@@ -4,7 +4,12 @@ import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearne
 import { speak, listen, canListen, judge, esVoices } from './speech.js';
 import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions } from './quiz.js';
 import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl, PROVIDERS, provider, providerInfo, hasKey as aiHasKey } from './ai.js';
-import { signIn, signOut, syncNow, scheduleSync, initSync, onSyncStatus, clientId, hasToken } from './sync.js';
+import * as drive from './sync.js';
+import * as cloud from './cloud.js';
+// Если в config.js задан Supabase — прогресс хранится там, иначе (запасной вариант) на Google Диске.
+const SYNC = cloud.configured() ? cloud : drive;
+const { syncNow, scheduleSync, initSync, onSyncStatus } = SYNC;
+const { signIn, signOut, clientId, hasToken } = drive;
 
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
@@ -635,7 +640,18 @@ on(/^\/profile$/, () => {
   const vs = esVoices();
   const last = settings.lastSync ? new Date(settings.lastSync).toLocaleString('ru-RU', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
   view.innerHTML = `
-    <div class="c stack">
+    ${cloud.configured() ? `<div class="c stack">
+      <b>Аккаунт и сохранение прогресса</b>
+      ${settings.signedIn ? `<div class="row start">${settings.picture ? `<img src="${esc(settings.picture)}" referrerpolicy="no-referrer" style="width:36px;height:36px;border-radius:50%">` : ''}<div><div>${esc(settings.name || '')}</div><div class="mut small">${esc(settings.email || '')}</div></div></div>
+          <div class="mut small">${last ? 'Последняя синхронизация: ' + last : ''}</div>
+          <div class="btns"><button class="btn ghost" id="cSync">Синхронизировать</button><button class="btn line" id="cOut">Выйти</button></div>`
+        : `<div class="mut small">Войдите, чтобы прогресс и свои слова сохранялись в аккаунте и были доступны на любом устройстве. Без входа всё хранится только на этом телефоне.</div>
+          <button class="btn" id="cGoogle">Войти через Google</button>
+          <div class="mut small" style="text-align:center">или по почте</div>
+          <input class="inp" id="cEmail" type="email" inputmode="email" autocomplete="email" placeholder="почта@example.com" value="${esc(settings.pendingEmail || '')}">
+          <div id="cCodeBox" ${settings.pendingEmail ? '' : 'hidden'} class="stack"><input class="inp" id="cCode" inputmode="numeric" autocomplete="one-time-code" placeholder="Код из письма"><button class="btn" id="cVerify">Войти</button></div>
+          <button class="btn ghost" id="cSend">${settings.pendingEmail ? 'Отправить код ещё раз' : 'Получить код на почту'}</button>`}
+    </div>` : `    <div class="c stack">
       <b>Google-аккаунт и синхронизация</b>
       ${settings.signedIn ? `<div class="row start">${settings.picture ? `<img src="${esc(settings.picture)}" referrerpolicy="no-referrer" style="width:36px;height:36px;border-radius:50%">` : ''}<div><div>${esc(settings.name || '')}</div><div class="mut small">${esc(settings.email || '')}</div></div></div>
           <div class="mut small" id="syncInfo">${last ? 'Последняя синхронизация: ' + last : ''}</div>
@@ -646,6 +662,7 @@ on(/^\/profile$/, () => {
           <div class="stack" style="margin-top:8px"><input class="inp" id="cid" value="${esc(settings.clientId)}" placeholder="…apps.googleusercontent.com"><button class="btn ghost sm" id="cidSave">Сохранить</button>
           <a class="small" href="#/setup">Как получить Client ID ›</a></div></details>` : ''}
     </div>
+`}
     <div class="c stack">
       <b>ИИ-помощник</b>
       <div class="field"><label>Сервис</label><select class="inp" id="aiProv">${Object.entries(PROVIDERS).map(([k, P]) => `<option value="${k}" ${k === provider() ? 'selected' : ''}>${esc(P.name)} · ${P.free ? 'бесплатно' : 'платно'}${aiKeys.get(k) ? ' ✓' : ''}</option>`).join('')}</select></div>
@@ -677,6 +694,19 @@ on(/^\/profile$/, () => {
     </div>
     <p class="mut small" style="text-align:center">Еспаньола ${VERSION} · по учебнику «Español Actual. Начальный курс» (Гринина Е.А., Микаэлян Ю.И.).</p>`;
   const b = id => $('#' + id);
+  if (b('cGoogle')) b('cGoogle').onclick = () => cloud.signInGoogle();
+  if (b('cSend')) b('cSend').onclick = async () => {
+    const em = b('cEmail').value.trim(); if (!/.+@.+\..+/.test(em)) return toast('Введите почту');
+    b('cSend').disabled = true;
+    try { await cloud.sendCode(em); settings.pendingEmail = em; saveSettings(); toast('Код отправлен на ' + em + '. Проверьте и папку «Спам»', 5000); route(); }
+    catch (e) { toast(e.message, 5000); b('cSend').disabled = false; }
+  };
+  if (b('cVerify')) b('cVerify').onclick = async () => {
+    try { await cloud.verifyCode(b('cEmail').value || settings.pendingEmail, b('cCode').value); delete settings.pendingEmail; saveSettings(); toast('Вход выполнен, прогресс сохранён'); renderAva(); route(); }
+    catch (e) { toast(e.message, 5000); }
+  };
+  if (b('cSync')) b('cSync').onclick = async () => { await cloud.syncNow(); route(); };
+  if (b('cOut')) b('cOut').onclick = () => { cloud.signOut(); renderAva(); route(); toast('Вы вышли. Прогресс остался на телефоне и в аккаунте'); };
   if (b('inBtn')) b('inBtn').onclick = async () => { try { await signIn(); toast('Вход выполнен, прогресс синхронизирован'); renderAva(); route(); } catch (e) { toast(e.message, 4000); } };
   if (b('syncBtn')) b('syncBtn').onclick = async () => { try { if (!hasToken()) await signIn(''); else await syncNow(); route(); } catch (e) { toast(e.message, 4000); } };
   if (b('outBtn')) b('outBtn').onclick = () => { signOut(); renderAva(); route(); toast('Вы вышли. Прогресс остался на телефоне и на Диске'); };
@@ -741,6 +771,10 @@ onChange(scheduleSync);
 async function start() {
   applyStyle(); renderAva();
   view.innerHTML = '<div class="empty-note">Загрузка…</div>';
+  if (cloud.configured()) {
+    try { if (await cloud.consumeRedirect()) toast('Вход выполнен'); } catch (e) { toast('Вход не удался: ' + e.message, 5000); }
+    renderAva();
+  }
   try { await loadBook(); }
   catch (e) { view.innerHTML = `<div class="empty-note">Не удалось загрузить учебник: ${esc(e.message)}<br>Проверьте интернет и обновите страницу.</div>`; return; }
   route();

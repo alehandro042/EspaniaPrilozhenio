@@ -16,16 +16,18 @@ h1{font-size:24px}h2{font-size:18px;margin-top:24px}
 <h2>Какие данные хранятся</h2>
 <p>Прогресс обучения (карточки, результаты тестов, уровни уроков) и слова, которые вы добавили сами. Эти данные хранятся в памяти браузера на вашем устройстве.</p>
 
-<h2>Вход через Google</h2>
+<h2>Аккаунт</h2>
+<p>Если вы входите в приложение (через Google или по коду из письма), ваш прогресс и адрес почты хранятся в базе Supabase (supabase.com), чтобы прогресс был доступен на разных устройствах. Каждый пользователь видит только свои данные.</p>
+<h2>Google Диск (запасной вариант)</h2>
 <p>Если вы входите через Google, приложение запрашивает доступ только к своей скрытой папке на вашем Google Диске (область <code>drive.appdata</code>), чтобы хранить там копию прогресса и синхронизировать её между устройствами. Приложение не видит, не читает и не изменяет другие ваши файлы на Google Диске. Имя, адрес почты и фото профиля используются только для показа в приложении.</p>
 
 <h2>Передача данных</h2>
-<p>У приложения нет своего сервера. Данные никому не передаются и не продаются. Если вы сами добавили ключ ИИ-сервиса (например, Gemini), ваши вопросы и фото отправляются напрямую в выбранный вами сервис по его правилам; ключ хранится только на вашем устройстве.</p>
+<p>Кроме базы Supabase, у приложения нет своего сервера. Данные никому не передаются и не продаются. Если вы сами добавили ключ ИИ-сервиса (например, Gemini), ваши вопросы и фото отправляются напрямую в выбранный вами сервис по его правилам; ключ хранится только на вашем устройстве.</p>
 
 <h2>Удаление данных</h2>
 <p>Прогресс на устройстве можно удалить в профиле приложения («Сбросить прогресс»). Доступ к Google Диску можно отозвать в любой момент на странице <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>; там же удаляются скрытые данные приложения.</p>
 
 <h2>Summary (English)</h2>
-<p>Espanola is a non-commercial study app. It stores your learning progress in your browser. If you sign in with Google, it uses only the hidden app data folder of your Google Drive (drive.appdata scope) to sync progress; it cannot access your other files. The app has no server and does not share or sell data. You can revoke access at myaccount.google.com/permissions.</p>
+<p>Espanola is a non-commercial study app. It stores your learning progress in your browser. If you sign in (Google or e-mail code), progress and your e-mail are stored in a Supabase database, visible only to you. The legacy Google Drive option uses only the hidden app data folder of your Google Drive (drive.appdata scope) to sync progress; it cannot access your other files. The app has no server and does not share or sell data. You can revoke access at myaccount.google.com/permissions.</p>
 </body>
 </html>
