@@ -1,9 +1,9 @@
-import { state, settings, save, saveSettings, onChange, gemini, streakDays, uid, replaceState, merge, tickDay } from './store.js';
+import { state, settings, save, saveSettings, onChange, aiKeys, streakDays, uid, replaceState, merge, tickDay } from './store.js';
 import { book, loadBook, hasRu, imgFor, KIND_RU, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences } from './data.js';
 import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearned, mistakes } from './srs.js';
 import { speak, listen, canListen, judge, esVoices } from './speech.js';
 import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions } from './quiz.js';
-import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl } from './ai.js';
+import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl, PROVIDERS, provider, providerInfo, hasKey as aiHasKey } from './ai.js';
 import { signIn, signOut, syncNow, scheduleSync, initSync, onSyncStatus, clientId, hasToken } from './sync.js';
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -528,17 +528,17 @@ function addMy(rows) {
 }
 
 function photoForm() {
-  const hasKey = !!gemini.key;
+  const hasKey = aiHasKey();
   if (photoRows) return `<div class="c stack"><div class="row"><b>Найдено на фото</b><span class="chip">проверьте</span></div>
       <div class="mut small">Исправьте ошибки и снимите галочки с лишнего.</div>
       ${photoRows.map((r, k) => `<div class="row" style="gap:6px"><input type="checkbox" data-pk="${k}" checked style="width:20px;height:20px;accent-color:var(--acc)">
         <input class="inp" data-pes="${k}" value="${esc(r.es)}" lang="es" style="padding:8px"><input class="inp" data-pru="${k}" value="${esc(r.ru)}" style="padding:8px"></div>`).join('')}
       <div class="btns"><button class="btn ghost" id="photoCancel">Отмена</button><button class="btn" id="photoSave">Сохранить</button></div></div>`;
   return `<div class="c stack"><b>Слова с фото</b>
-    <div class="mut small">${hasKey ? 'Сфотографируйте страницу или записи, ИИ найдёт испанские слова, а вы проверите их перед сохранением.' : 'Для распознавания нужен ключ Gemini (бесплатно, добавляется в профиле). Без ключа: выберите фото, нажмите «Спросить Gemini», затем скопируйте ответ сюда через «Списком».'}</div>
+    <div class="mut small">${hasKey ? 'Сфотографируйте страницу или записи, ИИ (' + providerInfo().name + ') найдёт испанские слова, а вы проверите их перед сохранением.' : 'Для распознавания нужен ключ ИИ (есть бесплатные, добавляется в профиле). Без ключа: выберите фото, нажмите «Спросить Gemini», затем скопируйте ответ сюда через «Списком».'}</div>
     <label class="btn" style="cursor:pointer">📷 Сфотографировать / выбрать<input type="file" id="photo" accept="image/*" capture="environment" hidden></label>
     <div id="photoMsg" class="mut small"></div>
-    ${!hasKey ? `<a class="mut small" href="#/profile">Добавить ключ Gemini ›</a>` : ''}</div>`;
+    ${!hasKey ? `<a class="mut small" href="#/profile">Добавить ключ ИИ ›</a>` : ''}</div>`;
 }
 async function shrink(file, max = 1600) {
   const img = await createImageBitmap(file).catch(() => null);
@@ -553,7 +553,7 @@ function bindPhoto() {
   if (inp) inp.onchange = async () => {
     const f = inp.files[0]; if (!f) return;
     const msg = $('#photoMsg');
-    if (!gemini.key) {
+    if (!aiHasKey()) {
       msg.innerHTML = `<button class="btn ghost" id="askPhoto">Спросить Gemini про это фото</button>`;
       $('#askPhoto').onclick = async () => {
         const r = await askGeminiApp('Выпиши все испанские слова с этого фото с русским переводом, по одному в строке, в формате: слово — перевод. Без пояснений.', [f]);
@@ -587,12 +587,12 @@ function aiContext() {
 on(/^\/ai(?:\?q=(.*))?$/, q => {
   setTitle('Помощник');
   const pre = q ? decodeURIComponent(q) : '';
-  const hasKey = !!gemini.key;
+  const hasKey = aiHasKey();
   const lid = state.last?.lesson; const L = lid && book.lessons.get(lid);
   const sugg = L ? (L.grammar || []).slice(0, 3).map(g => `Объясни ${g.id} «${g.title}» простыми словами, с примерами`) : [];
   view.innerHTML = `
     ${hasKey ? `<div class="chat" id="chat">${chatLog.map(m => `<div class="bubble ${m.role === 'user' ? 'me' : 'ai'}">${esc(m.text)}</div>`).join('') || `<div class="empty-note">Спросите что угодно про испанский: перевод, грамматику, как сказать фразу.</div>`}</div>`
-      : `<div class="c stack"><b>ИИ-помощник</b><div class="mut small">Чтобы отвечать прямо здесь, нужен ваш бесплатный ключ Gemini. Без ключа вопрос можно задать в приложении Gemini: кнопка скопирует запрос и откроет Gemini.</div><a class="btn line" href="#/profile">Добавить ключ Gemini</a></div>`}
+      : `<div class="c stack"><b>ИИ-помощник</b><div class="mut small">Чтобы отвечать прямо здесь, нужен ваш ключ ИИ (Gemini, Groq, Mistral и др., есть бесплатные). Без ключа вопрос можно задать в приложении Gemini: кнопка скопирует запрос и откроет Gemini.</div><a class="btn line" href="#/profile">Добавить ключ ИИ</a></div>`}
     ${sugg.length ? `<div class="row start" style="flex-wrap:wrap;gap:6px">${sugg.map(s => `<button class="chip" data-sugg="${esc(s)}">${esc(s.slice(0, 48))}…</button>`).join('')}</div>` : ''}
     <textarea class="inp" id="q" placeholder="Напишите вопрос…" style="min-height:80px">${esc(pre)}</textarea>
     <div class="btns">
@@ -646,11 +646,13 @@ on(/^\/profile$/, () => {
           <a class="small" href="#/setup">Как получить Client ID ›</a></div></details>` : ''}
     </div>
     <div class="c stack">
-      <b>Ключ Gemini</b>
-      <div class="mut small">Свой бесплатный ключ. Хранится только на этом устройстве и не синхронизируется. Получить: <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> → «Create API key» → скопировать.</div>
-      <input class="inp" id="gkey" type="password" autocomplete="off" value="${esc(gemini.key)}" placeholder="AIza…">
-      <div class="btns"><button class="btn ghost" id="gSave">Сохранить ключ</button>${gemini.key ? `<button class="btn line" id="gDel">Удалить</button>` : ''}</div>
-      <details><summary class="mut small">Модель</summary><input class="inp" id="gmodel" value="${esc(settings.model)}" placeholder="${esc(window.ESPANOLA_CONFIG?.geminiModel || 'gemini-flash-latest')}" style="margin-top:8px"></details>
+      <b>ИИ-помощник</b>
+      <div class="field"><label>Сервис</label><select class="inp" id="aiProv">${Object.entries(PROVIDERS).map(([k, P]) => `<option value="${k}" ${k === provider() ? 'selected' : ''}>${esc(P.name)} · ${P.free ? 'бесплатно' : 'платно'}${aiKeys.get(k) ? ' ✓' : ''}</option>`).join('')}</select></div>
+      <div class="mut small">${esc(providerInfo().note)}${providerInfo().vision ? '' : ' <b>Фото не читает.</b>'}<br>Где взять ключ: <a href="${providerInfo().keyUrl}" target="_blank" rel="noopener">${esc(providerInfo().keyHint)}</a>. Ключ хранится только на этом устройстве и не синхронизируется.</div>
+      <input class="inp" id="gkey" type="password" autocomplete="off" value="${esc(aiKeys.get(provider()))}" placeholder="${esc(providerInfo().keyPrefix || 'API-ключ')}">
+      <div class="btns"><button class="btn ghost" id="gSave">Сохранить ключ</button>${aiKeys.get(provider()) ? `<button class="btn line" id="gDel">Удалить</button>` : ''}</div>
+      <details><summary class="mut small">Модель</summary><input class="inp" id="gmodel" value="${esc((settings.models || {})[provider()] || '')}" placeholder="${esc(providerInfo().model)}" style="margin-top:8px"></details>
+      <div class="mut small">Без ключа в Помощнике работает кнопка «Спросить Gemini».</div>
     </div>
     <div class="c stack">
       <b>Стиль</b>
@@ -678,8 +680,9 @@ on(/^\/profile$/, () => {
   if (b('syncBtn')) b('syncBtn').onclick = async () => { try { if (!hasToken()) await signIn(''); else await syncNow(); route(); } catch (e) { toast(e.message, 4000); } };
   if (b('outBtn')) b('outBtn').onclick = () => { signOut(); renderAva(); route(); toast('Вы вышли. Прогресс остался на телефоне и на Диске'); };
   if (b('cidSave')) b('cidSave').onclick = () => { settings.clientId = b('cid').value.trim(); saveSettings(); route(); toast('Сохранено'); };
-  b('gSave').onclick = () => { gemini.key = b('gkey').value.trim(); settings.model = b('gmodel').value.trim(); saveSettings(); toast(gemini.key ? 'Ключ сохранён на этом устройстве' : 'Ключ удалён'); route(); };
-  if (b('gDel')) b('gDel').onclick = () => { gemini.key = ''; route(); };
+  b('aiProv').onchange = e => { settings.aiProvider = e.target.value; saveSettings(); route(); };
+  b('gSave').onclick = () => { const p = provider(); const v = b('gkey').value.trim(); aiKeys.set(p, v); settings.models = { ...(settings.models || {}), [p]: b('gmodel').value.trim() }; saveSettings(); toast(v ? 'Ключ сохранён на этом устройстве' : 'Ключ удалён'); route(); };
+  if (b('gDel')) b('gDel').onclick = () => { aiKeys.set(provider(), ''); route(); };
   view.querySelectorAll('[data-style]').forEach(x => x.onclick = () => { settings.style = x.dataset.style; saveSettings(); applyStyle(); route(); });
   if (b('voice')) b('voice').onchange = e => { settings.voice = e.target.value; saveSettings(); };
   b('rate').oninput = e => { settings.rate = +e.target.value; b('rv').textContent = settings.rate; saveSettings(); };

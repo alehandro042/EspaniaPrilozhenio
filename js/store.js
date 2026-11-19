@@ -1,7 +1,7 @@
 // Хранилище прогресса (на устройстве) + слияние для синхронизации.
 const KEY = 'espanola.state.v1';
 const SKEY = 'espanola.settings.v1';
-const GKEY = 'espanola.geminiKey'; // ключ Gemini — только на этом устройстве, не синхронизируется
+const GKEY = 'espanola.geminiKey'; // ключи ИИ — только на этом устройстве, не синхронизируется
 
 const listeners = new Set();
 export const onChange = fn => listeners.add(fn);
@@ -19,7 +19,7 @@ function write(k, v) {
 
 export let state = Object.assign(blank(), read(KEY, {}));
 export const settings = Object.assign(
-  { style: 'b', rate: 0.9, voice: '', clientId: '', model: '', signedIn: false, email: '', name: '', picture: '' },
+  { style: 'b', rate: 0.9, voice: '', clientId: '', model: '', aiProvider: 'gemini', models: {}, signedIn: false, email: '', name: '', picture: '' },
   read(SKEY, {})
 );
 
@@ -34,9 +34,10 @@ export function saveNow() { clearTimeout(saveTimer); write(KEY, state); }
 export function saveSettings() { write(SKEY, settings); }
 export function replaceState(s) { state = Object.assign(blank(), s); saveNow(); }
 
-export const gemini = {
-  get key() { try { return localStorage.getItem(GKEY) || ''; } catch { return ''; } },
-  set key(v) { try { v ? localStorage.setItem(GKEY, v) : localStorage.removeItem(GKEY); } catch {} }
+export const aiKeys = {
+  k: p => p === 'gemini' ? GKEY : 'espanola.key.' + p,
+  get(p) { try { return localStorage.getItem(this.k(p)) || ''; } catch { return ''; } },
+  set(p, v) { try { v ? localStorage.setItem(this.k(p), v) : localStorage.removeItem(this.k(p)); } catch {} }
 };
 
 export function today(d = new Date()) {
