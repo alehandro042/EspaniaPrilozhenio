@@ -1,0 +1,647 @@
+{
+ "id": 6,
+ "unit": 1,
+ "lesson": 6,
+ "title": "Unidad 1. Presentación — Lección 6",
+ "pages": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "missing_pages": [
+  33
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 35",
+  "verbs": [
+   {
+    "es": "casarse (con)",
+    "ru": "жениться, выходить замуж",
+    "page": 35
+   },
+   {
+    "es": "encantar",
+    "ru": "очень нравиться, восхищать",
+    "note": "§36",
+    "page": 35
+   },
+   {
+    "es": "estar jubilado",
+    "ru": "быть на пенсии",
+    "page": 35
+   },
+   {
+    "es": "gustar",
+    "ru": "нравиться",
+    "note": "§36",
+    "page": 35
+   },
+   {
+    "es": "querer",
+    "ru": "хотеть, любить",
+    "note": "§37",
+    "page": 35
+   }
+  ],
+  "other": [
+   {
+    "es": "ahora mismo",
+    "ru": "прямо сейчас",
+    "page": 35
+   },
+   {
+    "es": "amabilidad",
+    "gender": "f",
+    "ru": "любезность",
+    "page": 35
+   },
+   {
+    "es": "arquitectura",
+    "gender": "f",
+    "ru": "архитектура",
+    "page": 35
+   },
+   {
+    "es": "casado",
+    "ru": "женатый",
+    "page": 35
+   },
+   {
+    "es": "clásico",
+    "ru": "классический",
+    "page": 35
+   },
+   {
+    "es": "colega",
+    "gender": "m, f",
+    "ru": "коллега, однокурсник",
+    "page": 35
+   },
+   {
+    "es": "colombiano",
+    "ru": "колумбийский, колумбиец",
+    "page": 35
+   },
+   {
+    "es": "comida",
+    "gender": "f",
+    "ru": "еда",
+    "page": 35
+   },
+   {
+    "es": "director financiero",
+    "gender": "m",
+    "ru": "финансовый директор",
+    "page": 35
+   },
+   {
+    "es": "DNI (Documento Nacional de Identidad)",
+    "ru": "удостоверение личности (Испания)",
+    "page": 35
+   },
+   {
+    "es": "domicilio",
+    "gender": "m",
+    "ru": "место жительства",
+    "page": 35
+   },
+   {
+    "es": "edad",
+    "gender": "f",
+    "ru": "возраст",
+    "page": 35
+   },
+   {
+    "es": "estado civil",
+    "gender": "m",
+    "ru": "семейное положение",
+    "page": 35
+   },
+   {
+    "es": "fábrica",
+    "gender": "f",
+    "ru": "фабрика, завод",
+    "page": 35
+   },
+   {
+    "es": "fábrica textil",
+    "gender": "f",
+    "ru": "ткацкая фабрика",
+    "page": 35
+   },
+   {
+    "es": "firma",
+    "gender": "f",
+    "ru": "подпись",
+    "page": 35
+   },
+   {
+    "es": "fútbol",
+    "gender": "m",
+    "ru": "футбол",
+    "page": 35
+   },
+   {
+    "es": "geografía",
+    "gender": "f",
+    "ru": "география",
+    "page": 35
+   },
+   {
+    "es": "gótico",
+    "ru": "готический",
+    "page": 35
+   },
+   {
+    "es": "gramática",
+    "gender": "f",
+    "ru": "грамматика",
+    "page": 35
+   },
+   {
+    "es": "historia",
+    "gender": "f",
+    "ru": "история",
+    "page": 35
+   },
+   {
+    "es": "juntos",
+    "ru": "вместе",
+    "page": 35
+   },
+   {
+    "es": "lugar de nacimiento",
+    "gender": "m",
+    "ru": "место рождения",
+    "page": 35
+   },
+   {
+    "es": "matemáticas",
+    "gender": "f pl",
+    "ru": "математика",
+    "page": 35
+   },
+   {
+    "es": "moto",
+    "gender": "f",
+    "ru": "мотоцикл",
+    "page": 35
+   },
+   {
+    "es": "nacionalidad",
+    "gender": "f",
+    "ru": "национальность",
+    "page": 35
+   },
+   {
+    "es": "nada",
+    "ru": "зд. совсем",
+    "page": 35
+   },
+   {
+    "es": "nombre",
+    "gender": "m",
+    "ru": "имя",
+    "page": 35
+   },
+   {
+    "es": "ordenador",
+    "gender": "m",
+    "ru": "компьютер",
+    "page": 35
+   },
+   {
+    "es": "país",
+    "gender": "m",
+    "ru": "страна",
+    "page": 35
+   },
+   {
+    "es": "personas de referencia",
+    "gender": "m, f",
+    "ru": "поручители, доверенные лица",
+    "page": 35
+   },
+   {
+    "es": "precioso",
+    "ru": "очаровательный",
+    "page": 35
+   },
+   {
+    "es": "profesión",
+    "gender": "f",
+    "ru": "профессия",
+    "page": 35
+   },
+   {
+    "es": "regla",
+    "gender": "f",
+    "ru": "правило",
+    "page": 35
+   },
+   {
+    "es": "rosa",
+    "gender": "f",
+    "ru": "роза",
+    "page": 35
+   },
+   {
+    "es": "sexo",
+    "gender": "m",
+    "ru": "пол",
+    "page": 35
+   },
+   {
+    "es": "solicitud",
+    "gender": "f",
+    "ru": "прошение",
+    "page": 35
+   },
+   {
+    "es": "soltero",
+    "ru": "холостой",
+    "page": 35
+   }
+  ],
+  "phrases": [
+   {
+    "es": "Mucho gusto en conocerle",
+    "ru": "Приятно с вами познакомиться",
+    "page": 35
+   }
+  ],
+  "names_diminutives": {
+   "page": 31,
+   "items": [
+    "Ángel – Angelito",
+    "Antonia – Toñi",
+    "Carmen – Carmencita",
+    "Carlos – Carlitos",
+    "Concepción – Concha, Conchita",
+    "Dolores – Lola, Lolita",
+    "Elena – Elenita",
+    "Enrique – Quique",
+    "Francisco – Paco, Paquito, Quico, Pancho, Curro",
+    "Jesús – Chus, Suso",
+    "José – Pepe, Pepito",
+    "Manuel – Manolo, Manolito",
+    "María – Mari, Maruja",
+    "María Isabel – Maribel",
+    "María Jesús – Chus, Susi",
+    "María Teresa – Maite",
+    "Miguel – Miguelito",
+    "Pedro – Perico",
+    "Pilar – Pili, Pilarín",
+    "Rafael – Rafa, Rafi",
+    "Rosa – Rosita, Rosi",
+    "Rosario – Charo"
+   ]
+  }
+ },
+ "grammar": [
+  {
+   "id": "§35",
+   "title": "Личные местоимения в функции косвенного дополнения (Dativo – дательный падеж)",
+   "pages": [
+    31,
+    32
+   ],
+   "points": [
+    "Безударные формы (me, te, le, nos, os, les) ставятся перед личной формой глагола; ударные употребляются с предлогами.",
+    "¡Atención! Ударные формы с предлогом a никогда не употребляются без безударных: A mí me gusta Moscú. Me gusta Moscú. (Неверно: A mí gusta Moscú.)"
+   ],
+   "table": [
+    [
+     "ударные",
+     "безударные"
+    ],
+    [
+     "a mí",
+     "me gusta el café"
+    ],
+    [
+     "a ti",
+     "te gusta el café"
+    ],
+    [
+     "a Usted, a él, a ella",
+     "le gusta el café"
+    ],
+    [
+     "a nosotros",
+     "nos gusta el café"
+    ],
+    [
+     "a vosotros",
+     "os gusta el café"
+    ],
+    [
+     "a Ustedes, a ellos, a ellas",
+     "les gusta el café"
+    ]
+   ]
+  },
+  {
+   "id": "§36",
+   "title": "Глаголы gustar и encantar",
+   "page": 32,
+   "points": [
+    "Выражают личные предпочтения и вкусы.",
+    "Формы 1-го и 2-го лица используются редко: Tú me gustas a mí y yo no te gusto a ti.",
+    "encantar не употребляется с наречиями: Me encanta su amabilidad (не «Me encanta mucho»). Le encantan las motos.",
+    "Существительное, которое согласуется в числе с gustar, encantar, является подлежащим и всегда употребляется с определенным артиклем: No me gusta el café. Me encantan los libros interesantes."
+   ],
+   "examples": [
+    "Me gustan mucho las matemáticas.",
+    "A Usted le gusta bastante esta oficina.",
+    "A mí me gusta la historia, a ti te gusta la geografía.",
+    "A Ramón y a ti os gusta trabajar aquí.",
+    "A Teresa y a mí no nos gusta nada el fútbol."
+   ]
+  },
+  {
+   "id": "§37",
+   "title": "Глагол querer",
+   "page": 32,
+   "table": [
+    [
+     "quiero"
+    ],
+    [
+     "quieres"
+    ],
+    [
+     "quiere"
+    ],
+    [
+     "queremos"
+    ],
+    [
+     "queréis"
+    ],
+    [
+     "quieren"
+    ]
+   ],
+   "points": [
+    "Сочетания: terminar la carrera, ser economista, presentar la solicitud, trabajar en esta empresa, ver a mis amigos, a mis padres, a mis colegas.",
+    "Выражает желание: Quiero aprender el español.",
+    "querer = amar («любить», как правило, относится к людям): ¿Me quieres? – Sí, te quiero mucho."
+   ]
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "Безударное местоимение (me, te, le, nos, os, les) + глагол (§35, упр. 3)",
+   "pages": [
+    31,
+    32
+   ],
+   "examples": [
+    {
+     "es": "¿Te gusta este libro?"
+    },
+    {
+     "es": "Os presento a mi abuela."
+    },
+    {
+     "es": "Les presento al señor López."
+    },
+    {
+     "es": "¿Me presentas a tu marido?"
+    },
+    {
+     "es": "¿Nos vendes tu moto?"
+    },
+    {
+     "es": "¿Me lees este documento?"
+    },
+    {
+     "es": "Te escribo una carta."
+    }
+   ]
+  },
+  {
+   "pattern": "Усиление: a + ударная форма + безударная форма + глагол (§35)",
+   "page": 32,
+   "examples": [
+    {
+     "es": "A mí me gusta Moscú."
+    },
+    {
+     "es": "Tengo dos hijas guapas. ¿Cuál de ellas le gusta a Usted?"
+    }
+   ]
+  },
+  {
+   "pattern": "(A кому) + me/te/le… + gusta (ед. ч.) / gustan (мн. ч.) + артикль + существительное / инфинитив (§36)",
+   "page": 32,
+   "examples": [
+    {
+     "es": "No me gusta el café."
+    },
+    {
+     "es": "Me gustan mucho las matemáticas."
+    },
+    {
+     "es": "A Ramón y a ti os gusta trabajar aquí."
+    },
+    {
+     "es": "A Teresa y a mí no nos gusta nada el fútbol."
+    },
+    {
+     "es": "Me encantan los libros interesantes."
+    },
+    {
+     "es": "Le encantan las motos."
+    }
+   ]
+  },
+  {
+   "pattern": "querer + инфинитив (желание); querer a + человек (любить) (§37)",
+   "page": 32,
+   "examples": [
+    {
+     "es": "Quiero aprender el español."
+    },
+    {
+     "es": "Quiero terminar la carrera."
+    },
+    {
+     "es": "¿Me quieres? – Sí, te quiero mucho."
+    },
+    {
+     "es": "Quiero mucho a mis padres."
+    },
+    {
+     "es": "¿Quieres tomar algo?"
+    }
+   ]
+  },
+  {
+   "pattern": "Представление человека (диалог упр. 13)",
+   "page": 34,
+   "examples": [
+    {
+     "es": "¡Hola, Diego! Te presento a mi marido Felipe. Es ingeniero. Trabaja en una fábrica textil."
+    },
+    {
+     "es": "¡Hola, Felipe! ¿Qué hay?"
+    },
+    {
+     "es": "Pues nada, aquí estamos. ¿Sois compañeros de trabajo, verdad?"
+    },
+    {
+     "es": "Sí, trabajamos juntos en la agencia de viajes. Soy director financiero."
+    },
+    {
+     "es": "Pues, mucho gusto en conocerte, Diego. Hasta luego."
+    }
+   ]
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Прочитайте, следя за артикуляцией, и запомните имена и их уменьшительные формы",
+   "page": 31
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Прочитайте числительные: 2, 4, 7, 9, 13, 18, 23, 37, 44, 51, 67, 76, 82, 95, 11, 84, 15, 78, 17, 61, 14, 57, 49, 100, 35, 80, 12, 19, 50, 24, 38, 45, 52, 66, 77, 83, 99, 10, 16, 39, 54, 60, 25, 48, 91",
+   "page": 31
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Прочитайте и переведите",
+   "page": 32,
+   "items": [
+    "¿Te gusta este libro?",
+    "Tengo dos hijas guapas. ¿Cuál de ellas le gusta a Usted?",
+    "Os presento a mi abuela.",
+    "Les presento al señor López.",
+    "¿Me presentas a tu marido?",
+    "¿Nos vendes tu moto?",
+    "¿Me lees este documento?",
+    "Te escribo una carta."
+   ]
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Вставьте местоимения",
+   "page": 32,
+   "items": [
+    "A la madre no ___ gustan estas rosas.",
+    "¿___ gusta el café a Pedro? – Sí, ___ encanta el café colombiano.",
+    "A Ana y a mí ___ encanta estudiar en la Universidad, y a ti, ¿___ gusta?",
+    "Vosotros ___ gustáis y nosotros no ___ gustamos.",
+    "A los turistas ingleses ___ encanta Madrid.",
+    "A Carmen ___ gusta vivir en la residencia.",
+    "¿___ gusto? – ¡___ gustas mucho!",
+    "¡A nosotros ___ encanta Barcelona! – Pues, a mí ___ gusta Santiago de Compostela.",
+    "A vosotros no ___ gusta la comida, ¿por qué?"
+   ]
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Ответьте на вопросы",
+   "page": 32,
+   "items": [
+    "¿Os gusta estudiar en la Universidad?",
+    "¿Te gustan las rosas?",
+    "¿Le gusto a Usted?",
+    "¿Qué les gusta a Ustedes?",
+    "¿Qué no te gusta?",
+    "¿Qué cosas te encantan?",
+    "¿Os encanta el español?"
+   ]
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Перечислите, что вам нравится и не нравится (gustar, encantar): fútbol, estudiar, trabajar, libros interesantes, flores, café, viajar, libros aburridos, vivir en la residencia, económicas, historia, comida española, escribir pruebas, hablar con los amigos, tener problemas, chicas guapas",
+   "page": 32
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Проспрягайте querer с зависимыми словами из таблицы; задайте вопросы в парах",
+   "page": 32
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Переведите на русский язык (продолжение на с. 33, которой нет в PDF)",
+   "page": 32,
+   "items": [
+    "Quiero mucho a mis padres.",
+    "Me gusta España.",
+    "¿Quieres tomar algo?"
+   ]
+  },
+  {
+   "number": "12",
+   "instruction_ru": "(начало задания на с. 33) A: задавая вопросы, заполните анкету для одногруппников; B: представьте одногруппников",
+   "page": 34
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Прочитайте и переведите диалог; A: проспрягайте ser ingeniero, ser director financiero, ser su compañero de trabajo, estar aquí, estar en la agencia de viajes, trabajar en una fábrica textil, presentar a (sus) amigos, presentar a (sus) padres (hijos, hermanos); B: ответьте на вопросы; C: по ролям; D: перескажите",
+   "page": 34
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 34,
+   "items": [
+    "___ periodista presenta ___ pasaporte ___ policía.",
+    "¿___ quién está casada Lola? – ___ hijo ___ abogado.",
+    "¿___ dónde son, ___ señores?",
+    "No me gusta ___ tienda ___ tío Pepe.",
+    "¿Por qué no te gustan ___ motos?",
+    "Jorge es ___ buen camarero.",
+    "¿___ qué agencia ___ viajes trabaja Usted?"
+   ]
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы о родителях (¿Quién es tu padre? ¿Qué es tu padre? ¿Quién es tu madre? ¿Qué es tu madre? ¿Cómo son tus padres? ¿Cuántos años tienen? ¿De dónde son? ¿Dónde trabajan tus padres? ¿Cómo están?)",
+   "page": 34
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Расскажите о своей семье",
+   "page": 34
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 34,
+   "items": [
+    "Пако женится на красивой девушке, но она мне не нравится, она глупа.",
+    "Луис не хочет жениться, он еще молод.",
+    "Какое Ваше семейное положение? – Я замужем.",
+    "Моя бабушка уже на пенсии, а мой дедушка работает, потому что ему нет шестидесяти.",
+    "У Вас есть дети? – У меня две дочери и один сын.",
+    "Вам нравится Ваша профессия? – Да, мне нравится работать в банке.",
+    "Из какой Вы страны? – Я из Марокко.",
+    "Росарио не любит Пепе, поэтому она не хочет выходить за него замуж.",
+    "Тебе нравится это имя?",
+    "Хосефа любит магазины, а её муж – футбол.",
+    "Этот человек меня восхищает.",
+    "Мария изучает математику, потому что она ей нравится.",
+    "Господин директор, я представляю Вам испанского журналиста Эмилио Ромеро. Он хочет поговорить с Вами об одном важном деле.",
+    "Вот два компьютера. Какой из них тебе нравится?",
+    "Ваша племянница работает в парикмахерской? – Нет. Она официантка в баре, но хочет учиться на экономиста.",
+    "Я не люблю слишком длинные диалоги.",
+    "Хочешь посмотреть телевизор?",
+    "Как зовут твоих тетю и дядю?",
+    "Этот проект меня восхищает.",
+    "В банке Вы предъявляете паспорт и подписываете документы.",
+    "Эта страна находится далеко отсюда."
+   ]
+  }
+ ],
+ "questions_for_user": [
+  "В PDF нет страницы 33 учебника (после с. 32 сразу идет с. 34). На ней конец упр. 8, раздел Para conocer más «¿Eres soltero o estás casado?» и упр. 9–12 (видимо, анкета). Пришлите, пожалуйста, фото этой страницы."
+ ]
+}

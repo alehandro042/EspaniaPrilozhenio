@@ -1,0 +1,874 @@
+{
+ "book": "Español Actual. Современный испанский язык. Начальный курс",
+ "authors": [
+  "Гринина Е.А.",
+  "Микаэлян Ю.И."
+ ],
+ "source": "Содержание, с. 233–237 учебника (PDF-страницы 234–239)",
+ "note": "page = номер страницы учебника. PDF-страница на 2 больше до с. 32 и на 1 больше с с. 34 (страницы 33 в PDF нет).",
+ "front_matter": [
+  {
+   "title": "Предисловие",
+   "page": 3
+  },
+  {
+   "title": "Методические рекомендации",
+   "page": 5
+  }
+ ],
+ "units": [
+  {
+   "unit": 1,
+   "title": "Presentación",
+   "page": 6
+  },
+  {
+   "unit": 2,
+   "title": "Estudiar y trabajar",
+   "page": 36
+  },
+  {
+   "unit": 3,
+   "title": "En casa, en la oficina y en el hotel",
+   "page": 77
+  },
+  {
+   "unit": 4,
+   "title": "Mis ocupaciones y mis aficiones",
+   "page": 114
+  },
+  {
+   "unit": 5,
+   "title": "Medios de transporte y viajes",
+   "page": 144
+  },
+  {
+   "unit": 6,
+   "title": "Comidas y compras",
+   "page": 181
+  }
+ ],
+ "lessons": [
+  {
+   "id": 1,
+   "unit": 1,
+   "lesson": 1,
+   "title": "Unidad 1, Lección 1",
+   "page": 6,
+   "sections": [
+    "Introducción",
+    "Fonética",
+    "Gramática",
+    "Para conocer más. ¿Qué tal?",
+    "Vocabulario"
+   ],
+   "phonetics": [
+    "§1. Гласные и согласные звуки"
+   ],
+   "grammar": [
+    "§2. Артикль (2.1. Определенный артикль; 2.2. Неопределенный артикль)",
+    "§3. Род имени существительного",
+    "§4. Число имени существительного",
+    "§5. Личные местоимения",
+    "§6. Спряжение глагола tomar (I спряжение)"
+   ],
+   "para_conocer_mas": "¿Qué tal?",
+   "topics": [
+    "¿Qué tal?"
+   ],
+   "file": "lessons/u1-l1.json"
+  },
+  {
+   "id": 2,
+   "unit": 1,
+   "lesson": 2,
+   "title": "Unidad 1, Lección 2",
+   "page": 10,
+   "sections": [
+    "Fonética",
+    "Gramática",
+    "Para conocer más. Buenos días, señor",
+    "Vocabulario"
+   ],
+   "phonetics": [
+    "§7. Согласные звуки (продолжение)",
+    "§8. Ударение",
+    "§9. Порядок слов в разных типах предложений",
+    "§10. Вопросительные и восклицательные местоимения",
+    "§11. Интонация"
+   ],
+   "grammar": [
+    "§12. Существительные, обозначающие людей (personas)",
+    "§13. Простые предлоги a, en, de, con, para",
+    "§14. Глагол индивидуального спряжения estar"
+   ],
+   "para_conocer_mas": "Buenos días, señor",
+   "topics": [
+    "Buenos días, señor"
+   ],
+   "file": "lessons/u1-l2.json"
+  },
+  {
+   "id": 3,
+   "unit": 1,
+   "lesson": 3,
+   "title": "Unidad 1, Lección 3",
+   "page": 15,
+   "sections": [
+    "Fonética",
+    "Gramática",
+    "Para conocer más. ¡Hasta pronto!",
+    "Vocabulario"
+   ],
+   "phonetics": [
+    "§15. Палатальный звук [y]",
+    "§16. Дифтонги и трифтонги",
+    "§17. Слоги",
+    "§18. Знаки препинания"
+   ],
+   "grammar": [
+    "§19. Притяжательные местоимения",
+    "§20. Глагол индивидуального спряжения ser",
+    "§21. Существительные, обозначающие родственные отношения",
+    "§22. Спряжение местоименного глагола llamarse",
+    "§23. Спряжение правильных глаголов с окончанием -er (II спряжение)",
+    "§24. Глаголы индивидуального спряжения tener (иметь), ver (видеть)"
+   ],
+   "para_conocer_mas": "¡Hasta pronto!",
+   "topics": [
+    "¡Hasta pronto!"
+   ],
+   "file": "lessons/u1-l3.json"
+  },
+  {
+   "id": 4,
+   "unit": 1,
+   "lesson": 4,
+   "title": "Unidad 1, Lección 4",
+   "page": 20,
+   "sections": [
+    "Fonética",
+    "Gramática",
+    "Para conocer más. En la universidad",
+    "Vocabulario"
+   ],
+   "phonetics": [
+    "§25. Алфавит",
+    "§26. Некоторые правила произношения и орфографии"
+   ],
+   "grammar": [
+    "§27. Количественные числительные от 1 до 20",
+    "§28. Употребление глагола ser",
+    "§29. Указательные местоимения и местоименные наречия",
+    "§30. Спряжение правильных глаголов с окончанием -ir (III спряжение)"
+   ],
+   "para_conocer_mas": "En la universidad",
+   "topics": [
+    "En la universidad"
+   ],
+   "file": "lessons/u1-l4.json"
+  },
+  {
+   "id": 5,
+   "unit": 1,
+   "lesson": 5,
+   "title": "Unidad 1, Lección 5",
+   "page": 26,
+   "sections": [
+    "Fonética",
+    "Gramática",
+    "Para conocer más. Países y nacionalidades",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§31. Числительные от 20 до 100",
+    "§32. Имя прилагательное",
+    "§33. Неопределенные количественные прилагательные и наречия: mucho/muy/poco/bastante/demasiado",
+    "§34. Употребление глаголов ser/estar"
+   ],
+   "para_conocer_mas": "Países y nacionalidades",
+   "topics": [
+    "Países y nacionalidades"
+   ],
+   "file": "lessons/u1-l5.json"
+  },
+  {
+   "id": 6,
+   "unit": 1,
+   "lesson": 6,
+   "title": "Unidad 1, Lección 6",
+   "page": 31,
+   "sections": [
+    "Fonética",
+    "Gramática",
+    "Para conocer más. ¿Eres soltero o estás casado?",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§35. Личные местоимения в функции косвенного дополнения (Dativo – дательный падеж)",
+    "§36. Глаголы gustar и encantar",
+    "§37. Глагол querer"
+   ],
+   "para_conocer_mas": "¿Eres soltero o estás casado?",
+   "topics": [
+    "¿Eres soltero o estás casado?"
+   ],
+   "file": "lessons/u1-l6.json"
+  },
+  {
+   "id": 7,
+   "unit": 2,
+   "lesson": 1,
+   "title": "Unidad 2, Lección 1",
+   "page": 36,
+   "sections": [
+    "Gramática",
+    "Para conocer más. En los cursos de idioma",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§38. Неопределенные количественные прилагательные и наречия: tan, tanto",
+    "§39. También, tampoco",
+    "§40. Простые предлоги: sobre, sin, entre",
+    "§41. Глаголы decir, hablar",
+    "§42. Обозначение времени (I)"
+   ],
+   "para_conocer_mas": "En los cursos de idioma",
+   "topics": [
+    "En los cursos de idioma"
+   ]
+  },
+  {
+   "id": 8,
+   "unit": 2,
+   "lesson": 2,
+   "title": "Unidad 2, Lección 2",
+   "page": 42,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Empiezan las clases",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§43. Неопределенное местоимение todo (-a, -os, -as)",
+    "§44. Глаголы saber, conocer",
+    "§45. Спряжение отклоняющихся глаголов V группы",
+    "§46. Личные местоимения в функции прямого дополнения (Acusativo – винительный падеж)",
+    "§47. Глаголы aprender, enseñar",
+    "§48. Глагольные конструкции empezar a + infinitivo, terminar de + infinitivo, tener que + infinitivo, deber + infinitivo",
+    "§49. Обозначение времени (II)"
+   ],
+   "para_conocer_mas": "Empiezan las clases",
+   "topics": [
+    "Empiezan las clases"
+   ]
+  },
+  {
+   "id": 9,
+   "unit": 2,
+   "lesson": 3,
+   "title": "Unidad 2, Lección 3",
+   "page": 49,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Exámenes y notas",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§50. Неопределенные местоимения: algo/nada, alguien/nadie, alguno/ninguno",
+    "§51. Глаголы восприятия ver – mirar, oír – escuchar (видеть – смотреть, слышать – слушать)",
+    "§52. Простые предлоги desde, durante, hasta",
+    "§53. Дни недели",
+    "§54. Глаголы индивидуального спряжения hacer (делать), poner (ставить, класть)"
+   ],
+   "para_conocer_mas": "Exámenes y notas",
+   "topics": [
+    "Exámenes y notas"
+   ]
+  },
+  {
+   "id": 10,
+   "unit": 2,
+   "lesson": 4,
+   "title": "Unidad 2, Lección 4",
+   "page": 56,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Nuevo sistema educativo español",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§55. Неопределенные местоимения cada, cada uno",
+    "§56. Глаголы индивидуального спряжения dar (дать), poder (мочь)",
+    "§57. Порядок следования дополнений в предложении",
+    "§58. Даты. Месяцы. Времена года"
+   ],
+   "para_conocer_mas": "Nuevo sistema educativo español",
+   "topics": [
+    "Nuevo sistema educativo español"
+   ]
+  },
+  {
+   "id": 11,
+   "unit": 2,
+   "lesson": 5,
+   "title": "Unidad 2, Lección 5",
+   "page": 62,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Buscando empleo",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§59. Los indefinidos de igualdad. Неопределенные местоимения и прилагательные со значением сходства",
+    "§60. Таблица личных местоимений",
+    "§61. Избыточное употребление местоимений. Местоименная реприза",
+    "§62. Глаголы движения ir и venir",
+    "§63. Глагольная конструкция ir a infinitivo",
+    "§64. Предлог por"
+   ],
+   "para_conocer_mas": "Buscando empleo",
+   "topics": [
+    "Buscando empleo"
+   ]
+  },
+  {
+   "id": 12,
+   "unit": 2,
+   "lesson": 6,
+   "title": "Unidad 2, Lección 6",
+   "page": 69,
+   "sections": [
+    "Gramática",
+    "Para conocer más. En la empresa",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§65. Los indefinidos de diversidad. Неопределенные местоимения и прилагательные со значением неоднородности и разнообразия",
+    "§66. Предложная (ударная) форма местоимений-дополнений",
+    "§67. Простые предлоги ante, bajo, contra, excepto, hacia, mediante, salvo, según, tras",
+    "§68. Первая группа отклоняющихся глаголов. Ia и Ib"
+   ],
+   "para_conocer_mas": "En la empresa",
+   "topics": [
+    "En la empresa"
+   ]
+  },
+  {
+   "id": 13,
+   "unit": 3,
+   "lesson": 1,
+   "title": "Unidad 3, Lección 1",
+   "page": 77,
+   "sections": [
+    "Gramática",
+    "Para conocer más. La habitación",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§69. Numerales ordinales. Порядковые числительные",
+    "§70. Сложные предлоги, наречия и наречные выражения, служащие для описания положения предметов в пространстве",
+    "§71. Глаголы, обозначающие положение в пространстве",
+    "§72. Безличная форма hay",
+    "§73. IV группа отклоняющихся глаголов: dormir, morir"
+   ],
+   "para_conocer_mas": "La habitación",
+   "topics": [
+    "La habitación"
+   ]
+  },
+  {
+   "id": 14,
+   "unit": 3,
+   "lesson": 2,
+   "title": "Unidad 3, Lección 2",
+   "page": 83,
+   "sections": [
+    "Gramática",
+    "Para conocer más. En la recepción",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§74. Los comparativos. Степени сравнения прилагательных",
+    "§75. Los pronombres posesivos. Притяжательные местоимения. Ударная форма",
+    "§76. II группа отклоняющихся глаголов"
+   ],
+   "para_conocer_mas": "En la recepción",
+   "topics": [
+    "En la recepción"
+   ]
+  },
+  {
+   "id": 15,
+   "unit": 3,
+   "lesson": 3,
+   "title": "Unidad 3, Lección 3",
+   "page": 88,
+   "sections": [
+    "Gramática",
+    "Para conocer más. En mi apartamento",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§77. El superlativo. Превосходная степень (77.1. El superlativo absoluto. Абсолютная превосходная степень; 77.2. El superlativo relativo. Относительная превосходная степень)",
+    "§78. VI группа отклоняющихся глаголов (глаголы с окончанием -uir)",
+    "§79. Participio pasado. Причастие прошедшего времени",
+    "§80. Глагольная конструкция estar + participio pasado",
+    "§81. Pretérito Perfecto"
+   ],
+   "para_conocer_mas": "En mi apartamento",
+   "topics": [
+    "En mi apartamento"
+   ]
+  },
+  {
+   "id": 16,
+   "unit": 3,
+   "lesson": 4,
+   "title": "Unidad 3, Lección 4",
+   "page": 95,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Buscando un piso",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§82. Супплетивные формы сравнительной степени",
+    "§83. Pronombres demostrativos. Указательные местоимения",
+    "§84. III группа отклоняющихся глаголов",
+    "§85. Gerundio. Герундий",
+    "§86. Конструкция estar + gerundio"
+   ],
+   "para_conocer_mas": "Buscando un piso",
+   "topics": [
+    "Buscando un piso"
+   ]
+  },
+  {
+   "id": 17,
+   "unit": 3,
+   "lesson": 5,
+   "title": "Unidad 3, Lección 5",
+   "page": 100,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Planificando un viaje",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§87. Futuro Simple",
+    "§88. Lo neutro. Местоимение / артикль среднего рода lo"
+   ],
+   "para_conocer_mas": "Planificando un viaje",
+   "topics": [
+    "Planificando un viaje"
+   ]
+  },
+  {
+   "id": 18,
+   "unit": 3,
+   "lesson": 6,
+   "title": "Unidad 3, Lección 6",
+   "page": 106,
+   "sections": [
+    "Gramática",
+    "Para conocer más. En el hotel",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§89. Verbos reflexivos. Возвратные глаголы",
+    "§90. Наречия образа действия с суффиксом -mente"
+   ],
+   "para_conocer_mas": "En el hotel",
+   "topics": [
+    "En el hotel"
+   ]
+  },
+  {
+   "id": 19,
+   "unit": 4,
+   "lesson": 1,
+   "title": "Unidad 4, Lección 1",
+   "page": 114,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Actividades aburridas",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§91. Различия в употреблении глаголов ser/estar"
+   ],
+   "para_conocer_mas": "Actividades aburridas",
+   "topics": [
+    "Actividades aburridas"
+   ]
+  },
+  {
+   "id": 20,
+   "unit": 4,
+   "lesson": 2,
+   "title": "Unidad 4, Lección 2",
+   "page": 120,
+   "sections": [
+    "Gramática",
+    "Para conocer más. En la oficina",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§92. Pretérito Indefinido. Простое прошедшее время"
+   ],
+   "para_conocer_mas": "En la oficina",
+   "topics": [
+    "En la oficina"
+   ]
+  },
+  {
+   "id": 21,
+   "unit": 4,
+   "lesson": 3,
+   "title": "Unidad 4, Lección 3",
+   "page": 125,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Hablando de los planes",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§93. Спряжение отклоняющихся глаголов в Pretérito Indefinido"
+   ],
+   "para_conocer_mas": "Hablando de los planes",
+   "topics": [
+    "Hablando de los planes"
+   ]
+  },
+  {
+   "id": 22,
+   "unit": 4,
+   "lesson": 4,
+   "title": "Unidad 4, Lección 4",
+   "page": 131,
+   "sections": [
+    "Gramática",
+    "Para conocer más. IFEMA: feria de Madrid",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§94. Спряжение неправильных глаголов в Pretérito Indefinido"
+   ],
+   "para_conocer_mas": "IFEMA: feria de Madrid",
+   "topics": [
+    "IFEMA: feria de Madrid"
+   ]
+  },
+  {
+   "id": 23,
+   "unit": 4,
+   "lesson": 5,
+   "title": "Unidad 4, Lección 5",
+   "page": 137,
+   "sections": [
+    "Gramática",
+    "Para conocer más. La Navidad",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§95. Pretérito Imperfecto. Незаконченное (несовершенное) прошедшее время",
+    "§96. Различие в употреблении Pretérito Indefinido и Pretérito Imperfecto"
+   ],
+   "para_conocer_mas": "La Navidad",
+   "topics": [
+    "La Navidad"
+   ]
+  },
+  {
+   "id": 24,
+   "unit": 5,
+   "lesson": 1,
+   "title": "Unidad 5, Lección 1",
+   "page": 144,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Ofertas y planes para una Semana Santa en crisis",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§97. Numerales cardinales. Количественные числительные (101–1000)",
+    "§98. Artículo indeterminado. Неопределенный артикль",
+    "§99. Verbos de movimiento. Глаголы движения"
+   ],
+   "para_conocer_mas": "Ofertas y planes para una Semana Santa en crisis",
+   "topics": [
+    "Ofertas y planes para una Semana Santa en crisis"
+   ]
+  },
+  {
+   "id": 25,
+   "unit": 5,
+   "lesson": 2,
+   "title": "Unidad 5, Lección 2",
+   "page": 152,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Una vuelta por el centro de Madrid",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§100. Artículo determinado. Определенный артикль",
+    "§101. Potencial Simple"
+   ],
+   "para_conocer_mas": "Una vuelta por el centro de Madrid",
+   "topics": [
+    "Una vuelta por el centro de Madrid"
+   ]
+  },
+  {
+   "id": 26,
+   "unit": 5,
+   "lesson": 3,
+   "title": "Unidad 5, Lección 3",
+   "page": 160,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Metro de Madrid",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§102. Частные случаи употребления определенного артикля",
+    "§103. Pretérito Pluscuamperfecto de Indicativo. Предпрошедшее время"
+   ],
+   "para_conocer_mas": "Metro de Madrid",
+   "topics": [
+    "Metro de Madrid"
+   ]
+  },
+  {
+   "id": 27,
+   "unit": 5,
+   "lesson": 4,
+   "title": "Unidad 5, Lección 4",
+   "page": 167,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Sobre IBERIA",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§104. Los pronombres relativos. Относительные местоимения",
+    "§105. Concordancia de los tiempos. Согласование времен",
+    "§106. Tiempo. Погода"
+   ],
+   "para_conocer_mas": "Sobre IBERIA",
+   "topics": [
+    "Sobre IBERIA"
+   ]
+  },
+  {
+   "id": 28,
+   "unit": 5,
+   "lesson": 5,
+   "title": "Unidad 5, Lección 5",
+   "page": 174,
+   "sections": [
+    "Gramática",
+    "Para conocer más. En la taquilla",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§107. Voz Pasiva. Страдательный залог",
+    "§108. Наиболее типичные ошибки употребления времен Modo Indicativo"
+   ],
+   "para_conocer_mas": "En la taquilla",
+   "topics": [
+    "En la taquilla"
+   ]
+  },
+  {
+   "id": 29,
+   "unit": 6,
+   "lesson": 1,
+   "title": "Unidad 6, Lección 1",
+   "page": 181,
+   "sections": [
+    "Gramática",
+    "Para conocer más. En el restaurante",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§109. Modo Imperativo. Повелительное наклонение",
+    "§110. Valores de se (omónimos). Значения местоименной формы \"se\""
+   ],
+   "para_conocer_mas": "En el restaurante",
+   "topics": [
+    "En el restaurante"
+   ]
+  },
+  {
+   "id": 30,
+   "unit": 6,
+   "lesson": 2,
+   "title": "Unidad 6, Lección 2",
+   "page": 188,
+   "sections": [
+    "Gramática",
+    "Para conocer más. Haciendo la compra por Internet",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§111. Modo Imperativo (continuación) (111.1. Отклоняющиеся глаголы; 111.2. Неправильные глаголы)",
+    "§112. Oraciones condicionales del 1 tipo. Условные предложения 1-го типа"
+   ],
+   "para_conocer_mas": "Haciendo la compra por Internet",
+   "topics": [
+    "Haciendo la compra por Internet"
+   ]
+  },
+  {
+   "id": 31,
+   "unit": 6,
+   "lesson": 3,
+   "title": "Unidad 6, Lección 3",
+   "page": 194,
+   "sections": [
+    "Gramática",
+    "Para conocer más. En la tienda de ropa",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§113. Modo Imperativo. Употребление глаголов с личными местоимениями-дополнениями",
+    "§114. Modo Imperativo de los verbos reflexivos. Формы повелительного наклонения местоименных глаголов",
+    "§115. Perífrasis verbales de infinitivo. Глагольные конструкции с инфинитивом"
+   ],
+   "para_conocer_mas": "En la tienda de ropa",
+   "topics": [
+    "En la tienda de ropa"
+   ]
+  },
+  {
+   "id": 32,
+   "unit": 6,
+   "lesson": 4,
+   "title": "Unidad 6, Lección 4",
+   "page": 200,
+   "sections": [
+    "Gramática",
+    "Para conocer más. En la tienda de calzado",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§116. Modo Imperativo (recapitulación)",
+    "§117. Perífrasis verbales de participio. Глагольные конструкции с причастием",
+    "§118. Formación de las palabras: sufijos. Словообразование: суффиксы"
+   ],
+   "para_conocer_mas": "En la tienda de calzado",
+   "topics": [
+    "En la tienda de calzado"
+   ]
+  },
+  {
+   "id": 33,
+   "unit": 6,
+   "lesson": 5,
+   "title": "Unidad 6, Lección 5",
+   "page": 207,
+   "sections": [
+    "Gramática",
+    "Para conocer más. En El Corte Inglés",
+    "Texto complementario",
+    "Vocabulario"
+   ],
+   "phonetics": [],
+   "grammar": [
+    "§119. Perífrasis verbales de gerundio. Глагольные конструкции с герундием",
+    "§120. Formación de las palabras: prefijos. Словообразование: префиксы",
+    "§121. Conjunciones. Союзы"
+   ],
+   "para_conocer_mas": "En El Corte Inglés",
+   "topics": [
+    "En El Corte Inglés"
+   ]
+  }
+ ],
+ "review": [
+  {
+   "title": "REPASO (Unidades 1–3)",
+   "page": 112
+  },
+  {
+   "title": "REPASO GENERAL",
+   "page": 214
+  }
+ ],
+ "annexes": [
+  {
+   "title": "Anexo 1. Спряжение групп отклоняющихся глаголов",
+   "page": 217
+  },
+  {
+   "title": "Anexo 2. Глаголы индивидуального спряжения",
+   "page": 219
+  },
+  {
+   "title": "Anexo 3. Некоторые случаи глагольного управления",
+   "page": 222
+  },
+  {
+   "title": "Anexo 4. Léxico básico de las lecciones. Поурочный лексический минимум",
+   "page": 224
+  }
+ ],
+ "questions_for_user": []
+}

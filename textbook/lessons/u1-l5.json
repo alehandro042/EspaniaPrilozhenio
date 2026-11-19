@@ -1,0 +1,1012 @@
+{
+ "id": 5,
+ "unit": 1,
+ "lesson": 5,
+ "title": "Unidad 1. Presentación — Lección 5",
+ "pages": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 30–31; числительные §31, с. 26; страны и национальности, упр. 11, с. 29",
+  "verbs": [
+   {
+    "es": "necesitar",
+    "ru": "нуждаться, испытывать потребность в чем-л.",
+    "note": "соответствует русскому «нуждаться», упр. 12",
+    "page": 31
+   }
+  ],
+  "other": [
+   {
+    "es": "abogado",
+    "gender": "m",
+    "ru": "адвокат",
+    "page": 30
+   },
+   {
+    "es": "aburrido",
+    "ru": "скучный",
+    "page": 30
+   },
+   {
+    "es": "alegre",
+    "ru": "веселый",
+    "page": 30
+   },
+   {
+    "es": "algo",
+    "ru": "что-то",
+    "page": 30
+   },
+   {
+    "es": "antipático",
+    "ru": "неприятный (о человеке)",
+    "page": 30
+   },
+   {
+    "es": "argentino",
+    "ru": "аргентинский, аргентинец",
+    "page": 30
+   },
+   {
+    "es": "bastante",
+    "ru": "достаточно",
+    "page": 30
+   },
+   {
+    "es": "brasileño",
+    "ru": "бразильский, бразилец",
+    "page": 31
+   },
+   {
+    "es": "canadiense",
+    "ru": "канадский, канадец",
+    "page": 31
+   },
+   {
+    "es": "chino",
+    "ru": "китайский, китаец",
+    "page": 31
+   },
+   {
+    "es": "danés",
+    "ru": "датский, датчанин",
+    "page": 31
+   },
+   {
+    "es": "demasiado",
+    "ru": "слишком (много)",
+    "page": 31
+   },
+   {
+    "es": "egipcio",
+    "ru": "египетский, египтянин",
+    "page": 31
+   },
+   {
+    "es": "enfermo",
+    "ru": "больной",
+    "page": 31
+   },
+   {
+    "es": "feo",
+    "ru": "некрасивый",
+    "page": 31
+   },
+   {
+    "es": "flaco",
+    "ru": "худой",
+    "page": 31
+   },
+   {
+    "es": "gordo",
+    "ru": "толстый, полный",
+    "page": 31
+   },
+   {
+    "es": "griego",
+    "ru": "греческий, грек",
+    "page": 31
+   },
+   {
+    "es": "guapo",
+    "ru": "красивый (о человеке)",
+    "page": 31
+   },
+   {
+    "es": "inteligente",
+    "ru": "умный",
+    "page": 31
+   },
+   {
+    "es": "italiano",
+    "ru": "итальянский, итальянец",
+    "page": 31
+   },
+   {
+    "es": "japonés",
+    "ru": "японский, японец",
+    "page": 31
+   },
+   {
+    "es": "marroquí",
+    "ru": "марокканский, марокканец",
+    "page": 31
+   },
+   {
+    "es": "mexicano",
+    "ru": "мексиканский, мексиканец",
+    "page": 31
+   },
+   {
+    "es": "mucho",
+    "ru": "много",
+    "page": 31
+   },
+   {
+    "es": "muy",
+    "ru": "очень",
+    "page": 31
+   },
+   {
+    "es": "perezoso",
+    "ru": "ленивый",
+    "page": 31
+   },
+   {
+    "es": "poco",
+    "ru": "мало",
+    "page": 31
+   },
+   {
+    "es": "portugués",
+    "ru": "португальский, португалец",
+    "page": 31
+   },
+   {
+    "es": "ruso",
+    "ru": "русский, россиянин",
+    "page": 31
+   },
+   {
+    "es": "siempre",
+    "ru": "всегда",
+    "page": 31
+   },
+   {
+    "es": "simpático",
+    "ru": "приятный (о человеке)",
+    "page": 31
+   },
+   {
+    "es": "sueco",
+    "ru": "шведский, швед",
+    "page": 31
+   },
+   {
+    "es": "suizo",
+    "ru": "швейцарский, швейцарец",
+    "page": 31
+   },
+   {
+    "es": "tonto",
+    "ru": "глупый, дурак",
+    "page": 31
+   },
+   {
+    "es": "trabajador",
+    "ru": "работящий",
+    "page": 31
+   }
+  ],
+  "numbers": [
+   {
+    "es": "veintiuno",
+    "ru": "21",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "veintidós",
+    "ru": "22",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "veintitrés",
+    "ru": "23",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "veinticuatro",
+    "ru": "24",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "veinticinco",
+    "ru": "25",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "veintiséis",
+    "ru": "26",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "veintisiete",
+    "ru": "27",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "veintiocho",
+    "ru": "28",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "veintinueve",
+    "ru": "29",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "treinta",
+    "ru": "30",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "treinta y uno",
+    "ru": "31",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "cuarenta",
+    "ru": "40",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "cincuenta",
+    "ru": "50",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "sesenta",
+    "ru": "60",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "setenta",
+    "ru": "70",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "ochenta",
+    "ru": "80",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "noventa",
+    "ru": "90",
+    "page": 26,
+    "note": "§31"
+   },
+   {
+    "es": "ciento",
+    "ru": "100",
+    "page": 26,
+    "note": "§31"
+   }
+  ],
+  "countries": [
+   {
+    "es": "Rusia",
+    "page": 29
+   },
+   {
+    "es": "Alemania",
+    "page": 29
+   },
+   {
+    "es": "Italia",
+    "page": 29
+   },
+   {
+    "es": "Grecia",
+    "page": 29
+   },
+   {
+    "es": "Argentina",
+    "page": 29
+   },
+   {
+    "es": "España",
+    "page": 29
+   },
+   {
+    "es": "Brasil",
+    "page": 29
+   },
+   {
+    "es": "Francia",
+    "page": 29
+   },
+   {
+    "es": "Portugal",
+    "page": 29
+   },
+   {
+    "es": "Inglaterra",
+    "page": 29
+   },
+   {
+    "es": "Japón",
+    "page": 29
+   },
+   {
+    "es": "Estados Unidos",
+    "page": 29
+   },
+   {
+    "es": "México",
+    "page": 29
+   },
+   {
+    "es": "Suiza",
+    "page": 29
+   },
+   {
+    "es": "Canadá",
+    "page": 29
+   },
+   {
+    "es": "Suecia",
+    "page": 29
+   },
+   {
+    "es": "Holanda",
+    "page": 29
+   },
+   {
+    "es": "Egipto",
+    "page": 29
+   },
+   {
+    "es": "Marruecos",
+    "page": 29
+   },
+   {
+    "es": "Dinamarca",
+    "page": 29
+   },
+   {
+    "es": "China",
+    "page": 29
+   }
+  ],
+  "nationalities": [
+   {
+    "es": "mexicano, mexicana",
+    "page": 29
+   },
+   {
+    "es": "sueco, sueca",
+    "page": 29
+   },
+   {
+    "es": "portugués, portuguesa",
+    "page": 29
+   },
+   {
+    "es": "francés, francesa",
+    "page": 29
+   },
+   {
+    "es": "marroquí",
+    "page": 29
+   },
+   {
+    "es": "alemán, alemana",
+    "page": 29
+   },
+   {
+    "es": "canadiense",
+    "page": 29
+   },
+   {
+    "es": "japonés, japonesa",
+    "page": 29
+   },
+   {
+    "es": "ruso, rusa",
+    "page": 29
+   },
+   {
+    "es": "egipcio, egipcia",
+    "page": 29
+   },
+   {
+    "es": "italiano, italiana",
+    "page": 29
+   },
+   {
+    "es": "danés, danesa",
+    "page": 29
+   },
+   {
+    "es": "griego, griega",
+    "page": 29
+   },
+   {
+    "es": "inglés, inglesa",
+    "page": 29
+   },
+   {
+    "es": "argentino, argentina",
+    "page": 29
+   },
+   {
+    "es": "suizo, suiza",
+    "page": 29
+   },
+   {
+    "es": "español, española",
+    "page": 29
+   },
+   {
+    "es": "chino, china",
+    "page": 29
+   },
+   {
+    "es": "brasileño, brasileña",
+    "page": 29
+   },
+   {
+    "es": "estadounidense",
+    "page": 29
+   },
+   {
+    "es": "holandés, holandesa",
+    "page": 29
+   }
+  ],
+  "countries_note": "В упр. 11 страны и национальности даны двумя столбцами для сопоставления (задание A), перевод стран на русский в учебнике не дан.",
+  "phrases": [
+   {
+    "es": "Mucho gusto",
+    "ru": "(при знакомстве; перевод в учебнике не дан)",
+    "page": 29
+   },
+   {
+    "es": "Encantado",
+    "ru": "(при знакомстве; перевод в учебнике не дан)",
+    "page": 29
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "id": "§31",
+   "title": "Числительные от 20 до 100",
+   "pages": [
+    26,
+    27
+   ],
+   "table": [
+    [
+     "21",
+     "veintiuno",
+     "30",
+     "treinta"
+    ],
+    [
+     "22",
+     "veintidós",
+     "31",
+     "treinta y uno"
+    ],
+    [
+     "23",
+     "veintitrés",
+     "40",
+     "cuarenta"
+    ],
+    [
+     "24",
+     "veinticuatro",
+     "50",
+     "cincuenta"
+    ],
+    [
+     "25",
+     "veinticinco",
+     "60",
+     "sesenta"
+    ],
+    [
+     "26",
+     "veintiséis",
+     "70",
+     "setenta"
+    ],
+    [
+     "27",
+     "veintisiete",
+     "80",
+     "ochenta"
+    ],
+    [
+     "28",
+     "veintiocho",
+     "90",
+     "noventa"
+    ],
+    [
+     "29",
+     "veintinueve",
+     "100",
+     "ciento"
+    ]
+   ],
+   "points": [
+    "Десятки и единицы соединяются при помощи y (с 31 treinta y uno до 99 noventa y nueve).",
+    "ciento усекается до cien перед существительными мужского и женского рода (cien euros, cien personas) и перед некоторыми числительными (cien mil euros)."
+   ]
+  },
+  {
+   "id": "§32",
+   "title": "Имя прилагательное",
+   "page": 27,
+   "points": [
+    "Обычно ставится после существительного: un señor inteligente.",
+    "Всегда согласуется с существительным в роде и числе: una joven guapa.",
+    "Если относится к нескольким существительным, одно из которых мужского рода, ставится в мужском роде: el chico y su hermana son rubios.",
+    "bueno, malo теряют -o перед существительным м. р. ед. ч.: buen especialista, mal carácter.",
+    "grande → gran перед существительными м. и ж. р. в значении «великий»: un gran país, una gran nación.",
+    "Некоторые прилагательные перед существительным меняют значение: un hombre pobre (no tiene dinero) – бедный; un pobre hombre (es infeliz) – несчастный."
+   ],
+   "examples": [
+    "Es una persona... rubia/morena, alta/baja, flaca/gorda, guapa/fea, trabajadora/perezosa, inteligente/tonta, alegre/aburrida, simpática/antipática"
+   ]
+  },
+  {
+   "id": "§33",
+   "title": "Неопределенные количественные прилагательные и наречия: mucho/muy/poco/bastante/demasiado",
+   "page": 28,
+   "points": [
+    "Прилагательные согласуются с существительным в роде и числе; наречия неизменяемы.",
+    "mucho (-a, -os, -as): Bebe mucha agua. Наречие mucho (с глаголами): Bebe mucho.",
+    "muy (с прилагательными, причастиями и наречиями): Es muy alegre. Estudia muy bien.",
+    "poco (-a, -os, -as): Come poca fruta. Наречие: Come poco.",
+    "bastante (-s): Aquí viven bastantes extranjeros. Наречие: Estudia bastante para terminar bien la carrera.",
+    "demasiado (-a, -os, -as): Tiene demasiados libros. Наречие: Siempre habla demasiado."
+   ]
+  },
+  {
+   "id": "§34",
+   "title": "Употребление глаголов ser / estar",
+   "page": 28,
+   "points": [
+    "ser – неотъемлемые характеристики и постоянные качества.",
+    "estar – временные состояния и местоположение (временное и постоянное)."
+   ],
+   "table": [
+    [
+     "ser",
+     "estar"
+    ],
+    [
+     "Личность, родственные отношения: Soy Carlos. Soy el padre de Ana.",
+     "Временное состояние: Estoy muy bien. Juan está enfermo."
+    ],
+    [
+     "Внешность: Laura es alta y morena.",
+     ""
+    ],
+    [
+     "Происхождение: ¿Eres de Málaga?",
+     ""
+    ],
+    [
+     "Национальность: Somos argentinos.",
+     "Местоположение: Estamos en clase. Barcelona está en España."
+    ],
+    [
+     "Род деятельности: Soy estudiante. Es abogado.",
+     ""
+    ],
+    [
+     "Убеждения, вероисповедание: Soy católico. Soy demócrata.",
+     ""
+    ]
+   ]
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "Числительное (десятки y единицы) + существительное (§31, упр. 4)",
+   "pages": [
+    26,
+    27
+   ],
+   "examples": [
+    {
+     "es": "23 trenes"
+    },
+    {
+     "es": "31 jóvenes"
+    },
+    {
+     "es": "75 colegios"
+    },
+    {
+     "es": "100 noches"
+    },
+    {
+     "es": "41 empleadas"
+    },
+    {
+     "es": "51 revistas"
+    }
+   ]
+  },
+  {
+   "pattern": "Существительное + прилагательное, согласование в роде и числе (§32)",
+   "page": 27,
+   "examples": [
+    {
+     "es": "un señor inteligente"
+    },
+    {
+     "es": "una joven guapa"
+    },
+    {
+     "es": "el chico y su hermana son rubios"
+    },
+    {
+     "es": "buen especialista"
+    },
+    {
+     "es": "mal carácter"
+    },
+    {
+     "es": "un gran país"
+    },
+    {
+     "es": "una gran nación"
+    }
+   ]
+  },
+  {
+   "pattern": "Описание человека: Es una persona + прилагательное; ¿Es … tu …? (упр. 6)",
+   "page": 27,
+   "examples": [
+    {
+     "es": "Es una persona alta / simpática / trabajadora."
+    },
+    {
+     "es": "¿Es alto tu hermano? – No, no es alto, es bajo."
+    }
+   ]
+  },
+  {
+   "pattern": "mucho / poco / bastante / demasiado + существительное; глагол + mucho; muy + прилагательное / наречие (§33)",
+   "page": 28,
+   "examples": [
+    {
+     "es": "Bebe mucha agua."
+    },
+    {
+     "es": "Bebe mucho."
+    },
+    {
+     "es": "Es muy alegre."
+    },
+    {
+     "es": "Estudia muy bien."
+    },
+    {
+     "es": "Come poca fruta."
+    },
+    {
+     "es": "Aquí viven bastantes extranjeros."
+    },
+    {
+     "es": "Tiene demasiados libros."
+    },
+    {
+     "es": "Siempre habla demasiado."
+    }
+   ]
+  },
+  {
+   "pattern": "ser (постоянное) vs estar (состояние, место) (§34, упр. 10)",
+   "page": 28,
+   "examples": [
+    {
+     "es": "Laura es alta y morena."
+    },
+    {
+     "es": "Juan está enfermo."
+    },
+    {
+     "es": "Somos argentinos."
+    },
+    {
+     "es": "Barcelona está en España."
+    },
+    {
+     "es": "Estamos en clase."
+    }
+   ]
+  },
+  {
+   "pattern": "necesitar + существительное / инфинитив (упр. 12)",
+   "page": 29,
+   "examples": [
+    {
+     "es": "Necesito una taza y dos vasos."
+    },
+    {
+     "es": "¿Necesitas una revista inglesa?"
+    },
+    {
+     "es": "¿Qué necesita Usted? – Necesito redactar una carta en francés."
+    },
+    {
+     "es": "Necesitamos vender nuestro coche."
+    },
+    {
+     "es": "Los turistas necesitan un taxi."
+    }
+   ]
+  },
+  {
+   "pattern": "Знакомство: имя, профессия, откуда (диалог упр. 13)",
+   "pages": [
+    29,
+    30
+   ],
+   "examples": [
+    {
+     "es": "¡Hola! ¿Qué tal? ¿Cómo te llamas?"
+    },
+    {
+     "es": "Me llamo Verónica. ¿Y tú?"
+    },
+    {
+     "es": "Jesús María. Soy conductor. Trabajo en una empresa de transportes."
+    },
+    {
+     "es": "Mucho gusto, Jesús María."
+    },
+    {
+     "es": "Encantado. ¿Eres de aquí?"
+    },
+    {
+     "es": "No, soy de Barcelona. Estudio económicas en la Escuela Superior de Negocios. Es mi primera visita a Madrid."
+    },
+    {
+     "es": "Pues, aquí tienes mi tarjeta. Si necesitas algo..."
+    },
+    {
+     "es": "Muchas gracias. Hasta luego."
+    },
+    {
+     "es": "Adiós."
+    }
+   ]
+  },
+  {
+   "pattern": "Национальность и происхождение: ¿Qué es …? ¿De dónde es? (упр. 11B)",
+   "page": 29,
+   "examples": [
+    {
+     "es": "¿Qué es Juan? ¿De dónde es?"
+    },
+    {
+     "es": "¿Qué eres? ¿De dónde eres?"
+    }
+   ]
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Прочитайте, следя за артикуляцией и стыками слов",
+   "page": 26
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Прочитайте арифметические действия с числительными",
+   "page": 26
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Сосчитайте по-испански от 0 до 100",
+   "page": 27
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Прочитайте словосочетания с числительными: 23 trenes, 31 jóvenes, 50 muchachos, 75 colegios, 13 tazas, 8 taxis, 15 jóvenes, 21 escuelas, 100 noches, 30 días, 80 enfermeras, 61 universidades, 10 pasaportes, 100 museos, 95 asuntos, 4 clases, 41 empleadas, 19 artículos, 1 fruta, 51 revistas",
+   "page": 27
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Ответьте на вопросы",
+   "page": 27,
+   "items": [
+    "¿Cuántos años tienen tus padres?",
+    "¿Cuántos años tienen tus abuelos?",
+    "¿Cuántos parientes tienes?",
+    "¿Cuántos hermanos tienes?",
+    "¿Cuántos cuadernos tienes?",
+    "¿Cuántas clases tenéis?",
+    "¿Cuántos estudiantes asisten a las clases?",
+    "¿Cuántos estudiantes asisten a las conferencias?",
+    "¿Cuántos médicos trabajan en el hospital?",
+    "¿Cuántos periodistas trabajan en este periódico?",
+    "¿Cuántos dependientes trabajan en esta tienda?",
+    "¿Cuántos empleados trabajan en esta empresa alemana?",
+    "¿Cuántas peluqueras trabajan en esta peluquería francesa?"
+   ]
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Запомните прилагательные внешности и характера; A: вопросы о родственниках и друзьях; B: опишите себя, друга, однокурсника или родственника",
+   "page": 27
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Переведите на испанский: красивая женщина, высокий молодой человек, неприятный шофер, ленивый официант, работящая медсестра, глупый парикмахер, приятный туроператор, худой служащий, умный инженер, полный мужчина, веселый доктор, скучный человек, некрасивый мальчик, продавец низкого роста",
+   "page": 27
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Вставьте mucho / muy",
+   "page": 28,
+   "items": [
+    "El director comercial tiene ___ problemas.",
+    "Su tío es ___ inteligente.",
+    "Estudiamos ___ para terminar la carrera.",
+    "Pepe, escribes ___ mal.",
+    "Papá siempre toma ___ café.",
+    "¿Cómo estás? – Estoy ___ bien.",
+    "El jefe firma ___ documentos.",
+    "El niño comprende ___.",
+    "La secretaria redacta ___ cartas.",
+    "El profesor lee ___ en voz alta.",
+    "La joven es ___ trabajadora.",
+    "Envío ___ correos electrónicos.",
+    "Los estudiantes de nuestra Universidad aprenden ___ idiomas.",
+    "El libro es ___ aburrido.",
+    "El periodista responde a ___ preguntas."
+   ]
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 28,
+   "items": [
+    "Студенты читают много текстов.",
+    "Этот официант очень симпатичный, но слишком ленивый.",
+    "У вас достаточно учебников?",
+    "У меня мало родственников.",
+    "В этой больнице работают много медсестер и мало врачей.",
+    "Ты много времени смотришь телевизор? – Достаточно."
+   ]
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Вставьте ser / estar в нужной форме и переведите",
+   "page": 29,
+   "items": [
+    "¿(Tú) ___ de Barcelona? – No, ___ valenciano, pero ahora ___ en Barcelona.",
+    "Chicos, ¿dónde ___ Juana? – ___ en casa porque ___ enferma.",
+    "¿Cómo ___ tu novia, Andrés? – ___ muy guapa.",
+    "¿Vosotros ___ profesores? – No, señor, ___ estudiantes.",
+    "¿___ Ustedes de aquí? – No, ___ turistas.",
+    "Juan ___ director, ___ en su oficina.",
+    "Las chicas rusas ___ muy guapas."
+   ]
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Прочитайте, переведите и запомните названия стран; A: соотнесите страну и национальность; B: ответьте на вопросы",
+   "page": 29
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Прочитайте и переведите предложения с necesitar; B: переведите на испанский",
+   "page": 29,
+   "items": [
+    "Что Вам нужно? – Мне нужен телефон.",
+    "Преподавателю нужна красная ручка.",
+    "Мне нужны эти документы.",
+    "Нам нужно поговорить с Вами об одном деле.",
+    "Какие электробытовые приборы вам нужны?",
+    "Тебе не нужно смотреть телевизор, тебе нужны учебник и тетрадь.",
+    "Какие фрукты Вам нужны?",
+    "Предприятию нужно продать этот офис.",
+    "Этому магазину не нужны китайские товары.",
+    "Туристическому агентству нужен автобус."
+   ]
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Прочитайте и переведите диалог; A: проспрягайте ser conductor, ser de aquí, trabajar en una empresa de transportes, estudiar económicas, estudiar en la Escuela Superior de Negocios, necesitar algo, tener su tarjeta; B: ответьте на вопросы; C: по ролям; D: перескажите",
+   "pages": [
+    29,
+    30
+   ]
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 30,
+   "items": [
+    "___ joven se llama Marta, es ___ Málaga, pero ahora vive ___ Valencia.",
+    "¿Es vuestra primera visita ___ Moscú?",
+    "Andrés tiene 32 años y trabaja ___ empresa ___ transportes.",
+    "___ clase estudiamos mucho y escribimos demasiados ___ dictados.",
+    "Nuestro amigo John es ___ canadiense y necesita aprender ___ español.",
+    "¿Eres ___ portugués? – No, soy ___ brasileño, pero trabajo ___ Portugal.",
+    "¿Os gusta estudiar ___ económicas ___ Universidad?"
+   ]
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы о вашем друге (¿Cómo se llama? ¿De dónde es? ¿Cuántos años tiene? ¿Cómo es? ¿Cómo está? ¿Dónde vive? ¿Dónde estudia? ¿Cómo estudia?)",
+   "page": 30
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Расскажите о ваших друзьях",
+   "page": 30
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 30,
+   "items": [
+    "Твоему дедушке шестьдесят лет или семьдесят? – Ему пятьдесят девять.",
+    "Кто эта симпатичная блондинка? – Она американка, из Вашингтона.",
+    "Вы француз? – Нет, я канадец.",
+    "Откуда родом этот веселый молодой человек? – Он из Мексики.",
+    "Какого цвета твоя машина? – Она серая.",
+    "Сколько будет сто минус сорок четыре?",
+    "Мария – гречанка. Ей двадцать один год. Она работает в итальянском магазине.",
+    "Привет. Как у тебя дела? – Замечательно.",
+    "Ты дома или в школе?",
+    "Здравствуйте, меня зовут Мигель. Я ваш новый преподаватель испанского языка.",
+    "Вот мой номер телефона.",
+    "Этот господин высокий и худощавый, а его жена – женщина низкого роста, полная, но очень красивая.",
+    "Кто Вы? – Я юрист, работаю в банке.",
+    "Когда вы заканчиваете Университет?",
+    "Здесь находятся только немцы и англичане, а французы и испанцы в другом офисе.",
+    "Начальник подписывает документы, а его секретарь отправляет электронную почту.",
+    "Где Вы работаете? – В туристическом агентстве.",
+    "Как зовут коммерческого директора вашей компании?",
+    "Мы работаем со многими странами, например, с Голландией, Данией, Швецией, Швейцарией.",
+    "Зачем Вы открываете окно?"
+   ]
+  }
+ ],
+ "questions_for_user": []
+}

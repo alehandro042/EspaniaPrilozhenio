@@ -1,0 +1,749 @@
+import { state, settings, save, saveSettings, onChange, gemini, streakDays, uid, replaceState, merge, tickDay } from './store.js';
+import { book, loadBook, hasRu, imgFor, KIND_RU, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences } from './data.js';
+import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearned, mistakes } from './srs.js';
+import { speak, listen, canListen, judge, esVoices } from './speech.js';
+import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions } from './quiz.js';
+import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl } from './ai.js';
+import { signIn, signOut, syncNow, scheduleSync, initSync, onSyncStatus, clientId, hasToken } from './sync.js';
+
+const $ = (s, el = document) => el.querySelector(s);
+const view = $('#view');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const VERSION = '1.0';
+
+// ---------- общие элементы ----------
+function toast(msg, ms = 2600) {
+  const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toast.tm); toast.tm = setTimeout(() => t.classList.remove('show'), ms);
+}
+function setTitle(t, back) {
+  $('#title').textContent = t;
+  $('#back').hidden = !back;
+  $('#back').onclick = () => (typeof back === 'string' ? (location.hash = back) : history.back());
+}
+function applyStyle() {
+  document.documentElement.dataset.style = settings.style;
+  const col = { a: '#d6372b', b: '#2f5bd3', c: '#0f1a2e' }[settings.style];
+  $('meta[name=theme-color]').setAttribute('content', col);
+}
+function renderAva() {
+  const a = $('#ava');
+  a.innerHTML = settings.picture ? `<img src="${esc(settings.picture)}" alt="" referrerpolicy="no-referrer">` : esc((settings.name || '').trim()[0] || '👤');
+}
+const lvlChip = lid => `<span class="chip lvl${levelOf(lid)}">${LEVELS[levelOf(lid)]}</span>`;
+const bar = p => `<div class="bar"><i style="width:${p}%"></i></div>`;
+const gender = it => it.gender ? `<span class="g">${esc(it.gender)}</span>` : '';
+
+function wordRow(it, opts = {}) {
+  const img = imgFor(it.es);
+  const inCards = !!state.cards[it.id];
+  const tr = hasRu(it) ? esc(it.ru) : `<i>${esc(it.ru || 'перевода в учебнике нет')}</i>`;
+  return `<div class="word-row" data-id="${esc(it.id)}">
+    ${img ? `<img class="thumb" src="${esc(img.src)}" alt="" loading="lazy">` : ''}
+    <div class="grow"><div class="es">${esc(it.es)}${gender(it)}</div><div class="ru">${tr}${it.note && opts.notes !== false ? ` <span class="g">${esc(it.note)}</span>` : ''}</div></div>
+    <div class="icons">
+      <button class="ic" data-act="say" data-text="${esc(it.es)}" aria-label="Озвучить">🔊</button>
+      ${canListen ? `<button class="ic" data-act="mic" data-text="${esc(it.es)}" data-lid="${esc(it.lessonId)}" aria-label="Проверить произношение">🎤</button>` : ''}
+      <a class="ic" href="${translateUrl(it.es)}" target="_blank" rel="noopener" aria-label="Google Переводчик">↗</a>
+      ${hasRu(it) && !opts.noAdd ? `<button class="ic ${inCards ? 'on' : ''}" data-act="card" aria-label="В карточки">${inCards ? '✓' : '＋'}</button>` : ''}
+      ${opts.del ? `<button class="ic" data-act="delmy" aria-label="Удалить">🗑</button>` : ''}
+    </div></div>`;
+}
+
+// делегирование кликов по общим кнопкам
+document.addEventListener('click', async e => {
+  const b = e.target.closest('[data-act]'); if (!b) return;
+  const act = b.dataset.act;
+  if (act === 'say') { if (!speak(b.dataset.text)) toast('Озвучка недоступна в этом браузере'); }
+  else if (act === 'mic') micCheck(b, b.dataset.text, b.dataset.lid);
+  else if (act === 'card') {
+    const id = b.closest('[data-id]').dataset.id;
+    if (state.cards[id]) { delete state.cards[id]; save(); b.classList.remove('on'); b.textContent = '＋'; toast('Убрано из карточек'); }
+    else { addToCards([id]); b.classList.add('on'); b.textContent = '✓'; toast('Добавлено в карточки'); }
+  } else if (act === 'delmy') {
+    const id = b.closest('[data-id]').dataset.id.slice(2);
+    if (state.my[id]) { state.my[id] = { id, del: true, t: Date.now() }; delete state.cards['M|' + id]; save(); refreshMyItems(); route(); toast('Слово удалено'); }
+  }
+});
+
+async function micCheck(btn, text, lid) {
+  if (btn.classList.contains('rec')) return;
+  btn.classList.add('rec');
+  try {
+    const heard = await listen();
+    const lvl = lid && lid !== 'undefined' ? levelOf(isNaN(+lid) ? lid : +lid) : 0;
+    if (!heard.length) { toast('Не услышал, попробуйте ещё раз'); return; }
+    const j = judge(text, heard, lvl);
+    const v = { ok: '✅ Хорошо!', almost: '🟡 Почти. Послушайте 🔊 и повторите', bad: '❌ Не похоже, попробуйте ещё' }[j.verdict];
+    toast(`${v}\nУслышал: «${j.heard}»`, 4000);
+    if (j.verdict !== 'bad') tickDay(0);
+  } catch (err) { toast(err.message, 4000); }
+  finally { btn.classList.remove('rec'); }
+}
+
+// ---------- маршрутизация ----------
+const routes = [];
+const on = (re, fn) => routes.push([re, fn]);
+let cleanup = null;
+function route() {
+  if (cleanup) { try { cleanup(); } catch {} cleanup = null; }
+  if (!book.contents) return;
+  const h = location.hash.slice(1) || '/today';
+  const tab = h.split('/')[1];
+  const tabMap = { today: 'today', lessons: 'lessons', lesson: 'lessons', review: 'review', cards: 'review', test: tab === 'test' ? (h.includes('my') ? 'my' : 'review') : '', train: 'review', my: 'my', ai: 'ai' };
+  document.querySelectorAll('.tabs a').forEach(a => a.classList.toggle('on', a.dataset.tab === (tabMap[tab] || '')));
+  for (const [re, fn] of routes) { const m = h.match(re); if (m) { view.scrollTop = 0; fn(...m.slice(1)); return; } }
+  location.hash = '#/today';
+}
+window.addEventListener('hashchange', route);
+$('#ava').onclick = () => (location.hash = '#/profile');
+
+const loadedLessons = () => (book.contents.lessons || []).filter(l => book.lessons.has(l.id));
+
+// ---------- Сегодня ----------
+on(/^\/today$/, () => {
+  setTitle('Сегодня');
+  const due = dueCards().length;
+  const last = state.last?.lesson && book.lessons.has(state.last.lesson) ? state.last.lesson : loadedLessons()[0]?.id;
+  const lm = last && lessonMeta(last);
+  const learned = Object.values(state.cards).filter(isLearned).length;
+  const streak = streakDays();
+  const errs = mistakes().length;
+  view.innerHTML = `
+    <div class="c hero stack">
+      <div class="row"><div><div style="opacity:.85;font-size:14px">К повторению</div><div class="big">${due} ${plural(due, 'карточка', 'карточки', 'карточек')}</div></div>
+        <div style="font-size:28px;text-align:right">🔥<div style="font-size:13px;font-weight:600">${streak} ${plural(streak, 'день', 'дня', 'дней')}</div></div></div>
+      <a class="btn" href="${due ? '#/cards/due' : '#/review'}">${due ? 'Повторить' : 'Выбрать, что тренировать'}</a>
+    </div>
+    ${lm ? `<a class="c stack" href="#/lesson/${last}" style="text-decoration:none;color:inherit">
+      <div class="row"><span class="mut">${state.last?.lesson ? 'Продолжить' : 'Начать'}</span>${lvlChip(last)}</div>
+      <div class="row"><b>Урок ${lm.lesson} · Unidad ${lm.unit}</b><span class="mut">${lessonProgress(last)}%</span></div>
+      ${bar(lessonProgress(last))}
+      <div class="mut">${esc(unitMeta(lm.unit)?.title || '')}${lm.topics?.length ? ' · ' + esc(lm.topics.join(', ')) : ''}</div>
+    </a>` : ''}
+    <div class="btns">
+      <a class="btn ghost" href="#/train">Тренировка по урокам</a>
+      ${errs ? `<a class="btn ghost" href="#/test/mistakes">Мои ошибки (${errs})</a>` : ''}
+    </div>
+    <div class="c row"><div><b>Выучено слов</b><div class="mut">из уроков и своих</div></div><b style="font-size:22px">${learned}</b></div>
+    ${installBlock()}
+    ${!settings.signedIn ? `<a class="c row" href="#/profile" style="text-decoration:none;color:inherit"><div class="grow"><b>Сохранять прогресс в Google</b><div class="mut">Чтобы не потерять прогресс и учиться с разных устройств</div></div><span>›</span></a>` : ''}
+  `;
+});
+function plural(n, a, b, c) { n = Math.abs(n) % 100; const d = n % 10; return n > 10 && n < 20 ? c : d > 1 && d < 5 ? b : d === 1 ? a : c; }
+
+let installEvt = null;
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; if (/today|profile/.test(location.hash) || !location.hash) route(); });
+function installBlock() {
+  if (!installEvt) return '';
+  return `<button class="btn line" id="installBtn">📲 Установить на главный экран</button>`;
+}
+document.addEventListener('click', async e => {
+  if (e.target.id !== 'installBtn' || !installEvt) return;
+  installEvt.prompt(); await installEvt.userChoice; installEvt = null; route();
+});
+
+// ---------- Уроки ----------
+on(/^\/lessons$/, () => {
+  setTitle('Уроки');
+  const C = book.contents;
+  let html = '';
+  for (const u of C.units || []) {
+    const ls = (C.lessons || []).filter(l => l.unit === u.unit);
+    html += `<div class="sec-title">Unidad ${u.unit}. ${esc(u.title)}</div>`;
+    for (const l of ls) {
+      const ok = book.lessons.has(l.id);
+      const p = ok ? lessonProgress(l.id) : 0;
+      html += ok
+        ? `<a class="c lesson" href="#/lesson/${l.id}"><span class="num">${l.lesson}</span>
+            <div><div class="row"><b>Урок ${l.lesson}</b>${lvlChip(l.id)}</div>
+            <div class="mut small">${esc((l.topics || []).join(', '))}</div>${bar(p)}</div><span class="mut">${p}%</span></a>`
+        : `<div class="c lesson empty"><span class="num">${l.lesson}</span><div><b>Урок ${l.lesson}</b><div class="mut small">${esc((l.topics || []).join(', '))} · скоро</div></div><span></span></div>`;
+    }
+  }
+  view.innerHTML = html + `<p class="mut small" style="text-align:center">Материал: «Español Actual. Начальный курс», Гринина Е.А., Микаэлян Ю.И.</p>`;
+});
+
+const lessonTabs = {};
+on(/^\/lesson\/(\d+)(?:\/(\w+))?$/, (idS, tab) => {
+  const id = +idS; const L = book.lessons.get(id); const m = lessonMeta(id);
+  if (!L) { location.hash = '#/lessons'; return; }
+  state.last = { lesson: id, t: Date.now() }; save(true);
+  tab = tab || lessonTabs[id] || 'vocab'; lessonTabs[id] = tab;
+  setTitle(`Урок ${m.lesson} · Unidad ${m.unit}`, '#/lessons');
+  const p = lessonProgress(id);
+  const lv = state.levels[id];
+  let body = '';
+  if (tab === 'vocab') body = vocabTab(id, L);
+  else if (tab === 'grammar') body = grammarTab(id, L);
+  else body = sentencesTab(id, L);
+  view.innerHTML = `
+    <div class="c stack">
+      <div class="row"><span class="mut">${esc(unitMeta(m.unit)?.title || '')}</span>${lvlChip(id)}</div>
+      ${bar(p)}
+      <div class="mut small">Выучено ${p}% слов · ${LEVEL_HINT[levelOf(id)]}${levelOf(id) < 2 ? `. До следующего уровня: ${2 - (lv?.streak || 0)} ${plural(2 - (lv?.streak || 0), 'тест', 'теста', 'тестов')} подряд на 80%+` : ''}</div>
+    </div>
+    <div class="seg" role="tablist">
+      <button data-tab="vocab" class="${tab === 'vocab' ? 'on' : ''}">Словарь</button>
+      <button data-tab="grammar" class="${tab === 'grammar' ? 'on' : ''}">Грамматика</button>
+      <button data-tab="sent" class="${tab === 'sent' ? 'on' : ''}">Предложения</button>
+    </div>
+    ${body}
+    <a class="btn" href="#/test/lesson-${id}">Тест по уроку</a>`;
+  view.querySelectorAll('.seg button').forEach(b => b.onclick = () => { lessonTabs[id] = b.dataset.tab; location.replace(`#/lesson/${id}/${b.dataset.tab}`); });
+  view.querySelectorAll('[data-kind]').forEach(b => b.onclick = () => { lessonTabs['k' + id] = b.dataset.kind; route(); });
+  const all = $('#addAll'); if (all) all.onclick = () => { const n = addToCards(testable(id).map(i => i.id)); toast(n ? `Добавлено в карточки: ${n}` : 'Все слова урока уже в карточках'); route(); };
+});
+
+function vocabTab(id, L) {
+  const items = book.byLesson.get(id) || [];
+  const kinds = [...new Set(items.map(i => i.kind))];
+  const order = ['verb', 'word', 'phrase', 'number', 'country', 'nationality', 'extra', 'name'];
+  kinds.sort((a, b) => order.indexOf(a) - order.indexOf(b));
+  let k = lessonTabs['k' + id]; if (!kinds.includes(k)) k = kinds[0];
+  const list = items.filter(i => i.kind === k);
+  return `<div class="row start" style="flex-wrap:wrap;gap:6px">${kinds.map(x => `<button class="chip ${x === k ? 'on' : ''}" data-kind="${x}">${KIND_RU[x]} · ${items.filter(i => i.kind === x).length}</button>`).join('')}</div>
+    <div class="c">${list.map(it => wordRow(it)).join('') || '<div class="empty-note">Нет слов</div>'}</div>
+    <div class="btns"><button class="btn ghost" id="addAll">Все слова в карточки</button><a class="btn ghost" href="#/cards/lesson-${id}">Карточки урока</a></div>
+    ${L.vocabulary?.source ? `<div class="mut small" style="text-align:center">Источник: ${esc(L.vocabulary.source)}</div>` : ''}`;
+}
+
+function table(t) {
+  return `<div class="scroll-x"><table class="gt">${t.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</table></div>`;
+}
+function grammarTab(id, L) {
+  const conj = conjugations(L).length;
+  return (L.grammar || []).map(g => `
+    <div class="c stack">
+      <div class="row"><h3>${esc(g.id)}. ${esc(g.title)}</h3><span class="mut small">с. ${esc(g.page ?? (g.pages || []).join('–'))}</span></div>
+      ${g.table ? table(g.table) : ''}
+      ${g.points?.length ? `<ul class="pts">${g.points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : ''}
+      ${g.examples?.length ? `<div class="ex-list">${g.examples.map(x => `<button data-act="say" data-text="${esc(x)}">🔊 ${esc(x)}</button>`).join('')}</div>` : ''}
+      <a class="mut small" href="#/ai?q=${encodeURIComponent(`Объясни простыми словами ${g.id} «${g.title}» из учебника Español Actual, урок ${lessonMeta(id).lesson}, с примерами.`)}">Спросить помощника про ${esc(g.id)} ›</a>
+    </div>`).join('') + (conj ? `<a class="btn ghost" href="#/test/gram-${id}">Тренировать спряжение и артикли</a>` : `<a class="btn ghost" href="#/test/gram-${id}">Тренировать артикли</a>`);
+}
+function sentencesTab(id, L) {
+  const sb = L.sentence_building || [];
+  const ex = L.exercises || [];
+  return sb.map(s => `
+    <div class="c stack">
+      <div class="row"><h3>${esc(s.pattern)}</h3><span class="mut small">с. ${esc(s.page ?? (s.pages || []).join('–'))}</span></div>
+      <div>${(s.examples || []).map(e => `<div class="word-row"><div class="grow">${esc(e.es)}${e.ru ? `<div class="ru">${esc(e.ru)}</div>` : ''}</div><div class="icons">
+        <button class="ic" data-act="say" data-text="${esc(e.es)}">🔊</button>${canListen ? `<button class="ic" data-act="mic" data-text="${esc(e.es)}" data-lid="${id}">🎤</button>` : ''}</div></div>`).join('')}</div>
+      ${s.note ? `<div class="mut small">${esc(s.note)}</div>` : ''}
+    </div>`).join('') +
+    (sentences(L).length ? `<a class="btn ghost" href="#/test/sent-${id}">Собирать предложения</a>` : '') +
+    (ex.length ? `<details class="c"><summary><b>Упражнения из учебника (${ex.length})</b></summary>
+      ${ex.map(x => `<div class="word-row"><div class="grow"><b>${esc(x.number)}.</b> ${esc(x.instruction_ru)} <span class="mut small">с. ${esc(x.page ?? (x.pages || []).join('–'))}</span></div></div>`).join('')}</details>` : '');
+}
+
+// ---------- Повторить: карточки ----------
+on(/^\/review$/, () => {
+  setTitle('Повторить');
+  const due = dueCards();
+  const total = Object.keys(state.cards).length;
+  view.innerHTML = `
+    <div class="c hero stack">
+      <div style="opacity:.85;font-size:14px">Сейчас к повторению</div>
+      <div class="big">${due.length} ${plural(due.length, 'карточка', 'карточки', 'карточек')}</div>
+      ${due.length ? `<a class="btn" href="#/cards/due">Начать</a>` : `<div style="font-size:14px">${total ? 'Всё повторено. Новые карточки появятся по расписанию.' : 'Карточек пока нет. Откройте урок и нажмите «Все слова в карточки» или ＋ у слова.'}</div>`}
+    </div>
+    <a class="c row" href="#/train" style="text-decoration:none;color:inherit"><div class="grow"><b>Тренировка по нескольким урокам</b><div class="mut">Отметьте уроки и выберите карточки или тест</div></div><span>›</span></a>
+    ${mistakes().length ? `<a class="c row" href="#/test/mistakes" style="text-decoration:none;color:inherit"><div class="grow"><b>Мои ошибки</b><div class="mut">${mistakes().length} ${plural(mistakes().length, 'слово', 'слова', 'слов')}, в которых были ошибки</div></div><span>›</span></a>` : ''}
+    <div class="c mut small">Как работает повторение: «Знаю» откладывает слово на несколько дней, и каждый раз интервал растёт. «Трудно» — повторим скоро. «Не помню» — слово вернётся через пару минут, а ошибочные слова показываются чаще.</div>`;
+});
+
+function resolveSet(spec) {
+  // due | lesson-ID | ids-1,2,3 | my | mistakes
+  if (spec === 'due') return { items: dueCards(), title: 'Повторение', lessons: null };
+  if (spec === 'mistakes') return { items: mistakes(), title: 'Мои ошибки', lessons: [...new Set(mistakes().map(i => i.lessonId))] };
+  if (spec === 'my') return { items: (book.byLesson.get('my') || []).filter(hasRu), title: 'Мои слова', lessons: ['my'] };
+  const m = spec.match(/^(lesson|ids|gram|sent)-(.+)$/);
+  if (!m) return { items: [], title: '' };
+  const lessons = m[2].split(',').map(x => x === 'my' ? 'my' : +x).filter(x => x === 'my' || book.lessons.has(x));
+  const items = lessons.flatMap(l => (book.byLesson.get(l) || []).filter(hasRu));
+  return { items, lessons, kind: m[1], title: lessons.length === 1 ? lessonName(lessons[0]) : `Уроки: ${lessons.map(l => l === 'my' ? 'мои' : lessonMeta(l).lesson).join(', ')}` };
+}
+
+on(/^\/cards\/(.+)$/, spec => {
+  const set = resolveSet(decodeURIComponent(spec));
+  setTitle(set.title || 'Карточки', true);
+  let queue = spec === 'due' ? set.items : [...set.items].sort(() => Math.random() - .5);
+  if (spec !== 'due') { // в карточках урока сначала то, что пора повторить или ещё не выучено
+    queue.sort((a, b) => (isLearned(state.cards[a.id]) - isLearned(state.cards[b.id])));
+  }
+  queue = queue.slice(0, 30);
+  if (!queue.length) { view.innerHTML = `<div class="empty-note">Нечего повторять 🎉</div><a class="btn ghost" href="#/train">Тренировка по урокам</a>`; return; }
+  let i = 0, dir = settings.cardDir || 'es', known = 0;
+  const draw = () => {
+    if (i >= queue.length) {
+      view.innerHTML = `<div class="c stack" style="text-align:center"><div style="font-size:40px">🎉</div><h2>Готово!</h2><div class="mut">Карточек: ${queue.length}, «знаю»: ${known}</div></div>
+        <a class="btn" href="#/today">На главную</a>${set.lessons?.length ? `<a class="btn ghost" href="#/test/${spec === 'due' ? 'mistakes' : spec.replace(/^lesson-/, 'ids-')}">Пройти тест</a>` : ''}`;
+      scheduleSync(); return;
+    }
+    const it = queue[i]; const img = imgFor(it.es);
+    const front = dir === 'es'
+      ? `${img ? `<img src="${esc(img.src)}" alt="">` : ''}<div class="word">${esc(it.es)}</div>${gender(it)}`
+      : `<div class="word">${esc(it.ru)}</div>`;
+    const back = dir === 'es'
+      ? `<div class="word">${esc(it.ru)}</div>`
+      : `${img ? `<img src="${esc(img.src)}" alt="">` : ''}<div class="word">${esc(it.es)}</div>${gender(it)}`;
+    view.innerHTML = `
+      <div class="row"><span class="mut">Карточка ${i + 1} из ${queue.length}</span>
+        <button class="chip" id="dir">${dir === 'es' ? 'es → ru' : 'ru → es'}</button></div>
+      ${bar(100 * i / queue.length)}
+      <div class="flash" id="flash" role="button" tabindex="0" aria-label="Перевернуть карточку"><div class="in">
+        <div class="face fb-front"><div>${front}<div class="mut" style="margin-top:10px">нажмите, чтобы перевернуть</div></div></div>
+        <div class="face fb-back"><div>${back}<div class="mut" style="margin-top:8px">${esc(lessonName(it.lessonId))}</div></div></div>
+      </div></div>
+      <div class="row" style="justify-content:center;gap:10px">
+        <button class="ic" data-act="say" data-text="${esc(it.es)}">🔊</button>
+        ${canListen ? `<button class="ic" data-act="mic" data-text="${esc(it.es)}" data-lid="${esc(it.lessonId)}">🎤</button>` : ''}
+        <a class="ic" href="${translateUrl(it.es)}" target="_blank" rel="noopener">↗</a>
+      </div>
+      <div class="grade" id="grade" style="visibility:hidden">
+        <button data-g="0">Не помню<small>через 2 мин</small></button>
+        <button data-g="1">Трудно<small>скоро</small></button>
+        <button data-g="2">Знаю<small>через неск. дней</small></button>
+      </div>`;
+    const f = $('#flash');
+    const flip = () => { f.classList.toggle('flip'); $('#grade').style.visibility = 'visible'; if (f.classList.contains('flip') && dir === 'ru') speak(it.es); };
+    f.onclick = flip; f.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } };
+    if (dir === 'es') speak(it.es);
+    $('#dir').onclick = () => { dir = dir === 'es' ? 'ru' : 'es'; settings.cardDir = dir; saveSettings(); draw(); };
+    view.querySelectorAll('[data-g]').forEach(b => b.onclick = () => {
+      const g = +b.dataset.g; grade(it.id, g); if (g === 2) known++;
+      if (g === 0 && spec !== 'due') queue.push(it); // не помню — покажем ещё раз в этой сессии
+      i++; draw();
+    });
+  };
+  draw();
+});
+
+// ---------- Тренировка по нескольким урокам ----------
+on(/^\/train$/, () => {
+  setTitle('Тренировка', true);
+  const ls = loadedLessons();
+  const sel = new Set(settings.trainSel || []);
+  const units = [...new Set(ls.map(l => l.unit))];
+  const myCount = (book.byLesson.get('my') || []).filter(hasRu).length;
+  view.innerHTML = `
+    <div class="row start" style="flex-wrap:wrap;gap:6px">
+      ${units.map(u => `<button class="chip" data-preset="u${u}">Unidad ${u}</button>`).join('')}
+      <button class="chip" data-preset="started">Всё начатое</button>
+      <button class="chip" data-preset="none">Снять все</button>
+    </div>
+    <div class="c">
+      ${ls.map(l => `<label class="check"><input type="checkbox" value="${l.id}" ${sel.has(l.id) ? 'checked' : ''}><span class="grow">Урок ${l.lesson} · Unidad ${l.unit}<div class="mut small">${esc((l.topics || []).join(', '))}</div></span>${lvlChip(l.id)}</label>`).join('')}
+      ${myCount ? `<label class="check"><input type="checkbox" value="my" ${sel.has('my') ? 'checked' : ''}><span class="grow">Мои слова<div class="mut small">${myCount} ${plural(myCount, 'слово', 'слова', 'слов')}</div></span>${lvlChip('my')}</label>` : ''}
+    </div>
+    <div class="mut small">Каждое слово спрашивается на уровне своего урока.</div>
+    <div class="btns"><button class="btn ghost" id="goCards">Карточки</button><button class="btn" id="goTest">Тест</button></div>
+    ${mistakes().length ? `<a class="btn line" href="#/test/mistakes">Только мои ошибки (${mistakes().length})</a>` : ''}`;
+  const boxes = () => [...view.querySelectorAll('input[type=checkbox]')];
+  const chosen = () => boxes().filter(b => b.checked).map(b => b.value);
+  const store = () => { settings.trainSel = chosen().map(v => v === 'my' ? 'my' : +v); saveSettings(); };
+  boxes().forEach(b => b.onchange = store);
+  view.querySelectorAll('[data-preset]').forEach(c => c.onclick = () => {
+    const p = c.dataset.preset;
+    boxes().forEach(b => {
+      const l = ls.find(x => String(x.id) === b.value);
+      b.checked = p === 'none' ? false : p === 'started' ? (b.value === 'my' ? myCount > 0 : lessonProgress(+b.value) > 0 || !!state.levels[b.value]) : (l && 'u' + l.unit === p);
+    });
+    store();
+  });
+  const go = kind => { const c = chosen(); if (!c.length) return toast('Отметьте хотя бы один урок'); location.hash = `#/${kind}/ids-${c.join(',')}`; };
+  $('#goCards').onclick = () => go('cards');
+  $('#goTest').onclick = () => go('test');
+});
+
+// ---------- Тест ----------
+on(/^\/test\/(.+)$/, spec => {
+  spec = decodeURIComponent(spec);
+  const set = resolveSet(spec);
+  const isLessonTest = set.kind === 'lesson' && set.lessons?.length === 1;
+  let qs;
+  if (set.kind === 'gram') { const lid = set.lessons[0]; qs = grammarQuestions(lid, levelOf(lid), book.byLesson.get(lid) || []).sort(() => Math.random() - .5).slice(0, 10); }
+  else if (set.kind === 'sent') { qs = sentenceQuestions(set.lessons[0]).sort(() => Math.random() - .5).slice(0, 8); }
+  else if (spec === 'mistakes' || spec === 'due') qs = buildTest(set.lessons || [], Math.min(12, set.items.length), { items: set.items, vocabOnly: true });
+  else qs = buildTest(set.lessons || [], 10, { vocabOnly: spec === 'my' || (set.lessons || []).every(l => l === 'my') });
+  setTitle(isLessonTest ? 'Тест · ' + set.title : (set.kind === 'gram' ? 'Грамматика' : set.kind === 'sent' ? 'Предложения' : 'Тест'), true);
+  if (!qs.length) { view.innerHTML = `<div class="empty-note">Для теста пока нет материала.</div>`; return; }
+  let i = 0, right = 0; const wrong = [];
+  const lid0 = set.lessons?.[0];
+
+  const draw = () => {
+    if (i >= qs.length) return finish();
+    const q = qs[i];
+    let area = '';
+    if (q.options) {
+      const pics = q.type === 'pick_img';
+      area = `<div class="opts ${pics ? 'pics' : ''}">${q.options.map((o, k) => `<button class="opt" data-k="${k}">${pics ? `<img src="${esc(o.img)}" alt="">` : esc(o.label)}</button>`).join('')}</div>`;
+    } else if (q.type === 'order') {
+      area = `<div class="tiles" id="ans"></div><div class="tiles" id="pool" style="border-style:solid">${q.shuffled.map((w, k) => `<button class="tile" data-k="${k}">${esc(w)}</button>`).join('')}</div>
+        <button class="btn" id="chk">Проверить</button>`;
+    } else {
+      area = `<input class="inp" id="inp" autocomplete="off" autocapitalize="off" spellcheck="false" lang="es" placeholder="${q.article ? 'el / la + слово' : 'Ответ по-испански'}" enterkeyhint="done">
+        <div class="accents">${['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü', '¿', '¡'].map(c => `<button data-ch="${c}">${c}</button>`).join('')}</div>
+        <div class="btns">${q.hint ? `<button class="btn ghost" id="hint">Подсказка</button>` : ''}<button class="btn ghost" id="skip">Не знаю</button><button class="btn" id="chk">Проверить</button></div>`;
+    }
+    view.innerHTML = `
+      <div class="row"><span class="mut">Вопрос ${i + 1} из ${qs.length}</span>${q.item ? lvlChip(q.item.lessonId) : q.lessonId ? lvlChip(q.lessonId) : ''}</div>
+      ${bar(100 * i / qs.length)}
+      <div class="c stack">
+        <div class="mut q-kind">${esc(q.kind)}</div>
+        ${q.img ? `<img src="${esc(q.img)}" alt="" style="max-height:140px;margin:0 auto;border-radius:10px">` : ''}
+        <div class="q-prompt">${q.prompt === '🔊' ? `<button class="ic listen" data-act="say" data-text="${esc(q.speak)}" aria-label="Прослушать">🔊</button>` : q.type === 'order' ? `<span style="font-size:15px;font-weight:500;font-family:var(--body)">${esc(q.prompt)}</span>` : esc(q.prompt)}</div>
+        ${q.sub ? `<div class="mut" style="text-align:center">${esc(q.sub)}</div>` : ''}
+        ${q.speak && q.type !== 'choose_es' && q.prompt !== '🔊' ? `<div style="text-align:center"><button class="ic" data-act="say" data-text="${esc(q.speak)}">🔊</button></div>` : ''}
+      </div>
+      ${area}
+      <div id="fb"></div>`;
+    if (q.autoSpeak) setTimeout(() => speak(q.speak), 250);
+    if (q.options) view.querySelectorAll('.opt').forEach(b => b.onclick = () => {
+      if (view.querySelector('.opt.ok,.opt.bad')) return;
+      const o = q.options[+b.dataset.k];
+      view.querySelectorAll('.opt').forEach((x, k) => { if (q.options[k].correct) x.classList.add('ok'); });
+      if (!o.correct) b.classList.add('bad');
+      done(o.correct, false, correctText(q));
+    });
+    else if (q.type === 'order') {
+      const ans = $('#ans'), pool = $('#pool');
+      view.querySelectorAll('.tile').forEach(t => t.onclick = () => { (t.parentElement === pool ? ans : pool).appendChild(t); });
+      $('#chk').onclick = () => {
+        if ($('#fb').innerHTML) return;
+        const got = [...ans.children].map(t => t.textContent).join(' ');
+        done(got === q.words.join(' '), false, q.words.join(' '));
+      };
+    } else {
+      const inp = $('#inp'); setTimeout(() => inp.focus(), 50);
+      view.querySelectorAll('[data-ch]').forEach(b => b.onclick = () => { const s = inp.selectionStart ?? inp.value.length; inp.value = inp.value.slice(0, s) + b.dataset.ch + inp.value.slice(inp.selectionEnd ?? s); inp.focus(); inp.setSelectionRange(s + 1, s + 1); });
+      const check = () => {
+        if ($('#fb').innerHTML) return next();
+        if (!inp.value.trim()) return;
+        const lvl = q.item ? levelOf(q.item.lessonId) : levelOf(q.lessonId);
+        const r = checkTyped(inp.value, q.expected, lvl, q.article);
+        done(r.ok, r.almost, correctText(q), r.msg);
+      };
+      $('#chk').onclick = check;
+      inp.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); check(); } };
+      $('#skip').onclick = () => { if (!$('#fb').innerHTML) done(false, false, correctText(q)); };
+      const h = $('#hint'); if (h) h.onclick = () => toast(hintFor(q), 3500);
+    }
+  };
+  const correctText = q => q.type === 'write_es' ? (q.article ? q.article + ' ' : '') + q.item.es
+    : q.type === 'conj_write' || q.type === 'conj' ? q.answerSpeak
+    : q.options ? (q.type === 'pick_img' ? `${q.item.es} — ${q.item.ru}` : q.type === 'article' ? `${q.options.find(o => o.correct).label} ${q.item.es}` : (q.item ? `${q.item.es} — ${q.item.ru}` : q.options.find(o => o.correct).label)) : '';
+  function done(ok, almost, correct, msg) {
+    const q = qs[i];
+    if (ok) right++; else wrong.push({ q, correct });
+    if (q.item) answer(q.item.id, ok, almost);
+    else tickDay();
+    const sp = q.item?.es || q.answerSpeak;
+    $('#fb').innerHTML = `<div class="fb ${ok ? (almost ? 'almost' : 'ok') : 'bad'} stack">
+      <div class="row"><b>${ok ? (almost ? '🟡 Почти' : '✅ Верно') : '❌ Неверно'}</b>${sp ? `<button class="ic" data-act="say" data-text="${esc(sp)}">🔊</button>` : ''}</div>
+      ${msg ? `<div>${esc(msg)}</div>` : ''}${!ok || almost ? `<div>Правильно: <b>${esc(correct)}</b></div>` : ''}
+    </div><button class="btn" id="next" style="margin-top:10px">${i + 1 < qs.length ? 'Дальше' : 'Результат'}</button>`;
+    if (sp && ok) speak(sp);
+    $('#next').onclick = next;
+    $('#next').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  function next() { i++; draw(); }
+  function finish() {
+    const score = right / qs.length;
+    let lvlMsg = '';
+    if (isLessonTest) {
+      const r = recordTest(lid0, score);
+      lvlMsg = r.up ? `🎉 Урок переходит на уровень «${LEVELS[r.level]}»!`
+        : r.level >= 2 ? 'Урок на сложном уровне.'
+        : score >= 0.8 ? `Ещё ${2 - r.streak} ${plural(2 - r.streak, 'тест', 'теста', 'тестов')} на 80%+ подряд — и уровень повысится.`
+        : 'Для повышения уровня нужно 2 теста подряд на 80% и больше.';
+    }
+    view.innerHTML = `
+      <div class="c stack" style="text-align:center">
+        <div style="font-size:40px">${score >= 0.8 ? '🏆' : score >= 0.5 ? '👍' : '💪'}</div>
+        <div class="q-prompt">${right} из ${qs.length}</div>
+        <div class="mut">${Math.round(score * 100)}% верных ответов</div>
+        ${lvlMsg ? `<div>${lvlMsg}</div>` : ''}
+      </div>
+      ${wrong.length ? `<div class="sec-title">Ошибки — они чаще попадут в повторение</div><div class="c">${wrong.map(w => `<div class="word-row"><div class="grow"><div class="es">${esc(w.correct)}</div><div class="ru">${esc(w.q.prompt === '🔊' ? 'на слух' : w.q.prompt)}</div></div>${w.q.item?.es || w.q.answerSpeak ? `<button class="ic" data-act="say" data-text="${esc(w.q.item?.es || w.q.answerSpeak)}">🔊</button>` : ''}</div>`).join('')}</div>` : ''}
+      <div class="btns"><button class="btn ghost" id="again">Ещё раз</button>${lid0 && lid0 !== 'my' ? `<a class="btn ghost" href="#/lesson/${lid0}">К уроку</a>` : `<a class="btn ghost" href="#/today">На главную</a>`}</div>`;
+    $('#again').onclick = () => route();
+    scheduleSync();
+  }
+  draw();
+});
+
+// ---------- Мои слова ----------
+let photoRows = null;
+on(/^\/my(?:\/(\w+))?$/, mode => {
+  setTitle('Мои слова');
+  const items = book.byLesson.get('my') || [];
+  mode = mode || '';
+  let form = '';
+  if (mode === 'add') form = `<div class="c stack"><b>Новое слово</b>
+      <div class="field"><label>По-испански</label><input class="inp" id="nes" lang="es" autocapitalize="off"></div>
+      <div class="field"><label>Перевод</label><input class="inp" id="nru"></div>
+      <div class="btns"><a class="btn ghost" href="#/my">Отмена</a><button class="btn" id="saveOne">Сохранить</button></div></div>`;
+  else if (mode === 'list') form = `<div class="c stack"><b>Вставить списком</b>
+      <div class="mut small">По одному слову в строке: <code>слово — перевод</code>. Разделитель: тире, дефис, двоеточие, = или табуляция.</div>
+      <textarea class="inp" id="lst" lang="es" placeholder="perro — собака&#10;gato — кошка"></textarea>
+      <div class="btns"><a class="btn ghost" href="#/my">Отмена</a><button class="btn" id="saveList">Добавить</button></div></div>`;
+  else if (mode === 'photo') form = photoForm();
+  view.innerHTML = `
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+      <a class="c tight" href="#/my/add" style="text-align:center;text-decoration:none;color:inherit"><div style="font-size:22px">✍️</div><div class="mut">Вручную</div></a>
+      <a class="c tight" href="#/my/list" style="text-align:center;text-decoration:none;color:inherit"><div style="font-size:22px">📋</div><div class="mut">Списком</div></a>
+      <a class="c tight" href="#/my/photo" style="text-align:center;text-decoration:none;color:inherit"><div style="font-size:22px">📷</div><div class="mut">По фото</div></a>
+    </div>
+    ${form}
+    ${items.length ? `<div class="btns"><a class="btn ghost" href="#/cards/my">Карточки</a><a class="btn ghost" href="#/test/my">Тест</a></div>
+      <div class="c">${items.map(it => wordRow(it, { del: true })).join('')}</div>`
+      : !mode ? `<div class="empty-note">Здесь будут ваши слова не из учебника. Они тоже попадают в карточки и тесты.</div>` : ''}`;
+  const s1 = $('#saveOne'); if (s1) { $('#nes').focus(); s1.onclick = () => { const n = addMy([{ es: $('#nes').value, ru: $('#nru').value }]); if (n) { toast('Слово добавлено'); location.hash = '#/my'; } else toast('Заполните оба поля'); }; }
+  const s2 = $('#saveList'); if (s2) s2.onclick = () => {
+    const rows = parseList($('#lst').value);
+    const n = addMy(rows); toast(n ? `Добавлено слов: ${n}` : 'Не нашёл строк вида «слово — перевод»'); if (n) location.hash = '#/my';
+  };
+  if (mode === 'photo') bindPhoto();
+});
+
+function parseList(text) {
+  return text.split(/\r?\n/).map(l => l.trim()).filter(Boolean).map(l => {
+    const m = l.match(/^(.+?)\s*(?:\s[—–-]\s|[—–]|\t|=|:|\s-\s)\s*(.+)$/) || l.match(/^(.+?)\s+-\s*(.+)$/);
+    return m ? { es: m[1].replace(/^\d+[.)]\s*/, ''), ru: m[2] } : null;
+  }).filter(Boolean);
+}
+function addMy(rows) {
+  let n = 0;
+  const existing = new Set(Object.values(state.my).filter(w => !w.del).map(w => w.es.toLowerCase()));
+  for (const r of rows) {
+    const es = (r.es || '').trim(), ru = (r.ru || '').trim();
+    if (!es || !ru || existing.has(es.toLowerCase())) continue;
+    const id = uid(); state.my[id] = { id, es, ru, t: Date.now() }; state.cards['M|' + id] = { due: Date.now(), ivl: 0, ease: 2.5, reps: 0, lapses: 0, streak: 0, t: Date.now() };
+    existing.add(es.toLowerCase()); n++;
+  }
+  if (n) { save(); refreshMyItems(); }
+  return n;
+}
+
+function photoForm() {
+  const hasKey = !!gemini.key;
+  if (photoRows) return `<div class="c stack"><div class="row"><b>Найдено на фото</b><span class="chip">проверьте</span></div>
+      <div class="mut small">Исправьте ошибки и снимите галочки с лишнего.</div>
+      ${photoRows.map((r, k) => `<div class="row" style="gap:6px"><input type="checkbox" data-pk="${k}" checked style="width:20px;height:20px;accent-color:var(--acc)">
+        <input class="inp" data-pes="${k}" value="${esc(r.es)}" lang="es" style="padding:8px"><input class="inp" data-pru="${k}" value="${esc(r.ru)}" style="padding:8px"></div>`).join('')}
+      <div class="btns"><button class="btn ghost" id="photoCancel">Отмена</button><button class="btn" id="photoSave">Сохранить</button></div></div>`;
+  return `<div class="c stack"><b>Слова с фото</b>
+    <div class="mut small">${hasKey ? 'Сфотографируйте страницу или записи, ИИ найдёт испанские слова, а вы проверите их перед сохранением.' : 'Для распознавания нужен ключ Gemini (бесплатно, добавляется в профиле). Без ключа: выберите фото, нажмите «Спросить Gemini», затем скопируйте ответ сюда через «Списком».'}</div>
+    <label class="btn" style="cursor:pointer">📷 Сфотографировать / выбрать<input type="file" id="photo" accept="image/*" capture="environment" hidden></label>
+    <div id="photoMsg" class="mut small"></div>
+    ${!hasKey ? `<a class="mut small" href="#/profile">Добавить ключ Gemini ›</a>` : ''}</div>`;
+}
+async function shrink(file, max = 1600) {
+  const img = await createImageBitmap(file).catch(() => null);
+  if (!img) return { b64: await new Promise(r => { const fr = new FileReader(); fr.onload = () => r(fr.result.split(',')[1]); fr.readAsDataURL(file); }), mime: file.type };
+  const k = Math.min(1, max / Math.max(img.width, img.height));
+  const c = document.createElement('canvas'); c.width = img.width * k; c.height = img.height * k;
+  c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+  return { b64: c.toDataURL('image/jpeg', 0.85).split(',')[1], mime: 'image/jpeg' };
+}
+function bindPhoto() {
+  const inp = $('#photo');
+  if (inp) inp.onchange = async () => {
+    const f = inp.files[0]; if (!f) return;
+    const msg = $('#photoMsg');
+    if (!gemini.key) {
+      msg.innerHTML = `<button class="btn ghost" id="askPhoto">Спросить Gemini про это фото</button>`;
+      $('#askPhoto').onclick = async () => {
+        const r = await askGeminiApp('Выпиши все испанские слова с этого фото с русским переводом, по одному в строке, в формате: слово — перевод. Без пояснений.', [f]);
+        toast(r === 'shared' ? 'Выберите Gemini в меню. Ответ скопируйте в «Списком»' : 'Запрос скопирован. Прикрепите фото в Gemini и вставьте запрос', 5000);
+      };
+      return;
+    }
+    msg.textContent = 'Распознаю… это может занять до 30 секунд';
+    try {
+      const { b64, mime } = await shrink(f);
+      const rows = await wordsFromPhoto(b64, mime);
+      if (!rows.length) { msg.textContent = 'Слов не нашлось. Попробуйте фото чётче.'; return; }
+      photoRows = rows; route();
+    } catch (e) { msg.textContent = e.message; }
+  };
+  const c = $('#photoCancel'); if (c) c.onclick = () => { photoRows = null; location.hash = '#/my'; };
+  const s = $('#photoSave'); if (s) s.onclick = () => {
+    const rows = photoRows.map((_, k) => ({ on: $(`[data-pk="${k}"]`).checked, es: $(`[data-pes="${k}"]`).value, ru: $(`[data-pru="${k}"]`).value })).filter(r => r.on);
+    const n = addMy(rows); photoRows = null; toast(`Добавлено слов: ${n}`); location.hash = '#/my';
+  };
+}
+
+// ---------- Помощник ----------
+const chatLog = (() => { try { return JSON.parse(sessionStorage.getItem('espanola.chat') || '[]'); } catch { return []; } })();
+const saveChat = () => { try { sessionStorage.setItem('espanola.chat', JSON.stringify(chatLog.slice(-30))); } catch {} };
+function aiContext() {
+  const lid = state.last?.lesson; const L = lid && book.lessons.get(lid); const m = lid && lessonMeta(lid);
+  if (!L) return '';
+  return `студент сейчас на уроке ${m.lesson} (Unidad ${m.unit}). Грамматика урока: ${(L.grammar || []).map(g => g.id + ' ' + g.title).join('; ')}.`;
+}
+on(/^\/ai(?:\?q=(.*))?$/, q => {
+  setTitle('Помощник');
+  const pre = q ? decodeURIComponent(q) : '';
+  const hasKey = !!gemini.key;
+  const lid = state.last?.lesson; const L = lid && book.lessons.get(lid);
+  const sugg = L ? (L.grammar || []).slice(0, 3).map(g => `Объясни ${g.id} «${g.title}» простыми словами, с примерами`) : [];
+  view.innerHTML = `
+    ${hasKey ? `<div class="chat" id="chat">${chatLog.map(m => `<div class="bubble ${m.role === 'user' ? 'me' : 'ai'}">${esc(m.text)}</div>`).join('') || `<div class="empty-note">Спросите что угодно про испанский: перевод, грамматику, как сказать фразу.</div>`}</div>`
+      : `<div class="c stack"><b>ИИ-помощник</b><div class="mut small">Чтобы отвечать прямо здесь, нужен ваш бесплатный ключ Gemini. Без ключа вопрос можно задать в приложении Gemini: кнопка скопирует запрос и откроет Gemini.</div><a class="btn line" href="#/profile">Добавить ключ Gemini</a></div>`}
+    ${sugg.length ? `<div class="row start" style="flex-wrap:wrap;gap:6px">${sugg.map(s => `<button class="chip" data-sugg="${esc(s)}">${esc(s.slice(0, 48))}…</button>`).join('')}</div>` : ''}
+    <textarea class="inp" id="q" placeholder="Напишите вопрос…" style="min-height:80px">${esc(pre)}</textarea>
+    <div class="btns">
+      ${hasKey ? `<button class="btn" id="send">Отправить</button>` : ''}
+      <button class="btn ${hasKey ? 'ghost' : ''}" id="askApp">Спросить Gemini ↗</button>
+      ${navigator.share ? `<button class="btn ghost" id="shareQ" style="flex:0 0 auto;width:auto">Поделиться</button>` : ''}
+    </div>
+    ${hasKey && chatLog.length ? `<button class="btn line sm" id="clear" style="align-self:center">Очистить чат</button>` : ''}`;
+  const ta = $('#q');
+  view.querySelectorAll('[data-sugg]').forEach(b => b.onclick = () => { ta.value = b.dataset.sugg; ta.focus(); });
+  $('#askApp').onclick = async () => {
+    if (!ta.value.trim()) return toast('Сначала напишите вопрос');
+    const r = await askGeminiApp(ta.value.trim() + (aiContext() ? '\n(' + aiContext() + ')' : ''));
+    if (r === 'copied') toast('Запрос скопирован — вставьте его в Gemini', 4000);
+  };
+  const sh = $('#shareQ'); if (sh) sh.onclick = () => { if (!ta.value.trim()) return toast('Сначала напишите вопрос'); shareText(ta.value.trim()); };
+  const cl = $('#clear'); if (cl) cl.onclick = () => { chatLog.length = 0; saveChat(); route(); };
+  const send = $('#send');
+  if (send) send.onclick = async () => {
+    const text = ta.value.trim(); if (!text) return;
+    chatLog.push({ role: 'user', text }); saveChat(); ta.value = '';
+    const box = $('#chat'); box.querySelector('.empty-note')?.remove();
+    box.insertAdjacentHTML('beforeend', `<div class="bubble me">${esc(text)}</div><div class="bubble ai" id="wait">…</div>`);
+    view.scrollTop = view.scrollHeight; send.disabled = true;
+    try {
+      const ans = await chat(chatLog.slice(-12), aiContext());
+      chatLog.push({ role: 'model', text: ans }); saveChat();
+      $('#wait').outerHTML = `<div class="bubble ai">${esc(ans)}</div>`;
+    } catch (e) { chatLog.pop(); saveChat(); $('#wait').outerHTML = `<div class="bubble ai" style="color:var(--bad)">${esc(e.message)}</div>`; ta.value = text; }
+    send.disabled = false; view.scrollTop = view.scrollHeight;
+  };
+  if (pre && hasKey) setTimeout(() => send.click(), 100);
+});
+
+// ---------- Профиль ----------
+on(/^\/profile$/, () => {
+  setTitle('Профиль', true);
+  const cid = clientId();
+  const vs = esVoices();
+  const last = settings.lastSync ? new Date(settings.lastSync).toLocaleString('ru-RU', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
+  view.innerHTML = `
+    <div class="c stack">
+      <b>Google-аккаунт и синхронизация</b>
+      ${settings.signedIn ? `<div class="row start">${settings.picture ? `<img src="${esc(settings.picture)}" referrerpolicy="no-referrer" style="width:36px;height:36px;border-radius:50%">` : ''}<div><div>${esc(settings.name || '')}</div><div class="mut small">${esc(settings.email || '')}</div></div></div>
+          <div class="mut small" id="syncInfo">${last ? 'Последняя синхронизация: ' + last : ''}</div>
+          <div class="btns"><button class="btn ghost" id="syncBtn">Синхронизировать</button><button class="btn line" id="outBtn">Выйти</button></div>`
+        : `<div class="mut small">Прогресс и свои слова сохраняются в скрытой папке приложения на вашем Google Диске. Без входа всё хранится только на этом телефоне.</div>
+          ${cid ? `<button class="btn" id="inBtn">Войти через Google</button>` : `<div class="mut small">Вход ещё не настроен: нужен OAuth Client ID.</div>`}`}
+      ${!window.ESPANOLA_CONFIG?.googleClientId ? `<details><summary class="mut small">OAuth Client ID${cid ? ' (задан)' : ''}</summary>
+          <div class="stack" style="margin-top:8px"><input class="inp" id="cid" value="${esc(settings.clientId)}" placeholder="…apps.googleusercontent.com"><button class="btn ghost sm" id="cidSave">Сохранить</button>
+          <a class="small" href="#/setup">Как получить Client ID ›</a></div></details>` : ''}
+    </div>
+    <div class="c stack">
+      <b>Ключ Gemini</b>
+      <div class="mut small">Свой бесплатный ключ. Хранится только на этом устройстве и не синхронизируется. Получить: <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> → «Create API key» → скопировать.</div>
+      <input class="inp" id="gkey" type="password" autocomplete="off" value="${esc(gemini.key)}" placeholder="AIza…">
+      <div class="btns"><button class="btn ghost" id="gSave">Сохранить ключ</button>${gemini.key ? `<button class="btn line" id="gDel">Удалить</button>` : ''}</div>
+      <details><summary class="mut small">Модель</summary><input class="inp" id="gmodel" value="${esc(settings.model)}" placeholder="${esc(window.ESPANOLA_CONFIG?.geminiModel || 'gemini-flash-latest')}" style="margin-top:8px"></details>
+    </div>
+    <div class="c stack">
+      <b>Стиль</b>
+      <div class="styles">
+        <button data-style="a" class="${settings.style === 'a' ? 'on' : ''}"><span class="sw" style="background:#d6372b"></span>Сиеста</button>
+        <button data-style="b" class="${settings.style === 'b' ? 'on' : ''}"><span class="sw" style="background:#2f5bd3"></span>Тетрадь</button>
+        <button data-style="c" class="${settings.style === 'c' ? 'on' : ''}"><span class="sw" style="background:#0f1a2e;border:2px solid #ffb547"></span>Азулежу</button>
+      </div>
+    </div>
+    <div class="c stack">
+      <b>Озвучка</b>
+      ${vs.length ? `<select class="inp" id="voice"><option value="">Автоматически</option>${vs.map(v => `<option value="${esc(v.voiceURI)}" ${v.voiceURI === settings.voice ? 'selected' : ''}>${esc(v.name)} (${esc(v.lang)})</option>`).join('')}</select>` : `<div class="mut small">Испанский голос не найден. В Android: Настройки → Специальные возможности → Синтез речи → установить испанский язык.</div>`}
+      <div class="field"><label>Скорость: <span id="rv">${settings.rate}</span></label><input type="range" id="rate" min="0.5" max="1.3" step="0.1" value="${settings.rate}"></div>
+      <button class="btn ghost" data-act="say" data-text="Hola, ¿qué tal? Me llamo Ana.">🔊 Проверить</button>
+    </div>
+    ${installBlock()}
+    <div class="c stack">
+      <b>Данные</b>
+      <div class="btns"><button class="btn ghost" id="exp">Скачать копию</button><label class="btn ghost" style="cursor:pointer">Загрузить копию<input type="file" id="imp" accept="application/json,.json" hidden></label></div>
+      <button class="btn line" id="reset" style="color:var(--bad)">Сбросить прогресс на этом устройстве</button>
+    </div>
+    <p class="mut small" style="text-align:center">Еспаньола ${VERSION} · по учебнику «Español Actual. Начальный курс» (Гринина Е.А., Микаэлян Ю.И.).</p>`;
+  const b = id => $('#' + id);
+  if (b('inBtn')) b('inBtn').onclick = async () => { try { await signIn(); toast('Вход выполнен, прогресс синхронизирован'); renderAva(); route(); } catch (e) { toast(e.message, 4000); } };
+  if (b('syncBtn')) b('syncBtn').onclick = async () => { try { if (!hasToken()) await signIn(''); else await syncNow(); route(); } catch (e) { toast(e.message, 4000); } };
+  if (b('outBtn')) b('outBtn').onclick = () => { signOut(); renderAva(); route(); toast('Вы вышли. Прогресс остался на телефоне и на Диске'); };
+  if (b('cidSave')) b('cidSave').onclick = () => { settings.clientId = b('cid').value.trim(); saveSettings(); route(); toast('Сохранено'); };
+  b('gSave').onclick = () => { gemini.key = b('gkey').value.trim(); settings.model = b('gmodel').value.trim(); saveSettings(); toast(gemini.key ? 'Ключ сохранён на этом устройстве' : 'Ключ удалён'); route(); };
+  if (b('gDel')) b('gDel').onclick = () => { gemini.key = ''; route(); };
+  view.querySelectorAll('[data-style]').forEach(x => x.onclick = () => { settings.style = x.dataset.style; saveSettings(); applyStyle(); route(); });
+  if (b('voice')) b('voice').onchange = e => { settings.voice = e.target.value; saveSettings(); };
+  b('rate').oninput = e => { settings.rate = +e.target.value; b('rv').textContent = settings.rate; saveSettings(); };
+  b('exp').onclick = () => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(state)], { type: 'application/json' }));
+    a.download = `espanola-${new Date().toISOString().slice(0, 10)}.json`; a.click();
+  };
+  b('imp').onchange = async e => {
+    try { const s = JSON.parse(await e.target.files[0].text()); replaceState(merge(state, s)); refreshMyItems(); toast('Копия загружена и объединена'); scheduleSync(); route(); }
+    catch { toast('Не удалось прочитать файл'); }
+  };
+  b('reset').onclick = () => {
+    if (b('reset').dataset.sure) { replaceState({}); refreshMyItems(); toast('Прогресс сброшен'); route(); }
+    else { b('reset').dataset.sure = 1; b('reset').textContent = 'Нажмите ещё раз для подтверждения'; }
+  };
+});
+
+on(/^\/credits$/, () => {
+  setTitle('Источники картинок', true);
+  const rows = Object.entries(book.images);
+  view.innerHTML = rows.length ? `<div class="c">${rows.map(([es, im]) => `<div class="word-row"><img class="thumb" src="textbook/${esc(im.file)}" alt=""><div class="grow"><div class="es">${esc(es)}</div><div class="credit">${esc(im.author || '')} · ${esc(im.license || '')}${im.source ? ` · <a href="${esc(im.source)}" target="_blank" rel="noopener">источник</a>` : ''}</div></div></div>`).join('')}</div>`
+    : `<div class="empty-note">Картинок пока нет.</div>`;
+});
+
+on(/^\/setup$/, () => {
+  setTitle('Настройка входа Google', true);
+  const origin = location.origin;
+  view.innerHTML = `<div class="c stack small">
+    <div>Это делается один раз владельцем приложения (≈10 минут). Одногруппникам ничего настраивать не нужно.</div>
+    <ol class="steps">
+      <li>Откройте <a href="https://console.cloud.google.com/projectcreate" target="_blank" rel="noopener">console.cloud.google.com</a>, войдите и создайте проект, например «Espanola».</li>
+      <li>Включите Google Drive API: <a href="https://console.cloud.google.com/apis/library/drive.googleapis.com" target="_blank" rel="noopener">страница API</a> → «Включить».</li>
+      <li>Откройте <a href="https://console.cloud.google.com/auth/overview" target="_blank" rel="noopener">Google Auth Platform</a> → «Начать». Название: Еспаньола, почта поддержки — ваша, аудитория — <b>Внешняя (External)</b>, контактная почта — ваша → «Создать».</li>
+      <li>Раздел «Доступ к данным» (Data access) → «Добавить области» → найдите <code>.../auth/drive.appdata</code> → отметьте → «Обновить» → «Сохранить».</li>
+      <li>Раздел «Аудитория» (Audience) → «Опубликовать приложение» (Publish app), чтобы могли входить одногруппники. Или оставьте режим тестирования и добавьте их почты в «Тестовые пользователи».</li>
+      <li>Раздел «Клиенты» (Clients) → «Создать клиента» → тип <b>Веб-приложение</b>. В «Разрешённые источники JavaScript» добавьте <code>${esc(origin)}</code> → «Создать».</li>
+      <li>Скопируйте <b>Client ID</b> (оканчивается на <code>.apps.googleusercontent.com</code>) и вставьте его в профиле или пришлите Claude, чтобы встроить в приложение для всех.</li>
+    </ol>
+    <div class="mut">Client ID не секретный. Приложение получает доступ только к своей скрытой папке на Диске, ваши файлы оно не видит.</div>
+  </div>`;
+});
+
+// ---------- статус синхронизации ----------
+onSyncStatus((s, msg) => {
+  const d = $('#syncDot');
+  d.className = 'sync-dot ' + ({ on: 'on', busy: 'busy', err: 'err', need: 'err' }[s] || '');
+  d.title = msg || { on: 'Синхронизировано', busy: 'Синхронизация…', offline: 'Нет сети', need: 'Нужно войти заново' }[s] || '';
+});
+$('#syncDot').onclick = () => { if (settings.signedIn) location.hash = '#/profile'; };
+window.addEventListener('espanola:synced', () => { refreshMyItems(); renderAva(); if (!/test|cards/.test(location.hash)) route(); });
+onChange(scheduleSync);
+
+// ---------- запуск ----------
+async function start() {
+  applyStyle(); renderAva();
+  view.innerHTML = '<div class="empty-note">Загрузка…</div>';
+  try { await loadBook(); }
+  catch (e) { view.innerHTML = `<div class="empty-note">Не удалось загрузить учебник: ${esc(e.message)}<br>Проверьте интернет и обновите страницу.</div>`; return; }
+  route();
+  initSync();
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(e => console.warn('SW', e));
+    navigator.serviceWorker.addEventListener('message', e => { if (e.data === 'updated') toast('Приложение обновлено'); });
+  }
+}
+start();
