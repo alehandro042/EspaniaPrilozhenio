@@ -536,6 +536,7 @@ function photoForm() {
       <div class="btns"><button class="btn ghost" id="photoCancel">Отмена</button><button class="btn" id="photoSave">Сохранить</button></div></div>`;
   return `<div class="c stack"><b>Слова с фото</b>
     <div class="mut small">${hasKey ? 'Сфотографируйте страницу или записи, ИИ (' + providerInfo().name + ') найдёт испанские слова, а вы проверите их перед сохранением.' : 'Для распознавания нужен ключ ИИ (есть бесплатные, добавляется в профиле). Без ключа: выберите фото, нажмите «Спросить Gemini», затем скопируйте ответ сюда через «Списком».'}</div>
+    ${hasKey && !providerInfo().vision ? `<div class="fb almost small">${esc(providerInfo().name)} не читает фото. Выберите в <a href="#/profile">профиле</a> другой сервис (например, бесплатный Gemini или Groq).</div>` : ''}
     <label class="btn" style="cursor:pointer">📷 Сфотографировать / выбрать<input type="file" id="photo" accept="image/*" capture="environment" hidden></label>
     <div id="photoMsg" class="mut small"></div>
     ${!hasKey ? `<a class="mut small" href="#/profile">Добавить ключ ИИ ›</a>` : ''}</div>`;

@@ -34,6 +34,13 @@ export const PROVIDERS = {
     model: 'mistral-small-latest',
     note: 'Бесплатный план Experiment, нужен номер телефона. Читает фото.'
   },
+  deepseek: {
+    name: 'DeepSeek', free: false, vision: false, kind: 'openai',
+    url: 'https://api.deepseek.com/chat/completions',
+    keyUrl: 'https://platform.deepseek.com/api_keys', keyHint: 'platform.deepseek.com/api_keys (нужно пополнить баланс, от $2)', keyPrefix: 'sk-…',
+    model: 'deepseek-chat',
+    note: 'Платно, но очень дёшево. Бесплатно DeepSeek можно получить через OpenRouter (модели deepseek с пометкой «:free»).'
+  },
   openai: {
     name: 'OpenAI (ChatGPT)', free: false, vision: true, kind: 'openai',
     url: 'https://api.openai.com/v1/chat/completions',
@@ -137,7 +144,7 @@ export function chat(history, context) {
 
 // Распознать испанские слова на фото. Возвращает [{es, ru}]
 export async function wordsFromPhoto(b64, mime) {
-  if (!providerInfo().vision) throw new Error('Выбранный ИИ не умеет читать фото.');
+  if (!providerInfo().vision) throw new Error(providerInfo().name + ' не читает фото. Для фото выберите в профиле Gemini, Groq, Mistral или OpenRouter.');
   const prompt = 'На фото страница или записи с испанскими словами (возможно, с переводом). ' +
     'Выпиши все испанские слова и выражения, которые видны на фото, с русским переводом. Если перевод написан на фото — возьми его, иначе переведи сам. ' +
     'Ответь ТОЛЬКО JSON-массивом вида [{"es":"...","ru":"..."}] без пояснений и без markdown.';
