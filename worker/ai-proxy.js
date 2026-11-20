@@ -8,7 +8,7 @@ const ALLOWED_ORIGINS = ['https://alehandro042.github.io'];
 const DEFAULT_MODEL = 'deepseek-v4-pro';   // можно поменять переменной MODEL в настройках Worker
 const MAX_MESSAGES = 20;                   // сколько последних сообщений чата пересылать
 const MAX_CHARS = 40000;                   // предел длины запроса (символов)
-const MAX_TOKENS = 3000;                   // предел длины ответа
+const MAX_TOKENS = 12000;                  // предел длины ответа (DeepSeek V4 Pro сначала «думает», это тоже токены)
 const MAX_IMAGE = 8000000;                 // предел размера фото (символов base64)
 const API = 'https://gptunnel.ru/v1';
 
@@ -87,7 +87,13 @@ export default {
     try {
       const j = JSON.parse(text);
       // отдаём приложению только ответ, без служебных данных о балансе
-      out = r.ok ? { choices: [{ message: { content: j.choices?.[0]?.message?.content || '' } }] }
+      const ch = j.choices?.[0] || {};
+      const content = ch.message?.content || '';
+      if (r.ok && !content) {
+        out = { error: { message: ch.finish_reason === 'length' ? 'Ответ получился слишком длинным. Попросите меньше пунктов за раз (например, «пункты 1–10»).' : 'ИИ вернул пустой ответ, попробуйте ещё раз.' } };
+        return json(out, 502, origin);
+      }
+      out = r.ok ? { choices: [{ message: { content }, finish_reason: ch.finish_reason }] }
                  : { error: { message: j.error?.message || j.message || ('GPTunnel ' + r.status) } };
     } catch { out = { error: { message: 'GPTunnel ' + r.status } }; }
     return json(out, r.ok ? 200 : r.status, origin);

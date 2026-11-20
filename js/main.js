@@ -679,7 +679,7 @@ function exercisePrompt({ L, ex, m }, part, wish) {
   const refEx = refN && (L.exercises || []).find(x => String(x.number) === refN && x !== ex);
   const refTxt = refEx ? `\n\nУпражнение ${refN} (на него ссылается задание): ${refEx.text || (refEx.instruction_ru || '') + '\n' + (refEx.items || []).map((x, i) => `${i + 1}) ${typeof x === 'string' ? x : JSON.stringify(x)}`).join('\n')}` : '';
   const gram = (L.grammar || []).map(g => `${g.id} ${g.title}${g.points?.length ? ': ' + g.points.join(' ') : ''}`).join('\n').slice(0, 4000);
-  const vocab = (book.byLesson.get(m.id) || []).filter(hasRu).slice(0, 200).map(i => `${i.es} — ${i.ru}`).join('; ');
+  const vocab = (book.byLesson.get(m.id) || []).filter(hasRu).slice(0, 120).map(i => `${i.es} — ${i.ru}`).join('; ');
   return `Помоги выполнить упражнение из учебника «Español Actual. Начальный курс»: Unidad ${m.unit}, урок ${m.lesson}, упражнение ${ex.number}${pg ? ` (с. ${pg})` : ''}.
 ${ex.text ? 'Текст упражнения:\n' + ex.text : 'Задание: ' + (ex.instruction_ru || '') + (extra ? '\n' + extra : '')}${refTxt}
 
