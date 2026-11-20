@@ -1,11 +1,11 @@
 // Cloudflare Worker — посредник между приложением «Еспаньола» и GPTunnel.
 // Ключ GPTunnel хранится в секрете GPTUNNEL_KEY (Settings → Variables and Secrets), в коде его нет.
-// Пускает только запросы с сайта приложения. Текст — одна модель (DeepSeek),
+// Пускает только запросы с сайта приложения. Текст — одна модель (Gemini 3 Flash),
 // запросы с фото — дешёвая модель Gemini Flash (сама находится в списке моделей GPTunnel,
 // или задайте её точно переменной VISION_MODEL).
 
 const ALLOWED_ORIGINS = ['https://alehandro042.github.io'];
-const DEFAULT_MODEL = 'deepseek-v4-pro';   // можно поменять переменной MODEL в настройках Worker
+const DEFAULT_MODEL = 'gemini-3-flash';   // можно поменять переменной MODEL в настройках Worker
 const MAX_MESSAGES = 20;                   // сколько последних сообщений чата пересылать
 const MAX_CHARS = 40000;                   // предел длины запроса (символов)
 const MAX_TOKENS = 12000;                  // предел длины ответа (DeepSeek V4 Pro сначала «думает», это тоже токены)

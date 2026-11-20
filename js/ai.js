@@ -11,7 +11,7 @@ export const SYSTEM = 'Ты помощник студента, который у
 const PROXY = () => (window.ESPANOLA_CONFIG || {}).aiProxyUrl || '';
 export const PROVIDERS = {
   shared: {
-    name: 'DeepSeek от приложения', free: true, vision: true, kind: 'openai', noKey: true, // фото посредник отдаёт в Gemini Flash
+    name: 'ИИ от приложения', free: true, vision: true, kind: 'openai', noKey: true, // модель задаёт посредник (MODEL), фото — Gemini Flash-Lite
     get url() { return PROXY(); },
     model: 'deepseek-v4-pro',
     note: 'Работает сразу, ключ не нужен: запросы оплачивает владелец приложения. Пожалуйста, не злоупотребляйте.'

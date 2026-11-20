@@ -911,7 +911,7 @@ on(/^\/profile$/, () => {
           <a class="small" href="#/setup">Как получить Client ID ›</a></div></details>` : ''}
     </div>
 `}
-    ${onlyShared() ? `<div class="c stack"><b>ИИ-помощник</b><div class="mut small">DeepSeek работает у всех сразу, ключ не нужен. Задавайте вопросы во вкладке «Помощник» или нажимайте «🤖 Ответы» у упражнений.</div></div>` : `<div class="c stack">
+    ${onlyShared() ? `<div class="c stack"><b>ИИ-помощник</b><div class="mut small">ИИ-помощник (Gemini) работает у всех сразу, ключ не нужен. Задавайте вопросы во вкладке «Помощник» или нажимайте «🤖 Ответы» у упражнений.</div></div>` : `<div class="c stack">
       <b>ИИ-помощник</b>
       <div class="field"><label>Сервис</label><select class="inp" id="aiProv">${providerList().map(([k, P]) => `<option value="${k}" ${k === provider() ? 'selected' : ''}>${esc(P.name)} · ${P.free ? 'бесплатно' : 'платно'}${aiKeys.get(k) ? ' ✓' : ''}</option>`).join('')}</select></div>
       ${providerInfo().noKey ? `<div class="mut small">${esc(providerInfo().note)} Фото распознаёт Gemini Flash.</div>` : `
