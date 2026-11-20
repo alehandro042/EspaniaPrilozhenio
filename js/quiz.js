@@ -212,7 +212,8 @@ export const TOPICS = {
   numbers: { title: 'Числа', icon: '🔢', hint: 'От 0 до 99, на слух и письменно' },
   colors: { title: 'Цвета', icon: '🎨', hint: 'rojo, azul, verde…' },
   days: { title: 'Дни недели', icon: '📅', hint: 'lunes … domingo' },
-  time: { title: 'Время', icon: '🕒', hint: '¿Qué hora es? Son las…' }
+  time: { title: 'Время', icon: '🕒', hint: '¿Qué hora es? Son las…' },
+  gender: { title: 'Род', icon: '⚥', hint: 'el / la, un / una, los / las, casa blanca' }
 };
 const COLORS = ['rojo', 'azul', 'verde', 'amarillo', 'blanco', 'negro', 'gris', 'marrón', 'claro', 'oscuro'];
 const DAYS = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
@@ -282,7 +283,52 @@ function wordTopicQuestions(items, n) {
   }
   return qs;
 }
+// ---- Род: правила §3 (род), §4 (число), §32 (согласование прилагательного) ----
+function genderRule(it) {
+  const w = it.es.toLowerCase(), m = it.gender === 'm';
+  if (m && /(ma|ta)$/.test(w)) return '§3: греческие слова на -ma и -ta мужского рода: el problema, el idioma, el planeta.';
+  if (m && /(día|mapa)$/.test(w)) return '§3: запомнить: el día, el mapa — мужской род.';
+  if (m && /a$/.test(w)) return '§3: на -a, но мужского рода (лицо мужского пола или исключение): el artista, el día.';
+  if (!m && /(mano|radio)$/.test(w)) return '§3: запомнить: la mano, la radio — женский род.';
+  if (!m && /(foto|moto|disco)$/.test(w)) return '§3: сокращения на -o женского рода: la foto(grafía), la moto(cicleta).';
+  if (!m && /o$/.test(w)) return '§3: на -o, но женского рода (лицо женского пола или исключение): la modelo, la mano.';
+  if (!m && /(flor|labor)$/.test(w)) return '§3: исключения: la flor, la labor — женский род, хотя на -or.';
+  if (m && /(lápiz|pez|corazón|camión|avión)$/.test(w)) return '§3: исключения: el lápiz, el pez, el corazón, el camión, el avión — мужской род.';
+  if (!m && /(d|z|ión|zon|umbre|ie)$/.test(w)) return '§3: на -d, -z, -ión, -umbre, -ie — женский род: la universidad, la lección.';
+  if (m && /(aje|an|or|ambre|ete)$/.test(w)) return '§3: на -aje, -an, -or, -ambre, -ete — мужской род: el plan, el color.';
+  if (m && /o$/.test(w)) return '§3: на -o — мужской род: el alumno.';
+  if (!m && /a$/.test(w)) return '§3: на -a — женский род: la alumna.';
+  return `§3: на -e и на согласный бывают и мужского, и женского рода — это слово нужно запомнить: ${m ? 'el' : 'la'} ${it.es}.`;
+}
+function pluralOf(es) { // §4: гласный + s; согласный + es (берём только слова без ударений и с безопасным окончанием)
+  if (/[aeo]$/i.test(es) || /[áéó]$/.test(es)) return es + 's';
+  if (/[dlr]$/i.test(es) && !/[áéíóú]/.test(es)) return es + 'es';
+  return null;
+}
+function genderQuestions(n) {
+  const started = l => (state.levels[l] || Object.keys(state.cards).some(k => k.startsWith(`L${l}|`)));
+  const allNouns = articleItems([...book.items.values()].filter(it => it.ru && typeof it.lessonId === 'number'));
+  let nouns = allNouns.filter(it => started(it.lessonId));
+  if (nouns.length < 30) nouns = allNouns;
+  nouns = uniqBy(nouns, it => it.es);
+  const adjs = uniqBy([...book.items.values()].filter(it => it.kind === 'word' && it.ru && /^[a-záéíóúñ]+o$/.test(it.es) && /(ый|ий|ой)(?![а-яё])/.test(it.ru) && !it.gender), it => it.es);
+  if (nouns.length < 8) return [];
+  const qs = [];
+  for (const it of shuffle(nouns).slice(0, n)) {
+    const art = it.gender === 'm' ? 'el' : 'la', r = Math.random(), ex = genderRule(it);
+    const pl = pluralOf(it.es);
+    if (r < 0.35) qs.push({ type: 'article', item: it, kind: 'Род: el или la?', prompt: `… ${it.es}`, sub: it.ru, speak: `${art} ${it.es}`, options: ['el', 'la'].map(a => ({ label: a, correct: a === art })), explain: ex });
+    else if (r < 0.55) { const a2 = it.gender === 'm' ? 'un' : 'una'; qs.push({ type: 'choose_topic', item: it, kind: 'Неопределённый артикль: un или una?', prompt: `… ${it.es}`, sub: it.ru, options: ['un', 'una'].map(a => ({ label: a, correct: a === a2 })), answerSpeak: `${a2} ${it.es}`, correct: `${a2} ${it.es}`, explain: ex }); }
+    else if (r < 0.75 && pl) { const a3 = it.gender === 'm' ? 'los' : 'las'; qs.push({ type: 'choose_topic', item: it, kind: 'Множественное число: los или las?', prompt: `… ${pl}`, sub: it.ru, options: ['los', 'las'].map(a => ({ label: a, correct: a === a3 })), answerSpeak: `${a3} ${pl}`, correct: `${a3} ${pl}`, explain: ex + ' Во множественном числе: ' + (it.gender === 'm' ? 'el → los.' : 'la → las.') }); }
+    else if (adjs.length) {
+      const ad = pick(adjs), f = ad.es.replace(/o$/, 'a'), right = it.gender === 'm' ? ad.es : f;
+      qs.push({ type: 'choose_topic', item: it, kind: `Согласуйте прилагательное «${ad.ru}»`, prompt: `${art} ${it.es} …`, sub: it.ru, options: [ad.es, f].map(a => ({ label: a, correct: a === right })), answerSpeak: `${art} ${it.es} ${right}`, correct: `${art} ${it.es} ${right}`, explain: `§32: прилагательное согласуется с существительным в роде: ${it.es} — ${it.gender === 'm' ? 'мужской род, значит ' + ad.es : 'женский род, значит ' + f}. ` + ex });
+    } else qs.push({ type: 'article', item: it, kind: 'Род: el или la?', prompt: `… ${it.es}`, sub: it.ru, speak: `${art} ${it.es}`, options: ['el', 'la'].map(a => ({ label: a, correct: a === art })), explain: ex });
+  }
+  return qs;
+}
 export function topicTest(topic, n = 12) {
+  if (topic === 'gender') return genderQuestions(n);
   if (topic === 'numbers') return numberQuestions(n);
   if (topic === 'time') return timeQuestions(n);
   if (topic === 'colors') return wordTopicQuestions(topicItems(COLORS), n);
