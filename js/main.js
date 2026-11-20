@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.8';
+const VERSION = '1.9';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -670,8 +670,22 @@ function findExercise(spec) {
   return ex ? { lid, L, ex, m: lessonMeta(lid) } : null;
 }
 // Запрос к ИИ: текст упражнения + словарь и грамматика урока (только из учебника)
+// Части упражнения: строки, начинающиеся с «A.», «B.», «C.» (латиницей, как в данных учебника)
+function exerciseParts(text) {
+  const re = /^[ \t]*([A-DАБ])[.)]?[ \t]*(?=\n|$|[ \t])/gm, marks = [];
+  let m; while ((m = re.exec(text))) marks.push({ k: ({ 'А': 'A', 'Б': 'B' })[m[1]] || m[1], i: m.index, end: re.lastIndex });
+  if (new Set(marks.map(x => x.k)).size < 2) return null;
+  const parts = {};
+  marks.forEach((x, n) => { parts[x.k] = (parts[x.k] ? parts[x.k] + '\n' : '') + text.slice(x.end, marks[n + 1]?.i ?? text.length).trim(); });
+  return { intro: text.slice(0, marks[0].i).trim(), parts };
+}
 function exercisePrompt({ L, ex, m }, part, wish) {
   const pg = ex.page ?? (ex.pages || []).join('–');
+  const sp = ex.text && exerciseParts(ex.text);
+  let body = ex.text, partNote = '';
+  if (part && sp?.parts[part]) { body = `${sp.intro}\nЧасть ${part}:\n${sp.parts[part]}`; partNote = `Студент просит только часть ${part}, ниже дан только её текст. Выполни её.\n`; }
+  else if (part && sp) partNote = `Студент просит часть ${part}, но в упражнении есть только части ${Object.keys(sp.parts).join(', ')}. Скажи об этом и выполни упражнение целиком.\n`;
+  else if (part) partNote = `Студент просит часть ${part}, но в этом упражнении нет частей. Скажи об этом коротко и выполни упражнение целиком.\n`;
   const extra = ex.text ? ex.text : Object.entries(ex).filter(([k]) => !['number', 'instruction_ru', 'page', 'pages'].includes(k))
     .map(([k, v]) => Array.isArray(v) ? v.map((x, i) => `${i + 1}) ${typeof x === 'string' ? x : JSON.stringify(x)}`).join('\n') : (typeof v === 'string' ? v : JSON.stringify(v))).join('\n');
   // если задание ссылается на другое упражнение («слова из упражнения 2») — добавим и его текст
@@ -681,9 +695,9 @@ function exercisePrompt({ L, ex, m }, part, wish) {
   const gram = (L.grammar || []).map(g => `${g.id} ${g.title}${g.points?.length ? ': ' + g.points.join(' ') : ''}`).join('\n').slice(0, 4000);
   const vocab = (book.byLesson.get(m.id) || []).filter(hasRu).slice(0, 120).map(i => `${i.es} — ${i.ru}`).join('; ');
   return `Помоги выполнить упражнение из учебника «Español Actual. Начальный курс»: Unidad ${m.unit}, урок ${m.lesson}, упражнение ${ex.number}${pg ? ` (с. ${pg})` : ''}.
-${ex.text ? 'Текст упражнения:\n' + ex.text : 'Задание: ' + (ex.instruction_ru || '') + (extra ? '\n' + extra : '')}${refTxt}
+${ex.text ? 'Текст упражнения:\n' + body : 'Задание: ' + (ex.instruction_ru || '') + (extra ? '\n' + extra : '')}${refTxt}
 
-${part ? `Выполни только часть ${part} этого упражнения (если частей A/B/C нет, выполни упражнение целиком и скажи, что частей в нём нет).\n` : ''}${wish ? `Просьба студента: «${wish}». Учти её (например, если просят только ответы — дай только ответы без объяснений).\n` : ''}Дай ответы по пунктам, с номерами, и к каждому короткое объяснение по-русски (какое правило работает). Используй слова и грамматику этого урока (ниже). Если для упражнения нужен текст, картинка или диалог из учебника, которых здесь нет, так и скажи и сделай то, что возможно.
+${partNote}${wish ? `Просьба студента: «${wish}». Учти её (например, если просят только ответы — дай только ответы без объяснений).\n` : ''}Дай ответы по пунктам, с номерами, и к каждому короткое объяснение по-русски (какое правило работает). Используй слова и грамматику этого урока (ниже). Если для упражнения нужен текст, картинка или диалог из учебника, которых здесь нет, так и скажи и сделай то, что возможно.
 
 Грамматика урока:
 ${gram}
