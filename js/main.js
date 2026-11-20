@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.9';
+const VERSION = '1.10';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -617,7 +617,7 @@ let chats = lsGet(CHATS_KEY, null);
 if (!chats) { const old = lsGet('espanola.chat', []); chats = old.length ? [{ id: uid(), t: Date.now(), msgs: old }] : []; try { localStorage.removeItem('espanola.chat'); } catch {} }
 let chatCur = lsGet(CUR_KEY, null) || chats[0]?.id || uid();
 const chatLog = [...(chats.find(c => c.id === chatCur)?.msgs || [])];
-let chatPending = false; // ждём ответа ИИ (переживает перерисовку экрана)
+let chatPending = false, lastExQ = null; // ждём ответа ИИ (переживает перерисовку экрана)
 const chatTitle = c => { const u = c.msgs.find(m => m.role === 'user'); const t = (u?.show || u?.text || 'Новый чат').split('\n')[0]; return t.length > 60 ? t.slice(0, 58) + '…' : t; };
 const writeChats = () => { try { localStorage.setItem(CHATS_KEY, JSON.stringify(chats.slice(0, 50))); localStorage.setItem(CUR_KEY, JSON.stringify(chatCur)); } catch {} };
 const saveChat = () => {
@@ -641,15 +641,19 @@ const aiExercise = x => x.kind ? x.kind === 'closed' : EX_OK.test(x.instruction_
 const PART = { 'а': 'A', 'б': 'B', 'в': 'C', 'г': 'D', 'a': 'A', 'b': 'B', 'c': 'C', 'd': 'D' };
 function parseExerciseQuery(text) {
   const t = ' ' + String(text).toLowerCase().replace(/ё/g, 'е') + ' ';
-  const NUM = '(\\d{1,2})\\s*\\*?\\s*(?:[\\s.,(-]*([абвгabcd])(?![а-яa-z]))?';
+  const NUM = '(\\d{1,2})\\s*\\*?\\s*(?:[\\s.(-]*([абвгabcd])(?![а-яa-z]))?';
+  const LIST = NUM + '(?:\\s*(?:,|;|\\+|и|and|&)\\s*(?:упр(?:ажнени[еяю]|ажн)?\\.?\\s*)?' + '\\d{1,2}\\s*\\*?\\s*(?:[\\s.(-]*[абвгabcd](?![а-яa-z]))?' + ')*';
   const pg = t.match(/(?<![а-яa-z])(?:стр(?:аниц[аеуы])?|с)\.?\s*(\d{1,3})(?!\d)/);
-  const ex = t.match(new RegExp('(?:упр(?:ажнени[еяю]|ажн)?|№|номер|задани[еяю])\\.?\\s*' + NUM));
+  const exm = t.match(new RegExp('(?:упр(?:ажнени[еяю]|ажн)?|№|номер|задани[еяю])\\.?\\s*(' + LIST + ')'));
   const ls = t.match(/урок\S*\s*(\d{1,2})/);
-  const res = (num, part, extra) => ({ num, part: part ? PART[part] : null, ...extra });
-  if (ex && pg) return res(ex[1], ex[2], { page: +pg[1] });
-  if (ex && ls) return res(ex[1], ex[2], { lesson: +ls[1] });
-  const m = t.trim().match(new RegExp('^(\\d{1,3})[\\s,./:-]+' + NUM + '$'));
-  if (m) return res(m[2], m[3], { page: +m[1] });
+  // «17б и 19» → [{num:'17', part:'B'}, {num:'19', part:null}]
+  const items = s => [...s.matchAll(new RegExp(NUM, 'g'))].map(m => ({ num: m[1], part: m[2] ? PART[m[2]] : null }));
+  const res = (list, extra) => ({ ...list[0], items: list, ...extra });
+  if (exm && pg) return res(items(exm[1]), { page: +pg[1] });
+  if (exm && ls) return res(items(exm[1]), { lesson: +ls[1] });
+  if (exm) return res(items(exm[1]), { noPage: true }); // «а теперь упр 19» — страницу возьмём из прошлого запроса
+  const m = t.trim().match(new RegExp('^(\\d{1,3})[\\s,./:-]+(' + LIST + ')$'));
+  if (m) return res(items(m[2]), { page: +m[1] });
   return null;
 }
 function lookupExercise(q) {
@@ -679,25 +683,32 @@ function exerciseParts(text) {
   marks.forEach((x, n) => { parts[x.k] = (parts[x.k] ? parts[x.k] + '\n' : '') + text.slice(x.end, marks[n + 1]?.i ?? text.length).trim(); });
   return { intro: text.slice(0, marks[0].i).trim(), parts };
 }
-function exercisePrompt({ L, ex, m }, part, wish) {
+function exerciseBlock({ L, ex, m }, part) {
   const pg = ex.page ?? (ex.pages || []).join('–');
   const sp = ex.text && exerciseParts(ex.text);
   let body = ex.text, partNote = '';
-  if (part && sp?.parts[part]) { body = `${sp.intro}\nЧасть ${part}:\n${sp.parts[part]}`; partNote = `Студент просит только часть ${part}, ниже дан только её текст. Выполни её.\n`; }
-  else if (part && sp) partNote = `Студент просит часть ${part}, но в упражнении есть только части ${Object.keys(sp.parts).join(', ')}. Скажи об этом и выполни упражнение целиком.\n`;
-  else if (part) partNote = `Студент просит часть ${part}, но в этом упражнении нет частей. Скажи об этом коротко и выполни упражнение целиком.\n`;
-  const extra = ex.text ? ex.text : Object.entries(ex).filter(([k]) => !['number', 'instruction_ru', 'page', 'pages'].includes(k))
+  if (part && sp?.parts[part]) { body = `${sp.intro}\nЧасть ${part}:\n${sp.parts[part]}`; partNote = `(Студент просит только часть ${part}, ниже дан только её текст.)\n`; }
+  else if (part && sp) partNote = `(Студент просит часть ${part}, но в упражнении есть только части ${Object.keys(sp.parts).join(', ')}. Скажи об этом и выполни упражнение целиком.)\n`;
+  else if (part) partNote = `(Студент просит часть ${part}, но в этом упражнении нет частей. Скажи об этом коротко и выполни упражнение целиком.)\n`;
+  const extra = ex.text ? '' : Object.entries(ex).filter(([k]) => !['number', 'instruction_ru', 'page', 'pages', 'kind'].includes(k))
     .map(([k, v]) => Array.isArray(v) ? v.map((x, i) => `${i + 1}) ${typeof x === 'string' ? x : JSON.stringify(x)}`).join('\n') : (typeof v === 'string' ? v : JSON.stringify(v))).join('\n');
   // если задание ссылается на другое упражнение («слова из упражнения 2») — добавим и его текст
   const refN = (ex.instruction_ru || '').match(/упр(?:ажнени[ея]|\.)\s*(\d+)/i)?.[1];
   const refEx = refN && (L.exercises || []).find(x => String(x.number) === refN && x !== ex);
-  const refTxt = refEx ? `\n\nУпражнение ${refN} (на него ссылается задание): ${refEx.text || (refEx.instruction_ru || '') + '\n' + (refEx.items || []).map((x, i) => `${i + 1}) ${typeof x === 'string' ? x : JSON.stringify(x)}`).join('\n')}` : '';
-  const gram = (L.grammar || []).map(g => `${g.id} ${g.title}${g.points?.length ? ': ' + g.points.join(' ') : ''}`).join('\n').slice(0, 4000);
-  const vocab = (book.byLesson.get(m.id) || []).filter(hasRu).slice(0, 120).map(i => `${i.es} — ${i.ru}`).join('; ');
-  return `Помоги выполнить упражнение из учебника «Español Actual. Начальный курс»: Unidad ${m.unit}, урок ${m.lesson}, упражнение ${ex.number}${pg ? ` (с. ${pg})` : ''}.
-${ex.text ? 'Текст упражнения:\n' + body : 'Задание: ' + (ex.instruction_ru || '') + (extra ? '\n' + extra : '')}${refTxt}
+  const refTxt = refEx ? `\nУпражнение ${refN} (на него ссылается задание): ${refEx.text || (refEx.instruction_ru || '') + '\n' + (refEx.items || []).map((x, i) => `${i + 1}) ${typeof x === 'string' ? x : JSON.stringify(x)}`).join('\n')}` : '';
+  return `=== Упражнение ${ex.number}${part ? ', часть ' + part : ''} (Unidad ${m.unit}, урок ${m.lesson}${pg ? `, с. ${pg}` : ''}) ===\n${partNote}${ex.text ? body : (ex.instruction_ru || '') + (extra ? '\n' + extra : '')}${refTxt}`;
+}
+// sel: [{f, part}] — одно или несколько упражнений в одном запросе
+function exercisePrompt(sel, wish) {
+  const lessons = [...new Map(sel.map(x => [x.f.m.id, x.f])).values()];
+  const gram = lessons.flatMap(f => f.L.grammar || []).map(g => `${g.id} ${g.title}${g.points?.length ? ': ' + g.points.join(' ') : ''}`).join('\n').slice(0, 4000);
+  const vocab = lessons.flatMap(f => (book.byLesson.get(f.m.id) || []).filter(hasRu)).slice(0, 120).map(i => `${i.es} — ${i.ru}`).join('; ');
+  const many = sel.length > 1;
+  return `Помоги выполнить ${many ? 'упражнения' : 'упражнение'} из учебника «Español Actual. Начальный курс». Ниже полный текст${many ? ' каждого упражнения' : ''} из учебника.
 
-${partNote}${wish ? `Просьба студента: «${wish}». Учти её (например, если просят только ответы — дай только ответы без объяснений).\n` : ''}Дай ответы по пунктам, с номерами, и к каждому короткое объяснение по-русски (какое правило работает). Используй слова и грамматику этого урока (ниже). Если для упражнения нужен текст, картинка или диалог из учебника, которых здесь нет, так и скажи и сделай то, что возможно.
+${sel.map(x => exerciseBlock(x.f, x.part)).join('\n\n')}
+
+${wish ? `Просьба студента: «${wish}». Учти её (например, если просят только ответы — дай только ответы без объяснений).\n` : ''}${many ? 'Ответь по каждому упражнению отдельно, с заголовком «Упражнение N». ' : ''}Дай ответы по пунктам, с номерами, и к каждому короткое объяснение по-русски (какое правило работает). Используй слова и грамматику урока (ниже). Если для упражнения нужен текст, картинка или диалог из учебника, которых здесь нет, так и скажи и сделай то, что возможно.
 
 Грамматика урока:
 ${gram}
@@ -839,20 +850,29 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
     const last = box.lastElementChild; scroller.scrollTo({ top: last.offsetTop - 8, behavior: 'smooth' });
     if (!$('#newChat')) { $('.composer-foot').insertAdjacentHTML('beforeend', `<button class="icon-btn" id="newChat">${ICON_NEW}<span>Новый чат</span></button>`); $('#newChat').onclick = () => { openChat(); route(); }; }
   }
-  function sendExercise(f, label, part) {
-    const ins = f.ex.instruction_ru || ''; const short = ins.length > 70 ? ins.slice(0, 68).replace(/\s+\S*$/, '') + '…' : ins;
-    return sendText(exercisePrompt(f, part, label), `${label}\n📘 Урок ${f.m.lesson}, упр. ${f.ex.number}${part ? ', часть ' + part : ''}: ${short}`);
+  const shortIns = ex => { const ins = ex.instruction_ru || ''; return ins.length > 60 ? ins.slice(0, 58).replace(/\s+\S*$/, '') + '…' : ins; };
+  function sendExercises(sel, label, notes = []) {
+    const lines = sel.map(({ f, part }) => `📘 Урок ${f.m.lesson}, упр. ${f.ex.number}${part ? ', часть ' + part : ''}: ${shortIns(f.ex)}`);
+    return sendText(exercisePrompt(sel, label), `${label}\n${lines.join('\n')}${notes.length ? '\n⚠️ ' + notes.join('\n⚠️ ') : ''}`);
   }
+  const sendExercise = (f, label, part) => sendExercises([{ f, part }], label);
   send.onclick = () => {
     const text = ta.value.trim(); if (!text || busy) return; ta.value = ''; grow();
     const q = parseExerciseQuery(text);
+    if (q?.noPage) { if (lastExQ) Object.assign(q, lastExQ); else return localReply(text, 'Напишите ещё и страницу, например: «стр. 48 упр. 19».'); }
     if (q) {
+      lastExQ = q.page ? { page: q.page } : { lesson: q.lesson };
       const where = q.page ? `на странице ${q.page}` : `в уроке ${q.lesson}`;
-      const found = lookupExercise(q);
-      if (!found.length) return localReply(text, `Упражнения ${q.num} ${where} не нашёл. Проверьте номер страницы и упражнения (страница — как в учебнике). В уроке 6 нет упражнений 9–11: этой страницы нет в скане.`);
-      const ok = found.filter(f => aiExercise(f.ex));
-      if (!ok.length) return localReply(text, `Упражнение ${q.num} ${where} разговорное (рассказ о себе, диалог или чтение вслух). У него нет одного правильного ответа, поэтому ответы я не даю.\n\n**Задание:** ${found[0].ex.instruction_ru || ''}`);
-      return sendExercise(ok[0], text, q.part);
+      const sel = [], notes = [];
+      for (const it of q.items) {
+        const found = lookupExercise({ ...q, ...it });
+        const ok = found.filter(f => aiExercise(f.ex));
+        if (!found.length) notes.push(`Упражнения ${it.num} ${where} не нашёл. Проверьте номер страницы и упражнения (страница — как в учебнике).`);
+        else if (!ok.length) notes.push(`Упражнение ${it.num} ${where} разговорное (рассказ о себе, диалог или чтение вслух), у него нет одного правильного ответа, поэтому ответы на него не даю. Задание: ${found[0].ex.instruction_ru || ''}`);
+        else if (!sel.some(x => x.f.ex === ok[0].ex && x.part === it.part)) sel.push({ f: ok[0], part: it.part });
+      }
+      if (!sel.length) return localReply(text, notes.join('\n\n'));
+      return sendExercises(sel, text, notes);
     }
     sendText(text);
   };
