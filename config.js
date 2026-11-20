@@ -8,5 +8,5 @@ window.ESPANOLA_CONFIG = {
   supabaseUrl: "",
   supabaseKey: "",
   // Адрес Cloudflare Worker-посредника (worker/ai-proxy.js): DeepSeek для всех без ключа. См. SETUP-AI-PROXY.md
-  aiProxyUrl: ""
+  aiProxyUrl: "https://espanola-ai.kiskissmur39.workers.dev"
 };
