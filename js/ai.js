@@ -135,7 +135,7 @@ async function callOpenAI(P, key, model, system, history, image) {
   });
   const headers = { 'Content-Type': 'application/json' };
   if (!P.noKey) headers.Authorization = P.rawKey ? key : 'Bearer ' + key;
-  if (P === PROVIDERS.openrouter) { headers['HTTP-Referer'] = location.origin; headers['X-Title'] = 'Espanola'; }
+  if (P === PROVIDERS.openrouter) { headers['HTTP-Referer'] = location.origin; headers['X-Title'] = 'espanol.uchit'; }
   const body = { model, messages };
   if (P === PROVIDERS.gptunnel) body.useWalletBalance = true; // личный баланс GPTunnel
   let r;

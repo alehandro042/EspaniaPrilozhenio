@@ -1,6 +1,6 @@
 {
-  "name": "Еспаньола — испанский по учебнику",
-  "short_name": "Еспаньола",
+  "name": "espanol.uchit — испанский по учебнику",
+  "short_name": "espanol.uchit",
   "description": "Испанский по учебнику «Español Actual. Начальный курс»: слова, карточки, тесты, озвучка",
   "lang": "ru",
   "start_url": "./#/today",

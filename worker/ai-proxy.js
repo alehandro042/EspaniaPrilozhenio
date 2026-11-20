@@ -1,4 +1,4 @@
-// Cloudflare Worker — посредник между приложением «Еспаньола» и GPTunnel.
+// Cloudflare Worker — посредник между приложением «espanol.uchit» и GPTunnel.
 // Ключ GPTunnel хранится в секрете GPTUNNEL_KEY (Settings → Variables and Secrets), в коде его нет.
 // Пускает только запросы с сайта приложения. Текст — одна модель (Gemini 3 Flash),
 // запросы с фото — дешёвая модель Gemini Flash (сама находится в списке моделей GPTunnel,

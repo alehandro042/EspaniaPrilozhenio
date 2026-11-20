@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.14';
+const VERSION = '1.15';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -968,7 +968,7 @@ on(/^\/profile$/, () => {
       <div class="btns"><button class="btn ghost" id="exp">Скачать копию</button><label class="btn ghost" style="cursor:pointer">Загрузить копию<input type="file" id="imp" accept="application/json,.json" hidden></label></div>
       <button class="btn line" id="reset" style="color:var(--bad)">Сбросить прогресс на этом устройстве</button>
     </div>
-    <p class="mut small" style="text-align:center">Еспаньола ${VERSION} · по учебнику «Español Actual. Начальный курс» (Гринина Е.А., Микаэлян Ю.И.).</p>`;
+    <p class="mut small" style="text-align:center">espanol.uchit ${VERSION} · по учебнику «Español Actual. Начальный курс» (Гринина Е.А., Микаэлян Ю.И.).</p>`;
   const b = id => $('#' + id);
   if (b('cGoogle')) b('cGoogle').onclick = () => cloud.signInGoogle();
   if (b('cSend')) b('cSend').onclick = async () => {
