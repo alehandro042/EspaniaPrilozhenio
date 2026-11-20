@@ -228,3 +228,7 @@ html[data-style="c"] .hero{background:#1c2b45;color:var(--fg)}
 html[data-style="d"] .hero{background:#2a2300;color:var(--fg)}html[data-style="e"] .hero{background:#2e1212;color:var(--fg)}
 html[data-style="d"] .hero .btn,html[data-style="e"] .hero .btn{background:var(--acc);color:var(--on-acc)}
 html[data-style="c"] .hero .btn{background:var(--acc);color:var(--on-acc)}
+.topic-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.topic{display:grid;gap:2px;text-decoration:none;color:inherit;padding:12px}
+.topic span{font-size:24px}
+.topic small{font-size:12px;line-height:1.3}

@@ -206,3 +206,87 @@ export function buildWriteTest(lessonIds, n = 10) {
   if (qs.length < n) qs.push(...pickW(phrases.filter(p => !qs.some(q => q.item === p)), n - qs.length).map(mk));
   return shuffle(qs);
 }
+
+// ---------- Темы для повторения: числа, цвета, дни недели, время (всё из учебника) ----------
+export const TOPICS = {
+  numbers: { title: 'Числа', icon: '🔢', hint: 'От 0 до 99, на слух и письменно' },
+  colors: { title: 'Цвета', icon: '🎨', hint: 'rojo, azul, verde…' },
+  days: { title: 'Дни недели', icon: '📅', hint: 'lunes … domingo' },
+  time: { title: 'Время', icon: '🕒', hint: '¿Qué hora es? Son las…' }
+};
+const COLORS = ['rojo', 'azul', 'verde', 'amarillo', 'blanco', 'negro', 'gris', 'marrón', 'claro', 'oscuro'];
+const DAYS = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
+const uniqBy = (a, f) => { const s = new Set(); return a.filter(x => { const k = f(x); if (s.has(k)) return false; s.add(k); return true; }); };
+const topicItems = words => uniqBy([...book.items.values()].filter(it => it.ru && words.includes(it.es)), it => it.es)
+  .sort((a, b) => words.indexOf(a.es) - words.indexOf(b.es));
+
+// число словами по таблице учебника (§27, §31): 0–29 и десятки — как в списке, остальное «десяток y единица»
+function numberWords() {
+  const m = new Map();
+  for (const it of book.items.values()) if (it.kind === 'number' && /^\d+$/.test(it.ru || '')) m.set(+it.ru, it.es);
+  return m;
+}
+function numEs(n, W) {
+  if (W.has(n)) return W.get(n);
+  const t = Math.floor(n / 10) * 10, u = n % 10;
+  return W.has(t) && W.has(u) ? `${W.get(t)} y ${W.get(u)}` : null;
+}
+function numberQuestions(n) {
+  const W = numberWords(); if (W.size < 10) return [];
+  const pool = []; for (let k = 0; k < 100; k++) if (numEs(k, W)) pool.push(k);
+  const qs = [];
+  for (const k of shuffle(pool).slice(0, n)) {
+    const es = numEs(k, W), r = Math.random();
+    const near = shuffle(pool.filter(x => x !== k && (Math.abs(x - k) <= 12 || x % 10 === k % 10))).slice(0, 3);
+    if (r < 0.35) qs.push({ type: 'choose_topic', kind: 'Как это по-испански?', prompt: String(k), options: shuffle([k, ...near]).map(x => ({ label: numEs(x, W), correct: x === k, speak: numEs(x, W) })), answerSpeak: es });
+    else if (r < 0.7) qs.push({ type: 'conj_write', kind: 'Прослушайте и напишите цифрами', prompt: '🔊', speak: es, autoSpeak: true, expected: [String(k)], answerSpeak: es, correct: `${k} — ${es}`, placeholder: 'Цифрами, например 47', numeric: true });
+    else qs.push({ type: 'conj_write', kind: 'Напишите по-испански', prompt: String(k), expected: [es], answerSpeak: es, placeholder: 'Ответ по-испански', hint: true });
+  }
+  return qs;
+}
+// время по §42: Es la una / Son las + час, y cuarto / y media / menos cuarto / en punto
+function timeEs(h, m, W) {
+  let hh = h, tail = '';
+  if (m === 0) tail = '';
+  else if (m === 15) tail = ' y cuarto';
+  else if (m === 30) tail = ' y media';
+  else if (m === 45) { hh = h % 12 + 1; tail = ' menos cuarto'; }
+  else if (m < 30) tail = ' y ' + numEs(m, W);
+  else { hh = h % 12 + 1; tail = ' menos ' + numEs(60 - m, W); }
+  return (hh === 1 ? 'Es la una' : 'Son las ' + numEs(hh, W)) + tail;
+}
+const pad = m => String(m).padStart(2, '0');
+function timeQuestions(n) {
+  const W = numberWords(); if (W.size < 25) return [];
+  const MIN = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
+  const qs = [];
+  for (let k = 0; k < n; k++) {
+    const h = 1 + (Math.random() * 12 | 0), m = pick(MIN), es = timeEs(h, m, W), dig = `${h}:${pad(m)}`, r = Math.random();
+    const others = []; while (others.length < 3) { const h2 = 1 + (Math.random() * 12 | 0), m2 = pick(MIN), d2 = `${h2}:${pad(m2)}`; if (d2 !== dig && !others.some(o => o.d === d2) && (h2 === h || m2 === m || Math.random() < .3)) others.push({ d: d2, es: timeEs(h2, m2, W) }); }
+    if (r < 0.35) qs.push({ type: 'choose_topic', kind: '¿Qué hora es? Выберите по-испански', prompt: dig, options: shuffle([{ d: dig, es }, ...others]).map(o => ({ label: o.es, correct: o.d === dig, speak: o.es })), answerSpeak: es });
+    else if (r < 0.7) qs.push({ type: 'choose_topic', kind: 'Прослушайте: который час?', prompt: '🔊', speak: es, autoSpeak: true, options: shuffle([{ d: dig, es }, ...others]).map(o => ({ label: o.d, correct: o.d === dig })), answerSpeak: es, correct: `${dig} — ${es}` });
+    else qs.push({ type: 'conj_write', kind: '¿Qué hora es? Напишите по-испански', prompt: dig, expected: [es, ...(m === 0 ? [es + ' en punto'] : [])], answerSpeak: es, placeholder: 'Son las… / Es la…', hint: true });
+  }
+  return qs;
+}
+function wordTopicQuestions(items, n) {
+  if (items.length < 4) return [];
+  const qs = [];
+  const chosen = []; while (chosen.length < n) chosen.push(...shuffle(items)); 
+  for (const it of chosen.slice(0, n)) {
+    const others = shuffle(items.filter(x => x !== it)).slice(0, 3), r = Math.random();
+    if (r < 0.3) qs.push({ type: 'choose_ru', item: it, kind: 'Выберите перевод', prompt: it.es, speak: it.es, options: shuffle([it, ...others]).map(o => ({ label: o.ru, correct: o === it })) });
+    else if (r < 0.55) qs.push({ type: 'listen', item: it, kind: 'Прослушайте и выберите перевод', prompt: '🔊', speak: it.es, autoSpeak: true, options: shuffle([it, ...others]).map(o => ({ label: o.ru, correct: o === it })) });
+    else if (r < 0.8) qs.push({ type: 'choose_es', item: it, kind: 'Выберите по-испански', prompt: it.ru, options: shuffle([it, ...others]).map(o => ({ label: o.es, correct: o === it, speak: o.es })) });
+    else qs.push({ type: 'write_es', item: it, kind: 'Напишите по-испански', prompt: it.ru, expected: variants(it.es), hint: true });
+  }
+  return qs;
+}
+export function topicTest(topic, n = 12) {
+  if (topic === 'numbers') return numberQuestions(n);
+  if (topic === 'time') return timeQuestions(n);
+  if (topic === 'colors') return wordTopicQuestions(topicItems(COLORS), n);
+  if (topic === 'days') return wordTopicQuestions(topicItems(DAYS), n);
+  return [];
+}
+export const topicWords = topic => topic === 'colors' ? topicItems(COLORS) : topic === 'days' ? topicItems(DAYS) : [];

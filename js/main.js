@@ -2,7 +2,7 @@ import { state, settings, save, saveSettings, onChange, aiKeys, streakDays, uid,
 import { book, loadBook, hasRu, imgFor, KIND_RU, kindLabel, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences } from './data.js';
 import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearned, mistakes } from './srs.js';
 import { speak, listen, canListen, judge, esVoices } from './speech.js';
-import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions, buildWriteTest } from './quiz.js';
+import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions, buildWriteTest, TOPICS, topicTest } from './quiz.js';
 import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl, PROVIDERS, providerList, onlyShared, provider, providerInfo, hasKey as aiHasKey } from './ai.js';
 import * as drive from './sync.js';
 import * as cloud from './cloud.js';
@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.13';
+const VERSION = '1.14';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -277,6 +277,8 @@ on(/^\/review$/, () => {
       <div class="big">${due.length} ${plural(due.length, 'карточка', 'карточки', 'карточек')}</div>
       ${due.length ? `<a class="btn" href="#/cards/due">Начать</a>` : `<div style="font-size:14px">${total ? 'Всё повторено. Новые карточки появятся по расписанию.' : 'Карточек пока нет. Откройте урок и нажмите «Все слова в карточки» или ＋ у слова.'}</div>`}
     </div>
+    <div class="sec-title">Темы</div>
+    <div class="topic-grid">${Object.entries(TOPICS).map(([k, t]) => `<a class="c topic" href="#/test/topic-${k}"><span>${t.icon}</span><b>${t.title}</b><small class="mut">${t.hint}</small></a>`).join('')}</div>
     <a class="c row" href="#/train" style="text-decoration:none;color:inherit"><div class="grow"><b>Тренировка по нескольким урокам</b><div class="mut">Отметьте уроки и выберите карточки или тест</div></div><span>›</span></a>
     ${mistakes().length ? `<a class="c row" href="#/test/mistakes" style="text-decoration:none;color:inherit"><div class="grow"><b>Мои ошибки</b><div class="mut">${mistakes().length} ${plural(mistakes().length, 'слово', 'слова', 'слов')}, в которых были ошибки</div></div><span>›</span></a>` : ''}
     <div class="c mut small">Как работает повторение: «Знаю» откладывает слово на несколько дней, и каждый раз интервал растёт. «Трудно» — повторим скоро. «Не помню» — слово вернётся через пару минут, а ошибочные слова показываются чаще.</div>`;
@@ -287,6 +289,8 @@ function resolveSet(spec) {
   if (spec === 'due') return { items: dueCards(), title: 'Повторение', lessons: null };
   if (spec === 'mistakes') return { items: mistakes(), title: 'Мои ошибки', lessons: [...new Set(mistakes().map(i => i.lessonId))] };
   if (spec === 'my') return { items: (book.byLesson.get('my') || []).filter(hasRu), title: 'Мои слова', lessons: ['my'] };
+  const tp = spec.match(/^topic-(\w+)$/);
+  if (tp && TOPICS[tp[1]]) return { items: [], title: TOPICS[tp[1]].title, kind: 'topic', topic: tp[1] };
   const m = spec.match(/^(lesson|ids|gram|sent|write)-(.+)$/);
   if (!m) return { items: [], title: '' };
   const lessons = m[2].split(',').map(x => x === 'my' ? 'my' : +x).filter(x => x === 'my' || book.lessons.has(x));
@@ -396,10 +400,11 @@ on(/^\/test\/(.+)$/, spec => {
   let qs;
   if (set.kind === 'gram') { const lid = set.lessons[0]; qs = grammarQuestions(lid, levelOf(lid), book.byLesson.get(lid) || []).sort(() => Math.random() - .5).slice(0, 10); }
   else if (set.kind === 'write') { qs = buildWriteTest(set.lessons || [], 10); }
+  else if (set.kind === 'topic') { qs = topicTest(set.topic, 12); }
   else if (set.kind === 'sent') { qs = sentenceQuestions(set.lessons[0]).sort(() => Math.random() - .5).slice(0, 8); }
   else if (spec === 'mistakes' || spec === 'due') qs = buildTest(set.lessons || [], Math.min(12, set.items.length), { items: set.items, vocabOnly: true });
   else qs = buildTest(set.lessons || [], 10, { vocabOnly: spec === 'my' || (set.lessons || []).every(l => l === 'my') });
-  setTitle(isLessonTest ? 'Тест · ' + set.title : (set.kind === 'gram' ? 'Грамматика' : set.kind === 'sent' ? 'Предложения' : set.kind === 'write' ? 'Письменный тест' : 'Тест'), true);
+  setTitle(isLessonTest ? 'Тест · ' + set.title : (set.kind === 'gram' ? 'Грамматика' : set.kind === 'sent' ? 'Предложения' : set.kind === 'write' ? 'Письменный тест' : set.kind === 'topic' ? set.title : 'Тест'), true);
   if (!qs.length) { view.innerHTML = `<div class="empty-note">Для теста пока нет материала.</div>`; return; }
   let i = 0, right = 0; const wrong = [];
   const lid0 = set.lessons?.[0];
@@ -415,7 +420,7 @@ on(/^\/test\/(.+)$/, spec => {
       area = `<div class="tiles" id="ans"></div><div class="tiles" id="pool" style="border-style:solid">${q.shuffled.map((w, k) => `<button class="tile" data-k="${k}">${esc(w)}</button>`).join('')}</div>
         <button class="btn" id="chk">Проверить</button>`;
     } else {
-      area = `<input class="inp" id="inp" autocomplete="off" autocapitalize="off" spellcheck="false" lang="es" placeholder="${q.type === 'dictation' ? 'Напишите, что услышали' : q.article ? 'el / la + слово' : 'Ответ по-испански'}" enterkeyhint="done">
+      area = `<input class="inp" id="inp" autocomplete="off" autocapitalize="off" spellcheck="false" lang="es" placeholder="${q.placeholder ? q.placeholder : q.type === 'dictation' ? 'Напишите, что услышали' : q.article ? 'el / la + слово' : 'Ответ по-испански'}" enterkeyhint="done"${q.numeric ? ' inputmode="numeric"' : ''}>
         <div class="accents">${['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü', '¿', '¡'].map(c => `<button data-ch="${c}">${c}</button>`).join('')}</div>
         <div class="btns">${q.hint ? `<button class="btn ghost" id="hint">Подсказка</button>` : ''}<button class="btn ghost" id="skip">Не знаю</button><button class="btn" id="chk">Проверить</button></div>`;
     }
@@ -463,7 +468,7 @@ on(/^\/test\/(.+)$/, spec => {
       const h = $('#hint'); if (h) h.onclick = () => toast(hintFor(q), 3500);
     }
   };
-  const correctText = q => q.type === 'dictation' ? q.expected[0] : q.type === 'write_es' ? (q.article ? q.article + ' ' : '') + q.item.es
+  const correctText = q => q.correct ? q.correct : q.type === 'dictation' ? q.expected[0] : q.type === 'write_es' ? (q.article ? q.article + ' ' : '') + q.item.es
     : q.type === 'conj_write' || q.type === 'conj' ? q.answerSpeak
     : q.options ? (q.type === 'pick_img' ? `${q.item.es} — ${q.item.ru}` : q.type === 'article' ? `${q.options.find(o => o.correct).label} ${q.item.es}` : (q.item ? `${q.item.es} — ${q.item.ru}` : q.options.find(o => o.correct).label)) : '';
   function done(ok, almost, correct, msg) {
