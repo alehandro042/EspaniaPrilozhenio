@@ -91,7 +91,23 @@ function buildItems() {
     }
     book.byLesson.set(lid, arr);
   }
+  fillGender();
   refreshMyItems();
+}
+
+// Род, если в этом месте учебника он не указан:
+// 1) то же слово в другом уроке учебника с указанным родом (tema m, dictado m…);
+// 2) несколько слов без рода нигде в учебнике — по правилу §3 (-a — ж. р., -o — м. р.).
+const GENDER_BY_RULE = { 'fonética': 'f', 'economía': 'f', 'literatura': 'f', 'práctica': 'f', 'grado': 'm', 'sociología': 'f' };
+function fillGender() {
+  const known = new Map();
+  for (const it of book.items.values()) if (it.gender && it.gender !== 'pl' && it.gender !== 'm, f') {
+    const g = known.get(it.es); known.set(it.es, g === undefined || g === it.gender ? it.gender : null);
+  }
+  for (const it of book.items.values()) if (!it.gender && it.ru && !/\s/.test(it.es)) {
+    const g = known.get(it.es) || GENDER_BY_RULE[it.es];
+    if (g) it.gender = g;
+  }
 }
 
 export function refreshMyItems() {
@@ -153,10 +169,21 @@ export function articleItems(items) {
 }
 
 // Слово с артиклем для показа: la casa, el libro. Женские на a-/ha- (el agua) и фразы — без артикля.
+// Ударный ли первый слог (для el agua, el aula, el área — но la atención, la avenida)
+function firstSyllableStressed(w) {
+  w = w.toLowerCase();
+  if (/^h?á/.test(w)) return true;
+  if (/[áéíóú]/.test(w)) return false;
+  const syl = (w.match(/[aeiouü]+/g) || []).length;
+  return syl <= 1 || (syl === 2 && /[aeiouns]$/.test(w));
+}
 export function withArt(it) {
-  if (!it || !it.es || !(it.gender === 'm' || it.gender === 'f') || /[,/(\s]/.test(it.es)) return it?.es || '';
-  if (it.gender === 'm') return 'el ' + it.es;
-  return /^h?[aá]/i.test(it.es) ? it.es : 'la ' + it.es;
+  const g = it?.gender;
+  if (!it || !it.es || !['m', 'f', 'm pl', 'f pl'].includes(g) || /[,/(\s]/.test(it.es)) return it?.es || '';
+  if (g === 'm pl') return 'los ' + it.es;
+  if (g === 'f pl') return 'las ' + it.es;
+  if (g === 'm') return 'el ' + it.es;
+  return /^h?[aá]/i.test(it.es) && firstSyllableStressed(it.es) ? it.es : 'la ' + it.es;
 }
 
 // Предложения из раздела «построение предложений», которые можно собрать из слов.
