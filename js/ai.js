@@ -41,6 +41,13 @@ export const PROVIDERS = {
     model: 'deepseek-chat',
     note: 'Платно, но очень дёшево. Бесплатно DeepSeek можно получить через OpenRouter (модели deepseek с пометкой «:free»).'
   },
+  gptunnel: {
+    name: 'GPTunnel (оплата в рублях)', free: false, vision: true, kind: 'openai', rawKey: true,
+    url: 'https://gptunnel.ru/v1/chat/completions',
+    keyUrl: 'https://gptunnel.ru/profile', keyHint: 'gptunnel.ru → Профиль → вкладка «API» → создать ключ (баланс пополняется в рублях)', keyPrefix: 'ключ из вкладки API',
+    model: 'deepseek-v4-pro',
+    note: 'Российский сервис, доступ к DeepSeek, GPT, Claude и другим моделям, оплата в рублях. Название модели можно поменять: впишите его точно так, как в списке моделей GPTunnel. DeepSeek фото не читает, для фото выберите модель GPT.'
+  },
   openai: {
     name: 'OpenAI (ChatGPT)', free: false, vision: true, kind: 'openai',
     url: 'https://api.openai.com/v1/chat/completions',
@@ -107,11 +114,17 @@ async function callOpenAI(P, key, model, system, history, image) {
     if (image && i === history.length - 1) messages.push({ role, content: [{ type: 'text', text: h.text }, { type: 'image_url', image_url: { url: `data:${image.mime};base64,${image.b64}` } }] });
     else messages.push({ role, content: h.text });
   });
-  const headers = { 'Content-Type': 'application/json', Authorization: 'Bearer ' + key };
+  const headers = { 'Content-Type': 'application/json', Authorization: P.rawKey ? key : 'Bearer ' + key };
   if (P === PROVIDERS.openrouter) { headers['HTTP-Referer'] = location.origin; headers['X-Title'] = 'Espanola'; }
-  const r = await fetch(P.url, { method: 'POST', headers, body: JSON.stringify({ model, messages }) });
+  const body = { model, messages };
+  if (P === PROVIDERS.gptunnel) body.useWalletBalance = true; // личный баланс GPTunnel
+  let r;
+  try { r = await fetch(P.url, { method: 'POST', headers, body: JSON.stringify(body) }); }
+  catch (e) { throw new Error(navigator.onLine ? `Не удалось связаться с ${P.name}. Возможно, сервис не пускает запросы из браузера; попробуйте другой сервис.` : 'Нет интернета.'); }
   const j = await r.json().catch(() => ({}));
-  if (!r.ok) throw niceError(r.status, j.error?.message || j.message || r.statusText);
+  const em = j.error?.message || (typeof j.error === 'string' ? j.error : '') || j.message || r.statusText;
+  if (/model_not_allowed/.test(JSON.stringify(j))) throw new Error('Этот ключ не разрешает выбранную модель. Проверьте название модели или настройки ключа на сайте сервиса.');
+  if (!r.ok) throw niceError(r.status, em);
   const text = j.choices?.[0]?.message?.content;
   if (!text) throw new Error('ИИ не дал ответа.');
   return Array.isArray(text) ? text.map(x => x.text || '').join('') : text;
