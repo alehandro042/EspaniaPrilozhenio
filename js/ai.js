@@ -9,7 +9,7 @@ export const SYSTEM = 'Ты помощник студента, который у
 const PROXY = () => (window.ESPANOLA_CONFIG || {}).aiProxyUrl || '';
 export const PROVIDERS = {
   shared: {
-    name: 'DeepSeek от приложения', free: true, vision: false, kind: 'openai', noKey: true,
+    name: 'DeepSeek от приложения', free: true, vision: true, kind: 'openai', noKey: true, // фото посредник отдаёт в Gemini Flash
     get url() { return PROXY(); },
     model: 'deepseek-v4-pro',
     note: 'Работает сразу, ключ не нужен: запросы оплачивает владелец приложения. Пожалуйста, не злоупотребляйте.'
@@ -182,7 +182,11 @@ export async function wordsFromPhoto(b64, mime) {
   const text = await call({ history: [{ role: 'user', text: prompt }], image: { b64, mime } });
   const m = text.match(/\[[\s\S]*\]/);
   let arr;
-  try { arr = JSON.parse(m ? m[0] : text); } catch { throw new Error('ИИ ответил не в том формате, попробуйте ещё раз.'); }
+  try { arr = JSON.parse(m ? m[0] : text); } catch {
+    // запасной вариант: строки «слово — перевод»
+    arr = text.split('\n').map(l => l.replace(/^[\s*\-•\d.)]+/, '').split(/\s+[—–-]\s+/)).filter(x => x.length >= 2).map(([es, ...ru]) => ({ es, ru: ru.join(' — ') }));
+    if (!arr.length) throw new Error('ИИ ответил не в том формате, попробуйте ещё раз.');
+  }
   return arr.filter(x => x && x.es).map(x => ({ es: String(x.es).trim(), ru: String(x.ru || '').trim() }));
 }
 

@@ -567,7 +567,7 @@ function photoForm() {
       <div class="btns"><button class="btn ghost" id="photoCancel">Отмена</button><button class="btn" id="photoSave">Сохранить</button></div></div>`;
   if (onlyShared() && !providerInfo().vision) return `<div class="c stack"><b>Слова с фото</b><div class="mut small">Распознавание по фото пока выключено: DeepSeek не читает картинки. Добавляйте слова вручную или списком.</div></div>`;
   return `<div class="c stack"><b>Слова с фото</b>
-    <div class="mut small">${hasKey ? 'Сфотографируйте страницу или записи, ИИ (' + providerInfo().name + ') найдёт испанские слова, а вы проверите их перед сохранением.' : 'Для распознавания нужен ключ ИИ (есть бесплатные, добавляется в профиле). Без ключа: выберите фото, нажмите «Спросить Gemini», затем скопируйте ответ сюда через «Списком».'}</div>
+    <div class="mut small">${hasKey ? 'Сфотографируйте страницу или записи, ИИ' + (providerInfo().noKey ? '' : ' (' + providerInfo().name + ')') + ' найдёт испанские слова, а вы проверите их перед сохранением.' : 'Для распознавания нужен ключ ИИ (есть бесплатные, добавляется в профиле). Без ключа: выберите фото, нажмите «Спросить Gemini», затем скопируйте ответ сюда через «Списком».'}</div>
     ${hasKey && !providerInfo().vision ? `<div class="fb almost small">${esc(providerInfo().name)} не читает фото. Выберите в <a href="#/profile">профиле</a> другой сервис (например, бесплатный Gemini или Groq).</div>` : ''}
     <label class="btn" style="cursor:pointer">📷 Сфотографировать / выбрать<input type="file" id="photo" accept="image/*" capture="environment" hidden></label>
     <div id="photoMsg" class="mut small"></div>
@@ -742,7 +742,7 @@ on(/^\/profile$/, () => {
     ${onlyShared() ? `<div class="c stack"><b>ИИ-помощник</b><div class="mut small">DeepSeek работает у всех сразу, ключ не нужен. Задавайте вопросы во вкладке «Помощник» или нажимайте «🤖 Ответы» у упражнений.</div></div>` : `<div class="c stack">
       <b>ИИ-помощник</b>
       <div class="field"><label>Сервис</label><select class="inp" id="aiProv">${providerList().map(([k, P]) => `<option value="${k}" ${k === provider() ? 'selected' : ''}>${esc(P.name)} · ${P.free ? 'бесплатно' : 'платно'}${aiKeys.get(k) ? ' ✓' : ''}</option>`).join('')}</select></div>
-      ${providerInfo().noKey ? `<div class="mut small">${esc(providerInfo().note)} <b>Фото не читает</b> (для фото выберите Gemini, Groq или Mistral со своим ключом).</div>` : `
+      ${providerInfo().noKey ? `<div class="mut small">${esc(providerInfo().note)} Фото распознаёт Gemini Flash.</div>` : `
       <div class="mut small">${esc(providerInfo().note)}${providerInfo().vision ? '' : ' <b>Фото не читает.</b>'}<br>Где взять ключ: <a href="${providerInfo().keyUrl}" target="_blank" rel="noopener">${esc(providerInfo().keyHint)}</a>. Ключ хранится только на этом устройстве и не синхронизируется.</div>
       <input class="inp" id="gkey" type="password" autocomplete="off" value="${esc(aiKeys.get(provider()))}" placeholder="${esc(providerInfo().keyPrefix || 'API-ключ')}">
       <div class="btns"><button class="btn ghost" id="gSave">Сохранить ключ</button>${aiKeys.get(provider()) ? `<button class="btn line" id="gDel">Удалить</button>` : ''}</div>
