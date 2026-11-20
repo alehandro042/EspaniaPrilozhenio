@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.19';
+const VERSION = '1.20';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -130,7 +130,7 @@ on(/^\/today$/, () => {
       <a class="btn ghost" href="#/train">Тренировка по урокам</a>
       ${errs ? `<a class="btn ghost" href="#/test/mistakes">Мои ошибки (${errs})</a>` : ''}
     </div>
-    <div class="c row"><div><b>Выучено слов</b><div class="mut">из уроков и своих</div></div><b style="font-size:22px">${learned}</b></div>
+    <a class="c row" href="#/learned" style="text-decoration:none;color:inherit"><div class="grow"><b>Выучено слов</b><div class="mut">Открыть словарик выученных</div></div><b style="font-size:22px">${learned}</b><span>›</span></a>
     <a class="c row" href="#/ai?new" style="text-decoration:none;color:inherit"><div class="grow"><b>💬 Новый чат</b><div class="mut">Спросить помощника или получить ответы на упражнение</div></div><span>›</span></a>
     ${installBlock()}
     ${!settings.signedIn ? `<a class="c row" href="#/profile" style="text-decoration:none;color:inherit"><div class="grow"><b>Сохранять прогресс в Google</b><div class="mut">Чтобы не потерять прогресс и учиться с разных устройств</div></div><span>›</span></a>` : ''}
@@ -169,6 +169,29 @@ on(/^\/lessons$/, () => {
     }
   }
   view.innerHTML = html + `<p class="mut small" style="text-align:center">Материал: «Español Actual. Начальный курс», Гринина Е.А., Микаэлян Ю.И.</p>`;
+});
+
+// ---------- Словарик выученных слов ----------
+on(/^\/learned$/, () => {
+  setTitle('Выученные слова', '#/today');
+  const items = Object.entries(state.cards).filter(([, c]) => isLearned(c)).map(([id]) => book.items.get(id)).filter(Boolean);
+  if (!items.length) { view.innerHTML = `<div class="c stack" style="text-align:center"><div style="font-size:36px">📖</div><b>Пока пусто</b><div class="mut">Слово попадает сюда, когда вы несколько раз ответили на него правильно в тестах или карточках.</div><a class="btn" href="#/train">Тренироваться</a></div>`; return; }
+  const order = l => l === 'my' ? 1e9 : +l;
+  const groups = new Map();
+  for (const it of items.sort((a, b) => order(a.lessonId) - order(b.lessonId) || a.es.localeCompare(b.es, 'es'))) {
+    if (!groups.has(it.lessonId)) groups.set(it.lessonId, []); groups.get(it.lessonId).push(it);
+  }
+  const row = it => `<div class="word-row" data-s="${esc((withArt(it) + ' ' + it.ru).toLowerCase())}"><div class="grow"><div class="es">${esc(withArt(it))}</div><div class="ru">${esc(it.ru || '')}</div></div>
+    <div class="icons"><button class="ic" data-act="say" data-text="${esc(withArt(it))}" aria-label="Озвучить">🔊</button></div></div>`;
+  view.innerHTML = `<div class="mut small">Всего: ${items.length} ${plural(items.length, 'слово', 'слова', 'слов')}</div>
+    <input class="inp" id="lq" placeholder="Поиск по-испански или по-русски" autocomplete="off" autocapitalize="off" spellcheck="false">
+    ${[...groups].map(([l, list]) => `<div class="lgrp"><div class="sec-title">${esc(l === 'my' ? 'Мои слова' : lessonName(l))} · ${list.length}</div><div class="c">${list.map(row).join('')}</div></div>`).join('')}
+    <div class="mut" id="lnone" style="display:none;text-align:center">Ничего не найдено</div>`;
+  $('#lq').oninput = e => {
+    const q = e.target.value.trim().toLowerCase(); let any = false;
+    view.querySelectorAll('.lgrp').forEach(g => { let n = 0; g.querySelectorAll('.word-row').forEach(r => { const on = !q || r.dataset.s.includes(q); r.style.display = on ? '' : 'none'; if (on) n++; }); g.style.display = n ? '' : 'none'; any ||= n > 0; });
+    $('#lnone').style.display = any ? 'none' : '';
+  };
 });
 
 const lessonTabs = {};
