@@ -755,7 +755,9 @@
   {
    "number": "1",
    "instruction_ru": "Ответьте на вопросы (относительная превосходная степень)",
-   "page": 89
+   "page": 89,
+   "text": "Ответьте на вопросы:\n1. ¿Quién es el más inteligente del grupo? 2. ¿Qué edificio de la ciudad es el más alto? 3. ¿Qué hotel es el más caro? 4. ¿Qué fortaleza es la más antigua? 5. ¿Qué coches son los más rápidos? 6. ¿Qué tiendas son las más grandes?",
+   "kind": "open"
   },
   {
    "number": "2",
@@ -772,17 +774,23 @@
     "Эта улица очень длинная. Она самая длинная в нашем городе.",
     "Этот сотрудник очень любезен. Он самый любезный в этой компании.",
     "Этот шкаф очень удобный. Он самый удобный из всех."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Это очень прилежный студент. Он самый прилежный из всей группы. 2. Это очень сильный человек. Он самый сильный из всех нас. 3. Это очень древний город. Он самый древний в этой провинции. 4. Это очень богатый бизнесмен. Он самый богатый в стране. 5. Хосе – очень верный друг. Он самый верный из всех моих друзей. 6. Эта семья очень бедная. Она самая бедная на нашей улице. 7. Это задание очень простое. Оно самое простое из всех. 8. Эта улица очень длинная. Она самая длинная в нашем городе. 9. Этот сотрудник очень любезен. Он самый любезный в этой компании. 10. Этот шкаф очень удобный. Он самый удобный из всех.",
+   "kind": "closed"
   },
   {
    "number": "3",
    "instruction_ru": "Проспрягайте, переведите и запомните: destruirlo todo; destituir al director de su cargo; constituir una fundación; incluir este tema en su tesis; concluir con esto; huir de aquí; disminuir el precio. A – вопросы; B – переведите на испанский",
-   "page": 89
+   "page": 89,
+   "text": "Проспрягайте, переведите и запомните выражения: destruirlo todo; destituir al director de su cargo; constituir una fundación; incluir este tema en su tesis; concluir con esto; huir de aquí; disminuir el precio.\nA. Используя эти словосочетания, задайте друг другу вопросы.\nB. Переведите на испанский язык: 1. Какие здания строит Ваша компания? 2. Зачем вы разрушаете этот мост? Вы собираетесь построить новый? 3. Вы знаете, что сеньора Гарсию снимают с должности директора банка? 4. С какой целью Вы создаете этот фонд? 5. По телевизору говорят, что в магазинах снижают цены, но я этому не верю. 6. Почему ты убегаешь? 7. Я не собираюсь включать этот материал в мою диссертацию. 8. Чем ты завершаешь свое письмо?",
+   "kind": "closed"
   },
   {
    "number": "4",
    "instruction_ru": "Образуйте причастия от глаголов: dormir, seguir, vender, constituir, hacer, reproducir, guardar, escribir, sonreír, poner, ser, imprimir, ir, poder, estar, decir, aprobar, morir, ver, examinarse, tener, volver, asistir, visitar, abrir, reírse, romper, gustar, pedir, resolver, oír, escuchar",
-   "page": 90
+   "page": 90,
+   "text": "Образуйте причастные формы от следующих глаголов:\ndormir, seguir, vender, constituir, hacer, reproducir, guardar, escribir, sonreír, poner, ser, imprimir, ir, poder, estar, decir, aprobar, morir, ver, examinarse, tener, volver, asistir, visitar, abrir, reírse, romper, gustar, pedir, resolver, oír, escuchar.",
+   "kind": "closed"
   },
   {
    "number": "5",
@@ -799,7 +807,9 @@
     "El cliente no firma el contrato.",
     "La abuela sirve el café.",
     "No encuentro el lápiz rojo."
-   ]
+   ],
+   "text": "Трансформируйте по образцу: Mamá pone la mesa. – La mesa está puesta.:\n1. Los estudiantes traducen el diálogo. 2. El matemático no resuelve el problema. 3. El hijo dice toda la verdad a los padres. 4. Hacemos la tarea de casa. 5. Abro la puerta. 6. Escribís la redacción. 7. Los niños rompen el móvil. 8. El cliente no firma el contrato. 9. La abuela sirve el café. 10. No encuentro el lápiz rojo.",
+   "kind": "closed"
   },
   {
    "number": "6",
@@ -822,22 +832,30 @@
     "Башня разрушена.",
     "Документы вручены секретарю.",
     "Все уже одеты."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Стол накрыт. 2. Стул сломан. 3. Задача решена. 4. Письмо написано. 5. Окна открыты. 6. Факс отправлен. 7. Копии документов сделаны. 8. Все сказано. 9. Подарок выбран. 10. Все сидят за столом. 11. Комната освещена. 12. Экзамены сданы. 13. Картина продана. 14. Башня разрушена. 15. Документы вручены секретарю. 16. Все уже одеты.",
+   "kind": "closed"
   },
   {
    "number": "7",
    "instruction_ru": "Проспрягайте в Pretérito Perfecto; A – ответьте утвердительно (¿Has traducido el artículo? – Sí, ya lo he traducido.); B – отрицательно (¿Has escrito una carta a tu colega? – No, no se la he escrito todavía.)",
-   "page": 91
+   "page": 91,
+   "text": "Проспрягайте следующие глаголы в Pretérito Perfecto: guardar la información, subir al tercer piso, hacer dos copias del documento, concluir el bachillerato, volver a su despacho, ver una escalera, escribir en el cuaderno, resolver el problema, despedirse de todos, poner la mesa, graduarse en ciencias sociales, sentarse en una silla, colocarse en una agencia de publicidad, nunca decírselo.\nA. Ответьте утвердительно на вопросы по образцу (¿Has traducido el artículo? – Sí, ya lo he traducido.): 1. ¿Has resuelto el problema? 2. ¿Has puesto la mesa? 3. ¿Has conseguido tus propósitos? 4. ¿Has encontrado el despacho del director? 5. ¿Has hecho copias del texto? 6. ¿Has abierto la ventana?\nB. Ответьте отрицательно на вопросы по образцу (¿Has escrito una carta a tu colega? – No, no se la he escrito todavía.): 1. ¿Has elegido un regalo a Carmen? 2. ¿Has pedido frutas al camarero? 3. ¿Has servido té a los amigos? 4. ¿Has dejado los documentos a la secretaria? 5. ¿Has dicho la verdad a los padres? 6. ¿Has contado esta historia a Felipe?",
+   "kind": "closed"
   },
   {
    "number": "8",
    "instruction_ru": "Поставьте глаголы в Pretérito Perfecto и перескажите текст (Esta tarde Ramón atraviesa la plaza…)",
-   "page": 91
+   "page": 91,
+   "text": "Поставьте глаголы в Pretérito Perfecto и перескажите текст:\nEsta tarde Ramón atraviesa la plaza y se sienta a la mesa al aire libre. Le atiende una camarera muy simpática. Merienda con una taza de chocolate con churros. Después enciende un cigarrillo. No se mueve un rato, piensa en algo: recuerda el pasado o sueña con el futuro. Suena el móvil. Ramón atiende la llamada y después pregunta a la camarera cuánto cuesta su merienda. Le cuenta un chiste, paga y vuelve a la oficina.",
+   "kind": "closed"
   },
   {
    "number": "9",
    "instruction_ru": "Закончите предложения (He puesto la mesa. La mesa está …)",
-   "page": 91
+   "page": 91,
+   "text": "Закончите предложения:\n1. He puesto la mesa. La mesa está ___. 2. He escrito el currículum. El currículum está ___. 3. He atendido la llamada. La llamada está ___. 4. He comprado flores. Las flores están ___. 5. He copiado dos cartas. Las cartas están ___. 6. He resuelto todos los problemas. Todos los problemas ya están ___. 7. He abierto las ventanas. Las ventanas están ___. 8. He hecho copias de los documentos. Las copias están ___. 9. He dicho la verdad. La verdad está ___. 10. He roto un florero. El florero está ___.",
+   "kind": "closed"
   },
   {
    "number": "10",
@@ -856,12 +874,16 @@
     "Кто Вам вручил эти документы?",
     "Сегодня я не спал всю ночь.",
     "На этой неделе у нас не было занятий по английскому языку."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Вы уже пили кофе? 2. Я еще не видел этот фильм. 3. Кто Вам это сказал? 4. Ваш сын уже вернулся домой? 5. Ваша группа уже сдала экзамен? 6. Я никогда не был у него дома. 7. Он никогда не служил в армии. 8. Мы еще не выбрали ему подарок. 9. Ты уже попрощался со своими родственниками? 10. Кто Вам вручил эти документы? 11. Сегодня я не спал всю ночь. 12. На этой неделе у нас не было занятий по английскому языку.",
+   "kind": "closed"
   },
   {
    "number": "11",
    "instruction_ru": "Para conocer más: слова для описания квартиры (En casa); A – подберите прилагательные; B – опишите квартиру на картинке (план квартиры)",
-   "page": 92
+   "page": 92,
+   "text": "Запомните слова, которые используются для описания квартиры: En casa: cuarto, habitación, sala de estar, salón, comedor, cocina, despacho, dormitorio, alcoba, cuarto de baño, pasillo, recibidor, balcón, ventana, cristal, puerta, pared.\nA. Подберите определения к данным существительным, используя следующие прилагательные: grande, pequeño, amplio, acogedor, cómodo, espacioso, agradable, simpático, bien amueblado, etc.\nB. Опишите квартиру, которую вы видите на картинке (план квартиры в учебнике: Dormitorio Ppal, Dormitorio 2 y 3, Vestidor, Baño Ppal, Baño 2, Despacho – Zona Estudio, Cocina, Recibidor, Salón-Comedor, Pasillo con armarios de servicio).",
+   "kind": "open"
   },
   {
    "number": "12",
@@ -869,27 +891,37 @@
    "pages": [
     92,
     93
-   ]
+   ],
+   "text": "Прочитайте и переведите письмо:\nA la atención de todos mis amigos\nHola, he cambiado de domicilio. ¡Dios mío! Parece mentira pero es verdad. El edificio donde vivo ahora está construido desde hace poco. El apartamento me lo han encontrado en la agencia inmobiliaria. Lo de los precios, ni hablar. Tiene dos dormitorios, una sala de estar, una cocina bastante amplia y dos cuartos de baño. Está en el quinto piso. Hay dos ascensores que funcionan bien, por eso nunca he subido las escaleras a pie. Las ventanas de los dormitorios dan a una calle silenciosa donde hay poco tráfico. Los vecinos tampoco me molestan. Sinceramente, no los he conocido todavía. El apartamento me parece espacioso porque las paredes están pintadas de colores claros y por ahora hay pocos muebles. Necesito consejos útiles sobre cómo amueblarlo. Os los voy a agradecer mucho. De todos modos os prometo dar una fiesta bomba.\nMarcos\nP.S. Mi nueva dirección es: c/Goya 56, 5º-3ª.\nA. Проспрягайте следующие глаголы с зависимыми словами в Presente и в Pretérito Perfecto: cambiar de domicilio, subir las escaleras, no molestar a nadie, pintar las paredes de colores vivos, amueblar el piso, agradecérselo, prometerle muchas cosas, dar una fiesta bomba.\nB. Найдите эквиваленты: невероятно, но это правда; построено недавно; в агентстве по недвижимости; о ценах даже говорить не стоит; лифты, которые работают хорошо; я никогда не поднимался по лестнице пешком; окна выходят на тихую улицу; покрашены в светлые тона; устроить потрясающую вечеринку.\nC. Ответьте на вопросы: 1. ¿Dónde vive Marcos ahora? 2. ¿Cómo ha podido cambiar de domicilio? 3. ¿Cuál es el precio del piso? 4. ¿Cuántas habitaciones tiene el piso? 5. ¿Cuántos ascensores hay en la casa? 6. ¿En qué piso está el apartamento de Marcos? 7. ¿Adónde dan las ventanas? 8. ¿Hay mucho tráfico en la calle? 9. ¿De qué color están pintadas las paredes? 10. ¿Por qué a Marcos le parece espacioso su apartamento? 11. ¿Por qué nunca ha subido las escaleras a pie? 12. ¿Ha conocido a sus vecinos? 13. ¿Qué consejos necesita Marcos? 14. ¿Qué consejos podemos darle? 15. ¿Qué fiesta quiere dar Marcos?\nD. Опишите квартиру Маркоса.",
+   "kind": "closed"
   },
   {
    "number": "13",
    "instruction_ru": "Прочитайте обозначения нумерации квартир в Испании: 2º-2ª, 3º-1ª, 1º-4ª, 1º-3ª, 4º-dcha, 5º-izda, 6º-A, 7º-C, 8º-G, 4º-3ª, 2º-1ª, 3º-3ª, PB",
-   "page": 93
+   "page": 93,
+   "text": "Прочитайте следующие обозначения нумерации квартир в Испании:\n2º-2ª, 3º-1ª, 1º-4ª, 1º-3ª, 4º-dcha, 5º-izda, 6º-A, 7º-C, 8º-G, 4º-3ª, 2º-1ª, 3º-3ª, PB.",
+   "kind": "closed"
   },
   {
    "number": "14",
    "instruction_ru": "Вставьте предлоги и артикли",
-   "page": 93
+   "page": 93,
+   "text": "Вставьте необходимые предлоги и артикли:\n1. ¿Es ___ suyo este apartamento? – No, no es ___ mío, es ___ mis padres. 2. ___ esta semana Sergio ha cambiado ___ domicilio. ¿Sabes ___ su nueva dirección? 3. ___ cuarto ___ mi hija ___ paredes están pintadas ___ colores claros y las ventanas dan ___ calle silenciosa. 4. ___ Juan le han encontrado ___ piso ___ agencia inmobiliaria. 5. ___ mis amigos no les va ___ gustar este apartamento porque ___ edificio no hay ___ ascensor. 6. ___ cuarto ___ baño está ___ derecha ___ sala ___ estar.",
+   "kind": "closed"
   },
   {
    "number": "15",
    "instruction_ru": "Ответьте на вопросы о вашей квартире",
-   "page": 93
+   "page": 93,
+   "text": "Ответьте на вопросы:\n1. ¿Es espacioso el apartamento donde vive Usted? 2. ¿Cuántos dormitorios tiene? 3. ¿Adónde dan las ventanas? 4. ¿Cómo es la cocina? 5. ¿Cómo es la sala de estar? 6. ¿Hay muchos muebles en su apartamento? 7. ¿En qué piso está? 8. ¿Hay ascensor en el edificio? 9. ¿Conoce a sus vecinos? ¿Le molestan?",
+   "kind": "open"
   },
   {
    "number": "16",
    "instruction_ru": "Опишите свою квартиру",
-   "page": 93
+   "page": 93,
+   "text": "Опишите свою квартиру.",
+   "kind": "open"
   },
   {
    "number": "17",
@@ -906,22 +938,30 @@
     "Никому из нас не понравились их цены. Они самые высокие на рынке.",
     "Дверь открыта, зеркало разбито. Что здесь произошло?",
     "Эта квартира уже продана? – Да, её купил какой-то иностранец."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Куда выходят окна Вашей гостиной, на улицу или во двор? 2. Кто-нибудь уже накрыл стол? – Нет, никто из нас этого еще не сделал. 3. Какая комната просторней, моя или твоя? 4. Вам нравится эта спальня? Она самая светлая из всех. 5. Ваш совет, как обставить квартиру, потрясающий. 6. Мне сказали, что его сняли с должности. Это правда? 7. Кто построил самый красивый дом в Барселоне? – Самые красивые дома Барселоны построил известный архитектор Антонио Гауди. 8. Никому из нас не понравились их цены. Они самые высокие на рынке. 9. Дверь открыта, зеркало разбито. Что здесь произошло? 10. Эта квартира уже продана? – Да, её купил какой-то иностранец.",
+   "kind": "closed"
   },
   {
    "number": "18",
    "instruction_ru": "Texto complementario: прочитайте и переведите текст о покупке мебели",
-   "page": 94
+   "page": 94,
+   "text": "Прочитайте и переведите текст:\nAcabas de conseguir tu apartamento y ahora tienes que empezar a amueblarlo. Existen muchas alternativas pero principalmente dependen de un factor: ¿cuál es tu presupuesto? Si la idea de comprar muebles usados no te gusta demasiado, nuestro siguiente consejo es comprar en IKEA (tienen un bus gratuito los fines de semana). No son muebles de gran calidad pero tienen un precio excelente y un diseño contemporáneo. Les gustan a casi todos, en especial a la gente joven que son los que tienen presupuestos más ajustados.",
+   "kind": "closed"
   },
   {
    "number": "19",
    "instruction_ru": "Ответьте на вопросы по тексту",
-   "page": 94
+   "page": 94,
+   "text": "Ответьте на вопросы (по тексту упр. 18):\n1. ¿Te gusta la idea de comprar muebles usados? ¿Por qué? 2. ¿Por qué les gusta a los jóvenes hacer la compra en IKEA? 3. ¿Está lejos IKEA de tu casa? 4. ¿Qué cosas compras en IKEA?",
+   "kind": "closed"
   },
   {
    "number": "20",
    "instruction_ru": "Расскажите о вашем опыте приобретения мебели",
-   "page": 94
+   "page": 94,
+   "text": "Расскажите о вашем опыте приобретения мебели.",
+   "kind": "open"
   }
  ],
  "questions_for_user": []

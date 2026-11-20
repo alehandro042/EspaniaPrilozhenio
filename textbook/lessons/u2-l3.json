@@ -752,7 +752,9 @@
     "¿Lees algo?",
     "¿Firma Usted algún documento?",
     "¿Le gusta este joven a alguna de vosotras?"
-   ]
+   ],
+   "text": "Ответьте на вопросы отрицательно:\n1. ¿Sabes algo? 2. ¿Dice alguien la verdad? 3. ¿Bebes algo? 4. ¿Toma chocolate alguno de vosotros? 5. ¿Quieres algo? 6. ¿Tienes algún documento? 7. ¿Redactas algunas cartas? 8. ¿Dices algo? 9. ¿A alguno de ustedes le gusta este restaurante? 10. ¿A alguien le gusta tomar agua mineral? 11. ¿Comprendes algo? 12. ¿Escribes algunas palabras? 13. ¿Tienes algún certificado? 14. ¿Sabe alguno de ustedes cómo se llama el director financiero? 15. ¿Lees algo? 16. ¿Firma Usted algún documento? 17. ¿Le gusta este joven a alguna de vosotras?",
+   "kind": "closed"
   },
   {
    "number": "2",
@@ -766,7 +768,9 @@
     "У тебя есть какая-нибудь интересная книга? Хочу почитать что-нибудь в поезде. – Нет, у меня нет ни одной интересной книги.",
     "Никто из нас этого не знает.",
     "Я ничего не хочу переводить!"
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. У меня нет никаких новостей (noticia). 2. У тебя есть какие-нибудь испанские журналы? – Нет, у меня нет никаких иностранных журналов. 3. Кто-нибудь знаком с Марией? – Нет, никто не знаком с ней. 4. Пабло ничего не говорит и не хочет ни с кем разговаривать. 5. У тебя есть какая-нибудь интересная книга? Хочу почитать что-нибудь в поезде. – Нет, у меня нет ни одной интересной книги. 6. Никто из нас этого не знает. 7. Я ничего не хочу переводить!",
+   "kind": "closed"
   },
   {
    "number": "3",
@@ -786,7 +790,9 @@
     "¿Sabe usted catalán?",
     "¿Veis una película interesante?",
     "¿Escuchas la radio todas las noches?"
-   ]
+   ],
+   "text": "Проспрягайте ver, mirar, oír, escuchar с зависимыми словами; A – вопросы в парах; B – ответьте отрицательно, используя местоимения-дополнения в винительном падеже:\n1. ¿Ves a aquella joven guapa? 2. ¿Escucha alguno de vosotros la música clásica? 3. ¿Oís este sonido tan extraño? 4. ¿Miras estos libros? 5. ¿Ve usted a los franceses que están en la sala? 6. ¿Me oyes? 7. ¿Conoce usted al embajador chileno? 8. ¿Sabe usted catalán? 9. ¿Veis una película interesante? 10. ¿Escuchas la radio todas las noches?",
+   "kind": "closed"
   },
   {
    "number": "4",
@@ -803,7 +809,9 @@
     "Когда Хосе видит Ольгу, он не знает, что сказать.",
     "Я вижу наш автобус.",
     "Я слушаю Вас внимательно."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Я ничего не вижу, а также ничего не слышу и не хочу с тобой разговаривать. 2. Почему ты на меня так смотришь? Я тебе не нравлюсь? 3. Вечером мы смотрим какой-нибудь фильм по телевизору. 4. Ты любишь слушать музыку дома? – Дома у меня нет времени, я слушаю её в машине. 5. Я слышу голос мамы, которая меня зовет. 6. Слышишь шум? 7. Моя бабушка смотрит телевизор целый день. 8. Когда Хосе видит Ольгу, он не знает, что сказать. 9. Я вижу наш автобус. 10. Я слушаю Вас внимательно.",
+   "kind": "closed"
   },
   {
    "number": "5",
@@ -816,7 +824,9 @@
     "Estamos en el examen desde las 8 de la mañana y todavía no sabemos nuestras notas.",
     "Durante la conferencia ninguno de los estudiantes habla por teléfono, pero muchos envían mensajes.",
     "Tenéis que traducir el texto hasta la página 28."
-   ]
+   ],
+   "text": "Переведите на русский язык:\n1. Durante la clase escribimos dictados, escuchamos diálogos y aprendemos nuevas palabras. 2. Desde aquí no oigo ni veo nada. 3. Quieren terminar todo el trabajo hasta mediodía. 4. Estamos en el examen desde las 8 de la mañana y todavía no sabemos nuestras notas. 5. Durante la conferencia ninguno de los estudiantes habla por teléfono, pero muchos envían mensajes. 6. Tenéis que traducir el texto hasta la página 28.",
+   "kind": "closed"
   },
   {
    "number": "6",
@@ -831,7 +841,9 @@
     "¿A qué clases asistes los jueves?",
     "¿Qué día de la semana ves a tus amigos?",
     "¿Qué día de la semana visitas a tus abuelos?"
-   ]
+   ],
+   "text": "Ответьте на вопросы:\n1. ¿Qué día de la semana es hoy? 2. ¿Cuántas clases tienes los lunes? 3. ¿Cuántas clases tienes los sábados? ¿Y los domingos? 4. ¿Cuántas clases de idiomas tienes los viernes? 5. ¿Qué día de la semana asistes a las conferencias de relaciones económicas internacionales (historia, relaciones públicas, filosofía, contabilidad)? 6. ¿A qué clases asistes los jueves? 7. ¿Qué día de la semana ves a tus amigos? 8. ¿Qué día de la semana visitas a tus abuelos?",
+   "kind": "closed"
   },
   {
    "number": "7",
@@ -843,7 +855,9 @@
     "Какой сегодня день недели?",
     "По четвергам Мария учится водить машину.",
     "Хочешь посмотреть новый фильм в эту субботу?"
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. В этом семестре по пятницам у нас философия и современная международная политика. 2. Сегодня воскресенье, и у меня нет уроков. 3. Какой сегодня день недели? 4. По четвергам Мария учится водить машину. 5. Хочешь посмотреть новый фильм в эту субботу?",
+   "kind": "closed"
   },
   {
    "number": "8",
@@ -856,7 +870,9 @@
     "Mi hermano hace un máster en París.",
     "Pongo la radio y escucho música.",
     "¿Qué notas os pone la profesora en clase de español?"
-   ]
+   ],
+   "text": "Проспрягайте hacer и poner с зависимыми словами; A – вопросы в парах; B – переведите на русский:\n1. ¿Quién hace este ruido? 2. El jueves hago una ponencia en la Universidad. 3. ¿Quieres poner la mesa? 4. Mi hermano hace un máster en París. 5. Pongo la radio y escucho música. 6. ¿Qué notas os pone la profesora en clase de español?",
+   "kind": "closed"
   },
   {
    "number": "9",
@@ -870,7 +886,9 @@
     "Hijos, mamá ___ un plato sabroso, y vosotros ___ la mesa.",
     "Juanito, (tú) no debes ___ ruido cuando la abuela escucha la radio.",
     "Señor, ¿me ___ usted un favor?"
-   ]
+   ],
+   "text": "Вставьте hacer или poner в нужной форме и переведите:\n1. Elena e Isabel están en Madrid, ___ un máster en la Universidad Complutense. 2. El viernes (nosotros) ___ una comunicación en clase de Ciencias Sociales. 3. ¡Me encanta la salsa cubana! ¿Quieres ___ este disco? 4. Cuando los estudiantes no ___ la tarea de casa, el profesor les ___ una mala nota. 5. Hijos, mamá ___ un plato sabroso, y vosotros ___ la mesa. 6. Juanito, (tú) no debes ___ ruido cuando la abuela escucha la radio. 7. Señor, ¿me ___ usted un favor?",
+   "kind": "closed"
   },
   {
    "number": "10",
@@ -885,7 +903,9 @@
     "Ты выступаешь с докладом в первой половине дня, а я после обеда.",
     "Дети так шумят, а дедушка смотрит телевизор.",
     "Ты сделаешь мне одолжение, поставишь диск? Хочу немного послушать музыку."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Рауль ничего не делает и не хочет ничего делать. 2. Я кладу учебник на стол и начинаю делать домашнее задание. 3. Ты учишься в магистратуре за границей? 4. Какую оценку Вы мне ставите? 5. Я не делаю ничего плохого. – Хорошего тоже. 6. Ты выступаешь с докладом в первой половине дня, а я после обеда. 7. Дети так шумят, а дедушка смотрит телевизор. 8. Ты сделаешь мне одолжение, поставишь диск? Хочу немного послушать музыку.",
+   "kind": "closed"
   },
   {
    "number": "11",
@@ -909,22 +929,30 @@
     "Наш преподаватель не любит ставить хорошие оценки.",
     "Какие оценки ты получаешь на экзаменах?",
     "Какие предметы Вы сдаете сейчас?"
-   ]
+   ],
+   "text": "Para conocer más: запомните выражения, связанные с учебой; A – проспрягайте (examinarse de matemáticas, aprobarlas bien, sacar un sobresaliente, no prepararse bien para las clases, suspender dos exámenes, ponerle un notable); B – переведите на русский; C – переведите на испанский:\n1. ¿Cuándo os examináis de Ciencias Sociales? – Nos examinamos el viernes. 2. Todos los años le suspenden en dos asignaturas. 3. José y Pablo son buenos estudiantes, siempre sacan notas sobresalientes. 4. Nos encanta aprender idiomas extranjeros, pero no nos gusta tener exámenes. 5. Todos los años Manolo suspende inglés. 6. Cuando me preparo bien para la clase, el profesor me pone una buena nota. 7. Este año tienen que aprobar todos los exámenes. 8. Когда у тебя экзамен по философии? 9. Наша группа всегда хорошо сдает все экзамены. 10. Ты не провалишься! 11. Какой экзамен ты сдаешь? 12. Наш преподаватель не любит ставить хорошие оценки. 13. Какие оценки ты получаешь на экзаменах? 14. Какие предметы Вы сдаете сейчас?",
+   "kind": "closed"
   },
   {
    "number": "12",
    "instruction_ru": "Прочитайте и переведите письмо Фелипе; A – проспрягайте (hacer un máster, escribir una carta desde Madrid, prepararse para las clases, examinarse de tres asignaturas, aprobarlas con notas sobresalientes, poner la nota final, no tener nada que ver con eso, comparar las notas); B – ответьте на вопросы; C – расскажите о Фелипе",
-   "page": 53
+   "page": 53,
+   "text": "Прочитайте и переведите письмо:\nHola, Julia. Te escribo esta carta desde Madrid. Como sabes, estoy aquí para hacer un máster en la Escuela Diplomática. Tenemos clases de lunes a viernes. Los sábados y domingos descansamos y nos preparamos para las clases de la semana siguiente. Tengo que examinarme de tres asignaturas: Relaciones Económicas Internacionales, Derecho Internacional, Historia de Relaciones Internacionales. Todas son pruebas escritas. Espero aprobarlas con notas sobresalientes. En el diploma ponen la nota final. Las notas en España no tienen nada que ver con las nuestras. Aquí las tienes para comparar:\nsuspenso 0,0–4,9; aprobado 5,0–6,9; notable 7,0–8,9; sobresaliente 9,0–9,9; matrícula de honor 10,0.\nHasta la próxima. Un beso, Felipe.\nA. Проспрягайте следующие глаголы с зависимыми словами: hacer un máster, escribir una carta desde Madrid, prepararse para las clases, examinarse de tres asignaturas, aprobarlas con notas sobresalientes, poner la nota final, no tener nada que ver con eso, comparar las notas.\nB. Ответьте на вопросы: 1. ¿Dónde estudia Felipe? 2. ¿Qué materias estudia? 3. ¿Le gusta estudiar? 4. ¿Qué días de la semana estudia? 5. ¿Cuándo descansa? 6. ¿Cuándo se prepara para las clases? 7. ¿Estudia bien? 8. ¿De qué asignaturas tiene que examinarse? 9. ¿Espera aprobarlas bien? 10. ¿A quién escribe esta carta? 11. ¿Quién es Julia? 12. ¿Sabemos qué es? 13. ¿Qué notas ponen en España?\nC. Расскажите о Фелипе и его занятиях в Мадридской Дипломатической Школе.",
+   "kind": "closed"
   },
   {
    "number": "13",
    "instruction_ru": "Вставьте слова: matrícula de honor, hacer un máster, empresa internacional, poner notas, prueba escrita, relaciones económicas internacionales, aprobar, prepararse, examinarse",
-   "page": 53
+   "page": 53,
+   "text": "Вставьте подходящие по смыслу слова: matrícula de honor, hacer un máster, empresa internacional, poner notas, prueba escrita, relaciones económicas internacionales, aprobar, prepararse, examinarse.\nFelipe está ahora en Madrid, ___ en la Escuela Diplomática. Es un buen estudiante, ___ bien para las clases, y los profesores le ___ sobresalientes. Quiere ___ todas las asignaturas con ___. Este año ___ de tres asignaturas, todas son ___. Le gusta mucho estudiar ___ en el magisterio, quiere trabajar en una ___.",
+   "kind": "closed"
   },
   {
    "number": "14",
    "instruction_ru": "Вставьте предлоги и артикли",
-   "page": 53
+   "page": 53,
+   "text": "Вставьте необходимые предлоги и артикли:\n1. Ana estudia mucho ___ sacar ___ buenas notas. 2. Quiero ___ aprobar todas ___ asignaturas ___ notas sobresalientes. 3. Mi hermano está ahora ___ España, hace ___ máster ___ Universidad ___ Barcelona. Dice que le encanta ___ país. 4. Este año nos examinamos ___ cuatro asignaturas, todas son ___ pruebas escritas. 5. ___ estudiantes tienen clases ___ lunes ___ sábado y ___ domingos descansan y se preparan ___ clases ___ semana siguiente.",
+   "kind": "closed"
   },
   {
    "number": "15",
@@ -938,12 +966,16 @@
     "¿Apruebas bien todos los exámenes?",
     "¿De qué asignaturas te examinas este semestre?",
     "¿Cómo te preparas para las pruebas?"
-   ]
+   ],
+   "text": "Ответьте на вопросы:\n1. ¿Se parecen las notas en España a las notas en Rusia? ¿Por qué? 2. ¿Qué tenemos que hacer para sacar buenas notas? 3. ¿Y tú? ¿Sacas buenas notas? 4. ¿Qué notas te pone el profesor de inglés? ¿Y el de español? 5. ¿Apruebas bien todos los exámenes? 6. ¿De qué asignaturas te examinas este semestre? 7. ¿Cómo te preparas para las pruebas?",
+   "kind": "open"
   },
   {
    "number": "16",
    "instruction_ru": "Расскажите, какие экзамены и как вы сдаете",
-   "page": 54
+   "page": 54,
+   "text": "Расскажите, какие экзамены и как вы сдаете.",
+   "kind": "open"
   },
   {
    "number": "17",
@@ -970,7 +1002,9 @@
     "Почему ты не слушаешь преподавателя?",
     "Ты слышишь меня? – Нет, я смотрю на красивых девушек.",
     "Где мой учебник? – Ты не видишь, что он лежит на столе?"
-   ]
+   ],
+   "text": "Переведите на испанский язык (A и B):\n1. С понедельника я начинаю работать в банке. 2. Во вторник у нас экзамен по экономике. 3. По средам я делаю домашнее задание по испанскому. 4. Никто не приходит на занятия по субботам. 5. В воскресенье я не учусь и у меня много свободного времени. Я смотрю телевизор и слушаю музыку. 6. Никто из них не хочет идти на конференцию по экологии. 7. Ты читаешь книгу по истории России? – Нет, я ничего не читаю. 8. Во время урока мы много читаем, разговариваем и пишем. 9. До пятницы я хочу отправить электронные письма своим друзьям. 10. Ты видишь что-нибудь? – Нет, я ничего не вижу, но слышу какой-то шум. 11. Кто-нибудь из вас сдает экзамен во вторник? – Нет, мы сдаем международные экономические отношения в среду. 12. Ты знаешь, что этот экзамен письменный? 13. Вам нравится оценка, которую я Вам ставлю? 14. Мой друг очень хорошо говорит по-английски. – Почему же ему ставят двойку на экзамене? – Он плохо знает грамматику. 15. Все студенты нашей группы получают отличные оценки на экзамене по испанскому языку. 16. Кто-нибудь из вас делает сегодня доклад? – Нет, никто. 17. Никому не нравится получать плохие отметки. 18. Почему ты не слушаешь преподавателя? 19. Ты слышишь меня? – Нет, я смотрю на красивых девушек. 20. Где мой учебник? – Ты не видишь, что он лежит на столе?",
+   "kind": "closed"
   },
   {
    "number": "18",
@@ -978,12 +1012,16 @@
    "pages": [
     54,
     55
-   ]
+   ],
+   "text": "Прочитайте и переведите расписание занятий:\nUniversidad de Sevilla. Facultad de Ciencias Económicas y Empresariales. Curso 2017/2018. Primer cuatrimestre. Grado en economía. Curso 2° Grupo 1 (mañana).\nHORARIO DE CLASES\n10.00–11.30: lunes – Historia Económica II; martes – Microeconomía II; miércoles – Historia Económica II; jueves – Microeconomía II; viernes – Matemáticas II.\n12.00–13.30: lunes – Macroeconomía I; martes – Estadística Avanzada; miércoles – Matemáticas II; jueves – Macroeconomía I; viernes – Estadística Avanzada.\n(9.00–9.30 и 14.00–14.30 – занятий нет.)",
+   "kind": "closed"
   },
   {
    "number": "19",
    "instruction_ru": "Составьте свое расписание занятий",
-   "page": 55
+   "page": 55,
+   "text": "Составьте свое расписание занятий.",
+   "kind": "open"
   }
  ],
  "questions_for_user": []

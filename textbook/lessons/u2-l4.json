@@ -605,7 +605,9 @@
     "¿Quién sabe redactar textos en Microsoft Word? – Mujer, cada una sabe hacerlo.",
     "Cada día hacéis la tarea de casa y la profesora os pone una nota.",
     "Cada mes su amigo chileno le envía una carta."
-   ]
+   ],
+   "text": "Переведите на русский язык (cada, cada uno):\n1. Cada uno lo sabe. 2. Cada año académico tenemos nuevas asignaturas. 3. Cada uno hace con su vida lo que quiere. 4. Cada empleado quiere ser jefe. 5. Soy director financiero y tengo que leer y firmar cada documento. 6. ¿Quién sabe redactar textos en Microsoft Word? – Mujer, cada una sabe hacerlo. 7. Cada día hacéis la tarea de casa y la profesora os pone una nota. 8. Cada mes su amigo chileno le envía una carta.",
+   "kind": "closed"
   },
   {
    "number": "2",
@@ -619,17 +621,23 @@
     "Каждый должен учиться.",
     "Каждый испанец любит кофе.",
     "Каждый человек похож на своих родителей."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Каждый студент сдает экзамены. 2. Каждый новый учебный год начинается в сентябре. 3. Каждая девушка хочет выйти замуж, не так ли? 4. Каждый делает свою работу. 5. Каждый должен учиться. 6. Каждый испанец любит кофе. 7. Каждый человек похож на своих родителей.",
+   "kind": "closed"
   },
   {
    "number": "3",
    "instruction_ru": "Проспрягайте dar и poder с зависимыми словами; задайте в парах вопросы",
-   "page": 56
+   "page": 56,
+   "text": "Проспрягайте глаголы dar и poder с зависимыми словами (dar: un bolígrafo a José, alguna información, clases, las gracias, los buenos días, buenos resultados; poder: verlos, conocerla, trabajar mucho). Задайте в парах вопросы, используя эти словосочетания.",
+   "kind": "open"
   },
   {
    "number": "4",
    "instruction_ru": "Вставьте dar или poder в нужной форме и переведите",
-   "page": 56
+   "page": 56,
+   "text": "Вставьте необходимый по смыслу глагол (dar, poder) в нужной форме и переведите предложения:\n1. La madre de Marta es profesora, ___ clases de español y de inglés. 2. ¿Por qué entras en el aula y no ___ los buenos días a nadie? 3. (Yo) no ___ hacer este trabajo porque no sé leer en chino. 5. Profesora, ¿(nosotros) ___ hacerle una pregunta? 6. (Vosotros) no ___ entrar aquí, es una casa privada. 7. ¿Quién me ___ un bolígrafo? No ___ encontrarlo. 8. Hijo, siempre debes ___ las gracias cuando te ofrecen algo.\n(Пункт 4 в учебнике пропущен.)",
+   "kind": "closed"
   },
   {
    "number": "5",
@@ -645,7 +653,9 @@
     "Можешь сказать спасибо своему брату? – Это его работа.",
     "Почему Вы не здороваетесь?",
     "Почему это не дает никаких результатов?"
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Я даю тебе синюю ручку, а ты мне черную. 2. Я не могу дать Вам никакой информации. 3. Занятия, которые ведет наш преподаватель, очень интересные. Всегда все присутствуют. 4. Можешь сказать спасибо своему брату? – Это его работа. 5. Почему Вы не здороваетесь? 6. Почему это не дает никаких результатов?",
+   "kind": "closed"
   },
   {
    "number": "6",
@@ -668,12 +678,16 @@
     "¿Me la escribes?",
     "¿Nos lo lees?",
     "¿Se lo preguntas?"
-   ]
+   ],
+   "text": "Ответьте на вопросы по образцу: ¿Me lo explicas? – Quiero explicártelo.:\n1. ¿Me escuchas? 2. ¿Me oyes? 3. ¿La miras? 4. ¿Me lo dices? 5. ¿Me lo ofreces? 6. ¿Me la presentas? 7. ¿Nos das las gracias? 8. ¿Le das alguna información? 9. ¿La conoces? 10. ¿Lo sabes? 11. ¿Nos lo enseñas? 12. ¿Se lo haces? 13. ¿Me lo traduces? 14. ¿Me la escribes? 15. ¿Nos lo lees? 16. ¿Se lo preguntas?",
+   "kind": "closed"
   },
   {
    "number": "7",
    "instruction_ru": "Замените выделенные слова на местоимения-дополнения",
-   "page": 57
+   "page": 57,
+   "text": "Замените выделенные (здесь – между звездочками) слова на местоимения-дополнения:\n1. Puedes hacer un *máster* en el extranjero. 2. Dos alumnos leen *un diálogo*. 3. ¿Quién puede traducir *estas frases*? 4. ¿Para qué haces *este trabajo*? 5. ¿Das *el teléfono a María*? 6. Le ofrezco *a usted una taza de café*. 7. Damos *los buenos días a todos los presentes*. 8. El profesor da *clases a los estudiantes*. 9. ¿Sabes hablar *italiano*? 10. El embajador presenta *al jefe de la delegación comercial a los diplomáticos*. 11. Elisa presenta *a sus padres a sus amigos*. 12. La profesora pone *a los estudiantes buenas notas*. 13. La secretaria envía *correos electrónicos a los clientes*. 14. El jefe no quiere firmar *el documento*. 15. ¿Quién puede explicarnos *este tema*?",
+   "kind": "closed"
   },
   {
    "number": "8",
@@ -686,12 +700,16 @@
     "Преподаватель ставит этому студенту плохую оценку. Почему он ему её ставит?",
     "Внук не пишет писем своей бабушке. Почему он их ей не пишет?",
     "Клиенты задают служащему банка много вопросов. Почему они ему их задают?"
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Ты можешь дать мне этот коричневый карандаш? – Нет, я не могу тебе его дать. Он мне нужен. 2. Ты хочешь съесть эти фрукты? – Нет, я не хочу их есть, они мне не нравятся. 3. Ты умеешь водить машину? – Нет, я не умею её водить. 4. Преподаватель ставит этому студенту плохую оценку. Почему он ему её ставит? 5. Внук не пишет писем своей бабушке. Почему он их ей не пишет? 6. Клиенты задают служащему банка много вопросов. Почему они ему их задают?",
+   "kind": "closed"
   },
   {
    "number": "9",
    "instruction_ru": "Ответьте на вопросы о датах (A — числа, B — месяцы и времена года)",
-   "page": 58
+   "page": 58,
+   "text": "Ответьте на вопросы:\nA. (по образцу: ¿Estamos a trece de mayo? – No, no estamos a trece de mayo, estamos a once de enero.) 1. ¿Estamos a primero de enero? 2. ¿Estamos a dos de febrero? 3. ¿Estamos a tres de marzo? 4. ¿Estamos a cuatro de abril? 5. ¿Estamos a cinco de mayo? 6. ¿Estamos a seis de junio? 7. ¿Estamos a siete de julio? 8. ¿Estamos a diez de agosto? 9. ¿Estamos a doce de septiembre? 10. ¿Estamos a quince de octubre? 11. ¿Estamos a veinte de noviembre? 12. ¿Estamos a treinta y uno de diciembre? 13. ¿A cuántos estamos hoy?\nB. 1. ¿Estamos en enero? 2. ¿Estamos en febrero? 3. ¿Estamos en marzo? 4. ¿Estamos en mayo? 5. ¿Estamos en agosto? 6. ¿Estamos en setiembre? 7. ¿Estamos en noviembre? 8. ¿Estamos en diciembre? 9. ¿En qué mes estamos? 10. ¿Estamos en invierno? 11. ¿Estamos en primavera? 12. ¿Estamos en verano? 13. ¿En qué estación del año estamos? 14. ¿Cuáles son los meses de invierno? 15. ¿Cuáles son los meses de primavera? 16. ¿Cuáles son los meses de verano? 17. ¿Cuáles son los meses de otoño? 18. ¿Cuándo es tu cumpleaños?",
+   "kind": "closed"
   },
   {
    "number": "10",
@@ -704,7 +722,9 @@
     "Я так люблю зиму! – А я не люблю.",
     "В июне, июле и августе у нас нет уроков, мы отдыхаем, гуляем (pasear), смотрим фильмы.",
     "День рождения Серхио в октябре или в ноябре?"
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. В российских университетах студенты сдают экзамены в январе и в июне. 2. Какое сегодня число? – Сегодня 8 августа. 3. В Испании сейчас осень, а в Аргентине – весна. 4. Я так люблю зиму! – А я не люблю. 5. В июне, июле и августе у нас нет уроков, мы отдыхаем, гуляем (pasear), смотрим фильмы. 6. День рождения Серхио в октябре или в ноябре?",
+   "kind": "closed"
   },
   {
    "number": "11",
@@ -712,7 +732,9 @@
    "pages": [
     58,
     59
-   ]
+   ],
+   "text": "Запомните основные этапы системы среднего образования в Испании:\nLa Educación Primaria tiene carácter obligatorio y gratuito. Comprende tres ciclos de dos años cada uno, en total, seis cursos académicos, para los alumnos entre los seis y los doce años de edad.\nLa Educación Secundaria Obligatoria (ESO) es una etapa educativa obligatoria y gratuita que completa la educación básica. Consta de cuatro cursos académicos para los alumnos entre los 12 y los 16 años de edad.\nEl bachillerato forma parte de la educación secundaria postobligatoria y tiene carácter voluntario. Consta de dos cursos académicos para los estudiantes entre los 16 y 18 años de edad. Después de concluir el bachillerato uno puede prepararse para las pruebas de acceso a la Universidad.\nA. Найдите эквиваленты: начальное образование; обязательный и бесплатный характер; охватывает три этапа; обязательное среднее образование; завершает базовое образование; старшие классы средней школы; является частью; носит добровольный характер; получить аттестат о среднем образовании.\nB. Ответьте на вопросы: 1. ¿Qué carácter tiene la Educación Primaria? 2. ¿De cuántos cursos académicos consta? 3. ¿De qué edad son los alumnos? 4. ¿Qué carácter tiene la Educación Secundaria Obligatoria? 5. ¿De cuántos cursos académicos consta? 6. ¿De qué edad son los alumnos? 7. ¿Qué carácter tiene el bachillerato? 8. ¿De cuántos cursos académicos consta? 9. ¿De qué edad son los estudiantes?\nC. Выберите определение для следующих слов: academia, colegio, escuela, instituto, universidad.\n• Centro de estudios donde uno puede concluir el bachillerato. • Establecimientos de enseñanza para niños. • Institución de enseñanza superior que comprende diversas escuelas denominadas facultades, colegios, institutos o departamentos, según las épocas y países. • Establecimiento de enseñanza de diferentes tipos. • Establecimiento docente donde instruyen a los que se dedican a algún tipo de actividades.\nD. Вставьте подходящий по смыслу тип учебного заведения: 1. Los niños van al ___ cada día. 2. Ramón puede concluir el bachillerato en el ___ de Ramiro Maeztú en Madrid. 3. A Ana le gusta la pintura y quiere matricularse en la ___ de Bellas Artes. 4. Cada uno puede obtener DELE en el ___ Cervantes. 5. Las ___ públicas son gratuitas para los niños. 6. ¿Cuántas facultades tiene la ___ Autónoma de Barcelona? 7. La ___ Superior de Turismo organiza cursos de verano para los extranjeros.",
+   "kind": "closed"
   },
   {
    "number": "12",
@@ -720,27 +742,37 @@
    "pages": [
     59,
     60
-   ]
+   ],
+   "text": "Прочитайте и переведите текст:\nNuevo Sistema Educativo Español\nActualmente la enseñanza obligatoria hasta los dieciséis años es universal. En torno al 80% de los jóvenes cursa estudios de Bachillerato y el 30% de los jóvenes españoles estudia en la Universidad.\nAunque todos los españoles tienen derecho a una enseñanza pública y gratuita, también cada uno tiene derecho a escoger la enseñanza privada. A propósito, casi en todos los centros privados de Primaria se imparte enseñanza gratuita subvencionada.\nHoy en día la enseñanza afronta una profunda reforma que afecta a todos los niveles educativos.\nAquí tenemos el modelo del Nuevo Sistema Educativo Español: (схема по возрастам) Educación Infantil (0–6 años: Ciclo I, Ciclo II); Educación Primaria (6–12: Ciclo I, II, III); Educación Secundaria Obligatoria (12–16: Ciclo I, II) – вместе Educación Básica Obligatoria; Educación Secundaria: Bachillerato или Ciclos formativos de Grado Medio (16–18); Pruebas de acceso a la Universidad (18–19); Educación Superior: Educación Universitaria, Ciclos formativos de Grado Superior. (Fuente: Ministerio de Educación y Ciencia)\nA. Найдите эквиваленты: в настоящее время; новая образовательная система Испании; около 80%; учиться (2 варианта); имеют право на государственное и бесплатное образование; кстати; дается бесплатное дотационное образование; сегодня; переживает глубокую реформу; затрагивает все образовательные уровни.\nB. Проспрягайте следующие глаголы с зависимыми словами: cursar estudios de Bachillerato, tener derecho a una enseñanza pública y gratuita, escoger la enseñanza privada, impartir enseñanza gratuita, afrontar problemas, comparar los sistemas educativos.\nC. Ответьте на вопросы: 1. ¿A qué edad empieza la enseñanza en España? 2. ¿Qué etapas tiene el Nuevo Sistema Educativo Español? 3. ¿Es obligatoria la enseñanza? 4. ¿Es gratuita? 5. ¿Dónde se imparte la enseñanza gratuita? 6. ¿Cuántos jóvenes españoles cursan estudios de Bachillerato? 7. ¿Cuántos jóvenes españoles estudian en la Universidad? 8. ¿A qué enseñanza tienen derecho los españoles? 9. ¿Qué afronta la enseñanza en España actualmente? 10. ¿A qué niveles educativos afecta la reforma?\nD. Расскажите о новой системе образования в Испании.",
+   "kind": "closed"
   },
   {
    "number": "13",
    "instruction_ru": "Вставьте слова: ser universal, constar de, enseñanza obligatoria, educación superior, sistema educativo, carácter voluntario, tener derecho, educación básica, parecerse",
-   "page": 60
+   "page": 60,
+   "text": "Вставьте подходящие по смыслу слова: ser universal, constar de, enseñanza obligatoria, educación superior, sistema educativo, carácter voluntario, tener derecho, educación básica, parecerse.\nEl ___ español ___ en algo al sistema ruso. Todo español ___ a una enseñanza pública y gratuita. El sistema actual ___ cuatro etapas: educación infantil, ___ obligatoria, educación secundaria y ___. Actualmente en España la ___ hasta los 16 años ___. La educación secundaria postobligatoria tiene ___.",
+   "kind": "closed"
   },
   {
    "number": "14",
    "instruction_ru": "Вставьте предлоги и артикли",
-   "page": 60
+   "page": 60,
+   "text": "Вставьте необходимые предлоги и артикли:\n1. Hoy ___ día ___ jóvenes empiezan ___ trabajar durante ___ estudios ___ universidad. 2. ___ Rusia ___ enseñanza obligatoria ___ 14 años es universal. 3. Todo ___ ciudadano tiene derecho ___ enseñanza pública y gratuita. 4. ___ propósito, si quieres aprender ___ español, ___ universidad ofrece ___ cursos gratuitos ___ alumnos. 5. ___ nueva reforma afecta ___ todos ___ niveles educativos.",
+   "kind": "closed"
   },
   {
    "number": "15",
    "instruction_ru": "Ответьте на вопросы о системе образования в России",
-   "page": 60
+   "page": 60,
+   "text": "Ответьте на вопросы:\n1. ¿Cuándo empieza el año académico en Rusia? 2. ¿A qué edad empiezan los estudios en Rusia? 3. ¿De cuántos cursos académicos consta la educación primaria? 4. ¿Y la educación secundaria? 5. ¿Hasta qué edad es obligatoria la enseñanza en Rusia? 6. ¿Es gratuita la enseñanza en Rusia? 7. ¿Quién tiene derecho a una enseñanza pública y gratuita? 8. ¿Podemos comparar los sistemas educativos en Rusia y en España?",
+   "kind": "open"
   },
   {
    "number": "16",
    "instruction_ru": "Расскажите о системе образования в России",
-   "page": 60
+   "page": 60,
+   "text": "Расскажите о системе образования в России.",
+   "kind": "open"
   },
   {
    "number": "17",
@@ -757,22 +789,30 @@
     "Я люблю весну, а мои родители любят осень.",
     "Кто-нибудь знает, в каком месяце начинается учебный год в Испании? – Никто из нас этого не знает.",
     "Среднее образование является обязательным во многих странах."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Вы не знаете, какое сегодня число. Мы тоже этого не знаем. 2. Каждый студент сдает экзамен по иностранному языку. 3. Кто-нибудь из вас изучает международное право? – Здесь каждый его изучает. 4. Эта система дает хорошие результаты. 5. Вы можете объяснить мне, какие образовательные уровни затрагивает новая реформа в Испании? 6. У тебя новая машина? Можешь показать мне её? 7. Ты не знаком с нашей переводчицей? Сейчас я тебе её представлю. 8. Я люблю весну, а мои родители любят осень. 9. Кто-нибудь знает, в каком месяце начинается учебный год в Испании? – Никто из нас этого не знает. 10. Среднее образование является обязательным во многих странах.",
+   "kind": "closed"
   },
   {
    "number": "18",
    "instruction_ru": "Texto complementario: прочитайте и переведите текст «Colegio Liceo Europeo de Madrid»",
-   "page": 61
+   "page": 61,
+   "text": "Прочитайте и переведите текст:\nColegio Liceo Europeo de Madrid, uno de los colegios más valorados de Madrid\nEl Colegio Liceo Europeo, Madrid, es un centro privado de infantil, primaria, secundaria y ESO (Educación Secundaria Obligatoria). Aquí trabajan 95 profesores altamente cualificados.\nFundado en 1982, el colegio desarrolla en su proyecto educativo las tradiciones de enseñanza activa que nacen precisamente en Madrid a finales del siglo XIX.\nEl Liceo Europeo ofrece a sus alumnos una enseñanza basada en la práctica y la experiencia personal de cada uno de ellos, fomentando la curiosidad por investigar y descubrir lo desconocido.\nEl Colegio Liceo Europeo tiene fantásticas instalaciones deportivas, comedor y biblioteca. Destaca en actividades extraescolares de diversa tipología: jornadas de química, cursos de esquí, etc.",
+   "kind": "closed"
   },
   {
    "number": "19",
    "instruction_ru": "Ответьте на вопросы по тексту",
-   "page": 61
+   "page": 61,
+   "text": "Ответьте на вопросы (по тексту упр. 18):\n1. ¿Cómo es El Colegio Liceo Europeo? 2. ¿Dónde está? 3. ¿Qué tradiciones desarrolla? 4. ¿Qué enseñanza ofrece a sus alumnos? 5. ¿Qué tiene este colegio? 6. ¿Le gusta este colegio o no? ¿Por qué?",
+   "kind": "closed"
   },
   {
    "number": "20",
    "instruction_ru": "Расскажите о школе, в которой вы учились",
-   "page": 61
+   "page": 61,
+   "text": "Расскажите о школе, в которой вы учились.",
+   "kind": "open"
   }
  ],
  "questions_for_user": []

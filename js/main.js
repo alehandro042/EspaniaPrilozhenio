@@ -619,7 +619,7 @@ function aiContext() {
 // Для ИИ берём только тестовые и переводные упражнения (разговорные не нужны — просьба пользователя)
 const EX_OK = /переведите|переведите|вставьте|раскройте|трансформир|расставьте|проспрягайте|замените|закончите|поставьте|соотнесите|образуйте|употребл|выберите|дополните|соедините|напишите/i;
 const EX_NO = /^(расскажите|составьте рассказ|составьте свое|прочитайте, следя|сравните|сосчитайте|скажите)|повторите диалог|по ролям/i;
-const aiExercise = x => EX_OK.test(x.instruction_ru || '') && !EX_NO.test(x.instruction_ru || '');
+const aiExercise = x => x.kind ? x.kind === 'closed' : EX_OK.test(x.instruction_ru || '') && !EX_NO.test(x.instruction_ru || '');
 function findExercise(spec) {
   const [lidS, ...rest] = String(spec).split(':'); const lid = +lidS; const num = decodeURIComponent(rest.join(':'));
   const L = book.lessons.get(lid); const ex = L && (L.exercises || []).find(x => String(x.number) === num && aiExercise(x));
@@ -628,16 +628,16 @@ function findExercise(spec) {
 // Запрос к ИИ: текст упражнения + словарь и грамматика урока (только из учебника)
 function exercisePrompt({ L, ex, m }) {
   const pg = ex.page ?? (ex.pages || []).join('–');
-  const extra = Object.entries(ex).filter(([k]) => !['number', 'instruction_ru', 'page', 'pages'].includes(k))
+  const extra = ex.text ? ex.text : Object.entries(ex).filter(([k]) => !['number', 'instruction_ru', 'page', 'pages'].includes(k))
     .map(([k, v]) => Array.isArray(v) ? v.map((x, i) => `${i + 1}) ${typeof x === 'string' ? x : JSON.stringify(x)}`).join('\n') : (typeof v === 'string' ? v : JSON.stringify(v))).join('\n');
   // если задание ссылается на другое упражнение («слова из упражнения 2») — добавим и его текст
   const refN = (ex.instruction_ru || '').match(/упр(?:ажнени[ея]|\.)\s*(\d+)/i)?.[1];
   const refEx = refN && (L.exercises || []).find(x => String(x.number) === refN && x !== ex);
-  const refTxt = refEx ? `\n\nУпражнение ${refN} (на него ссылается задание): ${refEx.instruction_ru || ''}\n${(refEx.items || []).map((x, i) => `${i + 1}) ${typeof x === 'string' ? x : JSON.stringify(x)}`).join('\n')}` : '';
+  const refTxt = refEx ? `\n\nУпражнение ${refN} (на него ссылается задание): ${refEx.text || (refEx.instruction_ru || '') + '\n' + (refEx.items || []).map((x, i) => `${i + 1}) ${typeof x === 'string' ? x : JSON.stringify(x)}`).join('\n')}` : '';
   const gram = (L.grammar || []).map(g => `${g.id} ${g.title}${g.points?.length ? ': ' + g.points.join(' ') : ''}`).join('\n').slice(0, 4000);
   const vocab = (book.byLesson.get(m.id) || []).filter(hasRu).slice(0, 200).map(i => `${i.es} — ${i.ru}`).join('; ');
   return `Помоги выполнить упражнение из учебника «Español Actual. Начальный курс»: Unidad ${m.unit}, урок ${m.lesson}, упражнение ${ex.number}${pg ? ` (с. ${pg})` : ''}.
-Задание: ${ex.instruction_ru || ''}${extra ? '\n' + extra : ''}${refTxt}
+${ex.text ? 'Текст упражнения:\n' + ex.text : 'Задание: ' + (ex.instruction_ru || '') + (extra ? '\n' + extra : '')}${refTxt}
 
 Дай ответы по пунктам, с номерами, и к каждому короткое объяснение по-русски (какое правило работает). Используй слова и грамматику этого урока (ниже). Если для упражнения нужен текст, картинка или диалог из учебника, которых здесь нет, так и скажи и сделай то, что возможно.
 
@@ -657,7 +657,7 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
   view.innerHTML = `
     ${hasKey ? `<div class="chat" id="chat">${chatLog.map(m => `<div class="bubble ${m.role === 'user' ? 'me' : 'ai'}">${esc(m.show || m.text)}</div>`).join('') || `<div class="empty-note">Спросите что угодно про испанский: перевод, грамматику, как сказать фразу.</div>`}</div>`
       : `<div class="c stack"><b>ИИ-помощник</b><div class="mut small">Чтобы отвечать прямо здесь, нужен ваш ключ ИИ (Gemini, Groq, Mistral и др., есть бесплатные). Без ключа вопрос можно задать в приложении Gemini: кнопка скопирует запрос и откроет Gemini.</div><a class="btn line" href="#/profile">Добавить ключ ИИ</a></div>`}
-    ${exSel ? `<div class="c stack"><b>📘 Урок ${exSel.m.lesson} · Unidad ${exSel.m.unit}, упражнение ${esc(exSel.ex.number)}</b><div class="mut small">${esc(exSel.ex.instruction_ru || '')}</div>
+    ${exSel ? `<div class="c stack"><b>📘 Урок ${exSel.m.lesson} · Unidad ${exSel.m.unit}, упражнение ${esc(exSel.ex.number)}</b><div class="mut small">${esc(exSel.ex.instruction_ru || '')}</div>${exSel.ex.text ? `<details><summary class="small">Текст упражнения</summary><div class="small" style="white-space:pre-wrap;margin-top:6px">${esc(exSel.ex.text)}</div></details>` : ''}
       <div class="btns">${hasKey ? `<button class="btn" id="exSend">Получить ответы</button>` : ''}<button class="btn ${hasKey ? 'ghost' : ''}" id="exApp">Спросить Gemini ↗</button></div>
       <div class="mut small">ИИ получит текст задания, слова и грамматику урока. Ответы могут содержать ошибки, сверяйтесь с учебником.</div></div>` : ''}
     <details class="c"><summary><b>📘 Упражнение из учебника</b></summary>

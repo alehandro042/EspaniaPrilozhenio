@@ -842,7 +842,9 @@
     "Nuestros colegas vienen de diferentes países.",
     "Este restaurante no me gusta, vamos a otro.",
     "Leo este fragmento varias veces (раз) y no comprendo nada."
-   ]
+   ],
+   "text": "Переведите на русский язык (otro, demás, vario, diverso, diferente):\n1. Tengo dos cuadernos. Uno está aquí, ¿y dónde está el otro? 2. Entramos en la sala, ¿o quieres esperar a los demás? 3. Los estudiantes tienen varias preguntas y las hacen al profesor. 4. Andrés busca otro empleo, quiere trabajar en una empresa internacional. 5. Se especializa en finanzas y tiene diversos títulos, pero tiene poca experiencia laboral. 6. Nuestros colegas vienen de diferentes países. 7. Este restaurante no me gusta, vamos a otro. 8. Leo este fragmento varias veces (раз) y no comprendo nada.",
+   "kind": "closed"
   },
   {
    "number": "2",
@@ -858,7 +860,9 @@
     "Нас пятеро. Остальные не придут.",
     "Это все. Остальное не имеет значения.",
     "Разные страны имеют свои собственные традиции."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. У меня две тети. Одна – журналист, другая – преподаватель. 2. Вы видите два карандаша: один – желтый, другой – коричневый. 3. На этой неделе мы сдаем два экзамена: один по международным экономическим отношениям, другой по финансам. 4. Не хочешь рассказать мне об этом деле? – В другой раз. 5. Мой друг ходит в другую школу. 6. Студенты, которые учатся в других университетах, тоже хотят поехать на эти курсы. 7. Нас пятеро. Остальные не придут. 8. Это все. Остальное не имеет значения. 9. Разные страны имеют свои собственные традиции.",
+   "kind": "closed"
   },
   {
    "number": "3",
@@ -873,7 +877,9 @@
     "Es bueno aprender a pensar en sí mismo.",
     "Mis padres lo hacen todo para mí.",
     "Vivir en armonía consigo mismo es vivir en armonía con el mundo."
-   ]
+   ],
+   "text": "Переведите на русский язык (ударные местоимения):\n1. Voy a la cafetería a tomar algo, ¿vienes conmigo? 2. ¡Siempre hablan mal de mí! 3. Según ellos, tenemos una prueba de matemáticas este sábado. 4. No puedo ir allí sin ti. 5. Todos la conocen, hasta yo. 6. Es bueno aprender a pensar en sí mismo. 7. Mis padres lo hacen todo para mí. 8. Vivir en armonía consigo mismo es vivir en armonía con el mundo.",
+   "kind": "closed"
   },
   {
    "number": "4",
@@ -888,17 +894,23 @@
     "Mi cuñado trabaja con ___ (Usted).",
     "Mis padres creen mucho en ___ (yo).",
     "No voy a tomar café sin ___ (tú)."
-   ]
+   ],
+   "text": "Вставьте предложную форму местоимений-дополнений:\n1. Lo hago para ___ (tú). 2. ¿Vienes con ___ (yo)? 3. Queremos discutirlo entre ___ (nosotros). 4. Las chicas hablan de ___ (tú). 5. Me das esta revista a ___ (yo). 6. Mi cuñado trabaja con ___ (Usted). 7. Mis padres creen mucho en ___ (yo). 8. No voy a tomar café sin ___ (tú).",
+   "kind": "closed"
   },
   {
    "number": "5",
    "instruction_ru": "Вставьте необходимые предлоги",
-   "page": 71
+   "page": 71,
+   "text": "Вставьте необходимые предлоги:\n1. ¿___ qué Universidad ingresa usted? 2. Nuestro jefe va ___ vacaciones ___ julio. 3. La reunión empieza ___ las tres ___ la tarde y nadie sabe ___ qué hora termina. 4. Algunos estudiantes ___ nuestro grupo quieren ir ___ trabajar ___ el extranjero. 5. ¿Quién va ___ decirme ___ cuántos estamos hoy? 6. Se matricula ___ la autoescuela ___ la voluntad ___ sus padres. 7. ___ este año se licencia ___ Medicina ___ la Universidad ___ Salamanca. 8. El sol entra ___ la ventana. 9. ¿Vas ___ coche o vamos ___ metro? 10. Tengo clases de inglés todos los días ___ los sábados y las ___ español dos veces ___ semana. 11. ___ el chico que se examina ___ derecho público ___ mí le suspenden. ¡Qué pena! 12. ___ el ministro, hoy ___ día esta reforma afecta ___ todas las esferas ___ la vida ___ el país. 13. ___ los lunes ___ las nueve ___ las cuatro tengo clases. 14. ___ un año estudio informática.",
+   "kind": "closed"
   },
   {
    "number": "6",
    "instruction_ru": "Проспрягайте отклоняющиеся глаголы первой группы с зависимыми словами (A – Ia, B – Ib); C – вопросы в парах",
-   "page": 72
+   "page": 72,
+   "text": "Проспрягайте следующие отклоняющиеся глаголы первой группы с зависимыми словами:\nA. Ia: empezar (a discutirlo), sentarse (a la mesa, en el diván), atravesar (la plaza), merendar (a las cuatro y media, con frutas), pensar (en los coches), encender (el gas, la luz), perder (tiempo, a un cliente).\nB. Ib: costar (mucho), contar (una historia sentimental), recordar (sus estudios en el colegio), almorzar (en un restaurante griego), sonar (alto), soñar (con un viaje a Marruecos), moverse (mucho, poco), volver (a casa), soler (ir de vacaciones en enero).\nC. Задайте в парах вопросы, используя эти словосочетания.",
+   "kind": "open"
   },
   {
    "number": "7",
@@ -913,17 +925,23 @@
     "(Soler, yo) ___ comer poco.",
     "¿En qué (pensar, tú) ___?",
     "¿Cuánto (costar) ___ estas frutas?"
-   ]
+   ],
+   "text": "Раскройте скобки:\n1. Yo (sentarse) ___ a la mesa. 2. (Sonar) ___ la música. 3. ¿A qué hora (volver) ___ Usted a casa? 4. (Perder, ellos) ___ mucho tiempo así. 5. ¿Dónde (almorzar, tú) ___? 6. (Soler, yo) ___ comer poco. 7. ¿En qué (pensar, tú) ___? 8. ¿Cuánto (costar) ___ estas frutas?",
+   "kind": "closed"
   },
   {
    "number": "8",
    "instruction_ru": "Составьте 6 предложений: almorzar en casa, merendar con frutas, volver a casa tarde, soñar con la Universidad, soler tener prisa, pensar en los exámenes",
-   "page": 72
+   "page": 72,
+   "text": "Составьте 6 предложений со следующими словосочетаниями:\nalmorzar en casa, merendar con frutas, volver a casa tarde, soñar con la Universidad, soler tener prisa, pensar en los exámenes.",
+   "kind": "closed"
   },
   {
    "number": "9",
    "instruction_ru": "Прочитайте, переведите и воспроизведите текст, заменяя имя собственное личными местоимениями",
-   "page": 72
+   "page": 72,
+   "text": "Прочитайте, переведите и воспроизведите текст, заменяя имя собственное личными местоимениями:\nRamón atraviesa la plaza y se sienta a la mesa al aire libre. Le atiende una camarera muy simpática. Merienda con una taza de chocolate con churros. Aquí los preparan muy bien. Ramón suele hacerlo cada tarde. Después enciende un cigarrillo. No se mueve un rato, piensa en algo: recuerda el pasado o sueña con el futuro. Suena el móvil. Ramón atiende la llamada y después pregunta a la camarera cuánto cuesta su merienda. Le cuenta un chiste, paga y vuelve a la oficina.",
+   "kind": "closed"
   },
   {
    "number": "10",
@@ -940,17 +958,23 @@
     "Кто обслуживает этот столик?",
     "Почему ты не отвечаешь на их звонки?",
     "Кто-то находит работу, а кто-то её теряет."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. В котором часу начинаются занятия? 2. Я сажусь за стол, чтобы обедать, но думаю об экзаменах. 3. Обычно они возвращаются домой в шесть часов вечера. 4. О чем ты мечтаешь? 5. Ты вспоминаешь школьные годы? 6. Сколько стоит чашечка кофе? 7. Наш преподаватель всегда рассказывает очень интересные истории. 8. Кто обслуживает этот столик? 9. Почему ты не отвечаешь на их звонки? 10. Кто-то находит работу, а кто-то её теряет.",
+   "kind": "closed"
   },
   {
    "number": "11",
    "instruction_ru": "Para conocer más: запомните названия должностей, отделов и рода занятий в компании (En la empresa); расскажите, чем занимается и в каком отделе работает каждый",
-   "page": 73
+   "page": 73,
+   "text": "Запомните названия должностей, отделов и рода занятий, существующих в компании:\nEn la empresa. Cargos: director general, director de administración, director financiero, director comercial, director de producción, director de márketing, director de recursos humanos (RRHH). Departamentos: de producción, financiero, comercial, de márketing, de personal. Actividades: los estudios de mercado, la fabricación, el control de calidad, las ventas, las exportaciones, la publicidad, la contabilidad, la contratación, los salarios.\nРасскажите, чем занимается и в каком отделе работает каждый из сотрудников, упомянутых в таблице:\nA. ¿En qué departamento trabaja el director de producción? – Trabaja en el departamento de producción.\nB. ¿De qué se encarga el director de producción? – Se encarga del control de calidad.",
+   "kind": "closed"
   },
   {
    "number": "12",
    "instruction_ru": "Запомните выражения, связанные с устройством на работу; A – проспрягайте; B – переведите на русский; C – переведите на испанский",
-   "page": 73
+   "page": 73,
+   "text": "Запомните следующие выражения, связанные с устройством на работу: proponer / ofrecer un puesto / un cargo – предложить место / должность; aceptar el cargo / ocupar el puesto – принять / занять должность.\nA. Проспрягайте глаголы с зависимыми словами: proponer el cargo de subdirector, ofrecer un puesto en el departamento de personal, aceptar el cargo de economista, ocupar el puesto de ingeniero, encargarse de las ventas.\nB. Переведите на русский язык: 1. ¿Qué cargo te proponen en esta empresa? – Me proponen el cargo de agente de ventas, pero no sé si voy a aceptarlo. 2. Nuestro director financiero va a trabajar en la oficina en Madrid. – ¿Y a quién le van a ofrecer este cargo en nuestro departamento? 3. El hijo del director general trabaja en la agencia del padre, ocupa el puesto de director comercial.\nC. Переведите на испанский язык: 1. Какую должность Вам предлагают? – Мне предлагают должность экономиста. 2. Вы согласитесь занять должность, которую Вам предлагают? – Я не займу её, потому что у меня есть другое предложение. 3. Ты хочешь занять это место? – Естественно, но мне его не предлагают.",
+   "kind": "closed"
   },
   {
    "number": "13",
@@ -958,22 +982,30 @@
    "pages": [
     73,
     74
-   ]
+   ],
+   "text": "Прочитайте и переведите диалог:\nEn la empresa\n– En su currículum usted escribe que es licenciado en ciencias económicas y empresariales por la Universidad Autónoma de Madrid y tiene un MBA por ESADE.\n– Sí, tengo varios títulos.\n– El otro pretendiente tiene un MBA por IESE, es decir, Instituto de Estudios Superiores de la Empresa que también es muy conocido.\n– También domino diversos idiomas europeos y puedo trabajar con diferentes programas en el ordenador.\n– Bien, me parece que su expediente es uno de los mejores y por eso quiero proponerle un puesto en el departamento de márketing con el salario de 2 mil euros al mes para empezar. ¿Lo acepta usted?\n– Sí, señor, eso me conviene.\n– Pues, lo demás va a discutirlo con nuestros juristas y economistas. ¡Enhorabuena!\n– Gracias a Usted.\nA. Проспрягайте следующие глаголы с зависимыми словами: ser licenciado, tener varios títulos, dominar diversos idiomas, trabajar con diferentes programas en el ordenador, proponérselo, discutirlo, aceptarlo.\nB. Ответьте на вопросы: 1. ¿Qué quiere decir ESADE? 2. ¿Qué quiere decir IESE? 3. ¿Son prestigiosos estos centros de estudios? 4. ¿Le parece interesante la idea de hacer un MBA por ESADE o por IESE? 5. ¿Qué expediente tiene el pretendiente? 6. ¿Por qué es uno de los mejores? 7. ¿Qué propuesta le hace el director de RRHH? 8. ¿Lo acepta? 9. ¿Con quiénes va a discutir todos los detalles del contrato?\nC. Воспроизведите диалог по ролям. D. Перескажите содержание диалога от третьего лица и от лица участников встречи.",
+   "kind": "closed"
   },
   {
    "number": "14",
    "instruction_ru": "Вставьте предлоги и артикли",
-   "page": 74
+   "page": 74,
+   "text": "Вставьте необходимые предлоги и артикли:\n1. ___ Jorge le proponen ___ cargo ___ departamento ___ personal ___ salario ___ 2 mil euros ___ mes. 2. ¿Conoce ___ nuevo agente ___ ventas? Trabaja ___ misma oficina que Usted. 3. ___ pretendiente domina tres idiomas extranjeros y puede trabajar ___ diferentes programas ___ ordenador. 4. Todos ___ detalles ___ contrato vamos ___ discutirlos ___ viernes. 5. Me parece interesante ___ propuesta ___ director general, pero no sé si voy ___ aceptarla.",
+   "kind": "closed"
   },
   {
    "number": "15",
    "instruction_ru": "Ответьте на вопросы (время, дата, месяц, время года, дни недели, учеба)",
-   "page": 74
+   "page": 74,
+   "text": "Ответьте на вопросы:\n1. ¿Qué hora es? 2. ¿A qué hora termina la clase? 3. ¿A cuántos estamos hoy? 4. ¿En qué mes estamos? 5. ¿En qué estación del año estamos? 6. ¿Cómo se llaman otras estaciones del año? 7. ¿Qué día de la semana es hoy? 8. ¿Cómo se llaman otros días de la semana? 9. ¿Cuántas clases tenéis los lunes? 10. ¿Dónde estudia Usted? 11. ¿Qué carrera estudia?",
+   "kind": "open"
   },
   {
    "number": "16",
    "instruction_ru": "Расскажите о себе как о потенциальном работнике на рынке труда",
-   "page": 74
+   "page": 74,
+   "text": "Расскажите о себе как о потенциальном работнике на рынке труда.",
+   "kind": "open"
   },
   {
    "number": "17",
@@ -994,17 +1026,23 @@
     "Вы предлагаете мне место директора по продажам? – Да, я вам его предлагаю. У вас прекрасный послужной список.",
     "Целый день ты о чем-то мечтаешь.",
     "Вам нравится изучать деловое администрирование в Испании?"
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Кто будет меня обслуживать? 2. Выпьете еще одну чашечку горячего шоколада? – Да, я её выпью с большим удовольствием. 3. Вы принимаете мое предложение? – Нет, я не могу его принять, оно меня не устраивает. 4. Я думаю, что в этом ресторане готовят очень вкусные блюда. 5. Ручки я теряю каждый день. Ничего не помню. 6. Мне предлагают должность экономиста в финансовом отделе. А тебе? – А мне должность юриста в отделе кадров. 7. Начальник производства обычно обедает с часа до двух, а затем возвращается на свое рабочее место. 8. Кто-нибудь из ваших сотрудников умеет пользоваться различными компьютерными программами? – Бухгалтер и программист. У остальных мало опыта. 9. Вы предлагаете мне место директора по продажам? – Да, я вам его предлагаю. У вас прекрасный послужной список. 10. Целый день ты о чем-то мечтаешь. 11. Вам нравится изучать деловое администрирование в Испании?",
+   "kind": "closed"
   },
   {
    "number": "18",
    "instruction_ru": "Texto complementario: прочитайте и переведите объявление; интересует ли вас работа за границей?",
-   "page": 75
+   "page": 75,
+   "text": "Прочитайте и переведите это объявление. Интересует ли вас работа за границей? Обоснуйте свое мнение.\nAlemania es uno de los países demandantes de mano de obra española, especialmente de ingenieros e informáticos. La última noticia sobre ofertas de empleo nos llega de la mano de la red Eures. Un ingeniero constructor y un técnico de mantenimiento electrónico para trabajar en el país germano. Eso es lo que buscan esta vez. ¿Te interesa? El inglés y/o el alemán son una de las condiciones básicas que te pueden hacer optar al menos al primero de los puestos.",
+   "kind": "closed"
   },
   {
    "number": "19",
    "instruction_ru": "Расскажите, какие объявления об устройстве на работу можно найти в Интернете",
-   "page": 75
+   "page": 75,
+   "text": "Расскажите, какие объявления об устройстве на работу можно найти в Интернете.",
+   "kind": "open"
   }
  ],
  "questions_for_user": []

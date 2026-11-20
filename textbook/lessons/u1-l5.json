@@ -830,22 +830,30 @@
   {
    "number": "1",
    "instruction_ru": "Прочитайте, следя за артикуляцией и стыками слов",
-   "page": 26
+   "page": 26,
+   "text": "Прочитайте, следя за правильной артикуляцией звуков и обращая внимание на стыки слов:\nlas oficinas, los operadores, en el hospital, los restaurantes, los periodistas, la agencia de viajes, las universidades europeas, una enfermera joven, una empresa nueva, un empleado alto, un buen especialista, un vaso de agua mineral, un país occidental, un señor inteligente, una chica antipática, una muchacha perezosa, soy español, eres argentino, es alemán, sois ingleses, los rusos, las rusas, las razones, es rubia, es rojo.",
+   "kind": "reading"
   },
   {
    "number": "2",
    "instruction_ru": "Прочитайте арифметические действия с числительными",
-   "page": 26
+   "page": 26,
+   "text": "Прочитайте следующие арифметические действия с числительными:\n3 + 5 = 8; 1 + 6 = 7; 2 + 16 = 18; 14 – 2 = 12; 11 – 4 = 7; 10 – 4 = 6; 7 + 12 = 19; 3 + 14 = 17; 19 – 3 = 16; 13 – 5 = 8; 5 + 9 = 14; 8 + 10 = 18; 13 + 7 = 20; 12 – 7 = 5; 14 – 11 = 3; 13 – 3 = 10; 4 + 11 = 15; 11 – 2 = 9; 7 + 4 = 11; 20 – 19 = 1.",
+   "kind": "closed"
   },
   {
    "number": "3",
    "instruction_ru": "Сосчитайте по-испански от 0 до 100",
-   "page": 27
+   "page": 27,
+   "text": "Сосчитайте по-испански от 0 до 100.",
+   "kind": "closed"
   },
   {
    "number": "4",
    "instruction_ru": "Прочитайте словосочетания с числительными: 23 trenes, 31 jóvenes, 50 muchachos, 75 colegios, 13 tazas, 8 taxis, 15 jóvenes, 21 escuelas, 100 noches, 30 días, 80 enfermeras, 61 universidades, 10 pasaportes, 100 museos, 95 asuntos, 4 clases, 41 empleadas, 19 artículos, 1 fruta, 51 revistas",
-   "page": 27
+   "page": 27,
+   "text": "Прочитайте следующие словосочетания с числительными:\n23 trenes, 31 jóvenes, 50 muchachos, 75 colegios, 13 tazas, 8 taxis, 15 jóvenes, 21 escuelas, 100 noches, 30 días, 80 enfermeras, 61 universidades, 10 pasaportes, 100 museos, 95 asuntos, 4 clases, 41 empleadas, 19 artículos, 1 fruta, 51 revistas.",
+   "kind": "closed"
   },
   {
    "number": "5",
@@ -865,17 +873,23 @@
     "¿Cuántos dependientes trabajan en esta tienda?",
     "¿Cuántos empleados trabajan en esta empresa alemana?",
     "¿Cuántas peluqueras trabajan en esta peluquería francesa?"
-   ]
+   ],
+   "text": "Ответьте на вопросы:\n1. ¿Cuántos años tienen tus padres? 2. ¿Cuántos años tienen tus abuelos? 3. ¿Cuántos parientes tienes? 4. ¿Cuántos hermanos tienes? 5. ¿Cuántos cuadernos tienes? 6. ¿Cuántas clases tenéis? 7. ¿Cuántos estudiantes asisten a las clases? 8. ¿Cuántos estudiantes asisten a las conferencias? 9. ¿Cuántos médicos trabajan en el hospital? 10. ¿Cuántos periodistas trabajan en este periódico? 11. ¿Cuántos dependientes trabajan en esta tienda? 12. ¿Cuántos empleados trabajan en esta empresa alemana? 13. ¿Cuántas peluqueras trabajan en esta peluquería francesa?",
+   "kind": "open"
   },
   {
    "number": "6",
    "instruction_ru": "Запомните прилагательные внешности и характера; A: вопросы о родственниках и друзьях; B: опишите себя, друга, однокурсника или родственника",
-   "page": 27
+   "page": 27,
+   "text": "Запомните следующие прилагательные, описывающие внешность и характер: Es una persona... rubia/morena, alta/baja, flaca/gorda, guapa/fea, trabajadora/perezosa, inteligente/tonta, alegre/aburrida, simpática/antipática.\nA. В парах задайте друг другу вопросы относительно внешности и характера ваших родственников или друзей: ¿Es alto tu hermano? – No, no es alto, es bajo.\nB. Опишите себя, своего друга, однокурсника или родственника.",
+   "kind": "open"
   },
   {
    "number": "7",
    "instruction_ru": "Переведите на испанский: красивая женщина, высокий молодой человек, неприятный шофер, ленивый официант, работящая медсестра, глупый парикмахер, приятный туроператор, худой служащий, умный инженер, полный мужчина, веселый доктор, скучный человек, некрасивый мальчик, продавец низкого роста",
-   "page": 27
+   "page": 27,
+   "text": "Переведите на испанский язык следующие словосочетания:\nкрасивая женщина, высокий молодой человек, неприятный шофер, ленивый официант, работящая медсестра, глупый парикмахер, приятный туроператор, худой служащий, умный инженер, полный мужчина, веселый доктор, скучный человек, некрасивый мальчик, продавец низкого роста.",
+   "kind": "closed"
   },
   {
    "number": "8",
@@ -897,7 +911,9 @@
     "Los estudiantes de nuestra Universidad aprenden ___ idiomas.",
     "El libro es ___ aburrido.",
     "El periodista responde a ___ preguntas."
-   ]
+   ],
+   "text": "Вставьте mucho / muy:\n1. El director comercial tiene ___ problemas. 2. Su tío es ___ inteligente. 3. Estudiamos ___ para terminar la carrera. 4. Pepe, escribes ___ mal. 5. Papá siempre toma ___ café. 6. ¿Cómo estás? – Estoy ___ bien. 7. El jefe firma ___ documentos. 8. El niño comprende ___. 9. La secretaria redacta ___ cartas. 10. El profesor lee ___ en voz alta. 11. La joven es ___ trabajadora. 12. Envío ___ correos electrónicos. 13. Los estudiantes de nuestra Universidad aprenden ___ idiomas. 14. El libro es ___ aburrido. 15. El periodista responde a ___ preguntas.",
+   "kind": "closed"
   },
   {
    "number": "9",
@@ -910,7 +926,9 @@
     "У меня мало родственников.",
     "В этой больнице работают много медсестер и мало врачей.",
     "Ты много времени смотришь телевизор? – Достаточно."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Студенты читают много текстов. 2. Этот официант очень симпатичный, но слишком ленивый. 3. У вас достаточно учебников? 4. У меня мало родственников. 5. В этой больнице работают много медсестер и мало врачей. 6. Ты много времени смотришь телевизор? – Достаточно.",
+   "kind": "closed"
   },
   {
    "number": "10",
@@ -924,12 +942,16 @@
     "¿___ Ustedes de aquí? – No, ___ turistas.",
     "Juan ___ director, ___ en su oficina.",
     "Las chicas rusas ___ muy guapas."
-   ]
+   ],
+   "text": "Вставьте необходимый по смыслу глагол в нужной форме (ser / estar). Переведите предложения:\n1. ¿(Tú) ___ de Barcelona? – No, ___ valenciano, pero ahora ___ en Barcelona. 2. Chicos, ¿dónde ___ Juana? – ___ en casa porque ___ enferma. 3. ¿Cómo ___ tu novia, Andrés? – ___ muy guapa. 4. ¿Vosotros ___ profesores? – No, señor, ___ estudiantes. 5. ¿___ Ustedes de aquí? – No, ___ turistas. 6. Juan ___ director, ___ en su oficina. 7. Las chicas rusas ___ muy guapas.",
+   "kind": "closed"
   },
   {
    "number": "11",
    "instruction_ru": "Прочитайте, переведите и запомните названия стран; A: соотнесите страну и национальность; B: ответьте на вопросы",
-   "page": 29
+   "page": 29,
+   "text": "Прочитайте, переведите и запомните названия стран:\n1. Rusia 2. Alemania 3. Italia 4. Grecia 5. Argentina 6. España 7. Brasil 8. Francia 9. Portugal 10. Inglaterra 11. Japón 12. Estados Unidos 13. México 14. Suiza 15. Canadá 16. Suecia 17. Holanda 18. Egipto 19. Marruecos 20. Dinamarca 21. China\na. mexicano, mexicana b. sueco, sueca c. portugués, portuguesa d. francés, francesa e. marroquí f. alemán, alemana g. canadiense h. japonés, japonesa i. ruso, rusa j. egipcio, egipcia k. italiano, italiana l. danés, danesa m. griego, griega n. inglés, inglesa ñ. argentino, argentina o. suizo, suiza p. español, española t. chino, china q. brasileño, brasileña r. estadounidense s. holandés, holandesa\nA. Соотнесите название страны с прилагательным, обозначающим национальность.\nB. Ответьте на вопросы: 1. ¿Qué es Juan? ¿De dónde es? 2. ¿Qué es Pierre? ¿De dónde es? 3. ¿Qué es Walter? ¿De dónde es? 4. ¿Qué es Jennifer? ¿De dónde es? 5. ¿Qué es Iván? ¿De dónde es? 6. ¿Qué es Carlo? ¿De dónde es? 7. ¿Qué es Rosario? ¿De dónde es? 8. ¿Qué eres? ¿De dónde eres?",
+   "kind": "closed"
   },
   {
    "number": "12",
@@ -946,7 +968,9 @@
     "Предприятию нужно продать этот офис.",
     "Этому магазину не нужны китайские товары.",
     "Туристическому агентству нужен автобус."
-   ]
+   ],
+   "text": "Прочитайте и переведите следующие предложения, обращая внимание на употребление глагола necesitar (= «нуждаться»):\nA. 1. Necesito una taza y dos vasos. 2. ¿Necesitas una revista inglesa? 3. ¿Qué necesita Usted? – Necesito redactar una carta en francés. 4. Necesitamos vender nuestro coche. 5. ¿Necesitáis agua mineral? 6. Los turistas necesitan un taxi.\nB. (переведите на испанский) 1. Что Вам нужно? – Мне нужен телефон. 2. Преподавателю нужна красная ручка. 3. Мне нужны эти документы. 4. Нам нужно поговорить с Вами об одном деле. 5. Какие электробытовые приборы вам нужны? 6. Тебе не нужно смотреть телевизор, тебе нужны учебник и тетрадь. 7. Какие фрукты Вам нужны? 8. Предприятию нужно продать этот офис. 9. Этому магазину не нужны китайские товары. 10. Туристическому агентству нужен автобус.",
+   "kind": "closed"
   },
   {
    "number": "13",
@@ -954,7 +978,9 @@
    "pages": [
     29,
     30
-   ]
+   ],
+   "text": "Прочитайте и переведите диалог:\n– ¡Hola! ¿Qué tal? ¿Cómo te llamas?\n– Me llamo Verónica. ¿Y tú?\n– Jesús María. Soy conductor. Trabajo en una empresa de transportes.\n– Mucho gusto, Jesús María.\n– Encantado. ¿Eres de aquí?\n– No, soy de Barcelona. Estudio económicas en la Escuela Superior de Negocios. Es mi primera visita a Madrid.\n– Pues, aquí tienes mi tarjeta. Si necesitas algo...\n– Muchas gracias. Hasta luego.\n– Adiós.\nA. Проспрягайте: ser conductor, ser de aquí, trabajar en una empresa de transportes, estudiar económicas, estudiar en la Escuela Superior de Negocios, necesitar algo, tener su tarjeta.\nB. Ответьте на вопросы: 1. ¿Cómo se llama la chica? 2. ¿De dónde es? 3. ¿Qué es Verónica? 4. ¿Dónde vive Verónica? 5. ¿Dónde estudia? 6. ¿Cómo se llama el joven? 7. ¿De dónde es Jesús María? 8. ¿Qué es Jesús María? 9. ¿Dónde vive? 10. ¿Dónde trabaja? 11. ¿Dónde está Verónica? 12. ¿Es su primera visita a Madrid? 13. ¿Qué tiene Jesús María? 14. ¿Qué está en su tarjeta?\nC. Воспроизведите диалог по ролям. D. Перескажите содержание диалога.",
+   "kind": "closed"
   },
   {
    "number": "14",
@@ -968,17 +994,23 @@
     "Nuestro amigo John es ___ canadiense y necesita aprender ___ español.",
     "¿Eres ___ portugués? – No, soy ___ brasileño, pero trabajo ___ Portugal.",
     "¿Os gusta estudiar ___ económicas ___ Universidad?"
-   ]
+   ],
+   "text": "Вставьте необходимые предлоги и артикли:\n1. ___ joven se llama Marta, es ___ Málaga, pero ahora vive ___ Valencia. 2. ¿Es vuestra primera visita ___ Moscú? 3. Andrés tiene 32 años y trabaja ___ empresa ___ transportes. 4. ___ clase estudiamos mucho y escribimos demasiados ___ dictados. 5. Nuestro amigo John es ___ canadiense y necesita aprender ___ español. 6. ¿Eres ___ portugués? – No, soy ___ brasileño, pero trabajo ___ Portugal. 7. ¿Os gusta estudiar ___ económicas ___ Universidad?",
+   "kind": "closed"
   },
   {
    "number": "15",
    "instruction_ru": "Ответьте на вопросы о вашем друге (¿Cómo se llama? ¿De dónde es? ¿Cuántos años tiene? ¿Cómo es? ¿Cómo está? ¿Dónde vive? ¿Dónde estudia? ¿Cómo estudia?)",
-   "page": 30
+   "page": 30,
+   "text": "Ответьте на вопросы о вашем друге:\n1. ¿Cómo se llama tu amigo? 2. ¿De dónde es? 3. ¿Cuántos años tiene? 4. ¿Cómo es? 5. ¿Cómo está? 6. ¿Dónde vive? 7. ¿Dónde estudia? 8. ¿Cómo estudia?",
+   "kind": "open"
   },
   {
    "number": "16",
    "instruction_ru": "Расскажите о ваших друзьях",
-   "page": 30
+   "page": 30,
+   "text": "Расскажите о ваших друзьях.",
+   "kind": "open"
   },
   {
    "number": "17",
@@ -1005,7 +1037,9 @@
     "Как зовут коммерческого директора вашей компании?",
     "Мы работаем со многими странами, например, с Голландией, Данией, Швецией, Швейцарией.",
     "Зачем Вы открываете окно?"
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Твоему дедушке шестьдесят лет или семьдесят? – Ему пятьдесят девять. 2. Кто эта симпатичная блондинка? – Она американка, из Вашингтона. 3. Вы француз? – Нет, я канадец. 4. Откуда родом этот веселый молодой человек? – Он из Мексики. 5. Какого цвета твоя машина? – Она серая. 6. Сколько будет сто минус сорок четыре? 7. Мария – гречанка. Ей двадцать один год. Она работает в итальянском магазине. 8. Привет. Как у тебя дела? – Замечательно. 9. Ты дома или в школе? 10. Здравствуйте, меня зовут Мигель. Я ваш новый преподаватель испанского языка. 11. Вот мой номер телефона. 12. Этот господин высокий и худощавый, а его жена – женщина низкого роста, полная, но очень красивая. 13. Кто Вы? – Я юрист, работаю в банке. 14. Когда вы заканчиваете Университет? 15. Здесь находятся только немцы и англичане, а французы и испанцы в другом офисе. 16. Начальник подписывает документы, а его секретарь отправляет электронную почту. 17. Где Вы работаете? – В туристическом агентстве. 18. Как зовут коммерческого директора вашей компании? 19. Мы работаем со многими странами, например, с Голландией, Данией, Швецией, Швейцарией. 20. Зачем Вы открываете окно?",
+   "kind": "closed"
   }
  ],
  "questions_for_user": []

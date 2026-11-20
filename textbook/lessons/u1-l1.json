@@ -1,79 +1,456 @@
 {
- "id": 1, "unit": 1, "lesson": 1, "title": "Unidad 1. Presentación — Lección 1", "pages": [6, 7, 8, 9, 10],
+ "id": 1,
+ "unit": 1,
+ "lesson": 1,
+ "title": "Unidad 1. Presentación — Lección 1",
+ "pages": [
+  6,
+  7,
+  8,
+  9,
+  10
+ ],
  "vocabulary": {
   "source": "Vocabulario, с. 10",
   "verbs": [
-   {"es": "tomar", "ru": "брать; пить, есть", "page": 10}
+   {
+    "es": "tomar",
+    "ru": "брать; пить, есть",
+    "page": 10
+   }
   ],
   "other": [
-   {"es": "así así", "ru": "так себе", "page": 10},
-   {"es": "bien", "ru": "хорошо", "page": 10},
-   {"es": "café", "gender": "m", "ru": "кофе", "page": 10},
-   {"es": "datos personales", "gender": "m", "number": "pl", "ru": "личные данные", "page": 10},
-   {"es": "fatal", "ru": "ужасно", "page": 10},
-   {"es": "fenomenal", "ru": "замечательно", "page": 10},
-   {"es": "mal", "ru": "плохо", "page": 10},
-   {"es": "nota", "gender": "f", "ru": "запись, записка", "page": 10},
-   {"es": "té", "gender": "m", "ru": "чай", "page": 10},
-   {"es": "tren", "gender": "m", "ru": "поезд", "page": 10}
+   {
+    "es": "así así",
+    "ru": "так себе",
+    "page": 10
+   },
+   {
+    "es": "bien",
+    "ru": "хорошо",
+    "page": 10
+   },
+   {
+    "es": "café",
+    "gender": "m",
+    "ru": "кофе",
+    "page": 10
+   },
+   {
+    "es": "datos personales",
+    "gender": "m",
+    "number": "pl",
+    "ru": "личные данные",
+    "page": 10
+   },
+   {
+    "es": "fatal",
+    "ru": "ужасно",
+    "page": 10
+   },
+   {
+    "es": "fenomenal",
+    "ru": "замечательно",
+    "page": 10
+   },
+   {
+    "es": "mal",
+    "ru": "плохо",
+    "page": 10
+   },
+   {
+    "es": "nota",
+    "gender": "f",
+    "ru": "запись, записка",
+    "page": 10
+   },
+   {
+    "es": "té",
+    "gender": "m",
+    "ru": "чай",
+    "page": 10
+   },
+   {
+    "es": "tren",
+    "gender": "m",
+    "ru": "поезд",
+    "page": 10
+   }
   ],
   "phrases": [
-   {"es": "¿Cómo estás?", "ru": "Как поживаешь?", "page": 10},
-   {"es": "¡Hola!", "ru": "Привет!", "page": 10},
-   {"es": "¿Qué tal?", "ru": "Как дела?", "page": 10}
+   {
+    "es": "¿Cómo estás?",
+    "ru": "Как поживаешь?",
+    "page": 10
+   },
+   {
+    "es": "¡Hola!",
+    "ru": "Привет!",
+    "page": 10
+   },
+   {
+    "es": "¿Qué tal?",
+    "ru": "Как дела?",
+    "page": 10
+   }
   ],
   "extra_from_lesson": [
-   {"es": "fonética", "ru": "фонетика", "page": 8}, {"es": "gramática", "ru": "грамматика", "page": 8},
-   {"es": "matemáticas", "ru": "математика", "page": 8}, {"es": "economía", "ru": "экономика", "page": 8},
-   {"es": "literatura", "ru": "литература", "page": 8}, {"es": "historia", "ru": "история", "page": 8},
-   {"es": "tema", "ru": "тема", "page": 8}, {"es": "dictado", "ru": "диктант", "page": 8},
-   {"es": "documento", "ru": "документ", "page": 8}
+   {
+    "es": "fonética",
+    "ru": "фонетика",
+    "page": 8
+   },
+   {
+    "es": "gramática",
+    "ru": "грамматика",
+    "page": 8
+   },
+   {
+    "es": "matemáticas",
+    "ru": "математика",
+    "page": 8
+   },
+   {
+    "es": "economía",
+    "ru": "экономика",
+    "page": 8
+   },
+   {
+    "es": "literatura",
+    "ru": "литература",
+    "page": 8
+   },
+   {
+    "es": "historia",
+    "ru": "история",
+    "page": 8
+   },
+   {
+    "es": "tema",
+    "ru": "тема",
+    "page": 8
+   },
+   {
+    "es": "dictado",
+    "ru": "диктант",
+    "page": 8
+   },
+   {
+    "es": "documento",
+    "ru": "документ",
+    "page": 8
+   }
   ]
  },
  "grammar": [
-  {"id": "§1", "title": "Гласные и согласные звуки", "page": 8,
-   "points": ["В испанском пять гласных: [i], [e], [a], [o], [u]. Произносятся четко и никогда не редуцируются.", "Буква h не обозначает никакого звука."]},
-  {"id": "§2.1", "title": "Определенный артикль", "page": 8,
-   "table": [["", "муж. род", "жен. род"], ["ед. число", "el", "la"], ["множ. число", "los", "las"]],
-   "points": ["Употребляется, когда говорим о чем-то уже известном.", "Артикль el сливается с предлогами a и de: a + el = al, de + el = del."],
-   "examples": ["el mundo", "la casa", "los estudiantes", "las alumnas", "saludar al profesor", "la mesa del alumno"]},
-  {"id": "§2.2", "title": "Неопределенный артикль", "page": 8,
-   "table": [["", "муж. род", "жен. род"], ["ед. число", "un", "una"]],
-   "points": ["Употребляется, когда упоминаем о чем-то впервые.", "Перед существительными во множественном числе, как правило, не ставится. Формы unos / unas корректнее переводить неопределенным местоимением."],
-   "examples": [{"es": "un alumno"}, {"es": "una mesa"}, {"es": "unos estudiantes", "ru": "несколько студентов"}, {"es": "unas alumnas", "ru": "несколько учениц"}]},
-  {"id": "§3", "title": "Род имени существительного", "pages": [8, 9],
-   "table": [["муж. род", "жен. род", "муж. или жен. род"], ["-o: alumno", "-a: alumna", "-e: el café / la clase"], ["", "", "согласный: el hotel / la crisis"]],
+  {
+   "id": "§1",
+   "title": "Гласные и согласные звуки",
+   "page": 8,
+   "points": [
+    "В испанском пять гласных: [i], [e], [a], [o], [u]. Произносятся четко и никогда не редуцируются.",
+    "Буква h не обозначает никакого звука."
+   ]
+  },
+  {
+   "id": "§2.1",
+   "title": "Определенный артикль",
+   "page": 8,
+   "table": [
+    [
+     "",
+     "муж. род",
+     "жен. род"
+    ],
+    [
+     "ед. число",
+     "el",
+     "la"
+    ],
+    [
+     "множ. число",
+     "los",
+     "las"
+    ]
+   ],
+   "points": [
+    "Употребляется, когда говорим о чем-то уже известном.",
+    "Артикль el сливается с предлогами a и de: a + el = al, de + el = del."
+   ],
+   "examples": [
+    "el mundo",
+    "la casa",
+    "los estudiantes",
+    "las alumnas",
+    "saludar al profesor",
+    "la mesa del alumno"
+   ]
+  },
+  {
+   "id": "§2.2",
+   "title": "Неопределенный артикль",
+   "page": 8,
+   "table": [
+    [
+     "",
+     "муж. род",
+     "жен. род"
+    ],
+    [
+     "ед. число",
+     "un",
+     "una"
+    ]
+   ],
+   "points": [
+    "Употребляется, когда упоминаем о чем-то впервые.",
+    "Перед существительными во множественном числе, как правило, не ставится. Формы unos / unas корректнее переводить неопределенным местоимением."
+   ],
+   "examples": [
+    {
+     "es": "un alumno"
+    },
+    {
+     "es": "una mesa"
+    },
+    {
+     "es": "unos estudiantes",
+     "ru": "несколько студентов"
+    },
+    {
+     "es": "unas alumnas",
+     "ru": "несколько учениц"
+    }
+   ]
+  },
+  {
+   "id": "§3",
+   "title": "Род имени существительного",
+   "pages": [
+    8,
+    9
+   ],
+   "table": [
+    [
+     "муж. род",
+     "жен. род",
+     "муж. или жен. род"
+    ],
+    [
+     "-o: alumno",
+     "-a: alumna",
+     "-e: el café / la clase"
+    ],
+    [
+     "",
+     "",
+     "согласный: el hotel / la crisis"
+    ]
+   ],
    "points": [
     "Мужской род: на -a, обозначающие лицо мужского пола (el demócrata, el artista); названия рек, озер, морей, океанов (el Volga, el Titicaca, el Mediterráneo, el Atlántico); греческие слова с суффиксом -ta (el planeta, el atleta) и -ma (el problema, el idioma, el programa, el sistema); на -aje, -an, -or, -ambre, -ete (el montaje, el plan, el color, el alambre, el banquete), исключения: la flor, la labor; названия цвета (el (color) rosa, el violeta); некоторые слова: el día, el mapa.",
     "Женский род: на -o, обозначающие лицо женского пола (la modelo); на -d, -z, -ión, -zon, -umbre, -ie (la universidad, la voz, la lección, la excursión, la razón, la muchedumbre, la serie), исключения: el lápiz, el pez, el corazón, el camión, el avión; сокращения на -o (la foto(grafía), la moto(cicleta), la disco(teca)); некоторые слова: la mano, la radio.",
-    "Сноска: запомнить род слов латинского происхождения la forma, la reforma, la suma, французского la plataforma и итальянского la alarma."]},
-  {"id": "§4", "title": "Число имени существительного", "page": 9,
-   "table": [["ед. число оканчивается на", "множественное число"], ["гласный", "ед. ч. + -s"], ["согласный", "ед. ч. + -es"]],
-   "points": ["На -z: множественное на -ces (el lápiz – los lápices).", "Некоторые слова на -s не изменяются: el lunes – los lunes, el cumpleaños – los cumpleaños, la tesis – las tesis, la crisis – las crisis, el análisis – los análisis, el virus – los virus.", "Два слова меняют ударение: régimen – regímenes, carácter – caracteres."],
-   "examples": ["el hermano – los hermanos", "la casa – las casas", "el parque – los parques", "la universidad – las universidades", "el país – los países"]},
-  {"id": "§5", "title": "Личные местоимения", "pages": [9, 10],
-   "table": [["", "ед. число", "множ. число"], ["1-е лицо", "yo", "nosotros, nosotras"], ["2-е лицо", "tú", "vosotros, vosotras"], ["3-е лицо", "él, ella, usted", "ellos, ellas, ustedes"]],
-   "points": ["Как правило, личные местоимения в речи опускаются: лицо и число видны по окончанию глагола.", "Вежливые формы usted и ustedes согласуются с глаголом в 3-м лице.", "В формальной беседе обращаемся на usted (ustedes), в неформальной на tú (vosotros)."]},
-  {"id": "§6", "title": "Спряжение глагола tomar (I спряжение)", "page": 10,
-   "table": [["yo", "tomo"], ["tú", "tomas"], ["José", "toma"], ["José y yo", "tomamos"], ["José y tú", "tomáis"], ["José y Juan", "toman"]],
-   "points": ["Дополнения из таблицы: café, té, el tren, el metro, datos personales, una nota."]}
+    "Сноска: запомнить род слов латинского происхождения la forma, la reforma, la suma, французского la plataforma и итальянского la alarma."
+   ]
+  },
+  {
+   "id": "§4",
+   "title": "Число имени существительного",
+   "page": 9,
+   "table": [
+    [
+     "ед. число оканчивается на",
+     "множественное число"
+    ],
+    [
+     "гласный",
+     "ед. ч. + -s"
+    ],
+    [
+     "согласный",
+     "ед. ч. + -es"
+    ]
+   ],
+   "points": [
+    "На -z: множественное на -ces (el lápiz – los lápices).",
+    "Некоторые слова на -s не изменяются: el lunes – los lunes, el cumpleaños – los cumpleaños, la tesis – las tesis, la crisis – las crisis, el análisis – los análisis, el virus – los virus.",
+    "Два слова меняют ударение: régimen – regímenes, carácter – caracteres."
+   ],
+   "examples": [
+    "el hermano – los hermanos",
+    "la casa – las casas",
+    "el parque – los parques",
+    "la universidad – las universidades",
+    "el país – los países"
+   ]
+  },
+  {
+   "id": "§5",
+   "title": "Личные местоимения",
+   "pages": [
+    9,
+    10
+   ],
+   "table": [
+    [
+     "",
+     "ед. число",
+     "множ. число"
+    ],
+    [
+     "1-е лицо",
+     "yo",
+     "nosotros, nosotras"
+    ],
+    [
+     "2-е лицо",
+     "tú",
+     "vosotros, vosotras"
+    ],
+    [
+     "3-е лицо",
+     "él, ella, usted",
+     "ellos, ellas, ustedes"
+    ]
+   ],
+   "points": [
+    "Как правило, личные местоимения в речи опускаются: лицо и число видны по окончанию глагола.",
+    "Вежливые формы usted и ustedes согласуются с глаголом в 3-м лице.",
+    "В формальной беседе обращаемся на usted (ustedes), в неформальной на tú (vosotros)."
+   ]
+  },
+  {
+   "id": "§6",
+   "title": "Спряжение глагола tomar (I спряжение)",
+   "page": 10,
+   "table": [
+    [
+     "yo",
+     "tomo"
+    ],
+    [
+     "tú",
+     "tomas"
+    ],
+    [
+     "José",
+     "toma"
+    ],
+    [
+     "José y yo",
+     "tomamos"
+    ],
+    [
+     "José y tú",
+     "tomáis"
+    ],
+    [
+     "José y Juan",
+     "toman"
+    ]
+   ],
+   "points": [
+    "Дополнения из таблицы: café, té, el tren, el metro, datos personales, una nota."
+   ]
+  }
  ],
  "sentence_building": [
-  {"pattern": "Подлежащее + глагол + дополнение", "page": 10,
-   "examples": [{"es": "Juan toma café y María toma datos personales."}]},
-  {"pattern": "Вопрос и ответ да / нет (диалог упр. 5, заменять café на другие слова)", "page": 10,
-   "examples": [{"es": "¿Tomas café?"}, {"es": "Sí, tomo café. ¿Y tú?"}, {"es": "No, no tomo café, tomo té."}]},
-  {"pattern": "Отрицание: no перед глаголом", "page": 10, "examples": [{"es": "No, no tomo café."}]},
-  {"pattern": "Неофициальное приветствие (Para conocer más, упр. 6)", "page": 10,
-   "examples": [{"es": "¡Hola! ¿Qué tal? ¿Cómo estás?"}, {"es": "Fenomenal / bien / así así / mal / fatal."}]}
+  {
+   "pattern": "Подлежащее + глагол + дополнение",
+   "page": 10,
+   "examples": [
+    {
+     "es": "Juan toma café y María toma datos personales."
+    }
+   ]
+  },
+  {
+   "pattern": "Вопрос и ответ да / нет (диалог упр. 5, заменять café на другие слова)",
+   "page": 10,
+   "examples": [
+    {
+     "es": "¿Tomas café?"
+    },
+    {
+     "es": "Sí, tomo café. ¿Y tú?"
+    },
+    {
+     "es": "No, no tomo café, tomo té."
+    }
+   ]
+  },
+  {
+   "pattern": "Отрицание: no перед глаголом",
+   "page": 10,
+   "examples": [
+    {
+     "es": "No, no tomo café."
+    }
+   ]
+  },
+  {
+   "pattern": "Неофициальное приветствие (Para conocer más, упр. 6)",
+   "page": 10,
+   "examples": [
+    {
+     "es": "¡Hola! ¿Qué tal? ¿Cómo estás?"
+    },
+    {
+     "es": "Fenomenal / bien / así así / mal / fatal."
+    }
+   ]
+  }
  ],
  "exercises": [
-  {"number": "1", "instruction_ru": "Прочитайте, следя за правильной артикуляцией звуков", "page": 8},
-  {"number": "2", "instruction_ru": "Прочитайте слова с определенным и неопределенным артиклем: mesa, tema, modelo, sopa, mapa, unidad, planeta, facultad, salida, helado, universidad, casa, alumno, alumna, foto, plan, estudiante, flor, atleta, paso, equipo, historia, queso, clase, idioma, color", "page": 9},
-  {"number": "3", "instruction_ru": "Образуйте формы множественного числа слов из упражнения 2", "page": 9},
-  {"number": "4", "instruction_ru": "Проспрягайте глагол tomar с существительными из правой колонки таблицы", "page": 10},
-  {"number": "5", "instruction_ru": "Прочитайте, переведите и повторите диалог, заменяя слово café на другие", "page": 10},
-  {"number": "7", "instruction_ru": "В парах поприветствуйте друг друга", "page": 10}
+  {
+   "number": "1",
+   "instruction_ru": "Прочитайте, следя за правильной артикуляцией звуков",
+   "page": 8,
+   "text": "Прочитайте, следя за правильной артикуляцией звуков:\nalumno, materia, idioma, música, mundo, paso, piso, pedid, formal, fenomenal, fatal, luna, limón, latino, italiano, nada, danés, incluso, casa, empresa, mesa, instituto, así, academia, uso, último, menudo, té, teléfono, estudios, alemán, donde, dos, adiós, café, casado, como, queso, salida, helado, facultad, usted, simple, que, equipo, hotel, hostal, hola, historia, hasta.",
+   "kind": "reading"
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Прочитайте слова с определенным и неопределенным артиклем: mesa, tema, modelo, sopa, mapa, unidad, planeta, facultad, salida, helado, universidad, casa, alumno, alumna, foto, plan, estudiante, flor, atleta, paso, equipo, historia, queso, clase, idioma, color",
+   "page": 9,
+   "text": "Прочитайте приведенные ниже слова, употребляя их: A. с определенным артиклем; B. с неопределенным артиклем:\nmesa, tema, modelo, sopa, mapa, unidad, planeta, facultad, salida, helado, universidad, casa, alumno, alumna, foto, plan, estudiante, flor, atleta, paso, equipo, historia, queso, clase, idioma, color.",
+   "kind": "closed"
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Образуйте формы множественного числа слов из упражнения 2",
+   "page": 9,
+   "text": "Образуйте формы множественного числа слов из упражнения 2:\nmesa, tema, modelo, sopa, mapa, unidad, planeta, facultad, salida, helado, universidad, casa, alumno, alumna, foto, plan, estudiante, flor, atleta, paso, equipo, historia, queso, clase, idioma, color.",
+   "kind": "closed"
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Проспрягайте глагол tomar с существительными из правой колонки таблицы",
+   "page": 10,
+   "text": "Проспрягайте глагол tomar с существительными, которые даны в правой колонке таблицы (§6): café, té, el tren, el metro, datos personales, una nota.\n(yo, tú, José, José y yo, José y tú, José y Juan)",
+   "kind": "closed"
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Прочитайте, переведите и повторите диалог, заменяя слово café на другие",
+   "page": 10,
+   "text": "Прочитайте, переведите и повторите диалог, заменяя слово café на другие:\n– ¿Tomas café?\n– Sí, tomo café. ¿Y tú?\n– No, no tomo café, tomo té.",
+   "kind": "closed"
+  },
+  {
+   "number": "6",
+   "text": "Запомните некоторые формы неофициального приветствия:\n¡Hola! ¿Qué tal? ¿Cómo estás? – Fenomenal / bien / así así / mal / fatal.",
+   "kind": "open",
+   "instruction_ru": "Запомните некоторые формы неофициального приветствия",
+   "page": 10
+  },
+  {
+   "number": "7",
+   "instruction_ru": "В парах поприветствуйте друг друга",
+   "page": 10,
+   "text": "В парах поприветствуйте друг друга.",
+   "kind": "open"
+  }
  ],
  "culture": "Introducción (с. 6–7): испанский язык в мире, вехи истории Испании, карты Испании и Латинской Америки.",
  "questions_for_user": []

@@ -870,7 +870,9 @@
     "Целый вечер ты разговариваешь по телефону.",
     "Ты настоящий друг.",
     "У любого мальчишки есть компьютер."
-   ]
+   ],
+   "text": "Задания на todo: A – переведите на русский; B – вставьте артикли; C – переведите на испанский:\n1. Ты читаешь все эти книги? 2. Каждый день я хожу на занятия. 3. Каждый год мы навещаем наших родственников в Германии. 4. Все уже здесь? 5. Все утро преподаватель отвечает на вопросы студентов. 6. Весь день я сижу дома. Целый день я сижу дома. 7. Целый вечер ты разговариваешь по телефону. 8. Ты настоящий друг. 9. У любого мальчишки есть компьютер.",
+   "kind": "closed"
   },
   {
    "number": "2",
@@ -887,7 +889,9 @@
     "Какие языки Вы знаете? – Я хорошо говорю по-английски и по-испански.",
     "Я не умею писать письма.",
     "Я хорошо знаю Москву, но не знаю Мадрид."
-   ]
+   ],
+   "text": "Проспрягайте saber и conocer с зависимыми словами; A – вопросы; B – вставьте saber / conocer; C – переведите:\n1. Я хочу познакомиться с этой девушкой. Она такая красивая. 2. Мы не умеем говорить по-японски, по-китайски тоже. 3. Наш преподаватель знает столько! 4. Я знаю, что это не правда. 5. Я не знаком с Вашим директором. Какой он? 6. Вы не знаете, который час? 7. Ты хорошо знаешь историю Испании? 8. Какие языки Вы знаете? – Я хорошо говорю по-английски и по-испански. 9. Я не умею писать письма. 10. Я хорошо знаю Москву, но не знаю Мадрид.",
+   "kind": "closed"
   },
   {
    "number": "3",
@@ -900,7 +904,9 @@
     "Для чего мы рождаемся?",
     "Что производит эта немецкая компания?",
     "Я перевожу текст, а затем отвечаю на вопросы."
-   ]
+   ],
+   "text": "Проспрягайте словосочетания (ofrecer, parecerse, nacer, traducir, conducir, producir); A – вопросы; B – вставьте глаголы; C – переведите:\n1. На кого ты похож? На папу или на маму? – Я похож на маму, а моя сестра на папу. 2. Ты умеешь водить машину? 3. Я предлагаю тебе чашечку кофе. 4. Для чего мы рождаемся? 5. Что производит эта немецкая компания? 6. Я перевожу текст, а затем отвечаю на вопросы.",
+   "kind": "closed"
   },
   {
    "number": "4",
@@ -908,7 +914,9 @@
    "pages": [
     44,
     45
-   ]
+   ],
+   "text": "Ответьте на вопросы, заменяя дополнения на местоимения в винительном падеже:\n1. ¿Necesitas este bolígrafo? 2. ¿Necesitas estos lápices? 3. ¿Conoces a esta estudiante? 4. ¿Conoce Usted a aquellos señores? 5. ¿Sabes inglés? 6. ¿Sabe Usted portugués? 7. ¿Traduces estas frases? 8. ¿Producen ustedes coches? 9. ¿Conduces una moto? 10. ¿Ofreces una taza de chocolate? 11. ¿Conocéis un buen restaurante por aquí? 12. ¿Ofrecéis un trabajo interesante? 13. ¿Necesitáis mucho dinero? 14. ¿Conocéis a todas estas personas? 15. ¿Lees todas estas revistas? 16. ¿Tienes hermanos?",
+   "kind": "closed"
   },
   {
    "number": "5",
@@ -923,12 +931,16 @@
     "Вашим внукам нужен компьютер? – Да, он им очень нужен.",
     "Вы знакомы с господином Лара? – Нет, я с ним не знаком.",
     "Ты знаешь моих сестер? – Нет, я с ними не знаком."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Вам нужна черная ручка? – Нет, мне она не нужна. 2. Тебе нужны испанские журналы? – Нет, мне они не нужны. 3. Директору нужны эти документы? – Да, они ему нужны. 4. Вам нужен бразильский кофе? – Да, он нам нужен. 5. Студентам нужны хорошие отметки? – Да, они им очень нужны. 6. Вашим внукам нужен компьютер? – Да, он им очень нужен. 7. Вы знакомы с господином Лара? – Нет, я с ним не знаком. 8. Ты знаешь моих сестер? – Нет, я с ними не знаком.",
+   "kind": "closed"
   },
   {
    "number": "6",
    "instruction_ru": "Вставьте aprender / enseñar и переведите",
-   "page": 45
+   "page": 45,
+   "text": "Вставьте необходимый по смыслу глагол (aprender, enseñar) в нужной форме и переведите предложения:\n1. El ser humano ___ toda la vida. 2. ¿Quién te ___ álgebra? 3. Quiero ___ a mi hijo a conducir el coche. 4. La secretaria quiere ___ el inglés, lo necesita para su trabajo. 5. Sabes conducir la moto, pero no quieres ___ a tus amigos. 6. ¿Es difícil ___ a hablar castellano? 7. ¿Qué te gusta más: ___ o ___?",
+   "kind": "closed"
   },
   {
    "number": "7",
@@ -936,22 +948,30 @@
    "pages": [
     45,
     46
-   ]
+   ],
+   "text": "Переведите на русский язык:\n1. Debes hablar con él sobre este tema. 2. El profesor empieza a leer, y los estudiantes empiezan a escribir el dictado fonético. 3. ¿Cuándo termináis de estudiar? 4. ¡Los empleados de este departamento tienen que trabajar tanto! 5. A Andrés le encanta la literatura latinoamericana, debe aprender español. 6. La nueva agente de viajes tiene que aprender a traducir documentos al inglés y enviar mensajes. 7. Cuando el embajador termina de hablar, los periodistas le preguntan muchas cosas.",
+   "kind": "closed"
   },
   {
    "number": "8",
    "instruction_ru": "Вставьте глаголы: A – tener que, deber; B – empezar, terminar",
-   "page": 46
+   "page": 46,
+   "text": "Вставьте необходимый по смыслу глагол в нужной форме и переведите предложения:\nA. tener que, deber: 1. Pepe, ¡(tú) no ___ hablar así con tu padre! 2. Todos los estudiantes ___ saber las reglas de gramática para tener buenas notas. 3. Vuestro colega está enfermo, (vosotros) ___ visitarlo. 4. Para ser chófer (yo) ___ aprender a conducir el coche. 5. Usted ___ conocer a nuestra nueva empleada. Es una joven muy inteligente y simpática.\nB. empezar, terminar: 1. Señores, ¿por qué no ___ a trabajar? Ya son las 9:15. 2. No sé cuándo ___ de estudiar hoy. ¡Tengo tantas clases! 3. Mi papá ___ a trabajar temprano y ___ de trabajar tarde. Le encanta su profesión. 4. Queremos ___ a aprender el francés. 5. ¡Chicos! ¿Cuándo (vosotros) ___ de hablar y ___ a traducir el texto?",
+   "kind": "closed"
   },
   {
    "number": "9",
    "instruction_ru": "Переведите на русский язык",
-   "page": 46
+   "page": 46,
+   "text": "Переведите на русский язык:\n1. Este año académico por la mañana no tenemos clases, empezamos a estudiar por la tarde. 2. El director siempre llega a la oficina a las 8:45, no le gusta llegar tarde. 3. ¿A qué hora terminan las clases hoy? – Las clases empiezan a las 9 de la mañana y terminan a las 14:30 de la tarde. 4. Por la mañana trabajo en la agencia de mi padre y por la tarde asisto a los cursos de inglés. Llego a casa a las 10 de la noche. 5. Por las noches a mi abuela le gusta hablar por teléfono con sus amigas. 6. Hombre, ¡ya son las 17:30! ¿Quieres tomar algo en la cafetería? 7. Ya son las 14:45 y la profesora no está. – Dicen que está enferma.",
+   "kind": "closed"
   },
   {
    "number": "10",
    "instruction_ru": "Ответьте на вопросы: A – ¿Qué hora es? (8:45, 10:00, 12:55, 13:00, 9:15, 14:25, 11:30, 17:10, 19:15, 18:45); B – ¿A qué hora…?",
-   "page": 46
+   "page": 46,
+   "text": "Ответьте на вопросы:\nA. ¿Qué hora es?: 8:45, 10:00, 12:55, 13:00, 9:15, 14:25, 11:30, 17:10, 19:15, 18:45.\nB. (о себе) 1. ¿A qué hora empieza usted a estudiar? 2. ¿A qué hora termina usted de estudiar? 3. ¿A qué hora empieza usted a trabajar? 4. ¿A qué hora termina usted de trabajar? 5. ¿A qué hora toma usted algo en la cafetería? 6. ¿A qué hora llega usted a la Universidad? 7. ¿A qué hora trabaja usted con el ordenador? 8. ¿A qué hora tiene usted que visitar el banco?",
+   "kind": "closed"
   },
   {
    "number": "11",
@@ -966,22 +986,30 @@
     "В котором часу начинается урок политической географии?",
     "Мне не нравится бухгалтерский учет. Карлосу тоже.",
     "Марии очень нравится новейшая история, она хорошо знает этот предмет."
-   ]
+   ],
+   "text": "Запомните названия дисциплин; A – когда начинаются и заканчиваются занятия; B – обсудите предметы (interesante, aburrido, fácil, difícil, complicado); C – переведите:\n1. Сколько у вас сегодня уроков? – У нас четыре урока: математика, социология, связи с общественностью и английский язык. 2. Ты знаком с новым преподавателем философии? – Нет, я с ним не знаком. 3. В котором часу начинается урок политической географии? 4. Мне не нравится бухгалтерский учет. Карлосу тоже. 5. Марии очень нравится новейшая история, она хорошо знает этот предмет.",
+   "kind": "closed"
   },
   {
    "number": "12",
    "instruction_ru": "Прочитайте и переведите диалог; A – проспрягайте saber qué hora es, empezar a estudiar, terminar de hablar por teléfono, llamar por teléfono a la facultad, obtener toda la información, no tener idea, ser un buen estudiante; B – вопросы; C – по ролям; D – перескажите",
-   "page": 47
+   "page": 47,
+   "text": "Прочитайте и переведите диалог:\n– ¿Sabes qué horario tenemos este año académico?\n– Ni idea. ¿A qué se debe esta pregunta?\n– Dicen que las clases empiezan por la tarde.\n– ¡Qué barbaridad! Entonces ¿a qué hora terminan?\n– Dios sabe.\n– ¿Por qué no llamas por teléfono a la facultad para obtener toda la información?\n– No tengo el número.\n– Hombre, lo tienes en la página web de la Universidad.\n– Eres todo un genio.\nA. Проспрягайте следующие глаголы с зависимыми словами: saber qué hora es, empezar a estudiar, terminar de hablar por teléfono, llamar por teléfono a la facultad, obtener toda la información, no tener idea, ser un buen estudiante.\nB. Ответьте на вопросы: 1. ¿Sabe el joven qué horario tiene su grupo este año académico? 2. ¿A qué se debe (чем вызван) esta pregunta? 3. ¿A qué hora empiezan las clases por la tarde? 4. ¿A qué hora terminan? 5. ¿Dónde obtienen los estudiantes toda la información?\nC. Воспроизведите диалог по ролям. D. Перескажите содержание диалога.",
+   "kind": "closed"
   },
   {
    "number": "13",
    "instruction_ru": "Вставьте слова: asignatura, gestión de la empresa, horario, información, semestre, año académico, contabilidad, página web de la facultad, clase, empezar, terminar, realidad social y económica del país",
-   "page": 47
+   "page": 47,
+   "text": "Вставьте подходящие по смыслу слова: asignatura, gestión de la empresa, horario, información, semestre, año académico, contabilidad, página web de la facultad, clase, empezar, terminar, realidad social y económica del país.\nEste ___ tenemos muchas nuevas ___: ___, ___, ___, entre otras. Toda la ___ sobre los horarios está en la ___. Todos los días tenemos tres o cuatro ___ que ___ a las 9 de la mañana y ___ a las 14:30. Me gusta el ___ que tengo este ___.",
+   "kind": "closed"
   },
   {
    "number": "14",
    "instruction_ru": "Вставьте предлоги и артикли",
-   "page": 47
+   "page": 47,
+   "text": "Вставьте необходимые предлоги и артикли:\n1. ___ clases ___ escuela ___ idiomas empiezan ___ tarde, ___ 16:00. 2. ___ estudiantes terminan ___ traducir ___ diálogo y empiezan ___ escribir ___ dictado. 3. ___ tía ___ Ana es profesora, le enseña ___ leer. 4. Antonio quiere ___ llamar ___ teléfono ___ facultad ___ obtener toda ___ información. 5. ___ horario ___ clases está ___ página web ___ universidad.",
+   "kind": "closed"
   },
   {
    "number": "15",
@@ -989,12 +1017,16 @@
    "pages": [
     47,
     48
-   ]
+   ],
+   "text": "Ответьте на вопросы:\n1. ¿Dónde estudias? 2. ¿Qué estudias? 3. ¿Tienes muchas clases? 4. ¿A qué hora empiezan las clases? 5. ¿A qué hora terminan? 6. ¿Asistes a todas las clases? 7. ¿Qué asignaturas te gustan? 8. ¿Qué asignaturas no te gustan nada? ¿Por qué? 9. ¿Sabes cómo se llaman los profesores que te enseñan? 10. ¿Qué horario tienes este año académico?",
+   "kind": "open"
   },
   {
    "number": "16",
    "instruction_ru": "Расскажите, какие предметы вы изучаете и какое у вас расписание",
-   "page": 48
+   "page": 48,
+   "text": "Расскажите, какие предметы вы изучаете и какое у вас расписание.",
+   "kind": "open"
   },
   {
    "number": "17",
@@ -1022,22 +1054,30 @@
     "Мы хотим научиться жить без спешки (vivir sin prisa).",
     "Когда заканчивается учебный год?",
     "Вы знаете, в котором часу служащие этого предприятия заканчивают работать?"
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Когда ты пьешь кофе? – Я пью кофе по утрам. 2. В котором часу у вас начинается урок испанского языка? – В 14:30. 3. В котором часу Вы приходите в Университет? – Я прихожу ровно в восемь. 4. Который час? – 15:40. 5. В котором часу они заканчивают учиться? – Они заканчивают учиться в три часа дня. 6. В 8:30 утра я всегда в Университете и жду преподавателя. 7. Хосе приходит в офис в 9:15. 8. Мне не нравится работать по вечерам. 9. Мы должны быть в банке в 8:45. 10. Мигель работает в фирме «24 часа». 11. Кто этот высокий господин, который так хорошо говорит по-русски? – Я с ним не знаком, но знаю, что он живет в гостинице. 12. В котором часу начинается лекция испанского профессора по внешней торговле Испании? 13. У тебя есть красная ручка? – Нет, у меня её нет. 14. Ты любишь философию? – Нет, я её не люблю, она очень сложная. 15. У тебя есть новое расписание? – Нет, у меня его нет. 16. Ты умеешь писать письма? – Их пишет моя секретарша. 17. Ваша компания производит синие автомобили? – Нет, их производят только в Германии. 18. Кто учит вашего внука читать и писать? 19. Мы хотим научиться жить без спешки (vivir sin prisa). 20. Когда заканчивается учебный год? 21. Вы знаете, в котором часу служащие этого предприятия заканчивают работать?",
+   "kind": "closed"
   },
   {
    "number": "18",
    "instruction_ru": "Прочитайте и переведите текст «Universidad de Navarra: actividades culturales»",
-   "page": 48
+   "page": 48,
+   "text": "Прочитайте и переведите текст:\nUniversidad de Navarra: actividades culturales\nLa vida universitaria no se limita a cursar unos estudios, la universidad ofrece numerosas maneras de acercarse a la cultura: conciertos de música, obras de teatro, coro y orquesta universitarios, grupos de escritura o lectura o exposiciones de artes plásticas.\nSemanal «Vida Universitaria»\n«Vida Universitaria» es una publicación de Actividades Culturales que puede encontrarse en la entrada de todos los edificios y que proporciona información puntual sobre actividades culturales, sociales y deportivas, así como de otros acontecimientos relevantes de la universidad.\nTalleres\nPintura al óleo, poesía, producción musical, técnicas teatrales o fotografía.\nConcursos\nConcursos de humor, pop, rock, cantautores, relato corto y poesía. Cada estudiante tiene la oportunidad de demostrar sus habilidades.",
+   "kind": "closed"
   },
   {
    "number": "19",
    "instruction_ru": "Ответьте на вопросы по тексту",
-   "page": 48
+   "page": 48,
+   "text": "Ответьте на вопросы (по тексту упр. 18):\n1. ¿Qué actividades culturales ofrece la Universidad de Navarra? 2. ¿Qué es el semanal «Vida Universitaria»? 3. ¿Qué talleres tiene la Universidad de Navarra? 4. ¿Qué concursos organiza? 5. ¿Cuáles de estas actividades le interesan a Usted más?",
+   "kind": "closed"
   },
   {
    "number": "20",
    "instruction_ru": "Расскажите о культурных мероприятиях вашего университета",
-   "page": 48
+   "page": 48,
+   "text": "Расскажите о культурных мероприятиях университета, в котором вы учитесь.",
+   "kind": "open"
   }
  ],
  "questions_for_user": []

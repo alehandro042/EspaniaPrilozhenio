@@ -506,12 +506,16 @@
   {
    "number": "1",
    "instruction_ru": "Прочитайте, следя за артикуляцией, и запомните имена и их уменьшительные формы",
-   "page": 31
+   "page": 31,
+   "text": "Прочитайте, следя за правильной артикуляцией звуков, и запомните некоторые имена собственные и их уменьшительные формы:\nÁngel – Angelito; Antonia – Toñi; Carmen – Carmencita; Carlos – Carlitos; Concepción – Concha, Conchita; Dolores – Lola, Lolita; Elena – Elenita; Enrique – Quique; Francisco – Paco, Paquito, Quico, Pancho, Curro; Jesús – Chus, Suso; José – Pepe, Pepito; Manuel – Manolo, Manolito; María – Mari, Maruja; María Isabel – Maribel; María Jesús – Chus, Susi; María Teresa – Maite; Miguel – Miguelito; Pedro – Perico; Pilar – Pili, Pilarín; Rafael – Rafa, Rafi; Rosa – Rosita, Rosi; Rosario – Charo.",
+   "kind": "reading"
   },
   {
    "number": "2",
    "instruction_ru": "Прочитайте числительные: 2, 4, 7, 9, 13, 18, 23, 37, 44, 51, 67, 76, 82, 95, 11, 84, 15, 78, 17, 61, 14, 57, 49, 100, 35, 80, 12, 19, 50, 24, 38, 45, 52, 66, 77, 83, 99, 10, 16, 39, 54, 60, 25, 48, 91",
-   "page": 31
+   "page": 31,
+   "text": "Прочитайте следующие числительные:\n2, 4, 7, 9, 13, 18, 23, 37, 44, 51, 67, 76, 82, 95, 11, 84, 15, 78, 17, 61, 14, 57, 49, 100, 35, 80, 12, 19, 50, 24, 38, 45, 52, 66, 77, 83, 99, 10, 16, 39, 54, 60, 25, 48, 91.",
+   "kind": "closed"
   },
   {
    "number": "3",
@@ -526,7 +530,9 @@
     "¿Nos vendes tu moto?",
     "¿Me lees este documento?",
     "Te escribo una carta."
-   ]
+   ],
+   "text": "Прочитайте и переведите:\n1. ¿Te gusta este libro? 2. Tengo dos hijas guapas. ¿Cuál de ellas le gusta a Usted? 3. Os presento a mi abuela. 4. Les presento al señor López. 5. ¿Me presentas a tu marido? 6. ¿Nos vendes tu moto? 7. ¿Me lees este documento? 8. Te escribo una carta.",
+   "kind": "closed"
   },
   {
    "number": "4",
@@ -542,7 +548,9 @@
     "¿___ gusto? – ¡___ gustas mucho!",
     "¡A nosotros ___ encanta Barcelona! – Pues, a mí ___ gusta Santiago de Compostela.",
     "A vosotros no ___ gusta la comida, ¿por qué?"
-   ]
+   ],
+   "text": "Вставьте местоимения:\n1. A la madre no ___ gustan estas rosas. 2. ¿___ gusta el café a Pedro? – Sí, ___ encanta el café colombiano. 3. A Ana y a mí ___ encanta estudiar en la Universidad, y a ti, ¿___ gusta? 4. Vosotros ___ gustáis y nosotros no ___ gustamos. 5. A los turistas ingleses ___ encanta Madrid. 6. A Carmen ___ gusta vivir en la residencia. 7. ¿___ gusto? – ¡___ gustas mucho! 8. ¡A nosotros ___ encanta Barcelona! – Pues, a mí ___ gusta Santiago de Compostela. 9. A vosotros no ___ gusta la comida, ¿por qué?",
+   "kind": "closed"
   },
   {
    "number": "5",
@@ -556,17 +564,23 @@
     "¿Qué no te gusta?",
     "¿Qué cosas te encantan?",
     "¿Os encanta el español?"
-   ]
+   ],
+   "text": "Ответьте на вопросы:\n1. ¿Os gusta estudiar en la Universidad? 2. ¿Te gustan las rosas? 3. ¿Le gusto a Usted? 4. ¿Qué les gusta a Ustedes? 5. ¿Qué no te gusta? 6. ¿Qué cosas te encantan? 7. ¿Os encanta el español?",
+   "kind": "open"
   },
   {
    "number": "6",
    "instruction_ru": "Перечислите, что вам нравится и не нравится (gustar, encantar): fútbol, estudiar, trabajar, libros interesantes, flores, café, viajar, libros aburridos, vivir en la residencia, económicas, historia, comida española, escribir pruebas, hablar con los amigos, tener problemas, chicas guapas",
-   "page": 32
+   "page": 32,
+   "text": "Перечислите, какие вещи из списка вам нравятся и какие не нравятся (используя глаголы gustar, encantar):\nfútbol, estudiar, trabajar, libros interesantes, flores, café, viajar, libros aburridos, vivir en la residencia, económicas, historia, comida española, escribir pruebas, hablar con los amigos, tener problemas, chicas guapas.",
+   "kind": "open"
   },
   {
    "number": "7",
    "instruction_ru": "Проспрягайте querer с зависимыми словами из таблицы; задайте вопросы в парах",
-   "page": 32
+   "page": 32,
+   "text": "Проспрягайте глагол querer с зависимыми словами, которые даны в правой колонке таблицы (terminar la carrera, ser economista, presentar la solicitud, trabajar en esta empresa, ver a mis amigos, a mis padres, a mis colegas). Задайте в парах вопросы, используя эти словосочетания.",
+   "kind": "open"
   },
   {
    "number": "8",
@@ -576,17 +590,23 @@
     "Quiero mucho a mis padres.",
     "Me gusta España.",
     "¿Quieres tomar algo?"
-   ]
+   ],
+   "text": "Переведите на русский язык (продолжение на с. 33, которой нет в PDF):\n1. Quiero mucho a mis padres. 2. Me gusta España. 3. ¿Quieres tomar algo?",
+   "kind": "closed"
   },
   {
    "number": "12",
    "instruction_ru": "(начало задания на с. 33) A: задавая вопросы, заполните анкету для одногруппников; B: представьте одногруппников",
-   "page": 34
+   "page": 34,
+   "text": "(Начало упражнения на с. 33, которой нет в файле.)\nA. Задавая соответствующие вопросы, заполните анкету для своих одногруппников.\nB. Представьте своих одногруппников.",
+   "kind": "open"
   },
   {
    "number": "13",
    "instruction_ru": "Прочитайте и переведите диалог; A: проспрягайте ser ingeniero, ser director financiero, ser su compañero de trabajo, estar aquí, estar en la agencia de viajes, trabajar en una fábrica textil, presentar a (sus) amigos, presentar a (sus) padres (hijos, hermanos); B: ответьте на вопросы; C: по ролям; D: перескажите",
-   "page": 34
+   "page": 34,
+   "text": "Прочитайте и переведите диалог:\nIsabel: ¡Hola, Diego! Te presento a mi marido Felipe. Es ingeniero. Trabaja en una fábrica textil.\nDiego: ¡Hola, Felipe! ¿Qué hay?\nFelipe: Pues nada, aquí estamos. ¿Sois compañeros de trabajo, verdad?\nDiego: Sí, trabajamos juntos en la agencia de viajes. Soy director financiero.\nFelipe: Pues, mucho gusto en conocerte, Diego. Hasta luego.\nA. Проспрягайте следующие глаголы с зависимыми словами: ser ingeniero, ser director financiero, ser su compañero de trabajo, estar aquí, estar en la agencia de viajes, trabajar en una fábrica textil, presentar a (sus) amigos, presentar a (sus) padres (hijos, hermanos).\nB. Ответьте на вопросы: 1. ¿Cómo se llama el marido de Isabel? 2. ¿Qué es? 3. ¿Dónde trabaja? 4. ¿A quién presenta Isabel a su marido? 5. ¿Qué es Diego? 6. ¿Dónde trabajan Isabel y Diego? 7. ¿Trabajan juntos?\nC. Воспроизведите диалог по ролям. D. Перескажите содержание диалога.",
+   "kind": "closed"
   },
   {
    "number": "14",
@@ -600,17 +620,23 @@
     "¿Por qué no te gustan ___ motos?",
     "Jorge es ___ buen camarero.",
     "¿___ qué agencia ___ viajes trabaja Usted?"
-   ]
+   ],
+   "text": "Вставьте предлоги и артикли:\n1. ___ periodista presenta ___ pasaporte ___ policía. 2. ¿___ quién está casada Lola? – ___ hijo ___ abogado. 3. ¿___ dónde son, ___ señores? 4. No me gusta ___ tienda ___ tío Pepe. 5. ¿Por qué no te gustan ___ motos? 6. Jorge es ___ buen camarero. 7. ¿___ qué agencia ___ viajes trabaja Usted?",
+   "kind": "closed"
   },
   {
    "number": "15",
    "instruction_ru": "Ответьте на вопросы о родителях (¿Quién es tu padre? ¿Qué es tu padre? ¿Quién es tu madre? ¿Qué es tu madre? ¿Cómo son tus padres? ¿Cuántos años tienen? ¿De dónde son? ¿Dónde trabajan tus padres? ¿Cómo están?)",
-   "page": 34
+   "page": 34,
+   "text": "Ответьте на вопросы:\n1. ¿Quién es tu padre? 2. ¿Qué es tu padre? 3. ¿Quién es tu madre? 4. ¿Qué es tu madre? 5. ¿Cómo son tus padres? 6. ¿Cuántos años tienen? 7. ¿De dónde son? 8. ¿Dónde trabajan tus padres? 9. ¿Cómo están?",
+   "kind": "open"
   },
   {
    "number": "16",
    "instruction_ru": "Расскажите о своей семье",
-   "page": 34
+   "page": 34,
+   "text": "Расскажите о своей семье.",
+   "kind": "open"
   },
   {
    "number": "17",
@@ -638,7 +664,9 @@
     "Этот проект меня восхищает.",
     "В банке Вы предъявляете паспорт и подписываете документы.",
     "Эта страна находится далеко отсюда."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Пако женится на красивой девушке, но она мне не нравится, она глупа. 2. Луис не хочет жениться, он еще молод. 3. Какое Ваше семейное положение? – Я замужем. 4. Моя бабушка уже на пенсии, а мой дедушка работает, потому что ему нет шестидесяти. 5. У Вас есть дети? – У меня две дочери и один сын. 6. Вам нравится Ваша профессия? – Да, мне нравится работать в банке. 7. Из какой Вы страны? – Я из Марокко. 8. Росарио не любит Пепе, поэтому она не хочет выходить за него замуж. 9. Тебе нравится это имя? 10. Хосефа любит магазины, а её муж – футбол. 11. Этот человек меня восхищает. 12. Мария изучает математику, потому что она ей нравится. 13. Господин директор, я представляю Вам испанского журналиста Эмилио Ромеро. Он хочет поговорить с Вами об одном важном деле. 14. Вот два компьютера. Какой из них тебе нравится? 15. Ваша племянница работает в парикмахерской? – Нет. Она официантка в баре, но хочет учиться на экономиста. 16. Я не люблю слишком длинные диалоги. 17. Хочешь посмотреть телевизор? 18. Как зовут твоих тетю и дядю? 19. Этот проект меня восхищает. 20. В банке Вы предъявляете паспорт и подписываете документы. 21. Эта страна находится далеко отсюда.",
+   "kind": "closed"
   }
  ],
  "questions_for_user": [

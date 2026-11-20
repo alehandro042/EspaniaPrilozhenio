@@ -653,17 +653,23 @@
     "Chus es menos alta que Charo.",
     "Carlitos es más perezoso que Quique.",
     "Maite es menos alegre que Pili."
-   ]
+   ],
+   "text": "Трансформируйте по образцу: José es más alto que Juan. – Juan es menos alto que José.:\n1. Lola es más guapa que Concha. 2. Ángel es más inteligente que Quico. 3. Maribel es menos delgada que Susi. 4. Manolo es más gordo que Pepe. 5. Chus es menos alta que Charo. 6. Carlitos es más perezoso que Quique. 7. Maite es menos alegre que Pili.",
+   "kind": "closed"
   },
   {
    "number": "2",
    "instruction_ru": "Вспомните слова, обозначающие родственников, и охарактеризуйте своих родных, используя сравнительную степень",
-   "page": 83
+   "page": 83,
+   "text": "Вспомните, какие слова служат для обозначения родственников, и охарактеризуйте своих родных, используя сравнительную степень.",
+   "kind": "open"
   },
   {
    "number": "3",
    "instruction_ru": "Сравните предметы и мебель в вашей комнате: alto/bajo, ancho/estrecho, largo/corto, grande/pequeño, caro/barato, clásico/moderno, oscuro/claro",
-   "page": 83
+   "page": 83,
+   "text": "Сравните предметы и мебель в вашей комнате, употребляя следующие прилагательные: alto/bajo, ancho/estrecho, largo/corto, grande/pequeño, caro/barato, clásico/moderno, oscuro/claro.",
+   "kind": "open"
   },
   {
    "number": "4",
@@ -671,7 +677,9 @@
    "pages": [
     83,
     84
-   ]
+   ],
+   "text": "Ответьте на вопросы, обращая внимание на употребление сравнительной степени (образец: ¿Qué es más grande: la sala o la cocina? – La sala es más grande que la cocina. / La cocina es menos grande que la sala. / La cocina es tan grande como la sala.):\n1. ¿Qué música es más moderna: la de Tchaikovsky, o la de Enrique Iglesias? 2. ¿Quién es más alto: tu amigo o tú? 3. ¿Qué elemento de construcción es más ancho: la puerta o la ventana? 4. ¿Qué es más antiguo: el Kremlin o el Teatro Bolshoy? 5. ¿Qué coche es más caro: un Mercedes o un Lada? 6. ¿Quién es más viejo: vuestro abuelo o vuestra abuela? 7. ¿Qué mueble es más oscuro: el armario o la mesa? 8. ¿Quién es más guapa: Carmen o Eva?",
+   "kind": "closed"
   },
   {
    "number": "5",
@@ -688,12 +696,16 @@
     "Эта книга такая же скучная, как та.",
     "У нас столько же экзаменов, сколько у вас.",
     "Классическая музыка такая же красивая, как и современная."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Мария красивее Анны, но Анна умнее. 2. Кто из нас двоих прилежнее? 3. Твой брат более ленивый, чем ты, поэтому он получает плохие отметки. 4. Пятый зал меньше, чем первый. 5. Третья тема менее трудная, чем вторая. 6. Эта официантка менее симпатичная, чем та. 7. Ты такой же смуглый, как твой отец. 8. Эта книга такая же скучная, как та. 9. У нас столько же экзаменов, сколько у вас. 10. Классическая музыка такая же красивая, как и современная.",
+   "kind": "closed"
   },
   {
    "number": "6",
    "instruction_ru": "Вставьте необходимые притяжательные местоимения",
-   "page": 84
+   "page": 84,
+   "text": "Вставьте необходимые притяжательные местоимения:\n1. Este teléfono móvil es ___ (de ti). ¿Y dónde está ___ (el de mí)? 2. ___ cama (la de nosotros) está enfrente de la ventana y ___ (la de nuestros hijos) al lado del armario. 3. ___ habitación (la de mí) está a la izquierda y ___ (la de Usted) a la derecha. 4. Cerca de ___ hotel (el de nosotros) hay muchos coches. ¿En ___ (el de vosotros) también los hay? 5. ¿Es ___ el pasaporte (el de Usted)? – Sí, es ___. 6. Es un amigo ___, vive en la misma casa que yo. 7. Chicos, ¿dónde están ___ dormitorios (los de vosotros)? – ___ están en el primer piso y ___ (el de ti) está en el tercero. 8. ___ coche (el de María) es más grande que ___ (el de ti), pero ___ (el de ti) es más rápido. 9. ___ secretaria (la de nosotros) trabaja todo el día y ___ (la de vosotros) no. 10. ¿De quién es esta revista? – Es ___ (la de la profesora). 11. ___ empresa (la de nosotros) está cerca de aquí. ¿Y ___ (la de ustedes)? 12. ___ jefe (el de mí) es joven y ___ (el de usted) ya es viejo. 13. ___ profesores (los de nosotros) tienen mucha experiencia y ¿___ (los de vosotros)? 14. ¿Es ___ (la de Usted) esta mesa? No, ___ está en el rincón.",
+   "kind": "closed"
   },
   {
    "number": "7",
@@ -708,12 +720,16 @@
     "Твое окно выходит во двор, а мое на улицу.",
     "Это Ваша фотография? – Нет, моя лежит на столе справа.",
     "Это Ваша картина? – Нет, моя висит слева на стене."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Ваша комната такая же светлая, как наша. 2. Ваш календарь красивее, чем мой. 3. Мой компьютер работает быстрее, чем твой. 4. Наш ковер такой же старинный, как и Ваш. 5. Мое кресло такое же удобное, как и твое. 6. Твое окно выходит во двор, а мое на улицу. 7. Это Ваша фотография? – Нет, моя лежит на столе справа. 8. Это Ваша картина? – Нет, моя висит слева на стене.",
+   "kind": "closed"
   },
   {
    "number": "8",
    "instruction_ru": "Проспрягайте, переведите и запомните выражения; составьте рассказ: pedir una copa de vino, vestirse con elegancia, seguir su camino, conseguir sus propósitos, elegir un regalo, reírse de sus compañeros, sonreír porque estar de buen humor, despedirse de todos",
-   "page": 85
+   "page": 85,
+   "text": "Проспрягайте, переведите и запомните выражения. Составьте небольшой рассказ:\npedir una copa de vino, vestirse con elegancia, seguir su camino, conseguir sus propósitos, elegir un regalo, reírse de sus compañeros, sonreír porque estar de buen humor, despedirse de todos.",
+   "kind": "open"
   },
   {
    "number": "9",
@@ -730,12 +746,16 @@
     "Почему вы всегда смеетесь над своими товарищами?",
     "Почему ты не улыбаешься? У тебя плохое настроение?",
     "Как ты добиваешься этого?"
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Тебе налить чай или кофе? 2. Я прощаюсь с тобой до завтра и продолжаю свой путь. 3. Этот принтер ни на что не годится. Он такой старый! 4. Я выбираю подарки для моей семьи. 5. Как элегантно одевается эта девушка! 6. Официант накрывает на стол. 7. Я прошу тебя об одолжении. 8. Почему вы всегда смеетесь над своими товарищами? 9. Почему ты не улыбаешься? У тебя плохое настроение? 10. Как ты добиваешься этого?",
+   "kind": "closed"
   },
   {
    "number": "10",
    "instruction_ru": "Вставьте haber, estar или ser",
-   "page": 85
+   "page": 85,
+   "text": "Вставьте необходимые по смыслу глаголы (haber, estar, ser):\nEste ___ el despacho del director comercial. ___ en el sexto piso. No ___ bastante grande, pero ___ muy claro. En medio del despacho ___ una mesa de trabajo. Aunque ___ cómoda, allí siempre ___ muchos papeles que ___ desordenados, porque el director comercial ___ una persona desordenada. Sobre la mesa ___ un ordenador, una lámpara y un teléfono. La fotografía de su familia ___ en la pared. Alrededor de la mesa ___ un sillón y una silla. No ___ de cuero natural, sino artificial. El armario ___ entre la ventana y la pared.",
+   "kind": "closed"
   },
   {
    "number": "11",
@@ -743,17 +763,23 @@
    "pages": [
     85,
     86
-   ]
+   ],
+   "text": "Запомните слова, которые используются для описания офиса: En la oficina: el edificio, la recepción, el pasillo, la escalera, el ascensor, los lavabos/los servicios/los aseos; los despachos, la sala de reuniones, la cafetería, el distribuidor de bebidas, la máquina de café; el ordenador, la fotocopiadora, la impresora, el escáner, el fax.\nA. Ответив на вопросы, опишите рекламное агентство (El edificio de la agencia de relaciones públicas es de 3 pisos.): ¿En qué piso están la recepción, el despacho del director general, el despacho del director financiero, el despacho de la secretaria, la sala de reuniones, la cafetería, el distribuidor de bebidas, los lavabos? ¿Qué hay en el despacho del director general? ¿Qué hay en el despacho de la secretaria?\nB. Ответьте на вопросы: ¿Qué aparatos de los que hay en la oficina sirven para – guardar y poner en orden la información? – hablar con otras personas? – hacer copias de los documentos? – imprimir documentos? – reproducir un documento e introducirlo en el ordenador? – preparar café? – enviar un documento a alguien?",
+   "kind": "closed"
   },
   {
    "number": "12",
    "instruction_ru": "Прочитайте и переведите диалог «En la recepción»; A – проспрягайте; B – вопросы; C – по ролям; D – перескажите",
-   "page": 86
+   "page": 86,
+   "text": "Прочитайте и переведите диалог:\nEn la recepción\n– Hola, buenos días. Tengo unos documentos para el director general de la empresa «Intermoda». ¿Dónde puedo dejarlos?\n– Hay que entregarlos a la secretaria.\n– ¿Cómo la encuentro?\n– Usted toma el pasillo, al final hay un ascensor, usted sube en ascensor al tercer piso. Su despacho está allí.\n– Perdón. También quisiera preguntar por los lavabos y por la máquina de café.\n– Los lavabos están cerca de la escalera a la izquierda del ascensor y la máquina de café está en la planta baja detrás del quiosco de periódicos.\n– Pues, muchísimas gracias. Muy amable.\n– Hasta luego, adiós.\nA. Проспрягайте следующие глаголы с зависимыми словами: dejar documentos, entregarlos a la secretaria, encontrarla, tomar el pasillo, subir en ascensor, preguntar por los lavabos, ser amable.\nB. Ответьте на вопросы: 1. ¿Para qué llega el joven a la empresa «Intermoda»? 2. ¿Qué trae? 3. ¿A quién puede entregarlos? 4. ¿Dónde está la secretaria del director general? 5. ¿Qué hay que tomar para llegar allí? 6. ¿Cómo puede subir el joven al tercer piso si el ascensor no funciona? 7. ¿Qué más le interesa al joven? 8. ¿Dónde están los lavabos? 9. ¿Dónde está la máquina de café? 10. ¿Qué hay en la empresa «Intermoda»?\nC. Воспроизведите диалог по ролям. D. Перескажите содержание диалога от третьего лица и от лица его участников.",
+   "kind": "closed"
   },
   {
    "number": "13",
    "instruction_ru": "Вставьте подходящие слова (planta baja, ordenador, fax, oficina, impresora, despacho, piso, servir para, lavabos, distribuidor de bebidas, fotocopiadora, rincón, pasillo, recepción)",
-   "page": 86
+   "page": 86,
+   "text": "Вставьте подходящие по смыслу слова: planta baja, ordenador, fax, oficina, impresora, despacho, piso, servir para, lavabos, distribuidor de bebidas, fotocopiadora, rincón, pasillo, recepción.\nEsta es ___ de mi padre. En ___ está ___, la sala de reuniones y ___. ___ de mi padre está en el segundo ___. Allí hay varios aparatos que ___ hacer muchas cosas: sobre la mesa hay ___, ___, un teléfono y ___. Al lado de la mesa hay ___. También en ___ hay ___, y en ___, una máquina de café.",
+   "kind": "closed"
   },
   {
    "number": "14",
@@ -761,17 +787,23 @@
    "pages": [
     86,
     87
-   ]
+   ],
+   "text": "Вставьте необходимые предлоги и артикли:\n1. Si quiere entregar ___ documentos ___ secretaria, tiene que tomar ___ pasillo y después subir ___ ascensor ___ cuarto piso. Allí se encuentra ___ recepción. 2. ___ prima ___ Ana es muy guapa y siempre se viste ___ mucha elegancia. 3. ¿___ qué sirve este aparato? – Es ___ fotocopiadora, sirve ___ hacer copias ___ documentos. 4. ___ máquina ___ café se encuentra ___ planta baja, cerca ___ lavabos. – Gracias, pero es que no me gusta ___ café.",
+   "kind": "closed"
   },
   {
    "number": "15",
    "instruction_ru": "Ответьте на вопросы о месте работы родных",
-   "page": 87
+   "page": 87,
+   "text": "Ответьте на вопросы:\n1. ¿Conoce el lugar dónde trabaja su padre (madre, hermano, amigo etc.)? 2. ¿Cómo es? 3. ¿En qué piso está? 4. ¿Qué aparatos hay allí? 5. ¿Para qué sirven estos aparatos? 6. ¿Dónde se encuentran? 7. ¿Le gusta esta oficina? ¿Por qué?",
+   "kind": "open"
   },
   {
    "number": "16",
    "instruction_ru": "Опишите офис, где вы работаете или хотите работать",
-   "page": 87
+   "page": 87,
+   "text": "Опишите офис, где вы работаете или хотите работать.",
+   "kind": "open"
   },
   {
    "number": "17",
@@ -788,7 +820,9 @@
     "Кто-нибудь из вас может объяснить мне, как работает этот факс?",
     "Молодой человек выбирает шоколадку в автомате (máquina expendedora) и продолжает свой путь.",
     "Кабинет Вашего секретаря просторнее, чем Ваш. – Да, это так, но там больше шума, потому что он выходит на площадь."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Наш офис находится близко от центра, а ваш далеко. 2. Я не собираюсь подниматься на восьмой этаж по лестнице. – Что поделаешь! Лифт не работает. 3. Ты просишь чашечку кофе у официантки, и она тебе тут же её приносит. 4. В вашем офисе два компьютера, принтер и сканер. А почему нет ксерокса? – Он есть, но стоит в коридоре. 5. На цокольном этаже нет кабинетов, они расположены выше. 6. Где расположена бухгалтерия? 7. В моем столе три ящика. А в твоем? – В моем шесть. Он не новый, но очень удобный. 8. Кто-нибудь из вас может объяснить мне, как работает этот факс? 9. Молодой человек выбирает шоколадку в автомате (máquina expendedora) и продолжает свой путь. 10. Кабинет Вашего секретаря просторнее, чем Ваш. – Да, это так, но там больше шума, потому что он выходит на площадь.",
+   "kind": "closed"
   },
   {
    "number": "18",
@@ -796,17 +830,23 @@
    "pages": [
     87,
     88
-   ]
+   ],
+   "text": "Прочитайте и переведите текст:\nEl concepto tradicional de oficina está cambiando. La imagen de una estancia llena de papeles, archivadores, máquinas de escribir y fotocopiadoras, con una gran mesa de despacho y un ejecutivo pegado al teléfono, ya está en el pasado.\nHoy en día hay algunos que lo tienen muy claro: «Mi trabajo está donde quiero trabajar», dicen. La oficina móvil es la respuesta. Se compone de un portátil, una tarjeta de comunicaciones y un teléfono móvil. A través del teléfono, el usuario puede conectar con cualquier parte del mundo y enviar y recibir información. Ya existen en el mercado equipos muy potentes y de reducidas dimensiones. Algunos sólo pesan medio kilo.",
+   "kind": "closed"
   },
   {
    "number": "19",
    "instruction_ru": "Ответьте на вопросы по тексту",
-   "page": 88
+   "page": 88,
+   "text": "Ответьте на вопросы (по тексту упр. 18):\n1. ¿Cómo es el concepto tradicional de oficina? 2. ¿Qué quiere decir «Mi trabajo está donde quiero trabajar»? 3. ¿Qué tiene la oficina móvil? 4. ¿Qué equipos existen en el mercado?",
+   "kind": "closed"
   },
   {
    "number": "20",
    "instruction_ru": "Расскажите, каким вы представляете себе современный офис",
-   "page": 88
+   "page": 88,
+   "text": "Расскажите, каким вы представляете себе современный офис.",
+   "kind": "open"
   }
  ],
  "questions_for_user": []

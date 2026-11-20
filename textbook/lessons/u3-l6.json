@@ -851,12 +851,16 @@
   {
    "number": "1",
    "instruction_ru": "Переведите словосочетания и проспрягайте в Presente, Pretérito Perfecto и Futuro Simple: despertarse temprano, levantarse en seguida, cepillarse los dientes, afeitarse con la máquina de afeitar, lavarse con agua fría, secarse con una toalla, peinarse con un peine ante el espejo, ponerse un traje, vestirse bien, maquillarse, desmaquillarse antes de acostarse, quitarse la ropa, acostarse a las once y media, dormirse en el acto",
-   "page": 106
+   "page": 106,
+   "text": "Переведите словосочетания и проспрягайте их в Presente de Indicativo, Pretérito Perfecto и Futuro Simple:\ndespertarse temprano, levantarse en seguida, cepillarse los dientes, afeitarse con la máquina de afeitar, lavarse con agua fría, secarse con una toalla, peinarse con un peine ante el espejo, ponerse un traje, vestirse bien, maquillarse, desmaquillarse antes de acostarse, quitarse la ropa, acostarse a las once y media, dormirse en el acto.",
+   "kind": "closed"
   },
   {
    "number": "2",
    "instruction_ru": "Задайте вопрос с cuándo по модели: ¿Cuándo te levantarás? – Ya me he levantado.",
-   "page": 106
+   "page": 106,
+   "text": "Задайте вопрос с вопросительным словом cuándo по модели, используя словосочетания из упражнения 1: ¿Cuándo te levantarás? – Ya me he levantado.",
+   "kind": "open"
   },
   {
    "number": "3",
@@ -873,27 +877,37 @@
     "No te quitas la ropa.",
     "Maite no se maquilla.",
     "No se despiertan temprano."
-   ]
+   ],
+   "text": "Трансформируйте по модели: No me levanto. – No puedo levantarme.:\n1. No me lavo con agua fría. 2. No te peinas bien. 3. José no se afeita. 4. No nos vestimos. 5. No os acostáis. 6. No se cepillan los dientes. 7. No me pongo la corbata. 8. No te quitas la ropa. 9. Maite no se maquilla. 10. No se despiertan temprano.",
+   "kind": "closed"
   },
   {
    "number": "4",
    "instruction_ru": "Раскройте скобки",
-   "page": 107
+   "page": 107,
+   "text": "Раскройте скобки:\n1. ¿A qué hora (despertarse, tú) ___ hoy? 2. Tere es muy guapa y siempre (vestirse) ___ con elegancia. 3. Hijos, ¿ya (cepillarse, vosotros) ___ los dientes? 4. Mañana (tener, yo) ___ una entrevista de trabajo, (necesitar + ponerse, yo) ___ una corbata. 5. ¿Ya (maquillarse, tú) ___ para ir a la fiesta? 6. Los sábados nuestro héroe (acostarse) ___ tarde. 7. Los niños (dormirse) ___ en el acto.",
+   "kind": "closed"
   },
   {
    "number": "5",
    "instruction_ru": "Вставьте глаголы: quitarse, cepillarse, lavarse, despertarse, afeitarse, acostarse, ponerse",
-   "page": 107
+   "page": 107,
+   "text": "Вставьте подходящие по смыслу глаголы: quitarse, cepillarse, lavarse, despertarse, afeitarse, acostarse, ponerse.\n1. ¿Con qué ___ los dientes, Carlos? 2. Mañana Carmen va a una fiesta y quiere ___ una falda nueva. 3. Ahora el padre ___ con la máquina de afeitar ante el espejo. 4. Vosotros ___ tarde y ___ temprano, por eso no estáis bien. 5. ¿Por qué (tú) ___ las manos con agua fría? 6. Hijo, ¿ya ___ la ropa? ¡Es hora de dormir!",
+   "kind": "closed"
   },
   {
    "number": "6",
    "instruction_ru": "Ответьте на вопросы о распорядке дня",
-   "page": 107
+   "page": 107,
+   "text": "Ответьте на вопросы:\n1. ¿A qué hora te acuestas habitualmente? 2. ¿A qué hora te has acostado esta semana? 3. ¿Hoy te has despertado tarde o temprano? 4. ¿Y a qué hora te despiertas los domingos? 5. ¿Te gusta levantarte en seguida después de despertarte? 6. ¿Qué ropa te pones para ir a la Universidad (a una fiesta, a una entrevista de trabajo)?",
+   "kind": "open"
   },
   {
    "number": "7",
    "instruction_ru": "Составьте рассказ, используя словосочетания из упр. 1 (в разных временах)",
-   "page": 107
+   "page": 107,
+   "text": "Составьте небольшой рассказ, используя словосочетания из упр. 1 (в разных временах).",
+   "kind": "open"
   },
   {
    "number": "8",
@@ -914,7 +928,9 @@
     "Моя семья ложится спать в полночь.",
     "Ты всегда засыпаешь сразу?",
     "Я не смогу умыться и почистить зубы, потому что нет воды."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Ты уже проснулся? 2. Я не люблю рано вставать. 3. Какой зубной пастой (pasta dentífrica) ты чистишь зубы? 4. Сначала ты должен побриться. 5. Ты будешь умываться холодной водой? 6. Какое полотенце мне взять, чтобы вытереться? 7. Ты всегда причесываешься перед зеркалом? 8. Ты наденешь серую рубашку? – Нет, я хочу надеть черную. Она мне больше нравится. 9. Как ты считаешь, кто из этих моделей лучше всех одевается? 10. Почему ты не смыла косметику, прежде чем лечь спать? 11. Мария сняла туфли и поставила их под кровать. 12. Моя семья ложится спать в полночь. 13. Ты всегда засыпаешь сразу? 14. Я не смогу умыться и почистить зубы, потому что нет воды.",
+   "kind": "closed"
   },
   {
    "number": "9",
@@ -922,22 +938,30 @@
    "pages": [
     107,
     108
-   ]
+   ],
+   "text": "Переведите на русский язык следующие прилагательные: perfecto, agradable, maravilloso, admirable, estupendo, magnífico, espléndido, brillante, horrible, fatal, desastroso, desgraciado, difícil, fácil, alegre, aburrido, tranquilo, indudable, seguro, enérgico, claro, lento, correcto.\nA. Образуйте от них наречия с суффиксом -mente.\nB. Подберите к этим прилагательным существительные. Составьте предложения с этими словосочетаниями.",
+   "kind": "closed"
   },
   {
    "number": "10",
    "instruction_ru": "Переведите на испанский: идти медленно, говорить тихо, писать быстро, спокойно спать, легко выучить испанский язык, с трудом найти работу, блестяще знать предмет",
-   "page": 108
+   "page": 108,
+   "text": "Переведите на испанский язык:\nидти медленно, говорить тихо, писать быстро, спокойно спать, легко выучить испанский язык, с трудом найти работу, блестяще знать предмет.",
+   "kind": "closed"
   },
   {
    "number": "11",
    "instruction_ru": "Para conocer más: прочитайте и переведите письмо в гостиницу; A – эквиваленты; B – напишите свое письмо с просьбой забронировать номер",
-   "page": 108
+   "page": 108,
+   "text": "Прочитайте и переведите письмо:\nHotel Catalonia Excelsior, Barcelonina, 5, Valencia, 46002, España\nEstimados señores,\nQuiero reservar una habitación doble con dos camas del 23 de julio próximo al 2 de agosto a nombre de Ricardo Alarcón con vistas al mar si es posible.\nQuedo a la espera de su respuesta.\nLes saluda atentamente\nRicardo Alarcón\nA. Найдите эквиваленты: уважаемые господа; я прошу Вас забронировать; двухместный номер; на имя; с видом на море; жду Вашего ответа; с уважением.\nB. Напишите свое собственное письмо в гостиницу с просьбой забронировать номер на ваше имя.",
+   "kind": "closed"
   },
   {
    "number": "12",
    "instruction_ru": "Прочитайте и переведите диалог «En el hotel»; A – проспрягайте; B – вопросы; C – по ролям; D – перескажите",
-   "page": 108
+   "page": 108,
+   "text": "Прочитайте и переведите диалог:\nEn el hotel\n– ¡Buenas tardes! ¿Qué se le ofrece, señor?\n– ¡Buenas tardes! Tengo reservada una habitación a nombre de Ricardo Alarcón.\n– Un momento. Voy a mirar en el registro. Ah, sí. Su pasaporte, por favor.\n– Aquí lo tiene.\n– Gracias. ¿Me hace el favor de llenar este formulario?\n– Claro que sí. ¿Puedo pagar la factura ahora mismo?\n– Por supuesto. ¿La pagará con tarjeta o en efectivo?\n– Con tarjeta de crédito.\n– Muchas gracias, señor. Aquí tiene la factura y la llave de su habitación.\n– Es Usted muy amable. Hasta luego.\n– ¡Que lo pase bien, señor!\nA. Проспрягайте следующие глаголы с зависимыми словами в Presente, Pretérito Perfecto и в Futuro Simple: tener reservada una habitación, mirar en el registro, llenar el formulario, pagar la factura en efectivo, ser muy amable, entregar la llave, hacer el favor.\nB. Ответьте на вопросы: 1. ¿Qué reserva quiere hacer Ricardo Alarcón? 2. ¿A partir de qué fecha? 3. ¿Qué mira el recepcionista en el registro? 4. ¿Qué presenta Ricardo en la recepción del hotel? 5. ¿Qué tiene que llenar Ricardo? 6. ¿Cómo paga la factura? 7. ¿Qué le entrega el recepcionista?\nC. Воспроизведите диалог по ролям. D. Перескажите содержание диалога от третьего лица и от лица его участников.",
+   "kind": "closed"
   },
   {
    "number": "13",
@@ -945,22 +969,30 @@
    "pages": [
     108,
     109
-   ]
+   ],
+   "text": "Вставьте подходящие по смыслу слова: dormirse, recepcionista, cepillarse, tener reservada una habitación, encontrar, acostarse, pagar la factura, a su nombre, llenar el formulario, entregar la llave, lavarse.\nJulia va a pasar tres días en Madrid y ___ sencilla ___ en un hotel cerca de la Plaza Mayor. El hotel lo ___ por Internet. En la recepción ___, ___ en efectivo, y ___ le ___. Julia está muy cansada, por esto ___, ___ los dientes, ___ y ___ en seguida.",
+   "kind": "closed"
   },
   {
    "number": "14",
    "instruction_ru": "Вставьте предлоги и артикли",
-   "page": 109
+   "page": 109,
+   "text": "Вставьте необходимые предлоги и артикли:\n1. ___ viajero tiene reservada ___ habitación sencilla ___ nombre ___ Antonio Martínez. 2. ___ ventanas ___ habitación dan ___ patio, y me he dormido ___ acto. 3. Usted tiene que llenar ___ formulario, y ___ recepcionista le entregará ___ llave ___ cuarto. 4. ¿Has pagado ___ factura ___ tarjeta o ___ efectivo? 5. ¿Me hace ___ favor ___ explicarme cómo ir ___ centro ___ ciudad? – ___ momento, señor.",
+   "kind": "closed"
   },
   {
    "number": "15",
    "instruction_ru": "Ответьте на вопросы о гостиницах",
-   "page": 109
+   "page": 109,
+   "text": "Ответьте на вопросы:\n1. ¿Cómo hace Usted una reserva de hotel, por teléfono o por Internet? 2. ¿Cómo prefiere pagar la factura? 3. ¿Qué tipo de habitación le gusta? 4. ¿Qué datos pone en el formulario? 5. ¿En qué hotel se ha hospedado la última vez? 6. ¿Dónde se hospedará en el próximo viaje?",
+   "kind": "open"
   },
   {
    "number": "16",
    "instruction_ru": "Опишите отель, в котором вы обычно останавливаетесь",
-   "page": 109
+   "page": 109,
+   "text": "Опишите отель, в котором вы обычно останавливаетесь.",
+   "kind": "open"
   },
   {
    "number": "17",
@@ -977,17 +1009,23 @@
     "На первом этаже Вы найдете пункт обмена валюты и бар, а позавтракать Вы сможете в ресторане, который находится на втором этаже.",
     "Вам уже сообщили, что наш герой забронировал двухместный номер в гостинице «Старая башня».",
     "Как Вам гостиница? – Мне она показалась ужасной."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Сколько стоит одноместный номер с видом на море? 2. Я не буду бриться вечером. Я сделаю это завтра утром. 3. Ты уже лег спать? – Нет, я лягу через час. 4. Ты наденешь синюю рубашку? – Я уже надел желтую майку. 5. Кто мне поможет объяснить администратору, что я потерял ключ от номера? 6. У меня нет наличных денег. Я смогу расплатиться кредитной картой? 7. Мне очень жаль, но в номерах нет сейфов (caja fuerte). 8. На первом этаже Вы найдете пункт обмена валюты и бар, а позавтракать Вы сможете в ресторане, который находится на втором этаже. 9. Вам уже сообщили, что наш герой забронировал двухместный номер в гостинице «Старая башня». 10. Как Вам гостиница? – Мне она показалась ужасной.",
+   "kind": "closed"
   },
   {
    "number": "18",
    "instruction_ru": "Texto complementario: прочитайте и переведите информацию о двух гостиницах в Мадриде (Novotel Madrid Puente de la Paz, hotel Colón)",
-   "page": 109
+   "page": 109,
+   "text": "Прочитайте и переведите информацию о двух гостиницах в Мадриде:\nEl Novotel Madrid Puente de la Paz está situado en el corazón de una de las mayores zonas residenciales y empresariales de la vibrante ciudad de Madrid. A 10 minutos del aeropuerto y del recinto ferial Juan Carlos I, este hotel 4 estrellas es ideal para unas escapadas de fines de semana o unas vacaciones en Madrid. El hotel dispone de 240 habitaciones, una piscina al aire libre, un restaurante, un bar, 6 salas de reuniones y estacionamiento. Ideal para familias.\n* * *\nRenovado en 2007, el hotel Colón consta de 164 habitaciones. Ofrece variadas instalaciones, como un jardín, un amplio hall de entrada con ascensores, recepción 24h, servicio de caja fuerte, de cambio de divisas y de guardarropa. Cuenta también con sala de televisión, auditorio, cafetería y un restaurante a la carta climatizado con sillas altas para los más pequeños. Los que viajen por motivos de negocio pueden utilizar la sala de conferencias y la conexión a Internet. Como prestaciones adicionales encontrará el servicio de habitaciones, de lavandería y de atención médica. El hotel dispone también de aparcamiento con cargo. Este atractivo hotel de lujo está situado en el corazón de la ciudad, cerca del Parque del Retiro. A unos minutos a pie llegará al vibrante y animado centro madrileño. Aquí podrá encontrar numerosas tiendas, comercios, lugares de ocio y entretenimiento y los más bellos monumentos de la metrópoli.",
+   "kind": "closed"
   },
   {
    "number": "19",
    "instruction_ru": "В какой из двух гостиниц вы предпочтете остановиться? Обоснуйте",
-   "page": 110
+   "page": 110,
+   "text": "В какой из двух гостиниц вы предпочтете остановиться? Обоснуйте свое мнение.",
+   "kind": "open"
   }
  ],
  "questions_for_user": [],

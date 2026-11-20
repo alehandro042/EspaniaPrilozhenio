@@ -1028,7 +1028,9 @@
   {
    "number": "1",
    "instruction_ru": "Ответьте на вопросы (¿En qué piso…?)",
-   "page": 77
+   "page": 77,
+   "text": "Ответьте на вопросы:\n1. ¿En qué piso vives? 2. ¿En qué piso estamos? 3. ¿En qué piso está la biblioteca? 4. ¿En qué piso está el guardarropa? ¿En la planta baja o en el primer piso? 5. ¿En qué piso está la sala de conferencias? 6. ¿En qué piso está el rectorado? 7. ¿En qué piso está el decanato? 8. ¿En qué piso está la cafetería?",
+   "kind": "open"
   },
   {
    "number": "2",
@@ -1048,17 +1050,23 @@
     "одиннадцатое кафе",
     "двенадцатый ресторан",
     "тринадцатая гостиница"
-   ]
+   ],
+   "text": "Переведите на испанский словосочетания с порядковыми числительными:\n1. первое имя 2. вторая фамилия 3. третий этаж 4. четвертая дверь 5. пятый офис 6. шестой автобус 7. седьмой дом 8. восьмой экзамен 9. девятый зал 10. десятый вопрос 11. одиннадцатое кафе 12. двенадцатый ресторан 13. тринадцатая гостиница",
+   "kind": "closed"
   },
   {
    "number": "3",
    "instruction_ru": "Переведите на русский язык (предлоги места)",
-   "page": 78
+   "page": 78,
+   "text": "Переведите на русский язык:\n1. La Universidad está lejos de mi casa, tengo que tomar el metro para llegar allí. 2. Pili, ¿qué documentos debo firmar? No están sobre la mesa. – Entonces están encima del armario, jefe. 3. La oficina donde trabajan está al lado de un parque. 4. Adelante, señores. Todos ya están adentro. 5. Mis amigos y yo siempre nos encontramos en el centro de la ciudad. 6. Este libro podéis comprarlo en cualquier lugar. 7. Ya es medianoche, ¿qué hacéis fuera de casa a esta hora? 8. ¿El museo está a la derecha o a la izquierda del metro? 9. Alrededor de la Universidad ustedes pueden encontrar varios cafés y restaurantes.",
+   "kind": "closed"
   },
   {
    "number": "4",
    "instruction_ru": "Переведите на испанский: справа от двери, слева от дома; под окном; над столом; рядом с магазином; далеко от предприятия; перед машиной; недалеко от университета; за пределами офиса; за автобусом",
-   "page": 78
+   "page": 78,
+   "text": "Переведите на испанский язык:\nсправа от двери, слева от дома; под окном; над столом; рядом с магазином; далеко от предприятия; перед машиной; недалеко от университета; за пределами офиса; за автобусом.",
+   "kind": "closed"
   },
   {
    "number": "5",
@@ -1066,7 +1074,9 @@
    "pages": [
     78,
     79
-   ]
+   ],
+   "text": "Переведите на русский язык:\n1. Somos turistas, por favor, ¿dónde nos encontramos? – Os encontráis en la Plaza de España, a la izquierda está el monumento a Miguel de Cervantes. 2. La ciudad de Madrid está situada en el centro de la península. 3. Buenos días, ¿dónde se encuentra el despacho del director de recursos humanos? – Está en el primer piso. 4. El departamento que necesita está en la oficina central, Usted tiene que ir allí. 5. La administración de la facultad no está aquí, se encuentra en la planta baja. 6. ¿Dónde se sitúa México? – Se sitúa en América del Norte.",
+   "kind": "closed"
   },
   {
    "number": "6",
@@ -1081,32 +1091,44 @@
     "Туристическое агентство находится недалеко от моего дома.",
     "Такси стоит между домами.",
     "Не знаешь, где лежит мой учебник?"
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Мой дом находится близко от университета. 2. Языковая школа находится напротив гостиницы. 3. Второй зал находится на первом этаже. 4. Дверь расположена напротив окна. 5. Парикмахерская расположена справа от магазина, а банк слева. 6. Туристическое агентство находится недалеко от моего дома. 7. Такси стоит между домами. 8. Не знаешь, где лежит мой учебник?",
+   "kind": "closed"
   },
   {
    "number": "7",
    "instruction_ru": "Вставьте артикль, где это необходимо (после hay)",
-   "page": 79
+   "page": 79,
+   "text": "Вставьте артикль, где это необходимо:\n1. ¿Por qué no hay ___ clase hoy? 2. A la izquierda del televisor hay ___ florero. 3. Sobre la mesa de mi papá hay ___ libros y documentos. 4. En la sala de conferencias no hay ___ nadie. ¿Dónde está todo el mundo? 5. En medio del salón hay ___ alfombra. 6. Aquí no hay ___ teléfono. 7. Al lado de la facultad hay ___ cafetería muy acogedora. ¿Vamos allí? 8. En la pared hay ___ cuadros y fotografías.",
+   "kind": "closed"
   },
   {
    "number": "8",
    "instruction_ru": "Вставьте haber или estar и переведите",
-   "page": 79
+   "page": 79,
+   "text": "Вставьте необходимый по смыслу глагол (haber, estar) и переведите предложения:\n1. En el aula ___ muchos estudiantes. 2. La sala número 7 ___ en el tercer piso. 3. ¿Dónde ___ los alumnos? 4. Aquí no ___ nadie. 5. Encima de la mesa ___ una fotografía muy bonita. 6. Alrededor de la ciudad ___ muchos bosques. 7. A la derecha de la puerta ___ un espejo rectangular. 8. Mi apartamento ___ en el quinto piso. 9. En la pared ___ un cuadro. 10. La mesa de la secretaria ___ enfrente de la puerta. 11. En el cuarto ___ un diván y dos butacas. 12. Las butacas ___ delante de la mesita. 13. El armario ___ pegado a la pared. 14. ¿Cuántas lámparas ___ en el cuarto? 15. ¿La cocina ___ a la derecha o a la izquierda del pasillo? 16. ¿Qué ___ en el despacho? 17. El lápiz ___ debajo de la silla.",
+   "kind": "closed"
   },
   {
    "number": "9",
    "instruction_ru": "Проспрягайте dormir с зависимыми словами; A – morirse de risa, morirse de hambre; B – вопросы; C – переведите на испанский",
-   "page": 80
+   "page": 80,
+   "text": "Проспрягайте глагол dormir с зависимыми словами (ocho horas, como un lirón, plácidamente, en una cama plegable).\nA. Запомните и проспрягайте словосочетания: morirse de risa, morirse de hambre.\nB. Ответьте на вопросы (о себе): 1. ¿En qué duerme Usted? 2. ¿Duerme Usted bien? 3. ¿Cuántas horas duerme Usted de costumbre? 4. ¿Cuántas horas duerme Usted en época de los exámenes? 5. ¿Cuándo se muere Usted de risa? 6. ¿Cuándo se muere Usted de hambre?\nC. Переведите на испанский язык: 1. Уже восемь часов утра, а ты сладко спишь. 2. Я не люблю спать на диване. 3. Ты спишь, а я умираю от голода. 4. Вы мало спите и поэтому чувствуете себя плохо. 5. Я очень хочу спать, но я не могу спать на уроке.",
+   "kind": "closed"
   },
   {
    "number": "10",
    "instruction_ru": "Вставьте нужную форму отклоняющихся глаголов",
-   "page": 80
+   "page": 80,
+   "text": "Вставьте необходимую форму отклоняющихся глаголов:\n1. Rosa nunca (atender) ___ lo que le dicen. 2. Te (ofrecer, yo) ___ una merienda con frutas y chocolate. 3. Los alumnos (aprobar) ___ bien todos los exámenes. 4. Miguel (soñar) ___ con un nuevo ordenador. 5. Todos (morirse) ___ de risa. 6. ¿(pensar) ___ Usted en el salario? 7. Yo (conducir) ___ bien la moto. 8. Mi abuela no (recordar) ___ nada.",
+   "kind": "closed"
   },
   {
    "number": "11",
    "instruction_ru": "Para conocer más: запомните слова для описания комнаты (En mi cuarto); A – подберите прилагательные; B – ответьте на вопросы",
-   "page": 80
+   "page": 80,
+   "text": "Запомните слова, которые используются для описания комнаты: En mi cuarto: armario, cama, diván/sofá, mesa, silla, butaca/sillón, mesita, estantería, puerta, ventana, cortinas, suelo, alfombra, techo, lámpara, espejo, televisor, ordenador, libros, fotografía, calendario, reloj, cuadro.\nA. Подберите определения к данным существительным, используя следующие прилагательные: alto, bajo, largo, corto, estrecho, ancho, redondo, cuadrado, triangular, grande, pequeño, bonito, cómodo, etc.\nB. Ответьте на вопросы: 1. ¿Qué hay en su habitación? 2. ¿Dónde está? 3. ¿De qué color es?",
+   "kind": "open"
   },
   {
    "number": "12",
@@ -1114,27 +1136,37 @@
    "pages": [
     80,
     81
-   ]
+   ],
+   "text": "Прочитайте и переведите текст:\nLa habitación\nLa habitación no es grande, más bien pequeña, pero muy acogedora. El cuarto da al patio. El sol entra allí por las mañanas y lo ilumina. A la derecha hay una librería que ocupa toda la pared. Allí no hay cama, pero hay un sofá de color verde, muy cómodo para dormir, está enfrente de la librería. A la derecha de la puerta hay un armario ropero de madera, es alto, casi alcanza el techo. En el suelo hay una espesa alfombra del mismo color que el sofá. La mesa escritorio con tres cajones está en el rincón al lado de la ventana. Allí hay un ordenador, una impresora, un teléfono, un despertador, un florero, libros y papeles. Las cortinas también son de color verde con un dibujo a flores. La lámpara de seis brazos cuelga del techo. Además hay dos apliques de dos brazos cada uno que están encima del sofá. En la misma pared hay dos cuadros de medio tamaño con motivos orientales y un calendario muy bonito.\nA. Проспрягайте следующие глаголы с зависимыми словами: entrar por la puerta, ocupar un sitio, alcanzar el techo, dormir bien, iluminarlo.\nB. Найдите эквиваленты: выходит во двор; занимает всю стену; очень удобная для сна; деревянный платяной шкаф; почти достает до потолка; пушистый ковер; письменный стол с тремя ящиками; в углу; с цветочным рисунком; шестирожковая люстра; висит на потолке; картины среднего размера.\nC. Ответьте на вопросы: 1. ¿Cómo es la habitación? 2. ¿Adónde da la ventana? 3. ¿Cuándo entra allí el sol? 4. ¿Qué muebles hay en la habitación? 5. ¿Dónde está la librería? 6. ¿Dónde está el sofá? 7. ¿Cómo es? 8. ¿De qué color es? 9. ¿Dónde está el armario ropero? 10. ¿De qué es? 11. ¿Cómo es? 12. ¿Dónde está la alfombra? 13. ¿Cómo es? 14. ¿Dónde está la mesa escritorio? 15. ¿Cuántos cajones tiene? 16. ¿Qué hay sobre la mesa escritorio? 17. ¿Cómo son las cortinas? 18. ¿Dónde están la lámpara y los apliques? 19. ¿Cuántos brazos tienen? 20. ¿Dónde están los cuadros? 21. ¿De qué tamaño son? 22. ¿Qué también hay en la misma pared? 23. ¿Le gusta esta habitación? ¿Por qué?\nD. Опишите комнату из текста.",
+   "kind": "closed"
   },
   {
    "number": "13",
    "instruction_ru": "Вставьте подходящие слова (televisor, al lado de, impresora, casa de tres pisos, a la derecha de, mesa escritorio, encontrarse, acogedor, enfrente de, ordenador, armario ropero, en medio de, alfombra)",
-   "page": 81
+   "page": 81,
+   "text": "Вставьте подходящие по смыслу слова: televisor, al lado de, impresora, casa de tres pisos, a la derecha de, mesa escritorio, encontrarse, acogedor, enfrente de, ordenador, armario ropero, en medio de, alfombra.\nMi amigo Alberto vive con sus padres en ___. Su cuarto ___ en el primer piso, no es grande, pero es muy ___. ___ la puerta hay una cama, y ___ la cama está ___. Sobre la mesa hay ___, ___ y muchos libros y papeles. ___ la mesa hay ___ y ___ la habitación hay una espesa ___. En el cuarto de Alberto no hay ___ ni teléfono.",
+   "kind": "closed"
   },
   {
    "number": "14",
    "instruction_ru": "Вставьте предлоги и артикли",
-   "page": 81
+   "page": 81,
+   "text": "Вставьте необходимые предлоги и артикли:\n1. ___ agencia ___ viajes donde trabaja Andrés está ___ quinto piso. 2. Vivo lejos ___ universidad, por eso voy allí ___ metro. 3. ___ cuarto ___ mis hijos no hay ___ televisor porque no les gusta ver ___ tele. 4. ¿No queréis vivir ___ esta habitación porque ___ ventanas dan ___ patio? 5. ___ teléfono está ___ estantería, ___ lado ___ reloj. 6. ¿Hay ___ calendario aquí?",
+   "kind": "closed"
   },
   {
    "number": "15",
    "instruction_ru": "Ответьте на вопросы о своей комнате",
-   "page": 81
+   "page": 81,
+   "text": "Ответьте на вопросы:\n1. ¿En qué piso vive Usted? 2. ¿Cómo es su habitación? 3. ¿Adónde dan las ventanas? 4. ¿Dónde está la cama? 5. ¿Hay un televisor allí? 6. ¿Hay un ordenador? 7. ¿Hay muchos libros? ¿Dónde se encuentran? 8. ¿Qué suele hacer allí? 9. ¿Le gusta su habitación? ¿Por qué?",
+   "kind": "open"
   },
   {
    "number": "16",
    "instruction_ru": "Опишите вашу комнату",
-   "page": 81
+   "page": 81,
+   "text": "Опишите вашу комнату.",
+   "kind": "open"
   },
   {
    "number": "17",
@@ -1160,22 +1192,30 @@
     "А где зеркало? – Оно за дверью.",
     "На каком этаже ты живешь? – Я живу на третьем этаже, а мои родители на пятом.",
     "Никто из нас не любит спать на раскладушке."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. В комнате нет часов. 2. Ты не знаешь, где ваза? Я не могу найти её. 3. Эти голубые шторы мне не нравятся, они некрасивые. – А те жёлтые? 4. Платяной шкаф стоит в углу, справа от кровати. 5. Письменный стол деревянный? 6. Фотография, которая висит на стене, очень старая. 7. Почему эти бумаги лежат на ковре? 8. Какого цвета стены? 9. Мне нужно купить люстру и два бра для большой комнаты. 10. Сколько стоит этот календарь? 11. Под столом лежит карандаш. 12. Над дверью висит картина. 13. Вокруг стола стоят шесть стульев. 14. А где зеркало? – Оно за дверью. 15. На каком этаже ты живешь? – Я живу на третьем этаже, а мои родители на пятом. 16. Никто из нас не любит спать на раскладушке.",
+   "kind": "closed"
   },
   {
    "number": "18",
    "instruction_ru": "Texto complementario: прочитайте и переведите текст о гостиной (El salón)",
-   "page": 82
+   "page": 82,
+   "text": "Прочитайте и переведите текст:\nEl salón es uno de los espacios más importantes de la casa. En la sala solemos reunirnos con la familia, pero también es el espacio que ocupamos cuando invitamos a nuestros amigos, vecinos o visitas puntuales. De modo que es fundamental transformarlo en un lugar cálido, para sentirnos cómodos. Con la decoración podemos reflejar nuestro estilo personal.\nEl salón del hogar es un espacio multifuncional en el que siempre hay gente, por lo que conviene aprovechar cada metro cuadrado disponible. Los salones pequeños se pueden decorar perfectamente, aunque se necesita un poco más de creatividad. En un salón reducido podemos compensar la falta de espacio con soluciones decorativas muy variadas pero siempre ingeniosas. Los detalles decorativos convierten nuestro hogar en un lugar cómodo y acogedor.",
+   "kind": "closed"
   },
   {
    "number": "19",
    "instruction_ru": "Ответьте на вопросы по тексту",
-   "page": 82
+   "page": 82,
+   "text": "Ответьте на вопросы (по тексту упр. 18):\n1. ¿Por qué el salón es uno de los espacios más importantes de la casa? 2. ¿Qué hacemos para sentirnos cómodos? 3. ¿Por qué queremos aprovechar cada metro cuadrado disponible? 4. ¿Cómo podemos compensar la falta de espacio en los salones pequeños?",
+   "kind": "closed"
   },
   {
    "number": "20",
    "instruction_ru": "Перескажите текст",
-   "page": 82
+   "page": 82,
+   "text": "Перескажите текст.",
+   "kind": "open"
   }
  ],
  "questions_for_user": []

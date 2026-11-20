@@ -863,17 +863,24 @@
    "pages": [
     15,
     16
-   ]
+   ],
+   "text": "Прочитайте, следя за произношением:\nasiduo, aire, Mario, María, continuo, continúo, Paraguay, asiento, lenguaje, felicitaciones, alegría, alergia, averiguáis, guante, aéreo, poeta, cuidado, ciudad, biblioteca, diccionario, guay, yodo, yegua, viento, nueve, suizo, viuda, ciudadano, guayaba, circuito.",
+   "kind": "reading",
+   "page": 15
   },
   {
    "number": "2",
    "instruction_ru": "Проспрягайте глаголы с притяжательными местоимениями; A: ответьте на вопросы; B: переведите на испанский (мой кофе, мои личные данные, твой автобус, твои отметки, Ваш офис, Ваши машины, наш поезд, наш урок, наши дела, наши чашки, ваш самолет, ваша фирма, ваши документы)",
-   "page": 17
+   "page": 17,
+   "text": "Проспрягайте следующие глаголы с притяжательными местоимениями:\nestar en (su) oficina, presentar a (su) amigo / (sus) amigos, enviar (sus) mensajes, trabajar en (su) empresa / (sus) empresas.\nA. Ответьте на вопросы:\n1. ¿Visitas nuestra casa? 2. ¿Hablas con tu amiga? 3. ¿Trabajas en la empresa de Carlos? 4. ¿Presentáis vuestros pasaportes? 5. ¿Presentan ustedes sus tarjetas? 6. ¿Envía Usted sus mensajes? 7. ¿Estudias en nuestra universidad? 8. ¿Estás en el colegio de Ana?\nB. Переведите на испанский язык:\nмой кофе, мои личные данные, твой автобус, твои отметки, Ваш офис, Ваши машины, наш поезд, наш урок, наши дела, наши чашки, ваш самолет, ваша фирма, ваши документы.",
+   "kind": "closed"
   },
   {
    "number": "3",
    "instruction_ru": "Проспрягайте словосочетания с ser (ser estudiante, ser profesor, ser economista, ser el amigo de Pablo, ser el jefe de Mónica, ser español, ser joven); A: микродиалоги; B: ответьте на вопросы",
-   "page": 17
+   "page": 17,
+   "text": "Проспрягайте словосочетания:\nser estudiante, ser profesor, ser economista, ser el amigo de Pablo, ser el jefe de Mónica, ser español, ser joven.\nA. В парах составьте микродиалоги.\nB. Ответьте на вопросы:\n1. ¿Sois estudiantes o profesores? 2. ¿Eres español(a)? 3. ¿Son tus amigos? 4. ¿Es Usted economista? 5. ¿Es vuestra casa? 6. ¿Es el manual de Juan? 7. ¿Son sus revistas, señores? 8. Señora, ¿es su coche? 9. ¿Es mi agua mineral?",
+   "kind": "closed"
   },
   {
    "number": "4",
@@ -887,12 +894,16 @@
     "Sois los nietos de Teresa y Mario, ellos__.",
     "Somos los primos de Eva, su madre__.",
     "Mi marido es el hermano de Antonio, Antonio__."
-   ]
+   ],
+   "text": "Прочитайте и переведите существительные, обозначающие родственные отношения (§21): el padre – la madre (padres), el tío – la tía, el marido – la mujer, el abuelo – la abuela, el cuñado – la cuñada, el suegro – la suegra, el hijo – la hija, el sobrino – la sobrina, el hermano – la hermana, el nieto – la nieta, el primo – la prima, el yerno – la nuera.\nA. Образуйте формы множественного числа этих существительных.\nB. Закончите предложения по образцу: Maite es mi abuela, yo soy su nieto.\n1. Juan y Elena son nuestros tíos, nosotros__. 2. Soy el hijo de Pablo, él__. 3. Eres la mujer de José, él__. 4. Ustedes son los suegros de María, ella__. 5. Sois los nietos de Teresa y Mario, ellos__. 6. Somos los primos de Eva, su madre__. 7. Mi marido es el hermano de Antonio, Antonio__.",
+   "kind": "closed"
   },
   {
    "number": "5",
    "instruction_ru": "Ответьте на вопросы: ¿Cómo te llamas? ¿Cómo se llama tu padre (madre, tus abuelos, hermanos, etc.)?",
-   "page": 18
+   "page": 18,
+   "text": "Ответьте на вопросы:\n¿Cómo te llamas? ¿Cómo se llama tu padre (madre, tus abuelos, hermanos, etc.)?",
+   "kind": "closed"
   },
   {
    "number": "6",
@@ -907,17 +918,23 @@
     "Ее свекровь зовут Ольга.",
     "Его двоюродного брата зовут Хосе.",
     "Моих внуков зовут Пако и Мерсе."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Нашу дочь зовут Мария. 2. Как зовут Вашего сына и Вашу невестку? 3. Моего дядю зовут Мигель. 4. Твоего мужа зовут Фелипе? 5. Их племянника зовут Родриго. 6. Ее свекровь зовут Ольга. 7. Его двоюродного брата зовут Хосе. 8. Моих внуков зовут Пако и Мерсе.",
+   "kind": "closed"
   },
   {
    "number": "7",
    "instruction_ru": "Проспрягайте глаголы II спряжения и составьте 10 вопросов: beber (un vaso de agua, refresco, mucho/poco), leer (una carta, un texto, un diálogo, en voz alta / en voz baja), comprender (casi todo), aprender (un idioma extranjero: inglés, francés, español, alemán), vender (la casa, el coche, coches, televisores, electrodomésticos, mercancías), creer (en sus posibilidades, en el futuro), responder (bien en clase, a las preguntas del profesor)",
-   "page": 18
+   "page": 18,
+   "text": "Проспрягайте следующие глаголы второго спряжения и составьте 10 вопросов с ними:\nbeber – un vaso de agua, refresco; mucho / poco\nleer – una carta, un texto, un diálogo; en voz alta / en voz baja\ncomprender – casi todo\naprender – un idioma extranjero (inglés, francés, español, alemán)\nvender – la casa, el coche; coches, televisores, electrodomésticos, mercancías\ncreer – en sus posibilidades, en el futuro\nresponder – bien en clase, a las preguntas del profesor",
+   "kind": "closed"
   },
   {
    "number": "8",
    "instruction_ru": "Прочитайте и переведите текст; A: замените имена личными местоимениями; B: расскажите от разных лиц",
-   "page": 18
+   "page": 18,
+   "text": "Прочитайте и переведите текст:\n1) Jesús María estudia en el colegio. Aprende inglés. Ahora está en clase. Lee un texto en voz alta, cree que comprende casi todo, responde bien a las preguntas del profesor.\n2) Marisol y su hermana Ana María están en un bar. Comen frutas y beben refrescos. Hablan de su amigo Felipe que vende el coche.\nA. Прочитайте текст, заменив имена собственные на личные местоимения (yo, tú, nosotros, vosotros, ellos).\nB. Расскажите текст от разных лиц.",
+   "kind": "closed"
   },
   {
    "number": "9",
@@ -934,7 +951,9 @@
     "¿Bebes agua o refresco?",
     "¿Coméis con vuestros amigos o con vuestros parientes?",
     "¿Crees en tus posibilidades?"
-   ]
+   ],
+   "text": "Ответьте на вопросы:\n1. ¿Comes en casa o en la Universidad? 2. ¿Quién lee el texto en voz alta? 3. ¿Comprendes el diálogo? 4. ¿Quién responde a las preguntas del profesor? 5. ¿Quién vende coches? 6. ¿Qué idioma extranjero aprendéis? 7. ¿Quién aprende inglés? 8. ¿Bebes agua o refresco? 9. ¿Coméis con vuestros amigos o con vuestros parientes? 10. ¿Crees en tus posibilidades?",
+   "kind": "closed"
   },
   {
    "number": "10",
@@ -952,12 +971,24 @@
     "¿Veis al profesor?",
     "¿Ves la tele?",
     "¿A quién ves en el bar?"
-   ]
+   ],
+   "text": "Проспрягайте глаголы tener и ver с существительными, которые даны в правой колонке таблицы:\ntener – una casa, amigos, un coche, clases\nver – a su hermano / hermana / amigos / amigas; la tele\nA. Задайте в парах вопросы, используя эти словосочетания.\nB. Ответьте на вопросы:\n1. ¿Tienes hermanos? 2. ¿Tenéis clase de español? 3. ¿Tenéis amigos en España? 4. ¿Tienes coche? 5. ¿Ves a los estudiantes? 6. ¿Veis al profesor? 7. ¿Ves la tele? 8. ¿A quién ves en el bar?",
+   "kind": "closed",
+   "page": 18
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Запомните некоторые формулы прощания",
+   "page": 19,
+   "text": "Запомните некоторые формулы прощания:\n¡Adiós! / ¡Hasta luego! / ¡Hasta pronto! / ¡Hasta mañana! / ¡Hasta la próxima!",
+   "kind": "open"
   },
   {
    "number": "12",
    "instruction_ru": "В парах поприветствуйте друга, узнайте, как у него дела, и попрощайтесь",
-   "page": 19
+   "page": 19,
+   "text": "В парах поприветствуйте своего друга, узнайте, как у него дела, и попрощайтесь с ним.",
+   "kind": "open"
   },
   {
    "number": "13",
@@ -974,7 +1005,9 @@
     "Ты с друзьями обедаешь во французском ресторане?",
     "У тебя есть машина? – У меня нет машины, но есть мотоцикл.",
     "Почему твоя двоюродная сестра пьет много кофе?"
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Твой брат учится или работает? 2. Какие иностранные языки изучает Ваш племянник? – Он изучает английский и немецкий языки. 3. Наш служащий отвечает на вопросы клиента. 4. Какие товары продает Ваша компания? – Мы продаем электробытовые приборы. 5. Наш преподаватель верит в наши возможности. 6. Я читаю текст громко, а ты тихо. Почему? 7. У Мануэля есть дом в Валенсии. Он испанец. 8. Ты с друзьями обедаешь во французском ресторане? 9. У тебя есть машина? – У меня нет машины, но есть мотоцикл. 10. Почему твоя двоюродная сестра пьет много кофе?",
+   "kind": "closed"
   }
  ],
  "questions_for_user": []

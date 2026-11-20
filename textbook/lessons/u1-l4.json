@@ -1146,12 +1146,16 @@
   {
    "number": "1",
    "instruction_ru": "Сосчитайте по-испански от 0 (cero) до 20",
-   "page": 22
+   "page": 22,
+   "text": "Сосчитайте по-испански от 0 (cero) до 20.",
+   "kind": "closed"
   },
   {
    "number": "2",
    "instruction_ru": "Прочитайте и переведите: 1 manual, 5 cuadernos, 2 artículos, 4 revistas, 8 lápices, 3 bolígrafos, 20 años, 15 alumnas, 13 estudiantes, 1 profesora",
-   "page": 22
+   "page": 22,
+   "text": "Прочитайте и переведите:\n1 manual, 5 cuadernos, 2 artículos, 4 revistas, 8 lápices, 3 bolígrafos, 20 años, 15 alumnas, 13 estudiantes, 1 profesora.",
+   "kind": "closed"
   },
   {
    "number": "3",
@@ -1167,12 +1171,16 @@
     "¿Cuántos años tienes?",
     "¿Cuántos años tiene tu amigo / amiga?",
     "¿Tienes hermanos?"
-   ]
+   ],
+   "text": "Ответьте на вопросы о себе:\n1. ¿Cuántos bolígrafos tienes? 2. ¿Cuántos lápices tienes? 3. ¿Cuántos cuadernos tienes? 4. ¿Cuántos manuales tienes? 5. ¿Cuántas clases tienes hoy? 6. ¿Cuántos amigos tienes? 7. ¿Cuántos años tienes? 8. ¿Cuántos años tiene tu amigo / amiga? 9. ¿Tienes hermanos?",
+   "kind": "open"
   },
   {
    "number": "4",
    "instruction_ru": "Прочитайте и переведите примеры из таблицы §28; A: проспрягайте ser с зависимыми словами; B: задайте друг другу вопросы",
-   "page": 23
+   "page": 23,
+   "text": "Прочитайте и переведите примеры из таблицы (§28): Soy Juan González. Soy el padre de José. Soy el encargado del banco. Soy economista (jurista, diplomático, hombre de negocios, ingeniero, periodista). Soy español. Soy católico. Soy demócrata. Soy alto/bajo, rubio/moreno, inteligente, simpático, trabajador. Soy de Madrid. Dos más dos son cuatro. Cinco menos tres son dos. Es blanco, negro, rojo, azul, verde, gris, amarillo, marrón.\nA. Проспрягайте глагол ser с зависимыми словами (см. среднюю колонку таблицы).\nB. (в парах) ¿Eres alto? – Sí, soy alto. ¿Eres economista? – No, no soy economista, soy jurista.",
+   "kind": "closed"
   },
   {
    "number": "5",
@@ -1191,12 +1199,16 @@
     "Кто эта женщина? – Это мама моего друга.",
     "У Вас два сына. Кто из них журналист?",
     "Я вижу три машины. Какая из них такси?"
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Сколько будет пять плюс семь? – Двенадцать. 2. Сколько будет одиннадцать минус три? – Восемь. 3. Какого цвета твой учебник? – Он зеленый. 4. Какого цвета стакан? – Он белый. 5. Откуда родом Родриго? – Он из Малаги. 6. Как выглядит твой брат? – Он высокий брюнет. 7. Наши внуки умные и трудолюбивые. 8. Ваш племянник инженер? – Нет, он бизнесмен. 9. Кто по профессии твой дедушка? – Он юрист. 10. Кто эта женщина? – Это мама моего друга. 11. У Вас два сына. Кто из них журналист? 12. Я вижу три машины. Какая из них такси?",
+   "kind": "closed"
   },
   {
    "number": "6",
    "instruction_ru": "Ответьте на вопросы (¿Dónde está este manual / bolígrafo / lápiz / cuaderno? ¿De qué color es ese manual / bolígrafo / lápiz / cuaderno?); B: задайте аналогичные вопросы",
-   "page": 23
+   "page": 23,
+   "text": "Ответьте на вопросы (о предметах рядом с вами):\nA. 1. ¿Dónde está este manual? 2. ¿Dónde está este bolígrafo? 3. ¿Dónde está este lápiz? 4. ¿Dónde está este cuaderno? 5. ¿De qué color es ese manual? 6. ¿De qué color es ese bolígrafo? 7. ¿De qué color es ese lápiz? 8. ¿De qué color es ese cuaderno?\nB. В парах сформулируйте и задайте друг другу аналогичные вопросы.",
+   "kind": "open"
   },
   {
    "number": "7",
@@ -1209,17 +1221,23 @@
     "Этот испанский дипломат смуглый и высокий.",
     "Эта тетрадь желтая, та коричневая, а вон та белая.",
     "Этот учебник лежит здесь, тот там, а вон тот там."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Эти карандаши красные, а те синие. 2. Эта ручка зеленая, а та черная. 3. Эти журналы английские, те немецкие, а вон те французские. 4. Этот испанский дипломат смуглый и высокий. 5. Эта тетрадь желтая, та коричневая, а вон та белая. 6. Этот учебник лежит здесь, тот там, а вон тот там.",
+   "kind": "closed"
   },
   {
    "number": "8",
    "instruction_ru": "Проспрягайте глаголы III спряжения и составьте 10 вопросов: abrir (una ventana, una puerta, el manual, el libro, el cuaderno), escribir (una letra, un dictado, una redacción, una carta, un documento, el currículum, con la mano derecha / izquierda), asistir (a) (a las clases, a la conferencia)",
-   "page": 24
+   "page": 24,
+   "text": "Проспрягайте следующие глаголы третьего спряжения и составьте 10 вопросов с ними:\nabrir – una ventana, una puerta; el manual, el libro, el cuaderno\nescribir – una letra, un dictado, una redacción, una carta, un documento, el currículum; con la mano derecha / izquierda\nasistir (a) – a las clases, a la conferencia",
+   "kind": "closed"
   },
   {
    "number": "9",
    "instruction_ru": "Прочитайте и переведите текст; A: замените имя личными местоимениями; B: расскажите от разных лиц",
-   "page": 24
+   "page": 24,
+   "text": "Прочитайте и переведите текст:\nErnesto es estudiante, vive en la residencia. Asiste a las clases cada día. En clase abre el cuaderno y escribe un dictado, después lee el texto de la lección.\nA. Прочитайте текст, заменив имя собственное на личные местоимения (yo, tú, nosotros, vosotros, ellos).\nB. Расскажите текст от разных лиц.",
+   "kind": "closed"
   },
   {
    "number": "10",
@@ -1234,12 +1252,16 @@
     "¿Viven tus amigos en una casa privada?",
     "¿Quién vive en la residencia?",
     "¿Quiénes no asisten a las clases?"
-   ]
+   ],
+   "text": "Ответьте на вопросы:\n1. ¿Abres el manual de español o de inglés? 2. ¿Escribes un dictado en el cuaderno azul o verde? 3. ¿Asistís a la conferencia de historia? 4. ¿Dónde vives? 5. ¿Dónde viven tus abuelos? 6. ¿Viven tus amigos en una casa privada? 7. ¿Quién vive en la residencia? 8. ¿Quiénes no asisten a las clases?",
+   "kind": "open"
   },
   {
    "number": "11",
    "instruction_ru": "Запомните названия профессий и место работы и объясните, кто где работает",
-   "page": 24
+   "page": 24,
+   "text": "Запомните названия профессий и место работы и объясните, кто где работает:\nuniversidad – profesor; oficina – jefe, secretaria; empresa – empleado; hospital – médico, enfermera; restaurante – camarero; tienda – dependiente; peluquería – peluquero; periódico – periodista; agencia de viajes – agente de viajes; empresa de transporte – conductor, chófer, taxista.",
+   "kind": "closed"
   },
   {
    "number": "12",
@@ -1255,7 +1277,9 @@
     "¿De ___ es tu amigo?",
     "¿___ es su profesora?",
     "Tienes tres tías. ¿___ de ellas vive en Madrid?"
-   ]
+   ],
+   "text": "Расставьте в предложениях следующие вопросительные слова: ¿qué? ¿quién? ¿cómo? ¿dónde? ¿cuánto? ¿cuál?\n1. ¿___ está la peluquería? 2. ¿___ se llama Usted? 3. ¿___ estudia en este colegio? 4. ¿___ clases tienes hoy? 5. ¿___ es Usted de nacionalidad? 6. ¿___ camareros trabajan en el restaurante? 7. ¿De ___ es tu amigo? 8. ¿___ es su profesora? 9. Tienes tres tías. ¿___ de ellas vive en Madrid?",
+   "kind": "closed"
   },
   {
    "number": "13",
@@ -1263,7 +1287,9 @@
    "pages": [
     24,
     25
-   ]
+   ],
+   "text": "Прочитайте и переведите диалог между секретарем канцелярского отдела Университета и новым студентом:\n– ¡Hola, buenos días! ¿Cómo te llamas?\n– Soy Carlos.\n– ¿De dónde eres?\n– Soy de Santiago.\n– ¿Santiago de Chile o Santiago de Compostela?\n– Santiago de Compostela. Soy gallego.\n– ¿Cuáles son tus apellidos?\n– Me llamo Carlos Lorenzo Fraga.\n– ¿Cuántos años tienes?\n– Diecisiete.\n– ¿Dónde vives?\n– En la residencia estudiantil.\n– ¿Qué número de teléfono tienes?\n– El 120 15 12.\n– Gracias, Carlos. Hasta pronto.\n– Hasta luego.\nA. Проспрягайте следующие глаголы с зависимыми словами: ser gallego, ser de España, llamarse..., tener diecisiete años, vivir en la residencia estudiantil, no tener teléfono.\nB. Ответьте на вопросы: 1. ¿Cómo se llama el nuevo estudiante? 2. ¿De dónde es? 3. ¿Cuántos años tiene? 4. ¿Dónde vive? 5. ¿Dónde estudia? 6. ¿Qué número de teléfono tiene?\nC. Воспроизведите диалог по ролям. D. Перескажите содержание диалога.",
+   "kind": "closed"
   },
   {
    "number": "14",
@@ -1278,17 +1304,23 @@
     "Esta alumna rusa responde bien ___ preguntas ___ profesor.",
     "Este agente ___ viajes escribe ___ carta ___ mano izquierda.",
     "___ sobrino ___ José llega ___ Universidad ___ coche."
-   ]
+   ],
+   "text": "Вставьте необходимые предлоги и артикли:\n1. Mi abuelo trabaja ___ hospital. Es ___ médico. 2. Este camarero es ___ Galicia. 3. Llegamos ___ oficina temprano. 4. ___ estudiantes están ___ clase. 5. ¿Qué es Usted ___ profesión? – Soy ___ peluquero. 6. Esta alumna rusa responde bien ___ preguntas ___ profesor. 7. Este agente ___ viajes escribe ___ carta ___ mano izquierda. 8. ___ sobrino ___ José llega ___ Universidad ___ coche.",
+   "kind": "closed"
   },
   {
    "number": "15",
    "instruction_ru": "Ответьте на вопросы: ¿Cómo te llamas? ¿De dónde eres? ¿Cuántos años tienes? ¿Dónde vives? ¿Dónde estudias? ¿Cómo estás? ¿Cómo estudias?",
-   "page": 25
+   "page": 25,
+   "text": "Ответьте на вопросы:\n1. ¿Cómo te llamas? 2. ¿De dónde eres? 3. ¿Cuántos años tienes? 4. ¿Dónde vives? 5. ¿Dónde estudias? 6. ¿Cómo estás? 7. ¿Cómo estudias?",
+   "kind": "open"
   },
   {
    "number": "16",
    "instruction_ru": "Расскажите о себе",
-   "page": 25
+   "page": 25,
+   "text": "Расскажите о себе.",
+   "kind": "open"
   },
   {
    "number": "17",
@@ -1315,7 +1347,9 @@
     "Ты пишешь письмо?",
     "Сколько человек работает в больнице?",
     "У тебя есть черная ручка? – Нет. Эта ручка синяя, а тот карандаш красный."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Кто Вы? – Меня зовут Рамон. 2. Сколько тебе лет? – Мне пятнадцать. 3. Я дипломат. А Вы кто? 4. Откуда эта студентка? – Она из Испании. 5. Твой двоюродный брат высокий? – Нет, он низкого роста. 6. Какой у тебя дедушка? – Он умный. 7. Ваша сестра блондинка? – Нет, она брюнетка. 8. Какого цвета твоя тетрадь? – Она голубая. 9. Какого цвета этот учебник? – Зеленого. 10. Сколько будет шесть плюс семь? – Тринадцать. 11. Сколько лет твоему отцу? 12. Как зовут вашу бабушку? 13. Кто здесь? 14. Этот господин родом отсюда? 15. Где живет Ваш начальник? 16. Мы работаем в газете, а наши друзья учатся в Университете. 17. Мой друг – служащий. 18. Ты пишешь письмо? 19. Сколько человек работает в больнице? 20. У тебя есть черная ручка? – Нет. Эта ручка синяя, а тот карандаш красный.",
+   "kind": "closed"
   }
  ],
  "questions_for_user": []

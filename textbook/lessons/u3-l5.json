@@ -633,12 +633,16 @@
   {
    "number": "1",
    "instruction_ru": "Проспрягайте в Futuro Simple и придумайте ситуации: cambiar de domicilio, dar una fiesta, atenderle en seguida, salir de casa temprano, decírselo, poder aprobar el examen, hacerlo para mañana, no tener problemas, ir a ver a José, venir aquí dentro de un año, saberlo pasado mañana",
-   "page": 101
+   "page": 101,
+   "text": "Проспрягайте в Futuro Simple следующие глаголы. Придумайте ситуации:\ncambiar de domicilio, dar una fiesta, atenderle en seguida, salir de casa temprano, decírselo, poder aprobar el examen, hacerlo para mañana, no tener problemas, ir a ver a José, venir aquí dentro de un año, saberlo pasado mañana.",
+   "kind": "closed"
   },
   {
    "number": "2",
    "instruction_ru": "Поставьте глаголы в Futuro Simple и перескажите текст (Ramón atraviesa la plaza…)",
-   "page": 101
+   "page": 101,
+   "text": "Поставьте глаголы в Futuro Simple и перескажите текст:\nRamón atraviesa la plaza y se sienta a la mesa al aire libre. Le atiende una camarera muy simpática. Merienda con una taza de chocolate con churros. Después enciende un cigarrillo. No se mueve un rato, piensa en algo: recuerda el pasado o sueña con el futuro. Suena el móvil. Ramón atiende la llamada y después pregunta a la camarera cuánto cuesta su merienda. Le cuenta un chiste, paga y vuelve a la oficina.",
+   "kind": "closed"
   },
   {
    "number": "3",
@@ -646,12 +650,16 @@
    "pages": [
     101,
     102
-   ]
+   ],
+   "text": "Преобразуйте предложения согласно образцу, обращая также внимание на употребление también и tampoco (Todos los días voy a la oficina. – Mañana también iré a la oficina. / Hoy no vamos al colegio. – Mañana tampoco iremos al colegio.):\n1. Los domingos no tengo clases. El domingo que viene... 2. Juan siempre habla con mi jefe. Dentro de dos horas... 3. El ascensor nunca funciona. Pasado mañana... 4. Cada mes pagáis el alquiler. El mes que viene... 5. Todos los fines de semana la abuela viene a vernos. Este fin de semana... 6. Mis padres siempre lo saben todo. Esta vez... 7. Todos los años viajamos por mar. El año que viene... 8. Nunca sales con los amigos. El próximo sábado...",
+   "kind": "closed"
   },
   {
    "number": "4",
    "instruction_ru": "Раскройте скобки, употребляя будущее время",
-   "page": 102
+   "page": 102,
+   "text": "Раскройте скобки, обращая внимание на употребление будущего времени:\n1. ¿Cuándo (firmar, vosotros) ___ el contrato de inquilinato? 2. Mañana (ir, nosotros) ___ a la agencia inmobiliaria. 3. Rafael dice que (pagar, él) ___ el alquiler la semana que viene. 4. El próximo sábado (ser) ___ mi cumpleaños. 5. ¿(venir, tú) ___ conmigo al cine el domingo? 6. Pasado mañana los estudiantes (tener) ___ una prueba escrita. 7. Me parece que el vendedor no (disminuir) ___ el precio. 8. (salir, yo) ___ de casa dentro de 15 minutos.",
+   "kind": "closed"
   },
   {
    "number": "5",
@@ -665,12 +673,16 @@
     "¿Ya han puesto Ustedes un anuncio en el periódico?",
     "¿Ya has dicho toda la verdad a Ana?",
     "¿Ya os habéis despedido de vuestro abuelo?"
-   ]
+   ],
+   "text": "Ответьте по образцу: ¿Ya has traducido el artículo? – Lo traduciré mañana.:\n1. ¿Ya has escrito una carta? 2. ¿Ya has llamado al director financiero? 3. ¿Ya ha encontrado Usted empleo? 4. ¿Ya habéis alquilado un piso? 5. ¿Ya han puesto Ustedes un anuncio en el periódico? 6. ¿Ya has dicho toda la verdad a Ana? 7. ¿Ya os habéis despedido de vuestro abuelo?",
+   "kind": "closed"
   },
   {
    "number": "6",
    "instruction_ru": "Ответьте на вопросы (¿Cuándo terminarás la carrera? …)",
-   "page": 102
+   "page": 102,
+   "text": "Ответьте на вопросы:\n1. ¿Cuándo terminarás la carrera? 2. ¿Qué harás después de graduarte? 3. ¿Estudiarás un máster o buscarás empleo? 4. ¿Cuándo aprenderás a conducir el coche? 5. ¿Qué harás el fin de semana? 6. ¿Adónde irás de vacaciones? 7. ¿Qué nota te pondrá el profesor?",
+   "kind": "open"
   },
   {
    "number": "7",
@@ -687,7 +699,9 @@
     "Телевизор мы поставим в правый угол, а книжный шкаф слева от окна.",
     "С кем ты будешь совместно проживать в квартире?",
     "Кухня тебе очень понравится."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Я скажу тебе это завтра. 2. Когда ты придешь ко мне? 3. Через неделю мы поедем в отпуск в Египет. 4. Ты узнаешь это послезавтра. 5. В выходные мы увидим квартиру, которую сняли наши друзья. 6. Это упражнение я сделаю потом. Оно слишком сложное. 7. Я смогу снять здесь комнату на месяц? 8. Телевизор мы поставим в правый угол, а книжный шкаф слева от окна. 9. С кем ты будешь совместно проживать в квартире? 10. Кухня тебе очень понравится.",
+   "kind": "closed"
   },
   {
    "number": "8",
@@ -706,7 +720,9 @@
     "Se lo decimos todo.",
     "Lo firmáis todo.",
     "Te lo cuento todo."
-   ]
+   ],
+   "text": "Трансформируйте, употребляя будущее время: Te lo compra. – Te lo comprará.:\n1. Te lo dice. 2. Se lo vendéis. 3. Nos lo explicas. 4. Se lo traducen. 5. Me lo sirves. 6. Te lo agradezco. 7. Lo lee todo. 8. Lo saben todo. 9. Os lo enseño todo. 10. Se lo decimos todo. 11. Lo firmáis todo. 12. Te lo cuento todo.",
+   "kind": "closed"
   },
   {
    "number": "9",
@@ -720,7 +736,9 @@
     "Lo importante es resolver el conflicto sin causar problemas a los demás.",
     "Siempre es así: cada uno piensa en lo suyo.",
     "Jefe, ¿ya se va? ¿Y lo de los suizos?"
-   ]
+   ],
+   "text": "Переведите на русский язык (lo neutro):\n1. Lo de Juan no les interesa, no tienen nada que ver con esa historia. 2. ¿Por qué continuáis con lo vuestro? 3. Lo que pasa es que nadie quiere hacer este trabajo. 4. Me parece que debes pensarlo bien antes de enviar esta carta. 5. Lo importante es resolver el conflicto sin causar problemas a los demás. 6. Siempre es así: cada uno piensa en lo suyo. 7. Jefe, ¿ya se va? ¿Y lo de los suizos?",
+   "kind": "closed"
   },
   {
    "number": "10",
@@ -737,12 +755,16 @@
     "Я сожалею о том, что случилось с Марией.",
     "Дела на финансовом рынке сейчас интересуют всех.",
     "Это невозможно понять."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. Ты это сделаешь? 2. Ты сможешь добиться этого. 3. Я прошу тебя об этом. 4. Когда он тебе это написал? 5. Зачем ты это надел? 6. Я знаю, что у тебя этого нет. – Ты не можешь знать этого. 7. Я не хочу обсуждать с тобой мои дела. 8. Я сожалею о том, что случилось с Марией. 9. Дела на финансовом рынке сейчас интересуют всех. 10. Это невозможно понять.",
+   "kind": "closed"
   },
   {
    "number": "11",
    "instruction_ru": "Para conocer más: слова о размещении в гостинице (En el hotel); A – проспрягайте; B – переведите на русский; C – переведите на испанский",
-   "page": 103
+   "page": 103,
+   "text": "Запомните следующие слова, связанные с размещением в гостинице: En el hotel: reservar una habitación sencilla (individual) / doble, dirigirse al recepcionista, llenar el formulario, un cuarto desocupado, entregar la llave, temporada alta / baja, incluido el desayuno, alojarse / hospedarse / quedarse en el hotel de cuatro estrellas / hostal de dos estrellas / albergue estudiantil.\nA. Проспрягайте данные глаголы с зависимыми словами.\nB. Переведите на русский язык: 1. En enero iremos a Toledo, ya he reservado un hotel de 3 estrellas en el centro histórico. Somos cinco y he pedido 2 habitaciones dobles y una individual. 2. En la temporada baja los precios suelen ser 2 veces más bajos que en la temporada alta. 3. Se han dirigido al recepcionista para saber si hay habitaciones desocupadas. 4. ¿Dónde os hospedaréis en Madrid? – Nos hospedaremos en un albergue estudiantil. 5. ¿Por qué has elegido este hostal? – He visto las fotos en su página web y me ha gustado. 6. Una habitación sencilla en nuestro hotel cuesta 60 euros, el precio incluye el desayuno. 7. Señores, primero Ustedes llenan los formularios y después yo les entrego las llaves.\nC. Переведите на испанский язык: 1. Вы бронировали одноместный или двухместный номер? 2. Я вхожу в гостиницу, обращаюсь к администратору, но свободных номеров нет, потому что сейчас разгар туристического сезона. 3. Вы можете объяснить мне, как заполнить бланк? 4. Кто даст мне ключ от номера? 5. Вот стоимость одноместного номера, включая завтрак. 6. В какой гостинице Вы остановились?",
+   "kind": "closed"
   },
   {
    "number": "12",
@@ -750,27 +772,37 @@
    "pages": [
     103,
     104
-   ]
+   ],
+   "text": "Прочитайте и переведите диалог:\nReservando una habitación en el hotel\n– Hotel «Carlos V». Dígame.\n– Quiero reservar una habitación sencilla.\n– ¿A partir de qué fecha?\n– A partir del día quince para tres noches.\n– Lo siento pero es imposible. Como estamos en temporada alta, nuestro hotel está lleno.\n– ¡Qué mala suerte!\n– Le puedo aconsejar otro hotel de nuestra cadena de categoría más alta, es decir, cuatro estrellas.\n– ¿Serán más altos los precios?\n– Nada de eso, tiene los mismos precios porque está un poco más lejos del centro.\n– ¿Me explicará dónde está?\n– Naturalmente, señor. Allí hará una reserva fácilmente.\n– Se lo agradezco mucho, señor.\nA. Проспрягайте следующие глаголы с зависимыми словами в Presente, Pretérito Perfecto и в Futuro Simple: reservar una habitación sencilla, tener mala suerte, sentirlo, aconsejarle otro hotel, explicarle dónde está, agradecerle su amabilidad.\nB. Ответьте на вопросы: 1. ¿Qué reserva quiere hacer el señor en el hotel Carlos V? 2. ¿Por qué es imposible? 3. ¿Qué le aconseja al cliente el recepcionista? 4. ¿Por qué tiene los mismos precios el otro hotel? 5. ¿Qué hará el cliente?\nC. Воспроизведите диалог по ролям. D. Перескажите содержание диалога от третьего лица и от лица его участников.",
+   "kind": "closed"
   },
   {
    "number": "13",
    "instruction_ru": "Прочитайте и переведите текст «Planificando un viaje»; A – эквиваленты; B – список услуг турагентств",
-   "page": 104
+   "page": 104,
+   "text": "Прочитайте и переведите текст:\nPlanificando un viaje\n¿Estás planificando un viaje? En nuestra agencia de viajes encontrarás los comentarios de una gran cantidad de viajeros que dan a conocer sus experiencias negativas y positivas. Así, podrás conocer los mejores sitios para alojarte y sabrás dónde comer o qué ver antes de hacer una reserva. También encontrarás guías gratuitas con sugerencias y fotos de viajeros como tú que te ayudarán a tomar tus propias decisiones.\nTe encontraremos el hotel, hostal u otro tipo de alojamiento perfecto según tus necesidades. Tanto si buscas un hotel con encanto, un hostal barato o un hotel en el centro, lo encontrarás gracias a las críticas, opiniones y consejos de viajeros como tú. Las fotos de hoteles también te ayudarán a elegir el alojamiento, así como las fotos de destinos te ayudarán a empezar a conocer el destino antes de viajar. También te ayudaremos a encontrar vuelos baratos entre miles de itinerarios posibles.\nA. Найдите эквиваленты: планировать путешествие; большое количество путешественников; положительный и отрицательный опыт; бесплатные путеводители с рекомендациями; помогут принять решение; идеальный тип размещения; благодаря критике, мнениям и советам; тысячи возможных маршрутов.\nB. Расскажите, какие услуги оказывают туристические агентства. Составьте развернутый список таких услуг.",
+   "kind": "closed"
   },
   {
    "number": "14",
    "instruction_ru": "Вставьте предлоги и артикли",
-   "page": 104
+   "page": 104,
+   "text": "Вставьте необходимые предлоги и артикли:\n1. ___ viajero quiere reservar ___ habitación doble ___ hotel. 2. ___ partir ___ día 13 ___ noviembre estaremos ___ Madrid. 3. Nos dirigimos ___ recepcionista ___ hacer ___ reserva. 4. Eva y María no tienen ___ dinero, así que se hospedarán ___ albergue estudiantil lejos ___ centro. 5. ___ precio ___ habitación no incluye ___ desayuno. 6. ¿Ya has entregado ___ llave? – La entregaré ___ mediodía.",
+   "kind": "closed"
   },
   {
    "number": "15",
    "instruction_ru": "Ответьте на вопросы о бронировании и путешествиях",
-   "page": 104
+   "page": 104,
+   "text": "Ответьте на вопросы:\n1. ¿Qué hace Usted para reservar una habitación en el hotel? 2. ¿Le gusta alojarse en hoteles u hostales? ¿Por qué? 3. ¿Qué hoteles u hostales le gustan? 4. ¿Adónde ha viajado la última vez? 5. ¿Dónde se ha hospedado? 6. ¿Cómo ha hecho la reserva? 7. ¿Adónde será su próximo viaje? 8. ¿Cómo buscará y reservará el alojamiento?",
+   "kind": "open"
   },
   {
    "number": "16",
    "instruction_ru": "Расскажите, как забронировать гостиницу",
-   "page": 104
+   "page": 104,
+   "text": "Расскажите, как забронировать гостиницу.",
+   "kind": "open"
   },
   {
    "number": "17",
@@ -790,12 +822,16 @@
     "В разгар туристического сезона в этой четырехзвёздочной гостинице нет ни одного свободного номера. Мне очень жаль.",
     "То, что Вы сказали, очень важно для меня. Я благодарю Вас за это.",
     "Когда ты уезжаешь в Испанию? – Послезавтра. Но пока не знаю, где я остановлюсь."
-   ]
+   ],
+   "text": "Переведите на испанский язык:\n1. В этом журнале ты найдешь фотографии разных испанских гостиниц. 2. Когда Вы забронируете мне номер в гостинице? – Я Вам его уже забронировал. 3. Кто-нибудь мне скажет, когда мы будем обедать? 4. Моим друзьям не понравилась эта гостиница, поскольку завтрак не включен в стоимость номера. 5. В каком туристическом агентстве Вам забронировали такие дешевые билеты на самолет? 6. С первого июля цены поднимутся, потому что начинается высокий сезон. 7. На столе лежат бесплатные путеводители. Там много полезной информации. 8. В разгар туристического сезона в этой четырехзвёздочной гостинице нет ни одного свободного номера. Мне очень жаль. 9. То, что Вы сказали, очень важно для меня. Я благодарю Вас за это. 10. Когда ты уезжаешь в Испанию? – Послезавтра. Но пока не знаю, где я остановлюсь.",
+   "kind": "closed"
   },
   {
    "number": "18",
    "instruction_ru": "Texto complementario: прочитайте информацию об отеле Catalonia Excelsior и расскажите, устраивает ли он вас",
-   "page": 105
+   "page": 105,
+   "text": "Прочитайте информацию об отеле и расскажите, устраивает ли вас эта гостиница. Обоснуйте свое мнение.\nCatalonia Excelsior: Descripción. Categoría: **. Valoración: **. Habitación estándar por noche 106.00€ – 132.00€. Barcelonina, 5, Valencia, 46002, España... Cadena: Hoteles Catalonia, Tipo: Hotel.\nInstalaciones del hotel: Servicio de lavandería; Zonas comunes/públicas con acceso para sillas de ruedas; Se admiten animales domésticos; Personal políglota.\nComodidades en la habitación: Aire acondicionado; Teléfono; Televisión (por cable o satélite); Habitaciones de no fumadores.\nActividades de ocio: Spa/Masajes; Pista para footing; Piscina para niños; Jacuzzi.",
+   "kind": "closed"
   }
  ],
  "questions_for_user": [],
