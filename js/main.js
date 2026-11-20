@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.11';
+const VERSION = '1.12';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -28,7 +28,7 @@ function setTitle(t, back) {
 }
 function applyStyle() {
   document.documentElement.dataset.style = settings.style;
-  const col = { a: '#d6372b', b: '#2f5bd3', c: '#121212' }[settings.style];
+  const col = { a: '#d6372b', b: '#2f5bd3', c: '#121212', d: '#0d0d0d', e: '#0d0d0d' }[settings.style] || '#2f5bd3';
   $('meta[name=theme-color]').setAttribute('content', col);
 }
 function renderAva() {
@@ -131,6 +131,7 @@ on(/^\/today$/, () => {
       ${errs ? `<a class="btn ghost" href="#/test/mistakes">Мои ошибки (${errs})</a>` : ''}
     </div>
     <div class="c row"><div><b>Выучено слов</b><div class="mut">из уроков и своих</div></div><b style="font-size:22px">${learned}</b></div>
+    <a class="c row" href="#/ai?new" style="text-decoration:none;color:inherit"><div class="grow"><b>💬 Новый чат</b><div class="mut">Спросить помощника или получить ответы на упражнение</div></div><span>›</span></a>
     ${installBlock()}
     ${!settings.signedIn ? `<a class="c row" href="#/profile" style="text-decoration:none;color:inherit"><div class="grow"><b>Сохранять прогресс в Google</b><div class="mut">Чтобы не потерять прогресс и учиться с разных устройств</div></div><span>›</span></a>` : ''}
   `;
@@ -615,9 +616,8 @@ const CHATS_KEY = 'espanola.chats', CUR_KEY = 'espanola.chat.cur';
 const lsGet = (k, d) => { try { return JSON.parse(localStorage.getItem(k) || 'null') ?? d; } catch { return d; } };
 let chats = lsGet(CHATS_KEY, null);
 if (!chats) { const old = lsGet('espanola.chat', []); chats = old.length ? [{ id: uid(), t: Date.now(), msgs: old }] : []; try { localStorage.removeItem('espanola.chat'); } catch {} }
-// при запуске продолжаем последний разговор (а не пустой «новый чат»)
-let chatCur = lsGet(CUR_KEY, null);
-if (!chats.some(c => c.id === chatCur)) chatCur = chats[0]?.id || uid();
+// при каждом запуске и после выхода из Помощника — новый чат; прошлые лежат в «Истории» (просьба Александра)
+let chatCur = uid();
 const chatLog = [...(chats.find(c => c.id === chatCur)?.msgs || [])];
 let chatPending = false, lastExQ = null; // ждём ответа ИИ (переживает перерисовку экрана)
 const chatTitle = c => { const u = c.msgs.find(m => m.role === 'user'); const t = (u?.show || u?.text || 'Новый чат').split('\n')[0]; return t.length > 60 ? t.slice(0, 58) + '…' : t; };
@@ -795,10 +795,11 @@ function chatSuggestions() {
   return out.slice(0, 4);
 }
 
-on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
+on(/^\/ai(?:\?(q|ex|new)=?(.*))?$/, (kind, val) => {
+  if (kind === 'new') { if (chatLog.length && !chatPending) openChat(); kind = null; history.replaceState(null, '', location.pathname + '#/ai'); }
   setTitle('Помощник');
   view.classList.add('chatmode');
-  cleanup = () => view.classList.remove('chatmode');
+  cleanup = () => { view.classList.remove('chatmode'); if (!/^#\/ai/.test(location.hash) && chatLog.length && !chatPending) openChat(); };
   const pre = kind === 'q' && val ? decodeURIComponent(val) : '';
   const exSel = kind === 'ex' ? findExercise(val) : null;
   if (kind) history.replaceState(null, '', location.pathname + '#/ai');
@@ -946,6 +947,8 @@ on(/^\/profile$/, () => {
         <button data-style="a" class="${settings.style === 'a' ? 'on' : ''}"><span class="sw" style="background:#d6372b"></span>Сиеста</button>
         <button data-style="b" class="${settings.style === 'b' ? 'on' : ''}"><span class="sw" style="background:#2f5bd3"></span>Тетрадь</button>
         <button data-style="c" class="${settings.style === 'c' ? 'on' : ''}"><span class="sw" style="background:#121212;border:2px solid #8ab4f8"></span>Тёмная</button>
+        <button data-style="d" class="${settings.style === 'd' ? 'on' : ''}"><span class="sw" style="background:#0d0d0d;border:2px solid #ffd000"></span>Чёрно-жёлтая</button>
+        <button data-style="e" class="${settings.style === 'e' ? 'on' : ''}"><span class="sw" style="background:#0d0d0d;border:2px solid #e53935"></span>Чёрно-красная</button>
       </div>
     </div>
     <div class="c stack">
