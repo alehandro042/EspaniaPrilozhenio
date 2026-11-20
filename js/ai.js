@@ -70,9 +70,12 @@ export const PROVIDERS = {
   }
 };
 
+// Пока владелец решил: у всех только общий DeepSeek, выбор других ИИ скрыт (config.onlySharedAi)
+export const onlyShared = () => !!(PROXY() && (window.ESPANOLA_CONFIG || {}).onlySharedAi);
 export const providerList = () => Object.entries(PROVIDERS).filter(([k]) => k !== 'shared' || PROXY());
 export const provider = () => {
   const p = settings.aiProvider;
+  if (onlyShared()) return 'shared';
   if (p === 'shared') return PROXY() ? 'shared' : 'gemini';
   // пока человек сам не выбрал сервис и у него нет своего ключа — общий DeepSeek
   if (PROXY() && !settings.aiChosen && !(PROVIDERS[p] && aiKeys.get(p))) return 'shared';

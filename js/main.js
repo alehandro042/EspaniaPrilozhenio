@@ -3,7 +3,7 @@ import { book, loadBook, hasRu, imgFor, KIND_RU, kindLabel, lessonMeta, unitMeta
 import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearned, mistakes } from './srs.js';
 import { speak, listen, canListen, judge, esVoices } from './speech.js';
 import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions, buildWriteTest } from './quiz.js';
-import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl, PROVIDERS, providerList, provider, providerInfo, hasKey as aiHasKey } from './ai.js';
+import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl, PROVIDERS, providerList, onlyShared, provider, providerInfo, hasKey as aiHasKey } from './ai.js';
 import * as drive from './sync.js';
 import * as cloud from './cloud.js';
 // Если в config.js задан Supabase — прогресс хранится там, иначе (запасной вариант) на Google Диске.
@@ -522,10 +522,10 @@ on(/^\/my(?:\/(\w+))?$/, mode => {
       <div class="btns"><a class="btn ghost" href="#/my">Отмена</a><button class="btn" id="saveList">Добавить</button></div></div>`;
   else if (mode === 'photo') form = photoForm();
   view.innerHTML = `
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+    <div style="display:grid;grid-template-columns:repeat(${providerInfo().vision || !onlyShared() ? 3 : 2},1fr);gap:8px">
       <a class="c tight" href="#/my/add" style="text-align:center;text-decoration:none;color:inherit"><div style="font-size:22px">✍️</div><div class="mut">Вручную</div></a>
       <a class="c tight" href="#/my/list" style="text-align:center;text-decoration:none;color:inherit"><div style="font-size:22px">📋</div><div class="mut">Списком</div></a>
-      <a class="c tight" href="#/my/photo" style="text-align:center;text-decoration:none;color:inherit"><div style="font-size:22px">📷</div><div class="mut">По фото</div></a>
+      ${providerInfo().vision || !onlyShared() ? `<a class="c tight" href="#/my/photo" style="text-align:center;text-decoration:none;color:inherit"><div style="font-size:22px">📷</div><div class="mut">По фото</div></a>` : ''}
     </div>
     ${form}
     ${items.length ? `<div class="btns"><a class="btn ghost" href="#/cards/my">Карточки</a><a class="btn ghost" href="#/test/my">Тест</a></div>
@@ -565,6 +565,7 @@ function photoForm() {
       ${photoRows.map((r, k) => `<div class="row" style="gap:6px"><input type="checkbox" data-pk="${k}" checked style="width:20px;height:20px;accent-color:var(--acc)">
         <input class="inp" data-pes="${k}" value="${esc(r.es)}" lang="es" style="padding:8px"><input class="inp" data-pru="${k}" value="${esc(r.ru)}" style="padding:8px"></div>`).join('')}
       <div class="btns"><button class="btn ghost" id="photoCancel">Отмена</button><button class="btn" id="photoSave">Сохранить</button></div></div>`;
+  if (onlyShared() && !providerInfo().vision) return `<div class="c stack"><b>Слова с фото</b><div class="mut small">Распознавание по фото пока выключено: DeepSeek не читает картинки. Добавляйте слова вручную или списком.</div></div>`;
   return `<div class="c stack"><b>Слова с фото</b>
     <div class="mut small">${hasKey ? 'Сфотографируйте страницу или записи, ИИ (' + providerInfo().name + ') найдёт испанские слова, а вы проверите их перед сохранением.' : 'Для распознавания нужен ключ ИИ (есть бесплатные, добавляется в профиле). Без ключа: выберите фото, нажмите «Спросить Gemini», затем скопируйте ответ сюда через «Списком».'}</div>
     ${hasKey && !providerInfo().vision ? `<div class="fb almost small">${esc(providerInfo().name)} не читает фото. Выберите в <a href="#/profile">профиле</a> другой сервис (например, бесплатный Gemini или Groq).</div>` : ''}
@@ -658,7 +659,7 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
     ${hasKey ? `<div class="chat" id="chat">${chatLog.map(m => `<div class="bubble ${m.role === 'user' ? 'me' : 'ai'}">${esc(m.show || m.text)}</div>`).join('') || `<div class="empty-note">Спросите что угодно про испанский: перевод, грамматику, как сказать фразу.</div>`}</div>`
       : `<div class="c stack"><b>ИИ-помощник</b><div class="mut small">Чтобы отвечать прямо здесь, нужен ваш ключ ИИ (Gemini, Groq, Mistral и др., есть бесплатные). Без ключа вопрос можно задать в приложении Gemini: кнопка скопирует запрос и откроет Gemini.</div><a class="btn line" href="#/profile">Добавить ключ ИИ</a></div>`}
     ${exSel ? `<div class="c stack"><b>📘 Урок ${exSel.m.lesson} · Unidad ${exSel.m.unit}, упражнение ${esc(exSel.ex.number)}</b><div class="mut small">${esc(exSel.ex.instruction_ru || '')}</div>${exSel.ex.text ? `<details><summary class="small">Текст упражнения</summary><div class="small" style="white-space:pre-wrap;margin-top:6px">${esc(exSel.ex.text)}</div></details>` : ''}
-      <div class="btns">${hasKey ? `<button class="btn" id="exSend">Получить ответы</button>` : ''}<button class="btn ${hasKey ? 'ghost' : ''}" id="exApp">Спросить Gemini ↗</button></div>
+      <div class="btns">${hasKey ? `<button class="btn" id="exSend">Получить ответы</button>` : ''}${onlyShared() ? '' : `<button class="btn ${hasKey ? 'ghost' : ''}" id="exApp">Спросить Gemini ↗</button>`}</div>
       <div class="mut small">ИИ получит текст задания, слова и грамматику урока. Ответы могут содержать ошибки, сверяйтесь с учебником.</div></div>` : ''}
     <details class="c"><summary><b>📘 Упражнение из учебника</b></summary>
       <div class="stack" style="margin-top:10px">
@@ -670,7 +671,7 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
     <textarea class="inp" id="q" placeholder="Напишите вопрос…" style="min-height:80px">${esc(pre)}</textarea>
     <div class="btns">
       ${hasKey ? `<button class="btn" id="send">Отправить</button>` : ''}
-      <button class="btn ${hasKey ? 'ghost' : ''}" id="askApp">Спросить Gemini ↗</button>
+      ${onlyShared() ? '' : `<button class="btn ${hasKey ? 'ghost' : ''}" id="askApp">Спросить Gemini ↗</button>`}
       ${navigator.share ? `<button class="btn ghost" id="shareQ" style="flex:0 0 auto;width:auto">Поделиться</button>` : ''}
     </div>
     ${hasKey && chatLog.length ? `<button class="btn line sm" id="clear" style="align-self:center">Очистить чат</button>` : ''}`;
@@ -680,11 +681,11 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
   $('#exGo').onclick = () => { if ($('#exN').value) location.hash = `#/ai?ex=${$('#exL').value}:${encodeURIComponent($('#exN').value)}`; };
   if (exSel) {
     const full = exercisePrompt(exSel), show = `Урок ${exSel.m.lesson}, упражнение ${exSel.ex.number}: дай ответы`;
-    $('#exApp').onclick = async () => { const r = await askGeminiApp(full); if (r === 'copied') toast('Запрос скопирован — вставьте его в Gemini', 4000); };
+    if ($('#exApp')) $('#exApp').onclick = async () => { const r = await askGeminiApp(full); if (r === 'copied') toast('Запрос скопирован — вставьте его в Gemini', 4000); };
     const es = $('#exSend'); if (es) es.onclick = () => sendText(full, show);
   }
   view.querySelectorAll('[data-sugg]').forEach(b => b.onclick = () => { ta.value = b.dataset.sugg; ta.focus(); });
-  $('#askApp').onclick = async () => {
+  if ($('#askApp')) $('#askApp').onclick = async () => {
     if (!ta.value.trim()) return toast('Сначала напишите вопрос');
     const r = await askGeminiApp(ta.value.trim() + (aiContext() ? '\n(' + aiContext() + ')' : ''));
     if (r === 'copied') toast('Запрос скопирован — вставьте его в Gemini', 4000);
@@ -738,7 +739,7 @@ on(/^\/profile$/, () => {
           <a class="small" href="#/setup">Как получить Client ID ›</a></div></details>` : ''}
     </div>
 `}
-    <div class="c stack">
+    ${onlyShared() ? `<div class="c stack"><b>ИИ-помощник</b><div class="mut small">DeepSeek работает у всех сразу, ключ не нужен. Задавайте вопросы во вкладке «Помощник» или нажимайте «🤖 Ответы» у упражнений.</div></div>` : `<div class="c stack">
       <b>ИИ-помощник</b>
       <div class="field"><label>Сервис</label><select class="inp" id="aiProv">${providerList().map(([k, P]) => `<option value="${k}" ${k === provider() ? 'selected' : ''}>${esc(P.name)} · ${P.free ? 'бесплатно' : 'платно'}${aiKeys.get(k) ? ' ✓' : ''}</option>`).join('')}</select></div>
       ${providerInfo().noKey ? `<div class="mut small">${esc(providerInfo().note)} <b>Фото не читает</b> (для фото выберите Gemini, Groq или Mistral со своим ключом).</div>` : `
@@ -748,7 +749,7 @@ on(/^\/profile$/, () => {
       <details><summary class="mut small">Модель</summary><input class="inp" id="gmodel" value="${esc((settings.models || {})[provider()] || '')}" placeholder="${esc(providerInfo().model)}" style="margin-top:8px"></details>
       `}
       ${providerInfo().noKey ? "" : `<div class="mut small">Без ключа в Помощнике работает кнопка «Спросить Gemini».</div>`}
-    </div>
+    </div>`}
     <div class="c stack">
       <b>Стиль</b>
       <div class="styles">
@@ -788,7 +789,7 @@ on(/^\/profile$/, () => {
   if (b('syncBtn')) b('syncBtn').onclick = async () => { try { if (!hasToken()) await signIn(''); else await syncNow(); route(); } catch (e) { toast(e.message, 4000); } };
   if (b('outBtn')) b('outBtn').onclick = () => { signOut(); renderAva(); route(); toast('Вы вышли. Прогресс остался на телефоне и на Диске'); };
   if (b('cidSave')) b('cidSave').onclick = () => { settings.clientId = b('cid').value.trim(); saveSettings(); route(); toast('Сохранено'); };
-  b('aiProv').onchange = e => { settings.aiProvider = e.target.value; settings.aiChosen = true; saveSettings(); route(); };
+  if (b('aiProv')) b('aiProv').onchange = e => { settings.aiProvider = e.target.value; settings.aiChosen = true; saveSettings(); route(); };
   if (b('gSave')) b('gSave').onclick = () => { const p = provider(); const v = b('gkey').value.trim(); aiKeys.set(p, v); settings.models = { ...(settings.models || {}), [p]: b('gmodel').value.trim() }; saveSettings(); toast(v ? 'Ключ сохранён на этом устройстве' : 'Ключ удалён'); route(); };
   if (b('gDel')) b('gDel').onclick = () => { aiKeys.set(provider(), ''); route(); };
   view.querySelectorAll('[data-style]').forEach(x => x.onclick = () => { settings.style = x.dataset.style; saveSettings(); applyStyle(); route(); });
