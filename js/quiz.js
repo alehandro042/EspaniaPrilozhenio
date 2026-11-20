@@ -137,11 +137,16 @@ export function grammarQuestions(lid, lvl, items) {
   return qs;
 }
 
+// Перевод фраз урока с русского на испанский (только фразы, у которых в учебнике есть перевод)
+function phraseQuestions(lid, lvl) {
+  return (book.byLesson.get(lid) || []).filter(it => hasRu(it) && /\s/.test(it.es) && !/[=…/]/.test(it.es))
+    .map(it => ({ type: 'write_es', item: it, kind: 'Переведите на испанский', prompt: it.ru, expected: expOf(it), hint: lvl < 2 }));
+}
 export function sentenceQuestions(lid) {
   const L = book.lessons.get(lid); if (!L) return [];
   return sentences(L).map(s => {
     const words = s.es.split(/\s+/);
-    return { type: 'order', lessonId: lid, kind: 'Соберите предложение', prompt: s.pattern, words, shuffled: shuffle(words), answerSpeak: s.es };
+    return { type: 'order', lessonId: lid, kind: 'Соберите предложение', prompt: '', words, shuffled: shuffle(words), answerSpeak: s.es };
   });
 }
 
@@ -168,7 +173,7 @@ export function buildTest(lessonIds, n = 10, opts = {}) {
     for (const lid of lessonIds) if (lid !== 'my') {
       const lvl = levelOf(lid);
       extra.push(...shuffle(grammarQuestions(lid, lvl, book.byLesson.get(lid) || [])).slice(0, 4));
-      extra.push(...shuffle(sentenceQuestions(lid)).slice(0, 3));
+      extra.push(...shuffle(phraseQuestions(lid, lvl)).slice(0, 3));
     }
     qs.push(...shuffle(extra).slice(0, n - qs.length));
     // если грамматики мало — добираем словами

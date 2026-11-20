@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.22';
+const VERSION = '1.23';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -470,7 +470,7 @@ on(/^\/test\/(.+)$/, spec => {
       <div class="c stack">
         <div class="mut q-kind">${esc(q.kind)}</div>
         ${q.img ? `<img src="${esc(q.img)}" alt="" style="max-height:140px;margin:0 auto;border-radius:10px">` : ''}
-        <div class="q-prompt">${q.prompt === '🔊' ? `<button class="ic listen" data-act="say" data-text="${esc(q.speak)}" aria-label="Прослушать">🔊</button>` : q.type === 'order' ? `<span style="font-size:15px;font-weight:500;font-family:var(--body)">${esc(q.prompt)}</span>` : esc(q.prompt)}</div>
+        <div class="q-prompt">${q.prompt === '🔊' ? `<button class="ic listen" data-act="say" data-text="${esc(q.speak)}" aria-label="Прослушать">🔊</button>` : q.type === 'order' ? (q.prompt ? `<span style="font-size:15px;font-weight:500;font-family:var(--body)">${esc(q.prompt)}</span>` : '') : esc(q.prompt)}</div>
         ${q.sub ? `<div class="mut" style="text-align:center">${esc(q.sub)}</div>` : ''}
         ${q.speak && q.type !== 'choose_es' && q.prompt !== '🔊' ? `<div style="text-align:center"><button class="ic" data-act="say" data-text="${esc(q.speak)}">🔊</button></div>` : ''}
       </div>
