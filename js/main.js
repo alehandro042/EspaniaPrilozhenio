@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.20';
+const VERSION = '1.21';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -418,9 +418,23 @@ on(/^\/train$/, () => {
 });
 
 // ---------- Тест ----------
+const FAST_SEC = q => q.options ? (q.prompt === '🔊' ? 12 : 8) : q.type === 'order' || q.type === 'dictation' ? 40 : q.type === 'write_es' && /\s/.test(q.item?.es || '') ? 30 : 20;
 on(/^\/test\/(.+)$/, spec => {
   spec = decodeURIComponent(spec);
+  let mode = ''; const mm = spec.match(/^(.*)\?(fast|normal)$/); if (mm) { spec = mm[1]; mode = mm[2]; }
   const set = resolveSet(spec);
+  // Обычный и письменный тест: выбор режима «Обычно» / «Быстро»
+  if (!mode && (['lesson', 'ids', 'write'].includes(set.kind) || ['mistakes', 'due', 'my'].includes(spec))) {
+    setTitle(set.kind === 'write' ? 'Письменный тест' : 'Тест', true);
+    const last = settings.testMode || 'normal';
+    view.innerHTML = `<div class="mut">${esc(set.title || '')}</div><div class="sec-title">Как проходить?</div>
+      <a class="c row mode ${last === 'normal' ? 'on' : ''}" href="#/test/${encodeURIComponent(spec)}?normal" data-m="normal"><span style="font-size:28px">🐢</span><div class="grow"><b>Обычно</b><div class="mut">Без ограничения времени</div></div><span>›</span></a>
+      <a class="c row mode ${last === 'fast' ? 'on' : ''}" href="#/test/${encodeURIComponent(spec)}?fast" data-m="fast"><span style="font-size:28px">⚡</span><div class="grow"><b>Быстро</b><div class="mut">На ответ: выбор — 8 с, на слух — 12 с, написать — 20–40 с. Не успели — ошибка</div></div><span>›</span></a>`;
+    view.querySelectorAll('.mode').forEach(a => a.onclick = e => { e.preventDefault(); settings.testMode = a.dataset.m; saveSettings(); location.replace(a.getAttribute('href')); });
+    return;
+  }
+  const fast = mode === 'fast';
+  let timer = null; const stopTimer = () => { if (timer) { clearInterval(timer); timer = null; } };
   const isLessonTest = set.kind === 'lesson' && set.lessons?.length === 1;
   let qs;
   if (set.kind === 'gram') { const lid = set.lessons[0]; qs = grammarQuestions(lid, levelOf(lid), book.byLesson.get(lid) || []).sort(() => Math.random() - .5).slice(0, 10); }
@@ -430,7 +444,7 @@ on(/^\/test\/(.+)$/, spec => {
   else if (set.kind === 'sent') { qs = sentenceQuestions(set.lessons[0]).sort(() => Math.random() - .5).slice(0, 8); }
   else if (spec === 'mistakes' || spec === 'due') qs = buildTest(set.lessons || [], Math.min(12, set.items.length), { items: set.items, vocabOnly: true });
   else qs = buildTest(set.lessons || [], 10, { vocabOnly: spec === 'my' || (set.lessons || []).every(l => l === 'my') });
-  setTitle(isLessonTest ? 'Тест · ' + set.title : (set.kind === 'gram' ? 'Грамматика' : set.kind === 'sent' ? 'Предложения' : set.kind === 'write' ? 'Письменный тест' : set.kind === 'topic' ? set.title : set.kind === 'gender' ? 'Род · ' + set.title : 'Тест'), true);
+  setTitle((fast ? '⚡ ' : '') + (isLessonTest ? 'Тест · ' + set.title : (set.kind === 'gram' ? 'Грамматика' : set.kind === 'sent' ? 'Предложения' : set.kind === 'write' ? 'Письменный тест' : set.kind === 'topic' ? set.title : set.kind === 'gender' ? 'Род · ' + set.title : 'Тест')), true);
   if (!qs.length) { view.innerHTML = `<div class="empty-note">Для теста пока нет материала.</div>`; return; }
   let i = 0, right = 0; const wrong = [];
   const lid0 = set.lessons?.[0];
@@ -464,6 +478,22 @@ on(/^\/test\/(.+)$/, spec => {
       <div id="fb"></div>`;
     resetSlow();
     if (q.autoSpeak) setTimeout(() => speak(q.speak), 250);
+    stopTimer();
+    if (fast) {
+      const total = FAST_SEC(q) + (q.autoSpeak ? 1 : 0); let left = total; const t0 = Date.now(), qi = i;
+      $('.q-kind').insertAdjacentHTML('beforebegin', `<div class="row timer"><span class="mut">⏱ <b id="tleft">${left}</b> с</span><div class="bar grow"><i id="tbar" style="width:100%"></i></div></div>`);
+      timer = setInterval(() => {
+        const el = $('#tleft');
+        if (!el || qi !== i || $('#fb')?.innerHTML) return stopTimer();
+        left = Math.max(0, total - Math.floor((Date.now() - t0) / 1000)); el.textContent = left;
+        $('#tbar').style.width = (100 * Math.max(0, total * 1000 - (Date.now() - t0)) / (total * 1000)) + '%';
+        if (left <= 0) {
+          stopTimer();
+          if (q.options) view.querySelectorAll('.opt').forEach((x, k) => { if (q.options[k].correct) x.classList.add('ok'); });
+          done(false, false, q.type === 'order' ? q.words.join(' ') : correctText(q), '⏱ Время вышло');
+        }
+      }, 200);
+    }
     if (q.options) view.querySelectorAll('.opt').forEach(b => b.onclick = () => {
       if (view.querySelector('.opt.ok,.opt.bad')) return;
       const o = q.options[+b.dataset.k];
@@ -499,6 +529,7 @@ on(/^\/test\/(.+)$/, spec => {
     : q.type === 'conj_write' || q.type === 'conj' ? q.answerSpeak
     : q.options ? (q.type === 'pick_img' ? `${withArt(q.item)} — ${q.item.ru}` : q.type === 'article' ? `${q.options.find(o => o.correct).label} ${q.item.es}` : (q.item ? `${withArt(q.item)} — ${q.item.ru}` : q.options.find(o => o.correct).label)) : '';
   function done(ok, almost, correct, msg) {
+    stopTimer();
     const q = qs[i];
     if (ok) right++; else wrong.push({ q, correct });
     if (q.item) answer(q.item.id, ok, almost);
