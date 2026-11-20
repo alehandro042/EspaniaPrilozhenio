@@ -427,10 +427,8 @@ function prepQuestions(n, refs) {
       correct: `${r.prep} — ${r.full}`, answerSpeak: r.exs[0] || r.prep, explain: `${r.ref}: ${r.prep} — ${r.full}.` };
   };
   const G = shuffle(gaps), R = shuffle(rows);
-  while (qs.length < n && (G.length || R.length)) {
-    const q = (Math.random() < 0.65 && G.length) || !R.length ? mk(G.pop()) : meanQ(R.pop());
-    if (q) qs.push(q);
-  }
+  // только «Вставьте предлог» (вопросы «Что означает предлог?» убраны по просьбе пользователя)
+  while (qs.length < n && G.length) { const q = mk(G.pop()); if (q && !qs.some(x => x.prompt === q.prompt)) qs.push(q); }
   return qs;
 }
 export function topicTest(topic, n = 12, opts) {
