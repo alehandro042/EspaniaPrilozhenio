@@ -610,8 +610,24 @@ function bindPhoto() {
 }
 
 // ---------- Помощник ----------
-const chatLog = (() => { try { return JSON.parse(localStorage.getItem('espanola.chat') || '[]'); } catch { return []; } })();
-const saveChat = () => { try { localStorage.setItem('espanola.chat', JSON.stringify(chatLog.slice(-40))); } catch {} };
+// История чатов: список разговоров в localStorage, chatLog — сообщения открытого разговора
+const CHATS_KEY = 'espanola.chats', CUR_KEY = 'espanola.chat.cur';
+const lsGet = (k, d) => { try { return JSON.parse(localStorage.getItem(k) || 'null') ?? d; } catch { return d; } };
+let chats = lsGet(CHATS_KEY, null);
+if (!chats) { const old = lsGet('espanola.chat', []); chats = old.length ? [{ id: uid(), t: Date.now(), msgs: old }] : []; try { localStorage.removeItem('espanola.chat'); } catch {} }
+let chatCur = lsGet(CUR_KEY, null) || chats[0]?.id || uid();
+const chatLog = [...(chats.find(c => c.id === chatCur)?.msgs || [])];
+let chatPending = false; // ждём ответа ИИ (переживает перерисовку экрана)
+const chatTitle = c => { const u = c.msgs.find(m => m.role === 'user'); const t = (u?.show || u?.text || 'Новый чат').split('\n')[0]; return t.length > 60 ? t.slice(0, 58) + '…' : t; };
+const writeChats = () => { try { localStorage.setItem(CHATS_KEY, JSON.stringify(chats.slice(0, 50))); localStorage.setItem(CUR_KEY, JSON.stringify(chatCur)); } catch {} };
+const saveChat = () => {
+  let c = chats.find(x => x.id === chatCur);
+  if (!chatLog.length) { if (c) chats = chats.filter(x => x !== c); writeChats(); return; }
+  if (!c) { c = { id: chatCur }; chats.unshift(c); }
+  c.msgs = chatLog.slice(-60); c.t = Date.now();
+  chats.sort((a, b) => b.t - a.t); writeChats();
+};
+function openChat(id) { chatCur = id || uid(); chatLog.length = 0; chatLog.push(...(chats.find(c => c.id === chatCur)?.msgs || [])); writeChats(); }
 function aiContext() {
   const lid = state.last?.lesson; const L = lid && book.lessons.get(lid); const m = lid && lessonMeta(lid);
   if (!L) return '';
@@ -622,14 +638,18 @@ const EX_OK = /переведите|переведите|вставьте|рас
 const EX_NO = /^(расскажите|составьте рассказ|составьте свое|прочитайте, следя|сравните|сосчитайте|скажите)|повторите диалог|по ролям/i;
 const aiExercise = x => x.kind ? x.kind === 'closed' : EX_OK.test(x.instruction_ru || '') && !EX_NO.test(x.instruction_ru || '');
 // «стр. 45 упр. 3», «45 3», «упр 3 стр 45», «урок 2 упр 5» → упражнение учебника
+const PART = { 'а': 'A', 'б': 'B', 'в': 'C', 'г': 'D', 'a': 'A', 'b': 'B', 'c': 'C', 'd': 'D' };
 function parseExerciseQuery(text) {
-  const t = String(text).toLowerCase().replace(/ё/g, 'е').trim();
-  const PG = '(?:стр(?:аниц[аеуы])?\\.?|с\\.)\\s*(\\d{1,3})', EX = '(?:упр(?:ажнени[еяю])?\\.?|№|номер)\\s*(\\d{1,2}\\*?)';
-  let m;
-  if ((m = t.match(new RegExp(PG + '[\\s,.;:-]*' + EX)))) return { page: +m[1], num: m[2] };
-  if ((m = t.match(new RegExp(EX + '[\\s,.;:-]*(?:на\\s*)?' + PG)))) return { page: +m[2], num: m[1] };
-  if ((m = t.match(/урок\w*\s*(\d{1,2})[\s,.;:-]*(?:упр(?:ажнени[еяю])?\.?|№)\s*(\d{1,2}\*?)/))) return { lesson: +m[1], num: m[2] };
-  if ((m = t.match(/^(\d{1,3})[\s,./:-]+(\d{1,2}\*?)$/))) return { page: +m[1], num: m[2] };
+  const t = ' ' + String(text).toLowerCase().replace(/ё/g, 'е') + ' ';
+  const NUM = '(\\d{1,2})\\s*\\*?\\s*(?:[\\s.,(-]*([абвгabcd])(?![а-яa-z]))?';
+  const pg = t.match(/(?<![а-яa-z])(?:стр(?:аниц[аеуы])?|с)\.?\s*(\d{1,3})(?!\d)/);
+  const ex = t.match(new RegExp('(?:упр(?:ажнени[еяю]|ажн)?|№|номер|задани[еяю])\\.?\\s*' + NUM));
+  const ls = t.match(/урок\S*\s*(\d{1,2})/);
+  const res = (num, part, extra) => ({ num, part: part ? PART[part] : null, ...extra });
+  if (ex && pg) return res(ex[1], ex[2], { page: +pg[1] });
+  if (ex && ls) return res(ex[1], ex[2], { lesson: +ls[1] });
+  const m = t.trim().match(new RegExp('^(\\d{1,3})[\\s,./:-]+' + NUM + '$'));
+  if (m) return res(m[2], m[3], { page: +m[1] });
   return null;
 }
 function lookupExercise(q) {
@@ -650,7 +670,7 @@ function findExercise(spec) {
   return ex ? { lid, L, ex, m: lessonMeta(lid) } : null;
 }
 // Запрос к ИИ: текст упражнения + словарь и грамматика урока (только из учебника)
-function exercisePrompt({ L, ex, m }) {
+function exercisePrompt({ L, ex, m }, part, wish) {
   const pg = ex.page ?? (ex.pages || []).join('–');
   const extra = ex.text ? ex.text : Object.entries(ex).filter(([k]) => !['number', 'instruction_ru', 'page', 'pages'].includes(k))
     .map(([k, v]) => Array.isArray(v) ? v.map((x, i) => `${i + 1}) ${typeof x === 'string' ? x : JSON.stringify(x)}`).join('\n') : (typeof v === 'string' ? v : JSON.stringify(v))).join('\n');
@@ -663,7 +683,7 @@ function exercisePrompt({ L, ex, m }) {
   return `Помоги выполнить упражнение из учебника «Español Actual. Начальный курс»: Unidad ${m.unit}, урок ${m.lesson}, упражнение ${ex.number}${pg ? ` (с. ${pg})` : ''}.
 ${ex.text ? 'Текст упражнения:\n' + ex.text : 'Задание: ' + (ex.instruction_ru || '') + (extra ? '\n' + extra : '')}${refTxt}
 
-Дай ответы по пунктам, с номерами, и к каждому короткое объяснение по-русски (какое правило работает). Используй слова и грамматику этого урока (ниже). Если для упражнения нужен текст, картинка или диалог из учебника, которых здесь нет, так и скажи и сделай то, что возможно.
+${part ? `Выполни только часть ${part} этого упражнения (если частей A/B/C нет, выполни упражнение целиком и скажи, что частей в нём нет).\n` : ''}${wish ? `Просьба студента: «${wish}». Учти её (например, если просят только ответы — дай только ответы без объяснений).\n` : ''}Дай ответы по пунктам, с номерами, и к каждому короткое объяснение по-русски (какое правило работает). Используй слова и грамматику этого урока (ниже). Если для упражнения нужен текст, картинка или диалог из учебника, которых здесь нет, так и скажи и сделай то, что возможно.
 
 Грамматика урока:
 ${gram}
@@ -704,8 +724,30 @@ function md(src) {
 
 const ICON_SEND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
 const ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
+const ICON_HIST = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg>';
+function showHistory() {
+  const ago = t => { const d = (Date.now() - t) / 864e5; return d < 1 ? new Date(t).toLocaleTimeString('ru', { hour: '2-digit', minute: '2-digit' }) : d < 2 ? 'вчера' : new Date(t).toLocaleDateString('ru', { day: 'numeric', month: 'short' }); };
+  const el = document.createElement('div'); el.className = 'sheet-wrap';
+  const render = () => {
+    el.innerHTML = `<div class="sheet"><div class="row"><b style="font-size:17px">История чатов</b><button class="icon-btn" data-close>✕</button></div>
+      <button class="btn" data-new style="margin:10px 0">＋ Новый чат</button>
+      <div class="hist-list">${chats.length ? chats.map(c => `<div class="hist-item ${c.id === chatCur ? 'on' : ''}"><button class="hist-open" data-open="${c.id}"><span>${esc(chatTitle(c))}</span><small>${ago(c.t)} · ${c.msgs.length} сообщ.</small></button><button class="icon-btn" data-del="${c.id}" aria-label="Удалить">🗑</button></div>`).join('') : '<div class="empty-note">Пока нет сохранённых чатов</div>'}</div></div>`;
+  };
+  render(); document.body.appendChild(el);
+  const close = () => el.remove();
+  el.onclick = e => {
+    if (e.target === el) return close();
+    const t = e.target.closest('button'); if (!t) return;
+    const d = t.dataset;
+    if ('close' in d) close();
+    else if ('new' in d) { openChat(); close(); route(); }
+    else if (d.open) { openChat(d.open); close(); route(); }
+    else if (d.del) { chats = chats.filter(c => c.id !== d.del); if (d.del === chatCur) openChat(); writeChats(); render(); route(); }
+  };
+}
 const ICON_NEW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>';
 
+const TYPING = `<div class="msg ai" id="wait"><div class="ai-ava">ES</div><div class="typing"><i></i><i></i><i></i></div></div>`;
 function msgHtml(m, k) {
   if (m.role === 'user') return `<div class="msg me"><div class="bubble me">${esc(m.show || m.text)}</div></div>`;
   return `<div class="msg ai${m.err ? ' err' : ''}"><div class="ai-ava">ES</div><div class="ai-body"><div class="md">${m.err ? esc(m.text) : md(m.text)}</div>
@@ -737,19 +779,19 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
       <div class="mut">Спросите про перевод или грамматику. Для ответов на упражнение напишите страницу и номер: <b>стр. 45 упр. 3</b> или <b>45 3</b>.</div>
       <div class="sugg-grid">${chatSuggestions().map(s => `<button class="sugg" data-sugg="${esc(s.t)}"><b>${esc(s.t)}</b><span>${esc(s.d)}</span></button>`).join('')}</div></div>`;
   view.innerHTML = `
-    <div class="chat-scroll" id="chatScroll"><div class="chat" id="chat">${chatLog.length ? chatLog.map(msgHtml).join('') : emptyHtml()}</div></div>
+    <div class="chat-scroll" id="chatScroll"><div class="chat" id="chat">${chatLog.length ? chatLog.map(msgHtml).join('') : emptyHtml()}${chatPending ? TYPING : ''}</div></div>
     <div class="composer">
       ${hasKey ? '' : `<div class="mut small" style="padding:0 4px 6px">Нет ключа ИИ: вопрос откроется в приложении Gemini. <a href="#/profile">Добавить ключ</a></div>`}
       <div class="composer-box">
         <textarea id="q" rows="1" placeholder="Спросите что-нибудь…" enterkeyhint="send">${esc(pre)}</textarea>
         <button class="send-btn" id="send" aria-label="Отправить" disabled>${ICON_SEND}</button>
       </div>
-      <div class="composer-foot"><span class="mut small">ИИ может ошибаться, сверяйтесь с учебником</span>${chatLog.length ? `<button class="icon-btn" id="newChat">${ICON_NEW}<span>Новый чат</span></button>` : ''}</div>
+      <div class="composer-foot"><button class="icon-btn" id="histBtn">${ICON_HIST}<span>История${chats.length ? ' (' + chats.length + ')' : ''}</span></button><span class="mut small grow" style="text-align:center">ИИ может ошибаться</span>${chatLog.length ? `<button class="icon-btn" id="newChat">${ICON_NEW}<span>Новый чат</span></button>` : ''}</div>
     </div>`;
   const ta = $('#q'), send = $('#send'), box = $('#chat'), scroller = $('#chatScroll');
   const toBottom = (smooth) => scroller.scrollTo({ top: scroller.scrollHeight, behavior: smooth ? 'smooth' : 'auto' });
   const grow = () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 140) + 'px'; send.disabled = !ta.value.trim() || busy; };
-  let busy = false;
+  let busy = chatPending;
   ta.addEventListener('input', grow); grow(); toBottom();
   ta.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !matchMedia('(pointer:coarse)').matches) { e.preventDefault(); send.click(); } });
   const bindMsgs = () => {
@@ -759,30 +801,33 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
     });
   };
   bindMsgs();
-  const nc = $('#newChat'); if (nc) nc.onclick = () => { chatLog.length = 0; saveChat(); route(); };
+  const nc = $('#newChat'); if (nc) nc.onclick = () => { if (busy) return; openChat(); route(); };
+  $('#histBtn').onclick = () => showHistory();
   const ensureStarted = () => { if (box.querySelector('.chat-empty')) box.innerHTML = ''; };
   const push = m => { chatLog.push(m); saveChat(); ensureStarted(); box.insertAdjacentHTML('beforeend', msgHtml(m, chatLog.length - 1)); bindMsgs(); };
   function localReply(q, a) { push({ role: 'user', text: q }); push({ role: 'model', text: a, local: true }); toBottom(true); }
   async function sendText(text, show) {
     if (!hasKey) { const r = await askGeminiApp(text + (aiContext() ? '\n(' + aiContext() + ')' : '')); if (r === 'copied') toast('Запрос скопирован — вставьте его в Gemini', 4000); return; }
     push({ role: 'user', text, show });
-    box.insertAdjacentHTML('beforeend', `<div class="msg ai" id="wait"><div class="ai-ava">ES</div><div class="typing"><i></i><i></i><i></i></div></div>`);
-    toBottom(true); busy = true; grow();
+    box.insertAdjacentHTML('beforeend', TYPING);
+    toBottom(true); busy = true; chatPending = true; grow();
     try {
       // длинные запросы-упражнения из прошлого заменяем короткой подписью, чтобы запрос не разрастался
       const hist = chatLog.filter(m => !m.err && !m.local).slice(-12).map((m, i, a) => i < a.length - 1 && m.show ? { ...m, text: m.show } : m);
       const ans = await chat(hist, aiContext());
-      $('#wait')?.remove(); push({ role: 'model', text: ans });
+      chatPending = false; $('#wait')?.remove(); push({ role: 'model', text: ans });
     } catch (e) {
-      $('#wait')?.remove(); push({ role: 'model', text: e.message, err: true });
+      chatPending = false; $('#wait')?.remove(); push({ role: 'model', text: e.message, err: true });
     }
+    // если экран успели перерисовать (или ушли на другую вкладку) — не трогаем старые элементы
+    if (!box.isConnected) { if (/^#\/ai/.test(location.hash)) route(); return; }
     busy = false; grow();
     const last = box.lastElementChild; scroller.scrollTo({ top: last.offsetTop - 8, behavior: 'smooth' });
-    if (!$('#newChat')) { $('.composer-foot').insertAdjacentHTML('beforeend', `<button class="icon-btn" id="newChat">${ICON_NEW}<span>Новый чат</span></button>`); $('#newChat').onclick = () => { chatLog.length = 0; saveChat(); route(); }; }
+    if (!$('#newChat')) { $('.composer-foot').insertAdjacentHTML('beforeend', `<button class="icon-btn" id="newChat">${ICON_NEW}<span>Новый чат</span></button>`); $('#newChat').onclick = () => { openChat(); route(); }; }
   }
-  function sendExercise(f, label) {
+  function sendExercise(f, label, part) {
     const ins = f.ex.instruction_ru || ''; const short = ins.length > 70 ? ins.slice(0, 68).replace(/\s+\S*$/, '') + '…' : ins;
-    return sendText(exercisePrompt(f), `${label}\n📘 Урок ${f.m.lesson}, упр. ${f.ex.number}: ${short}`);
+    return sendText(exercisePrompt(f, part, label), `${label}\n📘 Урок ${f.m.lesson}, упр. ${f.ex.number}${part ? ', часть ' + part : ''}: ${short}`);
   }
   send.onclick = () => {
     const text = ta.value.trim(); if (!text || busy) return; ta.value = ''; grow();
@@ -793,7 +838,7 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
       if (!found.length) return localReply(text, `Упражнения ${q.num} ${where} не нашёл. Проверьте номер страницы и упражнения (страница — как в учебнике). В уроке 6 нет упражнений 9–11: этой страницы нет в скане.`);
       const ok = found.filter(f => aiExercise(f.ex));
       if (!ok.length) return localReply(text, `Упражнение ${q.num} ${where} разговорное (рассказ о себе, диалог или чтение вслух). У него нет одного правильного ответа, поэтому ответы я не даю.\n\n**Задание:** ${found[0].ex.instruction_ru || ''}`);
-      return sendExercise(ok[0], text);
+      return sendExercise(ok[0], text, q.part);
     }
     sendText(text);
   };
@@ -934,7 +979,7 @@ onSyncStatus((s, msg) => {
   d.title = msg || { on: 'Синхронизировано', busy: 'Синхронизация…', offline: 'Нет сети', need: 'Нужно войти заново' }[s] || '';
 });
 $('#syncDot').onclick = () => { if (settings.signedIn) location.hash = '#/profile'; };
-window.addEventListener('espanola:synced', () => { refreshMyItems(); renderAva(); if (!/test|cards/.test(location.hash)) route(); });
+window.addEventListener('espanola:synced', () => { refreshMyItems(); renderAva(); if (!/test|cards|ai|photo|add|list/.test(location.hash)) route(); });
 onChange(scheduleSync);
 
 // ---------- запуск ----------
