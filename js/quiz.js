@@ -2,6 +2,7 @@
 import { state, save } from './store.js';
 import { book, hasRu, imgFor, conjugations, articleItems, sentences, withArt } from './data.js';
 import { similarity } from './speech.js';
+import SENT_RU from './sentences-ru.js';
 
 export const LEVELS = ['Лёгкий', 'Средний', 'Сложный'];
 export const LEVEL_HINT = [
@@ -223,7 +224,8 @@ export const TOPICS = {
   numbers: { title: 'Числа', icon: '🔢', hint: 'От 0 до 99, на слух и письменно' },
   colors: { title: 'Цвета', icon: '🎨', hint: 'rojo, azul, verde…' },
   days: { title: 'Дни недели', icon: '📅', hint: 'lunes … domingo' },
-  time: { title: 'Время', icon: '🕒', hint: '¿Qué hora es? Son las…' }
+  time: { title: 'Время', icon: '🕒', hint: '¿Qué hora es? Son las…' },
+  preps: { title: 'Предлоги', icon: '🧭', hint: 'a, en, de, con, para, por, sin…' }
 };
 const COLORS = ['rojo', 'azul', 'verde', 'amarillo', 'blanco', 'negro', 'gris', 'marrón', 'claro', 'oscuro'];
 const DAYS = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
@@ -338,7 +340,93 @@ export function genderQuestions(lessons, n = 12) {
   }
   return qs;
 }
+// ---------- Предлоги: только таблицы §13, §40, §52, §64, §67, §70 и примеры из учебника ----------
+// пары, которые в этих контекстах могут быть взаимозаменяемы — не даём их вместе
+const CLASH = [['excepto', 'salvo'], ['de', 'desde'], ['a', 'hacia'], ['a', 'hasta'], ['por', 'durante'], ['con', 'mediante'], ['por', 'mediante'], ['en', 'por'], ['sobre', 'encima de'], ['bajo', 'debajo de'], ['entre', 'en medio de'], ['cerca de', 'al lado de'], ['cerca de', 'junto a'], ['al lado de', 'junto a'], ['cerca de', 'pegado a'], ['enfrente de', 'frente a'], ['delante de', 'enfrente de'], ['delante de', 'frente a'], ['dentro de', 'en']];
+const clashes = (a, b) => CLASH.some(([x, y]) => (x === a && y === b) || (y === a && x === b));
+const SIMPLE_PREPS = ['a', 'en', 'de', 'con', 'para', 'por', 'sobre', 'sin', 'entre', 'desde', 'durante', 'hasta', 'ante', 'bajo', 'contra', 'hacia', 'según', 'tras', 'excepto', 'salvo', 'mediante'];
+const reEsc = x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const wordRe = w => new RegExp(`(^|[\\s¿¡(])(${reEsc(w)})(?=$|[\\s,.;:?!)])`, 'i');
+function prepData() {
+  const rows = [], compounds = [], sents = [];
+  for (const L of book.lessons.values()) {
+    for (const g of L.grammar || []) {
+      if (!/редлог/.test(g.title || '')) continue;
+      const t = g.table; let tr = Array.isArray(t) ? t.slice(1) : t?.rows || [];
+      if (g.id === '§70') { for (const r of tr) for (const c of String(r[1] || '').split(/,\s*/)) if (/\s/.test(c.trim())) compounds.push({ prep: c.trim(), meaning: r[0], ref: g.id }); continue; }
+      const one = (g.title.match(/Предлог (\S+)$/) || [])[1];
+      for (const r of tr) {
+        const [p, meaning, ex] = r.length === 2 ? [one, r[0], r[1]] : r;
+        if (!p || !meaning) continue;
+        for (const prep of String(p).split(/\s*=\s*/)) {
+          const exs = String(ex || '').split(/;|,\s*(?=[a-záéíóúñ¿]+\s)/i).map(x => x.trim()).filter(x => x && !/^но:/.test(x) && wordRe(prep).test(x) && /\s/.test(x));
+          rows.push({ prep, meaning: String(meaning), full: String(meaning), exs, ref: g.id });
+        }
+      }
+    }
+    for (const sb of L.sentence_building || []) {
+      const ref = (String(sb.pattern || '').match(/§(13|64|67|70)/) || [])[0];
+      if (!ref) continue;
+      for (const e of sb.examples || []) if (e.es) sents.push({ es: e.es, ref, ru: SENT_RU_OF(e.es) });
+    }
+  }
+  return { rows, compounds, sents };
+}
+const SENT_RU_OF = es => SENT_RU[es] || '';
+function prepGap(text, cands) {
+  // ищем самое длинное совпадение предлога; «X de» + «l …» → «X del»
+  for (const c of cands.sort((a, b) => b.length - a.length)) {
+    const m = text.match(wordRe(c));
+    if (m) return { found: m[2], idx: m.index + m[1].length, len: m[2].length };
+    if (/ de$/.test(c)) { const m2 = text.match(wordRe(c + 'l')); if (m2) return { found: m2[2], idx: m2.index + m2[1].length, len: m2[2].length, del: true }; }
+    if (c === 'a' || c === 'de') { const m3 = text.match(wordRe(c === 'a' ? 'al' : 'del')); if (m3) return { found: m3[2], idx: m3.index + m3[1].length, len: m3[2].length, contr: true }; }
+  }
+  return null;
+}
+function prepQuestions(n) {
+  const { rows, compounds, sents } = prepData();
+  if (!rows.length) return [];
+  const ruleOf = (prep, ref) => { const rs = rows.filter(r => r.prep === prep.toLowerCase() && (!ref || r.ref === ref)); return rs.length ? `${rs[0].ref}: ${prep} — ${rs.map(r => r.full).join('; ')}.` : ''; };
+  const gaps = [];
+  for (const r of rows) for (const ex of r.exs) gaps.push({ text: ex, prep: r.prep, ref: r.ref, sub: r.full, explain: `${r.ref}: ${r.prep} — ${r.full}. Пример: ${ex.replace(/[.?!]$/, '')}.` });
+  for (const s of sents) {
+    const cands = s.ref === '§70' ? compounds.map(c => c.prep).concat(['en']) : SIMPLE_PREPS.filter(p => rows.some(r => r.prep === p && r.ref === s.ref));
+    const gp = prepGap(s.es, cands); if (!gp) continue;
+    const base = gp.del ? gp.found.slice(0, -1) : gp.found.toLowerCase();
+    const comp = compounds.find(c => c.prep === base);
+    gaps.push({ text: s.es, prep: base, ref: s.ref, sub: s.ru || (comp ? comp.meaning : rows.filter(r => r.prep === base && r.ref === s.ref).map(r => r.full).join('; ')), explain: comp ? `${comp.ref}: ${comp.prep} — ${comp.meaning}.` : ruleOf(base, s.ref) || ruleOf(base) });
+  }
+  const qs = [];
+  const mk = g => {
+    const cands = /\s/.test(g.prep) ? compounds.map(c => c.prep) : SIMPLE_PREPS;
+    const gp = prepGap(g.text, [g.prep]); if (!gp) return null;
+    const ans = gp.found.toLowerCase();
+    let opts;
+    if (gp.contr) opts = ans === 'al' ? ['al', 'a el', 'del', 'en'] : ['del', 'de el', 'al', 'en'];
+    else {
+      const clash = c => clashes(c, g.prep);
+      const others = shuffle(cands.filter(c => c !== g.prep && !clash(c))).slice(0, 3);
+      opts = [ans, ...others.map(o => gp.del ? o + 'l' : o)];
+    }
+    const blank = g.text.slice(0, gp.idx) + '…' + g.text.slice(gp.idx + gp.len);
+    return { type: 'choose_topic', kind: 'Вставьте предлог', prompt: blank, sub: g.sub || '', options: shuffle([...new Set(opts)]).map(o => ({ label: o, correct: o === ans })),
+      correct: g.text, answerSpeak: g.text, explain: (gp.contr ? '§2: a + el = al, de + el = del. ' : '') + (g.explain || '') };
+  };
+  const meanQ = r => {
+    const others = shuffle(uniqBy(rows.filter(x => x.prep !== r.prep && !clashes(x.prep, r.prep) && x.meaning !== r.meaning), x => x.meaning)).slice(0, 3);
+    if (others.length < 3) return null;
+    return { type: 'choose_topic', kind: 'Что означает предлог?', prompt: r.exs[0] ? `${r.prep} — «${r.exs[0]}»` : r.prep, options: shuffle([r, ...others]).map(o => ({ label: o.meaning, correct: o === r })),
+      correct: `${r.prep} — ${r.full}`, answerSpeak: r.exs[0] || r.prep, explain: `${r.ref}: ${r.prep} — ${r.full}.` };
+  };
+  const G = shuffle(gaps), R = shuffle(rows);
+  while (qs.length < n && (G.length || R.length)) {
+    const q = (Math.random() < 0.65 && G.length) || !R.length ? mk(G.pop()) : meanQ(R.pop());
+    if (q) qs.push(q);
+  }
+  return qs;
+}
 export function topicTest(topic, n = 12) {
+  if (topic === 'preps') return prepQuestions(n);
   if (topic === 'numbers') return numberQuestions(n);
   if (topic === 'time') return timeQuestions(n);
   if (topic === 'colors') return wordTopicQuestions(topicItems(COLORS), n);
