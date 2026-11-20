@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.21';
+const VERSION = '1.22';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -265,7 +265,7 @@ function grammarTab(id, L) {
       <div class="row"><h3>${esc(g.id)}. ${esc(g.title)}</h3><span class="mut small">с. ${esc(g.page ?? (g.pages || []).join('–'))}</span></div>
       ${g.table ? table(g.table) : ''}
       ${g.points?.length ? `<ul class="pts">${g.points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : ''}
-      ${g.examples?.length ? `<div class="ex-list">${g.examples.map(x => `<button data-act="say" data-text="${esc(x)}">🔊 ${esc(x)}</button>`).join('')}</div>` : ''}
+      ${g.examples?.length ? `<div class="ex-list">${g.examples.map(x => { const es = typeof x === 'string' ? x : x?.es || '', ru = typeof x === 'object' && x?.ru ? x.ru : ''; return es ? `<button data-act="say" data-text="${esc(es)}">🔊 ${esc(es)}${ru ? ` <span class="mut">— ${esc(ru)}</span>` : ''}</button>` : ''; }).join('')}</div>` : ''}
       <a class="mut small" href="#/ai?q=${encodeURIComponent(`Объясни простыми словами ${g.id} «${g.title}» из учебника Español Actual, урок ${lessonMeta(id).lesson}, с примерами.`)}">Спросить помощника про ${esc(g.id)} ›</a>
     </div>`).join('') + (conj ? `<a class="btn ghost" href="#/test/gram-${id}">Тренировать спряжение и артикли</a>` : `<a class="btn ghost" href="#/test/gram-${id}">Тренировать артикли</a>`);
 }
