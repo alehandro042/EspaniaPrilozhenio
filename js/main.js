@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.24';
+const VERSION = '1.25';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -443,6 +443,7 @@ on(/^\/test\/(.+)$/, spec => {
   else if (set.kind === 'gender') { qs = genderQuestions(set.lessons || [], 12); }
   else if (set.kind === 'sent') { qs = sentenceQuestions(set.lessons[0], levelOf(set.lessons[0])).sort(() => Math.random() - .5).slice(0, 8); }
   else if (spec === 'mistakes' || spec === 'due') qs = buildTest(set.lessons || [], Math.min(12, set.items.length), { items: set.items, vocabOnly: true });
+  else if (isLessonTest) qs = buildTest(set.lessons, 10, { vocabOnly: true, wordsOnly: true }); // тест по уроку — только слова
   else qs = buildTest(set.lessons || [], 10, { vocabOnly: spec === 'my' || (set.lessons || []).every(l => l === 'my') });
   setTitle((fast ? '⚡ ' : '') + (isLessonTest ? 'Тест · ' + set.title : (set.kind === 'gram' ? 'Грамматика' : set.kind === 'sent' ? 'Предложения' : set.kind === 'write' ? 'Письменный тест' : set.kind === 'topic' ? set.title : set.kind === 'gender' ? 'Род · ' + set.title : 'Тест')), true);
   if (!qs.length) { view.innerHTML = `<div class="empty-note">Для теста пока нет материала.</div>`; return; }

@@ -155,7 +155,8 @@ export function sentenceQuestions(lid, lvl = levelOf(lid)) {
 // Собрать тест. lessonIds — уроки (или 'my'). Каждое слово идёт на уровне своего урока.
 export function buildTest(lessonIds, n = 10, opts = {}) {
   const pool = [];
-  for (const lid of lessonIds) pool.push(...(book.byLesson.get(lid) || []).filter(hasRu));
+  const isWord = it => it.kind !== 'phrase' && !/\s/.test(it.es.replace(/\s*\([^)]*\)/g, '').trim());
+  for (const lid of lessonIds) pool.push(...(book.byLesson.get(lid) || []).filter(it => hasRu(it) && (!opts.wordsOnly || isWord(it))));
   const distractPool = pool.length >= 8 ? pool : [...book.items.values()].filter(hasRu);
   let vocab = opts.items ? opts.items.filter(hasRu) : pool;
   if (!vocab.length && !opts.items) return [];
