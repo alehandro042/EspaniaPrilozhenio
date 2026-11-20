@@ -1,5 +1,5 @@
 import { state, settings, save, saveSettings, onChange, aiKeys, streakDays, uid, replaceState, merge, tickDay } from './store.js';
-import { book, loadBook, hasRu, imgFor, KIND_RU, kindLabel, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences } from './data.js';
+import { book, loadBook, hasRu, imgFor, KIND_RU, kindLabel, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences, withArt } from './data.js';
 import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearned, mistakes } from './srs.js';
 import { speak, listen, canListen, judge, esVoices } from './speech.js';
 import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions, buildWriteTest, TOPICS, topicTest } from './quiz.js';
@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.16';
+const VERSION = '1.17';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -316,11 +316,11 @@ on(/^\/cards\/(.+)$/, spec => {
     }
     const it = queue[i]; const img = imgFor(it.es);
     const front = dir === 'es'
-      ? `${img ? `<img src="${esc(img.src)}" alt="">` : ''}<div class="word">${esc(it.es)}</div>${gender(it)}`
+      ? `${img ? `<img src="${esc(img.src)}" alt="">` : ''}<div class="word">${esc(withArt(it))}</div>${withArt(it) === it.es ? gender(it) : ''}`
       : `<div class="word">${esc(it.ru)}</div>`;
     const back = dir === 'es'
       ? `<div class="word">${esc(it.ru)}</div>`
-      : `${img ? `<img src="${esc(img.src)}" alt="">` : ''}<div class="word">${esc(it.es)}</div>${gender(it)}`;
+      : `${img ? `<img src="${esc(img.src)}" alt="">` : ''}<div class="word">${esc(withArt(it))}</div>${withArt(it) === it.es ? gender(it) : ''}`;
     view.innerHTML = `
       <div class="row"><span class="mut">Карточка ${i + 1} из ${queue.length}</span>
         <button class="chip" id="dir">${dir === 'es' ? 'es → ru' : 'ru → es'}</button></div>
@@ -468,15 +468,15 @@ on(/^\/test\/(.+)$/, spec => {
       const h = $('#hint'); if (h) h.onclick = () => toast(hintFor(q), 3500);
     }
   };
-  const correctText = q => q.correct ? q.correct : q.type === 'dictation' ? q.expected[0] : q.type === 'write_es' ? (q.article ? q.article + ' ' : '') + q.item.es
+  const correctText = q => q.correct ? q.correct : q.type === 'dictation' ? q.expected[0] : q.type === 'write_es' ? (q.article ? q.article + ' ' + q.item.es : withArt(q.item))
     : q.type === 'conj_write' || q.type === 'conj' ? q.answerSpeak
-    : q.options ? (q.type === 'pick_img' ? `${q.item.es} — ${q.item.ru}` : q.type === 'article' ? `${q.options.find(o => o.correct).label} ${q.item.es}` : (q.item ? `${q.item.es} — ${q.item.ru}` : q.options.find(o => o.correct).label)) : '';
+    : q.options ? (q.type === 'pick_img' ? `${withArt(q.item)} — ${q.item.ru}` : q.type === 'article' ? `${q.options.find(o => o.correct).label} ${q.item.es}` : (q.item ? `${withArt(q.item)} — ${q.item.ru}` : q.options.find(o => o.correct).label)) : '';
   function done(ok, almost, correct, msg) {
     const q = qs[i];
     if (ok) right++; else wrong.push({ q, correct });
     if (q.item) answer(q.item.id, ok, almost);
     else tickDay();
-    const sp = q.answerSpeak || q.item?.es;
+    const sp = q.answerSpeak || (q.item && withArt(q.item));
     $('#fb').innerHTML = `<div class="fb ${ok ? (almost ? 'almost' : 'ok') : 'bad'} stack">
       <div class="row"><b>${ok ? (almost ? '🟡 Почти' : '✅ Верно') : '❌ Неверно'}</b>${sp ? `<button class="ic" data-act="say" data-text="${esc(sp)}">🔊</button>` : ''}</div>
       ${msg ? `<div>${esc(msg)}</div>` : ''}${!ok || almost ? `<div>Правильно: <b>${esc(correct)}</b></div>` : ''}${!ok && q.explain ? `<div class="small">${esc(q.explain)}</div>` : ''}

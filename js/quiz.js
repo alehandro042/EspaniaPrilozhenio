@@ -1,6 +1,6 @@
 // Тесты: вопросы строятся только из данных учебника (слова, таблицы спряжений, предложения).
 import { state, save } from './store.js';
-import { book, hasRu, imgFor, conjugations, articleItems, sentences } from './data.js';
+import { book, hasRu, imgFor, conjugations, articleItems, sentences, withArt } from './data.js';
 import { similarity } from './speech.js';
 
 export const LEVELS = ['Лёгкий', 'Средний', 'Сложный'];
@@ -45,6 +45,8 @@ function variants(es) {
 }
 export const needsArticle = it => articleItems([it]).length > 0;
 const article = it => it.gender === 'm' ? 'el' : 'la';
+// Варианты ответа: слово и, если есть, слово с артиклем (артикль можно писать, но не обязательно)
+const expOf = it => { const v = variants(it.es), a = withArt(it); return a !== it.es ? [...v, ...v.map(x => a.slice(0, a.length - it.es.length) + x)] : v; };
 
 // Проверка набранного ответа
 export function checkTyped(input, expectedList, lvl, withArticle) {
@@ -67,12 +69,12 @@ export function checkTyped(input, expectedList, lvl, withArticle) {
   return { ok: false };
 }
 
-function distract(item, pool, field, n = 3) {
-  const val = item[field];
-  const sameKind = shuffle(pool.filter(x => x.id !== item.id && x[field] && x[field] !== val && x.kind === item.kind));
-  const other = shuffle(pool.filter(x => x.id !== item.id && x[field] && x[field] !== val && x.kind !== item.kind));
+function distract(item, pool, field, n = 3, get = x => x[field]) {
+  const val = get(item);
+  const sameKind = shuffle(pool.filter(x => x.id !== item.id && get(x) && get(x) !== val && x.kind === item.kind));
+  const other = shuffle(pool.filter(x => x.id !== item.id && get(x) && get(x) !== val && x.kind !== item.kind));
   const res = []; const used = new Set([val]);
-  for (const x of [...sameKind, ...other]) { if (res.length >= n) break; if (!used.has(x[field])) { used.add(x[field]); res.push(x[field]); } }
+  for (const x of [...sameKind, ...other]) { if (res.length >= n) break; if (!used.has(get(x))) { used.add(get(x)); res.push(get(x)); } }
   return res;
 }
 
@@ -84,33 +86,33 @@ function vocabQuestion(item, pool, lvl) {
   if (lvl === 0) {
     if (img && allImg.length >= 3 && r < 0.3) {
       const opts = shuffle([item, ...shuffle(allImg).slice(0, 3)]);
-      return { type: 'pick_img', item, kind: 'Выберите картинку', prompt: item.es, speak: item.es,
+      return { type: 'pick_img', item, kind: 'Выберите картинку', prompt: withArt(item), speak: withArt(item),
         options: opts.map(o => ({ img: imgFor(o.es).src, label: o.ru, correct: o.id === item.id })) };
     }
     if (r < 0.45) {
       const opts = shuffle([item.ru, ...distract(item, pool, 'ru')]);
-      return { type: 'listen', item, kind: 'Прослушайте и выберите перевод', prompt: '🔊', speak: item.es, autoSpeak: true,
+      return { type: 'listen', item, kind: 'Прослушайте и выберите перевод', prompt: '🔊', speak: withArt(item), autoSpeak: true,
         options: opts.map(o => ({ label: o, correct: o === item.ru })) };
     }
     if (r < 0.75) {
       const opts = shuffle([item.ru, ...distract(item, pool, 'ru')]);
-      return { type: 'choose_ru', item, kind: 'Выберите перевод', prompt: item.es, speak: item.es, img: img?.src,
+      return { type: 'choose_ru', item, kind: 'Выберите перевод', prompt: withArt(item), speak: withArt(item), img: img?.src,
         options: opts.map(o => ({ label: o, correct: o === item.ru })) };
     }
-    const opts = shuffle([item.es, ...distract(item, pool, 'es')]);
+    const opts = shuffle([withArt(item), ...distract(item, pool, 'es', 3, withArt)]);
     return { type: 'choose_es', item, kind: 'Выберите по-испански', prompt: item.ru, img: img?.src,
-      options: opts.map(o => ({ label: o, correct: o === item.es, speak: o })) };
+      options: opts.map(o => ({ label: o, correct: o === withArt(item), speak: o })) };
   }
   // средний и сложный: больше написания с русского на испанский
   const writeShare = lvl === 1 ? 0.6 : 0.8;
   if (r < writeShare) {
     const art = lvl === 2 && needsArticle(item) ? article(item) : '';
     return { type: 'write_es', item, kind: art ? 'Напишите по-испански с артиклем' : 'Напишите по-испански', prompt: item.ru,
-      img: lvl === 1 ? img?.src : null, expected: variants(item.es), article: art, hint: lvl === 1 };
+      img: lvl === 1 ? img?.src : null, expected: art ? variants(item.es) : expOf(item), article: art, hint: lvl === 1 };
   }
   const opts = shuffle([item.ru, ...distract(item, pool, 'ru', lvl === 2 ? 4 : 3)]);
   return { type: lvl === 2 ? 'listen' : 'choose_ru', item, kind: lvl === 2 ? 'Прослушайте и выберите перевод' : 'Выберите перевод',
-    prompt: lvl === 2 ? '🔊' : item.es, speak: item.es, autoSpeak: lvl === 2, options: opts.map(o => ({ label: o, correct: o === item.ru })) };
+    prompt: lvl === 2 ? '🔊' : withArt(item), speak: withArt(item), autoSpeak: lvl === 2, options: opts.map(o => ({ label: o, correct: o === item.ru })) };
 }
 
 export function grammarQuestions(lid, lvl, items) {
@@ -130,7 +132,7 @@ export function grammarQuestions(lid, lvl, items) {
   }
   for (const it of articleItems(items)) {
     qs.push({ type: 'article', item: it, kind: 'Род: el или la?', prompt: `… ${it.es}`, sub: it.ru, speak: it.es,
-      options: ['el', 'la'].map(a => ({ label: a, correct: a === article(it) })) });
+      options: ['el', 'la'].map(a => ({ label: a, correct: a === article(it) })), explain: genderRule(it) });
   }
   return qs;
 }
@@ -200,7 +202,7 @@ export function buildWriteTest(lessonIds, n = 10) {
     qs.push({ type: 'conj_write', lessonId: c.lessonId, kind: `Спряжение (${c.ref})`, prompt: `${c.person} … (${c.verb})`, expected: [c.form], answerSpeak: c.form, hint: levelOf(c.lessonId) < 2 });
   }
   const mk = it => { const lvl = levelOf(it.lessonId); const art = lvl === 2 && needsArticle(it) ? article(it) : '';
-    return { type: 'write_es', item: it, kind: art ? 'Напишите по-испански с артиклем' : (it.kind === 'phrase' || /\s/.test(it.es) ? 'Напишите фразу по-испански' : 'Напишите по-испански'), prompt: it.ru, expected: variants(it.es), article: art, hint: lvl < 2 }; };
+    return { type: 'write_es', item: it, kind: art ? 'Напишите по-испански с артиклем' : (it.kind === 'phrase' || /\s/.test(it.es) ? 'Напишите фразу по-испански' : 'Напишите по-испански'), prompt: it.ru, expected: art ? variants(it.es) : expOf(it), article: art, hint: lvl < 2 }; };
   qs.push(...pickW(phrases, want.phr).map(mk));
   qs.push(...pickW(words, n - qs.length).map(mk));
   if (qs.length < n) qs.push(...pickW(phrases.filter(p => !qs.some(q => q.item === p)), n - qs.length).map(mk));
@@ -276,10 +278,10 @@ function wordTopicQuestions(items, n) {
   const chosen = []; while (chosen.length < n) chosen.push(...shuffle(items)); 
   for (const it of chosen.slice(0, n)) {
     const others = shuffle(items.filter(x => x !== it)).slice(0, 3), r = Math.random();
-    if (r < 0.3) qs.push({ type: 'choose_ru', item: it, kind: 'Выберите перевод', prompt: it.es, speak: it.es, options: shuffle([it, ...others]).map(o => ({ label: o.ru, correct: o === it })) });
-    else if (r < 0.55) qs.push({ type: 'listen', item: it, kind: 'Прослушайте и выберите перевод', prompt: '🔊', speak: it.es, autoSpeak: true, options: shuffle([it, ...others]).map(o => ({ label: o.ru, correct: o === it })) });
-    else if (r < 0.8) qs.push({ type: 'choose_es', item: it, kind: 'Выберите по-испански', prompt: it.ru, options: shuffle([it, ...others]).map(o => ({ label: o.es, correct: o === it, speak: o.es })) });
-    else qs.push({ type: 'write_es', item: it, kind: 'Напишите по-испански', prompt: it.ru, expected: variants(it.es), hint: true });
+    if (r < 0.3) qs.push({ type: 'choose_ru', item: it, kind: 'Выберите перевод', prompt: withArt(it), speak: withArt(it), options: shuffle([it, ...others]).map(o => ({ label: o.ru, correct: o === it })) });
+    else if (r < 0.55) qs.push({ type: 'listen', item: it, kind: 'Прослушайте и выберите перевод', prompt: '🔊', speak: withArt(it), autoSpeak: true, options: shuffle([it, ...others]).map(o => ({ label: o.ru, correct: o === it })) });
+    else if (r < 0.8) qs.push({ type: 'choose_es', item: it, kind: 'Выберите по-испански', prompt: it.ru, options: shuffle([it, ...others]).map(o => ({ label: withArt(o), correct: o === it, speak: withArt(o) })) });
+    else qs.push({ type: 'write_es', item: it, kind: 'Напишите по-испански', prompt: it.ru, expected: expOf(it), hint: true });
   }
   return qs;
 }

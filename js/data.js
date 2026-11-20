@@ -151,6 +151,13 @@ export function articleItems(items) {
     !/^h?[aá]/i.test(it.es) && !/\s/.test(it.es));
 }
 
+// Слово с артиклем для показа: la casa, el libro. Женские на a-/ha- (el agua) и фразы — без артикля.
+export function withArt(it) {
+  if (!it || !it.es || !(it.gender === 'm' || it.gender === 'f') || /[,/(\s]/.test(it.es)) return it?.es || '';
+  if (it.gender === 'm') return 'el ' + it.es;
+  return /^h?[aá]/i.test(it.es) ? it.es : 'la ' + it.es;
+}
+
 // Предложения из раздела «построение предложений», которые можно собрать из слов.
 export function sentences(L) {
   const out = [];
