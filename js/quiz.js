@@ -383,8 +383,16 @@ function prepGap(text, cands) {
   }
   return null;
 }
-function prepQuestions(n) {
-  const { rows, compounds, sents } = prepData();
+// Параграфы учебника с предлогами (для выбора перед тестом)
+export function prepSections() {
+  const out = [];
+  for (const [lid, L] of book.lessons) for (const g of L.grammar || []) if (/редлог/.test(g.title || '')) out.push({ ref: g.id, title: g.title, lessonId: lid });
+  return out;
+}
+function prepQuestions(n, refs) {
+  let { rows, compounds, sents } = prepData();
+  if (refs?.length) { const R = new Set(refs); rows = rows.filter(r => R.has(r.ref)); compounds = compounds.filter(c => R.has(c.ref)); sents = sents.filter(x => R.has(x.ref)); }
+  if (!rows.length && !compounds.length) return [];
   if (!rows.length) return [];
   const ruleOf = (prep, ref) => { const rs = rows.filter(r => r.prep === prep.toLowerCase() && (!ref || r.ref === ref)); return rs.length ? `${rs[0].ref}: ${prep} — ${rs.map(r => r.full).join('; ')}.` : ''; };
   const gaps = [];
@@ -425,8 +433,8 @@ function prepQuestions(n) {
   }
   return qs;
 }
-export function topicTest(topic, n = 12) {
-  if (topic === 'preps') return prepQuestions(n);
+export function topicTest(topic, n = 12, opts) {
+  if (topic === 'preps') return prepQuestions(n, opts);
   if (topic === 'numbers') return numberQuestions(n);
   if (topic === 'time') return timeQuestions(n);
   if (topic === 'colors') return wordTopicQuestions(topicItems(COLORS), n);
