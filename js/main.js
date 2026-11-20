@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.12';
+const VERSION = '1.13';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -570,7 +570,8 @@ function photoForm() {
   return `<div class="c stack"><b>Слова с фото</b>
     <div class="mut small">${hasKey ? 'Сфотографируйте страницу или записи, ИИ' + (providerInfo().noKey ? '' : ' (' + providerInfo().name + ')') + ' найдёт испанские слова, а вы проверите их перед сохранением.' : 'Для распознавания нужен ключ ИИ (есть бесплатные, добавляется в профиле). Без ключа: выберите фото, нажмите «Спросить Gemini», затем скопируйте ответ сюда через «Списком».'}</div>
     ${hasKey && !providerInfo().vision ? `<div class="fb almost small">${esc(providerInfo().name)} не читает фото. Выберите в <a href="#/profile">профиле</a> другой сервис (например, бесплатный Gemini или Groq).</div>` : ''}
-    <label class="btn" style="cursor:pointer">📷 Сфотографировать / выбрать<input type="file" id="photo" accept="image/*" capture="environment" hidden></label>
+    <div class="btns"><label class="btn" style="cursor:pointer">📷 Сфотографировать<input type="file" class="photoIn" accept="image/*" capture="environment" hidden></label>
+      <label class="btn ghost" style="cursor:pointer">🖼 Из галереи<input type="file" class="photoIn" accept="image/*" hidden></label></div>
     <div id="photoMsg" class="mut small"></div>
     ${!hasKey ? `<a class="mut small" href="#/profile">Добавить ключ ИИ ›</a>` : ''}</div>`;
 }
@@ -583,9 +584,8 @@ async function shrink(file, max = 1600) {
   return { b64: c.toDataURL('image/jpeg', 0.85).split(',')[1], mime: 'image/jpeg' };
 }
 function bindPhoto() {
-  const inp = $('#photo');
-  if (inp) inp.onchange = async () => {
-    const f = inp.files[0]; if (!f) return;
+  view.querySelectorAll('.photoIn').forEach(inp => inp.onchange = async () => {
+    const f = inp.files[0]; inp.value = ''; if (!f) return;
     const msg = $('#photoMsg');
     if (!aiHasKey()) {
       msg.innerHTML = `<button class="btn ghost" id="askPhoto">Спросить Gemini про это фото</button>`;
@@ -602,7 +602,7 @@ function bindPhoto() {
       if (!rows.length) { msg.textContent = 'Слов не нашлось. Попробуйте фото чётче.'; return; }
       photoRows = rows; route();
     } catch (e) { msg.textContent = e.message; }
-  };
+  });
   const c = $('#photoCancel'); if (c) c.onclick = () => { photoRows = null; location.hash = '#/my'; };
   const s = $('#photoSave'); if (s) s.onclick = () => {
     const rows = photoRows.map((_, k) => ({ on: $(`[data-pk="${k}"]`).checked, es: $(`[data-pes="${k}"]`).value, ru: $(`[data-pru="${k}"]`).value })).filter(r => r.on);
