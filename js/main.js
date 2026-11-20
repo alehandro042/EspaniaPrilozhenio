@@ -621,6 +621,29 @@ function aiContext() {
 const EX_OK = /переведите|переведите|вставьте|раскройте|трансформир|расставьте|проспрягайте|замените|закончите|поставьте|соотнесите|образуйте|употребл|выберите|дополните|соедините|напишите/i;
 const EX_NO = /^(расскажите|составьте рассказ|составьте свое|прочитайте, следя|сравните|сосчитайте|скажите)|повторите диалог|по ролям/i;
 const aiExercise = x => x.kind ? x.kind === 'closed' : EX_OK.test(x.instruction_ru || '') && !EX_NO.test(x.instruction_ru || '');
+// «стр. 45 упр. 3», «45 3», «упр 3 стр 45», «урок 2 упр 5» → упражнение учебника
+function parseExerciseQuery(text) {
+  const t = String(text).toLowerCase().replace(/ё/g, 'е').trim();
+  const PG = '(?:стр(?:аниц[аеуы])?\\.?|с\\.)\\s*(\\d{1,3})', EX = '(?:упр(?:ажнени[еяю])?\\.?|№|номер)\\s*(\\d{1,2}\\*?)';
+  let m;
+  if ((m = t.match(new RegExp(PG + '[\\s,.;:-]*' + EX)))) return { page: +m[1], num: m[2] };
+  if ((m = t.match(new RegExp(EX + '[\\s,.;:-]*(?:на\\s*)?' + PG)))) return { page: +m[2], num: m[1] };
+  if ((m = t.match(/урок\w*\s*(\d{1,2})[\s,.;:-]*(?:упр(?:ажнени[еяю])?\.?|№)\s*(\d{1,2}\*?)/))) return { lesson: +m[1], num: m[2] };
+  if ((m = t.match(/^(\d{1,3})[\s,./:-]+(\d{1,2}\*?)$/))) return { page: +m[1], num: m[2] };
+  return null;
+}
+function lookupExercise(q) {
+  const out = [];
+  for (const l of loadedLessons()) {
+    const L = book.lessons.get(l.id);
+    for (const ex of L.exercises || []) {
+      if (String(ex.number).replace('*', '') !== q.num.replace('*', '')) continue;
+      const [a, b] = ex.pages || [ex.page, ex.page];
+      if (q.page ? (q.page === ex.page || (q.page >= a && q.page <= (b ?? a))) : l.lesson === q.lesson) out.push({ lid: l.id, L, ex, m: l });
+    }
+  }
+  return out;
+}
 function findExercise(spec) {
   const [lidS, ...rest] = String(spec).split(':'); const lid = +lidS; const num = decodeURIComponent(rest.join(':'));
   const L = book.lessons.get(lid); const ex = L && (L.exercises || []).find(x => String(x.number) === num && aiExercise(x));
@@ -661,12 +684,7 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
     ${exSel ? `<div class="c stack"><b>📘 Урок ${exSel.m.lesson} · Unidad ${exSel.m.unit}, упражнение ${esc(exSel.ex.number)}</b><div class="mut small">${esc(exSel.ex.instruction_ru || '')}</div>${exSel.ex.text ? `<details><summary class="small">Текст упражнения</summary><div class="small" style="white-space:pre-wrap;margin-top:6px">${esc(exSel.ex.text)}</div></details>` : ''}
       <div class="btns">${hasKey ? `<button class="btn" id="exSend">Получить ответы</button>` : ''}${onlyShared() ? '' : `<button class="btn ${hasKey ? 'ghost' : ''}" id="exApp">Спросить Gemini ↗</button>`}</div>
       <div class="mut small">ИИ получит текст задания, слова и грамматику урока. Ответы могут содержать ошибки, сверяйтесь с учебником.</div></div>` : ''}
-    <details class="c"><summary><b>📘 Упражнение из учебника</b></summary>
-      <div class="stack" style="margin-top:10px">
-        <select class="inp" id="exL">${loadedLessons().map(l => `<option value="${l.id}" ${l.id === (exSel?.lid || lid) ? 'selected' : ''}>Урок ${l.lesson} · Unidad ${l.unit}</option>`).join('')}</select>
-        <select class="inp" id="exN"></select>
-        <button class="btn ghost" id="exGo">Выбрать</button>
-      </div></details>
+    <div class="mut small" style="text-align:center">📘 Чтобы получить ответы, напишите страницу и номер упражнения, например: <b>стр. 45 упр. 3</b> или просто <b>45 3</b></div>
     ${sugg.length ? `<div class="row start" style="flex-wrap:wrap;gap:6px">${sugg.map(s => `<button class="chip" data-sugg="${esc(s)}">${esc(s.slice(0, 48))}…</button>`).join('')}</div>` : ''}
     <textarea class="inp" id="q" placeholder="Напишите вопрос…" style="min-height:80px">${esc(pre)}</textarea>
     <div class="btns">
@@ -676,9 +694,6 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
     </div>
     ${hasKey && chatLog.length ? `<button class="btn line sm" id="clear" style="align-self:center">Очистить чат</button>` : ''}`;
   const ta = $('#q');
-  const fillEx = () => { const L2 = book.lessons.get(+$('#exL').value); $('#exN').innerHTML = (L2?.exercises || []).filter(aiExercise).map(x => `<option value="${esc(x.number)}">Упр. ${esc(x.number)}: ${esc((x.instruction_ru || '').slice(0, 60))}</option>`).join('') || '<option value="">Нет тестовых упражнений</option>'; };
-  fillEx(); $('#exL').onchange = fillEx;
-  $('#exGo').onclick = () => { if ($('#exN').value) location.hash = `#/ai?ex=${$('#exL').value}:${encodeURIComponent($('#exN').value)}`; };
   if (exSel) {
     const full = exercisePrompt(exSel), show = `Урок ${exSel.m.lesson}, упражнение ${exSel.ex.number}: дай ответы`;
     if ($('#exApp')) $('#exApp').onclick = async () => { const r = await askGeminiApp(full); if (r === 'copied') toast('Запрос скопирован — вставьте его в Gemini', 4000); };
@@ -699,13 +714,33 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
     box.insertAdjacentHTML('beforeend', `<div class="bubble me">${esc(show || text)}</div><div class="bubble ai" id="wait">…</div>`);
     box.lastElementChild.scrollIntoView({ block: 'end' }); send.disabled = true;
     try {
-      const ans = await chat(chatLog.slice(-12), aiContext());
+      // длинные запросы-упражнения из прошлого заменяем короткой подписью, чтобы запрос не разрастался
+      const hist = chatLog.slice(-12).map((m, i, a) => i < a.length - 1 && m.show ? { ...m, text: m.show } : m);
+      const ans = await chat(hist, aiContext());
       chatLog.push({ role: 'model', text: ans }); saveChat();
       $('#wait').outerHTML = `<div class="bubble ai">${esc(ans)}</div>`;
     } catch (e) { chatLog.pop(); saveChat(); $('#wait').outerHTML = `<div class="bubble ai" style="color:var(--bad)">${esc(e.message)}</div>`; if (!show) ta.value = text; }
     send.disabled = false; box.lastElementChild.scrollIntoView({ block: 'start' });
   }
-  if (send) send.onclick = () => { const text = ta.value.trim(); if (!text) return; ta.value = ''; sendText(text); };
+  const localReply = (q, a) => {
+    const box = $('#chat'); box.querySelector('.empty-note')?.remove();
+    box.insertAdjacentHTML('beforeend', `<div class="bubble me">${esc(q)}</div><div class="bubble ai">${esc(a)}</div>`);
+    box.lastElementChild.scrollIntoView({ block: 'start' });
+  };
+  if (send) send.onclick = () => {
+    const text = ta.value.trim(); if (!text) return; ta.value = '';
+    const q = parseExerciseQuery(text);
+    if (q) {
+      const where = q.page ? `на странице ${q.page}` : `в уроке ${q.lesson}`;
+      const found = lookupExercise(q);
+      if (!found.length) return localReply(text, `Упражнения ${q.num} ${where} не нашёл. Проверьте номер страницы и упражнения (страница — как в учебнике). В уроке 6 нет упражнений 9–11: этой страницы нет в скане.`);
+      const ok = found.filter(f => aiExercise(f.ex));
+      if (!ok.length) return localReply(text, `Упражнение ${q.num} ${where} разговорное (рассказ о себе, диалог или чтение вслух), у него нет одного правильного ответа, поэтому ответы я не даю. Задание: ${found[0].ex.instruction_ru || ''}`);
+      const f = ok[0];
+      return sendText(exercisePrompt(f), `${text}\n📘 Урок ${f.m.lesson}, упр. ${f.ex.number}: ${f.ex.instruction_ru || ''}`);
+    }
+    sendText(text);
+  };
   if (pre && hasKey) setTimeout(() => send.click(), 100);
 });
 
