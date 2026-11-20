@@ -1,3 +1,4 @@
+import SENT_RU from './sentences-ru.js';
 // Загрузка учебника: textbook/contents.json + все уроки, у которых есть поле file.
 // Новый урок = новый JSON в textbook/lessons/ + поле "file" в contents.json. Код менять не нужно.
 import { state } from './store.js';
@@ -165,7 +166,7 @@ export function sentences(L) {
     const es = (e.es || '').trim();
     if (!es || /[=…/–—]|\.\.\./.test(es)) continue;
     const n = es.split(/\s+/).length;
-    if (n >= 3 && n <= 12 && /^[¡¿A-ZÁÉÍÓÚÑ]/.test(es)) out.push({ es, pattern: s.pattern });
+    if (n >= 3 && n <= 12 && /^[¡¿A-ZÁÉÍÓÚÑ]/.test(es)) out.push({ es, pattern: s.pattern, ru: SENT_RU[es] || '' });
   }
   return out;
 }

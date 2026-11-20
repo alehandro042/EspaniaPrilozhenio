@@ -142,11 +142,13 @@ function phraseQuestions(lid, lvl) {
   return (book.byLesson.get(lid) || []).filter(it => hasRu(it) && /\s/.test(it.es) && !/[=…/]/.test(it.es))
     .map(it => ({ type: 'write_es', item: it, kind: 'Переведите на испанский', prompt: it.ru, expected: expOf(it), hint: lvl < 2 }));
 }
-export function sentenceQuestions(lid) {
+// Предложения урока: русский перевод → испанский. Лёгкий уровень — собрать из слов, дальше — написать.
+export function sentenceQuestions(lid, lvl = levelOf(lid)) {
   const L = book.lessons.get(lid); if (!L) return [];
-  return sentences(L).map(s => {
-    const words = s.es.split(/\s+/);
-    return { type: 'order', lessonId: lid, kind: 'Соберите предложение', prompt: '', words, shuffled: shuffle(words), answerSpeak: s.es };
+  const all = sentences(L).filter(s => s.ru);
+  return all.map(s => {
+    if (lvl === 0) { const words = s.es.split(/\s+/); return { type: 'order', lessonId: lid, kind: 'Соберите перевод', prompt: s.ru, words, shuffled: shuffle(words), answerSpeak: s.es }; }
+    return { type: 'translate', lessonId: lid, kind: 'Переведите на испанский', prompt: s.ru, expected: [...new Set(all.filter(x => x.ru === s.ru).map(x => x.es))], correct: s.es, answerSpeak: s.es, hint: lvl < 2 };
   });
 }
 
@@ -173,7 +175,8 @@ export function buildTest(lessonIds, n = 10, opts = {}) {
     for (const lid of lessonIds) if (lid !== 'my') {
       const lvl = levelOf(lid);
       extra.push(...shuffle(grammarQuestions(lid, lvl, book.byLesson.get(lid) || [])).slice(0, 4));
-      extra.push(...shuffle(phraseQuestions(lid, lvl)).slice(0, 3));
+      extra.push(...shuffle(phraseQuestions(lid, lvl)).slice(0, 2));
+      extra.push(...shuffle(sentenceQuestions(lid, lvl)).slice(0, 2));
     }
     qs.push(...shuffle(extra).slice(0, n - qs.length));
     // если грамматики мало — добираем словами
