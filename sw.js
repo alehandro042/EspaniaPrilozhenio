@@ -1,23 +1,28 @@
 // Офлайн-режим: оболочка приложения кэшируется, учебник — «сначала сеть, потом кэш»,
 // чтобы новые уроки подхватывались сами, а без интернета работало последнее загруженное.
-const VERSION = 'espanola-v17';
+const VERSION = 'espanola-v18';
 const SHELL = ['./', 'index.html', 'css/app.css', 'config.js', 'manifest.webmanifest',
   'js/main.js', 'js/store.js', 'js/data.js', 'js/srs.js', 'js/speech.js', 'js/quiz.js', 'js/ai.js', 'js/sync.js', 'js/cloud.js',
   'icons/icon-192.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', e => {
-  e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== VERSION && k !== 'espanola-data' && k.startsWith('espanola-')).map(k => caches.delete(k))))
-    .then(() => self.clients.claim()));
+  e.waitUntil(caches.keys().then(async ks => {
+    const old = ks.filter(k => k !== VERSION && k !== 'espanola-data' && k.startsWith('espanola-'));
+    await Promise.all(old.map(k => caches.delete(k)));
+    await self.clients.claim();
+    // была старая версия → просим открытые окна перезагрузиться
+    if (old.length) (await self.clients.matchAll({ type: 'window' })).forEach(c => c.postMessage('updated'));
+  }));
 });
 
 async function networkFirst(req) {
   const isData = new URL(req.url).pathname.includes('/textbook/');
   const c = await caches.open(isData ? 'espanola-data' : VERSION);
   try {
-    const r = await fetch(req);
+    const r = await fetch(req.mode === 'navigate' ? req.url : req, { cache: 'no-cache' });
     if (r.ok) c.put(req, r.clone());
     return r;
   } catch (e) {

@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.0';
+const VERSION = '1.8';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -996,7 +996,12 @@ async function start() {
   initSync();
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js').catch(e => console.warn('SW', e));
-    navigator.serviceWorker.addEventListener('message', e => { if (e.data === 'updated') toast('Приложение обновлено'); });
+    navigator.serviceWorker.addEventListener('message', e => {
+      if (e.data !== 'updated') return;
+      // новая версия: сразу перезагружаемся, если человек не посреди теста или ответа ИИ
+      if (/test|cards|train/.test(location.hash) || chatPending) toast('Приложение обновлено — перезапустите его');
+      else location.reload();
+    });
   }
 }
 start();
