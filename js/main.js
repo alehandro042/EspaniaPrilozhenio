@@ -610,8 +610,8 @@ function bindPhoto() {
 }
 
 // ---------- Помощник ----------
-const chatLog = (() => { try { return JSON.parse(sessionStorage.getItem('espanola.chat') || '[]'); } catch { return []; } })();
-const saveChat = () => { try { sessionStorage.setItem('espanola.chat', JSON.stringify(chatLog.slice(-30))); } catch {} };
+const chatLog = (() => { try { return JSON.parse(localStorage.getItem('espanola.chat') || '[]'); } catch { return []; } })();
+const saveChat = () => { try { localStorage.setItem('espanola.chat', JSON.stringify(chatLog.slice(-40))); } catch {} };
 function aiContext() {
   const lid = state.last?.lesson; const L = lid && book.lessons.get(lid); const m = lid && lessonMeta(lid);
   if (!L) return '';
@@ -671,77 +671,134 @@ ${gram}
 Словарь урока: ${vocab}`;
 }
 
+// Мини-Markdown для ответов ИИ: заголовки, жирный/курсив, списки, таблицы, код. Сначала экранируем — HTML из ответа не выполняется.
+function md(src) {
+  const inline = s => esc(s)
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/__([^_]+)__/g, '<b>$1</b>')
+    .replace(/(^|[^*])\*([^*\s][^*]*)\*/g, '$1<i>$2</i>');
+  const lines = String(src).replace(/\r/g, '').split('\n');
+  let out = '', i = 0;
+  const isRow = l => /^\s*\|.*\|\s*$/.test(l);
+  while (i < lines.length) {
+    const l = lines[i];
+    if (/^```/.test(l)) { let code = []; i++; while (i < lines.length && !/^```/.test(lines[i])) code.push(lines[i++]); i++; out += `<pre>${esc(code.join('\n'))}</pre>`; continue; }
+    if (isRow(l) && i + 1 < lines.length && /^\s*\|?\s*:?-{2,}/.test(lines[i + 1])) {
+      const cells = r => r.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+      const head = cells(l); i += 2; const rows = [];
+      while (i < lines.length && isRow(lines[i])) rows.push(cells(lines[i++]));
+      out += `<div class="md-table"><table><thead><tr>${head.map(c => `<th>${inline(c)}</th>`).join('')}</tr></thead><tbody>${rows.map(r => `<tr>${r.map(c => `<td>${inline(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+      continue;
+    }
+    let m;
+    if ((m = l.match(/^(#{1,4})\s+(.*)/))) { out += `<h4>${inline(m[2])}</h4>`; i++; continue; }
+    if (/^\s*([-*•])\s+/.test(l)) { out += '<ul>'; while (i < lines.length && /^\s*([-*•])\s+/.test(lines[i])) out += `<li>${inline(lines[i++].replace(/^\s*[-*•]\s+/, ''))}</li>`; out += '</ul>'; continue; }
+    if (/^\s*\d+[.)]\s+/.test(l)) { const start = +l.match(/\d+/)[0]; out += `<ol start="${start}">`; while (i < lines.length && /^\s*\d+[.)]\s+/.test(lines[i])) out += `<li>${inline(lines[i++].replace(/^\s*\d+[.)]\s+/, ''))}</li>`; out += '</ol>'; continue; }
+    if (/^\s*(---|\*\*\*)\s*$/.test(l)) { out += '<hr>'; i++; continue; }
+    if (!l.trim()) { i++; continue; }
+    const para = []; while (i < lines.length && lines[i].trim() && !/^(```|#{1,4}\s|\s*[-*•]\s|\s*\d+[.)]\s)/.test(lines[i]) && !isRow(lines[i])) para.push(inline(lines[i++]));
+    out += `<p>${para.join('<br>')}</p>`;
+  }
+  return out;
+}
+
+const ICON_SEND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+const ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
+const ICON_NEW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>';
+
+function msgHtml(m, k) {
+  if (m.role === 'user') return `<div class="msg me"><div class="bubble me">${esc(m.show || m.text)}</div></div>`;
+  return `<div class="msg ai${m.err ? ' err' : ''}"><div class="ai-ava">ES</div><div class="ai-body"><div class="md">${m.err ? esc(m.text) : md(m.text)}</div>
+    ${m.err || m.local ? '' : `<div class="msg-acts"><button class="icon-btn" data-copy="${k}" aria-label="Копировать">${ICON_COPY}<span>Копировать</span></button></div>`}</div></div>`;
+}
+
+function chatSuggestions() {
+  const lid = state.last?.lesson; const L = lid && book.lessons.get(lid);
+  const ex = (L?.exercises || []).find(aiExercise) || [...book.lessons.values()].flatMap(x => x.exercises || []).find(aiExercise);
+  const g = L?.grammar?.[0];
+  const out = [];
+  if (ex) { const pg = ex.page ?? ex.pages?.[0]; out.push({ t: `стр. ${pg} упр. ${ex.number}`, d: 'Ответы на упражнение из учебника' }); }
+  out.push({ t: 'Переведи на испанский: Я учусь в университете', d: 'Перевод с объяснением' });
+  if (g) out.push({ t: `Объясни ${g.id} «${g.title}» простыми словами`, d: 'Грамматика текущего урока' });
+  out.push({ t: 'Проспрягай глагол ser в Presente', d: 'Спряжение' });
+  out.push({ t: 'Как сказать «Приятно познакомиться»?', d: 'Фразы' });
+  return out.slice(0, 4);
+}
+
 on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
   setTitle('Помощник');
+  view.classList.add('chatmode');
+  cleanup = () => view.classList.remove('chatmode');
   const pre = kind === 'q' && val ? decodeURIComponent(val) : '';
   const exSel = kind === 'ex' ? findExercise(val) : null;
+  if (kind) history.replaceState(null, '', location.pathname + '#/ai');
   const hasKey = aiHasKey();
-  const lid = state.last?.lesson; const L = lid && book.lessons.get(lid);
-  const sugg = L ? (L.grammar || []).slice(0, 3).map(g => `Объясни ${g.id} «${g.title}» простыми словами, с примерами`) : [];
+  const emptyHtml = () => `<div class="chat-empty"><div class="chat-logo">ES</div><h2>Чем помочь?</h2>
+      <div class="mut">Спросите про перевод или грамматику. Для ответов на упражнение напишите страницу и номер: <b>стр. 45 упр. 3</b> или <b>45 3</b>.</div>
+      <div class="sugg-grid">${chatSuggestions().map(s => `<button class="sugg" data-sugg="${esc(s.t)}"><b>${esc(s.t)}</b><span>${esc(s.d)}</span></button>`).join('')}</div></div>`;
   view.innerHTML = `
-    ${hasKey ? `<div class="chat" id="chat">${chatLog.map(m => `<div class="bubble ${m.role === 'user' ? 'me' : 'ai'}">${esc(m.show || m.text)}</div>`).join('') || `<div class="empty-note">Спросите что угодно про испанский: перевод, грамматику, как сказать фразу.</div>`}</div>`
-      : `<div class="c stack"><b>ИИ-помощник</b><div class="mut small">Чтобы отвечать прямо здесь, нужен ваш ключ ИИ (Gemini, Groq, Mistral и др., есть бесплатные). Без ключа вопрос можно задать в приложении Gemini: кнопка скопирует запрос и откроет Gemini.</div><a class="btn line" href="#/profile">Добавить ключ ИИ</a></div>`}
-    ${exSel ? `<div class="c stack"><b>📘 Урок ${exSel.m.lesson} · Unidad ${exSel.m.unit}, упражнение ${esc(exSel.ex.number)}</b><div class="mut small">${esc(exSel.ex.instruction_ru || '')}</div>${exSel.ex.text ? `<details><summary class="small">Текст упражнения</summary><div class="small" style="white-space:pre-wrap;margin-top:6px">${esc(exSel.ex.text)}</div></details>` : ''}
-      <div class="btns">${hasKey ? `<button class="btn" id="exSend">Получить ответы</button>` : ''}${onlyShared() ? '' : `<button class="btn ${hasKey ? 'ghost' : ''}" id="exApp">Спросить Gemini ↗</button>`}</div>
-      <div class="mut small">ИИ получит текст задания, слова и грамматику урока. Ответы могут содержать ошибки, сверяйтесь с учебником.</div></div>` : ''}
-    <div class="mut small" style="text-align:center">📘 Чтобы получить ответы, напишите страницу и номер упражнения, например: <b>стр. 45 упр. 3</b> или просто <b>45 3</b></div>
-    ${sugg.length ? `<div class="row start" style="flex-wrap:wrap;gap:6px">${sugg.map(s => `<button class="chip" data-sugg="${esc(s)}">${esc(s.slice(0, 48))}…</button>`).join('')}</div>` : ''}
-    <textarea class="inp" id="q" placeholder="Напишите вопрос…" style="min-height:80px">${esc(pre)}</textarea>
-    <div class="btns">
-      ${hasKey ? `<button class="btn" id="send">Отправить</button>` : ''}
-      ${onlyShared() ? '' : `<button class="btn ${hasKey ? 'ghost' : ''}" id="askApp">Спросить Gemini ↗</button>`}
-      ${navigator.share ? `<button class="btn ghost" id="shareQ" style="flex:0 0 auto;width:auto">Поделиться</button>` : ''}
-    </div>
-    ${hasKey && chatLog.length ? `<button class="btn line sm" id="clear" style="align-self:center">Очистить чат</button>` : ''}`;
-  const ta = $('#q');
-  if (exSel) {
-    const full = exercisePrompt(exSel), show = `Урок ${exSel.m.lesson}, упражнение ${exSel.ex.number}: дай ответы`;
-    if ($('#exApp')) $('#exApp').onclick = async () => { const r = await askGeminiApp(full); if (r === 'copied') toast('Запрос скопирован — вставьте его в Gemini', 4000); };
-    const es = $('#exSend'); if (es) es.onclick = () => sendText(full, show);
-  }
-  view.querySelectorAll('[data-sugg]').forEach(b => b.onclick = () => { ta.value = b.dataset.sugg; ta.focus(); });
-  if ($('#askApp')) $('#askApp').onclick = async () => {
-    if (!ta.value.trim()) return toast('Сначала напишите вопрос');
-    const r = await askGeminiApp(ta.value.trim() + (aiContext() ? '\n(' + aiContext() + ')' : ''));
-    if (r === 'copied') toast('Запрос скопирован — вставьте его в Gemini', 4000);
+    <div class="chat-scroll" id="chatScroll"><div class="chat" id="chat">${chatLog.length ? chatLog.map(msgHtml).join('') : emptyHtml()}</div></div>
+    <div class="composer">
+      ${hasKey ? '' : `<div class="mut small" style="padding:0 4px 6px">Нет ключа ИИ: вопрос откроется в приложении Gemini. <a href="#/profile">Добавить ключ</a></div>`}
+      <div class="composer-box">
+        <textarea id="q" rows="1" placeholder="Спросите что-нибудь…" enterkeyhint="send">${esc(pre)}</textarea>
+        <button class="send-btn" id="send" aria-label="Отправить" disabled>${ICON_SEND}</button>
+      </div>
+      <div class="composer-foot"><span class="mut small">ИИ может ошибаться, сверяйтесь с учебником</span>${chatLog.length ? `<button class="icon-btn" id="newChat">${ICON_NEW}<span>Новый чат</span></button>` : ''}</div>
+    </div>`;
+  const ta = $('#q'), send = $('#send'), box = $('#chat'), scroller = $('#chatScroll');
+  const toBottom = (smooth) => scroller.scrollTo({ top: scroller.scrollHeight, behavior: smooth ? 'smooth' : 'auto' });
+  const grow = () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 140) + 'px'; send.disabled = !ta.value.trim() || busy; };
+  let busy = false;
+  ta.addEventListener('input', grow); grow(); toBottom();
+  ta.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !matchMedia('(pointer:coarse)').matches) { e.preventDefault(); send.click(); } });
+  const bindMsgs = () => {
+    box.querySelectorAll('[data-sugg]').forEach(b => b.onclick = () => { ta.value = b.dataset.sugg; grow(); send.click(); });
+    box.querySelectorAll('[data-copy]').forEach(b => b.onclick = async () => {
+      try { await navigator.clipboard.writeText(chatLog[+b.dataset.copy].text); toast('Ответ скопирован'); } catch { toast('Не удалось скопировать'); }
+    });
   };
-  const sh = $('#shareQ'); if (sh) sh.onclick = () => { if (!ta.value.trim()) return toast('Сначала напишите вопрос'); shareText(ta.value.trim()); };
-  const cl = $('#clear'); if (cl) cl.onclick = () => { chatLog.length = 0; saveChat(); route(); };
-  const send = $('#send');
+  bindMsgs();
+  const nc = $('#newChat'); if (nc) nc.onclick = () => { chatLog.length = 0; saveChat(); route(); };
+  const ensureStarted = () => { if (box.querySelector('.chat-empty')) box.innerHTML = ''; };
+  const push = m => { chatLog.push(m); saveChat(); ensureStarted(); box.insertAdjacentHTML('beforeend', msgHtml(m, chatLog.length - 1)); bindMsgs(); };
+  function localReply(q, a) { push({ role: 'user', text: q }); push({ role: 'model', text: a, local: true }); toBottom(true); }
   async function sendText(text, show) {
-    chatLog.push({ role: 'user', text, show }); saveChat();
-    const box = $('#chat'); box.querySelector('.empty-note')?.remove();
-    box.insertAdjacentHTML('beforeend', `<div class="bubble me">${esc(show || text)}</div><div class="bubble ai" id="wait">…</div>`);
-    box.lastElementChild.scrollIntoView({ block: 'end' }); send.disabled = true;
+    if (!hasKey) { const r = await askGeminiApp(text + (aiContext() ? '\n(' + aiContext() + ')' : '')); if (r === 'copied') toast('Запрос скопирован — вставьте его в Gemini', 4000); return; }
+    push({ role: 'user', text, show });
+    box.insertAdjacentHTML('beforeend', `<div class="msg ai" id="wait"><div class="ai-ava">ES</div><div class="typing"><i></i><i></i><i></i></div></div>`);
+    toBottom(true); busy = true; grow();
     try {
       // длинные запросы-упражнения из прошлого заменяем короткой подписью, чтобы запрос не разрастался
-      const hist = chatLog.slice(-12).map((m, i, a) => i < a.length - 1 && m.show ? { ...m, text: m.show } : m);
+      const hist = chatLog.filter(m => !m.err && !m.local).slice(-12).map((m, i, a) => i < a.length - 1 && m.show ? { ...m, text: m.show } : m);
       const ans = await chat(hist, aiContext());
-      chatLog.push({ role: 'model', text: ans }); saveChat();
-      $('#wait').outerHTML = `<div class="bubble ai">${esc(ans)}</div>`;
-    } catch (e) { chatLog.pop(); saveChat(); $('#wait').outerHTML = `<div class="bubble ai" style="color:var(--bad)">${esc(e.message)}</div>`; if (!show) ta.value = text; }
-    send.disabled = false; box.lastElementChild.scrollIntoView({ block: 'start' });
+      $('#wait')?.remove(); push({ role: 'model', text: ans });
+    } catch (e) {
+      $('#wait')?.remove(); push({ role: 'model', text: e.message, err: true });
+    }
+    busy = false; grow();
+    const last = box.lastElementChild; scroller.scrollTo({ top: last.offsetTop - 8, behavior: 'smooth' });
+    if (!$('#newChat')) { $('.composer-foot').insertAdjacentHTML('beforeend', `<button class="icon-btn" id="newChat">${ICON_NEW}<span>Новый чат</span></button>`); $('#newChat').onclick = () => { chatLog.length = 0; saveChat(); route(); }; }
   }
-  const localReply = (q, a) => {
-    const box = $('#chat'); box.querySelector('.empty-note')?.remove();
-    box.insertAdjacentHTML('beforeend', `<div class="bubble me">${esc(q)}</div><div class="bubble ai">${esc(a)}</div>`);
-    box.lastElementChild.scrollIntoView({ block: 'start' });
-  };
-  if (send) send.onclick = () => {
-    const text = ta.value.trim(); if (!text) return; ta.value = '';
+  function sendExercise(f, label) {
+    const ins = f.ex.instruction_ru || ''; const short = ins.length > 70 ? ins.slice(0, 68).replace(/\s+\S*$/, '') + '…' : ins;
+    return sendText(exercisePrompt(f), `${label}\n📘 Урок ${f.m.lesson}, упр. ${f.ex.number}: ${short}`);
+  }
+  send.onclick = () => {
+    const text = ta.value.trim(); if (!text || busy) return; ta.value = ''; grow();
     const q = parseExerciseQuery(text);
     if (q) {
       const where = q.page ? `на странице ${q.page}` : `в уроке ${q.lesson}`;
       const found = lookupExercise(q);
       if (!found.length) return localReply(text, `Упражнения ${q.num} ${where} не нашёл. Проверьте номер страницы и упражнения (страница — как в учебнике). В уроке 6 нет упражнений 9–11: этой страницы нет в скане.`);
       const ok = found.filter(f => aiExercise(f.ex));
-      if (!ok.length) return localReply(text, `Упражнение ${q.num} ${where} разговорное (рассказ о себе, диалог или чтение вслух), у него нет одного правильного ответа, поэтому ответы я не даю. Задание: ${found[0].ex.instruction_ru || ''}`);
-      const f = ok[0];
-      return sendText(exercisePrompt(f), `${text}\n📘 Урок ${f.m.lesson}, упр. ${f.ex.number}: ${f.ex.instruction_ru || ''}`);
+      if (!ok.length) return localReply(text, `Упражнение ${q.num} ${where} разговорное (рассказ о себе, диалог или чтение вслух). У него нет одного правильного ответа, поэтому ответы я не даю.\n\n**Задание:** ${found[0].ex.instruction_ru || ''}`);
+      return sendExercise(ok[0], text);
     }
     sendText(text);
   };
-  if (pre && hasKey) setTimeout(() => send.click(), 100);
+  if (exSel) sendExercise(exSel, `Ответы: урок ${exSel.m.lesson}, упр. ${exSel.ex.number}`);
+  else if (pre && hasKey) setTimeout(() => send.click(), 100);
 });
 
 // ---------- Профиль ----------
