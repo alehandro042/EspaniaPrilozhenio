@@ -3,7 +3,7 @@ import { book, loadBook, hasRu, imgFor, KIND_RU, kindLabel, lessonMeta, unitMeta
 import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearned, mistakes } from './srs.js';
 import { speak, listen, canListen, judge, esVoices } from './speech.js';
 import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions, buildWriteTest } from './quiz.js';
-import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl, PROVIDERS, provider, providerInfo, hasKey as aiHasKey } from './ai.js';
+import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl, PROVIDERS, providerList, provider, providerInfo, hasKey as aiHasKey } from './ai.js';
 import * as drive from './sync.js';
 import * as cloud from './cloud.js';
 // Если в config.js задан Supabase — прогресс хранится там, иначе (запасной вариант) на Google Диске.
@@ -740,12 +740,14 @@ on(/^\/profile$/, () => {
 `}
     <div class="c stack">
       <b>ИИ-помощник</b>
-      <div class="field"><label>Сервис</label><select class="inp" id="aiProv">${Object.entries(PROVIDERS).map(([k, P]) => `<option value="${k}" ${k === provider() ? 'selected' : ''}>${esc(P.name)} · ${P.free ? 'бесплатно' : 'платно'}${aiKeys.get(k) ? ' ✓' : ''}</option>`).join('')}</select></div>
+      <div class="field"><label>Сервис</label><select class="inp" id="aiProv">${providerList().map(([k, P]) => `<option value="${k}" ${k === provider() ? 'selected' : ''}>${esc(P.name)} · ${P.free ? 'бесплатно' : 'платно'}${aiKeys.get(k) ? ' ✓' : ''}</option>`).join('')}</select></div>
+      ${providerInfo().noKey ? `<div class="mut small">${esc(providerInfo().note)} <b>Фото не читает</b> (для фото выберите Gemini, Groq или Mistral со своим ключом).</div>` : `
       <div class="mut small">${esc(providerInfo().note)}${providerInfo().vision ? '' : ' <b>Фото не читает.</b>'}<br>Где взять ключ: <a href="${providerInfo().keyUrl}" target="_blank" rel="noopener">${esc(providerInfo().keyHint)}</a>. Ключ хранится только на этом устройстве и не синхронизируется.</div>
       <input class="inp" id="gkey" type="password" autocomplete="off" value="${esc(aiKeys.get(provider()))}" placeholder="${esc(providerInfo().keyPrefix || 'API-ключ')}">
       <div class="btns"><button class="btn ghost" id="gSave">Сохранить ключ</button>${aiKeys.get(provider()) ? `<button class="btn line" id="gDel">Удалить</button>` : ''}</div>
       <details><summary class="mut small">Модель</summary><input class="inp" id="gmodel" value="${esc((settings.models || {})[provider()] || '')}" placeholder="${esc(providerInfo().model)}" style="margin-top:8px"></details>
-      <div class="mut small">Без ключа в Помощнике работает кнопка «Спросить Gemini».</div>
+      `}
+      ${providerInfo().noKey ? "" : `<div class="mut small">Без ключа в Помощнике работает кнопка «Спросить Gemini».</div>`}
     </div>
     <div class="c stack">
       <b>Стиль</b>
@@ -786,8 +788,8 @@ on(/^\/profile$/, () => {
   if (b('syncBtn')) b('syncBtn').onclick = async () => { try { if (!hasToken()) await signIn(''); else await syncNow(); route(); } catch (e) { toast(e.message, 4000); } };
   if (b('outBtn')) b('outBtn').onclick = () => { signOut(); renderAva(); route(); toast('Вы вышли. Прогресс остался на телефоне и на Диске'); };
   if (b('cidSave')) b('cidSave').onclick = () => { settings.clientId = b('cid').value.trim(); saveSettings(); route(); toast('Сохранено'); };
-  b('aiProv').onchange = e => { settings.aiProvider = e.target.value; saveSettings(); route(); };
-  b('gSave').onclick = () => { const p = provider(); const v = b('gkey').value.trim(); aiKeys.set(p, v); settings.models = { ...(settings.models || {}), [p]: b('gmodel').value.trim() }; saveSettings(); toast(v ? 'Ключ сохранён на этом устройстве' : 'Ключ удалён'); route(); };
+  b('aiProv').onchange = e => { settings.aiProvider = e.target.value; settings.aiChosen = true; saveSettings(); route(); };
+  if (b('gSave')) b('gSave').onclick = () => { const p = provider(); const v = b('gkey').value.trim(); aiKeys.set(p, v); settings.models = { ...(settings.models || {}), [p]: b('gmodel').value.trim() }; saveSettings(); toast(v ? 'Ключ сохранён на этом устройстве' : 'Ключ удалён'); route(); };
   if (b('gDel')) b('gDel').onclick = () => { aiKeys.set(provider(), ''); route(); };
   view.querySelectorAll('[data-style]').forEach(x => x.onclick = () => { settings.style = x.dataset.style; saveSettings(); applyStyle(); route(); });
   if (b('voice')) b('voice').onchange = e => { settings.voice = e.target.value; saveSettings(); };

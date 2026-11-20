@@ -6,5 +6,7 @@ window.ESPANOLA_CONFIG = {
   geminiModel: "gemini-flash-latest",
   // Supabase (бесплатная база для прогресса): Project URL и publishable/anon key, см. SETUP-SUPABASE.md
   supabaseUrl: "",
-  supabaseKey: ""
+  supabaseKey: "",
+  // Адрес Cloudflare Worker-посредника (worker/ai-proxy.js): DeepSeek для всех без ключа. См. SETUP-AI-PROXY.md
+  aiProxyUrl: ""
 };

@@ -6,7 +6,14 @@ export const SYSTEM = 'Ты помощник студента, который у
   'Если вопрос про конкретное слово, дай перевод, род, пример и подсказку по произношению.';
 
 // Модели по умолчанию можно поменять в профиле («Модель»), если сервис их переименует.
+const PROXY = () => (window.ESPANOLA_CONFIG || {}).aiProxyUrl || '';
 export const PROVIDERS = {
+  shared: {
+    name: 'DeepSeek от приложения', free: true, vision: false, kind: 'openai', noKey: true,
+    get url() { return PROXY(); },
+    model: 'deepseek-v4-pro',
+    note: 'Работает сразу, ключ не нужен: запросы оплачивает владелец приложения. Пожалуйста, не злоупотребляйте.'
+  },
   gemini: {
     name: 'Google Gemini', free: true, vision: true,
     keyUrl: 'https://aistudio.google.com/apikey', keyHint: 'aistudio.google.com/apikey → «Create API key»', keyPrefix: 'AIza…',
@@ -63,9 +70,16 @@ export const PROVIDERS = {
   }
 };
 
-export const provider = () => PROVIDERS[settings.aiProvider] ? settings.aiProvider : 'gemini';
+export const providerList = () => Object.entries(PROVIDERS).filter(([k]) => k !== 'shared' || PROXY());
+export const provider = () => {
+  const p = settings.aiProvider;
+  if (p === 'shared') return PROXY() ? 'shared' : 'gemini';
+  // пока человек сам не выбрал сервис и у него нет своего ключа — общий DeepSeek
+  if (PROXY() && !settings.aiChosen && !(PROVIDERS[p] && aiKeys.get(p))) return 'shared';
+  return PROVIDERS[p] ? p : 'gemini';
+};
 export const providerInfo = () => PROVIDERS[provider()];
-export const hasKey = () => !!aiKeys.get(provider());
+export const hasKey = () => !!(providerInfo().noKey || aiKeys.get(provider()));
 const modelFor = (p, vision) => (settings.models || {})[p] || (vision && PROVIDERS[p].visionModel) || PROVIDERS[p].model;
 
 function niceError(status, msg) {
@@ -78,7 +92,7 @@ function niceError(status, msg) {
 // history: [{role:'user'|'model', text}], image: {b64, mime} — прикрепляется к последнему сообщению
 async function call({ system, history, image }) {
   const p = provider(); const P = PROVIDERS[p]; const key = aiKeys.get(p);
-  if (!key) throw new Error('Нет ключа ИИ. Добавьте его в профиле.');
+  if (!key && !P.noKey) throw new Error('Нет ключа ИИ. Добавьте его в профиле.');
   if (P.kind === 'openai') return callOpenAI(P, key, modelFor(p, !!image), system, history, image);
   if (P.kind === 'claude') return callClaude(key, modelFor(p), system, history, image);
   return callGemini(key, p, system, history, image);
@@ -114,7 +128,8 @@ async function callOpenAI(P, key, model, system, history, image) {
     if (image && i === history.length - 1) messages.push({ role, content: [{ type: 'text', text: h.text }, { type: 'image_url', image_url: { url: `data:${image.mime};base64,${image.b64}` } }] });
     else messages.push({ role, content: h.text });
   });
-  const headers = { 'Content-Type': 'application/json', Authorization: P.rawKey ? key : 'Bearer ' + key };
+  const headers = { 'Content-Type': 'application/json' };
+  if (!P.noKey) headers.Authorization = P.rawKey ? key : 'Bearer ' + key;
   if (P === PROVIDERS.openrouter) { headers['HTTP-Referer'] = location.origin; headers['X-Title'] = 'Espanola'; }
   const body = { model, messages };
   if (P === PROVIDERS.gptunnel) body.useWalletBalance = true; // личный баланс GPTunnel
