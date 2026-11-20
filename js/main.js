@@ -261,7 +261,8 @@ function sentencesTab(id, L) {
         <a class="btn ghost sm" href="${translateUrl(x.es.slice(0, 4500))}" target="_blank" rel="noopener">↗ Перевести</a></div>
       </details>`).join('') : '') +
     (ex.length ? `<details class="c"><summary><b>Упражнения из учебника (${ex.length})</b></summary>
-      ${ex.map(x => `<div class="word-row"><div class="grow"><b>${esc(x.number)}.</b> ${esc(x.instruction_ru)} <span class="mut small">с. ${esc(x.page ?? (x.pages || []).join('–'))}</span></div></div>`).join('')}</details>` : '');
+      ${ex.map(x => `<div class="word-row"><div class="grow"><b>${esc(x.number)}.</b> ${esc(x.instruction_ru)} <span class="mut small">с. ${esc(x.page ?? (x.pages || []).join('–'))}</span></div>
+        ${aiExercise(x) ? `<a class="btn ghost sm" href="#/ai?ex=${id}:${encodeURIComponent(x.number)}" style="flex:none">🤖 Ответы</a>` : ''}</div>`).join('')}</details>` : '');
 }
 
 // ---------- Повторить: карточки ----------
@@ -615,15 +616,56 @@ function aiContext() {
   if (!L) return '';
   return `студент сейчас на уроке ${m.lesson} (Unidad ${m.unit}). Грамматика урока: ${(L.grammar || []).map(g => g.id + ' ' + g.title).join('; ')}.`;
 }
-on(/^\/ai(?:\?q=(.*))?$/, q => {
+// Для ИИ берём только тестовые и переводные упражнения (разговорные не нужны — просьба пользователя)
+const EX_OK = /переведите|переведите|вставьте|раскройте|трансформир|расставьте|проспрягайте|замените|закончите|поставьте|соотнесите|образуйте|употребл|выберите|дополните|соедините|напишите/i;
+const EX_NO = /^(расскажите|составьте рассказ|составьте свое|прочитайте, следя|сравните|сосчитайте|скажите)|повторите диалог|по ролям/i;
+const aiExercise = x => EX_OK.test(x.instruction_ru || '') && !EX_NO.test(x.instruction_ru || '');
+function findExercise(spec) {
+  const [lidS, ...rest] = String(spec).split(':'); const lid = +lidS; const num = decodeURIComponent(rest.join(':'));
+  const L = book.lessons.get(lid); const ex = L && (L.exercises || []).find(x => String(x.number) === num && aiExercise(x));
+  return ex ? { lid, L, ex, m: lessonMeta(lid) } : null;
+}
+// Запрос к ИИ: текст упражнения + словарь и грамматика урока (только из учебника)
+function exercisePrompt({ L, ex, m }) {
+  const pg = ex.page ?? (ex.pages || []).join('–');
+  const extra = Object.entries(ex).filter(([k]) => !['number', 'instruction_ru', 'page', 'pages'].includes(k))
+    .map(([k, v]) => Array.isArray(v) ? v.map((x, i) => `${i + 1}) ${typeof x === 'string' ? x : JSON.stringify(x)}`).join('\n') : (typeof v === 'string' ? v : JSON.stringify(v))).join('\n');
+  // если задание ссылается на другое упражнение («слова из упражнения 2») — добавим и его текст
+  const refN = (ex.instruction_ru || '').match(/упр(?:ажнени[ея]|\.)\s*(\d+)/i)?.[1];
+  const refEx = refN && (L.exercises || []).find(x => String(x.number) === refN && x !== ex);
+  const refTxt = refEx ? `\n\nУпражнение ${refN} (на него ссылается задание): ${refEx.instruction_ru || ''}\n${(refEx.items || []).map((x, i) => `${i + 1}) ${typeof x === 'string' ? x : JSON.stringify(x)}`).join('\n')}` : '';
+  const gram = (L.grammar || []).map(g => `${g.id} ${g.title}${g.points?.length ? ': ' + g.points.join(' ') : ''}`).join('\n').slice(0, 4000);
+  const vocab = (book.byLesson.get(m.id) || []).filter(hasRu).slice(0, 200).map(i => `${i.es} — ${i.ru}`).join('; ');
+  return `Помоги выполнить упражнение из учебника «Español Actual. Начальный курс»: Unidad ${m.unit}, урок ${m.lesson}, упражнение ${ex.number}${pg ? ` (с. ${pg})` : ''}.
+Задание: ${ex.instruction_ru || ''}${extra ? '\n' + extra : ''}${refTxt}
+
+Дай ответы по пунктам, с номерами, и к каждому короткое объяснение по-русски (какое правило работает). Используй слова и грамматику этого урока (ниже). Если для упражнения нужен текст, картинка или диалог из учебника, которых здесь нет, так и скажи и сделай то, что возможно.
+
+Грамматика урока:
+${gram}
+
+Словарь урока: ${vocab}`;
+}
+
+on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
   setTitle('Помощник');
-  const pre = q ? decodeURIComponent(q) : '';
+  const pre = kind === 'q' && val ? decodeURIComponent(val) : '';
+  const exSel = kind === 'ex' ? findExercise(val) : null;
   const hasKey = aiHasKey();
   const lid = state.last?.lesson; const L = lid && book.lessons.get(lid);
   const sugg = L ? (L.grammar || []).slice(0, 3).map(g => `Объясни ${g.id} «${g.title}» простыми словами, с примерами`) : [];
   view.innerHTML = `
-    ${hasKey ? `<div class="chat" id="chat">${chatLog.map(m => `<div class="bubble ${m.role === 'user' ? 'me' : 'ai'}">${esc(m.text)}</div>`).join('') || `<div class="empty-note">Спросите что угодно про испанский: перевод, грамматику, как сказать фразу.</div>`}</div>`
+    ${hasKey ? `<div class="chat" id="chat">${chatLog.map(m => `<div class="bubble ${m.role === 'user' ? 'me' : 'ai'}">${esc(m.show || m.text)}</div>`).join('') || `<div class="empty-note">Спросите что угодно про испанский: перевод, грамматику, как сказать фразу.</div>`}</div>`
       : `<div class="c stack"><b>ИИ-помощник</b><div class="mut small">Чтобы отвечать прямо здесь, нужен ваш ключ ИИ (Gemini, Groq, Mistral и др., есть бесплатные). Без ключа вопрос можно задать в приложении Gemini: кнопка скопирует запрос и откроет Gemini.</div><a class="btn line" href="#/profile">Добавить ключ ИИ</a></div>`}
+    ${exSel ? `<div class="c stack"><b>📘 Урок ${exSel.m.lesson} · Unidad ${exSel.m.unit}, упражнение ${esc(exSel.ex.number)}</b><div class="mut small">${esc(exSel.ex.instruction_ru || '')}</div>
+      <div class="btns">${hasKey ? `<button class="btn" id="exSend">Получить ответы</button>` : ''}<button class="btn ${hasKey ? 'ghost' : ''}" id="exApp">Спросить Gemini ↗</button></div>
+      <div class="mut small">ИИ получит текст задания, слова и грамматику урока. Ответы могут содержать ошибки, сверяйтесь с учебником.</div></div>` : ''}
+    <details class="c"><summary><b>📘 Упражнение из учебника</b></summary>
+      <div class="stack" style="margin-top:10px">
+        <select class="inp" id="exL">${loadedLessons().map(l => `<option value="${l.id}" ${l.id === (exSel?.lid || lid) ? 'selected' : ''}>Урок ${l.lesson} · Unidad ${l.unit}</option>`).join('')}</select>
+        <select class="inp" id="exN"></select>
+        <button class="btn ghost" id="exGo">Выбрать</button>
+      </div></details>
     ${sugg.length ? `<div class="row start" style="flex-wrap:wrap;gap:6px">${sugg.map(s => `<button class="chip" data-sugg="${esc(s)}">${esc(s.slice(0, 48))}…</button>`).join('')}</div>` : ''}
     <textarea class="inp" id="q" placeholder="Напишите вопрос…" style="min-height:80px">${esc(pre)}</textarea>
     <div class="btns">
@@ -633,6 +675,14 @@ on(/^\/ai(?:\?q=(.*))?$/, q => {
     </div>
     ${hasKey && chatLog.length ? `<button class="btn line sm" id="clear" style="align-self:center">Очистить чат</button>` : ''}`;
   const ta = $('#q');
+  const fillEx = () => { const L2 = book.lessons.get(+$('#exL').value); $('#exN').innerHTML = (L2?.exercises || []).filter(aiExercise).map(x => `<option value="${esc(x.number)}">Упр. ${esc(x.number)}: ${esc((x.instruction_ru || '').slice(0, 60))}</option>`).join('') || '<option value="">Нет тестовых упражнений</option>'; };
+  fillEx(); $('#exL').onchange = fillEx;
+  $('#exGo').onclick = () => { if ($('#exN').value) location.hash = `#/ai?ex=${$('#exL').value}:${encodeURIComponent($('#exN').value)}`; };
+  if (exSel) {
+    const full = exercisePrompt(exSel), show = `Урок ${exSel.m.lesson}, упражнение ${exSel.ex.number}: дай ответы`;
+    $('#exApp').onclick = async () => { const r = await askGeminiApp(full); if (r === 'copied') toast('Запрос скопирован — вставьте его в Gemini', 4000); };
+    const es = $('#exSend'); if (es) es.onclick = () => sendText(full, show);
+  }
   view.querySelectorAll('[data-sugg]').forEach(b => b.onclick = () => { ta.value = b.dataset.sugg; ta.focus(); });
   $('#askApp').onclick = async () => {
     if (!ta.value.trim()) return toast('Сначала напишите вопрос');
@@ -642,19 +692,19 @@ on(/^\/ai(?:\?q=(.*))?$/, q => {
   const sh = $('#shareQ'); if (sh) sh.onclick = () => { if (!ta.value.trim()) return toast('Сначала напишите вопрос'); shareText(ta.value.trim()); };
   const cl = $('#clear'); if (cl) cl.onclick = () => { chatLog.length = 0; saveChat(); route(); };
   const send = $('#send');
-  if (send) send.onclick = async () => {
-    const text = ta.value.trim(); if (!text) return;
-    chatLog.push({ role: 'user', text }); saveChat(); ta.value = '';
+  async function sendText(text, show) {
+    chatLog.push({ role: 'user', text, show }); saveChat();
     const box = $('#chat'); box.querySelector('.empty-note')?.remove();
-    box.insertAdjacentHTML('beforeend', `<div class="bubble me">${esc(text)}</div><div class="bubble ai" id="wait">…</div>`);
-    view.scrollTop = view.scrollHeight; send.disabled = true;
+    box.insertAdjacentHTML('beforeend', `<div class="bubble me">${esc(show || text)}</div><div class="bubble ai" id="wait">…</div>`);
+    box.lastElementChild.scrollIntoView({ block: 'end' }); send.disabled = true;
     try {
       const ans = await chat(chatLog.slice(-12), aiContext());
       chatLog.push({ role: 'model', text: ans }); saveChat();
       $('#wait').outerHTML = `<div class="bubble ai">${esc(ans)}</div>`;
-    } catch (e) { chatLog.pop(); saveChat(); $('#wait').outerHTML = `<div class="bubble ai" style="color:var(--bad)">${esc(e.message)}</div>`; ta.value = text; }
-    send.disabled = false; view.scrollTop = view.scrollHeight;
-  };
+    } catch (e) { chatLog.pop(); saveChat(); $('#wait').outerHTML = `<div class="bubble ai" style="color:var(--bad)">${esc(e.message)}</div>`; if (!show) ta.value = text; }
+    send.disabled = false; box.lastElementChild.scrollIntoView({ block: 'start' });
+  }
+  if (send) send.onclick = () => { const text = ta.value.trim(); if (!text) return; ta.value = ''; sendText(text); };
   if (pre && hasKey) setTimeout(() => send.click(), 100);
 });
 
