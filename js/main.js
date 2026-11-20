@@ -701,14 +701,14 @@ function exerciseBlock({ L, ex, m }, part) {
 // sel: [{f, part}] — одно или несколько упражнений в одном запросе
 function exercisePrompt(sel, wish) {
   const lessons = [...new Map(sel.map(x => [x.f.m.id, x.f])).values()];
-  const gram = lessons.flatMap(f => f.L.grammar || []).map(g => `${g.id} ${g.title}${g.points?.length ? ': ' + g.points.join(' ') : ''}`).join('\n').slice(0, 4000);
-  const vocab = lessons.flatMap(f => (book.byLesson.get(f.m.id) || []).filter(hasRu)).slice(0, 120).map(i => `${i.es} — ${i.ru}`).join('; ');
+  const gram = lessons.flatMap(f => f.L.grammar || []).map(g => `${g.id} ${g.title}${g.points?.length ? ': ' + g.points.join(' ') : ''}`).join('\n').slice(0, 2500);
+  const vocab = lessons.flatMap(f => (book.byLesson.get(f.m.id) || []).filter(hasRu)).slice(0, 80).map(i => `${i.es} — ${i.ru}`).join('; ');
   const many = sel.length > 1;
   return `Помоги выполнить ${many ? 'упражнения' : 'упражнение'} из учебника «Español Actual. Начальный курс». Ниже полный текст${many ? ' каждого упражнения' : ''} из учебника.
 
 ${sel.map(x => exerciseBlock(x.f, x.part)).join('\n\n')}
 
-${wish ? `Просьба студента: «${wish}». Учти её (например, если просят только ответы — дай только ответы без объяснений).\n` : ''}${many ? 'Ответь по каждому упражнению отдельно, с заголовком «Упражнение N». ' : ''}Дай ответы по пунктам, с номерами, и к каждому короткое объяснение по-русски (какое правило работает). Используй слова и грамматику урока (ниже). Если для упражнения нужен текст, картинка или диалог из учебника, которых здесь нет, так и скажи и сделай то, что возможно.
+${wish ? `Просьба студента: «${wish}». Учти её (например, если просят только ответы — дай только ответы без объяснений).\n` : ''}${many ? 'Ответь по каждому упражнению отдельно, с заголовком «Упражнение N». ' : ''}Дай ответы по пунктам, с номерами, и к каждому одно короткое объяснение по-русски (какое правило работает), без длинных вступлений. Используй слова и грамматику урока (ниже). Если для упражнения нужен текст, картинка или диалог из учебника, которых здесь нет, так и скажи и сделай то, что возможно.
 
 Грамматика урока:
 ${gram}
@@ -838,7 +838,8 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
     toBottom(true); busy = true; chatPending = true; grow();
     try {
       // длинные запросы-упражнения из прошлого заменяем короткой подписью, чтобы запрос не разрастался
-      const hist = chatLog.filter(m => !m.err && !m.local).slice(-12).map((m, i, a) => i < a.length - 1 && m.show ? { ...m, text: m.show } : m);
+      // экономия: в истории только 8 последних сообщений, старые ответы ИИ обрезаны до 600 символов
+      const hist = chatLog.filter(m => !m.err && !m.local).slice(-8).map((m, i, a) => i === a.length - 1 ? m : m.show ? { ...m, text: m.show } : m.role !== 'user' && m.text.length > 600 ? { ...m, text: m.text.slice(0, 600) + '…' } : m);
       const ans = await chat(hist, aiContext());
       chatPending = false; $('#wait')?.remove(); push({ role: 'model', text: ans });
     } catch (e) {
