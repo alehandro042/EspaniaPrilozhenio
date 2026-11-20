@@ -171,8 +171,9 @@ async function callClaude(key, model, system, history, image) {
   return text;
 }
 
-export function chat(history, context) {
-  return call({ system: SYSTEM + (context ? '\n\nКонтекст: ' + context : ''), history });
+export function chat(history, context, image) {
+  if (image && !providerInfo().vision) throw new Error(providerInfo().name + ' не читает фото.');
+  return call({ system: SYSTEM + (context ? '\n\nКонтекст: ' + context : ''), history, image });
 }
 
 // Распознать испанские слова на фото. Возвращает [{es, ru}]

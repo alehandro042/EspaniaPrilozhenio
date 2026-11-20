@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.10';
+const VERSION = '1.11';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -28,7 +28,7 @@ function setTitle(t, back) {
 }
 function applyStyle() {
   document.documentElement.dataset.style = settings.style;
-  const col = { a: '#d6372b', b: '#2f5bd3', c: '#0f1a2e' }[settings.style];
+  const col = { a: '#d6372b', b: '#2f5bd3', c: '#121212' }[settings.style];
   $('meta[name=theme-color]').setAttribute('content', col);
 }
 function renderAva() {
@@ -615,7 +615,9 @@ const CHATS_KEY = 'espanola.chats', CUR_KEY = 'espanola.chat.cur';
 const lsGet = (k, d) => { try { return JSON.parse(localStorage.getItem(k) || 'null') ?? d; } catch { return d; } };
 let chats = lsGet(CHATS_KEY, null);
 if (!chats) { const old = lsGet('espanola.chat', []); chats = old.length ? [{ id: uid(), t: Date.now(), msgs: old }] : []; try { localStorage.removeItem('espanola.chat'); } catch {} }
-let chatCur = lsGet(CUR_KEY, null) || chats[0]?.id || uid();
+// при запуске продолжаем последний разговор (а не пустой «новый чат»)
+let chatCur = lsGet(CUR_KEY, null);
+if (!chats.some(c => c.id === chatCur)) chatCur = chats[0]?.id || uid();
 const chatLog = [...(chats.find(c => c.id === chatCur)?.msgs || [])];
 let chatPending = false, lastExQ = null; // ждём ответа ИИ (переживает перерисовку экрана)
 const chatTitle = c => { const u = c.msgs.find(m => m.role === 'user'); const t = (u?.show || u?.text || 'Новый чат').split('\n')[0]; return t.length > 60 ? t.slice(0, 58) + '…' : t; };
@@ -770,11 +772,12 @@ function showHistory() {
     else if (d.del) { chats = chats.filter(c => c.id !== d.del); if (d.del === chatCur) openChat(); writeChats(); render(); route(); }
   };
 }
+const ICON_CAM = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15V8a2 2 0 0 0-2-2h-3l-2-3h-4L8 6H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9"/><circle cx="12" cy="12" r="3.5"/><path d="M19 17v6M16 20h6"/></svg>';
 const ICON_NEW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>';
 
 const TYPING = `<div class="msg ai" id="wait"><div class="ai-ava">ES</div><div class="typing"><i></i><i></i><i></i></div></div>`;
 function msgHtml(m, k) {
-  if (m.role === 'user') return `<div class="msg me"><div class="bubble me">${esc(m.show || m.text)}</div></div>`;
+  if (m.role === 'user') return `<div class="msg me"><div class="me-col">${m.thumb ? `<img class="msg-img" src="${m.thumb}" alt="фото">` : ''}${m.show || m.text ? `<div class="bubble me">${esc(m.show || m.text)}</div>` : ''}</div></div>`;
   return `<div class="msg ai${m.err ? ' err' : ''}"><div class="ai-ava">ES</div><div class="ai-body"><div class="md">${m.err ? esc(m.text) : md(m.text)}</div>
     ${m.err || m.local ? '' : `<div class="msg-acts"><button class="icon-btn" data-copy="${k}" aria-label="Копировать">${ICON_COPY}<span>Копировать</span></button></div>`}</div></div>`;
 }
@@ -807,7 +810,9 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
     <div class="chat-scroll" id="chatScroll"><div class="chat" id="chat">${chatLog.length ? chatLog.map(msgHtml).join('') : emptyHtml()}${chatPending ? TYPING : ''}</div></div>
     <div class="composer">
       ${hasKey ? '' : `<div class="mut small" style="padding:0 4px 6px">Нет ключа ИИ: вопрос откроется в приложении Gemini. <a href="#/profile">Добавить ключ</a></div>`}
+      <div class="attach-prev" id="attPrev" hidden></div>
       <div class="composer-box">
+        ${providerInfo().vision ? `<label class="attach-btn" aria-label="Прикрепить фото">${ICON_CAM}<input type="file" id="attach" accept="image/*" hidden></label>` : ''}
         <textarea id="q" rows="1" placeholder="Спросите что-нибудь…" enterkeyhint="send">${esc(pre)}</textarea>
         <button class="send-btn" id="send" aria-label="Отправить" disabled>${ICON_SEND}</button>
       </div>
@@ -815,7 +820,15 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
     </div>`;
   const ta = $('#q'), send = $('#send'), box = $('#chat'), scroller = $('#chatScroll');
   const toBottom = (smooth) => scroller.scrollTo({ top: scroller.scrollHeight, behavior: smooth ? 'smooth' : 'auto' });
-  const grow = () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 140) + 'px'; send.disabled = !ta.value.trim() || busy; };
+  let att = null; // прикреплённое фото {b64, mime, thumb}
+  const grow = () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 140) + 'px'; send.disabled = (!ta.value.trim() && !att) || busy; };
+  const showAtt = () => { const pv = $('#attPrev'); pv.hidden = !att; pv.innerHTML = att ? `<img src="${att.thumb}" alt=""><span class="mut small">Фото прикреплено</span><button class="icon-btn" id="attDel" aria-label="Убрать фото">✕</button>` : ''; if (att) $('#attDel').onclick = () => { att = null; showAtt(); grow(); }; };
+  const attIn = $('#attach');
+  if (attIn) attIn.onchange = async () => {
+    const f = attIn.files[0]; attIn.value = ''; if (!f) return;
+    try { const big = await shrink(f, 1400), small = await shrink(f, 220); att = { b64: big.b64, mime: big.mime, thumb: `data:${small.mime};base64,${small.b64}` }; showAtt(); grow(); ta.focus(); }
+    catch { toast('Не удалось открыть фото'); }
+  };
   let busy = chatPending;
   ta.addEventListener('input', grow); grow(); toBottom();
   ta.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !matchMedia('(pointer:coarse)').matches) { e.preventDefault(); send.click(); } });
@@ -831,16 +844,16 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
   const ensureStarted = () => { if (box.querySelector('.chat-empty')) box.innerHTML = ''; };
   const push = m => { chatLog.push(m); saveChat(); ensureStarted(); box.insertAdjacentHTML('beforeend', msgHtml(m, chatLog.length - 1)); bindMsgs(); };
   function localReply(q, a) { push({ role: 'user', text: q }); push({ role: 'model', text: a, local: true }); toBottom(true); }
-  async function sendText(text, show) {
+  async function sendText(text, show, image) {
     if (!hasKey) { const r = await askGeminiApp(text + (aiContext() ? '\n(' + aiContext() + ')' : '')); if (r === 'copied') toast('Запрос скопирован — вставьте его в Gemini', 4000); return; }
-    push({ role: 'user', text, show });
+    push({ role: 'user', text, show, ...(image ? { thumb: image.thumb } : {}) });
     box.insertAdjacentHTML('beforeend', TYPING);
     toBottom(true); busy = true; chatPending = true; grow();
     try {
       // длинные запросы-упражнения из прошлого заменяем короткой подписью, чтобы запрос не разрастался
       // экономия: в истории только 8 последних сообщений, старые ответы ИИ обрезаны до 600 символов
-      const hist = chatLog.filter(m => !m.err && !m.local).slice(-8).map((m, i, a) => i === a.length - 1 ? m : m.show ? { ...m, text: m.show } : m.role !== 'user' && m.text.length > 600 ? { ...m, text: m.text.slice(0, 600) + '…' } : m);
-      const ans = await chat(hist, aiContext());
+      const hist = chatLog.filter(m => !m.err && !m.local).slice(-8).map((m, i, a) => i === a.length - 1 ? m : m.thumb ? { ...m, text: (m.show || 'Вопрос') + ' [к сообщению было приложено фото]' } : m.show ? { ...m, text: m.show } : m.role !== 'user' && m.text.length > 600 ? { ...m, text: m.text.slice(0, 600) + '…' } : m);
+      const ans = await chat(hist, aiContext(), image);
       chatPending = false; $('#wait')?.remove(); push({ role: 'model', text: ans });
     } catch (e) {
       chatPending = false; $('#wait')?.remove(); push({ role: 'model', text: e.message, err: true });
@@ -858,7 +871,12 @@ on(/^\/ai(?:\?(q|ex)=(.*))?$/, (kind, val) => {
   }
   const sendExercise = (f, label, part) => sendExercises([{ f, part }], label);
   send.onclick = () => {
-    const text = ta.value.trim(); if (!text || busy) return; ta.value = ''; grow();
+    const text = ta.value.trim(); if ((!text && !att) || busy) return; ta.value = '';
+    if (att) {
+      const img = att; att = null; showAtt(); grow();
+      return sendText(text || 'Что на фото? Если это упражнение из учебника — выполни его: ответы по пунктам с короткими объяснениями.', text || '📷 Что на фото?', img);
+    }
+    grow();
     const q = parseExerciseQuery(text);
     if (q?.noPage) { if (lastExQ) Object.assign(q, lastExQ); else return localReply(text, 'Напишите ещё и страницу, например: «стр. 48 упр. 19».'); }
     if (q) {
@@ -927,7 +945,7 @@ on(/^\/profile$/, () => {
       <div class="styles">
         <button data-style="a" class="${settings.style === 'a' ? 'on' : ''}"><span class="sw" style="background:#d6372b"></span>Сиеста</button>
         <button data-style="b" class="${settings.style === 'b' ? 'on' : ''}"><span class="sw" style="background:#2f5bd3"></span>Тетрадь</button>
-        <button data-style="c" class="${settings.style === 'c' ? 'on' : ''}"><span class="sw" style="background:#0f1a2e;border:2px solid #ffb547"></span>Азулежу</button>
+        <button data-style="c" class="${settings.style === 'c' ? 'on' : ''}"><span class="sw" style="background:#121212;border:2px solid #8ab4f8"></span>Тёмная</button>
       </div>
     </div>
     <div class="c stack">

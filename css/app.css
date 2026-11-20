@@ -1,4 +1,4 @@
-/* Еспаньола — три стиля: a «Сиеста», b «Тетрадь», c «Азулежу» */
+/* Еспаньола — три стиля: a «Сиеста», b «Тетрадь», c «Тёмная» */
 :root{
   --display:"Unbounded","Golos Text",system-ui,sans-serif;
   --body:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -6,8 +6,7 @@
 }
 html[data-style="a"]{--bg:#fffaf0;--fg:#2a1d14;--mut:#7d6a5a;--card:#ffffff;--line:#f0e2c8;--acc:#d6372b;--acc2:#f5b301;--soft:#fff0c2;--on-acc:#fff;--head:var(--display);--r:18px;color-scheme:light}
 html[data-style="b"]{--bg:#f6f8fc;--fg:#18223a;--mut:#66708a;--card:#ffffff;--line:#e1e6f0;--acc:#2f5bd3;--acc2:#16a37f;--soft:#e8eefc;--on-acc:#fff;--head:var(--body);--r:12px;color-scheme:light}
-html[data-style="c"]{--bg:#0f1a2e;--fg:#eef2fa;--mut:#9aa8c4;--card:#18263f;--line:#26375a;--acc:#ffb547;--acc2:#5ec2e6;--soft:#1f3150;--on-acc:#1a1206;--head:var(--display);--r:16px;--ok:#3ccf9e;--bad:#ff6b5e;color-scheme:dark}
-html[data-style="c"] body{background-image:radial-gradient(circle at 10px 10px,rgba(94,194,230,.06) 3px,transparent 4px);background-size:20px 20px}
+html[data-style="c"]{--bg:#121212;--fg:#e8eaed;--mut:#9aa0a6;--card:#1e1f20;--line:#2e3033;--acc:#8ab4f8;--acc2:#81c995;--soft:#2a2b2e;--on-acc:#0b1a33;--head:var(--body);--r:14px;--ok:#81c995;--bad:#f28b82;color-scheme:dark}
 
 *{box-sizing:border-box}
 html,body{margin:0;height:100%}
@@ -62,7 +61,7 @@ h3{font-size:15px;margin:0}
 button.chip{cursor:pointer}
 .chip.on{background:var(--acc);color:var(--on-acc)}
 .chip.lvl0{background:#dff5ec;color:#0c6b52}.chip.lvl1{background:#fff1cc;color:#8a5a00}.chip.lvl2{background:#fde2df;color:#a3261c}
-html[data-style="c"] .chip.lvl0{background:#173f3a;color:#7fe3c1}html[data-style="c"] .chip.lvl1{background:#3d3218;color:#ffd47a}html[data-style="c"] .chip.lvl2{background:#47201f;color:#ff9c92}
+html[data-style="c"] .chip.lvl0{background:#1e3a2b;color:#81c995}html[data-style="c"] .chip.lvl1{background:#3a3220;color:#fdd663}html[data-style="c"] .chip.lvl2{background:#3c2321;color:#f28b82}
 
 .lesson{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;text-decoration:none;color:inherit}
 .num{width:40px;height:40px;border-radius:10px;background:var(--soft);display:grid;place-items:center;font-weight:700;font-family:var(--head);color:var(--acc)}
@@ -212,3 +211,15 @@ main.chatmode{padding:0;gap:0;overflow:hidden}
 .hist-open small{color:var(--mut);font-size:12px}
 @keyframes fadeIn{from{opacity:0}}
 @keyframes sheetUp{from{transform:translateY(40px);opacity:.5}}
+
+.me-col{display:grid;justify-items:end;gap:6px;max-width:84%}
+.me-col .bubble.me{max-width:100%}
+.msg-img{max-width:180px;max-height:220px;border-radius:14px;border:1px solid var(--line);object-fit:cover}
+.attach-btn{flex:none;width:38px;height:38px;margin-left:-10px;border-radius:50%;display:grid;place-items:center;color:var(--mut);cursor:pointer}
+.attach-btn:active{background:var(--soft)}
+.attach-btn svg{width:22px;height:22px}
+.attach-prev{display:flex;align-items:center;gap:8px;padding:0 4px 8px}
+.attach-prev img{width:44px;height:44px;border-radius:10px;object-fit:cover;border:1px solid var(--line)}
+.attach-prev span{flex:1}
+html[data-style="c"] .hero{background:#1c2b45;color:var(--fg)}
+html[data-style="c"] .hero .btn{background:var(--acc);color:var(--on-acc)}
