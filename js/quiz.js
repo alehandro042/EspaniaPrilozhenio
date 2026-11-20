@@ -3,6 +3,7 @@ import { state, save } from './store.js';
 import { book, hasRu, imgFor, conjugations, articleItems, sentences, withArt } from './data.js';
 import { similarity } from './speech.js';
 import SENT_RU from './sentences-ru.js';
+import { PRON_SECTIONS, PRON_ITEMS } from './pronouns.js';
 
 export const LEVELS = ['Лёгкий', 'Средний', 'Сложный'];
 export const LEVEL_HINT = [
@@ -225,8 +226,27 @@ export const TOPICS = {
   colors: { title: 'Цвета', icon: '🎨', hint: 'rojo, azul, verde…' },
   days: { title: 'Дни недели', icon: '📅', hint: 'lunes … domingo' },
   time: { title: 'Время', icon: '🕒', hint: '¿Qué hora es? Son las…' },
-  preps: { title: 'Предлоги', icon: '🧭', hint: 'a, en, de, con, para, por, sin…' }
+  preps: { title: 'Предлоги', icon: '🧭', hint: 'a, en, de, con, para, por, sin…' },
+  prons: { title: 'Местоимения', icon: '👥', hint: 'me, te, lo, la, le, se lo…' }
 };
+export const pronSections = () => PRON_SECTIONS.map(x => ({ ref: x.ref, title: x.title }));
+function pronQuestions(n, refs) {
+  const R = refs?.length ? new Set(refs) : null;
+  const qs = [];
+  for (const it of shuffle(PRON_ITEMS.filter(x => !R || R.has(x.ref)))) {
+    if (qs.length >= n) break;
+    const sec = PRON_SECTIONS.find(x => x.ref === it.ref);
+    const m = it.es.match(new RegExp(`(^|[\\s¿¡])(${it.g})(?=[\\s,.?!]|$)`));
+    if (!m) continue;
+    const idx = m.index + m[1].length, cap = /^[A-ZÁÉÍÓÚÑ]/.test(it.g);
+    const fix = o => cap ? o[0].toUpperCase() + o.slice(1) : o;
+    const ans = it.g, low = ans.toLowerCase();
+    const opts = [ans, ...shuffle(sec.pool.filter(o => o !== low)).slice(0, 3).map(fix)];
+    qs.push({ type: 'choose_topic', kind: 'Вставьте местоимение', prompt: it.es.slice(0, idx) + '…' + it.es.slice(idx + ans.length), sub: it.ru || SENT_RU[it.es] || '',
+      options: shuffle(opts).map(o => ({ label: o, correct: o === ans })), correct: it.es, answerSpeak: it.es, explain: sec.rule });
+  }
+  return qs;
+}
 const COLORS = ['rojo', 'azul', 'verde', 'amarillo', 'blanco', 'negro', 'gris', 'marrón', 'claro', 'oscuro'];
 const DAYS = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
 const uniqBy = (a, f) => { const s = new Set(); return a.filter(x => { const k = f(x); if (s.has(k)) return false; s.add(k); return true; }); };
@@ -433,6 +453,7 @@ function prepQuestions(n, refs) {
 }
 export function topicTest(topic, n = 12, opts) {
   if (topic === 'preps') return prepQuestions(n, opts);
+  if (topic === 'prons') return pronQuestions(n, opts);
   if (topic === 'numbers') return numberQuestions(n);
   if (topic === 'time') return timeQuestions(n);
   if (topic === 'colors') return wordTopicQuestions(topicItems(COLORS), n);

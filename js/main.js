@@ -2,7 +2,7 @@ import { state, settings, save, saveSettings, onChange, aiKeys, streakDays, uid,
 import { book, loadBook, hasRu, imgFor, KIND_RU, kindLabel, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences, withArt } from './data.js';
 import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearned, mistakes } from './srs.js';
 import { speak, resetSlow, listen, canListen, judge, esVoices } from './speech.js';
-import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions, buildWriteTest, TOPICS, topicTest, prepSections, genderQuestions, genderNouns } from './quiz.js';
+import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions, buildWriteTest, TOPICS, topicTest, prepSections, pronSections, genderQuestions, genderNouns } from './quiz.js';
 import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl, PROVIDERS, providerList, onlyShared, provider, providerInfo, hasKey as aiHasKey } from './ai.js';
 import * as drive from './sync.js';
 import * as cloud from './cloud.js';
@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.29';
+const VERSION = '1.30';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -195,20 +195,22 @@ on(/^\/learned$/, () => {
 });
 
 // ---------- Предлоги: выбор параграфов ----------
-on(/^\/preps$/, () => {
-  setTitle('Предлоги', '#/review');
-  const secs = prepSections();
-  const sel = new Set(settings.prepSel?.length ? settings.prepSel : secs.map(x => x.ref));
+on(/^\/(preps|prons)$/, kind => {
+  const P = kind === 'preps';
+  const key = P ? 'prepSel' : 'pronSel';
+  setTitle(P ? 'Предлоги' : 'Местоимения', '#/review');
+  const secs = P ? prepSections() : pronSections();
+  const sel = new Set(settings[key]?.length ? settings[key] : secs.map(x => x.ref));
   view.innerHTML = `<div class="sec-title">Из каких параграфов брать</div>
     <div class="row" style="gap:8px"><button class="chip" data-p="all">Все</button><button class="chip" data-p="none">Снять все</button></div>
-    <div class="c">${secs.map(x => { const m = lessonMeta(x.lessonId); return `<label class="check"><input type="checkbox" value="${esc(x.ref)}" ${sel.has(x.ref) ? 'checked' : ''}><span class="grow"><b>${esc(x.ref)}</b> ${esc(x.title.replace(/^(Простые|Сложные) предлоги:?\s*/, (a) => a))}<div class="mut small">Урок ${m.lesson} · Unidad ${m.unit}</div></span></label>`; }).join('')}</div>
+    <div class="c">${secs.map(x => { const m = x.lessonId ? lessonMeta(x.lessonId) : null; return `<label class="check"><input type="checkbox" value="${esc(x.ref)}" ${sel.has(x.ref) ? 'checked' : ''}><span class="grow"><b>${esc(x.ref)}</b> ${esc(x.title)}${m ? `<div class="mut small">Урок ${m.lesson} · Unidad ${m.unit}</div>` : ''}</span></label>`; }).join('')}</div>
     <div class="btns"><button class="btn ghost" id="pfast">⚡ Быстро</button><button class="btn" id="pgo">Начать</button></div>`;
   const boxes = () => [...view.querySelectorAll('input[type=checkbox]')];
   const chosen = () => boxes().filter(b => b.checked).map(b => b.value);
-  const store = () => { settings.prepSel = chosen(); saveSettings(); };
+  const store = () => { settings[key] = chosen(); saveSettings(); };
   boxes().forEach(b => b.onchange = store);
   view.querySelectorAll('[data-p]').forEach(c => c.onclick = () => { boxes().forEach(b => b.checked = c.dataset.p === 'all'); store(); });
-  const go = fast => { if (!chosen().length) return toast('Отметьте хотя бы один параграф'); store(); location.hash = '#/test/topic-preps' + (fast ? '?fast' : ''); };
+  const go = fast => { if (!chosen().length) return toast('Отметьте хотя бы один параграф'); store(); location.hash = `#/test/topic-${kind}` + (fast ? '?fast' : ''); };
   $('#pgo').onclick = () => go(false); $('#pfast').onclick = () => go(true);
 });
 
@@ -321,7 +323,7 @@ on(/^\/review$/, () => {
       ${due.length ? `<a class="btn" href="#/cards/due">Начать</a>` : `<div style="font-size:14px">${total ? 'Всё повторено. Новые карточки появятся по расписанию.' : 'Карточек пока нет. Откройте урок и нажмите «Все слова в карточки» или ＋ у слова.'}</div>`}
     </div>
     <div class="sec-title">Темы</div>
-    <div class="topic-grid">${Object.entries(TOPICS).map(([k, t]) => `<a class="c topic" href="${k === 'preps' ? '#/preps' : '#/test/topic-' + k}"><span>${t.icon}</span><b>${t.title}</b><small class="mut">${t.hint}</small></a>`).join('')}</div>
+    <div class="topic-grid">${Object.entries(TOPICS).map(([k, t]) => `<a class="c topic" href="${k === 'preps' || k === 'prons' ? '#/' + k : '#/test/topic-' + k}"><span>${t.icon}</span><b>${t.title}</b><small class="mut">${t.hint}</small></a>`).join('')}</div>
     <a class="c row" href="#/train" style="text-decoration:none;color:inherit"><div class="grow"><b>Тренировка по нескольким урокам</b><div class="mut">Отметьте уроки и выберите карточки или тест</div></div><span>›</span></a>
     ${mistakes().length ? `<a class="c row" href="#/test/mistakes" style="text-decoration:none;color:inherit"><div class="grow"><b>Мои ошибки</b><div class="mut">${mistakes().length} ${plural(mistakes().length, 'слово', 'слова', 'слов')}, в которых были ошибки</div></div><span>›</span></a>` : ''}
     <div class="c mut small">Как работает повторение: «Знаю» откладывает слово на несколько дней, и каждый раз интервал растёт. «Трудно» — повторим скоро. «Не помню» — слово вернётся через пару минут, а ошибочные слова показываются чаще.</div>`;
@@ -457,7 +459,7 @@ on(/^\/test\/(.+)$/, spec => {
   let qs;
   if (set.kind === 'gram') { const lid = set.lessons[0]; qs = grammarQuestions(lid, levelOf(lid), book.byLesson.get(lid) || []).sort(() => Math.random() - .5).slice(0, 10); }
   else if (set.kind === 'write') { qs = buildWriteTest(set.lessons || [], 10); }
-  else if (set.kind === 'topic') { qs = topicTest(set.topic, 12, set.topic === 'preps' ? settings.prepSel : undefined); }
+  else if (set.kind === 'topic') { qs = topicTest(set.topic, 12, set.topic === 'preps' ? settings.prepSel : set.topic === 'prons' ? settings.pronSel : undefined); }
   else if (set.kind === 'gender') { qs = genderQuestions(set.lessons || [], 12); }
   else if (set.kind === 'sent') { qs = sentenceQuestions(set.lessons[0], levelOf(set.lessons[0])).sort(() => Math.random() - .5).slice(0, 8); }
   else if (spec === 'mistakes' || spec === 'due') qs = buildTest(set.lessons || [], Math.min(12, set.items.length), { items: set.items, vocabOnly: true });
