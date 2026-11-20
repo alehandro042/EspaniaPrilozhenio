@@ -1,0 +1,1182 @@
+{
+ "id": 13,
+ "unit": 3,
+ "lesson": 1,
+ "title": "Unidad 3. En casa, en la oficina y en el hotel — Lección 1",
+ "pages": [
+  77,
+  78,
+  79,
+  80,
+  81,
+  82,
+  83
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 82–83; слова комнаты — Para conocer más, с. 80",
+  "verbs": [
+   {
+    "es": "alcanzar",
+    "ru": "достигать чего-л.",
+    "page": 82
+   },
+   {
+    "es": "aprovechar",
+    "ru": "воспользоваться",
+    "page": 82
+   },
+   {
+    "es": "colgar (Ib)",
+    "ru": "висеть, вешать",
+    "page": 82
+   },
+   {
+    "es": "convenir",
+    "ru": "подходить",
+    "page": 82
+   },
+   {
+    "es": "dar a",
+    "ru": "выходить (об окнах)",
+    "page": 82
+   },
+   {
+    "es": "dormir (IV)",
+    "ru": "спать",
+    "note": "§73: duermo, duermes, duerme, dormimos, dormís, duermen",
+    "page": 82
+   },
+   {
+    "es": "dormir como un lirón",
+    "ru": "спать как сурок",
+    "note": "§73",
+    "page": 82
+   },
+   {
+    "es": "dormir plácidamente",
+    "ru": "безмятежно спать",
+    "note": "§73",
+    "page": 82
+   },
+   {
+    "es": "encontrarse (Ib)",
+    "ru": "находиться",
+    "note": "§71",
+    "page": 82
+   },
+   {
+    "es": "iluminar",
+    "ru": "освещать",
+    "page": 82
+   },
+   {
+    "es": "morir(se) (IV)",
+    "ru": "умирать",
+    "note": "§73; возвратная форма — преимущественно в переносном значении",
+    "page": 83
+   },
+   {
+    "es": "morirse de risa",
+    "ru": "помирать со смеху",
+    "note": "§73",
+    "page": 83
+   },
+   {
+    "es": "morirse de hambre",
+    "ru": "умирать от голода (очень хотеть есть)",
+    "note": "§73",
+    "page": 83
+   },
+   {
+    "es": "reflejar",
+    "ru": "отражать",
+    "page": 83
+   },
+   {
+    "es": "situarse, estar situado",
+    "ru": "находиться, располагаться",
+    "note": "§71",
+    "page": 83
+   }
+  ],
+  "other": [
+   {
+    "es": "acogedor",
+    "ru": "уютный",
+    "page": 82
+   },
+   {
+    "es": "además",
+    "ru": "кроме того",
+    "page": 82
+   },
+   {
+    "es": "alfombra",
+    "gender": "f",
+    "ru": "ковер напольный",
+    "page": 82
+   },
+   {
+    "es": "apartamento",
+    "gender": "m",
+    "ru": "квартира",
+    "page": 82
+   },
+   {
+    "es": "aplique",
+    "gender": "m",
+    "ru": "бра",
+    "page": 82
+   },
+   {
+    "es": "armario",
+    "gender": "m",
+    "ru": "шкаф",
+    "page": 82
+   },
+   {
+    "es": "armario ropero",
+    "gender": "m",
+    "ru": "платяной шкаф",
+    "page": 82
+   },
+   {
+    "es": "bosque",
+    "gender": "m",
+    "ru": "лес",
+    "page": 82
+   },
+   {
+    "es": "brazo",
+    "gender": "m",
+    "ru": "рука, зд. плафон, рожок",
+    "page": 82
+   },
+   {
+    "es": "butaca",
+    "gender": "f",
+    "ru": "кресло",
+    "page": 82
+   },
+   {
+    "es": "cajón",
+    "gender": "m",
+    "ru": "ящик",
+    "page": 82
+   },
+   {
+    "es": "calendario",
+    "gender": "m",
+    "ru": "календарь",
+    "page": 82
+   },
+   {
+    "es": "cálido",
+    "ru": "теплый, горячий",
+    "page": 82
+   },
+   {
+    "es": "cama",
+    "gender": "f",
+    "ru": "кровать",
+    "page": 82
+   },
+   {
+    "es": "cama plegable",
+    "gender": "f",
+    "ru": "раскладушка",
+    "page": 82
+   },
+   {
+    "es": "cocina",
+    "gender": "f",
+    "ru": "кухня",
+    "page": 82
+   },
+   {
+    "es": "cómodo",
+    "ru": "удобный",
+    "page": 82
+   },
+   {
+    "es": "cortinas",
+    "gender": "f pl",
+    "ru": "шторы, занавески",
+    "page": 82
+   },
+   {
+    "es": "costumbre",
+    "gender": "f",
+    "ru": "привычка",
+    "page": 82
+   },
+   {
+    "es": "de costumbre",
+    "ru": "обычно",
+    "page": 82
+   },
+   {
+    "es": "cuadro",
+    "gender": "m",
+    "ru": "картина",
+    "page": 82
+   },
+   {
+    "es": "decanato",
+    "gender": "m",
+    "ru": "деканат",
+    "page": 82
+   },
+   {
+    "es": "despacho",
+    "gender": "m",
+    "ru": "кабинет",
+    "page": 82
+   },
+   {
+    "es": "despertador",
+    "gender": "m",
+    "ru": "будильник",
+    "page": 82
+   },
+   {
+    "es": "dibujo",
+    "gender": "m",
+    "ru": "рисунок",
+    "page": 82
+   },
+   {
+    "es": "dibujo a flores",
+    "gender": "m",
+    "ru": "цветочный рисунок",
+    "page": 82
+   },
+   {
+    "es": "disponible",
+    "ru": "имеющийся в наличии",
+    "page": 82
+   },
+   {
+    "es": "diván, sofá",
+    "gender": "m",
+    "ru": "диван",
+    "page": 82
+   },
+   {
+    "es": "espacio",
+    "gender": "m",
+    "ru": "пространство",
+    "page": 82
+   },
+   {
+    "es": "espejo",
+    "gender": "m",
+    "ru": "зеркало",
+    "page": 82
+   },
+   {
+    "es": "espeso",
+    "ru": "зд. пушистый",
+    "page": 82
+   },
+   {
+    "es": "estantería",
+    "gender": "f",
+    "ru": "стеллаж",
+    "page": 82
+   },
+   {
+    "es": "falta",
+    "gender": "f",
+    "ru": "зд. нехватка",
+    "page": 82
+   },
+   {
+    "es": "florero",
+    "gender": "m",
+    "ru": "ваза",
+    "page": 82
+   },
+   {
+    "es": "fotocopiadora",
+    "gender": "f",
+    "ru": "ксерокс",
+    "page": 82
+   },
+   {
+    "es": "fotografía",
+    "gender": "f",
+    "ru": "фотография",
+    "page": 82
+   },
+   {
+    "es": "guardarropa",
+    "gender": "m",
+    "ru": "гардероб",
+    "page": 82
+   },
+   {
+    "es": "hogar",
+    "gender": "m",
+    "ru": "дом, очаг",
+    "page": 82
+   },
+   {
+    "es": "impresora",
+    "gender": "f",
+    "ru": "принтер",
+    "page": 82
+   },
+   {
+    "es": "ingenioso",
+    "ru": "находчивый",
+    "page": 82
+   },
+   {
+    "es": "lámpara",
+    "gender": "f",
+    "ru": "лампа",
+    "page": 82
+   },
+   {
+    "es": "librería",
+    "gender": "f",
+    "ru": "книжный шкаф",
+    "page": 82
+   },
+   {
+    "es": "madera",
+    "gender": "f",
+    "ru": "дерево",
+    "page": 82
+   },
+   {
+    "es": "mesa escritorio",
+    "gender": "f",
+    "ru": "письменный стол",
+    "page": 82
+   },
+   {
+    "es": "mesita",
+    "gender": "f",
+    "ru": "столик",
+    "page": 83
+   },
+   {
+    "es": "monumento",
+    "gender": "m",
+    "ru": "памятник",
+    "page": 83
+   },
+   {
+    "es": "norte",
+    "gender": "m",
+    "ru": "север",
+    "page": 83
+   },
+   {
+    "es": "oriental",
+    "ru": "восточный",
+    "page": 83
+   },
+   {
+    "es": "papel",
+    "gender": "m",
+    "ru": "бумага",
+    "page": 83
+   },
+   {
+    "es": "parque",
+    "gender": "m",
+    "ru": "парк",
+    "page": 83
+   },
+   {
+    "es": "pasillo",
+    "gender": "m",
+    "ru": "коридор",
+    "page": 83
+   },
+   {
+    "es": "patio",
+    "gender": "m",
+    "ru": "двор",
+    "page": 83
+   },
+   {
+    "es": "pegado",
+    "ru": "стоящий вплотную к",
+    "page": 83
+   },
+   {
+    "es": "península",
+    "gender": "f",
+    "ru": "полуостров",
+    "page": 83
+   },
+   {
+    "es": "pequeño",
+    "ru": "маленький",
+    "page": 83
+   },
+   {
+    "es": "piso",
+    "gender": "m",
+    "ru": "этаж, квартира",
+    "page": 83
+   },
+   {
+    "es": "planta baja",
+    "gender": "f",
+    "ru": "цокольный (первый) этаж",
+    "page": 83
+   },
+   {
+    "es": "puntual",
+    "ru": "разовый, случайный",
+    "page": 83
+   },
+   {
+    "es": "rectangular",
+    "ru": "прямоугольный",
+    "page": 83
+   },
+   {
+    "es": "rectorado",
+    "gender": "m",
+    "ru": "ректорат",
+    "page": 83
+   },
+   {
+    "es": "redondo",
+    "ru": "круглый",
+    "page": 83
+   },
+   {
+    "es": "reloj",
+    "gender": "m",
+    "ru": "часы",
+    "page": 83
+   },
+   {
+    "es": "rincón",
+    "gender": "m",
+    "ru": "угол (внутренний)",
+    "page": 83
+   },
+   {
+    "es": "río",
+    "gender": "m",
+    "ru": "река",
+    "page": 83
+   },
+   {
+    "es": "sala de conferencias",
+    "ru": "конференц-зал",
+    "page": 83
+   },
+   {
+    "es": "silla",
+    "gender": "f",
+    "ru": "стул",
+    "page": 83
+   },
+   {
+    "es": "sillón",
+    "gender": "m",
+    "ru": "кресло",
+    "page": 83
+   },
+   {
+    "es": "sol",
+    "gender": "m",
+    "ru": "солнце",
+    "page": 83
+   },
+   {
+    "es": "solución",
+    "gender": "f",
+    "ru": "решение",
+    "page": 83
+   },
+   {
+    "es": "suelo",
+    "gender": "m",
+    "ru": "пол",
+    "page": 83
+   },
+   {
+    "es": "tamaño",
+    "gender": "m",
+    "ru": "размер",
+    "page": 83
+   },
+   {
+    "es": "de medio tamaño",
+    "ru": "среднего размера",
+    "page": 83
+   },
+   {
+    "es": "techo",
+    "gender": "m",
+    "ru": "потолок",
+    "page": 83
+   }
+  ],
+  "ordinals": [
+   {
+    "n": 1,
+    "es": "primero",
+    "page": 77
+   },
+   {
+    "n": 2,
+    "es": "segundo",
+    "page": 77
+   },
+   {
+    "n": 3,
+    "es": "tercero",
+    "page": 77
+   },
+   {
+    "n": 4,
+    "es": "cuarto",
+    "page": 77
+   },
+   {
+    "n": 5,
+    "es": "quinto",
+    "page": 77
+   },
+   {
+    "n": 6,
+    "es": "sexto",
+    "page": 77
+   },
+   {
+    "n": 7,
+    "es": "séptimo",
+    "page": 77
+   },
+   {
+    "n": 8,
+    "es": "octavo",
+    "page": 77
+   },
+   {
+    "n": 9,
+    "es": "noveno",
+    "page": 77
+   },
+   {
+    "n": 10,
+    "es": "décimo",
+    "page": 77
+   },
+   {
+    "n": 11,
+    "es": "undécimo / décimoprimero",
+    "page": 77
+   },
+   {
+    "n": 12,
+    "es": "duodécimo / décimosegundo",
+    "page": 77
+   },
+   {
+    "n": 13,
+    "es": "decimotercero",
+    "page": 77
+   },
+   {
+    "n": 14,
+    "es": "decimocuarto",
+    "page": 77
+   },
+   {
+    "n": 15,
+    "es": "decimoquinto",
+    "page": 77
+   },
+   {
+    "n": 16,
+    "es": "decimosexto",
+    "page": 77
+   },
+   {
+    "n": 17,
+    "es": "decimoséptimo",
+    "page": 77
+   },
+   {
+    "n": 18,
+    "es": "decimooctavo",
+    "page": 77
+   },
+   {
+    "n": 19,
+    "es": "decimonoveno",
+    "page": 77
+   },
+   {
+    "n": 20,
+    "es": "vigésimo",
+    "page": 77
+   },
+   {
+    "n": 21,
+    "es": "vigésimo primero",
+    "page": 77
+   },
+   {
+    "n": 22,
+    "es": "vigésimo segundo",
+    "page": 77
+   },
+   {
+    "n": 30,
+    "es": "trigésimo",
+    "page": 77
+   },
+   {
+    "n": 40,
+    "es": "cuadragésimo",
+    "page": 77
+   },
+   {
+    "n": 50,
+    "es": "quincuagésimo",
+    "page": 77
+   },
+   {
+    "n": 60,
+    "es": "sexagésimo",
+    "page": 77
+   },
+   {
+    "n": 70,
+    "es": "septuagésimo",
+    "page": 77
+   },
+   {
+    "n": 80,
+    "es": "octogésimo",
+    "page": 77
+   },
+   {
+    "n": 90,
+    "es": "nonagésimo",
+    "page": 77
+   },
+   {
+    "n": 100,
+    "es": "centésimo",
+    "page": 77
+   }
+  ],
+  "room_words": {
+   "page": 80,
+   "title": "En mi cuarto (Para conocer más, упр. 11)",
+   "words": [
+    "armario",
+    "cama",
+    "diván/sofá",
+    "mesa",
+    "silla",
+    "butaca/sillón",
+    "mesita",
+    "estantería",
+    "puerta",
+    "ventana",
+    "cortinas",
+    "suelo",
+    "alfombra",
+    "techo",
+    "lámpara",
+    "espejo",
+    "televisor",
+    "ordenador",
+    "libros",
+    "fotografía",
+    "calendario",
+    "reloj",
+    "cuadro"
+   ],
+   "adjectives": [
+    "alto",
+    "bajo",
+    "largo",
+    "corto",
+    "estrecho",
+    "ancho",
+    "redondo",
+    "cuadrado",
+    "triangular",
+    "grande",
+    "pequeño",
+    "bonito",
+    "cómodo"
+   ]
+  }
+ },
+ "grammar": [
+  {
+   "id": "§69",
+   "title": "Numerales ordinales. Порядковые числительные",
+   "page": 77,
+   "table": {
+    "1–10": [
+     "primero",
+     "segundo",
+     "tercero",
+     "cuarto",
+     "quinto",
+     "sexto",
+     "séptimo",
+     "octavo",
+     "noveno",
+     "décimo"
+    ],
+    "11–22": [
+     "undécimo / décimoprimero",
+     "duodécimo / décimosegundo",
+     "decimotercero",
+     "decimocuarto",
+     "decimoquinto",
+     "decimosexto",
+     "decimoséptimo",
+     "decimooctavo",
+     "decimonoveno",
+     "vigésimo",
+     "vigésimo primero",
+     "vigésimo segundo"
+    ],
+    "30–100": [
+     "trigésimo",
+     "cuadragésimo",
+     "quincuagésimo",
+     "sexagésimo",
+     "septuagésimo",
+     "octogésimo",
+     "nonagésimo",
+     "centésimo"
+    ]
+   },
+   "points": [
+    "Порядковые числительные согласуются с существительным в роде и числе: segundo piso, cuarta puerta.",
+    "primero и tercero усекаются перед существительным мужского рода ед. числа: primer piso, tercer edificio.",
+    "В разговорной речи порядковые числительные употребляются только до décimo, дальше обычно — количественные: Su oficina está en el piso doce.",
+    "NB: в Испании и большинстве стран Латинской Америки нумерация этажей начинается с цокольного этажа – planta baja. El primer piso соответствует в русском языке второму этажу."
+   ]
+  },
+  {
+   "id": "§70",
+   "title": "Сложные предлоги, наречия и наречные выражения для описания положения предметов в пространстве",
+   "page": 78,
+   "table": {
+    "columns": [
+     "положение",
+     "предлоги",
+     "наречия и наречные выражения"
+    ],
+    "rows": [
+     [
+      "сверху",
+      "encima de, sobre",
+      "arriba"
+     ],
+     [
+      "снизу",
+      "debajo de, bajo",
+      "abajo"
+     ],
+     [
+      "спереди",
+      "delante de",
+      "delante, adelante"
+     ],
+     [
+      "сзади",
+      "detrás de, tras",
+      "detrás, atrás"
+     ],
+     [
+      "снаружи",
+      "fuera de, en las afueras de",
+      "fuera, afuera"
+     ],
+     [
+      "внутри",
+      "dentro de, en",
+      "dentro, adentro"
+     ],
+     [
+      "в центре",
+      "en medio de",
+      "en el centro"
+     ],
+     [
+      "между",
+      "entre, en medio de",
+      ""
+     ],
+     [
+      "напротив",
+      "enfrente de, frente a",
+      "enfrente"
+     ],
+     [
+      "против",
+      "contra",
+      "de espaldas"
+     ],
+     [
+      "сбоку",
+      "a la derecha de, a la izquierda de",
+      "a la derecha, a la izquierda"
+     ],
+     [
+      "вокруг",
+      "alrededor de",
+      "alrededor"
+     ],
+     [
+      "отдельно",
+      "",
+      "aparte"
+     ],
+     [
+      "близко",
+      "cerca de, junto a, al lado de, pegado a",
+      "cerca"
+     ],
+     [
+      "далеко",
+      "lejos de",
+      "lejos"
+     ],
+     [
+      "неопределенное",
+      "",
+      "en algún sitio, en alguna parte, por todas partes, en cualquier lugar"
+     ]
+    ]
+   },
+   "points": []
+  },
+  {
+   "id": "§71",
+   "title": "Глаголы, обозначающие положение в пространстве: estar, encontrarse, situarse (estar situado)",
+   "page": 78,
+   "points": [
+    "El director está en su despacho.",
+    "La facultad de ciencias sociales se encuentra lejos de aquí.",
+    "La ciudad se sitúa entre dos ríos.",
+    "El País Vasco está situado en el norte de España."
+   ]
+  },
+  {
+   "id": "§72",
+   "title": "Безличная форма hay",
+   "page": 79,
+   "table": {
+    "columns": [
+     "hay (наличие или отсутствие)",
+     "está (точное местонахождение)"
+    ],
+    "rows": [
+     [
+      "En la oficina hay un ordenador.",
+      "El ordenador está sobre la mesa."
+     ]
+    ]
+   },
+   "points": [
+    "Безличная форма глагола haber; обычно ставится, если предложение начинается с обстоятельства места. Переводится как «есть», «имеется» или «нет»: Sobre la mesa hay un manual y tres bolígrafos. En este despacho no hay fotocopiadora.",
+    "NB: существительное после hay никогда не ставится с определенным артиклем. В ед. числе — с неопределенным артиклем, во мн. числе — без артикля. При отрицании артикль также опускается: En medio de la habitación hay una mesa redonda. En el aula hay estudiantes. Enfrente del hotel no hay taxi."
+   ]
+  },
+  {
+   "id": "§73",
+   "title": "IV группа отклоняющихся глаголов: dormir (спать), morir(se) (умирать)",
+   "page": 80,
+   "table": {
+    "dormir (o→ue)": [
+     "duermo",
+     "duermes",
+     "duerme",
+     "dormimos",
+     "dormís",
+     "duermen"
+    ],
+    "dormir + ": "ocho horas, como un lirón, plácidamente, en una cama plegable"
+   },
+   "points": [
+    "Los estudiantes duermen poco.",
+    "¿Por qué te mueres de risa?",
+    "morirse de risa, morirse de hambre.",
+    "NB: возвратная форма morirse употребляется преимущественно в переносном значении."
+   ]
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "Порядковое числительное + существительное; en el … piso (§69)",
+   "page": 77,
+   "examples": [
+    {
+     "es": "segundo piso, cuarta puerta"
+    },
+    {
+     "es": "primer piso, tercer edificio"
+    },
+    {
+     "es": "Su oficina está en el piso doce."
+    },
+    {
+     "es": "¿En qué piso vives?"
+    }
+   ]
+  },
+  {
+   "pattern": "Предмет + estar + предлог места + предмет (§70, §71)",
+   "pages": [
+    78,
+    79
+   ],
+   "examples": [
+    {
+     "es": "La Universidad está lejos de mi casa."
+    },
+    {
+     "es": "Los documentos están encima del armario."
+    },
+    {
+     "es": "La oficina donde trabajan está al lado de un parque."
+    },
+    {
+     "es": "¿El museo está a la derecha o a la izquierda del metro?"
+    },
+    {
+     "es": "El País Vasco está situado en el norte de España."
+    }
+   ]
+  },
+  {
+   "pattern": "Обстоятельство места + hay + un/una / без артикля (§72)",
+   "page": 79,
+   "examples": [
+    {
+     "es": "Sobre la mesa hay un manual y tres bolígrafos."
+    },
+    {
+     "es": "En medio de la habitación hay una mesa redonda."
+    },
+    {
+     "es": "En el aula hay estudiantes."
+    },
+    {
+     "es": "Enfrente del hotel no hay taxi."
+    }
+   ]
+  },
+  {
+   "pattern": "hay (что есть) vs. está (где находится) (§72)",
+   "page": 79,
+   "examples": [
+    {
+     "es": "En la oficina hay un ordenador."
+    },
+    {
+     "es": "El ordenador está sobre la mesa."
+    }
+   ]
+  },
+  {
+   "pattern": "Описание комнаты (Para conocer más, текст «La habitación»)",
+   "page": 80,
+   "examples": [
+    {
+     "es": "La habitación no es grande, más bien pequeña, pero muy acogedora."
+    },
+    {
+     "es": "El cuarto da al patio."
+    },
+    {
+     "es": "A la derecha hay una librería que ocupa toda la pared."
+    },
+    {
+     "es": "La mesa escritorio con tres cajones está en el rincón al lado de la ventana."
+    }
+   ]
+  }
+ ],
+ "texts": [
+  {
+   "title": "La habitación (упр. 12)",
+   "page": 80,
+   "es": "La habitación no es grande, más bien pequeña, pero muy acogedora. El cuarto da al patio. El sol entra allí por las mañanas y lo ilumina. A la derecha hay una librería que ocupa toda la pared. Allí no hay cama, pero hay un sofá de color verde, muy cómodo para dormir, está enfrente de la librería. A la derecha de la puerta hay un armario ropero de madera, es alto, casi alcanza el techo. En el suelo hay una espesa alfombra del mismo color que el sofá. La mesa escritorio con tres cajones está en el rincón al lado de la ventana. Allí hay un ordenador, una impresora, un teléfono, un despertador, un florero, libros y papeles. Las cortinas también son de color verde con un dibujo a flores. La lámpara de seis brazos cuelga del techo. Además hay dos apliques de dos brazos cada uno que están encima del sofá. En la misma pared hay dos cuadros de medio tamaño con motivos orientales y un calendario muy bonito."
+  },
+  {
+   "title": "El salón (Texto complementario, упр. 18)",
+   "page": 82,
+   "es": "El salón es uno de los espacios más importantes de la casa. En la sala solemos reunirnos con la familia, pero también es el espacio que ocupamos cuando invitamos a nuestros amigos, vecinos o visitas puntuales. De modo que es fundamental transformarlo en un lugar cálido, para sentirnos cómodos. Con la decoración podemos reflejar nuestro estilo personal. El salón del hogar es un espacio multifuncional en el que siempre hay gente, por lo que conviene aprovechar cada metro cuadrado disponible. Los salones pequeños se pueden decorar perfectamente, aunque se necesita un poco más de creatividad. En un salón reducido podemos compensar la falta de espacio con soluciones decorativas muy variadas pero siempre ingeniosas. Los detalles decorativos convierten nuestro hogar en un lugar cómodo y acogedor."
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Ответьте на вопросы (¿En qué piso…?)",
+   "page": 77
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Переведите на испанский словосочетания с порядковыми числительными",
+   "page": 77,
+   "items": [
+    "первое имя",
+    "вторая фамилия",
+    "третий этаж",
+    "четвертая дверь",
+    "пятый офис",
+    "шестой автобус",
+    "седьмой дом",
+    "восьмой экзамен",
+    "девятый зал",
+    "десятый вопрос",
+    "одиннадцатое кафе",
+    "двенадцатый ресторан",
+    "тринадцатая гостиница"
+   ]
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Переведите на русский язык (предлоги места)",
+   "page": 78
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Переведите на испанский: справа от двери, слева от дома; под окном; над столом; рядом с магазином; далеко от предприятия; перед машиной; недалеко от университета; за пределами офиса; за автобусом",
+   "page": 78
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Переведите на русский язык (estar, encontrarse, situarse)",
+   "pages": [
+    78,
+    79
+   ]
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 79,
+   "items": [
+    "Мой дом находится близко от университета.",
+    "Языковая школа находится напротив гостиницы.",
+    "Второй зал находится на первом этаже.",
+    "Дверь расположена напротив окна.",
+    "Парикмахерская расположена справа от магазина, а банк слева.",
+    "Туристическое агентство находится недалеко от моего дома.",
+    "Такси стоит между домами.",
+    "Не знаешь, где лежит мой учебник?"
+   ]
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Вставьте артикль, где это необходимо (после hay)",
+   "page": 79
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Вставьте haber или estar и переведите",
+   "page": 79
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Проспрягайте dormir с зависимыми словами; A – morirse de risa, morirse de hambre; B – вопросы; C – переведите на испанский",
+   "page": 80
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Вставьте нужную форму отклоняющихся глаголов",
+   "page": 80
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Para conocer más: запомните слова для описания комнаты (En mi cuarto); A – подберите прилагательные; B – ответьте на вопросы",
+   "page": 80
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Прочитайте и переведите текст «La habitación»; A – проспрягайте; B – эквиваленты; C – вопросы; D – опишите комнату",
+   "pages": [
+    80,
+    81
+   ]
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Вставьте подходящие слова (televisor, al lado de, impresora, casa de tres pisos, a la derecha de, mesa escritorio, encontrarse, acogedor, enfrente de, ordenador, armario ropero, en medio de, alfombra)",
+   "page": 81
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 81
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы о своей комнате",
+   "page": 81
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Опишите вашу комнату",
+   "page": 81
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "pages": [
+    81,
+    82
+   ],
+   "items": [
+    "В комнате нет часов.",
+    "Ты не знаешь, где ваза? Я не могу найти её.",
+    "Эти голубые шторы мне не нравятся, они некрасивые. – А те жёлтые?",
+    "Платяной шкаф стоит в углу, справа от кровати.",
+    "Письменный стол деревянный?",
+    "Фотография, которая висит на стене, очень старая.",
+    "Почему эти бумаги лежат на ковре?",
+    "Какого цвета стены?",
+    "Мне нужно купить люстру и два бра для большой комнаты.",
+    "Сколько стоит этот календарь?",
+    "Под столом лежит карандаш.",
+    "Над дверью висит картина.",
+    "Вокруг стола стоят шесть стульев.",
+    "А где зеркало? – Оно за дверью.",
+    "На каком этаже ты живешь? – Я живу на третьем этаже, а мои родители на пятом.",
+    "Никто из нас не любит спать на раскладушке."
+   ]
+  },
+  {
+   "number": "18",
+   "instruction_ru": "Texto complementario: прочитайте и переведите текст о гостиной (El salón)",
+   "page": 82
+  },
+  {
+   "number": "19",
+   "instruction_ru": "Ответьте на вопросы по тексту",
+   "page": 82
+  },
+  {
+   "number": "20",
+   "instruction_ru": "Перескажите текст",
+   "page": 82
+  }
+ ],
+ "questions_for_user": []
+}

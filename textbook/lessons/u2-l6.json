@@ -1,0 +1,1011 @@
+{
+ "id": 12,
+ "unit": 2,
+ "lesson": 6,
+ "title": "Unidad 2. Estudiar y trabajar — Lección 6",
+ "pages": [
+  69,
+  70,
+  71,
+  72,
+  73,
+  74,
+  75,
+  76
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 75–76; выражения — Para conocer más, с. 73",
+  "verbs": [
+   {
+    "es": "aceptar",
+    "ru": "принимать, одобрять",
+    "page": 75
+   },
+   {
+    "es": "acordar (Ib)",
+    "ru": "вспоминать, напоминать",
+    "page": 75
+   },
+   {
+    "es": "almorzar (Ib)",
+    "ru": "обедать",
+    "note": "§68",
+    "page": 75
+   },
+   {
+    "es": "atender (Ia)",
+    "ru": "внимательно слушать, заниматься кем-то, обслуживать",
+    "note": "§68: atiendo, atiendes, atiende, atendemos, atendéis, atienden",
+    "page": 75
+   },
+   {
+    "es": "atravesar (Ia)",
+    "ru": "переходить",
+    "note": "§68",
+    "page": 75
+   },
+   {
+    "es": "comenzar a (Ia)",
+    "ru": "начинать",
+    "page": 75
+   },
+   {
+    "es": "contar (Ib)",
+    "ru": "рассказывать",
+    "note": "§68",
+    "page": 75
+   },
+   {
+    "es": "convenir",
+    "ru": "подходить",
+    "page": 75
+   },
+   {
+    "es": "costar (Ib)",
+    "ru": "стоить",
+    "note": "§68",
+    "page": 75
+   },
+   {
+    "es": "discutir",
+    "ru": "обсуждать, спорить",
+    "page": 75
+   },
+   {
+    "es": "dominar",
+    "ru": "владеть",
+    "page": 75
+   },
+   {
+    "es": "encender (Ia)",
+    "ru": "зажигать, включать",
+    "note": "§68",
+    "page": 75
+   },
+   {
+    "es": "gobernar (Ia)",
+    "ru": "управлять",
+    "page": 75
+   },
+   {
+    "es": "manifestar (Ia)",
+    "ru": "выражать, демонстрировать",
+    "page": 75
+   },
+   {
+    "es": "merendar (Ia)",
+    "ru": "полдничать",
+    "note": "§68",
+    "page": 75
+   },
+   {
+    "es": "moverse (Ib)",
+    "ru": "двигаться",
+    "note": "§68",
+    "page": 75
+   },
+   {
+    "es": "optar (a)",
+    "ru": "зд. претендовать",
+    "page": 75
+   },
+   {
+    "es": "pagar",
+    "ru": "платить",
+    "page": 75
+   },
+   {
+    "es": "pensar (en) (Ia)",
+    "ru": "думать",
+    "note": "§68",
+    "page": 76
+   },
+   {
+    "es": "perder (Ia)",
+    "ru": "терять",
+    "note": "§68",
+    "page": 76
+   },
+   {
+    "es": "probar (Ib)",
+    "ru": "пробовать",
+    "page": 76
+   },
+   {
+    "es": "proponer",
+    "ru": "предлагать",
+    "page": 76
+   },
+   {
+    "es": "ocupar el puesto",
+    "ru": "занимать должность",
+    "page": 76
+   },
+   {
+    "es": "recomendar (Ia)",
+    "ru": "рекомендовать",
+    "page": 76
+   },
+   {
+    "es": "recordar (Ib)",
+    "ru": "помнить",
+    "note": "§68: вспоминать",
+    "page": 76
+   },
+   {
+    "es": "sentarse (Ia)",
+    "ru": "садиться",
+    "note": "§68",
+    "page": 76
+   },
+   {
+    "es": "soler (Ib)",
+    "ru": "иметь обыкновение",
+    "note": "§68",
+    "page": 76
+   },
+   {
+    "es": "sonar (Ib)",
+    "ru": "звучать",
+    "note": "§68",
+    "page": 76
+   },
+   {
+    "es": "soñar (con) (Ib)",
+    "ru": "мечтать",
+    "note": "§68",
+    "page": 76
+   },
+   {
+    "es": "volar (Ib)",
+    "ru": "летать",
+    "page": 76
+   },
+   {
+    "es": "volver (Ib)",
+    "ru": "возвращаться",
+    "note": "§68",
+    "page": 76
+   },
+   {
+    "es": "encontrar (Ib)",
+    "ru": "находить",
+    "note": "§68: encuentro, encuentras, encuentra, encontramos, encontráis, encuentran (в словаре урока 5)",
+    "page": 72
+   },
+   {
+    "es": "empezar (Ia)",
+    "ru": "начинать",
+    "note": "§68, упр. 6",
+    "page": 72
+   },
+   {
+    "es": "encargarse de",
+    "ru": "заниматься чем-л., отвечать за что-л.",
+    "note": "из упр. 11–12, в Vocabulario нет",
+    "page": 73
+   }
+  ],
+  "other": [
+   {
+    "es": "actividad",
+    "gender": "f",
+    "ru": "деятельность",
+    "page": 75
+   },
+   {
+    "es": "administración",
+    "gender": "f",
+    "ru": "администрация",
+    "page": 75
+   },
+   {
+    "es": "al aire libre",
+    "ru": "на свежем воздухе",
+    "page": 75
+   },
+   {
+    "es": "al menos",
+    "ru": "по меньшей мере, по крайней мере",
+    "page": 75
+   },
+   {
+    "es": "almuerzo",
+    "gender": "m",
+    "ru": "обед",
+    "page": 75
+   },
+   {
+    "es": "armonía",
+    "gender": "f",
+    "ru": "гармония",
+    "page": 75
+   },
+   {
+    "es": "cargo",
+    "gender": "m",
+    "ru": "должность",
+    "page": 75
+   },
+   {
+    "es": "chiste",
+    "gender": "m",
+    "ru": "шутка, анекдот",
+    "page": 75
+   },
+   {
+    "es": "churro",
+    "gender": "m",
+    "ru": "чурро (испанский пончик)",
+    "page": 75
+   },
+   {
+    "es": "ciencias económicas y empresariales",
+    "ru": "предпринимательство",
+    "page": 75
+   },
+   {
+    "es": "cigarrillo",
+    "gender": "m",
+    "ru": "сигарета",
+    "page": 75
+   },
+   {
+    "es": "condición",
+    "gender": "f",
+    "ru": "условие",
+    "page": 75
+   },
+   {
+    "es": "contratación",
+    "gender": "f",
+    "ru": "найм, заключение трудового договора",
+    "page": 75
+   },
+   {
+    "es": "control",
+    "gender": "m",
+    "ru": "контроль",
+    "page": 75
+   },
+   {
+    "es": "demás",
+    "ru": "остальной, прочий",
+    "note": "§65",
+    "page": 75
+   },
+   {
+    "es": "departamento",
+    "gender": "m",
+    "ru": "отдел, департамент",
+    "page": 75
+   },
+   {
+    "es": "diferente",
+    "ru": "другой, отличный",
+    "note": "§65",
+    "page": 75
+   },
+   {
+    "es": "diverso",
+    "ru": "разнообразный",
+    "note": "§65",
+    "page": 75
+   },
+   {
+    "es": "exportación",
+    "gender": "f",
+    "ru": "вывоз, экспорт",
+    "page": 75
+   },
+   {
+    "es": "expediente",
+    "gender": "m",
+    "ru": "личное дело, досье",
+    "page": 75
+   },
+   {
+    "es": "fabricación",
+    "gender": "f",
+    "ru": "изготовление",
+    "page": 75
+   },
+   {
+    "es": "informático",
+    "gender": "m",
+    "ru": "программист",
+    "page": 75
+   },
+   {
+    "es": "llamada",
+    "gender": "f",
+    "ru": "звонок",
+    "page": 75
+   },
+   {
+    "es": "mano de obra",
+    "gender": "f",
+    "ru": "рабочая сила",
+    "page": 75
+   },
+   {
+    "es": "mantenimiento",
+    "gender": "m",
+    "ru": "содержание, техническое обслуживание",
+    "page": 75
+   },
+   {
+    "es": "mejor",
+    "ru": "лучший",
+    "page": 75
+   },
+   {
+    "es": "merienda",
+    "gender": "f",
+    "ru": "полдник",
+    "page": 75
+   },
+   {
+    "es": "país demandante",
+    "ru": "страна, имеющая спрос на что-л.",
+    "page": 76
+   },
+   {
+    "es": "pasado",
+    "gender": "m",
+    "ru": "прошлое",
+    "page": 76
+   },
+   {
+    "es": "pretendiente",
+    "gender": "m",
+    "ru": "претендент",
+    "page": 76
+   },
+   {
+    "es": "producción",
+    "gender": "f",
+    "ru": "производство, продукция",
+    "page": 76
+   },
+   {
+    "es": "propuesta",
+    "gender": "f",
+    "ru": "предложение",
+    "page": 76
+   },
+   {
+    "es": "publicidad",
+    "gender": "f",
+    "ru": "реклама",
+    "page": 76
+   },
+   {
+    "es": "puesto",
+    "gender": "m",
+    "ru": "должность",
+    "page": 76
+   },
+   {
+    "es": "un rato",
+    "ru": "некоторое время",
+    "page": 76
+   },
+   {
+    "es": "recursos humanos",
+    "gender": "m pl",
+    "ru": "кадры",
+    "page": 76
+   },
+   {
+    "es": "red",
+    "gender": "f",
+    "ru": "сеть",
+    "page": 76
+   },
+   {
+    "es": "salario",
+    "gender": "m",
+    "ru": "зарплата",
+    "page": 76
+   },
+   {
+    "es": "vario",
+    "ru": "различный, разнообразный",
+    "note": "§65",
+    "page": 76
+   },
+   {
+    "es": "venta",
+    "gender": "f",
+    "ru": "продажа",
+    "page": 76
+   },
+   {
+    "es": "vez",
+    "gender": "f",
+    "ru": "раз",
+    "page": 76
+   }
+  ],
+  "phrases": [
+   {
+    "es": "¡Enhorabuena!",
+    "ru": "В добрый час!",
+    "page": 75
+   },
+   {
+    "es": "es decir",
+    "ru": "то есть",
+    "page": 75
+   },
+   {
+    "es": "una u otra cosa",
+    "ru": "то или иное",
+    "note": "§65",
+    "page": 70
+   },
+   {
+    "es": "proponer / ofrecer un puesto / un cargo",
+    "ru": "предложить место / должность",
+    "note": "Para conocer más, упр. 12",
+    "page": 73
+   },
+   {
+    "es": "aceptar el cargo / ocupar el puesto",
+    "ru": "принять / занять должность",
+    "note": "Para conocer más, упр. 12",
+    "page": 73
+   },
+   {
+    "es": "¿En qué departamento trabaja el director de producción? – Trabaja en el departamento de producción.",
+    "ru": "В каком отделе работает директор по производству? – В производственном отделе.",
+    "note": "упр. 11 A",
+    "page": 73
+   },
+   {
+    "es": "¿De qué se encarga el director de producción? – Se encarga del control de calidad.",
+    "ru": "Чем занимается директор по производству? – Контролем качества.",
+    "note": "упр. 11 B",
+    "page": 73
+   },
+   {
+    "es": "Eso me conviene.",
+    "ru": "Это меня устраивает.",
+    "note": "из диалога упр. 13",
+    "page": 74
+   }
+  ],
+  "company_terms": {
+   "page": 73,
+   "note": "Para conocer más, упр. 11 «En la empresa» (без перевода в книге)",
+   "cargos": [
+    "director general",
+    "director de administración",
+    "director financiero",
+    "director comercial",
+    "director de producción",
+    "director de márketing",
+    "director de recursos humanos (RRHH)"
+   ],
+   "departamentos": [
+    "de producción",
+    "financiero",
+    "comercial",
+    "de márketing",
+    "de personal"
+   ],
+   "actividades": [
+    "los estudios de mercado",
+    "la fabricación",
+    "el control de calidad",
+    "las ventas",
+    "las exportaciones",
+    "la publicidad",
+    "la contabilidad",
+    "la contratación",
+    "los salarios"
+   ]
+  }
+ },
+ "grammar": [
+  {
+   "id": "§65",
+   "title": "Los indefinidos de diversidad. Неопределенные местоимения и прилагательные со значением неоднородности и разнообразия",
+   "pages": [
+    69,
+    70
+   ],
+   "table": {
+    "rows": [
+     [
+      "otro (-a, -os, -as)",
+      "другой, еще один",
+      "Ahora vivimos en otro país. Necesito otra taza de café."
+     ],
+     [
+      "diferente (-s)",
+      "разный, различный",
+      "Somos de diferentes grupos académicos."
+     ],
+     [
+      "diverso (-a, -os, -as)",
+      "различный, разнообразный",
+      "Aquí aprenden diversos idiomas."
+     ],
+     [
+      "vario (-a, -os, -as)",
+      "разный, разнообразный; несколько",
+      "Esta clínica tiene especialistas varios. Tengo varios cuadernos verdes."
+     ],
+     [
+      "demás",
+      "остальные, другие, прочие",
+      "Los demás no me conocen. Todo lo demás es muy aburrido."
+     ]
+    ]
+   },
+   "points": [
+    "otro не употребляется с неопределенным артиклем. Определенный артикль ставится, если есть только два предмета, между которыми делается выбор: Veo dos coches. Este rojo no me gusta, prefiero el otro. Juan tiene dos hermanas, una es médica y la otra es abogada.",
+    "Запомните: una u otra cosa – то или иное.",
+    "diferente и diverso ставятся, как правило, перед существительным: Trabajamos con diferentes programas.",
+    "vario перед существительным = «несколько», после существительного = «разный, разнообразный».",
+    "demás не изменяется в роде и числе."
+   ]
+  },
+  {
+   "id": "§66",
+   "title": "Предложная (ударная) форма местоимений-дополнений",
+   "page": 70,
+   "table": {
+    "rows": [
+     [
+      "(de) mí",
+      "conmigo"
+     ],
+     [
+      "(de) ti",
+      "contigo"
+     ],
+     [
+      "(de) él, ella, ello, usted, sí",
+      "consigo (mismo); con él, ella, ello, usted"
+     ],
+     [
+      "(de) nosotros/as",
+      "con nosotros/as"
+     ],
+     [
+      "(de) vosotros/as",
+      "con vosotros/as"
+     ],
+     [
+      "(de) ellos, ellas, ustedes, sí",
+      "consigo; con ellos, ellas, ustedes"
+     ]
+    ]
+   },
+   "points": [
+    "de mí, a ti, en él, para nosotros, sin vosotros, sobre ellos, etc.",
+    "consigo и sí употребляются не так часто и, как правило, в возвратном значении: ¿Por qué habla consigo mismo? Conocer a sí mismo es muy importante.",
+    "С предлогами entre, excepto, hasta, menos, salvo, según употребляется личное местоимение в форме именительного падежа: Todo el mundo lo sabe, menos tú."
+   ]
+  },
+  {
+   "id": "§67",
+   "title": "Простые предлоги ante, bajo, contra, excepto, hacia, mediante, salvo, según, tras",
+   "page": 71,
+   "table": {
+    "rows": [
+     [
+      "ante",
+      "положение спереди, напротив – перед",
+      "¿Quién está ante nosotros?"
+     ],
+     [
+      "bajo",
+      "положение снизу – под",
+      "bajo un coche"
+     ],
+     [
+      "contra",
+      "противостояние – против",
+      "¿Estás contra mí?"
+     ],
+     [
+      "excepto = salvo",
+      "исключение – кроме",
+      "excepto los días de fiesta; van todos salvo tú"
+     ],
+     [
+      "hacia",
+      "примерное направление – к",
+      "¿Vamos hacia un bar?"
+     ],
+     [
+      "mediante",
+      "способ достижения цели – путем, посредством",
+      "mediante las negociaciones"
+     ],
+     [
+      "según",
+      "источник информации – согласно",
+      "según este autor"
+     ],
+     [
+      "tras",
+      "следование в пространстве и времени – за, после",
+      "tras aquellas casas; tras la reunión"
+     ]
+    ]
+   },
+   "points": []
+  },
+  {
+   "id": "§68",
+   "title": "Первая группа отклоняющихся глаголов. Ia и Ib",
+   "page": 72,
+   "table": {
+    "atender, Ia (e→ie)": [
+     "atiendo",
+     "atiendes",
+     "atiende",
+     "atendemos",
+     "atendéis",
+     "atienden"
+    ],
+    "encontrar, Ib (o→ue)": [
+     "encuentro",
+     "encuentras",
+     "encuentra",
+     "encontramos",
+     "encontráis",
+     "encuentran"
+    ],
+    "Ia": "empezar (начинать) a discutirlo; sentarse (садиться) a la mesa, en el diván; atravesar (пересекать) la plaza; merendar (полдничать) a las cuatro y media, con frutas; pensar (думать) en los coches; encender (зажигать) el gas, la luz; perder (терять) tiempo, a un cliente",
+    "Ib": "costar (стоить) mucho; contar (рассказывать) una historia sentimental; recordar (вспоминать) sus estudios en el colegio; almorzar (обедать) en un restaurante griego; sonar (звучать) alto; soñar (мечтать о) con un viaje a Marruecos; moverse (двигаться) mucho, poco; volver (возвращаться) a casa; soler (иметь обыкновение) ir de vacaciones en enero"
+   },
+   "points": [
+    "Ia: ударное e → ie; Ib: ударное o → ue (в формах nosotros и vosotros без изменений).",
+    "¿Quién atiende a los turistas?",
+    "No encuentra empleo porque tiene poca experiencia profesional."
+   ]
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "otro / el otro / los demás (§65)",
+   "pages": [
+    69,
+    70
+   ],
+   "examples": [
+    {
+     "es": "Necesito otra taza de café."
+    },
+    {
+     "es": "Este rojo no me gusta, prefiero el otro."
+    },
+    {
+     "es": "Juan tiene dos hermanas, una es médica y la otra es abogada."
+    },
+    {
+     "es": "Los demás no me conocen."
+    },
+    {
+     "es": "Tengo varios cuadernos verdes."
+    }
+   ]
+  },
+  {
+   "pattern": "Предлог + ударное местоимение; conmigo, contigo (§66)",
+   "pages": [
+    70,
+    71
+   ],
+   "examples": [
+    {
+     "es": "Voy a la cafetería a tomar algo, ¿vienes conmigo?"
+    },
+    {
+     "es": "¡Siempre hablan mal de mí!"
+    },
+    {
+     "es": "No puedo ir allí sin ti."
+    },
+    {
+     "es": "Todo el mundo lo sabe, menos tú."
+    },
+    {
+     "es": "Según ellos, tenemos una prueba de matemáticas este sábado."
+    }
+   ]
+  },
+  {
+   "pattern": "Предлоги ante, bajo, contra, excepto/salvo, hacia, mediante, según, tras (§67)",
+   "page": 71,
+   "examples": [
+    {
+     "es": "¿Quién está ante nosotros?"
+    },
+    {
+     "es": "¿Estás contra mí?"
+    },
+    {
+     "es": "Van todos salvo tú."
+    },
+    {
+     "es": "¿Vamos hacia un bar?"
+    },
+    {
+     "es": "Según este autor."
+    },
+    {
+     "es": "Tras la reunión."
+    }
+   ]
+  },
+  {
+   "pattern": "Отклоняющиеся глаголы Ia/Ib в речи (§68)",
+   "page": 72,
+   "examples": [
+    {
+     "es": "¿Quién atiende a los turistas?"
+    },
+    {
+     "es": "No encuentra empleo porque tiene poca experiencia profesional."
+    },
+    {
+     "es": "Ramón atraviesa la plaza y se sienta a la mesa al aire libre."
+    },
+    {
+     "es": "Ramón suele hacerlo cada tarde."
+    },
+    {
+     "es": "Recuerda el pasado o sueña con el futuro."
+    }
+   ]
+  },
+  {
+   "pattern": "Должности и обязанности: trabajar en el departamento de …; encargarse de …; proponer/aceptar un cargo",
+   "pages": [
+    73,
+    74
+   ],
+   "examples": [
+    {
+     "es": "Trabaja en el departamento de producción."
+    },
+    {
+     "es": "Se encarga del control de calidad."
+    },
+    {
+     "es": "Me proponen el cargo de agente de ventas, pero no sé si voy a aceptarlo."
+    },
+    {
+     "es": "Ocupa el puesto de director comercial."
+    }
+   ]
+  }
+ ],
+ "texts": [
+  {
+   "title": "Ramón (упр. 9)",
+   "page": 72,
+   "es": "Ramón atraviesa la plaza y se sienta a la mesa al aire libre. Le atiende una camarera muy simpática. Merienda con una taza de chocolate con churros. Aquí los preparan muy bien. Ramón suele hacerlo cada tarde. Después enciende un cigarrillo. No se mueve un rato, piensa en algo: recuerda el pasado o sueña con el futuro. Suena el móvil. Ramón atiende la llamada y después pregunta a la camarera cuánto cuesta su merienda. Le cuenta un chiste, paga y vuelve a la oficina."
+  },
+  {
+   "title": "En la empresa (диалог, упр. 13)",
+   "pages": [
+    73,
+    74
+   ],
+   "es": "– En su currículum usted escribe que es licenciado en ciencias económicas y empresariales por la Universidad Autónoma de Madrid y tiene un MBA por ESADE.\n– Sí, tengo varios títulos.\n– El otro pretendiente tiene un MBA por IESE, es decir, Instituto de Estudios Superiores de la Empresa que también es muy conocido.\n– También domino diversos idiomas europeos y puedo trabajar con diferentes programas en el ordenador.\n– Bien, me parece que su expediente es uno de los mejores y por eso quiero proponerle un puesto en el departamento de márketing con el salario de 2 mil euros al mes para empezar. ¿Lo acepta usted?\n– Sí, señor, eso me conviene.\n– Pues, lo demás va a discutirlo con nuestros juristas y economistas. ¡Enhorabuena!\n– Gracias a Usted."
+  },
+  {
+   "title": "Объявление (Texto complementario, упр. 18)",
+   "page": 75,
+   "es": "Alemania es uno de los países demandantes de mano de obra española, especialmente de ingenieros e informáticos. La última noticia sobre ofertas de empleo nos llega de la mano de la red Eures. Un ingeniero constructor y un técnico de mantenimiento electrónico para trabajar en el país germano. Eso es lo que buscan esta vez. ¿Te interesa? El inglés y/o el alemán son una de las condiciones básicas que te pueden hacer optar al menos al primero de los puestos."
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Переведите на русский язык (otro, demás, vario, diverso, diferente)",
+   "page": 70,
+   "items": [
+    "Tengo dos cuadernos. Uno está aquí, ¿y dónde está el otro?",
+    "Entramos en la sala, ¿o quieres esperar a los demás?",
+    "Los estudiantes tienen varias preguntas y las hacen al profesor.",
+    "Andrés busca otro empleo, quiere trabajar en una empresa internacional.",
+    "Se especializa en finanzas y tiene diversos títulos, pero tiene poca experiencia laboral.",
+    "Nuestros colegas vienen de diferentes países.",
+    "Este restaurante no me gusta, vamos a otro.",
+    "Leo este fragmento varias veces (раз) y no comprendo nada."
+   ]
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 70,
+   "items": [
+    "У меня две тети. Одна – журналист, другая – преподаватель.",
+    "Вы видите два карандаша: один – желтый, другой – коричневый.",
+    "На этой неделе мы сдаем два экзамена: один по международным экономическим отношениям, другой по финансам.",
+    "Не хочешь рассказать мне об этом деле? – В другой раз.",
+    "Мой друг ходит в другую школу.",
+    "Студенты, которые учатся в других университетах, тоже хотят поехать на эти курсы.",
+    "Нас пятеро. Остальные не придут.",
+    "Это все. Остальное не имеет значения.",
+    "Разные страны имеют свои собственные традиции."
+   ]
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Переведите на русский язык (ударные местоимения)",
+   "page": 71,
+   "items": [
+    "Voy a la cafetería a tomar algo, ¿vienes conmigo?",
+    "¡Siempre hablan mal de mí!",
+    "Según ellos, tenemos una prueba de matemáticas este sábado.",
+    "No puedo ir allí sin ti.",
+    "Todos la conocen, hasta yo.",
+    "Es bueno aprender a pensar en sí mismo.",
+    "Mis padres lo hacen todo para mí.",
+    "Vivir en armonía consigo mismo es vivir en armonía con el mundo."
+   ]
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Вставьте предложную форму местоимений-дополнений",
+   "page": 71,
+   "items": [
+    "Lo hago para ___ (tú).",
+    "¿Vienes con ___ (yo)?",
+    "Queremos discutirlo entre ___ (nosotros).",
+    "Las chicas hablan de ___ (tú).",
+    "Me das esta revista a ___ (yo).",
+    "Mi cuñado trabaja con ___ (Usted).",
+    "Mis padres creen mucho en ___ (yo).",
+    "No voy a tomar café sin ___ (tú)."
+   ]
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Вставьте необходимые предлоги",
+   "page": 71
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Проспрягайте отклоняющиеся глаголы первой группы с зависимыми словами (A – Ia, B – Ib); C – вопросы в парах",
+   "page": 72
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Раскройте скобки",
+   "page": 72,
+   "items": [
+    "Yo (sentarse) ___ a la mesa.",
+    "(Sonar) ___ la música.",
+    "¿A qué hora (volver) ___ Usted a casa?",
+    "(Perder, ellos) ___ mucho tiempo así.",
+    "¿Dónde (almorzar, tú) ___?",
+    "(Soler, yo) ___ comer poco.",
+    "¿En qué (pensar, tú) ___?",
+    "¿Cuánto (costar) ___ estas frutas?"
+   ]
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Составьте 6 предложений: almorzar en casa, merendar con frutas, volver a casa tarde, soñar con la Universidad, soler tener prisa, pensar en los exámenes",
+   "page": 72
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Прочитайте, переведите и воспроизведите текст, заменяя имя собственное личными местоимениями",
+   "page": 72
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 73,
+   "items": [
+    "В котором часу начинаются занятия?",
+    "Я сажусь за стол, чтобы обедать, но думаю об экзаменах.",
+    "Обычно они возвращаются домой в шесть часов вечера.",
+    "О чем ты мечтаешь?",
+    "Ты вспоминаешь школьные годы?",
+    "Сколько стоит чашечка кофе?",
+    "Наш преподаватель всегда рассказывает очень интересные истории.",
+    "Кто обслуживает этот столик?",
+    "Почему ты не отвечаешь на их звонки?",
+    "Кто-то находит работу, а кто-то её теряет."
+   ]
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Para conocer más: запомните названия должностей, отделов и рода занятий в компании (En la empresa); расскажите, чем занимается и в каком отделе работает каждый",
+   "page": 73
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Запомните выражения, связанные с устройством на работу; A – проспрягайте; B – переведите на русский; C – переведите на испанский",
+   "page": 73
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Прочитайте и переведите диалог «En la empresa»; A – проспрягайте; B – вопросы; C – по ролям; D – перескажите",
+   "pages": [
+    73,
+    74
+   ]
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 74
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы (время, дата, месяц, время года, дни недели, учеба)",
+   "page": 74
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Расскажите о себе как о потенциальном работнике на рынке труда",
+   "page": 74
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "pages": [
+    74,
+    75
+   ],
+   "items": [
+    "Кто будет меня обслуживать?",
+    "Выпьете еще одну чашечку горячего шоколада? – Да, я её выпью с большим удовольствием.",
+    "Вы принимаете мое предложение? – Нет, я не могу его принять, оно меня не устраивает.",
+    "Я думаю, что в этом ресторане готовят очень вкусные блюда.",
+    "Ручки я теряю каждый день. Ничего не помню.",
+    "Мне предлагают должность экономиста в финансовом отделе. А тебе? – А мне должность юриста в отделе кадров.",
+    "Начальник производства обычно обедает с часа до двух, а затем возвращается на свое рабочее место.",
+    "Кто-нибудь из ваших сотрудников умеет пользоваться различными компьютерными программами? – Бухгалтер и программист. У остальных мало опыта.",
+    "Вы предлагаете мне место директора по продажам? – Да, я вам его предлагаю. У вас прекрасный послужной список.",
+    "Целый день ты о чем-то мечтаешь.",
+    "Вам нравится изучать деловое администрирование в Испании?"
+   ]
+  },
+  {
+   "number": "18",
+   "instruction_ru": "Texto complementario: прочитайте и переведите объявление; интересует ли вас работа за границей?",
+   "page": 75
+  },
+  {
+   "number": "19",
+   "instruction_ru": "Расскажите, какие объявления об устройстве на работу можно найти в Интернете",
+   "page": 75
+  }
+ ],
+ "questions_for_user": []
+}

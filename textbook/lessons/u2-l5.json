@@ -1,0 +1,962 @@
+{
+ "id": 11,
+ "unit": 2,
+ "lesson": 5,
+ "title": "Unidad 2. Estudiar y trabajar — Lección 5",
+ "pages": [
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 68–69; выражения — Para conocer más, с. 66",
+  "verbs": [
+   {
+    "es": "buscar",
+    "ru": "искать",
+    "page": 68
+   },
+   {
+    "es": "colocarse",
+    "ru": "устроиться (на работу)",
+    "page": 68
+   },
+   {
+    "es": "comprar",
+    "ru": "покупать",
+    "page": 68
+   },
+   {
+    "es": "desarrollar",
+    "ru": "развивать",
+    "page": 68
+   },
+   {
+    "es": "diplomarse (en)",
+    "ru": "получить диплом (4 года)",
+    "page": 68
+   },
+   {
+    "es": "encontrar (Ib)",
+    "ru": "найти",
+    "page": 68
+   },
+   {
+    "es": "entrar",
+    "ru": "войти, поступить",
+    "page": 68
+   },
+   {
+    "es": "especializarse (en)",
+    "ru": "специализироваться",
+    "page": 68
+   },
+   {
+    "es": "figurar",
+    "ru": "фигурировать",
+    "page": 69
+   },
+   {
+    "es": "graduarse (en)",
+    "ru": "окончить ВУЗ (4 года)",
+    "page": 69
+   },
+   {
+    "es": "ingresar",
+    "ru": "поступить",
+    "page": 69
+   },
+   {
+    "es": "invitar",
+    "ru": "пригласить",
+    "page": 69
+   },
+   {
+    "es": "ir",
+    "ru": "идти",
+    "note": "§62: voy, vas, va, vamos, vais, van",
+    "page": 69
+   },
+   {
+    "es": "ir a pie, andando",
+    "ru": "идти пешком",
+    "page": 69
+   },
+   {
+    "es": "ir a + infinitivo",
+    "ru": "собираться что-л. сделать (ближайшее будущее)",
+    "note": "§63",
+    "page": 65
+   },
+   {
+    "es": "licenciarse (en)",
+    "ru": "получить высшее образование",
+    "note": "в Испании с Болонской системой больше не существует (с. 66)",
+    "page": 69
+   },
+   {
+    "es": "matricularse (en)",
+    "ru": "записаться, поступить",
+    "page": 69
+   },
+   {
+    "es": "ofertar",
+    "ru": "предлагать, выставлять на продажу",
+    "page": 69
+   },
+   {
+    "es": "solicitar",
+    "ru": "просить, ходатайствовать",
+    "page": 69
+   },
+   {
+    "es": "venir",
+    "ru": "приходить, идти (по напр. к говорящему)",
+    "note": "§62: vengo, vienes, viene, venimos, venís, vienen",
+    "page": 69
+   }
+  ],
+  "other": [
+   {
+    "es": "adelante",
+    "ru": "вперед",
+    "page": 68
+   },
+   {
+    "es": "agente de bolsa",
+    "gender": "m",
+    "ru": "биржевой агент",
+    "page": 68
+   },
+   {
+    "es": "análisis",
+    "gender": "m",
+    "ru": "анализ",
+    "page": 68
+   },
+   {
+    "es": "analista de mercados",
+    "gender": "m",
+    "ru": "рыночный аналитик",
+    "page": 68
+   },
+   {
+    "es": "aumento de precios",
+    "gender": "m",
+    "ru": "рост цен",
+    "page": 68
+   },
+   {
+    "es": "aval",
+    "gender": "m",
+    "ru": "поручительство",
+    "page": 68
+   },
+   {
+    "es": "base de datos",
+    "gender": "f",
+    "ru": "база данных",
+    "page": 68
+   },
+   {
+    "es": "campaña de publicidad",
+    "gender": "f",
+    "ru": "рекламная кампания",
+    "page": 68
+   },
+   {
+    "es": "capacidad",
+    "gender": "f",
+    "ru": "способность",
+    "page": 68
+   },
+   {
+    "es": "competencia",
+    "gender": "f",
+    "ru": "конкуренция",
+    "page": 68
+   },
+   {
+    "es": "comprobación",
+    "gender": "f",
+    "ru": "проверка, сверка",
+    "page": 68
+   },
+   {
+    "es": "concierto",
+    "gender": "m",
+    "ru": "концерт",
+    "page": 68
+   },
+   {
+    "es": "creación",
+    "gender": "f",
+    "ru": "создание",
+    "page": 68
+   },
+   {
+    "es": "datos financieros",
+    "gender": "m pl",
+    "ru": "финансовые данные",
+    "page": 68
+   },
+   {
+    "es": "empleo",
+    "gender": "m",
+    "ru": "работа",
+    "page": 68
+   },
+   {
+    "es": "equipo",
+    "gender": "m",
+    "ru": "команда",
+    "page": 68
+   },
+   {
+    "es": "experiencia",
+    "gender": "f",
+    "ru": "опыт",
+    "page": 68
+   },
+   {
+    "es": "experiencia profesional, laboral",
+    "gender": "f",
+    "ru": "опыт работы",
+    "page": 68
+   },
+   {
+    "es": "facilidad",
+    "gender": "f",
+    "ru": "легкость",
+    "page": 69
+   },
+   {
+    "es": "falta",
+    "gender": "f",
+    "ru": "ошибка",
+    "page": 69
+   },
+   {
+    "es": "fluido",
+    "ru": "свободный",
+    "page": 69
+   },
+   {
+    "es": "formación académica",
+    "gender": "f",
+    "ru": "образование",
+    "note": "в книге столбцы перевода сдвинуты: «образование формы / жизни»",
+    "page": 69
+   },
+   {
+    "es": "formas de vida",
+    "gender": "f pl",
+    "ru": "формы жизни",
+    "page": 69
+   },
+   {
+    "es": "función",
+    "gender": "f",
+    "ru": "функция",
+    "page": 69
+   },
+   {
+    "es": "hablado",
+    "ru": "разговорный",
+    "page": 69
+   },
+   {
+    "es": "igual",
+    "ru": "одинаковый, такой же",
+    "note": "§59",
+    "page": 69
+   },
+   {
+    "es": "informe",
+    "gender": "m",
+    "ru": "отчет",
+    "page": 69
+   },
+   {
+    "es": "intención",
+    "gender": "f",
+    "ru": "намерение",
+    "page": 69
+   },
+   {
+    "es": "interés",
+    "gender": "m",
+    "ru": "интерес",
+    "page": 69
+   },
+   {
+    "es": "datos de interés",
+    "ru": "зд. дополнительная информация",
+    "page": 69
+   },
+   {
+    "es": "jefe de personal",
+    "gender": "m",
+    "ru": "начальник отдела кадров",
+    "page": 69
+   },
+   {
+    "es": "manejo",
+    "gender": "m",
+    "ru": "управление",
+    "page": 69
+   },
+   {
+    "es": "mercado inmobiliario",
+    "gender": "m",
+    "ru": "рынок недвижимости",
+    "page": 69
+   },
+   {
+    "es": "mismo",
+    "ru": "сам, такой же",
+    "note": "§59",
+    "page": 69
+   },
+   {
+    "es": "movilidad",
+    "gender": "f",
+    "ru": "подвижность, мобильность",
+    "page": 69
+   },
+   {
+    "es": "panadería",
+    "gender": "f",
+    "ru": "булочная",
+    "page": 69
+   },
+   {
+    "es": "permiso",
+    "gender": "m",
+    "ru": "разрешение",
+    "page": 69
+   },
+   {
+    "es": "plaza",
+    "gender": "f",
+    "ru": "площадь",
+    "page": 69
+   },
+   {
+    "es": "préstamo",
+    "gender": "m",
+    "ru": "ссуда, заем",
+    "page": 69
+   },
+   {
+    "es": "promoción",
+    "gender": "f",
+    "ru": "продвижение",
+    "page": 69
+   },
+   {
+    "es": "propio",
+    "ru": "сам, собственный",
+    "note": "§59",
+    "page": 69
+   },
+   {
+    "es": "provincia",
+    "gender": "f",
+    "ru": "провинция",
+    "page": 69
+   },
+   {
+    "es": "proyecto",
+    "gender": "m",
+    "ru": "проект",
+    "page": 69
+   },
+   {
+    "es": "raro",
+    "ru": "редкий, странный",
+    "page": 69
+   },
+   {
+    "es": "revisión",
+    "gender": "f",
+    "ru": "проверка",
+    "page": 69
+   },
+   {
+    "es": "semejante",
+    "ru": "похожий, подобный",
+    "note": "§59",
+    "page": 69
+   },
+   {
+    "es": "trabajo",
+    "gender": "m",
+    "ru": "работа",
+    "page": 69
+   },
+   {
+    "es": "vacaciones",
+    "gender": "f pl",
+    "ru": "каникулы",
+    "page": 69
+   },
+   {
+    "es": "valoración",
+    "gender": "f",
+    "ru": "оценка",
+    "page": 69
+   },
+   {
+    "es": "verbal",
+    "ru": "устный",
+    "page": 69
+   }
+  ],
+  "phrases": [
+   {
+    "es": "¿En qué puedo servirle?",
+    "ru": "Чем могу быть полезен?",
+    "page": 68
+   },
+   {
+    "es": "con permiso",
+    "ru": "с вашего позволения",
+    "page": 69
+   },
+   {
+    "es": "por supuesto",
+    "ru": "конечно, само собой",
+    "page": 69
+   },
+   {
+    "es": "¡Qué raro!",
+    "ru": "Как странно!",
+    "page": 69
+   },
+   {
+    "es": "entrar / ingresar en la Escuela superior de …",
+    "ru": "поступить в вуз",
+    "note": "Para conocer más, упр. 11",
+    "page": 66
+   },
+   {
+    "es": "matricularse en (la Universidad, los cursos de …)",
+    "ru": "поступить в университет, записаться на курсы …",
+    "note": "Para conocer más",
+    "page": 66
+   },
+   {
+    "es": "graduarse en … por la Universidad de …",
+    "ru": "получить диплом или степень в Университете …",
+    "note": "Para conocer más",
+    "page": 66
+   },
+   {
+    "es": "diplomarse en",
+    "ru": "получить диплом бакалавра",
+    "note": "Para conocer más",
+    "page": 66
+   },
+   {
+    "es": "licenciarse en",
+    "ru": "получить высшее образование (с введением Болонской системы в Испании больше не существует)",
+    "note": "Para conocer más",
+    "page": 66
+   },
+   {
+    "es": "especializarse en comercio exterior",
+    "ru": "быть специалистом по внешней торговле",
+    "note": "Para conocer más",
+    "page": 66
+   },
+   {
+    "es": "buscar / encontrar empleo / trabajo",
+    "ru": "искать / найти работу",
+    "note": "Para conocer más",
+    "page": 66
+   },
+   {
+    "es": "colocarse en una empresa de jurista",
+    "ru": "устроиться юристом на предприятие",
+    "note": "Para conocer más",
+    "page": 66
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "id": "§59",
+   "title": "Los indefinidos de igualdad. Неопределенные местоимения и прилагательные со значением сходства",
+   "page": 62,
+   "table": {
+    "rows": [
+     [
+      "mismo (-a, -os, -as)",
+      "тот же самый; сам; именно, прямо",
+      "Tengo los mismos problemas. El niño mismo puede hacerlo. Tienes que responderme ahora mismo."
+     ],
+     [
+      "tal (-es)",
+      "такой",
+      "Tales cursos son gratuitos."
+     ],
+     [
+      "igual (-es)",
+      "одинаковый, такой же",
+      "Firmamos contratos iguales con todos. José es igual a su hermano."
+     ],
+     [
+      "semejante (-s)",
+      "похожий, подобный",
+      "Estos dos niveles son muy semejantes. Semejante programa es fatal."
+     ],
+     [
+      "propio (-a, -os, -as)",
+      "собственный, сам",
+      "Lo hace por el interés propio. El propio director lo quiere."
+     ]
+    ]
+   },
+   "points": [
+    "mismo в препозиции с определенным артиклем = «тот же самый»: es la misma voz, somos del mismo colegio, lo mismo.",
+    "mismo после местоимений и наречий = «именно», «прямо»: ahora mismo, hoy mismo.",
+    "mismo и propio с существительными = «сам»: el mismo rector = el propio rector. После личных местоимений в этом значении — только mismo: yo mismo, tú mismo, nosotros mismos.",
+    "tal ставится с существительными и подчеркивает качество; tan — перед прилагательными и наречиями и подчеркивает интенсивность признака: Tal cosa es muy fea. Es una cosa tan fea."
+   ]
+  },
+  {
+   "id": "§60",
+   "title": "Таблица личных местоимений",
+   "page": 63,
+   "table": {
+    "columns": [
+     "подлежащее",
+     "прямое дополнение",
+     "косвенное дополнение",
+     "предложная форма"
+    ],
+    "rows": [
+     [
+      "yo",
+      "me",
+      "me",
+      "(para) mí"
+     ],
+     [
+      "tú",
+      "te",
+      "te",
+      "(para) ti"
+     ],
+     [
+      "él, ella, usted",
+      "lo (le), la",
+      "le",
+      "(para) él, ella, usted, sí"
+     ],
+     [
+      "nosotros/as",
+      "nos",
+      "nos",
+      "(para) nosotros/as"
+     ],
+     [
+      "vosotros/as",
+      "os",
+      "os",
+      "(para) vosotros/as"
+     ],
+     [
+      "ellos, ellas, ustedes",
+      "los, las",
+      "les",
+      "(para) ellos, ellas, ustedes, sí"
+     ]
+    ]
+   },
+   "points": []
+  },
+  {
+   "id": "§61",
+   "title": "Избыточное употребление местоимений. Местоименная реприза",
+   "page": 63,
+   "points": [
+    "Если прямое или косвенное дополнение стоит перед сказуемым, оно обязательно дублируется личным местоимением в соответствующем падеже: A esta joven la conozco. Estas frases las traducimos en clase."
+   ]
+  },
+  {
+   "id": "§62",
+   "title": "Глаголы движения ir и venir",
+   "page": 64,
+   "table": {
+    "ir": [
+     "voy",
+     "vas",
+     "va",
+     "vamos",
+     "vais",
+     "van"
+    ],
+    "venir": [
+     "vengo",
+     "vienes",
+     "viene",
+     "venimos",
+     "venís",
+     "vienen"
+    ],
+    "ir + ": "allí, a España, a casa, a la oficina, a casa de José, a verte, a veros, contigo, con usted, en metro, en autobús, en coche, a pie, andando, por la calle, de vacaciones",
+    "venir + ": "aquí, de la Universidad, a verme, a vernos, conmigo, con nosotros"
+   },
+   "points": [
+    "ir – идти, ехать, направляться куда-то.",
+    "venir – прийти, приехать, прибыть (по направлению к говорящему)."
+   ]
+  },
+  {
+   "id": "§63",
+   "title": "Глагольная конструкция ir a + infinitivo",
+   "page": 65,
+   "points": [
+    "Выражает намерение говорящего; в современном языке имеет значение ближайшего будущего времени: Voy a ver a mis amigos. ¿Vienes conmigo? Voy a hablar con el jefe sobre este proyecto."
+   ]
+  },
+  {
+   "id": "§64",
+   "title": "Предлог por",
+   "page": 65,
+   "table": {
+    "rows": [
+     [
+      "движение",
+      "vamos por la plaza; ¿entra alguien por la puerta?"
+     ],
+     [
+      "приблизительное время, время суток",
+      "por los años noventa; por la tarde"
+     ],
+     [
+      "примерная продолжительность",
+      "por unos meses"
+     ],
+     [
+      "периодичность",
+      "dos veces por semana"
+     ],
+     [
+      "средство или инструмент",
+      "llamar por teléfono; enviar una carta por avión"
+     ],
+     [
+      "повод, причина",
+      "nunca llega tarde por ser puntual"
+     ],
+     [
+      "способ, образ действия",
+      "por (la) fuerza"
+     ],
+     [
+      "цель",
+      "va a morir por sus ideales"
+     ],
+     [
+      "стоимость",
+      "voy a comprarlo por 20 euros"
+     ]
+    ]
+   },
+   "points": []
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "el mismo / tal / igual / semejante / propio + существительное (§59)",
+   "page": 62,
+   "examples": [
+    {
+     "es": "Tengo los mismos problemas."
+    },
+    {
+     "es": "Tienes que responderme ahora mismo."
+    },
+    {
+     "es": "Tales cursos son gratuitos."
+    },
+    {
+     "es": "José es igual a su hermano."
+    },
+    {
+     "es": "El propio director lo quiere."
+    },
+    {
+     "es": "Tal cosa es muy fea. Es una cosa tan fea."
+    }
+   ]
+  },
+  {
+   "pattern": "Местоименная реприза: дополнение перед глаголом + местоимение (§61)",
+   "pages": [
+    63,
+    64
+   ],
+   "examples": [
+    {
+     "es": "A esta joven la conozco."
+    },
+    {
+     "es": "Estas frases las traducimos en clase."
+    },
+    {
+     "es": "Veo a este señor. – A este señor le veo."
+    }
+   ]
+  },
+  {
+   "pattern": "ir a / venir de + место; ir en + транспорт; ir a pie (§62)",
+   "page": 64,
+   "examples": [
+    {
+     "es": "¿Vienes conmigo a la fiesta? – Sí, voy contigo con mucho gusto."
+    },
+    {
+     "es": "¿Adónde vas? – Voy a ver a mi amigo."
+    },
+    {
+     "es": "¿Cómo vas a la Universidad, en coche o en metro?"
+    }
+   ]
+  },
+  {
+   "pattern": "ir a + infinitivo — намерение, ближайшее будущее (§63)",
+   "page": 65,
+   "examples": [
+    {
+     "es": "Voy a ver a mis amigos. ¿Vienes conmigo?"
+    },
+    {
+     "es": "Voy a hablar con el jefe sobre este proyecto."
+    },
+    {
+     "es": "¿Vas a aprobar el inglés?"
+    }
+   ]
+  },
+  {
+   "pattern": "Значения предлога por (§64)",
+   "page": 65,
+   "examples": [
+    {
+     "es": "Siempre vamos a la Universidad por esta calle."
+    },
+    {
+     "es": "Por la tarde nos gusta descansar."
+    },
+    {
+     "es": "Dos veces por semana."
+    },
+    {
+     "es": "Llamar por teléfono."
+    },
+    {
+     "es": "Voy a comprarlo por 20 euros."
+    }
+   ]
+  }
+ ],
+ "texts": [
+  {
+   "title": "Buscando empleo (диалог, упр. 12)",
+   "page": 66,
+   "es": "– Con permiso. ¿Es usted el jefe de personal?\n– Sí, señor. Adelante. ¿En qué puedo servirle?\n– Es que busco empleo y...\n– ...quiere colocarse en nuestra empresa.\n– Sí, señor. Por eso estoy aquí.\n– ¿En qué se especializa usted?\n– Soy graduado en económicas por la Universidad Complutense de Madrid. Ahora estudio un máster en la Escuela Superior de Administración y Dirección de Empresas, pero pronto termino esta carrera.\n– Ah, sí. ESADE es un centro de estudios muy prestigioso. ¿Tiene usted experiencia profesional?\n– Por supuesto que no.\n– Pues, bien. Necesito su currículum. Lo estudio y después, si todo me parece bien, le invito para una entrevista.\n– Muchas gracias, señor. Aquí tiene mi currículum. Hasta luego."
+  },
+  {
+   "title": "Currículum vitae (Texto complementario, упр. 18)",
+   "page": 68,
+   "es": "Образец резюме: EXPERIENCIA LABORAL (Banco Hipotecario Portugués, febrero 2003 – actualm., Coordinadora de préstamos de hipotecas; J.M. Monten y asociados, enero 2002 – enero 2003, Analista de mercados; Funciones: comunicación con agentes de bolsa e hipotecas, análisis e informes sobre el mercado inmobiliario, comprobación de avales y datos financieros, creación de documentos y manejo de la base de datos, revisión y valoración de documentos de estudios de mercado, preparación de promociones, presentación a los clientes de las campañas de publicidad); FORMACIÓN ACADÉMICA (1996–2001 Universidad de Valencia, Licenciada en CC.EE. y Empresariales, Especialidad Márketing); IDIOMAS (Inglés fluido, verbal y escrito; Portugués hablado y escrito); INFORMÁTICA; DATOS DE INTERÉS (facilidad para las relaciones públicas, trabajo en equipo; capacidad para organizar y desarrollar diferentes proyectos de márketing; interés por las diferentes culturas y formas de vida en otros países; entusiasmo por el trabajo y movilidad geográfica)."
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Прочитайте и переведите предложения (mismo, tal, igual, semejante, propio)",
+   "page": 63,
+   "items": [
+    "Vivimos en el mismo hotel que los Aguirre.",
+    "Ana y Elena tienen semejantes problemas en el trabajo.",
+    "Yo misma hago café por la mañana.",
+    "El propio escritor da una entrevista a nuestro periódico.",
+    "Los estudiantes hacen semejantes faltas en la prueba.",
+    "¡Jorge y tú tenéis faltas iguales en la tarea de casa!",
+    "Tales móviles son muy bonitos.",
+    "El mismo ministro quiere hablar con Usted.",
+    "Semejante error es imperdonable.",
+    "Tales casos son difíciles.",
+    "Necesitamos hablar aquí mismo.",
+    "Las reformas económicas de estos dos países no son iguales."
+   ]
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Вставьте tan или tal и переведите",
+   "page": 63,
+   "items": [
+    "Es una novela ___ interesante.",
+    "___ novela no me gusta.",
+    "No podemos comprar un coche ___ caro.",
+    "___ coche es lo que quiero.",
+    "___ cursos son muy populares ahora.",
+    "Son los futbolistas ___ populares entre los jóvenes.",
+    "___ reforma afecta a todo el sistema educativo.",
+    "Una reforma ___ profunda debe ser universal para todos."
+   ]
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 63,
+   "items": [
+    "Вы работаете на том же самом предприятии?",
+    "Они всегда говорят об одних и тех же вещах.",
+    "Ты сам можешь сделать эту работу.",
+    "Почему ты всегда слушаешь одну и ту же музыку?",
+    "Она сама этого не понимает?",
+    "Во многих европейских странах одинаковая система образования.",
+    "Нам не нравится подобная реформа.",
+    "Сам декан (decano) присутствует на этой лекции.",
+    "Мы хотим познакомиться с Вашей женой сегодня же вечером.",
+    "Пепе начинает читать тот же самый текст вслух."
+   ]
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Ответьте, заменяя прямое дополнение безударными местоимениями: ¿Lees libros? – Sí, los leo. / No, no los leo (pero quiero leerlos).",
+   "page": 63
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Местоименная реприза: A – поменяйте порядок слов (Veo a este señor. – A este señor le veo.); B – переведите на испанский, обращая внимание на порядок слов",
+   "page": 64
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Проспрягайте ir и venir с зависимыми словами; A – вопросы в парах; B – ответьте на вопросы",
+   "page": 64
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 64,
+   "items": [
+    "Ты идешь домой, а я иду к Марии.",
+    "Почему ты не хочешь пойти с нами на дискотеку? – Дело в том, что я еду к своим родственникам на день рождения.",
+    "Вот идет автобус.",
+    "Мои родители едут в отпуск во Францию, а я еду в Малагу в языковую школу.",
+    "Ты идешь со мной обедать? – Разумеется.",
+    "Ты едешь на метро, а затем идешь пешком по улице.",
+    "Куда Вы сегодня идете? – Мы идем в музей Прадо.",
+    "Откуда ты идешь так поздно?",
+    "Ты откуда и куда?"
+   ]
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Ответьте на вопросы утвердительно (ir a + infinitivo)",
+   "page": 65
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 65,
+   "items": [
+    "Моя подруга собирается изучать испанский язык в Институте Сервантеса.",
+    "Когда ты будешь делать домашнюю работу?",
+    "Когда вы ко мне приедете?",
+    "После лекции мы собираемся пойти пообедать.",
+    "Твои родители собираются покупать тебе новый компьютер?",
+    "Я не собираюсь отвечать на твои вопросы."
+   ]
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Переведите на русский язык (предлог por)",
+   "page": 65,
+   "items": [
+    "Siempre vamos a la Universidad por esta calle.",
+    "Todos los días Miguel tiene que hablar por Skype con los clientes europeos.",
+    "Por no hacer la tarea de casa Juan no va a sacar una buena nota en esta asignatura.",
+    "No voy a comprar las frutas aquí, están muy caras. Las compro por 3 euros en otra tienda.",
+    "¿Les mandas las cartas a tus amigos estadounidenses por avión, nieto? – No, abuela, se las mando por Internet.",
+    "Por la tarde a mis amigos y a mí nos gusta descansar después de las clases y escuchar música.",
+    "Carlos está ahora en Chile y va a estar allí por algunos años – hace un máster en la Universidad de Santiago de Chile."
+   ]
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Para conocer más: выражения об учебе и карьере; A – проспрягайте; B – переведите на русский; C – переведите на испанский",
+   "page": 66
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Прочитайте и переведите диалог «Buscando empleo»; A – проспрягайте; B – вопросы; C – по ролям; D – перескажите",
+   "pages": [
+    66,
+    67
+   ]
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Вставьте слова: colocarse, experiencia profesional, entrevista de trabajo, estudiar un máster, terminar la carrera, graduarse, currículum, empresa, buscar empleo, invitar",
+   "page": 67
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 67
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы",
+   "page": 67
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Расскажите, какое образование и в каком вузе вы получаете",
+   "page": 67
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 67,
+   "items": [
+    "Вы ищете работу? – Да, я ищу её с сентября.",
+    "Ваш опыт нам очень необходим. Подобных специалистов мало.",
+    "Вы получаете диплом бакалавра в этом году? А что собираетесь делать дальше?",
+    "Этому предприятию требуется один выпускник с дипломом юриста и двое с дипломом экономиста.",
+    "Вы можете прислать мне Ваше резюме? – Да, конечно я Вам его пришлю по электронной почте.",
+    "Ты идешь со мной в банк? – Нет, я не могу пойти с тобой туда сейчас. У меня встреча.",
+    "Эти телевизоры одинаковые. Они мне совсем не нравятся. Я не собираюсь покупать их за такую цену.",
+    "Чтобы устроиться в эту компанию, тебе нужно получить диплом бакалавра коммерции.",
+    "Сам генеральный директор хочет встретиться с Вами и обсудить эту тему.",
+    "На какой факультет вы собираетесь поступать?",
+    "Наш финансовый директор собирается поехать в банк в это же самое время. Вы можете встретить его там."
+   ]
+  },
+  {
+   "number": "18",
+   "instruction_ru": "Texto complementario: прочитайте и переведите резюме (Currículum vitae)",
+   "page": 68
+  },
+  {
+   "number": "19",
+   "instruction_ru": "Представьте свое резюме",
+   "page": 68
+  }
+ ],
+ "questions_for_user": []
+}

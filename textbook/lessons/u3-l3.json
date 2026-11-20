@@ -1,0 +1,928 @@
+{
+ "id": 15,
+ "unit": 3,
+ "lesson": 3,
+ "title": "Unidad 3. En casa, en la oficina y en el hotel — Lección 3",
+ "pages": [
+  88,
+  89,
+  90,
+  91,
+  92,
+  93,
+  94
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 94; слова квартиры — Para conocer más, с. 92",
+  "verbs": [
+   {
+    "es": "agradecer (Va)",
+    "ru": "благодарить",
+    "page": 94
+   },
+   {
+    "es": "amueblar",
+    "ru": "обставить мебелью",
+    "page": 94
+   },
+   {
+    "es": "cambiar (de algo)",
+    "ru": "сменить что-л.",
+    "page": 94
+   },
+   {
+    "es": "conseguir (II)",
+    "ru": "получить, добыть",
+    "page": 94
+   },
+   {
+    "es": "constituir (VI)",
+    "ru": "образовывать",
+    "note": "§78",
+    "page": 94
+   },
+   {
+    "es": "construir (VI)",
+    "ru": "строить",
+    "note": "§78: construyo, construyes, construye, construimos, construís, construyen",
+    "page": 94
+   },
+   {
+    "es": "depender (de)",
+    "ru": "зависеть от чего-л.",
+    "page": 94
+   },
+   {
+    "es": "destituir (VI)",
+    "ru": "смещать",
+    "note": "§78",
+    "page": 94
+   },
+   {
+    "es": "destruir (VI)",
+    "ru": "разрушать",
+    "note": "§78",
+    "page": 94
+   },
+   {
+    "es": "disminuir (VI)",
+    "ru": "уменьшать",
+    "note": "§78",
+    "page": 94
+   },
+   {
+    "es": "huir (VI)",
+    "ru": "убегать",
+    "note": "§78",
+    "page": 94
+   },
+   {
+    "es": "incluir (VI)",
+    "ru": "включать",
+    "note": "§78",
+    "page": 94
+   },
+   {
+    "es": "molestar",
+    "ru": "беспокоить",
+    "page": 94
+   },
+   {
+    "es": "pintar",
+    "ru": "красить",
+    "page": 94
+   },
+   {
+    "es": "poner la mesa",
+    "ru": "накрывать на стол",
+    "page": 94
+   },
+   {
+    "es": "prometer",
+    "ru": "обещать",
+    "page": 94
+   },
+   {
+    "es": "resolver (Ib)",
+    "ru": "решать, разрешать",
+    "page": 94
+   },
+   {
+    "es": "romper",
+    "ru": "рвать, разбивать",
+    "page": 94
+   },
+   {
+    "es": "viajar",
+    "ru": "путешествовать",
+    "page": 94
+   },
+   {
+    "es": "concluir (VI)",
+    "ru": "завершать",
+    "note": "§78; в словаре урока 4: concluir el bachillerato",
+    "page": 89
+   }
+  ],
+  "other": [
+   {
+    "es": "agencia inmobiliaria",
+    "gender": "f",
+    "ru": "агентство по торговле недвижимостью",
+    "page": 94
+   },
+   {
+    "es": "agradable",
+    "ru": "приятный",
+    "page": 94
+   },
+   {
+    "es": "ajustado",
+    "ru": "зд. стесненный",
+    "page": 94
+   },
+   {
+    "es": "alcoba",
+    "gender": "f",
+    "ru": "спальня",
+    "page": 94
+   },
+   {
+    "es": "amplio",
+    "ru": "просторный, широкий",
+    "page": 94
+   },
+   {
+    "es": "atención",
+    "gender": "f",
+    "ru": "внимание",
+    "page": 94
+   },
+   {
+    "es": "balcón",
+    "gender": "m",
+    "ru": "балкон",
+    "page": 94
+   },
+   {
+    "es": "barco",
+    "gender": "m",
+    "ru": "корабль",
+    "page": 94
+   },
+   {
+    "es": "calidad",
+    "gender": "f",
+    "ru": "качество",
+    "page": 94
+   },
+   {
+    "es": "comedor",
+    "gender": "m",
+    "ru": "столовая",
+    "page": 94
+   },
+   {
+    "es": "consejo",
+    "gender": "m",
+    "ru": "совет",
+    "page": 94
+   },
+   {
+    "es": "cristal",
+    "gender": "m",
+    "ru": "стекло",
+    "page": 94
+   },
+   {
+    "es": "cuarto",
+    "gender": "m",
+    "ru": "комната",
+    "page": 94
+   },
+   {
+    "es": "cuarto de baño",
+    "gender": "m",
+    "ru": "ванная комната",
+    "page": 94
+   },
+   {
+    "es": "dirección",
+    "gender": "f",
+    "ru": "адрес",
+    "page": 94
+   },
+   {
+    "es": "diseño",
+    "gender": "m",
+    "ru": "дизайн",
+    "page": 94
+   },
+   {
+    "es": "espacioso",
+    "ru": "просторный",
+    "page": 94
+   },
+   {
+    "es": "fiel",
+    "ru": "верный",
+    "page": 94
+   },
+   {
+    "es": "fiesta",
+    "gender": "f",
+    "ru": "праздник, вечеринка",
+    "page": 94
+   },
+   {
+    "es": "una fiesta bomba",
+    "gender": "f",
+    "ru": "потрясающая вечеринка",
+    "page": 94
+   },
+   {
+    "es": "fortaleza",
+    "gender": "f",
+    "ru": "крепость",
+    "page": 94
+   },
+   {
+    "es": "fuerte",
+    "ru": "сильный",
+    "page": 94
+   },
+   {
+    "es": "fundación",
+    "gender": "f",
+    "ru": "фонд, организация",
+    "page": 94
+   },
+   {
+    "es": "habitación",
+    "gender": "f",
+    "ru": "комната",
+    "page": 94
+   },
+   {
+    "es": "máquina",
+    "gender": "f",
+    "ru": "машина, аппарат",
+    "page": 94
+   },
+   {
+    "es": "mentira",
+    "gender": "f",
+    "ru": "ложь",
+    "page": 94
+   },
+   {
+    "es": "mueble",
+    "gender": "m",
+    "ru": "мебель",
+    "page": 94
+   },
+   {
+    "es": "nunca",
+    "ru": "никогда",
+    "page": 94
+   },
+   {
+    "es": "pobre",
+    "ru": "бедный",
+    "page": 94
+   },
+   {
+    "es": "por ahora",
+    "ru": "пока, пока что",
+    "page": 94
+   },
+   {
+    "es": "presupuesto",
+    "gender": "m",
+    "ru": "бюджет",
+    "page": 94
+   },
+   {
+    "es": "puente",
+    "gender": "m",
+    "ru": "мост",
+    "page": 94
+   },
+   {
+    "es": "recibidor",
+    "gender": "m",
+    "ru": "прихожая",
+    "page": 94
+   },
+   {
+    "es": "rico",
+    "ru": "богатый; вкусный",
+    "page": 94
+   },
+   {
+    "es": "sala de estar",
+    "ru": "гостиная",
+    "page": 94
+   },
+   {
+    "es": "salón",
+    "gender": "m",
+    "ru": "гостиная, салон",
+    "page": 94
+   },
+   {
+    "es": "silencioso",
+    "ru": "тихий",
+    "page": 94
+   },
+   {
+    "es": "simple",
+    "ru": "простой",
+    "page": 94
+   },
+   {
+    "es": "sincero",
+    "ru": "искренний",
+    "page": 94
+   },
+   {
+    "es": "sumamente",
+    "ru": "в высшей степени",
+    "page": 94
+   },
+   {
+    "es": "tesis",
+    "gender": "f",
+    "ru": "диссертация",
+    "page": 94
+   },
+   {
+    "es": "todavía",
+    "ru": "еще",
+    "page": 94
+   },
+   {
+    "es": "torre",
+    "gender": "f",
+    "ru": "башня",
+    "page": 94
+   },
+   {
+    "es": "tráfico",
+    "gender": "m",
+    "ru": "движение",
+    "page": 94
+   },
+   {
+    "es": "útil",
+    "ru": "полезный",
+    "page": 94
+   },
+   {
+    "es": "vecino",
+    "ru": "соседский, сосед",
+    "page": 94
+   },
+   {
+    "es": "verdaderamente",
+    "ru": "поистине",
+    "page": 94
+   },
+   {
+    "es": "ya",
+    "ru": "уже",
+    "page": 94
+   }
+  ],
+  "phrases": [
+   {
+    "es": "A la atención de…",
+    "ru": "Вниманию кого-л.",
+    "page": 94
+   },
+   {
+    "es": "hace poco (mucho)",
+    "ru": "недавно (давно)",
+    "page": 94
+   },
+   {
+    "es": "Parece mentira…",
+    "ru": "Не может быть…",
+    "page": 94
+   },
+   {
+    "es": "¡Dios mío! Parece mentira pero es verdad.",
+    "ru": "Боже мой! Невероятно, но это правда.",
+    "note": "из письма упр. 12",
+    "page": 92
+   },
+   {
+    "es": "Lo de los precios, ni hablar.",
+    "ru": "О ценах даже говорить не стоит.",
+    "note": "из письма упр. 12 (эквивалент в упр. 12 B)",
+    "page": 92
+   }
+  ],
+  "home_words": {
+   "page": 92,
+   "title": "En casa (Para conocer más, упр. 11)",
+   "words": [
+    "cuarto",
+    "habitación",
+    "sala de estar",
+    "salón",
+    "comedor",
+    "cocina",
+    "despacho",
+    "dormitorio",
+    "alcoba",
+    "cuarto de baño",
+    "pasillo",
+    "recibidor",
+    "balcón",
+    "ventana",
+    "cristal",
+    "puerta",
+    "pared"
+   ],
+   "adjectives": [
+    "grande",
+    "pequeño",
+    "amplio",
+    "acogedor",
+    "cómodo",
+    "espacioso",
+    "agradable",
+    "simpático",
+    "bien amueblado"
+   ],
+   "flat_numbering": "2º-2ª, 3º-1ª, 1º-4ª, 1º-3ª, 4º-dcha, 5º-izda, 6º-A, 7º-C, 8º-G, 4º-3ª, 2º-1ª, 3º-3ª, PB (упр. 13, с. 93)"
+  },
+  "irregular_participles": [
+   {
+    "es": "tomar",
+    "participio": "tomado",
+    "page": 90
+   },
+   {
+    "es": "beber",
+    "participio": "bebido",
+    "page": 90
+   },
+   {
+    "es": "vivir",
+    "participio": "vivido",
+    "page": 90
+   },
+   {
+    "es": "abrir",
+    "participio": "abierto",
+    "page": 90
+   },
+   {
+    "es": "ver",
+    "participio": "visto",
+    "page": 90
+   },
+   {
+    "es": "volver",
+    "participio": "vuelto",
+    "page": 90
+   },
+   {
+    "es": "poner",
+    "participio": "puesto",
+    "page": 90
+   },
+   {
+    "es": "hacer",
+    "participio": "hecho",
+    "page": 90
+   },
+   {
+    "es": "escribir",
+    "participio": "escrito",
+    "page": 90
+   },
+   {
+    "es": "decir",
+    "participio": "dicho",
+    "page": 90
+   },
+   {
+    "es": "resolver",
+    "participio": "resuelto",
+    "page": 90
+   },
+   {
+    "es": "romper",
+    "participio": "roto",
+    "page": 90
+   },
+   {
+    "es": "morir",
+    "participio": "muerto",
+    "page": 90
+   },
+   {
+    "es": "cubrir",
+    "participio": "cubierto",
+    "page": 90
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "id": "§77",
+   "title": "El superlativo. Превосходная степень",
+   "pages": [
+    88,
+    89
+   ],
+   "table": {
+    "columns": [
+     "суффиксы -ísimo/-ísima",
+     "суффикс -bilísimo (прилагательные на -able)",
+     "наречие muy",
+     "приставки super-, extra- (разговорная речь)"
+    ],
+    "rows": [
+     [
+      "altísimo, buenísimo",
+      "agradabilísimo",
+      "muy alto, muy agradable",
+      "un restaurante superbueno, una comida extrarrica"
+     ]
+    ],
+    "неправильные формы": [
+     "largo – larguísimo",
+     "rico – riquísimo",
+     "antiguo – antiquísimo",
+     "fuerte – fortísimo",
+     "pobre – paupérrimo",
+     "fiel – fidelísimo",
+     "simple – simplicísimo"
+    ]
+   },
+   "points": [
+    "Превосходная степень может быть абсолютной и относительной.",
+    "77.1. El superlativo absoluto — образуется при помощи суффиксов, наречий и приставок; как правило, используется наречие muy: muy agradable – очень приятный.",
+    "77.2. El superlativo relativo — образуется при помощи определенного артикля + más / menos: Jorge es el más inteligente de la familia. – Хорхе – самый умный в семье. Esta joven es la más guapa de todas. – Эта девушка – самая красивая из всех. Aquellos ordenadores son los menos caros de la tienda. – Эти компьютеры – самые дешевые в магазине.",
+    "NB: при относительной превосходной степени необходим предлог de: Antonio es el más aplicado del grupo. – Антонио самый прилежный в группе."
+   ]
+  },
+  {
+   "id": "§78",
+   "title": "VI группа отклоняющихся глаголов (глаголы с окончанием -uir)",
+   "page": 89,
+   "table": {
+    "construir (i → y между гласными)": [
+     "construyo",
+     "construyes",
+     "construye",
+     "construimos",
+     "construís",
+     "construyen"
+    ],
+    "construir + ": "una casa, un edificio, un puente, una torre, una ciudad, una fortaleza, un coche, un avión, un barco, una máquina",
+    "так же": "destruir, destituir, constituir, incluir, concluir, huir, disminuir"
+   },
+   "points": []
+  },
+  {
+   "id": "§79",
+   "title": "Participio pasado. Причастие прошедшего времени",
+   "page": 90,
+   "table": {
+    "columns": [
+     "tomar",
+     "beber",
+     "vivir"
+    ],
+    "rows": [
+     [
+      "tomado",
+      "bebido",
+      "vivido"
+     ]
+    ],
+    "неправильные формы": [
+     "abrir – abierto",
+     "ver – visto",
+     "volver – vuelto",
+     "poner – puesto",
+     "hacer – hecho",
+     "escribir – escrito",
+     "decir – dicho",
+     "resolver – resuelto",
+     "romper – roto",
+     "morir – muerto",
+     "cubrir – cubierto"
+    ]
+   },
+   "points": [
+    "Причастие – безличная форма глагола, совмещающая признаки глагола и прилагательного.",
+    "В предложении может выполнять функции определения.",
+    "Используется для образования сложных времен и глагольных конструкций."
+   ]
+  },
+  {
+   "id": "§80",
+   "title": "Глагольная конструкция estar + participio pasado",
+   "page": 90,
+   "points": [
+    "Выражает результат действия: El café ya está preparado. Los ejercicios están hechos. La casa está construida. Todas las flores están vendidas."
+   ]
+  },
+  {
+   "id": "§81",
+   "title": "Pretérito Perfecto",
+   "pages": [
+    90,
+    91
+   ],
+   "table": {
+    "haber": [
+     "he",
+     "has",
+     "ha",
+     "hemos",
+     "habéis",
+     "han"
+    ],
+    "схема": "haber + participio pasado"
+   },
+   "points": [
+    "Обозначает: а) действие, произошедшее в еще незаконченном промежутке времени; б) действие, начавшееся в прошлом и продолжающееся в момент речи; в) действие, совершившееся в прошлом, но актуальное для говорящего в настоящий момент.",
+    "Образуется при помощи вспомогательного глагола haber и причастия смыслового глагола: He trabajado. Ya han llegado. Nos hemos divertido.",
+    "Как правило, употребляется с наречиями периода или момента времени: hoy, ahora (Hoy me he levantado tarde. Ahora hemos escrito la prueba); esta mañana (tarde, noche) (Esta tarde no lo he visto); esta semana (Esta semana hemos aprobado el último examen); este mes, este año (Este año han viajado mucho); ya, todavía (¿Todavía no has traducido el texto?); nunca, siempre (Nunca ha estado en Sevilla)."
+   ]
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "el / la / los / las + más / menos + прилагательное + de (§77.2)",
+   "page": 89,
+   "examples": [
+    {
+     "es": "Jorge es el más inteligente de la familia."
+    },
+    {
+     "es": "Esta joven es la más guapa de todas."
+    },
+    {
+     "es": "Aquellos ordenadores son los menos caros de la tienda."
+    },
+    {
+     "es": "Antonio es el más aplicado del grupo."
+    }
+   ]
+  },
+  {
+   "pattern": "muy + прилагательное / прилагательное + -ísimo (§77.1)",
+   "page": 88,
+   "examples": [
+    {
+     "es": "muy alto – altísimo"
+    },
+    {
+     "es": "muy agradable – agradabilísimo"
+    },
+    {
+     "es": "un restaurante superbueno"
+    }
+   ]
+  },
+  {
+   "pattern": "estar + participio — результат действия (§80)",
+   "page": 90,
+   "examples": [
+    {
+     "es": "El café ya está preparado."
+    },
+    {
+     "es": "Los ejercicios están hechos."
+    },
+    {
+     "es": "Mamá pone la mesa. – La mesa está puesta."
+    },
+    {
+     "es": "He abierto las ventanas. Las ventanas están abiertas."
+    }
+   ]
+  },
+  {
+   "pattern": "Pretérito Perfecto: haber + participio + маркеры hoy, esta semana, ya, todavía, nunca (§81)",
+   "pages": [
+    90,
+    91
+   ],
+   "examples": [
+    {
+     "es": "Hoy me he levantado tarde."
+    },
+    {
+     "es": "Esta semana hemos aprobado el último examen."
+    },
+    {
+     "es": "¿Todavía no has traducido el texto?"
+    },
+    {
+     "es": "Nunca ha estado en Sevilla."
+    },
+    {
+     "es": "¿Has traducido el artículo? – Sí, ya lo he traducido."
+    },
+    {
+     "es": "¿Has escrito una carta a tu colega? – No, no se la he escrito todavía."
+    }
+   ]
+  }
+ ],
+ "texts": [
+  {
+   "title": "Письмо Маркоса (упр. 12)",
+   "page": 92,
+   "es": "A la atención de todos mis amigos\nHola,\nhe cambiado de domicilio. ¡Dios mío! Parece mentira pero es verdad. El edificio donde vivo ahora está construido desde hace poco. El apartamento me lo han encontrado en la agencia inmobiliaria. Lo de los precios, ni hablar. Tiene dos dormitorios, una sala de estar, una cocina bastante amplia y dos cuartos de baño. Está en el quinto piso. Hay dos ascensores que funcionan bien, por eso nunca he subido las escaleras a pie. Las ventanas de los dormitorios dan a una calle silenciosa donde hay poco tráfico. Los vecinos tampoco me molestan. Sinceramente, no los he conocido todavía. El apartamento me parece espacioso porque las paredes están pintadas de colores claros y por ahora hay pocos muebles. Necesito consejos útiles sobre cómo amueblarlo. Os los voy a agradecer mucho. De todos modos os prometo dar una fiesta bomba.\nMarcos\nP.S. Mi nueva dirección es: c/Goya 56, 5º-3ª."
+  },
+  {
+   "title": "Amueblar el apartamento (Texto complementario, упр. 18)",
+   "page": 94,
+   "es": "Acabas de conseguir tu apartamento y ahora tienes que empezar a amueblarlo. Existen muchas alternativas pero principalmente dependen de un factor: ¿cuál es tu presupuesto? Si la idea de comprar muebles usados no te gusta demasiado, nuestro siguiente consejo es comprar en IKEA (tienen un bus gratuito los fines de semana). No son muebles de gran calidad pero tienen un precio excelente y un diseño contemporáneo. Les gustan a casi todos, en especial a la gente joven que son los que tienen presupuestos más ajustados."
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Ответьте на вопросы (относительная превосходная степень)",
+   "page": 89
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 89,
+   "items": [
+    "Это очень прилежный студент. Он самый прилежный из всей группы.",
+    "Это очень сильный человек. Он самый сильный из всех нас.",
+    "Это очень древний город. Он самый древний в этой провинции.",
+    "Это очень богатый бизнесмен. Он самый богатый в стране.",
+    "Хосе – очень верный друг. Он самый верный из всех моих друзей.",
+    "Эта семья очень бедная. Она самая бедная на нашей улице.",
+    "Это задание очень простое. Оно самое простое из всех.",
+    "Эта улица очень длинная. Она самая длинная в нашем городе.",
+    "Этот сотрудник очень любезен. Он самый любезный в этой компании.",
+    "Этот шкаф очень удобный. Он самый удобный из всех."
+   ]
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Проспрягайте, переведите и запомните: destruirlo todo; destituir al director de su cargo; constituir una fundación; incluir este tema en su tesis; concluir con esto; huir de aquí; disminuir el precio. A – вопросы; B – переведите на испанский",
+   "page": 89
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Образуйте причастия от глаголов: dormir, seguir, vender, constituir, hacer, reproducir, guardar, escribir, sonreír, poner, ser, imprimir, ir, poder, estar, decir, aprobar, morir, ver, examinarse, tener, volver, asistir, visitar, abrir, reírse, romper, gustar, pedir, resolver, oír, escuchar",
+   "page": 90
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Трансформируйте по образцу: Mamá pone la mesa. – La mesa está puesta.",
+   "page": 90,
+   "items": [
+    "Los estudiantes traducen el diálogo.",
+    "El matemático no resuelve el problema.",
+    "El hijo dice toda la verdad a los padres.",
+    "Hacemos la tarea de casa.",
+    "Abro la puerta.",
+    "Escribís la redacción.",
+    "Los niños rompen el móvil.",
+    "El cliente no firma el contrato.",
+    "La abuela sirve el café.",
+    "No encuentro el lápiz rojo."
+   ]
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 90,
+   "items": [
+    "Стол накрыт.",
+    "Стул сломан.",
+    "Задача решена.",
+    "Письмо написано.",
+    "Окна открыты.",
+    "Факс отправлен.",
+    "Копии документов сделаны.",
+    "Все сказано.",
+    "Подарок выбран.",
+    "Все сидят за столом.",
+    "Комната освещена.",
+    "Экзамены сданы.",
+    "Картина продана.",
+    "Башня разрушена.",
+    "Документы вручены секретарю.",
+    "Все уже одеты."
+   ]
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Проспрягайте в Pretérito Perfecto; A – ответьте утвердительно (¿Has traducido el artículo? – Sí, ya lo he traducido.); B – отрицательно (¿Has escrito una carta a tu colega? – No, no se la he escrito todavía.)",
+   "page": 91
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Поставьте глаголы в Pretérito Perfecto и перескажите текст (Esta tarde Ramón atraviesa la plaza…)",
+   "page": 91
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Закончите предложения (He puesto la mesa. La mesa está …)",
+   "page": 91
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 91,
+   "items": [
+    "Вы уже пили кофе?",
+    "Я еще не видел этот фильм.",
+    "Кто Вам это сказал?",
+    "Ваш сын уже вернулся домой?",
+    "Ваша группа уже сдала экзамен?",
+    "Я никогда не был у него дома.",
+    "Он никогда не служил в армии.",
+    "Мы еще не выбрали ему подарок.",
+    "Ты уже попрощался со своими родственниками?",
+    "Кто Вам вручил эти документы?",
+    "Сегодня я не спал всю ночь.",
+    "На этой неделе у нас не было занятий по английскому языку."
+   ]
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Para conocer más: слова для описания квартиры (En casa); A – подберите прилагательные; B – опишите квартиру на картинке (план квартиры)",
+   "page": 92
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Прочитайте и переведите письмо Маркоса; A – проспрягайте в Presente и Pretérito Perfecto; B – эквиваленты; C – вопросы; D – опишите квартиру Маркоса",
+   "pages": [
+    92,
+    93
+   ]
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Прочитайте обозначения нумерации квартир в Испании: 2º-2ª, 3º-1ª, 1º-4ª, 1º-3ª, 4º-dcha, 5º-izda, 6º-A, 7º-C, 8º-G, 4º-3ª, 2º-1ª, 3º-3ª, PB",
+   "page": 93
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 93
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы о вашей квартире",
+   "page": 93
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Опишите свою квартиру",
+   "page": 93
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 93,
+   "items": [
+    "Куда выходят окна Вашей гостиной, на улицу или во двор?",
+    "Кто-нибудь уже накрыл стол? – Нет, никто из нас этого еще не сделал.",
+    "Какая комната просторней, моя или твоя?",
+    "Вам нравится эта спальня? Она самая светлая из всех.",
+    "Ваш совет, как обставить квартиру, потрясающий.",
+    "Мне сказали, что его сняли с должности. Это правда?",
+    "Кто построил самый красивый дом в Барселоне? – Самые красивые дома Барселоны построил известный архитектор Антонио Гауди.",
+    "Никому из нас не понравились их цены. Они самые высокие на рынке.",
+    "Дверь открыта, зеркало разбито. Что здесь произошло?",
+    "Эта квартира уже продана? – Да, её купил какой-то иностранец."
+   ]
+  },
+  {
+   "number": "18",
+   "instruction_ru": "Texto complementario: прочитайте и переведите текст о покупке мебели",
+   "page": 94
+  },
+  {
+   "number": "19",
+   "instruction_ru": "Ответьте на вопросы по тексту",
+   "page": 94
+  },
+  {
+   "number": "20",
+   "instruction_ru": "Расскажите о вашем опыте приобретения мебели",
+   "page": 94
+  }
+ ],
+ "questions_for_user": []
+}

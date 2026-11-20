@@ -1,0 +1,803 @@
+{
+ "id": 17,
+ "unit": 3,
+ "lesson": 5,
+ "title": "Unidad 3. En casa, en la oficina y en el hotel — Lección 5",
+ "pages": [
+  100,
+  101,
+  102,
+  103,
+  104,
+  105,
+  106
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 105–106; слова о гостинице — Para conocer más, с. 103",
+  "verbs": [
+   {
+    "es": "aconsejar",
+    "ru": "советовать",
+    "page": 105
+   },
+   {
+    "es": "alojarse",
+    "ru": "поселиться",
+    "page": 105
+   },
+   {
+    "es": "ayudar (a)",
+    "ru": "помогать",
+    "page": 105
+   },
+   {
+    "es": "caber",
+    "ru": "вмещаться",
+    "note": "Futuro: cabré, cabrás… (§87)",
+    "page": 105
+   },
+   {
+    "es": "dar a conocer",
+    "ru": "сообщать",
+    "page": 105
+   },
+   {
+    "es": "dirigirse",
+    "ru": "направляться",
+    "page": 105
+   },
+   {
+    "es": "estar listo",
+    "ru": "быть готовым",
+    "page": 105
+   },
+   {
+    "es": "tomar una decisión",
+    "ru": "принять решение",
+    "page": 105
+   },
+   {
+    "es": "llenar",
+    "ru": "заполнять",
+    "page": 106
+   },
+   {
+    "es": "planificar",
+    "ru": "планировать",
+    "page": 106
+   },
+   {
+    "es": "quedarse",
+    "ru": "остаться",
+    "page": 106
+   },
+   {
+    "es": "reservar",
+    "ru": "бронировать",
+    "page": 106
+   },
+   {
+    "es": "hacer reserva",
+    "ru": "бронировать",
+    "page": 106
+   },
+   {
+    "es": "salir",
+    "ru": "выходить, выезжать",
+    "note": "Futuro: saldré, saldrás… (§87)",
+    "page": 106
+   }
+  ],
+  "other": [
+   {
+    "es": "a partir de",
+    "ru": "начиная с",
+    "page": 105
+   },
+   {
+    "es": "acceso",
+    "gender": "m",
+    "ru": "доступ",
+    "page": 105
+   },
+   {
+    "es": "actividades de ocio",
+    "ru": "досуг",
+    "page": 105
+   },
+   {
+    "es": "albergue",
+    "gender": "m",
+    "ru": "хостел, приют",
+    "page": 105
+   },
+   {
+    "es": "alojamiento",
+    "gender": "m",
+    "ru": "проживание",
+    "page": 105
+   },
+   {
+    "es": "animal",
+    "gender": "m",
+    "ru": "животное",
+    "page": 105
+   },
+   {
+    "es": "animal doméstico",
+    "gender": "m",
+    "ru": "домашнее животное",
+    "page": 105
+   },
+   {
+    "es": "cadena",
+    "gender": "f",
+    "ru": "цепочка, зд. сеть",
+    "page": 105
+   },
+   {
+    "es": "cantidad",
+    "gender": "f",
+    "ru": "количество",
+    "page": 105
+   },
+   {
+    "es": "categoría",
+    "gender": "f",
+    "ru": "категория",
+    "page": 105
+   },
+   {
+    "es": "comentario",
+    "gender": "m",
+    "ru": "комментарий",
+    "page": 105
+   },
+   {
+    "es": "comodidad",
+    "gender": "f",
+    "ru": "удобство",
+    "page": 105
+   },
+   {
+    "es": "crítica",
+    "gender": "f",
+    "ru": "критика",
+    "page": 105
+   },
+   {
+    "es": "decisión",
+    "gender": "f",
+    "ru": "решение",
+    "page": 105
+   },
+   {
+    "es": "descripción",
+    "gender": "f",
+    "ru": "описание",
+    "page": 105
+   },
+   {
+    "es": "desocupado",
+    "ru": "свободный",
+    "page": 105
+   },
+   {
+    "es": "destino",
+    "gender": "m",
+    "ru": "место назначения",
+    "page": 105
+   },
+   {
+    "es": "en seguida",
+    "ru": "сразу же",
+    "page": 105
+   },
+   {
+    "es": "encanto",
+    "gender": "m",
+    "ru": "очарование, шарм",
+    "page": 105
+   },
+   {
+    "es": "estándar",
+    "ru": "стандартный",
+    "page": 105
+   },
+   {
+    "es": "estrella",
+    "gender": "f",
+    "ru": "звезда",
+    "page": 105
+   },
+   {
+    "es": "fácilmente",
+    "ru": "легко",
+    "page": 105
+   },
+   {
+    "es": "fecha",
+    "gender": "f",
+    "ru": "дата",
+    "page": 105
+   },
+   {
+    "es": "fin de semana",
+    "gender": "m",
+    "ru": "выходные",
+    "page": 105
+   },
+   {
+    "es": "footing",
+    "gender": "m",
+    "ru": "бег трусцой",
+    "page": 105
+   },
+   {
+    "es": "formulario",
+    "gender": "m",
+    "ru": "формуляр",
+    "page": 105
+   },
+   {
+    "es": "fumador",
+    "ru": "курящий",
+    "page": 105
+   },
+   {
+    "es": "gracias a",
+    "ru": "благодаря чему-л.",
+    "page": 105
+   },
+   {
+    "es": "guía",
+    "gender": "f",
+    "ru": "путеводитель",
+    "page": 105
+   },
+   {
+    "es": "habitación sencilla (doble)",
+    "gender": "f",
+    "ru": "одноместный (двухместный) номер",
+    "page": 105
+   },
+   {
+    "es": "hostal",
+    "gender": "m",
+    "ru": "дешевая гостиница (1-2 звезды)",
+    "page": 105
+   },
+   {
+    "es": "imposible",
+    "ru": "невозможный",
+    "page": 105
+   },
+   {
+    "es": "instalación",
+    "gender": "f",
+    "ru": "оборудование",
+    "page": 105
+   },
+   {
+    "es": "itinerario",
+    "gender": "m",
+    "ru": "маршрут",
+    "page": 105
+   },
+   {
+    "es": "lavandería",
+    "gender": "f",
+    "ru": "прачечная",
+    "page": 105
+   },
+   {
+    "es": "listo",
+    "ru": "зд. готовый",
+    "page": 105
+   },
+   {
+    "es": "llave",
+    "gender": "f",
+    "ru": "ключ",
+    "page": 105
+   },
+   {
+    "es": "lleno",
+    "ru": "полный",
+    "page": 106
+   },
+   {
+    "es": "mañana",
+    "ru": "завтра",
+    "page": 106
+   },
+   {
+    "es": "pasado mañana",
+    "ru": "послезавтра",
+    "page": 106
+   },
+   {
+    "es": "naturalmente",
+    "ru": "естественно, само собой",
+    "page": 106
+   },
+   {
+    "es": "negativo",
+    "ru": "отрицательный",
+    "page": 106
+   },
+   {
+    "es": "opinión",
+    "gender": "f",
+    "ru": "мнение",
+    "page": 106
+   },
+   {
+    "es": "personal",
+    "gender": "m",
+    "ru": "персонал",
+    "page": 106
+   },
+   {
+    "es": "piscina",
+    "gender": "f",
+    "ru": "бассейн",
+    "page": 106
+   },
+   {
+    "es": "pista",
+    "gender": "f",
+    "ru": "площадка",
+    "page": 106
+   },
+   {
+    "es": "políglota",
+    "gender": "m, f",
+    "ru": "полиглот, владеющий несколькими языками",
+    "page": 106
+   },
+   {
+    "es": "positivo",
+    "ru": "положительный",
+    "page": 106
+   },
+   {
+    "es": "recepcionista",
+    "gender": "m, f",
+    "ru": "администратор",
+    "page": 106
+   },
+   {
+    "es": "silla de ruedas",
+    "gender": "f",
+    "ru": "инвалидное кресло",
+    "page": 106
+   },
+   {
+    "es": "sitio",
+    "gender": "m",
+    "ru": "место",
+    "page": 106
+   },
+   {
+    "es": "suerte",
+    "gender": "f",
+    "ru": "судьба, участь",
+    "page": 106
+   },
+   {
+    "es": "mala suerte",
+    "gender": "f",
+    "ru": "невезение",
+    "page": 106
+   },
+   {
+    "es": "sugerencia",
+    "gender": "f",
+    "ru": "совет, предложение",
+    "page": 106
+   },
+   {
+    "es": "televisión por cable (satélite)",
+    "gender": "f",
+    "ru": "кабельное (спутниковое) ТВ",
+    "page": 106
+   },
+   {
+    "es": "temporada alta (baja)",
+    "gender": "f",
+    "ru": "высокий (низкий) сезон",
+    "page": 106
+   },
+   {
+    "es": "valoración",
+    "gender": "f",
+    "ru": "оценка",
+    "page": 106
+   },
+   {
+    "es": "vez",
+    "gender": "f",
+    "ru": "раз",
+    "page": 106
+   },
+   {
+    "es": "esta vez",
+    "ru": "в этот раз",
+    "page": 106
+   },
+   {
+    "es": "viaje",
+    "gender": "m",
+    "ru": "путешествие",
+    "page": 106
+   },
+   {
+    "es": "viajero",
+    "gender": "m",
+    "ru": "путешественник",
+    "page": 106
+   },
+   {
+    "es": "vuelo",
+    "gender": "m",
+    "ru": "рейс",
+    "page": 106
+   },
+   {
+    "es": "zona común (pública)",
+    "gender": "f",
+    "ru": "зона общего доступа",
+    "page": 106
+   }
+  ],
+  "phrases": [
+   {
+    "es": "Dígame",
+    "ru": "Алло, слушаю",
+    "page": 105
+   },
+   {
+    "es": "¡Qué mala suerte!",
+    "ru": "Какое невезение!",
+    "note": "из диалога упр. 12",
+    "page": 103
+   },
+   {
+    "es": "Lo siento pero es imposible.",
+    "ru": "Сожалею, но это невозможно.",
+    "note": "из диалога упр. 12",
+    "page": 103
+   },
+   {
+    "es": "Se lo agradezco mucho.",
+    "ru": "Я Вам очень благодарен.",
+    "note": "из диалога упр. 12",
+    "page": 103
+   }
+  ],
+  "hotel_words": {
+   "page": 103,
+   "title": "En el hotel (Para conocer más, упр. 11)",
+   "words": [
+    "reservar una habitación sencilla (individual) / doble",
+    "dirigirse al recepcionista",
+    "llenar el formulario",
+    "un cuarto desocupado",
+    "entregar la llave",
+    "temporada alta / baja",
+    "incluido el desayuno",
+    "alojarse / hospedarse / quedarse en el hotel de cuatro estrellas / hostal de dos estrellas / albergue estudiantil"
+   ]
+  }
+ },
+ "grammar": [
+  {
+   "id": "§87",
+   "title": "Futuro Simple",
+   "pages": [
+    100,
+    101
+   ],
+   "table": {
+    "hablar": [
+     "hablaré",
+     "hablarás",
+     "hablará",
+     "hablaremos",
+     "hablaréis",
+     "hablarán"
+    ],
+    "окончания": "-é, -ás, -á, -emos, -éis, -án",
+    "изменение основы": [
+     "caber – cabré, cabrás…",
+     "decir – diré, dirás…",
+     "haber – habré, habrás…",
+     "hacer – haré, harás…",
+     "poder – podré, podrás…",
+     "poner – pondré, pondrás…",
+     "querer – querré, querrás…",
+     "saber – sabré, sabrás…",
+     "salir – saldré, saldrás…",
+     "tener – tendré, tendrás…",
+     "venir – vendré, vendrás…",
+     "valer – valdré, valdrás…"
+    ]
+   },
+   "points": [
+    "Будущее время выражает действие или состояние, последующее по отношению к моменту речи.",
+    "Образуется от инфинитива путем прибавления окончаний, одинаковых для всех спряжений (это формы глагола haber): infinitivo + формы haber в Presente de Indicativo.",
+    "Употребляется с наречиями: mañana, pasado mañana, la semana (el mes, el año) que viene, dentro de tres meses etc.: Mañana aprobaremos el examen. La semana que viene iré al médico. Dentro de 2 días estarán listos los documentos. Pasado mañana será el cumpleaños de Sergio."
+   ]
+  },
+  {
+   "id": "§88",
+   "title": "Lo neutro. Местоимение / артикль среднего рода lo",
+   "page": 102,
+   "points": [
+    "Безударная форма lo заменяет в позиции прямого дополнения: местоимение среднего рода (¿Quién ha dicho eso? = ¿Quién lo ha dicho?) или целое предложение (Ha dicho que quiere llamarte. – ¿Lo ha dicho?).",
+    "Местоимение lo всегда выступает в паре с прямым дополнением todo: Lo sabe todo.",
+    "Артикль среднего рода lo служит для субстантивации других частей речи: Lo hecho no me gusta. Lo suyo no me interesa mucho. Lo de la Universidad es cosa tuya."
+   ]
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "Futuro Simple + маркеры будущего (§87)",
+   "pages": [
+    101,
+    102
+   ],
+   "examples": [
+    {
+     "es": "Mañana aprobaremos el examen."
+    },
+    {
+     "es": "La semana que viene iré al médico."
+    },
+    {
+     "es": "Dentro de 2 días estarán listos los documentos."
+    },
+    {
+     "es": "Todos los días voy a la oficina. – Mañana también iré a la oficina."
+    },
+    {
+     "es": "Hoy no vamos al colegio. – Mañana tampoco iremos al colegio."
+    },
+    {
+     "es": "¿Ya has traducido el artículo? – Lo traduciré mañana."
+    }
+   ]
+  },
+  {
+   "pattern": "lo + глагол = «это»; lo … todo; lo + прилагательное / de (§88)",
+   "page": 102,
+   "examples": [
+    {
+     "es": "¿Quién lo ha dicho?"
+    },
+    {
+     "es": "Lo sabe todo."
+    },
+    {
+     "es": "Te lo compra. – Te lo comprará."
+    },
+    {
+     "es": "Lo hecho no me gusta."
+    },
+    {
+     "es": "Lo de la Universidad es cosa tuya."
+    },
+    {
+     "es": "Lo importante es resolver el conflicto sin causar problemas a los demás."
+    }
+   ]
+  },
+  {
+   "pattern": "Бронирование номера (диалог «Reservando una habitación en el hotel»)",
+   "page": 103,
+   "examples": [
+    {
+     "es": "Quiero reservar una habitación sencilla."
+    },
+    {
+     "es": "¿A partir de qué fecha? – A partir del día quince para tres noches."
+    },
+    {
+     "es": "Como estamos en temporada alta, nuestro hotel está lleno."
+    },
+    {
+     "es": "Le puedo aconsejar otro hotel de nuestra cadena de categoría más alta."
+    }
+   ]
+  }
+ ],
+ "texts": [
+  {
+   "title": "Reservando una habitación en el hotel (диалог, упр. 12)",
+   "page": 103,
+   "es": "– Hotel «Carlos V». Dígame.\n– Quiero reservar una habitación sencilla.\n– ¿A partir de qué fecha?\n– A partir del día quince para tres noches.\n– Lo siento pero es imposible. Como estamos en temporada alta, nuestro hotel está lleno.\n– ¡Qué mala suerte!\n– Le puedo aconsejar otro hotel de nuestra cadena de categoría más alta, es decir, cuatro estrellas.\n– ¿Serán más altos los precios?\n– Nada de eso, tiene los mismos precios porque está un poco más lejos del centro.\n– ¿Me explicará dónde está?\n– Naturalmente, señor. Allí hará una reserva fácilmente.\n– Se lo agradezco mucho, señor."
+  },
+  {
+   "title": "Planificando un viaje (упр. 13)",
+   "page": 104,
+   "es": "¿Estás planificando un viaje? En nuestra agencia de viajes encontrarás los comentarios de una gran cantidad de viajeros que dan a conocer sus experiencias negativas y positivas. Así, podrás conocer los mejores sitios para alojarte y sabrás dónde comer o qué ver antes de hacer una reserva. También encontrarás guías gratuitas con sugerencias y fotos de viajeros como tú que te ayudarán a tomar tus propias decisiones. Te encontraremos el hotel, hostal u otro tipo de alojamiento perfecto según tus necesidades. Tanto si buscas un hotel con encanto, un hostal barato o un hotel en el centro, lo encontrarás gracias a las críticas, opiniones y consejos de viajeros como tú. Las fotos de hoteles también te ayudarán a elegir el alojamiento, así como las fotos de destinos te ayudarán a empezar a conocer el destino antes de viajar. También te ayudaremos a encontrar vuelos baratos entre miles de itinerarios posibles."
+  },
+  {
+   "title": "Catalonia Excelsior (Texto complementario, упр. 18)",
+   "page": 105,
+   "es": "Catalonia Excelsior: Descripción. Categoría: **. Valoración: **. Habitación estándar por noche 106.00€ – 132.00€. Barcelonina, 5, Valencia, 46002, España. Cadena: Hoteles Catalonia, Tipo: Hotel. Instalaciones del hotel: Servicio de lavandería; Zonas comunes/públicas con acceso para sillas de ruedas; Se admiten animales domésticos; Personal políglota. Comodidades en la habitación: Aire acondicionado; Teléfono; Televisión (por cable o satélite); Habitaciones de no fumadores. Actividades de ocio: Spa/Masajes; Pista para footing; Piscina para niños; Jacuzzi."
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Проспрягайте в Futuro Simple и придумайте ситуации: cambiar de domicilio, dar una fiesta, atenderle en seguida, salir de casa temprano, decírselo, poder aprobar el examen, hacerlo para mañana, no tener problemas, ir a ver a José, venir aquí dentro de un año, saberlo pasado mañana",
+   "page": 101
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Поставьте глаголы в Futuro Simple и перескажите текст (Ramón atraviesa la plaza…)",
+   "page": 101
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Преобразуйте по образцу (también / tampoco): Todos los días voy a la oficina. – Mañana también iré a la oficina.",
+   "pages": [
+    101,
+    102
+   ]
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Раскройте скобки, употребляя будущее время",
+   "page": 102
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Ответьте по образцу: ¿Ya has traducido el artículo? – Lo traduciré mañana.",
+   "page": 102,
+   "items": [
+    "¿Ya has escrito una carta?",
+    "¿Ya has llamado al director financiero?",
+    "¿Ya ha encontrado Usted empleo?",
+    "¿Ya habéis alquilado un piso?",
+    "¿Ya han puesto Ustedes un anuncio en el periódico?",
+    "¿Ya has dicho toda la verdad a Ana?",
+    "¿Ya os habéis despedido de vuestro abuelo?"
+   ]
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Ответьте на вопросы (¿Cuándo terminarás la carrera? …)",
+   "page": 102
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 102,
+   "items": [
+    "Я скажу тебе это завтра.",
+    "Когда ты придешь ко мне?",
+    "Через неделю мы поедем в отпуск в Египет.",
+    "Ты узнаешь это послезавтра.",
+    "В выходные мы увидим квартиру, которую сняли наши друзья.",
+    "Это упражнение я сделаю потом. Оно слишком сложное.",
+    "Я смогу снять здесь комнату на месяц?",
+    "Телевизор мы поставим в правый угол, а книжный шкаф слева от окна.",
+    "С кем ты будешь совместно проживать в квартире?",
+    "Кухня тебе очень понравится."
+   ]
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Трансформируйте, употребляя будущее время: Te lo compra. – Te lo comprará.",
+   "page": 102,
+   "items": [
+    "Te lo dice.",
+    "Se lo vendéis.",
+    "Nos lo explicas.",
+    "Se lo traducen.",
+    "Me lo sirves.",
+    "Te lo agradezco.",
+    "Lo lee todo.",
+    "Lo saben todo.",
+    "Os lo enseño todo.",
+    "Se lo decimos todo.",
+    "Lo firmáis todo.",
+    "Te lo cuento todo."
+   ]
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Переведите на русский язык (lo neutro)",
+   "page": 103,
+   "items": [
+    "Lo de Juan no les interesa, no tienen nada que ver con esa historia.",
+    "¿Por qué continuáis con lo vuestro?",
+    "Lo que pasa es que nadie quiere hacer este trabajo.",
+    "Me parece que debes pensarlo bien antes de enviar esta carta.",
+    "Lo importante es resolver el conflicto sin causar problemas a los demás.",
+    "Siempre es así: cada uno piensa en lo suyo.",
+    "Jefe, ¿ya se va? ¿Y lo de los suizos?"
+   ]
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 103,
+   "items": [
+    "Ты это сделаешь?",
+    "Ты сможешь добиться этого.",
+    "Я прошу тебя об этом.",
+    "Когда он тебе это написал?",
+    "Зачем ты это надел?",
+    "Я знаю, что у тебя этого нет. – Ты не можешь знать этого.",
+    "Я не хочу обсуждать с тобой мои дела.",
+    "Я сожалею о том, что случилось с Марией.",
+    "Дела на финансовом рынке сейчас интересуют всех.",
+    "Это невозможно понять."
+   ]
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Para conocer más: слова о размещении в гостинице (En el hotel); A – проспрягайте; B – переведите на русский; C – переведите на испанский",
+   "page": 103
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Прочитайте и переведите диалог «Reservando una habitación en el hotel»; A – проспрягайте в Presente, Pretérito Perfecto и Futuro Simple; B – вопросы; C – по ролям; D – перескажите",
+   "pages": [
+    103,
+    104
+   ]
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Прочитайте и переведите текст «Planificando un viaje»; A – эквиваленты; B – список услуг турагентств",
+   "page": 104
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 104
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы о бронировании и путешествиях",
+   "page": 104
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Расскажите, как забронировать гостиницу",
+   "page": 104
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "pages": [
+    104,
+    105
+   ],
+   "items": [
+    "В этом журнале ты найдешь фотографии разных испанских гостиниц.",
+    "Когда Вы забронируете мне номер в гостинице? – Я Вам его уже забронировал.",
+    "Кто-нибудь мне скажет, когда мы будем обедать?",
+    "Моим друзьям не понравилась эта гостиница, поскольку завтрак не включен в стоимость номера.",
+    "В каком туристическом агентстве Вам забронировали такие дешевые билеты на самолет?",
+    "С первого июля цены поднимутся, потому что начинается высокий сезон.",
+    "На столе лежат бесплатные путеводители. Там много полезной информации.",
+    "В разгар туристического сезона в этой четырехзвёздочной гостинице нет ни одного свободного номера. Мне очень жаль.",
+    "То, что Вы сказали, очень важно для меня. Я благодарю Вас за это.",
+    "Когда ты уезжаешь в Испанию? – Послезавтра. Но пока не знаю, где я остановлюсь."
+   ]
+  },
+  {
+   "number": "18",
+   "instruction_ru": "Texto complementario: прочитайте информацию об отеле Catalonia Excelsior и расскажите, устраивает ли он вас",
+   "page": 105
+  }
+ ],
+ "questions_for_user": [],
+ "note": "В оглавлении у урока 5 указано «Para conocer más. Planificando un viaje», в самом уроке раздел Para conocer más — слова «En el hotel», а «Planificando un viaje» — текст упр. 13."
+}

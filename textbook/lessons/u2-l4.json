@@ -1,0 +1,779 @@
+{
+ "id": 10,
+ "unit": 2,
+ "lesson": 4,
+ "title": "Unidad 2. Estudiar y trabajar — Lección 4",
+ "pages": [
+  56,
+  57,
+  58,
+  59,
+  60,
+  61,
+  62
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 61–62",
+  "verbs": [
+   {
+    "es": "afectar",
+    "ru": "влиять, зд. затрагивать",
+    "page": 61
+   },
+   {
+    "es": "afrontar",
+    "ru": "столкнуться, стоять лицом к лицу",
+    "page": 61
+   },
+   {
+    "es": "completar",
+    "ru": "завершать",
+    "page": 61
+   },
+   {
+    "es": "comprender",
+    "ru": "зд. содержать, включать",
+    "page": 61
+   },
+   {
+    "es": "concluir (VI) el bachillerato",
+    "ru": "получить аттестат о среднем образовании",
+    "page": 61
+   },
+   {
+    "es": "constar de",
+    "ru": "состоять из чего-л.",
+    "page": 61
+   },
+   {
+    "es": "cursar estudios",
+    "ru": "учиться",
+    "page": 61
+   },
+   {
+    "es": "dar",
+    "ru": "давать",
+    "note": "§56, индивидуальное спряжение: doy, das, da, damos, dais, dan",
+    "page": 61
+   },
+   {
+    "es": "dar las gracias",
+    "ru": "благодарить",
+    "page": 61
+   },
+   {
+    "es": "dar los buenos días",
+    "ru": "здороваться",
+    "page": 61
+   },
+   {
+    "es": "descubrir",
+    "ru": "открыть, обнаружить что-л.",
+    "page": 61
+   },
+   {
+    "es": "escoger",
+    "ru": "выбирать",
+    "page": 61
+   },
+   {
+    "es": "explicar",
+    "ru": "объяснять",
+    "page": 61
+   },
+   {
+    "es": "fomentar",
+    "ru": "побуждать, поощрять",
+    "page": 61
+   },
+   {
+    "es": "poder",
+    "ru": "мочь",
+    "note": "§56: puedo, puedes, puede, podemos, podéis, pueden",
+    "page": 62
+   }
+  ],
+  "other": [
+   {
+    "es": "a propósito",
+    "ru": "кстати",
+    "page": 61
+   },
+   {
+    "es": "actualmente",
+    "ru": "в настоящее время",
+    "page": 61
+   },
+   {
+    "es": "aunque",
+    "ru": "хотя",
+    "page": 61
+   },
+   {
+    "es": "bachillerato",
+    "gender": "m",
+    "ru": "старшие классы",
+    "page": 61
+   },
+   {
+    "es": "cada",
+    "ru": "каждый",
+    "note": "§55",
+    "page": 61
+   },
+   {
+    "es": "ciclo formativo",
+    "gender": "m",
+    "ru": "учебный период, цикл",
+    "page": 61
+   },
+   {
+    "es": "cumpleaños",
+    "gender": "m",
+    "ru": "день рождения",
+    "page": 61
+   },
+   {
+    "es": "curiosidad",
+    "gender": "f",
+    "ru": "любопытство, любознательность",
+    "page": 61
+   },
+   {
+    "es": "disco duro",
+    "gender": "m",
+    "ru": "жесткий диск",
+    "page": 61
+   },
+   {
+    "es": "educación",
+    "gender": "f",
+    "ru": "образование",
+    "page": 61
+   },
+   {
+    "es": "educación primaria",
+    "gender": "f",
+    "ru": "начальное образование",
+    "page": 61
+   },
+   {
+    "es": "educación secundaria",
+    "gender": "f",
+    "ru": "среднее образование",
+    "page": 61
+   },
+   {
+    "es": "educación superior",
+    "gender": "f",
+    "ru": "высшее образование",
+    "page": 61
+   },
+   {
+    "es": "en torno a",
+    "ru": "вокруг, около",
+    "page": 61
+   },
+   {
+    "es": "esquí",
+    "gender": "m",
+    "ru": "лыжи, лыжный спорт",
+    "page": 61
+   },
+   {
+    "es": "estación del año",
+    "gender": "f",
+    "ru": "время года",
+    "page": 61
+   },
+   {
+    "es": "grado",
+    "ru": "степень, класс (в школе)",
+    "page": 61
+   },
+   {
+    "es": "jornada",
+    "gender": "f",
+    "ru": "зд. день (посвященный чему-л.), мероприятие",
+    "page": 61
+   },
+   {
+    "es": "medio",
+    "ru": "средний",
+    "page": 61
+   },
+   {
+    "es": "mes",
+    "gender": "m",
+    "ru": "месяц",
+    "page": 61
+   },
+   {
+    "es": "modelo",
+    "gender": "m",
+    "ru": "модель",
+    "page": 61
+   },
+   {
+    "es": "novio, novia",
+    "gender": "m, f",
+    "ru": "жених, невеста",
+    "page": 61
+   },
+   {
+    "es": "obligatorio",
+    "ru": "обязательный",
+    "page": 61
+   },
+   {
+    "es": "primero",
+    "ru": "первый, первое число месяца",
+    "page": 62
+   },
+   {
+    "es": "profundo",
+    "ru": "глубокий",
+    "page": 62
+   },
+   {
+    "es": "reforma",
+    "gender": "f",
+    "ru": "реформа",
+    "page": 62
+   },
+   {
+    "es": "resultado",
+    "gender": "m",
+    "ru": "результат",
+    "page": 62
+   },
+   {
+    "es": "sistema",
+    "gender": "m",
+    "ru": "система",
+    "page": 62
+   },
+   {
+    "es": "sistema educativo",
+    "gender": "m",
+    "ru": "система образования",
+    "page": 62
+   },
+   {
+    "es": "subvencionado",
+    "ru": "субсидированный",
+    "page": 62
+   },
+   {
+    "es": "universal",
+    "ru": "всеобщий",
+    "page": 62
+   },
+   {
+    "es": "valorado",
+    "ru": "зд. престижный",
+    "page": 62
+   }
+  ],
+  "months_seasons": [
+   {
+    "es": "enero",
+    "gender": "m",
+    "ru": "январь",
+    "note": "invierno",
+    "page": 61
+   },
+   {
+    "es": "febrero",
+    "gender": "m",
+    "ru": "февраль",
+    "note": "invierno",
+    "page": 61
+   },
+   {
+    "es": "marzo",
+    "gender": "m",
+    "ru": "март",
+    "note": "primavera",
+    "page": 61
+   },
+   {
+    "es": "abril",
+    "gender": "m",
+    "ru": "апрель",
+    "note": "primavera",
+    "page": 61
+   },
+   {
+    "es": "mayo",
+    "gender": "m",
+    "ru": "май",
+    "note": "primavera",
+    "page": 61
+   },
+   {
+    "es": "junio",
+    "gender": "m",
+    "ru": "июнь",
+    "note": "verano",
+    "page": 61
+   },
+   {
+    "es": "julio",
+    "gender": "m",
+    "ru": "июль",
+    "note": "verano",
+    "page": 61
+   },
+   {
+    "es": "agosto",
+    "gender": "m",
+    "ru": "август",
+    "note": "verano",
+    "page": 61
+   },
+   {
+    "es": "septiembre (setiembre)",
+    "gender": "m",
+    "ru": "сентябрь",
+    "note": "otoño",
+    "page": 62
+   },
+   {
+    "es": "octubre",
+    "gender": "m",
+    "ru": "октябрь",
+    "note": "otoño",
+    "page": 61
+   },
+   {
+    "es": "noviembre",
+    "gender": "m",
+    "ru": "ноябрь",
+    "note": "otoño",
+    "page": 61
+   },
+   {
+    "es": "diciembre",
+    "gender": "m",
+    "ru": "декабрь",
+    "note": "invierno",
+    "page": 61
+   },
+   {
+    "es": "primavera",
+    "gender": "f",
+    "ru": "весна",
+    "page": 62
+   },
+   {
+    "es": "verano",
+    "gender": "m",
+    "ru": "лето",
+    "page": 62
+   },
+   {
+    "es": "otoño",
+    "gender": "m",
+    "ru": "осень",
+    "page": 61
+   },
+   {
+    "es": "invierno",
+    "gender": "m",
+    "ru": "зима",
+    "page": 61
+   }
+  ],
+  "phrases": [
+   {
+    "es": "¿A cuántos estamos hoy?",
+    "ru": "Какое сегодня число?",
+    "page": 61
+   },
+   {
+    "es": "¿A cuántos estamos hoy? – Estamos a 5 de octubre.",
+    "ru": "Какое сегодня число? – Сегодня 5 октября.",
+    "note": "§58",
+    "page": 57
+   },
+   {
+    "es": "¿En qué mes estamos? – Estamos en octubre.",
+    "ru": "Какой сейчас месяц? – Октябрь.",
+    "note": "§58",
+    "page": 57
+   },
+   {
+    "es": "¿En qué estación del año estamos? – Estamos en otoño.",
+    "ru": "Какое сейчас время года? – Осень.",
+    "note": "§58",
+    "page": 57
+   },
+   {
+    "es": "Mi cumpleaños es el 4 de abril.",
+    "ru": "Мой день рождения 4 апреля.",
+    "note": "§58",
+    "page": 57
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "id": "§55",
+   "title": "Неопределенные местоимения cada, cada uno",
+   "page": 56,
+   "points": [
+    "cada, cada uno (каждый) не изменяются в роде и числе: Cada ordenador tiene un disco duro. Cada día tengo clase de español.",
+    "cada uno / cada una заменяют одушевленные существительные: Cada uno debe asistir a las clases. Cada una sabe preparar café."
+   ]
+  },
+  {
+   "id": "§56",
+   "title": "Глаголы индивидуального спряжения dar (дать), poder (мочь)",
+   "page": 56,
+   "table": {
+    "dar": [
+     "doy",
+     "das",
+     "da",
+     "damos",
+     "dais",
+     "dan"
+    ],
+    "poder": [
+     "puedo",
+     "puedes",
+     "puede",
+     "podemos",
+     "podéis",
+     "pueden"
+    ],
+    "dar + ": "un bolígrafo a José, alguna información, clases, las gracias, los buenos días, buenos resultados",
+    "poder + ": "verlos, conocerla, trabajar mucho"
+   },
+   "points": []
+  },
+  {
+   "id": "§57",
+   "title": "Порядок следования дополнений в предложении",
+   "page": 57,
+   "points": [
+    "Местоимения-дополнения всегда идут перед личной формой глагола. Сначала косвенное дополнение, затем прямое: Me explicas el texto. Me lo explicas. Te digo el número. Te lo digo. Nos presenta a su novia. Nos la presenta. Os damos el dinero. Os lo damos.",
+    "Если два личных местоимения 3-го лица оказываются рядом, le или les всегда заменяется на se: le lo digo → se lo digo; les lo digo → se lo digo.",
+    "Местоимения-дополнения употребляются в постпозиции после инфинитива, герундия и утвердительного императива и пишутся с ними слитно: Quiero decírtelo. Puedo explicárselo."
+   ]
+  },
+  {
+   "id": "§58",
+   "title": "Даты. Месяцы. Времена года",
+   "page": 57,
+   "table": {
+    "primavera": [
+     "marzo",
+     "abril",
+     "mayo"
+    ],
+    "verano": [
+     "junio",
+     "julio",
+     "agosto"
+    ],
+    "otoño": [
+     "septiembre (setiembre)",
+     "octubre",
+     "noviembre"
+    ],
+    "invierno": [
+     "diciembre",
+     "enero",
+     "febrero"
+    ]
+   },
+   "points": [
+    "NB: ¿A cuántos estamos hoy? – Estamos a 5 de octubre.",
+    "¿En qué mes estamos? – Estamos en octubre.",
+    "¿En qué estación del año estamos? – Estamos en otoño.",
+    "Mi cumpleaños es el 4 de abril."
+   ]
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "cada + существительное; cada uno/una + глагол (§55)",
+   "page": 56,
+   "examples": [
+    {
+     "es": "Cada día tengo clase de español."
+    },
+    {
+     "es": "Cada uno debe asistir a las clases."
+    },
+    {
+     "es": "Cada año académico tenemos nuevas asignaturas."
+    }
+   ]
+  },
+  {
+   "pattern": "Косвенное + прямое местоимение перед глаголом (§57)",
+   "page": 57,
+   "examples": [
+    {
+     "es": "Me lo explicas."
+    },
+    {
+     "es": "Te lo digo."
+    },
+    {
+     "es": "Nos la presenta."
+    },
+    {
+     "es": "Os lo damos."
+    },
+    {
+     "es": "Se lo digo."
+    }
+   ]
+  },
+  {
+   "pattern": "Инфинитив + слитные местоимения (§57)",
+   "page": 57,
+   "examples": [
+    {
+     "es": "Quiero decírtelo."
+    },
+    {
+     "es": "Puedo explicárselo."
+    },
+    {
+     "es": "¿Me lo explicas? – Quiero explicártelo."
+    }
+   ]
+  },
+  {
+   "pattern": "Дата: Estamos a + число + de + месяц; Estamos en + месяц/время года (§58)",
+   "pages": [
+    57,
+    58
+   ],
+   "examples": [
+    {
+     "es": "Estamos a 5 de octubre."
+    },
+    {
+     "es": "Estamos en octubre."
+    },
+    {
+     "es": "Estamos en otoño."
+    },
+    {
+     "es": "¿Estamos a trece de mayo? – No, no estamos a trece de mayo, estamos a once de enero."
+    },
+    {
+     "es": "Mi cumpleaños es el 4 de abril."
+    }
+   ]
+  }
+ ],
+ "texts": [
+  {
+   "title": "Этапы образования в Испании (Para conocer más, упр. 11)",
+   "page": 58,
+   "es": "La Educación Primaria tiene carácter obligatorio y gratuito. Comprende tres ciclos de dos años cada uno, en total, seis cursos académicos, para los alumnos entre los seis y los doce años de edad. La Educación Secundaria Obligatoria (ESO) es una etapa educativa obligatoria y gratuita que completa la educación básica. Consta de cuatro cursos académicos para los alumnos entre los 12 y los 16 años de edad. El bachillerato forma parte de la educación secundaria postobligatoria y tiene carácter voluntario. Consta de dos cursos académicos para los estudiantes entre los 16 y 18 años de edad. Después de concluir el bachillerato uno puede prepararse para las pruebas de acceso a la Universidad."
+  },
+  {
+   "title": "Nuevo Sistema Educativo Español (упр. 12)",
+   "page": 59,
+   "es": "Actualmente la enseñanza obligatoria hasta los dieciséis años es universal. En torno al 80% de los jóvenes cursa estudios de Bachillerato y el 30% de los jóvenes españoles estudia en la Universidad. Aunque todos los españoles tienen derecho a una enseñanza pública y gratuita, también cada uno tiene derecho a escoger la enseñanza privada. A propósito, casi en todos los centros privados de Primaria se imparte enseñanza gratuita subvencionada. Hoy en día la enseñanza afronta una profunda reforma que afecta a todos los niveles educativos. Aquí tenemos el modelo del Nuevo Sistema Educativo Español: (схема: Educación Infantil 0–6, Educación Primaria 6–12, ESO 12–16, Bachillerato / Ciclos formativos de Grado Medio 16–18, Pruebas de acceso a la Universidad, Educación Universitaria / Ciclos formativos de Grado Superior)."
+  },
+  {
+   "title": "Colegio Liceo Europeo de Madrid (Texto complementario, упр. 18)",
+   "page": 61,
+   "es": "El Colegio Liceo Europeo, Madrid, es un centro privado de infantil, primaria, secundaria y ESO (Educación Secundaria Obligatoria). Aquí trabajan 95 profesores altamente cualificados. Fundado en 1982, el colegio desarrolla en su proyecto educativo las tradiciones de enseñanza activa que nacen precisamente en Madrid a finales del siglo XIX. El Liceo Europeo ofrece a sus alumnos una enseñanza basada en la práctica y la experiencia personal de cada uno de ellos, fomentando la curiosidad por investigar y descubrir lo desconocido. El Colegio Liceo Europeo tiene fantásticas instalaciones deportivas, comedor y biblioteca. Destaca en actividades extraescolares de diversa tipología: jornadas de química, cursos de esquí, etc."
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Переведите на русский язык (cada, cada uno)",
+   "page": 56,
+   "items": [
+    "Cada uno lo sabe.",
+    "Cada año académico tenemos nuevas asignaturas.",
+    "Cada uno hace con su vida lo que quiere.",
+    "Cada empleado quiere ser jefe.",
+    "Soy director financiero y tengo que leer y firmar cada documento.",
+    "¿Quién sabe redactar textos en Microsoft Word? – Mujer, cada una sabe hacerlo.",
+    "Cada día hacéis la tarea de casa y la profesora os pone una nota.",
+    "Cada mes su amigo chileno le envía una carta."
+   ]
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 56,
+   "items": [
+    "Каждый студент сдает экзамены.",
+    "Каждый новый учебный год начинается в сентябре.",
+    "Каждая девушка хочет выйти замуж, не так ли?",
+    "Каждый делает свою работу.",
+    "Каждый должен учиться.",
+    "Каждый испанец любит кофе.",
+    "Каждый человек похож на своих родителей."
+   ]
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Проспрягайте dar и poder с зависимыми словами; задайте в парах вопросы",
+   "page": 56
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Вставьте dar или poder в нужной форме и переведите",
+   "page": 56
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Переведите на испанский язык",
+   "pages": [
+    56,
+    57
+   ],
+   "items": [
+    "Я даю тебе синюю ручку, а ты мне черную.",
+    "Я не могу дать Вам никакой информации.",
+    "Занятия, которые ведет наш преподаватель, очень интересные. Всегда все присутствуют.",
+    "Можешь сказать спасибо своему брату? – Это его работа.",
+    "Почему Вы не здороваетесь?",
+    "Почему это не дает никаких результатов?"
+   ]
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Ответьте на вопросы по образцу: ¿Me lo explicas? – Quiero explicártelo.",
+   "page": 57,
+   "items": [
+    "¿Me escuchas?",
+    "¿Me oyes?",
+    "¿La miras?",
+    "¿Me lo dices?",
+    "¿Me lo ofreces?",
+    "¿Me la presentas?",
+    "¿Nos das las gracias?",
+    "¿Le das alguna información?",
+    "¿La conoces?",
+    "¿Lo sabes?",
+    "¿Nos lo enseñas?",
+    "¿Se lo haces?",
+    "¿Me lo traduces?",
+    "¿Me la escribes?",
+    "¿Nos lo lees?",
+    "¿Se lo preguntas?"
+   ]
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Замените выделенные слова на местоимения-дополнения",
+   "page": 57
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 57,
+   "items": [
+    "Ты можешь дать мне этот коричневый карандаш? – Нет, я не могу тебе его дать. Он мне нужен.",
+    "Ты хочешь съесть эти фрукты? – Нет, я не хочу их есть, они мне не нравятся.",
+    "Ты умеешь водить машину? – Нет, я не умею её водить.",
+    "Преподаватель ставит этому студенту плохую оценку. Почему он ему её ставит?",
+    "Внук не пишет писем своей бабушке. Почему он их ей не пишет?",
+    "Клиенты задают служащему банка много вопросов. Почему они ему их задают?"
+   ]
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Ответьте на вопросы о датах (A — числа, B — месяцы и времена года)",
+   "page": 58
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 58,
+   "items": [
+    "В российских университетах студенты сдают экзамены в январе и в июне.",
+    "Какое сегодня число? – Сегодня 8 августа.",
+    "В Испании сейчас осень, а в Аргентине – весна.",
+    "Я так люблю зиму! – А я не люблю.",
+    "В июне, июле и августе у нас нет уроков, мы отдыхаем, гуляем (pasear), смотрим фильмы.",
+    "День рождения Серхио в октябре или в ноябре?"
+   ]
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Para conocer más: запомните этапы среднего образования в Испании (Educación Primaria, ESO, bachillerato); A – найдите эквиваленты; B – ответьте на вопросы; C – выберите определение (academia, colegio, escuela, instituto, universidad); D – вставьте тип учебного заведения",
+   "pages": [
+    58,
+    59
+   ]
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Прочитайте и переведите текст «Nuevo Sistema Educativo Español»; A – эквиваленты; B – проспрягайте; C – вопросы; D – расскажите",
+   "pages": [
+    59,
+    60
+   ]
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Вставьте слова: ser universal, constar de, enseñanza obligatoria, educación superior, sistema educativo, carácter voluntario, tener derecho, educación básica, parecerse",
+   "page": 60
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 60
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы о системе образования в России",
+   "page": 60
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Расскажите о системе образования в России",
+   "page": 60
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 60,
+   "items": [
+    "Вы не знаете, какое сегодня число. Мы тоже этого не знаем.",
+    "Каждый студент сдает экзамен по иностранному языку.",
+    "Кто-нибудь из вас изучает международное право? – Здесь каждый его изучает.",
+    "Эта система дает хорошие результаты.",
+    "Вы можете объяснить мне, какие образовательные уровни затрагивает новая реформа в Испании?",
+    "У тебя новая машина? Можешь показать мне её?",
+    "Ты не знаком с нашей переводчицей? Сейчас я тебе её представлю.",
+    "Я люблю весну, а мои родители любят осень.",
+    "Кто-нибудь знает, в каком месяце начинается учебный год в Испании? – Никто из нас этого не знает.",
+    "Среднее образование является обязательным во многих странах."
+   ]
+  },
+  {
+   "number": "18",
+   "instruction_ru": "Texto complementario: прочитайте и переведите текст «Colegio Liceo Europeo de Madrid»",
+   "page": 61
+  },
+  {
+   "number": "19",
+   "instruction_ru": "Ответьте на вопросы по тексту",
+   "page": 61
+  },
+  {
+   "number": "20",
+   "instruction_ru": "Расскажите о школе, в которой вы учились",
+   "page": 61
+  }
+ ],
+ "questions_for_user": []
+}

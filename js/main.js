@@ -1,5 +1,5 @@
 import { state, settings, save, saveSettings, onChange, aiKeys, streakDays, uid, replaceState, merge, tickDay } from './store.js';
-import { book, loadBook, hasRu, imgFor, KIND_RU, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences } from './data.js';
+import { book, loadBook, hasRu, imgFor, KIND_RU, kindLabel, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences } from './data.js';
 import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearned, mistakes } from './srs.js';
 import { speak, listen, canListen, judge, esVoices } from './speech.js';
 import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions } from './quiz.js';
@@ -204,17 +204,33 @@ function vocabTab(id, L) {
   const items = book.byLesson.get(id) || [];
   const kinds = [...new Set(items.map(i => i.kind))];
   const order = ['verb', 'word', 'phrase', 'number', 'country', 'nationality', 'extra', 'name'];
-  kinds.sort((a, b) => order.indexOf(a) - order.indexOf(b));
+  const rank = x => order.includes(x) ? order.indexOf(x) : 100;
+  kinds.sort((a, b) => rank(a) - rank(b));
   let k = lessonTabs['k' + id]; if (!kinds.includes(k)) k = kinds[0];
   const list = items.filter(i => i.kind === k);
-  return `<div class="row start" style="flex-wrap:wrap;gap:6px">${kinds.map(x => `<button class="chip ${x === k ? 'on' : ''}" data-kind="${x}">${KIND_RU[x]} · ${items.filter(i => i.kind === x).length}</button>`).join('')}</div>
+  return `<div class="row start" style="flex-wrap:wrap;gap:6px">${kinds.map(x => `<button class="chip ${x === k ? 'on' : ''}" data-kind="${x}">${esc(kindLabel(x))} · ${items.filter(i => i.kind === x).length}</button>`).join('')}</div>
     <div class="c">${list.map(it => wordRow(it)).join('') || '<div class="empty-note">Нет слов</div>'}</div>
     <div class="btns"><button class="btn ghost" id="addAll">Все слова в карточки</button><a class="btn ghost" href="#/cards/lesson-${id}">Карточки урока</a></div>
     ${L.vocabulary?.source ? `<div class="mut small" style="text-align:center">Источник: ${esc(L.vocabulary.source)}</div>` : ''}`;
 }
 
 function table(t) {
-  return `<div class="scroll-x"><table class="gt">${t.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</table></div>`;
+  const grid = rows => `<div class="scroll-x"><table class="gt">${rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</table></div>`;
+  if (Array.isArray(t)) return grid(t.map(r => Array.isArray(r) ? r : [r]));
+  if (!t || typeof t !== 'object') return '';
+  if (Array.isArray(t.rows)) return grid([...(t.columns ? [t.columns] : []), ...t.rows]) + extras(t, ['columns', 'rows']);
+  // {"ver": [формы], "oír": [...], "ver + ": "сочетания", ...}: списки — колонками, строки — пояснениями
+  const cols = Object.entries(t).filter(([, v]) => Array.isArray(v));
+  let html = '';
+  if (cols.length) {
+    const n = Math.max(...cols.map(([, v]) => v.length));
+    html = grid([cols.map(([k]) => k), ...Array.from({ length: n }, (_, i) => cols.map(([, v]) => v[i] ?? ''))]);
+  }
+  return html + extras(t, cols.map(([k]) => k));
+}
+function extras(t, skip) {
+  const rest = Object.entries(t).filter(([k, v]) => !skip.includes(k) && v != null && !Array.isArray(v));
+  return rest.length ? `<ul class="pts">${rest.map(([k, v]) => `<li><b>${esc(k.trim())}</b> ${esc(typeof v === 'string' ? v : JSON.stringify(v))}</li>`).join('')}</ul>` : '';
 }
 function grammarTab(id, L) {
   const conj = conjugations(L).length;
@@ -238,6 +254,12 @@ function sentencesTab(id, L) {
       ${s.note ? `<div class="mut small">${esc(s.note)}</div>` : ''}
     </div>`).join('') +
     (sentences(L).length ? `<a class="btn ghost" href="#/test/sent-${id}">Собирать предложения</a>` : '') +
+    ((L.texts || []).filter(x => x.es).length ? `<div class="sec-title">Тексты из учебника</div>` + L.texts.filter(x => x.es).map(x => `
+      <details class="c"><summary class="row"><b class="grow">${esc(x.title || 'Текст')}</b><span class="mut small">с. ${esc(x.page ?? (x.pages || []).join('–'))}</span></summary>
+        <div style="white-space:pre-wrap;margin-top:10px">${esc(x.es)}</div>
+        <div class="btns" style="margin-top:10px"><button class="btn ghost sm" data-act="say" data-text="${esc(x.es)}">🔊 Прослушать</button>
+        <a class="btn ghost sm" href="${translateUrl(x.es.slice(0, 4500))}" target="_blank" rel="noopener">↗ Перевести</a></div>
+      </details>`).join('') : '') +
     (ex.length ? `<details class="c"><summary><b>Упражнения из учебника (${ex.length})</b></summary>
       ${ex.map(x => `<div class="word-row"><div class="grow"><b>${esc(x.number)}.</b> ${esc(x.instruction_ru)} <span class="mut small">с. ${esc(x.page ?? (x.pages || []).join('–'))}</span></div></div>`).join('')}</details>` : '');
 }

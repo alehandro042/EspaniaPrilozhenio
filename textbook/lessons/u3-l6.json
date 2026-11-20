@@ -1,0 +1,995 @@
+{
+ "id": 18,
+ "unit": 3,
+ "lesson": 6,
+ "title": "Unidad 3. En casa, en la oficina y en el hotel — Lección 6",
+ "pages": [
+  106,
+  107,
+  108,
+  109,
+  110,
+  111
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 110–111",
+  "verbs": [
+   {
+    "es": "acostarse (Ib)",
+    "ru": "ложиться спать",
+    "note": "§89",
+    "page": 110
+   },
+   {
+    "es": "afeitarse",
+    "ru": "бриться",
+    "note": "§89",
+    "page": 110
+   },
+   {
+    "es": "cepillarse",
+    "ru": "чистить (зубы)",
+    "note": "§89",
+    "page": 110
+   },
+   {
+    "es": "constar (de)",
+    "ru": "состоять; зд. насчитывать",
+    "page": 110
+   },
+   {
+    "es": "contar (con) (Ib)",
+    "ru": "иметь в своем распоряжении; зд. включать в себя",
+    "page": 110
+   },
+   {
+    "es": "desmaquillarse",
+    "ru": "смывать косметику",
+    "note": "§89",
+    "page": 110
+   },
+   {
+    "es": "despertarse (Ia)",
+    "ru": "просыпаться",
+    "note": "§89",
+    "page": 110
+   },
+   {
+    "es": "disponer (de)",
+    "ru": "располагать",
+    "page": 110
+   },
+   {
+    "es": "dormirse (IV)",
+    "ru": "засыпать",
+    "note": "§89",
+    "page": 110
+   },
+   {
+    "es": "lavarse",
+    "ru": "умываться",
+    "note": "§89",
+    "page": 110
+   },
+   {
+    "es": "levantarse",
+    "ru": "вставать",
+    "note": "§89",
+    "page": 110
+   },
+   {
+    "es": "peinarse",
+    "ru": "причесываться",
+    "note": "§89",
+    "page": 110
+   },
+   {
+    "es": "ponerse",
+    "ru": "надеть",
+    "note": "§89: me pongo, te pones, se pone, nos ponemos, os ponéis, se ponen",
+    "page": 110
+   },
+   {
+    "es": "quitarse",
+    "ru": "снимать с себя",
+    "note": "§89",
+    "page": 111
+   },
+   {
+    "es": "renovar",
+    "ru": "обновлять",
+    "page": 111
+   },
+   {
+    "es": "secarse",
+    "ru": "вытираться",
+    "note": "§89",
+    "page": 111
+   },
+   {
+    "es": "maquillarse",
+    "ru": "краситься (наносить косметику)",
+    "note": "из упр. 1, в Vocabulario нет",
+    "page": 106
+   },
+   {
+    "es": "vestirse",
+    "ru": "одеваться",
+    "note": "§76 (II), упр. 1",
+    "page": 106
+   }
+  ],
+  "other": [
+   {
+    "es": "acto",
+    "gender": "m",
+    "ru": "поступок, действие",
+    "page": 110
+   },
+   {
+    "es": "en el acto",
+    "ru": "мгновенно, сразу же",
+    "page": 110
+   },
+   {
+    "es": "a nombre de",
+    "ru": "на имя",
+    "page": 110
+   },
+   {
+    "es": "abrigo",
+    "gender": "m",
+    "ru": "пальто",
+    "page": 110
+   },
+   {
+    "es": "adicional",
+    "ru": "дополнительный",
+    "page": 110
+   },
+   {
+    "es": "admirable",
+    "ru": "изумительный",
+    "page": 110
+   },
+   {
+    "es": "ahora mismo",
+    "ru": "прямо сейчас",
+    "page": 110
+   },
+   {
+    "es": "animado",
+    "ru": "оживленный, веселый",
+    "page": 110
+   },
+   {
+    "es": "aparcamiento",
+    "gender": "m",
+    "ru": "стоянка, парковка",
+    "page": 110
+   },
+   {
+    "es": "aparcamiento con cargo",
+    "gender": "m",
+    "ru": "платная стоянка",
+    "page": 110
+   },
+   {
+    "es": "atención médica",
+    "gender": "f",
+    "ru": "медицинское обслуживание",
+    "page": 110
+   },
+   {
+    "es": "atractivo",
+    "ru": "привлекательный",
+    "page": 110
+   },
+   {
+    "es": "auditorio",
+    "gender": "m",
+    "ru": "конференц-зал",
+    "page": 110
+   },
+   {
+    "es": "bello",
+    "ru": "красивый, прекрасный",
+    "page": 110
+   },
+   {
+    "es": "blusa",
+    "gender": "f",
+    "ru": "блузка",
+    "page": 110
+   },
+   {
+    "es": "botas",
+    "gender": "f pl",
+    "ru": "сапоги",
+    "page": 110
+   },
+   {
+    "es": "brillante",
+    "ru": "блестящий",
+    "page": 110
+   },
+   {
+    "es": "caja fuerte",
+    "gender": "f",
+    "ru": "сейф",
+    "page": 110
+   },
+   {
+    "es": "camisa",
+    "gender": "f",
+    "ru": "рубашка",
+    "page": 110
+   },
+   {
+    "es": "camiseta",
+    "gender": "f",
+    "ru": "майка",
+    "page": 110
+   },
+   {
+    "es": "carta",
+    "gender": "f",
+    "ru": "зд. меню",
+    "page": 110
+   },
+   {
+    "es": "cazadora",
+    "gender": "f",
+    "ru": "куртка",
+    "page": 110
+   },
+   {
+    "es": "chaqueta",
+    "gender": "f",
+    "ru": "пиджак, жакет",
+    "page": 110
+   },
+   {
+    "es": "climatizado",
+    "ru": "с кондиционером",
+    "page": 110
+   },
+   {
+    "es": "comercio",
+    "gender": "m",
+    "ru": "магазин",
+    "page": 110
+   },
+   {
+    "es": "conexión",
+    "gender": "f",
+    "ru": "связь, зд. доступ",
+    "page": 110
+   },
+   {
+    "es": "corazón",
+    "gender": "m",
+    "ru": "сердце",
+    "page": 110
+   },
+   {
+    "es": "corbata",
+    "gender": "f",
+    "ru": "галстук",
+    "page": 110
+   },
+   {
+    "es": "correcto",
+    "ru": "правильный",
+    "page": 110
+   },
+   {
+    "es": "desastroso",
+    "ru": "катастрофический",
+    "page": 110
+   },
+   {
+    "es": "desgraciado",
+    "ru": "несчастный, невезучий",
+    "page": 110
+   },
+   {
+    "es": "diente",
+    "gender": "m",
+    "ru": "зуб",
+    "page": 110
+   },
+   {
+    "es": "divisas",
+    "gender": "f pl",
+    "ru": "валюта",
+    "page": 110
+   },
+   {
+    "es": "cambio de divisas",
+    "ru": "обмен валюты",
+    "page": 110
+   },
+   {
+    "es": "(dinero) en efectivo",
+    "ru": "наличные (о деньгах)",
+    "page": 110
+   },
+   {
+    "es": "enérgico",
+    "ru": "энергичный",
+    "page": 110
+   },
+   {
+    "es": "entretenimiento",
+    "gender": "m",
+    "ru": "развлечение",
+    "page": 110
+   },
+   {
+    "es": "escapada",
+    "gender": "f",
+    "ru": "побег; зд. маленькое путешествие",
+    "page": 110
+   },
+   {
+    "es": "espléndido",
+    "ru": "превосходный, восхитительный",
+    "page": 110
+   },
+   {
+    "es": "estacionamiento",
+    "gender": "m",
+    "ru": "парковка",
+    "page": 110
+   },
+   {
+    "es": "estimado",
+    "ru": "уважаемый",
+    "page": 110
+   },
+   {
+    "es": "estupendo",
+    "ru": "прекрасный, изумительный",
+    "page": 110
+   },
+   {
+    "es": "factura",
+    "gender": "f",
+    "ru": "счет",
+    "page": 110
+   },
+   {
+    "es": "falda",
+    "gender": "f",
+    "ru": "юбка",
+    "page": 110
+   },
+   {
+    "es": "gabardina",
+    "gender": "f",
+    "ru": "плащ",
+    "page": 110
+   },
+   {
+    "es": "gorro",
+    "gender": "m",
+    "ru": "шапка",
+    "page": 110
+   },
+   {
+    "es": "horrible",
+    "ru": "ужасный",
+    "page": 110
+   },
+   {
+    "es": "indudable",
+    "ru": "несомненный",
+    "page": 110
+   },
+   {
+    "es": "jardín",
+    "gender": "m",
+    "ru": "сад",
+    "page": 110
+   },
+   {
+    "es": "justo",
+    "ru": "точный, верный",
+    "page": 110
+   },
+   {
+    "es": "lento",
+    "ru": "медленный",
+    "page": 110
+   },
+   {
+    "es": "lugar de ocio",
+    "gender": "m",
+    "ru": "место отдыха, досуга",
+    "page": 110
+   },
+   {
+    "es": "lujo",
+    "gender": "m",
+    "ru": "роскошь",
+    "page": 110
+   },
+   {
+    "es": "hotel de lujo",
+    "ru": "отель класса люкс",
+    "page": 110
+   },
+   {
+    "es": "magnífico",
+    "ru": "великолепный",
+    "page": 110
+   },
+   {
+    "es": "máquina de afeitar",
+    "gender": "f",
+    "ru": "бритва",
+    "page": 110
+   },
+   {
+    "es": "maravilloso",
+    "ru": "чудесный",
+    "page": 110
+   },
+   {
+    "es": "metrópoli",
+    "gender": "f",
+    "ru": "столица, метрополия",
+    "page": 110
+   },
+   {
+    "es": "pantalón",
+    "gender": "m",
+    "ru": "брюки",
+    "page": 110
+   },
+   {
+    "es": "peine",
+    "gender": "m",
+    "ru": "расческа",
+    "page": 110
+   },
+   {
+    "es": "perfecto",
+    "ru": "безукоризненный",
+    "page": 110
+   },
+   {
+    "es": "por motivos de",
+    "ru": "из-за, по причине",
+    "page": 110
+   },
+   {
+    "es": "prestación",
+    "gender": "f",
+    "ru": "услуга",
+    "page": 110
+   },
+   {
+    "es": "puntual",
+    "ru": "пунктуальный",
+    "page": 110
+   },
+   {
+    "es": "recinto ferial",
+    "gender": "m",
+    "ru": "территория ярмарки",
+    "page": 111
+   },
+   {
+    "es": "recto",
+    "ru": "прямой",
+    "page": 111
+   },
+   {
+    "es": "registro",
+    "gender": "m",
+    "ru": "книга записей",
+    "page": 111
+   },
+   {
+    "es": "regular",
+    "ru": "обычный, регулярный",
+    "page": 111
+   },
+   {
+    "es": "ropa",
+    "gender": "f",
+    "ru": "одежда",
+    "page": 111
+   },
+   {
+    "es": "seguro",
+    "ru": "уверенный",
+    "page": 111
+   },
+   {
+    "es": "toalla",
+    "gender": "f",
+    "ru": "полотенце",
+    "page": 111
+   },
+   {
+    "es": "traje",
+    "gender": "m",
+    "ru": "костюм",
+    "page": 111
+   },
+   {
+    "es": "tranquilo",
+    "ru": "спокойный",
+    "page": 111
+   },
+   {
+    "es": "vestido",
+    "gender": "m",
+    "ru": "платье",
+    "page": 111
+   },
+   {
+    "es": "vibrante",
+    "ru": "зд. живой",
+    "page": 111
+   },
+   {
+    "es": "vista al mar",
+    "ru": "вид на море",
+    "page": 111
+   },
+   {
+    "es": "zapatos",
+    "gender": "m pl",
+    "ru": "туфли",
+    "page": 111
+   },
+   {
+    "es": "zona empresarial",
+    "ru": "бизнес-центр",
+    "page": 111
+   },
+   {
+    "es": "zona residencial",
+    "ru": "жилой район",
+    "page": 111
+   }
+  ],
+  "phrases": [
+   {
+    "es": "Les saluda atentamente",
+    "ru": "С уважением",
+    "page": 110
+   },
+   {
+    "es": "Lo siento",
+    "ru": "Мне очень жаль",
+    "page": 110
+   },
+   {
+    "es": "¡Que lo pase bien!",
+    "ru": "Приятного отдыха!",
+    "page": 110
+   },
+   {
+    "es": "¿Qué se le ofrece?",
+    "ru": "Чем могу помочь? (Что могу Вам предложить?)",
+    "page": 110
+   },
+   {
+    "es": "Quedo a la espera de su respuesta",
+    "ru": "Жду Вашего ответа",
+    "page": 110
+   },
+   {
+    "es": "Estimados señores",
+    "ru": "Уважаемые господа",
+    "note": "из письма упр. 11 (estimado — уважаемый)",
+    "page": 108
+   },
+   {
+    "es": "¿Me hace el favor de llenar este formulario?",
+    "ru": "Заполните, пожалуйста, этот формуляр.",
+    "note": "из диалога упр. 12",
+    "page": 108
+   },
+   {
+    "es": "¿La pagará con tarjeta o en efectivo?",
+    "ru": "Вы заплатите картой или наличными?",
+    "note": "из диалога упр. 12",
+    "page": 108
+   }
+  ],
+  "adjectives_for_mente": [
+   {
+    "es": "perfecto",
+    "page": 107
+   },
+   {
+    "es": "agradable",
+    "page": 107
+   },
+   {
+    "es": "maravilloso",
+    "page": 107
+   },
+   {
+    "es": "admirable",
+    "page": 107
+   },
+   {
+    "es": "estupendo",
+    "page": 107
+   },
+   {
+    "es": "magnífico",
+    "page": 107
+   },
+   {
+    "es": "espléndido",
+    "page": 107
+   },
+   {
+    "es": "brillante",
+    "page": 107
+   },
+   {
+    "es": "horrible",
+    "page": 107
+   },
+   {
+    "es": "fatal",
+    "page": 107
+   },
+   {
+    "es": "desastroso",
+    "page": 107
+   },
+   {
+    "es": "desgraciado",
+    "page": 107
+   },
+   {
+    "es": "difícil",
+    "page": 107
+   },
+   {
+    "es": "fácil",
+    "page": 107
+   },
+   {
+    "es": "alegre",
+    "page": 107
+   },
+   {
+    "es": "aburrido",
+    "page": 107
+   },
+   {
+    "es": "tranquilo",
+    "page": 107
+   },
+   {
+    "es": "indudable",
+    "page": 107
+   },
+   {
+    "es": "seguro",
+    "page": 107
+   },
+   {
+    "es": "enérgico",
+    "page": 107
+   },
+   {
+    "es": "claro",
+    "page": 107
+   },
+   {
+    "es": "lento",
+    "page": 107
+   },
+   {
+    "es": "correcto",
+    "page": 107
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "id": "§89",
+   "title": "Verbos reflexivos. Возвратные глаголы",
+   "page": 106,
+   "table": {
+    "columns": [
+     "Presente",
+     "querer + infinitivo"
+    ],
+    "rows": [
+     [
+      "me pongo la camiseta",
+      "quiero ponerme el vestido (el gorro)"
+     ],
+     [
+      "te pones el pantalón",
+      "quieres ponerte la camisa"
+     ],
+     [
+      "se pone la blusa",
+      "quiere ponerse la corbata"
+     ],
+     [
+      "nos ponemos las faldas (las chaquetas)",
+      "queremos ponernos las gabardinas"
+     ],
+     [
+      "os ponéis las cazadoras",
+      "queréis poneros los abrigos"
+     ],
+     [
+      "se ponen los zapatos",
+      "quieren ponerse las botas"
+     ]
+    ]
+   },
+   "points": [
+    "Возвратное местоимение (me, te, se, nos, os, se) стоит перед личной формой глагола и пишется слитно с инфинитивом: me pongo – quiero ponerme.",
+    "¿Cuándo te levantarás? – Ya me he levantado.",
+    "No me levanto. – No puedo levantarme."
+   ]
+  },
+  {
+   "id": "§90",
+   "title": "Наречия образа действия с суффиксом -mente",
+   "page": 107,
+   "points": [
+    "Образуются от прилагательных с суффиксом -mente, прилагательное берется в форме женского рода: rápido – rápidamente.",
+    "Если у прилагательного только одно окончание, его форма не меняется: amable – amablemente, puntual – puntualmente.",
+    "При нескольких наречиях на -mente суффикс сохраняется только у последнего: Lo harán tranquila y correctamente.",
+    "NB: прилагательные, которые могут употребляться как наречия: alto, bajo, rápido, lento, caro, barato, claro, justo, seguro, fuerte, regular, recto, derecho. Por la mañana me visto rápido y salgo de casa corriendo. ¡Antonio siempre habla tan alto!"
+   ]
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "Возвратный глагол: me/te/se… + глагол; инфинитив + местоимение (§89)",
+   "page": 106,
+   "examples": [
+    {
+     "es": "Me pongo la camiseta."
+    },
+    {
+     "es": "Quiero ponerme el vestido."
+    },
+    {
+     "es": "¿Cuándo te levantarás? – Ya me he levantado."
+    },
+    {
+     "es": "No me levanto. – No puedo levantarme."
+    }
+   ]
+  },
+  {
+   "pattern": "Наречия на -mente; прилагательное в роли наречия (§90)",
+   "page": 107,
+   "examples": [
+    {
+     "es": "rápido – rápidamente"
+    },
+    {
+     "es": "amable – amablemente"
+    },
+    {
+     "es": "Lo harán tranquila y correctamente."
+    },
+    {
+     "es": "Por la mañana me visto rápido y salgo de casa corriendo."
+    },
+    {
+     "es": "¡Antonio siempre habla tan alto!"
+    }
+   ]
+  },
+  {
+   "pattern": "Письмо в гостиницу (упр. 11)",
+   "page": 108,
+   "examples": [
+    {
+     "es": "Estimados señores,"
+    },
+    {
+     "es": "Quiero reservar una habitación doble con dos camas del 23 de julio próximo al 2 de agosto a nombre de Ricardo Alarcón con vistas al mar si es posible."
+    },
+    {
+     "es": "Quedo a la espera de su respuesta."
+    },
+    {
+     "es": "Les saluda atentamente"
+    }
+   ]
+  },
+  {
+   "pattern": "Заселение в гостиницу (диалог «En el hotel»)",
+   "page": 108,
+   "examples": [
+    {
+     "es": "Tengo reservada una habitación a nombre de Ricardo Alarcón."
+    },
+    {
+     "es": "Su pasaporte, por favor."
+    },
+    {
+     "es": "¿Puedo pagar la factura ahora mismo?"
+    },
+    {
+     "es": "Aquí tiene la factura y la llave de su habitación."
+    }
+   ]
+  }
+ ],
+ "texts": [
+  {
+   "title": "Письмо в Hotel Catalonia Excelsior (упр. 11)",
+   "page": 108,
+   "es": "Hotel Catalonia Excelsior\nBarcelonina, 5,\nValencia, 46002, España\nEstimados señores,\nQuiero reservar una habitación doble con dos camas del 23 de julio próximo al 2 de agosto a nombre de Ricardo Alarcón con vistas al mar si es posible.\nQuedo a la espera de su respuesta.\nLes saluda atentamente\nRicardo Alarcón"
+  },
+  {
+   "title": "En el hotel (диалог, упр. 12)",
+   "page": 108,
+   "es": "– ¡Buenas tardes! ¿Qué se le ofrece, señor?\n– ¡Buenas tardes! Tengo reservada una habitación a nombre de Ricardo Alarcón.\n– Un momento. Voy a mirar en el registro. Ah, sí. Su pasaporte, por favor.\n– Aquí lo tiene.\n– Gracias. ¿Me hace el favor de llenar este formulario?\n– Claro que sí. ¿Puedo pagar la factura ahora mismo?\n– Por supuesto. ¿La pagará con tarjeta o en efectivo?\n– Con tarjeta de crédito.\n– Muchas gracias, señor. Aquí tiene la factura y la llave de su habitación.\n– Es Usted muy amable. Hasta luego.\n– ¡Que lo pase bien, señor!"
+  },
+  {
+   "title": "Dos hoteles en Madrid (Texto complementario, упр. 18)",
+   "page": 109,
+   "es": "El Novotel Madrid Puente de la Paz está situado en el corazón de una de las mayores zonas residenciales y empresariales de la vibrante ciudad de Madrid. A 10 minutos del aeropuerto y del recinto ferial Juan Carlos I, este hotel 4 estrellas es ideal para unas escapadas de fines de semana o unas vacaciones en Madrid. El hotel dispone de 240 habitaciones, una piscina al aire libre, un restaurante, un bar, 6 salas de reuniones y estacionamiento. Ideal para familias.\n\nRenovado en 2007, el hotel Colón consta de 164 habitaciones. Ofrece variadas instalaciones, como un jardín, un amplio hall de entrada con ascensores, recepción 24h, servicio de caja fuerte, de cambio de divisas y de guardarropa. Cuenta también con sala de televisión, auditorio, cafetería y un restaurante a la carta climatizado con sillas altas para los más pequeños. Los que viajen por motivos de negocio pueden utilizar la sala de conferencias y la conexión a Internet. Como prestaciones adicionales encontrará el servicio de habitaciones, de lavandería y de atención médica. El hotel dispone también de aparcamiento con cargo. Este atractivo hotel de lujo está situado en el corazón de la ciudad, cerca del Parque del Retiro. A unos minutos a pie llegará al vibrante y animado centro madrileño. Aquí podrá encontrar numerosas tiendas, comercios, lugares de ocio y entretenimiento y los más bellos monumentos de la metrópoli."
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Переведите словосочетания и проспрягайте в Presente, Pretérito Perfecto и Futuro Simple: despertarse temprano, levantarse en seguida, cepillarse los dientes, afeitarse con la máquina de afeitar, lavarse con agua fría, secarse con una toalla, peinarse con un peine ante el espejo, ponerse un traje, vestirse bien, maquillarse, desmaquillarse antes de acostarse, quitarse la ropa, acostarse a las once y media, dormirse en el acto",
+   "page": 106
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Задайте вопрос с cuándo по модели: ¿Cuándo te levantarás? – Ya me he levantado.",
+   "page": 106
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Трансформируйте по модели: No me levanto. – No puedo levantarme.",
+   "page": 106,
+   "items": [
+    "No me lavo con agua fría.",
+    "No te peinas bien.",
+    "José no se afeita.",
+    "No nos vestimos.",
+    "No os acostáis.",
+    "No se cepillan los dientes.",
+    "No me pongo la corbata.",
+    "No te quitas la ropa.",
+    "Maite no se maquilla.",
+    "No se despiertan temprano."
+   ]
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Раскройте скобки",
+   "page": 107
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Вставьте глаголы: quitarse, cepillarse, lavarse, despertarse, afeitarse, acostarse, ponerse",
+   "page": 107
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Ответьте на вопросы о распорядке дня",
+   "page": 107
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Составьте рассказ, используя словосочетания из упр. 1 (в разных временах)",
+   "page": 107
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 107,
+   "items": [
+    "Ты уже проснулся?",
+    "Я не люблю рано вставать.",
+    "Какой зубной пастой (pasta dentífrica) ты чистишь зубы?",
+    "Сначала ты должен побриться.",
+    "Ты будешь умываться холодной водой?",
+    "Какое полотенце мне взять, чтобы вытереться?",
+    "Ты всегда причесываешься перед зеркалом?",
+    "Ты наденешь серую рубашку? – Нет, я хочу надеть черную. Она мне больше нравится.",
+    "Как ты считаешь, кто из этих моделей лучше всех одевается?",
+    "Почему ты не смыла косметику, прежде чем лечь спать?",
+    "Мария сняла туфли и поставила их под кровать.",
+    "Моя семья ложится спать в полночь.",
+    "Ты всегда засыпаешь сразу?",
+    "Я не смогу умыться и почистить зубы, потому что нет воды."
+   ]
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Переведите прилагательные; A – образуйте наречия на -mente; B – подберите существительные и составьте предложения",
+   "pages": [
+    107,
+    108
+   ]
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Переведите на испанский: идти медленно, говорить тихо, писать быстро, спокойно спать, легко выучить испанский язык, с трудом найти работу, блестяще знать предмет",
+   "page": 108
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Para conocer más: прочитайте и переведите письмо в гостиницу; A – эквиваленты; B – напишите свое письмо с просьбой забронировать номер",
+   "page": 108
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Прочитайте и переведите диалог «En el hotel»; A – проспрягайте; B – вопросы; C – по ролям; D – перескажите",
+   "page": 108
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Вставьте подходящие слова (dormirse, recepcionista, cepillarse, tener reservada una habitación, encontrar, acostarse, pagar la factura, a su nombre, llenar el formulario, entregar la llave, lavarse)",
+   "pages": [
+    108,
+    109
+   ]
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 109
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы о гостиницах",
+   "page": 109
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Опишите отель, в котором вы обычно останавливаетесь",
+   "page": 109
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 109,
+   "items": [
+    "Сколько стоит одноместный номер с видом на море?",
+    "Я не буду бриться вечером. Я сделаю это завтра утром.",
+    "Ты уже лег спать? – Нет, я лягу через час.",
+    "Ты наденешь синюю рубашку? – Я уже надел желтую майку.",
+    "Кто мне поможет объяснить администратору, что я потерял ключ от номера?",
+    "У меня нет наличных денег. Я смогу расплатиться кредитной картой?",
+    "Мне очень жаль, но в номерах нет сейфов (caja fuerte).",
+    "На первом этаже Вы найдете пункт обмена валюты и бар, а позавтракать Вы сможете в ресторане, который находится на втором этаже.",
+    "Вам уже сообщили, что наш герой забронировал двухместный номер в гостинице «Старая башня».",
+    "Как Вам гостиница? – Мне она показалась ужасной."
+   ]
+  },
+  {
+   "number": "18",
+   "instruction_ru": "Texto complementario: прочитайте и переведите информацию о двух гостиницах в Мадриде (Novotel Madrid Puente de la Paz, hotel Colón)",
+   "page": 109
+  },
+  {
+   "number": "19",
+   "instruction_ru": "В какой из двух гостиниц вы предпочтете остановиться? Обоснуйте",
+   "page": 110
+  }
+ ],
+ "questions_for_user": [],
+ "note": "В оглавлении у урока 6 указано «Para conocer más. En el hotel»; в уроке этот раздел — письмо в гостиницу и диалог «En el hotel»."
+}

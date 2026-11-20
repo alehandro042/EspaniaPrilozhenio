@@ -11,8 +11,31 @@ const KIND = {
 };
 export const KIND_RU = {
   verb: 'Глаголы', word: 'Остальные слова', phrase: 'Фразы', number: 'Числительные',
-  country: 'Страны', nationality: 'Национальности', extra: 'Слова из урока', name: 'Имена', my: 'Мои слова'
+  country: 'Страны', nationality: 'Национальности', extra: 'Слова из урока', name: 'Имена', my: 'Мои слова',
+  subjects: 'Предметы', grades_spain: 'Оценки в Испании', months_seasons: 'Месяцы и сезоны', ordinals: 'Порядковые',
+  irregular_participles: 'Причастия', irregular_gerunds: 'Герундий', adjectives_for_mente: 'Прилагательные → -mente',
+  company_terms: 'В компании', room_words: 'В комнате', office_words: 'В офисе', home_words: 'Дома',
+  real_estate_words: 'Недвижимость', hotel_words: 'В отеле'
 };
+export const kindLabel = k => KIND_RU[k] || k.replace(/_/g, ' ');
+
+// Слово из словаря учебника → поля карточки. Перевод берём только из учебника.
+function fromEntry(w) {
+  if (typeof w === 'string') return { es: w, ru: '' };
+  if (!w || !w.es) return null;
+  let ru = w.ru || '', note = w.note || '';
+  if (!ru && w.n != null) ru = String(w.n);
+  if (w.participio) note = [note, 'participio: ' + w.participio].filter(Boolean).join('; ');
+  if (w.gerundio) note = [note, 'gerundio: ' + w.gerundio].filter(Boolean).join('; ');
+  if (w.range) note = [note, w.range].filter(Boolean).join('; ');
+  return { es: w.es, ru, gender: w.gender || '', note, page: w.page, participio: w.participio, gerundio: w.gerundio };
+}
+// Тематические списки-объекты: {title, page, words: [...]} или {page, note, cargos: [...], ...}
+function flattenGroup(obj) {
+  const out = [];
+  for (const [k, v] of Object.entries(obj)) if (Array.isArray(v)) for (const w of v) { const e = fromEntry(w); if (e) out.push({ ...e, page: e.page ?? obj.page }); }
+  return out;
+}
 
 async function getJSON(path) {
   const r = await fetch(BASE + path, { cache: 'no-cache' });
@@ -52,15 +75,16 @@ function buildItems() {
   for (const [lid, L] of book.lessons) {
     const arr = [];
     const seen = new Set();
-    for (const [field, list] of Object.entries(L.vocabulary || {})) {
-      if (!Array.isArray(list)) continue;
-      const kind = KIND[field] || 'word';
+    for (const [field, raw] of Object.entries(L.vocabulary || {})) {
+      const list = Array.isArray(raw) ? raw.map(fromEntry) : (raw && typeof raw === 'object') ? flattenGroup(raw) : null;
+      if (!list) continue;
+      const kind = KIND[field] || field;
       for (const w of list) {
         if (!w || !w.es) continue;
         const id = `L${lid}|${w.es}`;
         if (seen.has(id)) continue;
         seen.add(id);
-        const it = { id, lessonId: lid, kind, es: w.es, ru: w.ru || '', gender: w.gender || '', note: w.note || '', page: w.page };
+        const it = { id, lessonId: lid, kind, ...w };
         arr.push(it); book.items.set(id, it);
       }
     }
@@ -96,7 +120,17 @@ const isInf = s => /^[a-záéíóúñ]+(ar|er|ir)(se)?$/i.test((s || '').trim())
 export function conjugations(L) {
   const out = []; // {verb, person, form, ref}
   for (const g of L.grammar || []) {
-    const t = g.table; if (!Array.isArray(t)) continue;
+    const t = g.table;
+    if (t && !Array.isArray(t) && typeof t === 'object') {
+      // {"hablar": [6 форм], "atender, Ia (e→ie)": [...], ...}
+      for (const [k, v] of Object.entries(t)) {
+        const verb = (k.match(/^([a-záéíóúñ]+)/i) || [])[1];
+        if (Array.isArray(v) && v.length === 6 && isInf(verb) && v.every(x => typeof x === 'string'))
+          v.forEach((form, i) => out.push({ verb, person: DEFAULT_PERSONS[i], form, ref: g.id }));
+      }
+      continue;
+    }
+    if (!Array.isArray(t)) continue;
     const ref = g.id;
     const titleVerb = ((g.title || '').match(/глагол[а-я]*\s+([a-záéíóúñ]+(?:se)?)/i) || [])[1];
     if (t.length === 6 && t.every(r => r.length === 2) && titleVerb) {

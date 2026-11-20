@@ -1,0 +1,990 @@
+{
+ "id": 9,
+ "unit": 2,
+ "lesson": 3,
+ "title": "Unidad 2. Estudiar y trabajar — Lección 3",
+ "pages": [
+  49,
+  50,
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 55; выражения — Para conocer más, с. 52",
+  "verbs": [
+   {
+    "es": "aprobar (Ib)",
+    "ru": "сдавать (успешно)",
+    "note": "отклоняющийся Ib: apruebo, apruebas, aprueba, aprobamos, aprobáis, aprueban",
+    "page": 55
+   },
+   {
+    "es": "comparar",
+    "ru": "сравнивать",
+    "page": 55
+   },
+   {
+    "es": "descansar",
+    "ru": "отдыхать",
+    "page": 55
+   },
+   {
+    "es": "escuchar",
+    "ru": "слушать",
+    "note": "§51",
+    "page": 55
+   },
+   {
+    "es": "esperar",
+    "ru": "ждать, ожидать",
+    "page": 55
+   },
+   {
+    "es": "examinarse (de)",
+    "ru": "сдавать экзамен",
+    "page": 55
+   },
+   {
+    "es": "hacer",
+    "ru": "делать",
+    "note": "§54, индивидуальное спряжение",
+    "page": 55
+   },
+   {
+    "es": "mirar",
+    "ru": "смотреть",
+    "note": "§51",
+    "page": 55
+   },
+   {
+    "es": "oír",
+    "ru": "слышать",
+    "note": "§51: oigo, oyes, oye, oímos, oís, oyen",
+    "page": 55
+   },
+   {
+    "es": "pasar",
+    "ru": "проходить, сдавать",
+    "page": 55
+   },
+   {
+    "es": "poner",
+    "ru": "класть, ставить",
+    "note": "§54, индивидуальное спряжение",
+    "page": 55
+   },
+   {
+    "es": "prepararse (para)",
+    "ru": "готовиться к чему-л.",
+    "page": 55
+   },
+   {
+    "es": "sacar",
+    "ru": "доставать что-л.",
+    "page": 55
+   },
+   {
+    "es": "sacar una nota",
+    "ru": "получать оценку",
+    "page": 55
+   },
+   {
+    "es": "suspender",
+    "ru": "провалить кого-л. на экзамене; не сдать экзамен",
+    "page": 55
+   },
+   {
+    "es": "ver",
+    "ru": "видеть",
+    "note": "§51: veo, ves, ve, vemos, veis, ven",
+    "page": 50
+   }
+  ],
+  "other": [
+   {
+    "es": "algo",
+    "ru": "что-то, что-нибудь",
+    "note": "§50",
+    "page": 55
+   },
+   {
+    "es": "alguien",
+    "ru": "кто-то, кто-нибудь",
+    "note": "§50",
+    "page": 55
+   },
+   {
+    "es": "alguno",
+    "ru": "какой-то, какой-нибудь",
+    "note": "§50",
+    "page": 55
+   },
+   {
+    "es": "avanzado",
+    "ru": "продвинутый",
+    "page": 55
+   },
+   {
+    "es": "beso",
+    "gender": "m",
+    "ru": "поцелуй",
+    "page": 55
+   },
+   {
+    "es": "catalán",
+    "ru": "каталанский, каталонец",
+    "page": 55
+   },
+   {
+    "es": "certificado",
+    "gender": "m",
+    "ru": "сертификат",
+    "page": 55
+   },
+   {
+    "es": "chileno",
+    "ru": "чилийский, чилиец",
+    "page": 55
+   },
+   {
+    "es": "ciencias sociales",
+    "gender": "f pl",
+    "ru": "социология",
+    "page": 55
+   },
+   {
+    "es": "comunicación",
+    "gender": "f",
+    "ru": "сообщение, контакт, связь",
+    "page": 55
+   },
+   {
+    "es": "diploma",
+    "gender": "m",
+    "ru": "диплом",
+    "page": 55
+   },
+   {
+    "es": "disco",
+    "gender": "m",
+    "ru": "диск, пластинка",
+    "page": 55
+   },
+   {
+    "es": "domingo",
+    "gender": "m",
+    "ru": "воскресенье",
+    "note": "§53",
+    "page": 55
+   },
+   {
+    "es": "Escuela Diplomática",
+    "ru": "Дипломатическая Академия",
+    "page": 55
+   },
+   {
+    "es": "escrito",
+    "ru": "письменный",
+    "page": 55
+   },
+   {
+    "es": "extraño",
+    "ru": "странный",
+    "page": 55
+   },
+   {
+    "es": "favor",
+    "gender": "m",
+    "ru": "услуга, одолжение",
+    "page": 55
+   },
+   {
+    "es": "hoy",
+    "ru": "сегодня",
+    "page": 55
+   },
+   {
+    "es": "jueves",
+    "gender": "m",
+    "ru": "четверг",
+    "note": "§53",
+    "page": 55
+   },
+   {
+    "es": "lunes",
+    "gender": "m",
+    "ru": "понедельник",
+    "note": "§53",
+    "page": 55
+   },
+   {
+    "es": "magisterio",
+    "gender": "m",
+    "ru": "магистратура",
+    "page": 55
+   },
+   {
+    "es": "martes",
+    "gender": "m",
+    "ru": "вторник",
+    "note": "§53",
+    "page": 55
+   },
+   {
+    "es": "máster",
+    "gender": "m",
+    "ru": "выпускник магистратуры",
+    "page": 55
+   },
+   {
+    "es": "hacer un máster",
+    "ru": "учиться в магистратуре",
+    "page": 55
+   },
+   {
+    "es": "materia",
+    "gender": "f",
+    "ru": "предмет",
+    "page": 55
+   },
+   {
+    "es": "miércoles",
+    "gender": "m",
+    "ru": "среда",
+    "note": "§53",
+    "page": 55
+   },
+   {
+    "es": "nada",
+    "ru": "ничего",
+    "note": "§50",
+    "page": 55
+   },
+   {
+    "es": "nadie",
+    "ru": "никто",
+    "note": "§50",
+    "page": 55
+   },
+   {
+    "es": "ninguno",
+    "ru": "никакой",
+    "note": "§50",
+    "page": 55
+   },
+   {
+    "es": "nota",
+    "gender": "f",
+    "ru": "оценка",
+    "page": 55
+   },
+   {
+    "es": "nota excelente, sobresaliente",
+    "gender": "f",
+    "ru": "отличная оценка",
+    "page": 55
+   },
+   {
+    "es": "nota final",
+    "gender": "f",
+    "ru": "итоговая оценка",
+    "page": 55
+   },
+   {
+    "es": "palabra",
+    "gender": "f",
+    "ru": "слово",
+    "page": 55
+   },
+   {
+    "es": "película",
+    "gender": "f",
+    "ru": "фильм",
+    "page": 55
+   },
+   {
+    "es": "ponencia",
+    "gender": "f",
+    "ru": "доклад",
+    "page": 55
+   },
+   {
+    "es": "prueba",
+    "gender": "f",
+    "ru": "контрольная, зачет",
+    "page": 55
+   },
+   {
+    "es": "radio",
+    "gender": "f",
+    "ru": "радио",
+    "page": 55
+   },
+   {
+    "es": "ruido",
+    "gender": "m",
+    "ru": "шум",
+    "page": 55
+   },
+   {
+    "es": "sábado",
+    "gender": "m",
+    "ru": "суббота",
+    "note": "§53",
+    "page": 55
+   },
+   {
+    "es": "siguiente",
+    "ru": "следующий",
+    "page": 55
+   },
+   {
+    "es": "sonido",
+    "gender": "m",
+    "ru": "звук",
+    "page": 55
+   },
+   {
+    "es": "tarea de casa",
+    "gender": "f",
+    "ru": "домашнее задание",
+    "page": 55
+   },
+   {
+    "es": "viernes",
+    "gender": "m",
+    "ru": "пятница",
+    "note": "§53",
+    "page": 55
+   },
+   {
+    "es": "voz",
+    "gender": "f",
+    "ru": "голос",
+    "page": 55
+   }
+  ],
+  "phrases": [
+   {
+    "es": "no tener nada que ver",
+    "ru": "не иметь никакого отношения",
+    "page": 55
+   },
+   {
+    "es": "prepararse para las clases",
+    "ru": "готовиться к занятиям",
+    "note": "Para conocer más, упр. 11",
+    "page": 52
+   },
+   {
+    "es": "tener un examen / pasar el examen / examinarse de alguna materia",
+    "ru": "сдавать экзамен",
+    "note": "Para conocer más, упр. 11",
+    "page": 52
+   },
+   {
+    "es": "aprobar el examen",
+    "ru": "сдать экзамен",
+    "note": "Para conocer más, упр. 11",
+    "page": 52
+   },
+   {
+    "es": "poner una nota",
+    "ru": "поставить оценку",
+    "note": "Para conocer más, упр. 11",
+    "page": 52
+   },
+   {
+    "es": "sacar una nota",
+    "ru": "получить оценку",
+    "note": "Para conocer más, упр. 11",
+    "page": 52
+   },
+   {
+    "es": "suspender a alguien en el examen / suspender el examen",
+    "ru": "провалить кого-то на экзамене / не сдать предмет",
+    "note": "Para conocer más, упр. 11",
+    "page": 52
+   },
+   {
+    "es": "Hasta la próxima",
+    "ru": "До следующего (письма)",
+    "note": "из письма упр. 12, перевода в Vocabulario нет",
+    "page": 53
+   },
+   {
+    "es": "Un beso",
+    "ru": "Целую",
+    "note": "из письма упр. 12 (beso — поцелуй)",
+    "page": 53
+   }
+  ],
+  "grades_spain": [
+   {
+    "es": "suspenso",
+    "range": "0,0–4,9"
+   },
+   {
+    "es": "aprobado",
+    "range": "5,0–6,9"
+   },
+   {
+    "es": "notable",
+    "range": "7,0–8,9"
+   },
+   {
+    "es": "sobresaliente",
+    "range": "9,0–9,9"
+   },
+   {
+    "es": "matrícula de honor",
+    "range": "10,0"
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "id": "§50",
+   "title": "Неопределенные местоимения algo/nada, alguien/nadie, alguno/ninguno",
+   "pages": [
+    49,
+    50
+   ],
+   "table": {
+    "columns": [
+     "утвердительные",
+     "пример",
+     "отрицательные",
+     "пример"
+    ],
+    "rows": [
+     [
+      "algo",
+      "¿Quieres tomar algo?",
+      "nada",
+      "No, no quiero tomar nada."
+     ],
+     [
+      "alguien",
+      "¿Lo sabe alguien?",
+      "nadie",
+      "No, no lo sabe nadie."
+     ],
+     [
+      "alguno",
+      "¿Tienes alguna foto?",
+      "ninguno",
+      "No, no tengo ninguna."
+     ]
+    ]
+   },
+   "points": [
+    "Указывают на неопределенный предмет, признак, количество или их отсутствие.",
+    "Как прилагательные alguno и ninguno усекаются перед существительными мужского рода ед. числа: ¿Tienes algún libro español? – Sí, tengo alguno. / No, no tengo ningún libro. / No, no tengo ninguno.",
+    "У ninguno нет множественного числа: ¿Tienes algunas fotos? – No, no tengo ninguna (foto).",
+    "Если есть уточнение, вместо alguien и nadie употребляются alguno de (nosotros, vosotros, ustedes…) и ninguno de: Alguno de ustedes lo sabe. Ninguno de ustedes lo sabe.",
+    "NB: если отрицательное местоимение стоит перед глаголом, частица no опускается: No lo dice nadie. Nadie lo dice."
+   ]
+  },
+  {
+   "id": "§51",
+   "title": "Глаголы восприятия ver – mirar, oír – escuchar (видеть – смотреть, слышать – слушать)",
+   "page": 50,
+   "table": {
+    "ver": [
+     "veo",
+     "ves",
+     "ve",
+     "vemos",
+     "veis",
+     "ven"
+    ],
+    "oír": [
+     "oigo",
+     "oyes",
+     "oye",
+     "oímos",
+     "oís",
+     "oyen"
+    ],
+    "ver + ": "a su amigo, un taxi, la tele, una película",
+    "mirar + ": "algo, una cosa, a una persona",
+    "oír + ": "la voz del profesor, sus palabras, un sonido, un ruido",
+    "escuchar + ": "música, la radio"
+   },
+   "points": [
+    "ver – видеть, mirar – смотреть; oír – слышать, escuchar – слушать.",
+    "Me mira, pero no me ve.",
+    "Quien más mira, menos ve.",
+    "Me escucha, pero no me oye."
+   ]
+  },
+  {
+   "id": "§52",
+   "title": "Простые предлоги desde, durante, hasta",
+   "page": 51,
+   "table": {
+    "rows": [
+     [
+      "desde",
+      "исходная точка в пространстве или во времени",
+      "llegar desde Madrid; desde las seis"
+     ],
+     [
+      "durante",
+      "промежуток времени",
+      "durante la fiesta"
+     ],
+     [
+      "hasta",
+      "конечная точка в пространстве или во времени",
+      "este tren no llega hasta allí; hasta mañana"
+     ]
+    ]
+   },
+   "points": []
+  },
+  {
+   "id": "§53",
+   "title": "Дни недели",
+   "page": 51,
+   "table": {
+    "singular": [
+     "el lunes",
+     "el martes",
+     "el miércoles",
+     "el jueves",
+     "el viernes",
+     "el sábado",
+     "el domingo"
+    ],
+    "plural": [
+     "los lunes",
+     "los martes",
+     "los miércoles",
+     "los jueves",
+     "los viernes",
+     "los sábados",
+     "los domingos"
+    ]
+   },
+   "points": [
+    "¿Qué día de la semana es hoy? – Hoy es miércoles.",
+    "¿Qué clases tienes los miércoles? – Los miércoles no tengo clases.",
+    "Во мн. числе меняются только sábado → sábados и domingo → domingos (по таблице)."
+   ]
+  },
+  {
+   "id": "§54",
+   "title": "Глаголы индивидуального спряжения hacer (делать), poner (ставить, класть)",
+   "page": 52,
+   "table": {
+    "hacer": [
+     "hago",
+     "haces",
+     "hace",
+     "hacemos",
+     "hacéis",
+     "hacen"
+    ],
+    "poner": [
+     "pongo",
+     "pones",
+     "pone",
+     "ponemos",
+     "ponéis",
+     "ponen"
+    ],
+    "hacer + ": "algún trabajo, un favor, la tarea de casa, los deberes, un máster, ruido, una comunicación, una ponencia",
+    "poner + ": "el libro sobre la mesa, una nota, un disco, la radio, la mesa"
+   },
+   "points": []
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "Вопрос с algo/alguien/alguno → отрицательный ответ с nada/nadie/ninguno (§50)",
+   "page": 49,
+   "examples": [
+    {
+     "es": "¿Quieres tomar algo? – No, no quiero tomar nada."
+    },
+    {
+     "es": "¿Lo sabe alguien? – No, no lo sabe nadie."
+    },
+    {
+     "es": "¿Tienes algún libro español? – No, no tengo ningún libro."
+    },
+    {
+     "es": "¿Tienes algunas fotos? – No, no tengo ninguna."
+    }
+   ]
+  },
+  {
+   "pattern": "Отрицательное местоимение перед глаголом — без no (§50)",
+   "page": 50,
+   "examples": [
+    {
+     "es": "No lo dice nadie."
+    },
+    {
+     "es": "Nadie lo dice."
+    },
+    {
+     "es": "Ninguno de ustedes lo sabe."
+    }
+   ]
+  },
+  {
+   "pattern": "ver/oír (результат) против mirar/escuchar (действие) (§51)",
+   "page": 50,
+   "examples": [
+    {
+     "es": "Me mira, pero no me ve."
+    },
+    {
+     "es": "Me escucha, pero no me oye."
+    },
+    {
+     "es": "¿Oyes este sonido tan extraño?"
+    },
+    {
+     "es": "¿Escuchas la radio todas las noches?"
+    }
+   ]
+  },
+  {
+   "pattern": "desde … hasta / durante + существительное (§52)",
+   "pages": [
+    51,
+    52
+   ],
+   "examples": [
+    {
+     "es": "Durante la clase escribimos dictados."
+    },
+    {
+     "es": "Estamos en el examen desde las 8 de la mañana."
+    },
+    {
+     "es": "Tenéis que traducir el texto hasta la página 28."
+    }
+   ]
+  },
+  {
+   "pattern": "Дни недели: es + день; los + день = «по …» (§53)",
+   "page": 51,
+   "examples": [
+    {
+     "es": "¿Qué día de la semana es hoy? – Hoy es miércoles."
+    },
+    {
+     "es": "Los miércoles no tengo clases."
+    },
+    {
+     "es": "Tenemos clases de lunes a viernes."
+    }
+   ]
+  },
+  {
+   "pattern": "Выражения об учебе: hacer un máster, prepararse para, examinarse de, aprobar, sacar/poner una nota, suspender",
+   "pages": [
+    52,
+    53
+   ],
+   "examples": [
+    {
+     "es": "Mi hermano hace un máster en París."
+    },
+    {
+     "es": "Nos examinamos el viernes."
+    },
+    {
+     "es": "Siempre sacan notas sobresalientes."
+    },
+    {
+     "es": "Cuando me preparo bien para la clase, el profesor me pone una buena nota."
+    },
+    {
+     "es": "Todos los años Manolo suspende inglés."
+    }
+   ]
+  }
+ ],
+ "texts": [
+  {
+   "title": "Письмо Фелипе (упр. 12)",
+   "page": 53,
+   "es": "Hola, Julia. Te escribo esta carta desde Madrid. Como sabes, estoy aquí para hacer un máster en la Escuela Diplomática. Tenemos clases de lunes a viernes. Los sábados y domingos descansamos y nos preparamos para las clases de la semana siguiente. Tengo que examinarme de tres asignaturas: Relaciones Económicas Internacionales, Derecho Internacional, Historia de Relaciones Internacionales. Todas son pruebas escritas. Espero aprobarlas con notas sobresalientes. En el diploma ponen la nota final. Las notas en España no tienen nada que ver con las nuestras. Aquí las tienes para comparar: suspenso 0,0-4,9; aprobado 5,0-6,9; notable 7,0-8,9; sobresaliente 9,0-9,9; matrícula de honor 10,0. Hasta la próxima. Un beso, Felipe."
+  },
+  {
+   "title": "Horario de clases, Universidad de Sevilla (Texto complementario, упр. 18)",
+   "pages": [
+    54,
+    55
+   ],
+   "es": "Curso 2017/2018. Primer cuatrimestre. Grado en economía. Curso 2° Grupo 1 (mañana). 10.00–11.30: lunes y miércoles Historia Económica II; martes y jueves Microeconomía II; viernes Matemáticas II. 12.00–13.30: lunes y jueves Macroeconomía I; martes y viernes Estadística Avanzada; miércoles Matemáticas II."
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Ответьте на вопросы отрицательно",
+   "page": 50,
+   "items": [
+    "¿Sabes algo?",
+    "¿Dice alguien la verdad?",
+    "¿Bebes algo?",
+    "¿Toma chocolate alguno de vosotros?",
+    "¿Quieres algo?",
+    "¿Tienes algún documento?",
+    "¿Redactas algunas cartas?",
+    "¿Dices algo?",
+    "¿A alguno de ustedes le gusta este restaurante?",
+    "¿A alguien le gusta tomar agua mineral?",
+    "¿Comprendes algo?",
+    "¿Escribes algunas palabras?",
+    "¿Tienes algún certificado?",
+    "¿Sabe alguno de ustedes cómo se llama el director financiero?",
+    "¿Lees algo?",
+    "¿Firma Usted algún documento?",
+    "¿Le gusta este joven a alguna de vosotras?"
+   ]
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 50,
+   "items": [
+    "У меня нет никаких новостей (noticia).",
+    "У тебя есть какие-нибудь испанские журналы? – Нет, у меня нет никаких иностранных журналов.",
+    "Кто-нибудь знаком с Марией? – Нет, никто не знаком с ней.",
+    "Пабло ничего не говорит и не хочет ни с кем разговаривать.",
+    "У тебя есть какая-нибудь интересная книга? Хочу почитать что-нибудь в поезде. – Нет, у меня нет ни одной интересной книги.",
+    "Никто из нас этого не знает.",
+    "Я ничего не хочу переводить!"
+   ]
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Проспрягайте ver, mirar, oír, escuchar с зависимыми словами; A – вопросы в парах; B – ответьте отрицательно, используя местоимения-дополнения в винительном падеже",
+   "pages": [
+    50,
+    51
+   ],
+   "items": [
+    "¿Ves a aquella joven guapa?",
+    "¿Escucha alguno de vosotros la música clásica?",
+    "¿Oís este sonido tan extraño?",
+    "¿Miras estos libros?",
+    "¿Ve usted a los franceses que están en la sala?",
+    "¿Me oyes?",
+    "¿Conoce usted al embajador chileno?",
+    "¿Sabe usted catalán?",
+    "¿Veis una película interesante?",
+    "¿Escuchas la radio todas las noches?"
+   ]
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 51,
+   "items": [
+    "Я ничего не вижу, а также ничего не слышу и не хочу с тобой разговаривать.",
+    "Почему ты на меня так смотришь? Я тебе не нравлюсь?",
+    "Вечером мы смотрим какой-нибудь фильм по телевизору.",
+    "Ты любишь слушать музыку дома? – Дома у меня нет времени, я слушаю её в машине.",
+    "Я слышу голос мамы, которая меня зовет.",
+    "Слышишь шум?",
+    "Моя бабушка смотрит телевизор целый день.",
+    "Когда Хосе видит Ольгу, он не знает, что сказать.",
+    "Я вижу наш автобус.",
+    "Я слушаю Вас внимательно."
+   ]
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Переведите на русский язык",
+   "page": 51,
+   "items": [
+    "Durante la clase escribimos dictados, escuchamos diálogos y aprendemos nuevas palabras.",
+    "Desde aquí no oigo ni veo nada.",
+    "Quieren terminar todo el trabajo hasta mediodía.",
+    "Estamos en el examen desde las 8 de la mañana y todavía no sabemos nuestras notas.",
+    "Durante la conferencia ninguno de los estudiantes habla por teléfono, pero muchos envían mensajes.",
+    "Tenéis que traducir el texto hasta la página 28."
+   ]
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Ответьте на вопросы",
+   "page": 51,
+   "items": [
+    "¿Qué día de la semana es hoy?",
+    "¿Cuántas clases tienes los lunes?",
+    "¿Cuántas clases tienes los sábados? ¿Y los domingos?",
+    "¿Cuántas clases de idiomas tienes los viernes?",
+    "¿Qué día de la semana asistes a las conferencias de relaciones económicas internacionales (historia, relaciones públicas, filosofía, contabilidad)?",
+    "¿A qué clases asistes los jueves?",
+    "¿Qué día de la semana ves a tus amigos?",
+    "¿Qué día de la semana visitas a tus abuelos?"
+   ]
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 51,
+   "items": [
+    "В этом семестре по пятницам у нас философия и современная международная политика.",
+    "Сегодня воскресенье, и у меня нет уроков.",
+    "Какой сегодня день недели?",
+    "По четвергам Мария учится водить машину.",
+    "Хочешь посмотреть новый фильм в эту субботу?"
+   ]
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Проспрягайте hacer и poner с зависимыми словами; A – вопросы в парах; B – переведите на русский",
+   "page": 52,
+   "items": [
+    "¿Quién hace este ruido?",
+    "El jueves hago una ponencia en la Universidad.",
+    "¿Quieres poner la mesa?",
+    "Mi hermano hace un máster en París.",
+    "Pongo la radio y escucho música.",
+    "¿Qué notas os pone la profesora en clase de español?"
+   ]
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Вставьте hacer или poner в нужной форме и переведите",
+   "page": 52,
+   "items": [
+    "Elena e Isabel están en Madrid, ___ un máster en la Universidad Complutense.",
+    "El viernes (nosotros) ___ una comunicación en clase de Ciencias Sociales.",
+    "¡Me encanta la salsa cubana! ¿Quieres ___ este disco?",
+    "Cuando los estudiantes no ___ la tarea de casa, el profesor les ___ una mala nota.",
+    "Hijos, mamá ___ un plato sabroso, y vosotros ___ la mesa.",
+    "Juanito, (tú) no debes ___ ruido cuando la abuela escucha la radio.",
+    "Señor, ¿me ___ usted un favor?"
+   ]
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 52,
+   "items": [
+    "Рауль ничего не делает и не хочет ничего делать.",
+    "Я кладу учебник на стол и начинаю делать домашнее задание.",
+    "Ты учишься в магистратуре за границей?",
+    "Какую оценку Вы мне ставите?",
+    "Я не делаю ничего плохого. – Хорошего тоже.",
+    "Ты выступаешь с докладом в первой половине дня, а я после обеда.",
+    "Дети так шумят, а дедушка смотрит телевизор.",
+    "Ты сделаешь мне одолжение, поставишь диск? Хочу немного послушать музыку."
+   ]
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Para conocer más: запомните выражения, связанные с учебой; A – проспрягайте (examinarse de matemáticas, aprobarlas bien, sacar un sobresaliente, no prepararse bien para las clases, suspender dos exámenes, ponerle un notable); B – переведите на русский; C – переведите на испанский",
+   "pages": [
+    52,
+    53
+   ],
+   "items": [
+    "¿Cuándo os examináis de Ciencias Sociales? – Nos examinamos el viernes.",
+    "Todos los años le suspenden en dos asignaturas.",
+    "José y Pablo son buenos estudiantes, siempre sacan notas sobresalientes.",
+    "Nos encanta aprender idiomas extranjeros, pero no nos gusta tener exámenes.",
+    "Todos los años Manolo suspende inglés.",
+    "Cuando me preparo bien para la clase, el profesor me pone una buena nota.",
+    "Este año tienen que aprobar todos los exámenes.",
+    "Когда у тебя экзамен по философии?",
+    "Наша группа всегда хорошо сдает все экзамены.",
+    "Ты не провалишься!",
+    "Какой экзамен ты сдаешь?",
+    "Наш преподаватель не любит ставить хорошие оценки.",
+    "Какие оценки ты получаешь на экзаменах?",
+    "Какие предметы Вы сдаете сейчас?"
+   ]
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Прочитайте и переведите письмо Фелипе; A – проспрягайте (hacer un máster, escribir una carta desde Madrid, prepararse para las clases, examinarse de tres asignaturas, aprobarlas con notas sobresalientes, poner la nota final, no tener nada que ver con eso, comparar las notas); B – ответьте на вопросы; C – расскажите о Фелипе",
+   "page": 53
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Вставьте слова: matrícula de honor, hacer un máster, empresa internacional, poner notas, prueba escrita, relaciones económicas internacionales, aprobar, prepararse, examinarse",
+   "page": 53
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 53
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы",
+   "page": 54,
+   "items": [
+    "¿Se parecen las notas en España a las notas en Rusia? ¿Por qué?",
+    "¿Qué tenemos que hacer para sacar buenas notas?",
+    "¿Y tú? ¿Sacas buenas notas?",
+    "¿Qué notas te pone el profesor de inglés? ¿Y el de español?",
+    "¿Apruebas bien todos los exámenes?",
+    "¿De qué asignaturas te examinas este semestre?",
+    "¿Cómo te preparas para las pruebas?"
+   ]
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Расскажите, какие экзамены и как вы сдаете",
+   "page": 54
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык (A и B)",
+   "page": 54,
+   "items": [
+    "С понедельника я начинаю работать в банке.",
+    "Во вторник у нас экзамен по экономике.",
+    "По средам я делаю домашнее задание по испанскому.",
+    "Никто не приходит на занятия по субботам.",
+    "В воскресенье я не учусь и у меня много свободного времени. Я смотрю телевизор и слушаю музыку.",
+    "Никто из них не хочет идти на конференцию по экологии.",
+    "Ты читаешь книгу по истории России? – Нет, я ничего не читаю.",
+    "Во время урока мы много читаем, разговариваем и пишем.",
+    "До пятницы я хочу отправить электронные письма своим друзьям.",
+    "Ты видишь что-нибудь? – Нет, я ничего не вижу, но слышу какой-то шум.",
+    "Кто-нибудь из вас сдает экзамен во вторник? – Нет, мы сдаем международные экономические отношения в среду.",
+    "Ты знаешь, что этот экзамен письменный?",
+    "Вам нравится оценка, которую я Вам ставлю?",
+    "Мой друг очень хорошо говорит по-английски. – Почему же ему ставят двойку на экзамене? – Он плохо знает грамматику.",
+    "Все студенты нашей группы получают отличные оценки на экзамене по испанскому языку.",
+    "Кто-нибудь из вас делает сегодня доклад? – Нет, никто.",
+    "Никому не нравится получать плохие отметки.",
+    "Почему ты не слушаешь преподавателя?",
+    "Ты слышишь меня? – Нет, я смотрю на красивых девушек.",
+    "Где мой учебник? – Ты не видишь, что он лежит на столе?"
+   ]
+  },
+  {
+   "number": "18",
+   "instruction_ru": "Texto complementario: прочитайте и переведите расписание занятий (Universidad de Sevilla, Facultad de Ciencias Económicas y Empresariales, Grado en economía)",
+   "pages": [
+    54,
+    55
+   ]
+  },
+  {
+   "number": "19",
+   "instruction_ru": "Составьте свое расписание занятий",
+   "page": 55
+  }
+ ],
+ "questions_for_user": []
+}

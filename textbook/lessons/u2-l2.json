@@ -1,0 +1,1044 @@
+{
+ "id": 8,
+ "unit": 2,
+ "lesson": 2,
+ "title": "Unidad 2. Estudiar y trabajar — Lección 2",
+ "pages": [
+  42,
+  43,
+  44,
+  45,
+  46,
+  47,
+  48,
+  49
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 48–49",
+  "verbs": [
+   {
+    "es": "acercarse (a)",
+    "ru": "приблизиться",
+    "page": 48
+   },
+   {
+    "es": "conducir (V)",
+    "ru": "водить",
+    "note": "§45",
+    "page": 49
+   },
+   {
+    "es": "conocer (V)",
+    "ru": "знать, быть знакомым",
+    "note": "§44, §45",
+    "page": 49
+   },
+   {
+    "es": "deber",
+    "ru": "быть обязанным (считать своим долгом) сделать что-л.",
+    "note": "§48",
+    "page": 49
+   },
+   {
+    "es": "empezar (Ia)",
+    "ru": "начинать(ся)",
+    "note": "§48, отклоняющийся Ia",
+    "page": 49
+   },
+   {
+    "es": "enseñar",
+    "ru": "научить другого",
+    "note": "из §47 (в Vocabulario нет)",
+    "page": 45
+   },
+   {
+    "es": "limitarse (a)",
+    "ru": "ограничиваться",
+    "page": 49
+   },
+   {
+    "es": "llamar (por teléfono)",
+    "ru": "звать (звонить)",
+    "page": 49
+   },
+   {
+    "es": "nacer",
+    "ru": "родиться",
+    "page": 49
+   },
+   {
+    "es": "obtener",
+    "ru": "получить",
+    "page": 49
+   },
+   {
+    "es": "parecerse (a) (V)",
+    "ru": "быть похожим, походить",
+    "note": "§45",
+    "page": 49
+   },
+   {
+    "es": "producir (V)",
+    "ru": "производить",
+    "note": "§45",
+    "page": 49
+   },
+   {
+    "es": "proporcionar",
+    "ru": "предоставлять, обеспечивать",
+    "page": 49
+   },
+   {
+    "es": "saber",
+    "ru": "знать",
+    "note": "§44",
+    "page": 49
+   },
+   {
+    "es": "saber + inf",
+    "ru": "уметь что-л. делать",
+    "note": "§44",
+    "page": 49
+   },
+   {
+    "es": "tener que",
+    "ru": "быть должным сделать что-л.",
+    "note": "§48",
+    "page": 49
+   },
+   {
+    "es": "terminar (de)",
+    "ru": "заканчивать(ся)",
+    "note": "§48",
+    "page": 49
+   },
+   {
+    "es": "traducir (Vb)",
+    "ru": "переводить",
+    "note": "§45",
+    "page": 49
+   }
+  ],
+  "other": [
+   {
+    "es": "acontecimiento",
+    "gender": "m",
+    "ru": "событие",
+    "page": 48
+   },
+   {
+    "es": "año académico",
+    "gender": "m",
+    "ru": "учебный год",
+    "page": 48
+   },
+   {
+    "es": "artes plásticas",
+    "gender": "f pl",
+    "ru": "изобразительное искусство",
+    "page": 49
+   },
+   {
+    "es": "asignatura",
+    "gender": "f",
+    "ru": "предмет",
+    "page": 49
+   },
+   {
+    "es": "barbaridad",
+    "gender": "f",
+    "ru": "варварство, дикость",
+    "page": 49
+   },
+   {
+    "es": "caballero",
+    "gender": "m",
+    "ru": "рыцарь, джентльмен",
+    "page": 49
+   },
+   {
+    "es": "cantautor",
+    "gender": "m",
+    "ru": "бард, автор-исполнитель песен",
+    "page": 49
+   },
+   {
+    "es": "cena",
+    "gender": "f",
+    "ru": "ужин",
+    "page": 49
+   },
+   {
+    "es": "ciudad",
+    "gender": "f",
+    "ru": "город",
+    "page": 49
+   },
+   {
+    "es": "comercio exterior",
+    "ru": "внешняя торговля",
+    "page": 49
+   },
+   {
+    "es": "contabilidad",
+    "gender": "f",
+    "ru": "бухгалтерия, бух. учет",
+    "page": 49
+   },
+   {
+    "es": "contemporáneo",
+    "ru": "современный",
+    "page": 49
+   },
+   {
+    "es": "corto",
+    "ru": "короткий",
+    "page": 49
+   },
+   {
+    "es": "deportivo",
+    "ru": "спортивный",
+    "page": 49
+   },
+   {
+    "es": "derecho",
+    "gender": "m",
+    "ru": "право",
+    "page": 49
+   },
+   {
+    "es": "dinero",
+    "gender": "m",
+    "ru": "деньги",
+    "page": 49
+   },
+   {
+    "es": "edificio",
+    "gender": "m",
+    "ru": "здание",
+    "page": 49
+   },
+   {
+    "es": "embajador",
+    "gender": "m",
+    "ru": "посол",
+    "page": 49
+   },
+   {
+    "es": "estadísticas",
+    "gender": "f pl",
+    "ru": "статистика",
+    "page": 49
+   },
+   {
+    "es": "exposición",
+    "gender": "f",
+    "ru": "выставка",
+    "page": 49
+   },
+   {
+    "es": "facultad",
+    "gender": "f",
+    "ru": "факультет",
+    "page": 49
+   },
+   {
+    "es": "filosofía",
+    "gender": "f",
+    "ru": "философия",
+    "page": 49
+   },
+   {
+    "es": "finanzas",
+    "gender": "f pl",
+    "ru": "финансы",
+    "page": 49
+   },
+   {
+    "es": "frase",
+    "gender": "f",
+    "ru": "предложение",
+    "page": 49
+   },
+   {
+    "es": "genio",
+    "gender": "m",
+    "ru": "гений",
+    "page": 49
+   },
+   {
+    "es": "gerente",
+    "gender": "m, f",
+    "ru": "управляющий",
+    "page": 49
+   },
+   {
+    "es": "gestión de la empresa",
+    "ru": "управление предприятием",
+    "page": 49
+   },
+   {
+    "es": "habilidad",
+    "gender": "f",
+    "ru": "способность, умение",
+    "page": 49
+   },
+   {
+    "es": "informática",
+    "gender": "f",
+    "ru": "информатика",
+    "page": 49
+   },
+   {
+    "es": "obra",
+    "gender": "f",
+    "ru": "произведение",
+    "page": 49
+   },
+   {
+    "es": "página",
+    "gender": "f",
+    "ru": "страница",
+    "page": 49
+   },
+   {
+    "es": "página web",
+    "gender": "f",
+    "ru": "веб-страница",
+    "page": 49
+   },
+   {
+    "es": "pintura al óleo",
+    "gender": "f",
+    "ru": "живопись маслом",
+    "page": 49
+   },
+   {
+    "es": "público",
+    "ru": "государственный",
+    "page": 49
+   },
+   {
+    "es": "realidad",
+    "gender": "f",
+    "ru": "реальность",
+    "page": 49
+   },
+   {
+    "es": "relaciones económicas exteriores",
+    "ru": "международные экономические отношения",
+    "page": 49
+   },
+   {
+    "es": "relaciones públicas",
+    "ru": "связи с общественностью",
+    "page": 49
+   },
+   {
+    "es": "relato",
+    "gender": "m",
+    "ru": "рассказ",
+    "page": 49
+   },
+   {
+    "es": "relevante",
+    "ru": "важный, значимый",
+    "page": 49
+   },
+   {
+    "es": "semanal",
+    "ru": "еженедельный (журнал)",
+    "page": 49
+   },
+   {
+    "es": "taller",
+    "gender": "m",
+    "ru": "мастерская, семинар",
+    "page": 49
+   },
+   {
+    "es": "teléfono móvil",
+    "gender": "m",
+    "ru": "мобильный телефон",
+    "page": 49
+   }
+  ],
+  "phrases": [
+   {
+    "es": "¡Qué barbaridad!",
+    "ru": "Какой ужас!",
+    "page": 49
+   },
+   {
+    "es": "¿A qué se debe...?",
+    "ru": "Чем вызван?",
+    "page": 49
+   },
+   {
+    "es": "por la mañana",
+    "ru": "утром, в первой половине дня",
+    "note": "§49",
+    "page": 46
+   },
+   {
+    "es": "por la tarde",
+    "ru": "после обеда, во второй половине дня, вечером",
+    "note": "§49",
+    "page": 46
+   },
+   {
+    "es": "por la noche",
+    "ru": "вечером (когда стемнело), ночью",
+    "note": "§49",
+    "page": 46
+   },
+   {
+    "es": "¿A qué hora...?",
+    "ru": "В котором часу...?",
+    "note": "§49",
+    "page": 46
+   },
+   {
+    "es": "ofrecer una taza de café / una cena",
+    "ru": "предложить чашку кофе / ужин",
+    "note": "упр. 3",
+    "page": 44
+   },
+   {
+    "es": "parecerse a su padre / madre",
+    "ru": "быть похожим на отца / мать",
+    "note": "упр. 3",
+    "page": 44
+   },
+   {
+    "es": "nacer en Barcelona",
+    "ru": "родиться в Барселоне",
+    "note": "упр. 3",
+    "page": 44
+   },
+   {
+    "es": "traducir el texto",
+    "ru": "перевести текст",
+    "note": "упр. 3",
+    "page": 44
+   },
+   {
+    "es": "conducir el coche",
+    "ru": "водить машину",
+    "note": "упр. 3",
+    "page": 44
+   },
+   {
+    "es": "producir teléfonos móviles",
+    "ru": "производить мобильные телефоны",
+    "note": "упр. 3",
+    "page": 44
+   }
+  ],
+  "subjects": [
+   {
+    "es": "inglés",
+    "page": 46
+   },
+   {
+    "es": "francés",
+    "page": 46
+   },
+   {
+    "es": "alemán",
+    "page": 46
+   },
+   {
+    "es": "matemáticas",
+    "page": 46
+   },
+   {
+    "es": "informática",
+    "page": 46
+   },
+   {
+    "es": "relaciones económicas internacionales",
+    "page": 46
+   },
+   {
+    "es": "márketing",
+    "page": 46
+   },
+   {
+    "es": "comercio internacional",
+    "page": 46
+   },
+   {
+    "es": "finanzas",
+    "page": 46
+   },
+   {
+    "es": "gestión de la empresa",
+    "page": 46
+   },
+   {
+    "es": "relaciones públicas",
+    "page": 46
+   },
+   {
+    "es": "filosofía",
+    "page": 46
+   },
+   {
+    "es": "historia de las relaciones internacionales",
+    "page": 46
+   },
+   {
+    "es": "geografía política y económica",
+    "page": 46
+   },
+   {
+    "es": "derecho internacional público",
+    "page": 46
+   },
+   {
+    "es": "historia contemporánea",
+    "page": 46
+   },
+   {
+    "es": "política internacional contemporánea",
+    "page": 46
+   },
+   {
+    "es": "contabilidad",
+    "page": 46
+   },
+   {
+    "es": "estadísticas",
+    "page": 46
+   },
+   {
+    "es": "política exterior del país",
+    "page": 46
+   },
+   {
+    "es": "realidad social y económica del país",
+    "page": 46
+   },
+   {
+    "es": "sociología",
+    "page": 46
+   }
+  ],
+  "subjects_note": "Университетские дисциплины (asignaturas), упр. 11, с. 46; перевод в учебнике не дан."
+ },
+ "grammar": [
+  {
+   "id": "§43",
+   "title": "Неопределенное местоимение todo (-a, -os, -as)",
+   "pages": [
+    42,
+    43
+   ],
+   "points": [
+    "Может быть прилагательным и местоимением; как прилагательное согласуется с существительным в роде и числе.",
+    "todo + определенный артикль = «весь»: Los empleados trabajan todo el día. Estudiamos toda la tarde. Leemos todos los diálogos. La secretaria envía todas las cartas.",
+    "NB: todos los días = каждый день.",
+    "todo el mundo = todos (о людях): Todo el mundo ya está en la oficina.",
+    "todo + неопределенный артикль = 1) «целый»: Te escribo esta carta todo un día; 2) «настоящий»: Ya eres toda una señorita.",
+    "todo без артикля = «любой»: Toda secretaria debe saber redactar cartas."
+   ]
+  },
+  {
+   "id": "§44",
+   "title": "Глаголы saber, conocer",
+   "page": 43,
+   "table": [
+    [
+     "saber – знать факты, уметь",
+     "conocer – быть знакомым с кем-то или чем-то, иметь представление о чем-то"
+    ],
+    [
+     "sé",
+     "conozco"
+    ],
+    [
+     "sabes",
+     "conoces"
+    ],
+    [
+     "sabe",
+     "conoce"
+    ],
+    [
+     "sabemos",
+     "conocemos"
+    ],
+    [
+     "sabéis",
+     "conocéis"
+    ],
+    [
+     "saben",
+     "conocen"
+    ]
+   ],
+   "points": [
+    "saber: muchas cosas, toda la verdad, qué hora es, inglés, bien la asignatura, hablar chino.",
+    "conocer: a este señor, la literatura, bien la ciudad.",
+    "NB: saber + infinitivo = «уметь что-либо делать»: Mi hijo todavía no sabe leer ni escribir."
+   ],
+   "examples": [
+    "Conozco a esta señorita, sé que es española."
+   ]
+  },
+  {
+   "id": "§45",
+   "title": "Спряжение отклоняющихся глаголов V группы",
+   "page": 43,
+   "points": [
+    "В глаголах на -cer и -cir согласный c меняется на zc перед o и a."
+   ],
+   "examples": [
+    "No conozco a esta chica.",
+    "Conduzco bien el coche.",
+    "Me parezco a mis padres."
+   ]
+  },
+  {
+   "id": "§46",
+   "title": "Личные местоимения в функции прямого дополнения (Acusativo – винительный падеж)",
+   "page": 44,
+   "table": [
+    [
+     "муж. род",
+     "жен. род",
+     "ср. род",
+     "вежливая форма",
+     "возвратная форма"
+    ],
+    [
+     "me",
+     "me",
+     "",
+     "",
+     "me"
+    ],
+    [
+     "te",
+     "te",
+     "",
+     "",
+     "te"
+    ],
+    [
+     "lo (люди и предметы), le (люди)",
+     "la (люди и предметы)",
+     "lo",
+     "lo (le) (муж. род), la (жен. род)",
+     "se"
+    ],
+    [
+     "nos",
+     "nos",
+     "",
+     "",
+     "nos"
+    ],
+    [
+     "os",
+     "os",
+     "",
+     "",
+     "os"
+    ],
+    [
+     "los (люди и предметы)",
+     "las (люди и предметы)",
+     "",
+     "los (муж. род), las (жен. род)",
+     "se"
+    ]
+   ],
+   "points": [
+    "le вместо lo – только если прямое дополнение обозначает лицо мужского пола: El señor García es el gerente del banco. ¿Lo conoces? = ¿Le conoces?",
+    "Для лиц мужского пола во множественном числе предпочтительнее los: Quiero hablar con nuestros colegas alemanes pero no los veo aquí.",
+    "lo среднего рода относится к предыдущему высказыванию: Es un banco muy seguro. ¿Lo sabes?"
+   ]
+  },
+  {
+   "id": "§47",
+   "title": "Глаголы aprender, enseñar",
+   "page": 45,
+   "points": [
+    "aprender – научиться самому; enseñar – научить другого."
+   ],
+   "examples": [
+    "Mi hijo tiene 6 años y aprende a leer.",
+    "La profesora enseña a mi hijo a leer."
+   ]
+  },
+  {
+   "id": "§48",
+   "title": "Глагольные конструкции empezar a / terminar de / tener que / deber + infinitivo",
+   "page": 45,
+   "points": [
+    "empezar a + inf – начало действия: Empiezo a estudiar a las 9 en punto.",
+    "terminar de + inf – окончание действия: El padre termina de trabajar a las 6 de la tarde.",
+    "tener que + inf – необходимость, вызванная внешними обстоятельствами: No tiene trabajo, por eso tiene que vivir con los padres.",
+    "deber + inf – обязанность (моральный долг): Debes respetar a los padres.",
+    "NB: empezar относится к первой группе отклоняющихся глаголов (см. §68 и Anexo 1): empiezo, empiezas, empieza, empezamos, empezáis, empiezan (las clases, a estudiar)."
+   ]
+  },
+  {
+   "id": "§49",
+   "title": "Обозначение времени (II)",
+   "page": 46,
+   "points": [
+    "por la mañana – утром; por la tarde – после обеда, вечером; por la noche – вечером (когда стемнело), ночью.",
+    "¿A qué hora...? – В котором часу...?",
+    "NB: ¿Qué hora es? ≠ ¿A qué hora...?"
+   ],
+   "examples": [
+    "¿Qué hora es? – Son las nueve y cuarto.",
+    "¿A qué hora empieza la clase de español? – La clase de español empieza a las ocho y media y termina a las diez en punto."
+   ]
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "todo + артикль + существительное (§43)",
+   "page": 42,
+   "examples": [
+    {
+     "es": "Los empleados trabajan todo el día."
+    },
+    {
+     "es": "Leemos todos los diálogos."
+    },
+    {
+     "es": "Todos los días tenemos clases de inglés."
+    },
+    {
+     "es": "Todo el mundo ya está en la oficina."
+    },
+    {
+     "es": "Toda secretaria debe saber redactar cartas."
+    }
+   ]
+  },
+  {
+   "pattern": "saber (факт / que… / inf) vs conocer (a + человек / место) (§44)",
+   "page": 43,
+   "examples": [
+    {
+     "es": "Conozco a esta señorita, sé que es española."
+    },
+    {
+     "es": "Mi hijo todavía no sabe leer ni escribir."
+    },
+    {
+     "es": "¿Sabe Usted dónde trabaja Miguel?"
+    },
+    {
+     "es": "Conozco bien la ciudad."
+    }
+   ]
+  },
+  {
+   "pattern": "Местоимение прямого дополнения (lo, la, los, las…) перед глаголом (§46, упр. 4)",
+   "page": 44,
+   "examples": [
+    {
+     "es": "El señor García es el gerente del banco. ¿Lo conoces?"
+    },
+    {
+     "es": "Quiero hablar con nuestros colegas alemanes pero no los veo aquí."
+    },
+    {
+     "es": "Es un banco muy seguro. ¿Lo sabes?"
+    },
+    {
+     "es": "Hombre, lo tienes en la página web de la Universidad."
+    }
+   ]
+  },
+  {
+   "pattern": "aprender a + inf / enseñar a (кого) a + inf (§47)",
+   "page": 45,
+   "examples": [
+    {
+     "es": "Mi hijo tiene 6 años y aprende a leer."
+    },
+    {
+     "es": "La profesora enseña a mi hijo a leer."
+    }
+   ]
+  },
+  {
+   "pattern": "empezar a / terminar de / tener que / deber + infinitivo (§48)",
+   "page": 45,
+   "examples": [
+    {
+     "es": "Empiezo a estudiar a las 9 en punto."
+    },
+    {
+     "es": "El padre termina de trabajar a las 6 de la tarde."
+    },
+    {
+     "es": "No tiene trabajo, por eso tiene que vivir con los padres."
+    },
+    {
+     "es": "Debes respetar a los padres."
+    }
+   ]
+  },
+  {
+   "pattern": "¿A qué hora + глагол? – a la una / a las + время (§49)",
+   "page": 46,
+   "examples": [
+    {
+     "es": "¿A qué hora empieza la clase de español? – La clase de español empieza a las ocho y media y termina a las diez en punto."
+    },
+    {
+     "es": "Las clases empiezan a las 9 de la mañana y terminan a las 14:30 de la tarde."
+    },
+    {
+     "es": "Por la mañana trabajo en la agencia de mi padre y por la tarde asisto a los cursos de inglés."
+    }
+   ]
+  },
+  {
+   "pattern": "Мнение о предмете: ¿Qué te parece…? – Me parece + прилагательное (упр. 11B)",
+   "page": 47,
+   "examples": [
+    {
+     "es": "¿Qué te parece la clase de geografía política y económica? – Me parece muy interesante."
+    }
+   ]
+  },
+  {
+   "pattern": "Диалог (упр. 12)",
+   "page": 47,
+   "examples": [
+    {
+     "es": "¿Sabes qué horario tenemos este año académico?"
+    },
+    {
+     "es": "Ni idea. ¿A qué se debe esta pregunta?"
+    },
+    {
+     "es": "Dicen que las clases empiezan por la tarde."
+    },
+    {
+     "es": "¡Qué barbaridad! Entonces ¿a qué hora terminan?"
+    },
+    {
+     "es": "Dios sabe."
+    },
+    {
+     "es": "¿Por qué no llamas por teléfono a la facultad para obtener toda la información?"
+    },
+    {
+     "es": "No tengo el número."
+    },
+    {
+     "es": "Hombre, lo tienes en la página web de la Universidad."
+    },
+    {
+     "es": "Eres todo un genio."
+    }
+   ]
+  }
+ ],
+ "texts": [
+  {
+   "title": "Universidad de Navarra: actividades culturales (Texto complementario, упр. 18)",
+   "page": 48
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Задания на todo: A – переведите на русский; B – вставьте артикли; C – переведите на испанский",
+   "pages": [
+    42,
+    43
+   ],
+   "items": [
+    "Ты читаешь все эти книги?",
+    "Каждый день я хожу на занятия.",
+    "Каждый год мы навещаем наших родственников в Германии.",
+    "Все уже здесь?",
+    "Все утро преподаватель отвечает на вопросы студентов.",
+    "Весь день я сижу дома. Целый день я сижу дома.",
+    "Целый вечер ты разговариваешь по телефону.",
+    "Ты настоящий друг.",
+    "У любого мальчишки есть компьютер."
+   ]
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Проспрягайте saber и conocer с зависимыми словами; A – вопросы; B – вставьте saber / conocer; C – переведите",
+   "page": 43,
+   "items": [
+    "Я хочу познакомиться с этой девушкой. Она такая красивая.",
+    "Мы не умеем говорить по-японски, по-китайски тоже.",
+    "Наш преподаватель знает столько!",
+    "Я знаю, что это не правда.",
+    "Я не знаком с Вашим директором. Какой он?",
+    "Вы не знаете, который час?",
+    "Ты хорошо знаешь историю Испании?",
+    "Какие языки Вы знаете? – Я хорошо говорю по-английски и по-испански.",
+    "Я не умею писать письма.",
+    "Я хорошо знаю Москву, но не знаю Мадрид."
+   ]
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Проспрягайте словосочетания (ofrecer, parecerse, nacer, traducir, conducir, producir); A – вопросы; B – вставьте глаголы; C – переведите",
+   "page": 44,
+   "items": [
+    "На кого ты похож? На папу или на маму? – Я похож на маму, а моя сестра на папу.",
+    "Ты умеешь водить машину?",
+    "Я предлагаю тебе чашечку кофе.",
+    "Для чего мы рождаемся?",
+    "Что производит эта немецкая компания?",
+    "Я перевожу текст, а затем отвечаю на вопросы."
+   ]
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Ответьте на вопросы, заменяя дополнения местоимениями в винительном падеже",
+   "pages": [
+    44,
+    45
+   ]
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 45,
+   "items": [
+    "Вам нужна черная ручка? – Нет, мне она не нужна.",
+    "Тебе нужны испанские журналы? – Нет, мне они не нужны.",
+    "Директору нужны эти документы? – Да, они ему нужны.",
+    "Вам нужен бразильский кофе? – Да, он нам нужен.",
+    "Студентам нужны хорошие отметки? – Да, они им очень нужны.",
+    "Вашим внукам нужен компьютер? – Да, он им очень нужен.",
+    "Вы знакомы с господином Лара? – Нет, я с ним не знаком.",
+    "Ты знаешь моих сестер? – Нет, я с ними не знаком."
+   ]
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Вставьте aprender / enseñar и переведите",
+   "page": 45
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Переведите на русский язык (конструкции §48)",
+   "pages": [
+    45,
+    46
+   ]
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Вставьте глаголы: A – tener que, deber; B – empezar, terminar",
+   "page": 46
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Переведите на русский язык",
+   "page": 46
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Ответьте на вопросы: A – ¿Qué hora es? (8:45, 10:00, 12:55, 13:00, 9:15, 14:25, 11:30, 17:10, 19:15, 18:45); B – ¿A qué hora…?",
+   "page": 46
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Запомните названия дисциплин; A – когда начинаются и заканчиваются занятия; B – обсудите предметы (interesante, aburrido, fácil, difícil, complicado); C – переведите",
+   "pages": [
+    46,
+    47
+   ],
+   "items": [
+    "Сколько у вас сегодня уроков? – У нас четыре урока: математика, социология, связи с общественностью и английский язык.",
+    "Ты знаком с новым преподавателем философии? – Нет, я с ним не знаком.",
+    "В котором часу начинается урок политической географии?",
+    "Мне не нравится бухгалтерский учет. Карлосу тоже.",
+    "Марии очень нравится новейшая история, она хорошо знает этот предмет."
+   ]
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Прочитайте и переведите диалог; A – проспрягайте saber qué hora es, empezar a estudiar, terminar de hablar por teléfono, llamar por teléfono a la facultad, obtener toda la información, no tener idea, ser un buen estudiante; B – вопросы; C – по ролям; D – перескажите",
+   "page": 47
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Вставьте слова: asignatura, gestión de la empresa, horario, información, semestre, año académico, contabilidad, página web de la facultad, clase, empezar, terminar, realidad social y económica del país",
+   "page": 47
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 47
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы об учебе",
+   "pages": [
+    47,
+    48
+   ]
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Расскажите, какие предметы вы изучаете и какое у вас расписание",
+   "page": 48
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 48,
+   "items": [
+    "Когда ты пьешь кофе? – Я пью кофе по утрам.",
+    "В котором часу у вас начинается урок испанского языка? – В 14:30.",
+    "В котором часу Вы приходите в Университет? – Я прихожу ровно в восемь.",
+    "Который час? – 15:40.",
+    "В котором часу они заканчивают учиться? – Они заканчивают учиться в три часа дня.",
+    "В 8:30 утра я всегда в Университете и жду преподавателя.",
+    "Хосе приходит в офис в 9:15.",
+    "Мне не нравится работать по вечерам.",
+    "Мы должны быть в банке в 8:45.",
+    "Мигель работает в фирме «24 часа».",
+    "Кто этот высокий господин, который так хорошо говорит по-русски? – Я с ним не знаком, но знаю, что он живет в гостинице.",
+    "В котором часу начинается лекция испанского профессора по внешней торговле Испании?",
+    "У тебя есть красная ручка? – Нет, у меня её нет.",
+    "Ты любишь философию? – Нет, я её не люблю, она очень сложная.",
+    "У тебя есть новое расписание? – Нет, у меня его нет.",
+    "Ты умеешь писать письма? – Их пишет моя секретарша.",
+    "Ваша компания производит синие автомобили? – Нет, их производят только в Германии.",
+    "Кто учит вашего внука читать и писать?",
+    "Мы хотим научиться жить без спешки (vivir sin prisa).",
+    "Когда заканчивается учебный год?",
+    "Вы знаете, в котором часу служащие этого предприятия заканчивают работать?"
+   ]
+  },
+  {
+   "number": "18",
+   "instruction_ru": "Прочитайте и переведите текст «Universidad de Navarra: actividades culturales»",
+   "page": 48
+  },
+  {
+   "number": "19",
+   "instruction_ru": "Ответьте на вопросы по тексту",
+   "page": 48
+  },
+  {
+   "number": "20",
+   "instruction_ru": "Расскажите о культурных мероприятиях вашего университета",
+   "page": 48
+  }
+ ],
+ "questions_for_user": []
+}

@@ -1,0 +1,1058 @@
+{
+ "id": 7,
+ "unit": 2,
+ "lesson": 1,
+ "title": "Unidad 2. Estudiar y trabajar — Lección 1",
+ "pages": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 41–42; выражения с tener, с. 38",
+  "verbs": [
+   {
+    "es": "acreditar",
+    "ru": "подтверждать",
+    "page": 41
+   },
+   {
+    "es": "cumplir",
+    "ru": "исполнять(ся)",
+    "note": "в §41: cuántos años cumple",
+    "page": 41
+   },
+   {
+    "es": "decir",
+    "ru": "говорить, сказать",
+    "note": "§41",
+    "page": 41
+   },
+   {
+    "es": "elegir (II)",
+    "ru": "выбирать",
+    "note": "(II) — группа отклоняющихся глаголов",
+    "page": 41
+   },
+   {
+    "es": "especializarse (en)",
+    "ru": "специализироваться",
+    "page": 41
+   },
+   {
+    "es": "facilitar",
+    "ru": "помогать, способствовать",
+    "page": 41
+   },
+   {
+    "es": "garantizar",
+    "ru": "гарантировать",
+    "page": 41
+   },
+   {
+    "es": "impartir clases",
+    "ru": "проводить занятия",
+    "page": 41
+   },
+   {
+    "es": "incluir",
+    "ru": "включать",
+    "page": 41
+   },
+   {
+    "es": "interesarle (a uno)",
+    "ru": "интересовать",
+    "page": 41
+   },
+   {
+    "es": "ofrecer (Va)",
+    "ru": "предлагать",
+    "note": "(Va) — группа отклоняющихся глаголов",
+    "page": 42
+   },
+   {
+    "es": "otorgar",
+    "ru": "выдавать, присваивать",
+    "page": 42
+   },
+   {
+    "es": "respaldar",
+    "ru": "поддерживать",
+    "page": 42
+   },
+   {
+    "es": "tener prisa",
+    "ru": "торопиться (состояние)",
+    "page": 42
+   }
+  ],
+  "other": [
+   {
+    "es": "adecuado",
+    "ru": "адекватный",
+    "page": 41
+   },
+   {
+    "es": "adicional",
+    "ru": "дополнительный",
+    "page": 41
+   },
+   {
+    "es": "adulto",
+    "ru": "взрослый",
+    "page": 41
+   },
+   {
+    "es": "ambiente",
+    "gender": "m",
+    "ru": "обстановка",
+    "page": 41
+   },
+   {
+    "es": "anual",
+    "ru": "годовой",
+    "page": 41
+   },
+   {
+    "es": "aula",
+    "gender": "f",
+    "ru": "аудитория",
+    "page": 41
+   },
+   {
+    "es": "calidad",
+    "gender": "f",
+    "ru": "качество",
+    "page": 41
+   },
+   {
+    "es": "caro",
+    "ru": "дорогой",
+    "page": 41
+   },
+   {
+    "es": "centro de estudios",
+    "gender": "m",
+    "ru": "учебное заведение",
+    "page": 41
+   },
+   {
+    "es": "cosa",
+    "gender": "f",
+    "ru": "вещь",
+    "page": 41
+   },
+   {
+    "es": "crisis",
+    "gender": "f",
+    "ru": "кризис",
+    "page": 41
+   },
+   {
+    "es": "cuarto",
+    "ru": "четверть",
+    "page": 41
+   },
+   {
+    "es": "cursos",
+    "gender": "m pl",
+    "ru": "курсы",
+    "page": 41
+   },
+   {
+    "es": "demandado",
+    "ru": "востребованный",
+    "page": 41
+   },
+   {
+    "es": "distendido",
+    "ru": "расслабленный, спокойный",
+    "page": 41
+   },
+   {
+    "es": "documentación",
+    "gender": "f",
+    "ru": "документация",
+    "page": 41
+   },
+   {
+    "es": "duración",
+    "gender": "f",
+    "ru": "длительность",
+    "page": 41
+   },
+   {
+    "es": "en broma",
+    "ru": "в шутку",
+    "page": 41
+   },
+   {
+    "es": "en punto",
+    "ru": "ровно в (о времени)",
+    "page": 41
+   },
+   {
+    "es": "en serio",
+    "ru": "всерьез",
+    "page": 41
+   },
+   {
+    "es": "enseñanza",
+    "gender": "f",
+    "ru": "преподавание",
+    "page": 41
+   },
+   {
+    "es": "equipo",
+    "gender": "m",
+    "ru": "команда",
+    "page": 41
+   },
+   {
+    "es": "español de negocios",
+    "ru": "деловой испанский",
+    "page": 41
+   },
+   {
+    "es": "examen",
+    "gender": "m",
+    "ru": "экзамен",
+    "page": 41
+   },
+   {
+    "es": "excelente",
+    "ru": "отличный",
+    "page": 41
+   },
+   {
+    "es": "flexible",
+    "ru": "гибкий",
+    "page": 41
+   },
+   {
+    "es": "folleto informativo",
+    "gender": "m",
+    "ru": "информационный буклет",
+    "page": 41
+   },
+   {
+    "es": "gratuito",
+    "ru": "бесплатный",
+    "page": 41
+   },
+   {
+    "es": "grupo",
+    "gender": "m",
+    "ru": "группа зд.",
+    "page": 41
+   },
+   {
+    "es": "hecho a medida",
+    "ru": "в соответствии потребностям",
+    "page": 41
+   },
+   {
+    "es": "horario",
+    "gender": "m",
+    "ru": "расписание",
+    "page": 41
+   },
+   {
+    "es": "idea",
+    "gender": "f",
+    "ru": "идея",
+    "page": 41
+   },
+   {
+    "es": "indiscutible",
+    "ru": "бесспорный",
+    "page": 41
+   },
+   {
+    "es": "inscripción",
+    "gender": "f",
+    "ru": "запись, регистрация",
+    "page": 41
+   },
+   {
+    "es": "jueves",
+    "gender": "m",
+    "ru": "четверг",
+    "page": 41
+   },
+   {
+    "es": "lunes",
+    "gender": "m",
+    "ru": "понедельник",
+    "page": 41
+   },
+   {
+    "es": "madrugada",
+    "gender": "f",
+    "ru": "рассвет, раннее утро",
+    "page": 41
+   },
+   {
+    "es": "mañana",
+    "gender": "f",
+    "ru": "утро",
+    "page": 41
+   },
+   {
+    "es": "matrícula",
+    "gender": "f",
+    "ru": "зачисление (на курсы)",
+    "page": 41
+   },
+   {
+    "es": "media",
+    "gender": "f",
+    "ru": "средняя величина",
+    "page": 41
+   },
+   {
+    "es": "medianoche",
+    "gender": "f",
+    "ru": "полночь",
+    "page": 42
+   },
+   {
+    "es": "mediodía",
+    "gender": "m",
+    "ru": "полдень",
+    "page": 42
+   },
+   {
+    "es": "moderno",
+    "ru": "современный",
+    "page": 42
+   },
+   {
+    "es": "mundo",
+    "gender": "m",
+    "ru": "мир",
+    "page": 42
+   },
+   {
+    "es": "nativo",
+    "ru": "носитель языка",
+    "page": 42
+   },
+   {
+    "es": "necesario",
+    "ru": "необходимый",
+    "page": 42
+   },
+   {
+    "es": "necesidad",
+    "gender": "f",
+    "ru": "необходимость",
+    "page": 42
+   },
+   {
+    "es": "nivel",
+    "gender": "m",
+    "ru": "уровень",
+    "page": 42
+   },
+   {
+    "es": "oferta",
+    "gender": "f",
+    "ru": "выгодное коммерческое предложение",
+    "page": 42
+   },
+   {
+    "es": "particular",
+    "ru": "частный",
+    "page": 42
+   },
+   {
+    "es": "perro",
+    "gender": "m",
+    "ru": "собака",
+    "page": 42
+   },
+   {
+    "es": "posible",
+    "ru": "возможный",
+    "page": 42
+   },
+   {
+    "es": "práctica",
+    "ru": "практика",
+    "page": 42
+   },
+   {
+    "es": "precio",
+    "gender": "m",
+    "ru": "цена",
+    "page": 42
+   },
+   {
+    "es": "preparación",
+    "gender": "f",
+    "ru": "подготовка, готовность",
+    "page": 42
+   },
+   {
+    "es": "procedente",
+    "ru": "происходящий (из)",
+    "page": 42
+   },
+   {
+    "es": "programador",
+    "gender": "m",
+    "ru": "программист",
+    "page": 42
+   },
+   {
+    "es": "promedio",
+    "gender": "m",
+    "ru": "средний показатель",
+    "page": 42
+   },
+   {
+    "es": "reducido",
+    "ru": "сокращенный",
+    "page": 42
+   },
+   {
+    "es": "respuesta",
+    "gender": "f",
+    "ru": "ответ",
+    "page": 42
+   },
+   {
+    "es": "rigor",
+    "gender": "m",
+    "ru": "строгость",
+    "page": 42
+   },
+   {
+    "es": "según",
+    "ru": "согласно чему-л.",
+    "page": 42
+   },
+   {
+    "es": "semana",
+    "gender": "f",
+    "ru": "неделя",
+    "page": 42
+   },
+   {
+    "es": "seriedad",
+    "gender": "f",
+    "ru": "серьезность",
+    "page": 42
+   },
+   {
+    "es": "servicio",
+    "gender": "m",
+    "ru": "услуга",
+    "page": 42
+   },
+   {
+    "es": "suerte",
+    "gender": "f",
+    "ru": "удача",
+    "page": 42
+   },
+   {
+    "es": "también",
+    "ru": "тоже (после утверждения)",
+    "page": 42
+   },
+   {
+    "es": "tampoco",
+    "ru": "тоже не (после отрицания)",
+    "page": 42
+   },
+   {
+    "es": "tan, tanto",
+    "ru": "столь, столько",
+    "page": 42
+   },
+   {
+    "es": "tarde",
+    "gender": "f",
+    "ru": "день (после обеда)",
+    "page": 42
+   },
+   {
+    "es": "tema",
+    "gender": "m",
+    "ru": "тема",
+    "page": 42
+   },
+   {
+    "es": "titulado",
+    "ru": "дипломированный",
+    "page": 42
+   },
+   {
+    "es": "variado",
+    "ru": "разнообразный",
+    "page": 42
+   },
+   {
+    "es": "ventaja",
+    "gender": "f",
+    "ru": "преимущество",
+    "page": 42
+   },
+   {
+    "es": "verano",
+    "gender": "m",
+    "ru": "лето",
+    "page": 42
+   },
+   {
+    "es": "verdad",
+    "gender": "f",
+    "ru": "правда",
+    "page": 42
+   }
+  ],
+  "phrases": [
+   {
+    "es": "Claro que sí",
+    "ru": "Конечно",
+    "page": 41
+   },
+   {
+    "es": "¡Perdón!",
+    "ru": "Извини!",
+    "page": 42
+   },
+   {
+    "es": "tener prisa",
+    "gender": "f",
+    "ru": "торопиться (состояние)",
+    "note": "Para conocer más",
+    "page": 38
+   },
+   {
+    "es": "tener hambre",
+    "gender": "f",
+    "ru": "испытывать чувство голода",
+    "note": "Para conocer más",
+    "page": 38
+   },
+   {
+    "es": "tener sed",
+    "gender": "f",
+    "ru": "испытывать жажду",
+    "note": "Para conocer más",
+    "page": 38
+   },
+   {
+    "es": "tener frío",
+    "gender": "m",
+    "ru": "чувствовать холод",
+    "note": "Para conocer más",
+    "page": 38
+   },
+   {
+    "es": "tener calor",
+    "gender": "m",
+    "ru": "чувствовать тепло",
+    "note": "Para conocer más",
+    "page": 38
+   },
+   {
+    "es": "tener sueño",
+    "gender": "m",
+    "ru": "хотеть спать",
+    "note": "Para conocer más",
+    "page": 38
+   },
+   {
+    "es": "tener miedo a algo",
+    "gender": "m",
+    "ru": "бояться чего-либо",
+    "note": "Para conocer más",
+    "page": 38
+   },
+   {
+    "es": "tener suerte",
+    "gender": "f",
+    "ru": "быть везучим",
+    "note": "Para conocer más",
+    "page": 38
+   },
+   {
+    "es": "tener razón",
+    "gender": "f",
+    "ru": "быть правым",
+    "note": "Para conocer más",
+    "page": 38
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "id": "§38",
+   "title": "Неопределенные количественные прилагательные и наречия: tan, tanto",
+   "page": 36,
+   "points": [
+    "Прилагательное tanto (-a, -os, -as) согласуется с существительным в роде и числе: Redacta tantas cartas.",
+    "Наречия tan, tanto неизменяемы: tanto – с глаголами (Escribe tanto); tan – с прилагательными, причастиями и наречиями (Ana es tan guapa. Es una casa tan bonita. Trabaja tan bien)."
+   ]
+  },
+  {
+   "id": "§39",
+   "title": "También, tampoco",
+   "pages": [
+    36,
+    37
+   ],
+   "table": [
+    [
+     "",
+     "утвердительное предложение",
+     "отрицательное предложение"
+    ],
+    [
+     "согласие",
+     "también: Soy perezoso. – Y yo también. Me gusta la música. – A mí también.",
+     "tampoco: No soy tonto. – Y yo tampoco soy tonto. No me gusta el tenis. – A mí no me gusta el tenis tampoco."
+    ],
+    [
+     "несогласие",
+     "no: Quiero hablar contigo. – Y yo no. Me gusta la música. – A mí no.",
+     "sí: No quiero comer fruta. – Y yo sí. No me gusta el tenis. – A mí sí."
+    ]
+   ]
+  },
+  {
+   "id": "§40",
+   "title": "Простые предлоги: sobre, sin, entre",
+   "page": 37,
+   "table": [
+    [
+     "предлог",
+     "значение",
+     "пример"
+    ],
+    [
+     "sobre",
+     "положение сверху; тема для обсуждения или беседы",
+     "el libro está sobre la mesa; la conferencia sobre los problemas ecológicos"
+    ],
+    [
+     "sin",
+     "отсутствие, нехватка чего-либо",
+     "café sin azúcar"
+    ],
+    [
+     "entre",
+     "среди, между",
+     "entre tú y yo; entre Moscú y San Petersburgo"
+    ]
+   ]
+  },
+  {
+   "id": "§41",
+   "title": "Глаголы decir, hablar",
+   "page": 37,
+   "table": [
+    [
+     "decir – сказать что-то кому-то",
+     ""
+    ],
+    [
+     "digo",
+     "muchas cosas a José"
+    ],
+    [
+     "dices",
+     "la verdad"
+    ],
+    [
+     "dice",
+     "cuántos años tiene"
+    ],
+    [
+     "decimos",
+     "cuántos años cumple"
+    ],
+    [
+     "decís",
+     "que Rosa está bien"
+    ],
+    [
+     "dicen",
+     "en serio, en broma"
+    ]
+   ],
+   "points": [
+    "hablar – поговорить с кем-то о чем-то: hablar con José de / sobre un asunto, mucho / poco, español, bien el español, en español ahora."
+   ],
+   "examples": [
+    "José dice a María que quiere hablar con Felipe de un asunto."
+   ]
+  },
+  {
+   "id": "§42",
+   "title": "Обозначение времени (I). ¿Qué hora es?",
+   "page": 38,
+   "points": [
+    "Es la una (de la madrugada, de la tarde). Son las dos. Son las siete (de la mañana, de la tarde). Son las nueve (de la mañana, de la noche). Son las doce / Es mediodía / Es medianoche.",
+    "После часа: y dos minutos, y cinco, y diez, y cuarto, y veinte, y veinticinco, y media.",
+    "До часа: menos veinticinco, menos veinte, menos cuarto, menos diez, menos cinco, menos un minuto.",
+    "Ровно: en punto."
+   ]
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "tanto + сущ. (согласуется); глагол + tanto; tan + прилагательное / наречие (§38)",
+   "page": 36,
+   "examples": [
+    {
+     "es": "Redacta tantas cartas."
+    },
+    {
+     "es": "Escribe tanto."
+    },
+    {
+     "es": "Ana es tan guapa."
+    },
+    {
+     "es": "Es una casa tan bonita."
+    },
+    {
+     "es": "Trabaja tan bien."
+    }
+   ]
+  },
+  {
+   "pattern": "Согласие и несогласие: también / tampoco / sí / no (§39)",
+   "pages": [
+    36,
+    37
+   ],
+   "examples": [
+    {
+     "es": "Soy perezoso. – Y yo también."
+    },
+    {
+     "es": "Me gusta la música. – A mí también."
+    },
+    {
+     "es": "No soy tonto. – Y yo tampoco soy tonto."
+    },
+    {
+     "es": "Quiero hablar contigo. – Y yo no."
+    },
+    {
+     "es": "No quiero comer fruta. – Y yo sí."
+    },
+    {
+     "es": "No me gusta el tenis. – A mí sí."
+    }
+   ]
+  },
+  {
+   "pattern": "sobre / sin / entre + существительное (§40)",
+   "page": 37,
+   "examples": [
+    {
+     "es": "El libro está sobre la mesa."
+    },
+    {
+     "es": "Me gusta tomar té sin limón y sin azúcar."
+    },
+    {
+     "es": "Tarragona está entre Barcelona y Valencia."
+    },
+    {
+     "es": "El tío de Ana tiene entre 50 y 60 años."
+    }
+   ]
+  },
+  {
+   "pattern": "decir (что) a (кому) / decir que + предложение; hablar con (кем) de / sobre (чем) (§41)",
+   "page": 37,
+   "examples": [
+    {
+     "es": "José dice a María que quiere hablar con Felipe de un asunto."
+    },
+    {
+     "es": "decir la verdad"
+    },
+    {
+     "es": "decir en serio, en broma"
+    },
+    {
+     "es": "hablar bien el español"
+    }
+   ]
+  },
+  {
+   "pattern": "Который час: Es la una / Son las + число + y / menos + минуты (§42)",
+   "page": 38,
+   "examples": [
+    {
+     "es": "¿Qué hora es? – Son las cinco menos diez."
+    },
+    {
+     "es": "Es la una de la tarde."
+    },
+    {
+     "es": "Son las siete y media."
+    },
+    {
+     "es": "Son las doce en punto."
+    }
+   ]
+  },
+  {
+   "pattern": "tener + существительное для состояний (Para conocer más)",
+   "page": 38,
+   "examples": [
+    {
+     "es": "¿Tienes prisa? – Sí, tengo mucha prisa."
+    }
+   ]
+  },
+  {
+   "pattern": "Диалог (упр. 12)",
+   "page": 39,
+   "examples": [
+    {
+     "es": "¡Qué bien hablas el español! Tienes mucha práctica, ¿no?"
+    },
+    {
+     "es": "Es que el idioma español me encanta."
+    },
+    {
+     "es": "A mí también. Pero..."
+    },
+    {
+     "es": "Pues asisto a los cursos del Instituto Cervantes. Allí trabajan tantos profesores buenos... Son nativos. ¿Te interesa estudiar la lengua castellana en ese centro de estudios?"
+    },
+    {
+     "es": "Es una buena idea. ¿Es posible?"
+    },
+    {
+     "es": "Te lo digo en serio. Aquí tienes folletos informativos: el horario de las clases, sus precios, la documentación necesaria."
+    },
+    {
+     "es": "¿No es tan caro, verdad?"
+    },
+    {
+     "es": "Claro que no. ¿Quieres decirme qué hora es?"
+    },
+    {
+     "es": "Son las cinco menos diez."
+    },
+    {
+     "es": "¡Uf! ¡Perdón! Tengo prisa. ¡Suerte!"
+    },
+    {
+     "es": "¡Muchísimas gracias! ¡Adiós!"
+    }
+   ]
+  }
+ ],
+ "texts": [
+  {
+   "title": "Cursos de español (объявления, упр. 13)",
+   "page": 39
+  },
+  {
+   "title": "DELE: Diplomas de español como lengua extranjera (Texto complementario, упр. 18)",
+   "pages": [
+    40,
+    41
+   ]
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Вставьте tan, tanto",
+   "page": 36
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 36,
+   "items": [
+    "Столько стран присутствуют на конференции.",
+    "Этот бизнесмен такой умный.",
+    "Студенты пишут столько диктантов.",
+    "Ваш племянник такой высокий.",
+    "Хосе читает текст так тихо.",
+    "Мы едим такое вкусное блюдо.",
+    "Нам так нравится Барселона!"
+   ]
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Выразите согласие, затем несогласие с репликами (в парах)",
+   "page": 37,
+   "items": [
+    "Me gusta el fútbol.",
+    "Me gustan las motos.",
+    "Estudio mucho.",
+    "No quiero beber agua.",
+    "Tomo café.",
+    "No tengo coche.",
+    "No tengo clases.",
+    "Soy de Japón.",
+    "No vivo en la residencia.",
+    "No trabajo aquí."
+   ]
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Вставьте формы личных местоимений-дополнений (Dativo)",
+   "page": 37
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 37,
+   "items": [
+    "Вы не любите отвечать на вопросы журналистов, мы тоже.",
+    "Ты пишешь левой рукой, я тоже.",
+    "Вы хотите выпить чашку чая, и я тоже.",
+    "Твоя сестра врач, а ты нет.",
+    "Мне не нравятся слишком веселые девушки, а тебе нравятся.",
+    "Вы не хотите быть инженером, и я тоже."
+   ]
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Переведите на русский язык (sobre, sin, entre)",
+   "page": 37
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Проспрягайте decir и hablar с зависимыми словами; задайте вопросы в парах",
+   "page": 37
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Вставьте decir / hablar и переведите",
+   "page": 38
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 38,
+   "items": [
+    "Я не хочу говорить на эту тему.",
+    "Мой друг всегда говорит мне правду.",
+    "Ты так хорошо говоришь по-немецки! Ты занимаешься на курсах?",
+    "Почему Роса не говорит, сколько ей лет? Она такая молодая!",
+    "Моя бабушка всегда так много говорит!",
+    "На каком языке вы говорите на уроке с преподавателем? – Мы говорим с ним на английском.",
+    "Колумбийский журналист рассказывает нам много нового о Колумбии."
+   ]
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Скажите, который час: 12:45, 15:05, 17:30, 18:50, 21:00, 16:15, 8:10, 7:25, 10:40, 12:00, 1:35, 13:40, 1:05, 13:20, 23:55, 24:00",
+   "page": 38
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Запомните выражения с tener; A: вопросы по образцу; B: переведите",
+   "pages": [
+    38,
+    39
+   ],
+   "items": [
+    "Ты голоден? – Я не хочу есть, но очень хочу пить.",
+    "Уже полночь, мне хочется спать, но мне нужно прочитать два документа.",
+    "Вы очень торопитесь? – Нет, у меня есть полчаса, чтобы выпить чашечку кофе и поговорить с Вами о футболе.",
+    "Нам очень жарко, потому что мы много работаем.",
+    "Тебе холодно? – Нет, мне тепло.",
+    "Почему Каролина боится собак?",
+    "Конечно, Вы правы.",
+    "Сегодня тебе не везет."
+   ]
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Прочитайте и переведите диалог; A: проспрягайте tener mucha práctica, asistir a los cursos, ser nativo, estudiar la lengua española, decirlo en serio, decir qué hora es, hablar bien el idioma extranjero; B: ответьте на вопросы; C: по ролям; D: перескажите",
+   "page": 39
+  },
+  {
+   "number": "13*",
+   "instruction_ru": "Прочитайте и переведите объявления; A: найдите эквиваленты; B: ответьте на вопросы; C: какой курс привлекательнее и почему",
+   "pages": [
+    39,
+    40
+   ]
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 40
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы о вашем изучении языков",
+   "page": 40
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Расскажите о своих занятиях иностранным языком",
+   "page": 40
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 40,
+   "items": [
+    "Мне так нравится учить испанский язык.",
+    "Мануэла такая красивая девушка.",
+    "Хосе такой умный юноша.",
+    "Мне не нравится классическая музыка. – Мне тоже.",
+    "Меня восхищает фламенко! – Меня тоже.",
+    "10 книг и 15 ручек лежат на правом столе, а те журналы и газеты – на левом.",
+    "Сейчас мы говорим с учеными о проблемах экологии (problemas ecológicos).",
+    "Мария столько работает.",
+    "Я хочу сказать правду своей сестре.",
+    "Этот официант столько разговаривает. Думаю, что он не хочет работать.",
+    "У Вас столько братьев и сестер!",
+    "Почему Вы не хотите поговорить с ним об этом деле?",
+    "Я восхищаюсь нашим начальником. Он так хорошо говорит по-английски.",
+    "Ты любишь поговорить о ценах, но я так тороплюсь сейчас. – А я нет.",
+    "Который час? – Без четверти три. Двадцать минут второго. Полночь. Половина первого. Ровно девять.",
+    "Ты пьешь чай без сахара?",
+    "Мария, я хочу представить тебе моего двоюродного брата Хорхе. Он юрист и работает в строительной компании.",
+    "Какие иностранные языки Вы изучаете?",
+    "Простите, я не понимаю. Вы сейчас говорите в шутку или всерьез?",
+    "Вот твое расписание занятий. Оно тебе не нравится? А мне нравится."
+   ]
+  },
+  {
+   "number": "18",
+   "instruction_ru": "Прочитайте и переведите текст DELE",
+   "pages": [
+    40,
+    41
+   ]
+  },
+  {
+   "number": "19",
+   "instruction_ru": "Ответьте на вопросы по тексту",
+   "page": 41
+  },
+  {
+   "number": "20",
+   "instruction_ru": "Расскажите, какие сертификаты знания иностранного языка вам известны",
+   "page": 41
+  }
+ ],
+ "questions_for_user": []
+}

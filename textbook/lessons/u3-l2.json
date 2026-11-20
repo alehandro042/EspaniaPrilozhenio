@@ -1,0 +1,813 @@
+{
+ "id": 14,
+ "unit": 3,
+ "lesson": 2,
+ "title": "Unidad 3. En casa, en la oficina y en el hotel — Lección 2",
+ "pages": [
+  83,
+  84,
+  85,
+  86,
+  87,
+  88
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 87–88; слова офиса — Para conocer más, с. 85",
+  "verbs": [
+   {
+    "es": "cambiar",
+    "ru": "меняться",
+    "page": 87
+   },
+   {
+    "es": "componerse (de)",
+    "ru": "состоять из чего-л.",
+    "page": 87
+   },
+   {
+    "es": "conseguir (II)",
+    "ru": "достигать",
+    "note": "§76",
+    "page": 87
+   },
+   {
+    "es": "dejar",
+    "ru": "оставлять",
+    "page": 87
+   },
+   {
+    "es": "despedirse (de) (II)",
+    "ru": "прощаться",
+    "note": "§76",
+    "page": 87
+   },
+   {
+    "es": "elegir (II)",
+    "ru": "выбирать",
+    "note": "§76",
+    "page": 88
+   },
+   {
+    "es": "entregar",
+    "ru": "вручать",
+    "page": 88
+   },
+   {
+    "es": "funcionar",
+    "ru": "работать, функционировать",
+    "page": 88
+   },
+   {
+    "es": "guardar",
+    "ru": "хранить",
+    "page": 88
+   },
+   {
+    "es": "estar de buen (mal) humor",
+    "ru": "быть в хорошем (в плохом) настроении",
+    "page": 88
+   },
+   {
+    "es": "imprimir",
+    "ru": "печатать",
+    "page": 88
+   },
+   {
+    "es": "introducir (Vb)",
+    "ru": "вводить",
+    "page": 88
+   },
+   {
+    "es": "pedir (II)",
+    "ru": "просить",
+    "note": "§76",
+    "page": 88
+   },
+   {
+    "es": "pesar",
+    "ru": "весить",
+    "page": 88
+   },
+   {
+    "es": "poner en orden",
+    "ru": "приводить в порядок, организовывать",
+    "page": 88
+   },
+   {
+    "es": "reírse (II)",
+    "ru": "смеяться",
+    "note": "§76",
+    "page": 88
+   },
+   {
+    "es": "reproducir (Vb)",
+    "ru": "воспроизводить",
+    "page": 88
+   },
+   {
+    "es": "seguir (II)",
+    "ru": "следовать, продолжать",
+    "note": "§76",
+    "page": 88
+   },
+   {
+    "es": "servir (II)",
+    "ru": "служить, прислуживать",
+    "note": "§76: sirvo, sirves, sirve, servimos, servís, sirven",
+    "page": 88
+   },
+   {
+    "es": "servir la mesa",
+    "ru": "накрывать на стол",
+    "note": "§76",
+    "page": 88
+   },
+   {
+    "es": "sonreír (II)",
+    "ru": "улыбаться",
+    "note": "§76",
+    "page": 88
+   },
+   {
+    "es": "subir",
+    "ru": "подниматься",
+    "page": 88
+   },
+   {
+    "es": "vestirse (II)",
+    "ru": "одеваться",
+    "note": "§76",
+    "page": 88
+   }
+  ],
+  "other": [
+   {
+    "es": "amable",
+    "ru": "любезный",
+    "page": 87
+   },
+   {
+    "es": "ancho",
+    "ru": "широкий",
+    "page": 87
+   },
+   {
+    "es": "antiguo",
+    "ru": "старинный",
+    "page": 87
+   },
+   {
+    "es": "archivador",
+    "gender": "m",
+    "ru": "картотечный шкаф",
+    "page": 87
+   },
+   {
+    "es": "artificial",
+    "ru": "искусственный",
+    "page": 87
+   },
+   {
+    "es": "ascensor",
+    "gender": "m",
+    "ru": "лифт",
+    "page": 87
+   },
+   {
+    "es": "aseo, lavabo, servicios",
+    "gender": "m",
+    "ru": "туалет, уборная",
+    "page": 87
+   },
+   {
+    "es": "barato",
+    "ru": "дешевый",
+    "page": 87
+   },
+   {
+    "es": "camino",
+    "gender": "m",
+    "ru": "дорога, путь",
+    "page": 87
+   },
+   {
+    "es": "claro",
+    "ru": "светлый",
+    "page": 87
+   },
+   {
+    "es": "copa",
+    "gender": "f",
+    "ru": "бокал, кубок",
+    "page": 87
+   },
+   {
+    "es": "copia",
+    "gender": "f",
+    "ru": "копия",
+    "page": 87
+   },
+   {
+    "es": "corto",
+    "ru": "короткий",
+    "page": 87
+   },
+   {
+    "es": "cuero",
+    "gender": "m",
+    "ru": "кожа",
+    "page": 87
+   },
+   {
+    "es": "desordenado",
+    "ru": "неорганизованный; в беспорядке",
+    "page": 87
+   },
+   {
+    "es": "dimensión",
+    "gender": "f",
+    "ru": "размер",
+    "page": 87
+   },
+   {
+    "es": "distribuidor de bebidas",
+    "gender": "m",
+    "ru": "автомат с напитками",
+    "page": 88
+   },
+   {
+    "es": "dormitorio",
+    "gender": "m",
+    "ru": "спальня",
+    "page": 88
+   },
+   {
+    "es": "edificio",
+    "gender": "m",
+    "ru": "здание",
+    "page": 88
+   },
+   {
+    "es": "ejecutivo",
+    "gender": "m",
+    "ru": "руководящий, ответственный работник",
+    "page": 88
+   },
+   {
+    "es": "ejército",
+    "gender": "m",
+    "ru": "армия",
+    "page": 88
+   },
+   {
+    "es": "elegancia",
+    "gender": "f",
+    "ru": "элегантность",
+    "page": 88
+   },
+   {
+    "es": "con elegancia",
+    "ru": "элегантно",
+    "page": 88
+   },
+   {
+    "es": "equipo",
+    "gender": "m",
+    "ru": "оборудование",
+    "page": 88
+   },
+   {
+    "es": "escalera",
+    "gender": "f",
+    "ru": "лестница",
+    "page": 88
+   },
+   {
+    "es": "escáner",
+    "gender": "m",
+    "ru": "сканер",
+    "page": 88
+   },
+   {
+    "es": "estancia",
+    "gender": "f",
+    "ru": "зд. помещение",
+    "page": 88
+   },
+   {
+    "es": "estrecho",
+    "ru": "узкий",
+    "page": 88
+   },
+   {
+    "es": "fax",
+    "gender": "m",
+    "ru": "факс",
+    "page": 88
+   },
+   {
+    "es": "al final",
+    "ru": "в конце чего-л.",
+    "page": 88
+   },
+   {
+    "es": "fuerzas armadas",
+    "gender": "f pl",
+    "ru": "вооруженные силы",
+    "page": 88
+   },
+   {
+    "es": "humor",
+    "gender": "m",
+    "ru": "настроение",
+    "page": 88
+   },
+   {
+    "es": "intérprete",
+    "gender": "m, f",
+    "ru": "переводчик (устный)",
+    "page": 88
+   },
+   {
+    "es": "largo",
+    "ru": "длинный",
+    "page": 88
+   },
+   {
+    "es": "máquina de café",
+    "gender": "f",
+    "ru": "кофейный автомат",
+    "page": 88
+   },
+   {
+    "es": "natural",
+    "ru": "натуральный",
+    "page": 88
+   },
+   {
+    "es": "oscuro",
+    "ru": "темный",
+    "page": 88
+   },
+   {
+    "es": "pequeño",
+    "ru": "маленький",
+    "page": 88
+   },
+   {
+    "es": "portátil",
+    "gender": "m",
+    "ru": "ноутбук",
+    "page": 88
+   },
+   {
+    "es": "propósito",
+    "gender": "m",
+    "ru": "цель",
+    "page": 88
+   },
+   {
+    "es": "quiosco",
+    "gender": "m",
+    "ru": "киоск",
+    "page": 88
+   },
+   {
+    "es": "rápido",
+    "ru": "быстрый",
+    "page": 88
+   },
+   {
+    "es": "recepción",
+    "gender": "f",
+    "ru": "приемная",
+    "page": 88
+   },
+   {
+    "es": "regalo",
+    "gender": "m",
+    "ru": "подарок",
+    "page": 88
+   },
+   {
+    "es": "sala de reuniones",
+    "gender": "f",
+    "ru": "зал заседаний",
+    "page": 88
+   },
+   {
+    "es": "tarjeta de comunicaciones",
+    "gender": "f",
+    "ru": "карта оплаты услуг связи",
+    "page": 88
+   },
+   {
+    "es": "usuario",
+    "gender": "m",
+    "ru": "пользователь",
+    "page": 88
+   }
+  ],
+  "phrases": [
+   {
+    "es": "Hay que entregarlos a la secretaria.",
+    "ru": "Их нужно передать секретарю.",
+    "note": "из диалога упр. 12",
+    "page": 86
+   },
+   {
+    "es": "También quisiera preguntar por los lavabos.",
+    "ru": "Еще я хотел бы спросить, где туалет.",
+    "note": "из диалога упр. 12",
+    "page": 86
+   },
+   {
+    "es": "Muchísimas gracias. Muy amable.",
+    "ru": "Большое спасибо. Очень любезно.",
+    "note": "из диалога упр. 12",
+    "page": 86
+   }
+  ],
+  "office_words": {
+   "page": 85,
+   "title": "En la oficina (Para conocer más, упр. 11)",
+   "words": [
+    "el edificio",
+    "la recepción",
+    "el pasillo",
+    "la escalera",
+    "el ascensor",
+    "los lavabos/los servicios/los aseos",
+    "los despachos",
+    "la sala de reuniones",
+    "la cafetería",
+    "el distribuidor de bebidas",
+    "la máquina de café",
+    "el ordenador",
+    "la fotocopiadora",
+    "la impresora",
+    "el escáner",
+    "el fax"
+   ]
+  }
+ },
+ "grammar": [
+  {
+   "id": "§74",
+   "title": "Los comparativos. Степени сравнения прилагательных",
+   "page": 83,
+   "table": {
+    "rows": [
+     [
+      "больше",
+      "José es más alto que Juan."
+     ],
+     [
+      "меньше",
+      "Juan es menos alto que José."
+     ],
+     [
+      "равенство",
+      "Juan es tan alto como tú."
+     ]
+    ]
+   },
+   "points": [
+    "más + прилагательное + que; menos + прилагательное + que; tan + прилагательное + como."
+   ]
+  },
+  {
+   "id": "§75",
+   "title": "Los pronombres posesivos. Притяжательные местоимения. Ударная форма",
+   "page": 84,
+   "table": {
+    "columns": [
+     "singular masc.",
+     "singular fem.",
+     "plural masc.",
+     "plural fem."
+    ],
+    "rows": [
+     [
+      "mío",
+      "mía",
+      "míos",
+      "mías"
+     ],
+     [
+      "tuyo",
+      "tuya",
+      "tuyos",
+      "tuyas"
+     ],
+     [
+      "suyo",
+      "suya",
+      "suyos",
+      "suyas"
+     ],
+     [
+      "nuestro",
+      "nuestra",
+      "nuestros",
+      "nuestras"
+     ],
+     [
+      "vuestro",
+      "vuestra",
+      "vuestros",
+      "vuestras"
+     ],
+     [
+      "suyo",
+      "suya",
+      "suyos",
+      "suyas"
+     ]
+    ]
+   },
+   "points": [
+    "Ставятся после существительного и согласуются с ним в роде и числе: Es un colega mío.",
+    "Употребляются после глагола в составе сложного сказуемого: Esta tarjeta es suya, ¿no? ¿Es suya esta moto?",
+    "Употребляются с определенным артиклем, если пропущено существительное: Este apartamento tiene dos dormitorios. ¿Y el suyo? – El mío tiene tres."
+   ]
+  },
+  {
+   "id": "§76",
+   "title": "II группа отклоняющихся глаголов (e→i)",
+   "page": 85,
+   "table": {
+    "servir (e→i)": [
+     "sirvo",
+     "sirves",
+     "sirve",
+     "servimos",
+     "servís",
+     "sirven"
+    ],
+    "servir + ": "la mesa; té, café; en el ejército / en las fuerzas armadas; para algo (no servir para nada); de intérprete",
+    "так же": "pedir, despedirse (de), vestirse, seguir, conseguir, elegir, reírse, sonreír"
+   },
+   "points": []
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "más / menos + прилагательное + que; tan + прилагательное + como (§74)",
+   "page": 83,
+   "examples": [
+    {
+     "es": "José es más alto que Juan."
+    },
+    {
+     "es": "Juan es menos alto que José."
+    },
+    {
+     "es": "Juan es tan alto como tú."
+    },
+    {
+     "es": "La sala es más grande que la cocina."
+    },
+    {
+     "es": "La cocina es tan grande como la sala."
+    }
+   ]
+  },
+  {
+   "pattern": "Существительное + ударное притяжательное; el mío / el suyo (§75)",
+   "page": 84,
+   "examples": [
+    {
+     "es": "Es un colega mío."
+    },
+    {
+     "es": "Esta tarjeta es suya, ¿no?"
+    },
+    {
+     "es": "¿Es suya esta moto?"
+    },
+    {
+     "es": "Este apartamento tiene dos dormitorios. ¿Y el suyo? – El mío tiene tres."
+    }
+   ]
+  },
+  {
+   "pattern": "servir para + инфинитив / servir de (§76, упр. 11 B)",
+   "pages": [
+    85,
+    86
+   ],
+   "examples": [
+    {
+     "es": "Este aparato no sirve para nada."
+    },
+    {
+     "es": "Sirve de intérprete."
+    },
+    {
+     "es": "¿Para qué sirve este aparato? – Es una fotocopiadora, sirve para hacer copias de documentos."
+    }
+   ]
+  },
+  {
+   "pattern": "Как пройти: tomar el pasillo, subir en ascensor al … piso (диалог «En la recepción»)",
+   "page": 86,
+   "examples": [
+    {
+     "es": "Usted toma el pasillo, al final hay un ascensor, usted sube en ascensor al tercer piso."
+    },
+    {
+     "es": "Los lavabos están cerca de la escalera a la izquierda del ascensor."
+    },
+    {
+     "es": "La máquina de café está en la planta baja detrás del quiosco de periódicos."
+    }
+   ]
+  }
+ ],
+ "texts": [
+  {
+   "title": "En la recepción (диалог, упр. 12)",
+   "page": 86,
+   "es": "– Hola, buenos días. Tengo unos documentos para el director general de la empresa «Intermoda». ¿Dónde puedo dejarlos?\n– Hay que entregarlos a la secretaria.\n– ¿Cómo la encuentro?\n– Usted toma el pasillo, al final hay un ascensor, usted sube en ascensor al tercer piso. Su despacho está allí.\n– Perdón. También quisiera preguntar por los lavabos y por la máquina de café.\n– Los lavabos están cerca de la escalera a la izquierda del ascensor y la máquina de café está en la planta baja detrás del quiosco de periódicos.\n– Pues, muchísimas gracias. Muy amable.\n– Hasta luego, adiós."
+  },
+  {
+   "title": "La oficina móvil (Texto complementario, упр. 18)",
+   "pages": [
+    87,
+    88
+   ],
+   "es": "El concepto tradicional de oficina está cambiando. La imagen de una estancia llena de papeles, archivadores, máquinas de escribir y fotocopiadoras, con una gran mesa de despacho y un ejecutivo pegado al teléfono, ya está en el pasado. Hoy en día hay algunos que lo tienen muy claro: «Mi trabajo está donde quiero trabajar», dicen. La oficina móvil es la respuesta. Se compone de un portátil, una tarjeta de comunicaciones y un teléfono móvil. A través del teléfono, el usuario puede conectar con cualquier parte del mundo y enviar y recibir información. Ya existen en el mercado equipos muy potentes y de reducidas dimensiones. Algunos sólo pesan medio kilo."
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Трансформируйте по образцу: José es más alto que Juan. – Juan es menos alto que José.",
+   "page": 83,
+   "items": [
+    "Lola es más guapa que Concha.",
+    "Ángel es más inteligente que Quico.",
+    "Maribel es menos delgada que Susi.",
+    "Manolo es más gordo que Pepe.",
+    "Chus es menos alta que Charo.",
+    "Carlitos es más perezoso que Quique.",
+    "Maite es menos alegre que Pili."
+   ]
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Вспомните слова, обозначающие родственников, и охарактеризуйте своих родных, используя сравнительную степень",
+   "page": 83
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Сравните предметы и мебель в вашей комнате: alto/bajo, ancho/estrecho, largo/corto, grande/pequeño, caro/barato, clásico/moderno, oscuro/claro",
+   "page": 83
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Ответьте на вопросы, используя сравнительную степень",
+   "pages": [
+    83,
+    84
+   ]
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 84,
+   "items": [
+    "Мария красивее Анны, но Анна умнее.",
+    "Кто из нас двоих прилежнее?",
+    "Твой брат более ленивый, чем ты, поэтому он получает плохие отметки.",
+    "Пятый зал меньше, чем первый.",
+    "Третья тема менее трудная, чем вторая.",
+    "Эта официантка менее симпатичная, чем та.",
+    "Ты такой же смуглый, как твой отец.",
+    "Эта книга такая же скучная, как та.",
+    "У нас столько же экзаменов, сколько у вас.",
+    "Классическая музыка такая же красивая, как и современная."
+   ]
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Вставьте необходимые притяжательные местоимения",
+   "page": 84
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 85,
+   "items": [
+    "Ваша комната такая же светлая, как наша.",
+    "Ваш календарь красивее, чем мой.",
+    "Мой компьютер работает быстрее, чем твой.",
+    "Наш ковер такой же старинный, как и Ваш.",
+    "Мое кресло такое же удобное, как и твое.",
+    "Твое окно выходит во двор, а мое на улицу.",
+    "Это Ваша фотография? – Нет, моя лежит на столе справа.",
+    "Это Ваша картина? – Нет, моя висит слева на стене."
+   ]
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Проспрягайте, переведите и запомните выражения; составьте рассказ: pedir una copa de vino, vestirse con elegancia, seguir su camino, conseguir sus propósitos, elegir un regalo, reírse de sus compañeros, sonreír porque estar de buen humor, despedirse de todos",
+   "page": 85
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 85,
+   "items": [
+    "Тебе налить чай или кофе?",
+    "Я прощаюсь с тобой до завтра и продолжаю свой путь.",
+    "Этот принтер ни на что не годится. Он такой старый!",
+    "Я выбираю подарки для моей семьи.",
+    "Как элегантно одевается эта девушка!",
+    "Официант накрывает на стол.",
+    "Я прошу тебя об одолжении.",
+    "Почему вы всегда смеетесь над своими товарищами?",
+    "Почему ты не улыбаешься? У тебя плохое настроение?",
+    "Как ты добиваешься этого?"
+   ]
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Вставьте haber, estar или ser",
+   "page": 85
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Para conocer más: слова для описания офиса (En la oficina); A – опишите рекламное агентство; B – для чего служат аппараты в офисе",
+   "pages": [
+    85,
+    86
+   ]
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Прочитайте и переведите диалог «En la recepción»; A – проспрягайте; B – вопросы; C – по ролям; D – перескажите",
+   "page": 86
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Вставьте подходящие слова (planta baja, ordenador, fax, oficina, impresora, despacho, piso, servir para, lavabos, distribuidor de bebidas, fotocopiadora, rincón, pasillo, recepción)",
+   "page": 86
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "pages": [
+    86,
+    87
+   ]
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы о месте работы родных",
+   "page": 87
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Опишите офис, где вы работаете или хотите работать",
+   "page": 87
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 87,
+   "items": [
+    "Наш офис находится близко от центра, а ваш далеко.",
+    "Я не собираюсь подниматься на восьмой этаж по лестнице. – Что поделаешь! Лифт не работает.",
+    "Ты просишь чашечку кофе у официантки, и она тебе тут же её приносит.",
+    "В вашем офисе два компьютера, принтер и сканер. А почему нет ксерокса? – Он есть, но стоит в коридоре.",
+    "На цокольном этаже нет кабинетов, они расположены выше.",
+    "Где расположена бухгалтерия?",
+    "В моем столе три ящика. А в твоем? – В моем шесть. Он не новый, но очень удобный.",
+    "Кто-нибудь из вас может объяснить мне, как работает этот факс?",
+    "Молодой человек выбирает шоколадку в автомате (máquina expendedora) и продолжает свой путь.",
+    "Кабинет Вашего секретаря просторнее, чем Ваш. – Да, это так, но там больше шума, потому что он выходит на площадь."
+   ]
+  },
+  {
+   "number": "18",
+   "instruction_ru": "Texto complementario: прочитайте и переведите текст о современном офисе",
+   "pages": [
+    87,
+    88
+   ]
+  },
+  {
+   "number": "19",
+   "instruction_ru": "Ответьте на вопросы по тексту",
+   "page": 88
+  },
+  {
+   "number": "20",
+   "instruction_ru": "Расскажите, каким вы представляете себе современный офис",
+   "page": 88
+  }
+ ],
+ "questions_for_user": []
+}

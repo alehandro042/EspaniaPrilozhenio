@@ -1,0 +1,725 @@
+{
+ "id": 16,
+ "unit": 3,
+ "lesson": 4,
+ "title": "Unidad 3. En casa, en la oficina y en el hotel — Lección 4",
+ "pages": [
+  95,
+  96,
+  97,
+  98,
+  99,
+  100
+ ],
+ "vocabulary": {
+  "source": "Vocabulario, с. 100; слова о недвижимости — Para conocer más, с. 97",
+  "verbs": [
+   {
+    "es": "advertir (III)",
+    "ru": "предупреждать",
+    "page": 100
+   },
+   {
+    "es": "alquilar",
+    "ru": "сдавать в аренду, снимать",
+    "page": 100
+   },
+   {
+    "es": "compartir (con)",
+    "ru": "делить с кем-л.",
+    "page": 100
+   },
+   {
+    "es": "convertir(se) (en) (III)",
+    "ru": "превращать(ся)",
+    "note": "§84",
+    "page": 100
+   },
+   {
+    "es": "divertirse",
+    "ru": "веселиться, развлекаться",
+    "note": "§84 (III)",
+    "page": 100
+   },
+   {
+    "es": "formalizar",
+    "ru": "оформлять",
+    "page": 100
+   },
+   {
+    "es": "importar",
+    "ru": "иметь значение",
+    "page": 100
+   },
+   {
+    "es": "invertir (en) (III)",
+    "ru": "вкладывать",
+    "note": "§84: invierto, inviertes, invierte, invertimos, invertís, invierten",
+    "page": 100
+   },
+   {
+    "es": "mentir (III)",
+    "ru": "лгать",
+    "note": "§84",
+    "page": 100
+   },
+   {
+    "es": "mudarse",
+    "ru": "переезжать (на другую квартиру)",
+    "page": 100
+   },
+   {
+    "es": "preferir (III)",
+    "ru": "предпочитать",
+    "note": "§84",
+    "page": 100
+   },
+   {
+    "es": "saludar",
+    "ru": "здороваться, приветствовать",
+    "page": 100
+   },
+   {
+    "es": "sentir (III)",
+    "ru": "сожалеть о чем-л.",
+    "note": "§84",
+    "page": 100
+   },
+   {
+    "es": "sentirse (III)",
+    "ru": "чувствовать себя",
+    "note": "§84",
+    "page": 100
+   }
+  ],
+  "other": [
+   {
+    "es": "aire acondicionado",
+    "gender": "m",
+    "ru": "кондиционер",
+    "page": 100
+   },
+   {
+    "es": "alquiler",
+    "gender": "m",
+    "ru": "арендная плата",
+    "page": 100
+   },
+   {
+    "es": "anuncio",
+    "gender": "m",
+    "ru": "объявление",
+    "page": 100
+   },
+   {
+    "es": "área bruta",
+    "gender": "f",
+    "ru": "общая площадь",
+    "page": 100
+   },
+   {
+    "es": "bien comunicado",
+    "ru": "зд. удачно расположенный",
+    "page": 100
+   },
+   {
+    "es": "calefacción",
+    "gender": "f",
+    "ru": "отопление",
+    "page": 100
+   },
+   {
+    "es": "cantidad",
+    "gender": "f",
+    "ru": "количество",
+    "page": 100
+   },
+   {
+    "es": "capital",
+    "gender": "m",
+    "ru": "капитал",
+    "page": 100
+   },
+   {
+    "es": "casa de campo",
+    "gender": "f",
+    "ru": "загородный дом",
+    "page": 100
+   },
+   {
+    "es": "chalet",
+    "gender": "m",
+    "ru": "шале, дача",
+    "page": 100
+   },
+   {
+    "es": "conforme a",
+    "ru": "согласно чему-л.",
+    "page": 100
+   },
+   {
+    "es": "contrato de inquilinato",
+    "ru": "договор аренды",
+    "page": 100
+   },
+   {
+    "es": "elevado",
+    "ru": "высокий, значительный",
+    "page": 100
+   },
+   {
+    "es": "estudio",
+    "gender": "m",
+    "ru": "студия",
+    "page": 100
+   },
+   {
+    "es": "exterior",
+    "ru": "внешний, зд. окна выходят на улицу",
+    "page": 100
+   },
+   {
+    "es": "fácil",
+    "ru": "легкий",
+    "page": 100
+   },
+   {
+    "es": "fianza",
+    "gender": "f",
+    "ru": "залог",
+    "page": 100
+   },
+   {
+    "es": "gastos de comunidad",
+    "gender": "m pl",
+    "ru": "коммунальные расходы",
+    "page": 100
+   },
+   {
+    "es": "garaje",
+    "gender": "m",
+    "ru": "гараж",
+    "page": 100
+   },
+   {
+    "es": "héroe",
+    "gender": "m",
+    "ru": "герой",
+    "page": 100
+   },
+   {
+    "es": "intereses",
+    "gender": "m pl",
+    "ru": "проценты",
+    "page": 100
+   },
+   {
+    "es": "interior",
+    "ru": "внутренний, зд. окна выходят во двор дома",
+    "page": 100
+   },
+   {
+    "es": "luz",
+    "gender": "f",
+    "ru": "свет",
+    "page": 100
+   },
+   {
+    "es": "metro cuadrado",
+    "gender": "m",
+    "ru": "квадратный метр",
+    "page": 100
+   },
+   {
+    "es": "moderado",
+    "ru": "умеренный",
+    "page": 100
+   },
+   {
+    "es": "peligro",
+    "gender": "m",
+    "ru": "опасность",
+    "page": 100
+   },
+   {
+    "es": "piso",
+    "gender": "m",
+    "ru": "квартира",
+    "page": 100
+   },
+   {
+    "es": "triste",
+    "ru": "грустный",
+    "page": 100
+   },
+   {
+    "es": "ubicación",
+    "gender": "f",
+    "ru": "местоположение",
+    "page": 100
+   },
+   {
+    "es": "vivienda",
+    "gender": "f",
+    "ru": "жилье",
+    "page": 100
+   }
+  ],
+  "phrases": [
+   {
+    "es": "¡Qué va!",
+    "ru": "Куда там! (ничего подобного)",
+    "page": 100
+   },
+   {
+    "es": "Eso no me importa.",
+    "ru": "Это для меня неважно.",
+    "note": "из диалога упр. 13",
+    "page": 98
+   }
+  ],
+  "real_estate_words": {
+   "page": 97,
+   "title": "En la agencia inmobiliaria (Para conocer más, упр. 11)",
+   "words": [
+    "vender",
+    "comprar",
+    "alquilar",
+    "compartir un piso",
+    "formalizar el contrato de inquilinato",
+    "piso",
+    "apartamento",
+    "estudio",
+    "una casa privada",
+    "una casa de campo",
+    "chalet",
+    "pagar gastos de comunidad / una fianza de dos meses / el alquiler / intereses"
+   ]
+  },
+  "irregular_gerunds": [
+   {
+    "es": "tomar",
+    "gerundio": "tomando",
+    "page": 97
+   },
+   {
+    "es": "beber",
+    "gerundio": "bebiendo",
+    "page": 97
+   },
+   {
+    "es": "vivir",
+    "gerundio": "viviendo",
+    "page": 97
+   },
+   {
+    "es": "decir",
+    "gerundio": "diciendo",
+    "page": 97
+   },
+   {
+    "es": "ir",
+    "gerundio": "yendo",
+    "page": 97
+   },
+   {
+    "es": "poder",
+    "gerundio": "pudiendo",
+    "page": 97
+   },
+   {
+    "es": "venir",
+    "gerundio": "viniendo",
+    "page": 97
+   },
+   {
+    "es": "pedir (II)",
+    "gerundio": "pidiendo",
+    "page": 97
+   },
+   {
+    "es": "invertir (III)",
+    "gerundio": "invirtiendo",
+    "page": 97
+   },
+   {
+    "es": "dormir (IV)",
+    "gerundio": "durmiendo",
+    "page": 97
+   },
+   {
+    "es": "construir (VI)",
+    "gerundio": "construyendo",
+    "page": 97
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "id": "§82",
+   "title": "Супплетивные формы сравнительной степени",
+   "page": 95,
+   "table": {
+    "columns": [
+     "adjetivo",
+     "comparativo"
+    ],
+    "rows": [
+     [
+      "bueno",
+      "mejor"
+     ],
+     [
+      "malo",
+      "peor"
+     ],
+     [
+      "grande",
+      "mayor (de más edad)"
+     ],
+     [
+      "pequeño",
+      "menor (de menos edad)"
+     ]
+    ]
+   },
+   "points": [
+    "Особые формы сравнительной степени, восходящие к латинским формам.",
+    "Estos cursos de idioma son mejores que aquellos. – Эти языковые курсы лучше, чем те.",
+    "La técnica paraguaya es peor que la japonesa. – Парагвайская техника хуже японской.",
+    "Mi padre es 2 años mayor que mi madre. – Мой отец на 2 года старше моей матери.",
+    "Las hijas de Miguel son menores que las mías. – Дочери Мигеля младше моих.",
+    "NB: есть и регулярные формы más bueno, más malo, más grande, más pequeño с другими оттенками значения: Esta empresa es más grande que aquella (по размеру). Vuestra habitación es más pequeña que la nuestra (по размеру). Juan es más bueno que Manuel. – Хуан добрее Мануэля. Tu gato es más malo que mi perro. – Твой кот злее моей собаки.",
+    "Превосходная степень — с определенным артиклем: Soy el menor de la familia. Gema y Luisa son las mejores estudiantes del curso."
+   ]
+  },
+  {
+   "id": "§83",
+   "title": "Pronombres demostrativos. Указательные местоимения",
+   "page": 96,
+   "points": [
+    "Могут использоваться как прилагательные и самостоятельно, заменяя существительное; формы совпадают: Este chico es bajo, ese es más bajo y aquel es el más bajo de todos. Este coche es caro, ese es más caro y aquel es el más caro de todos. Esta moto es barata, esa es más barata y aquella es la más barata de todas.",
+    "Есть формы среднего рода (formas neutras): esto, eso, aquello — аналогичны русским «это, то», обычно заменяют целое предложение: Esto no tiene nada que ver con este tema. Eso no me gusta nada. No quiere hablar de aquello, es una historia muy triste."
+   ]
+  },
+  {
+   "id": "§84",
+   "title": "III группа отклоняющихся глаголов (e → ie)",
+   "page": 96,
+   "table": {
+    "invertir (e → ie)": [
+     "invierto",
+     "inviertes",
+     "invierte",
+     "invertimos",
+     "invertís",
+     "invierten"
+    ],
+    "invertir + ": "los capitales, el dinero en un negocio",
+    "так же": "preferir, sentir, mentir, divertirse, convertirse"
+   },
+   "points": []
+  },
+  {
+   "id": "§85",
+   "title": "Gerundio. Герундий",
+   "page": 97,
+   "table": {
+    "columns": [
+     "tomar",
+     "beber",
+     "vivir"
+    ],
+    "rows": [
+     [
+      "tomando",
+      "bebiendo",
+      "viviendo"
+     ]
+    ],
+    "неправильные формы": [
+     "decir – diciendo",
+     "ir – yendo",
+     "poder – pudiendo",
+     "venir – viniendo",
+     "pedir (II) – pidiendo",
+     "invertir (III) – invirtiendo",
+     "dormir (IV) – durmiendo",
+     "construir (VI) – construyendo"
+    ]
+   },
+   "points": [
+    "Неизменяемая глагольная форма, совмещающая признаки глагола и наречия образа действия; переводится, как правило, деепричастием.",
+    "Возвратные и личные местоимения пишутся слитно с герундием: sintiéndose, diciéndoselo.",
+    "NB: при отрицании вместо герундия — инфинитив с предлогом sin: El jefe entra en la oficina saludando a todo el mundo. El jefe entra en la oficina sin saludar a nadie.",
+    "После seguir и continuar глагол ставится в форме герундия: Sigo trabajando."
+   ]
+  },
+  {
+   "id": "§86",
+   "title": "Конструкция estar + gerundio",
+   "page": 97,
+   "points": [
+    "Выражает длительное действие, развивающееся в момент речи: ¿Qué estás haciendo? – Estoy fotocopiando unos documentos."
+   ]
+  }
+ ],
+ "sentence_building": [
+  {
+   "pattern": "mejor / peor / mayor / menor + que; el mejor / el menor de (§82)",
+   "page": 95,
+   "examples": [
+    {
+     "es": "Estos cursos de idioma son mejores que aquellos."
+    },
+    {
+     "es": "Mi padre es 2 años mayor que mi madre."
+    },
+    {
+     "es": "Soy el menor de la familia."
+    },
+    {
+     "es": "Gema y Luisa son las mejores estudiantes del curso."
+    }
+   ]
+  },
+  {
+   "pattern": "este – ese – aquel; esto / eso / aquello (§83)",
+   "page": 96,
+   "examples": [
+    {
+     "es": "Este chico es bajo, ese es más bajo y aquel es el más bajo de todos."
+    },
+    {
+     "es": "Eso no me gusta nada."
+    },
+    {
+     "es": "No quiere hablar de aquello, es una historia muy triste."
+    }
+   ]
+  },
+  {
+   "pattern": "Герундий как обстоятельство; sin + инфинитив; seguir + герундий (§85)",
+   "page": 97,
+   "examples": [
+    {
+     "es": "El jefe entra en la oficina saludando a todo el mundo."
+    },
+    {
+     "es": "El jefe entra en la oficina sin saludar a nadie."
+    },
+    {
+     "es": "Sigo trabajando."
+    },
+    {
+     "es": "Anita lo hace todo riéndose."
+    }
+   ]
+  },
+  {
+   "pattern": "estar + gerundio — действие в момент речи (§86)",
+   "pages": [
+    97,
+    98
+   ],
+   "examples": [
+    {
+     "es": "¿Qué estás haciendo? – Estoy fotocopiando unos documentos."
+    },
+    {
+     "es": "El director firma los documentos. – Ahora el director está firmando los documentos."
+    },
+    {
+     "es": "He comprado el periódico de hoy y estoy leyendo anuncios."
+    }
+   ]
+  }
+ ],
+ "texts": [
+  {
+   "title": "Объявления (упр. 12)",
+   "page": 98,
+   "es": "VENDO PISO. Plaza Castilla, nuevo, exterior, tres dormitorios, dos baños, mucha luz, calefacción, aire acondicionado, ascensor, garaje.\nVENDO APARTAMENTO. Cuatro Caminos, viejo, interior, un dormitorio, sin calefacción, bien comunicado, barato.\nSE ALQUILA UN ESTUDIO. Ciudad Universitaria, interior, bien amueblado, 4° con ascensor, garaje, calefacción, gastos de comunidad incluidos.\nSE ALQUILA UN PISO PARA COMPARTIR. Atocha, exterior, tres dormitorios, un salón-comedor, cocina, baño, calefacción, ascensor. Fianza de dos meses."
+  },
+  {
+   "title": "Buscando un piso (диалог, упр. 13)",
+   "page": 98,
+   "es": "– ¿Qué estás haciendo?\n– He comprado el periódico de hoy y estoy leyendo anuncios.\n– ¿Ya has encontrado algo?\n– No, ¡qué va! Lo que me ha gustado, ya está alquilado.\n– ¿Qué estás buscando?\n– Necesito un estudio o un apartamento cerca de Ciudad Universitaria de precio moderado, con muebles, calefacción y bien comunicado.\n– Sí, la ubicación es muy importante para la vivienda. ¿De cuántos metros cuadrados la prefieres?\n– Eso no me importa.\n– Oye, ¿sabes que es más fácil encontrar un piso con tres dormitorios para compartirlo con otros dos estudiantes? ¿Y qué me dices del alquiler? Entre los tres no es tan alto.\n– Te agradezco mucho tu consejo. Ya estoy escribiendo el anuncio de que busco a dos estudiantes que quieran compartir un piso conmigo."
+  },
+  {
+   "title": "Viviendas en Venezuela (Texto complementario, упр. 18)",
+   "page": 99,
+   "es": "El proyecto de construcción de 10000 (diez mil) viviendas en Venezuela es uno de los proyectos más grandes de construcción de elevada cantidad de unidades residenciales en todo el mundo el cual se realiza conforme a un contrato. Dicho contrato es uno de los contratos más grandes de todo el mundo que ha sido firmado entre Kayson y la República Bolivariana de Venezuela. En cada sitio se proyecta la construcción de 2500 (dos mil quinientos) apartamentos de 4 pisos. El 67% de las unidades son de 3 dormitorios y los restos de 2 dormitorios. Área bruta de unidades de 3 dormitorios es casi 85 metros cuadrados y de unidades de 2 dormitorios casi 70 metros cuadrados. Área total de infraestructura de viviendas es casi 950000 (novecientos cincuenta mil) metros cuadrados."
+  }
+ ],
+ "exercises": [
+  {
+   "number": "1",
+   "instruction_ru": "Переведите на русский язык (mejor, peor, mayor, menor)",
+   "page": 95,
+   "items": [
+    "Mi hermano es 9 años menor que yo.",
+    "El despacho de Joaquín es mucho más grande que el mío.",
+    "¿Quién es mayor: tu primo o tú?",
+    "Jorge es el mejor estudiante de la facultad, siempre saca notas sobresalientes.",
+    "Este ordenador es peor que otros, por eso no lo he comprado.",
+    "Mi habitación es la más pequeña de todas, pero es muy acogedora.",
+    "¿A quién le han puesto las peores notas?",
+    "Ana y yo tenemos 21 años, somos las mayores del grupo.",
+    "Dicen que el diccionario de la Real Academia Española es el mejor. ¿Qué te parece?"
+   ]
+  },
+  {
+   "number": "2",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 95,
+   "items": [
+    "Эта квартира лучше. Она самая лучшая из всех.",
+    "Этот телевизор хуже. Он самый плохой.",
+    "Этот шкаф больше. Он самый большой.",
+    "Этот стол меньше. Он самый маленький.",
+    "Мой брат старше меня. Он самый старший из всех детей.",
+    "Твоя сестра младше тебя. Она самая младшая в семье.",
+    "Русская древесина лучше, чем китайская.",
+    "Ваши товары хуже, чем наши.",
+    "Дон Карлос – лучший сотрудник предприятия."
+   ]
+  },
+  {
+   "number": "3",
+   "instruction_ru": "Переведите на русский язык (указательные местоимения)",
+   "page": 96
+  },
+  {
+   "number": "4",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 96,
+   "items": [
+    "Этот дом просторный, тот еще просторнее, а вон тот – самый просторный из всех.",
+    "Этот лифт новый, тот еще новее, а вон тот самый новый из всех.",
+    "Этот цвет темный, тот еще темнее, а вон тот самый темный из всех.",
+    "Это похоже на правду.",
+    "Это никогда меня не интересовало.",
+    "Это ни на что не годится."
+   ]
+  },
+  {
+   "number": "5",
+   "instruction_ru": "Проспрягайте, переведите, запомните: preferir el café al té, sentirlo mucho / no sentirse bien, mentir como siempre, divertirse hasta medianoche, convertirse en un héroe; A – вопросы; B – переведите на испанский",
+   "page": 96
+  },
+  {
+   "number": "6",
+   "instruction_ru": "Вставьте нужную форму отклоняющихся глаголов",
+   "page": 96
+  },
+  {
+   "number": "7",
+   "instruction_ru": "Образуйте герундий: estudiar, trabajar, huir, poder, elegir, morirse, irse, sentarse, sentirse, seguir, venir, convertirse, concluir, decir, vestirse, ser, poner, despedirse, estar, oír, ver, reírse",
+   "page": 97
+  },
+  {
+   "number": "8",
+   "instruction_ru": "Переведите на русский язык (герундий)",
+   "page": 97
+  },
+  {
+   "number": "9",
+   "instruction_ru": "Преобразуйте по образцу: El director firma los documentos. – Ahora el director está firmando los documentos.",
+   "page": 97,
+   "items": [
+    "En clase hacemos preguntas al profesor.",
+    "La secretaria sirve el café al jefe.",
+    "Siempre te digo la verdad.",
+    "Los lunes escribís dictados.",
+    "Los obreros construyen el edificio.",
+    "Papá duerme la siesta.",
+    "Usted invierte el dinero en este proyecto.",
+    "Juan sube las escaleras a pie.",
+    "Ana espera el ascensor."
+   ]
+  },
+  {
+   "number": "10",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 97,
+   "items": [
+    "Сейчас одиннадцать часов. Мы пьем кофе.",
+    "Я сейчас не могу это сделать, я разговариваю по телефону.",
+    "Кто так шумит?",
+    "Ты меня не слушаешь.",
+    "Какую программу ты сейчас смотришь по телевизору?",
+    "Я работаю на компьютере, а ты мне мешаешь (molestar)."
+   ]
+  },
+  {
+   "number": "11",
+   "instruction_ru": "Para conocer más: слова, связанные с недвижимостью (En la agencia inmobiliaria); A – проспрягайте; B – переведите на русский; C – на испанский",
+   "pages": [
+    97,
+    98
+   ]
+  },
+  {
+   "number": "12",
+   "instruction_ru": "Прочитайте объявления (Vendo piso, Vendo apartamento, Se alquila un estudio, Se alquila un piso para compartir) и выберите подходящее",
+   "page": 98
+  },
+  {
+   "number": "13",
+   "instruction_ru": "Прочитайте и переведите диалог «Buscando un piso»; A – проспрягайте; B – вопросы; C – по ролям; D – перескажите",
+   "pages": [
+    98,
+    99
+   ]
+  },
+  {
+   "number": "14",
+   "instruction_ru": "Вставьте предлоги и артикли",
+   "page": 99
+  },
+  {
+   "number": "15",
+   "instruction_ru": "Ответьте на вопросы об аренде жилья",
+   "page": 99
+  },
+  {
+   "number": "16",
+   "instruction_ru": "Расскажите о ваших планах снять или купить квартиру",
+   "page": 99
+  },
+  {
+   "number": "17",
+   "instruction_ru": "Переведите на испанский язык",
+   "page": 99,
+   "items": [
+    "Вы хотите снять эту квартиру? – Да, я хочу снять её, потому что мне нравится её расположение. – Но это невозможно, потому что она уже сдана.",
+    "Вы нам не сказали, сколько квадратных метров имеет ваша жилплощадь?",
+    "В какой бизнес Вы вкладываете ваши капиталы? – Сейчас я инвестирую в строительство жилья.",
+    "Кто предупредил тебя об опасности?",
+    "Это объявление – длинное, то еще длиннее, а вон то – самое длинное из всех.",
+    "Вам понравилась квартира, которую купили ваши соседи? – Мне очень жаль, но она мне не понравилась. Она очень маленькая и находится далеко от центра.",
+    "Как Вы нашли эту квартиру? – Читая объявления в газете.",
+    "Мы можем снять одну квартиру на двоих, уменьшив, таким образом, расходы.",
+    "Вы уже видели Вашу комнату? – Нет, я её еще не видел. Но собираюсь посмотреть её прямо сейчас.",
+    "Почему Вы поднимались на пятый этаж пешком? – Дело в том, что лифт не работает."
+   ]
+  },
+  {
+   "number": "18",
+   "instruction_ru": "Texto complementario: прочитайте и переведите текст о строительстве жилья в Венесуэле",
+   "page": 99
+  },
+  {
+   "number": "19",
+   "instruction_ru": "Ответьте на вопросы по тексту",
+   "page": 100
+  },
+  {
+   "number": "20",
+   "instruction_ru": "Перескажите содержание текста",
+   "page": 100
+  }
+ ],
+ "questions_for_user": []
+}
