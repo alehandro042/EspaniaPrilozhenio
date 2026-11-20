@@ -2,7 +2,7 @@ import { state, settings, save, saveSettings, onChange, aiKeys, streakDays, uid,
 import { book, loadBook, hasRu, imgFor, KIND_RU, kindLabel, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences, withArt } from './data.js';
 import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearned, mistakes } from './srs.js';
 import { speak, listen, canListen, judge, esVoices } from './speech.js';
-import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions, buildWriteTest, TOPICS, topicTest } from './quiz.js';
+import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions, buildWriteTest, TOPICS, topicTest, genderQuestions, genderNouns } from './quiz.js';
 import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl, PROVIDERS, providerList, onlyShared, provider, providerInfo, hasKey as aiHasKey } from './ai.js';
 import * as drive from './sync.js';
 import * as cloud from './cloud.js';
@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.17';
+const VERSION = '1.18';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -156,7 +156,8 @@ on(/^\/lessons$/, () => {
   let html = '';
   for (const u of C.units || []) {
     const ls = (C.lessons || []).filter(l => l.unit === u.unit);
-    html += `<div class="sec-title">Unidad ${u.unit}. ${esc(u.title)}</div>`;
+    const uids = ls.filter(l => book.lessons.has(l.id)).map(l => l.id);
+    html += `<div class="row sec-row"><div class="sec-title">Unidad ${u.unit}. ${esc(u.title)}</div>${genderNouns(uids).length >= 4 ? `<a class="chip" href="#/test/gender-${uids.join(',')}">⚥ Род: тест по юниту</a>` : ''}</div>`;
     for (const l of ls) {
       const ok = book.lessons.has(l.id);
       const p = ok ? lessonProgress(l.id) : 0;
@@ -195,7 +196,8 @@ on(/^\/lesson\/(\d+)(?:\/(\w+))?$/, (idS, tab) => {
       <button data-tab="sent" class="${tab === 'sent' ? 'on' : ''}">Предложения</button>
     </div>
     ${body}
-    <div class="btns"><a class="btn" href="#/test/lesson-${id}">Тест по уроку</a><a class="btn ghost" href="#/test/write-${id}">✍️ Письменный тест</a></div>`;
+    <div class="btns"><a class="btn" href="#/test/lesson-${id}">Тест по уроку</a><a class="btn ghost" href="#/test/write-${id}">✍️ Письменный тест</a></div>
+    ${genderNouns([id]).length >= 4 ? `<a class="btn line" href="#/test/gender-${id}">⚥ Род: el/la, un/una, los/las</a>` : ''}`;
   view.querySelectorAll('.seg button').forEach(b => b.onclick = () => { lessonTabs[id] = b.dataset.tab; location.replace(`#/lesson/${id}/${b.dataset.tab}`); });
   view.querySelectorAll('[data-kind]').forEach(b => b.onclick = () => { lessonTabs['k' + id] = b.dataset.kind; route(); });
   const all = $('#addAll'); if (all) all.onclick = () => { const n = addToCards(testable(id).map(i => i.id)); toast(n ? `Добавлено в карточки: ${n}` : 'Все слова урока уже в карточках'); route(); };
@@ -291,7 +293,7 @@ function resolveSet(spec) {
   if (spec === 'my') return { items: (book.byLesson.get('my') || []).filter(hasRu), title: 'Мои слова', lessons: ['my'] };
   const tp = spec.match(/^topic-(\w+)$/);
   if (tp && TOPICS[tp[1]]) return { items: [], title: TOPICS[tp[1]].title, kind: 'topic', topic: tp[1] };
-  const m = spec.match(/^(lesson|ids|gram|sent|write)-(.+)$/);
+  const m = spec.match(/^(lesson|ids|gram|sent|write|gender)-(.+)$/);
   if (!m) return { items: [], title: '' };
   const lessons = m[2].split(',').map(x => x === 'my' ? 'my' : +x).filter(x => x === 'my' || book.lessons.has(x));
   const items = lessons.flatMap(l => (book.byLesson.get(l) || []).filter(hasRu));
@@ -401,10 +403,11 @@ on(/^\/test\/(.+)$/, spec => {
   if (set.kind === 'gram') { const lid = set.lessons[0]; qs = grammarQuestions(lid, levelOf(lid), book.byLesson.get(lid) || []).sort(() => Math.random() - .5).slice(0, 10); }
   else if (set.kind === 'write') { qs = buildWriteTest(set.lessons || [], 10); }
   else if (set.kind === 'topic') { qs = topicTest(set.topic, 12); }
+  else if (set.kind === 'gender') { qs = genderQuestions(set.lessons || [], 12); }
   else if (set.kind === 'sent') { qs = sentenceQuestions(set.lessons[0]).sort(() => Math.random() - .5).slice(0, 8); }
   else if (spec === 'mistakes' || spec === 'due') qs = buildTest(set.lessons || [], Math.min(12, set.items.length), { items: set.items, vocabOnly: true });
   else qs = buildTest(set.lessons || [], 10, { vocabOnly: spec === 'my' || (set.lessons || []).every(l => l === 'my') });
-  setTitle(isLessonTest ? 'Тест · ' + set.title : (set.kind === 'gram' ? 'Грамматика' : set.kind === 'sent' ? 'Предложения' : set.kind === 'write' ? 'Письменный тест' : set.kind === 'topic' ? set.title : 'Тест'), true);
+  setTitle(isLessonTest ? 'Тест · ' + set.title : (set.kind === 'gram' ? 'Грамматика' : set.kind === 'sent' ? 'Предложения' : set.kind === 'write' ? 'Письменный тест' : set.kind === 'topic' ? set.title : set.kind === 'gender' ? 'Род · ' + set.title : 'Тест'), true);
   if (!qs.length) { view.innerHTML = `<div class="empty-note">Для теста пока нет материала.</div>`; return; }
   let i = 0, right = 0; const wrong = [];
   const lid0 = set.lessons?.[0];

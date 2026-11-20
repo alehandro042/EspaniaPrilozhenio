@@ -214,8 +214,7 @@ export const TOPICS = {
   numbers: { title: 'Числа', icon: '🔢', hint: 'От 0 до 99, на слух и письменно' },
   colors: { title: 'Цвета', icon: '🎨', hint: 'rojo, azul, verde…' },
   days: { title: 'Дни недели', icon: '📅', hint: 'lunes … domingo' },
-  time: { title: 'Время', icon: '🕒', hint: '¿Qué hora es? Son las…' },
-  gender: { title: 'Род', icon: '⚥', hint: 'el / la, un / una, los / las, casa blanca' }
+  time: { title: 'Время', icon: '🕒', hint: '¿Qué hora es? Son las…' }
 };
 const COLORS = ['rojo', 'azul', 'verde', 'amarillo', 'blanco', 'negro', 'gris', 'marrón', 'claro', 'oscuro'];
 const DAYS = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
@@ -307,14 +306,15 @@ function pluralOf(es) { // §4: гласный + s; согласный + es (б�
   if (/[dlr]$/i.test(es) && !/[áéíóú]/.test(es)) return es + 'es';
   return null;
 }
-function genderQuestions(n) {
-  const started = l => (state.levels[l] || Object.keys(state.cards).some(k => k.startsWith(`L${l}|`)));
-  const allNouns = articleItems([...book.items.values()].filter(it => it.ru && typeof it.lessonId === 'number'));
-  let nouns = allNouns.filter(it => started(it.lessonId));
-  if (nouns.length < 30) nouns = allNouns;
-  nouns = uniqBy(nouns, it => it.es);
-  const adjs = uniqBy([...book.items.values()].filter(it => it.kind === 'word' && it.ru && /^[a-záéíóúñ]+o$/.test(it.es) && /(ый|ий|ой)(?![а-яё])/.test(it.ru) && !it.gender), it => it.es);
-  if (nouns.length < 8) return [];
+// Существительные урока(ов) для теста «Род»
+export const genderNouns = lessons => uniqBy(articleItems(lessons.flatMap(l => (book.byLesson.get(l) || []).filter(it => it.ru))), it => it.es);
+export function genderQuestions(lessons, n = 12) {
+  const nouns = genderNouns(lessons);
+  const isAdj = it => it.kind === 'word' && it.ru && /^[a-záéíóúñ]+o$/.test(it.es) && /(ый|ий|ой)(?![а-яё])/.test(it.ru) && !/женат|замуж|холост|развед|вдов|о человеке/.test(it.ru) && !it.gender;
+  // прилагательные: из этих уроков и всех пройденных до них
+  const maxL = Math.max(...lessons.filter(l => typeof l === 'number'));
+  const adjs = uniqBy([...book.items.values()].filter(it => isAdj(it) && typeof it.lessonId === 'number' && it.lessonId <= maxL), it => it.es);
+  if (nouns.length < 4) return [];
   const qs = [];
   for (const it of shuffle(nouns).slice(0, n)) {
     const art = it.gender === 'm' ? 'el' : 'la', r = Math.random(), ex = genderRule(it);
@@ -330,7 +330,6 @@ function genderQuestions(n) {
   return qs;
 }
 export function topicTest(topic, n = 12) {
-  if (topic === 'gender') return genderQuestions(n);
   if (topic === 'numbers') return numberQuestions(n);
   if (topic === 'time') return timeQuestions(n);
   if (topic === 'colors') return wordTopicQuestions(topicItems(COLORS), n);
