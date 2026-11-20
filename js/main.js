@@ -1,7 +1,7 @@
 import { state, settings, save, saveSettings, onChange, aiKeys, streakDays, uid, replaceState, merge, tickDay } from './store.js';
 import { book, loadBook, hasRu, imgFor, KIND_RU, kindLabel, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences, withArt } from './data.js';
 import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearned, mistakes } from './srs.js';
-import { speak, listen, canListen, judge, esVoices } from './speech.js';
+import { speak, resetSlow, listen, canListen, judge, esVoices } from './speech.js';
 import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions, buildWriteTest, TOPICS, topicTest, genderQuestions, genderNouns } from './quiz.js';
 import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl, PROVIDERS, providerList, onlyShared, provider, providerInfo, hasKey as aiHasKey } from './ai.js';
 import * as drive from './sync.js';
@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.18';
+const VERSION = '1.19';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -316,7 +316,7 @@ on(/^\/cards\/(.+)$/, spec => {
         <a class="btn" href="#/today">На главную</a>${set.lessons?.length ? `<a class="btn ghost" href="#/test/${spec === 'due' ? 'mistakes' : spec.replace(/^lesson-/, 'ids-')}">Пройти тест</a>` : ''}`;
       scheduleSync(); return;
     }
-    const it = queue[i]; const img = imgFor(it.es);
+    const it = queue[i]; const img = imgFor(it.es); resetSlow();
     const front = dir === 'es'
       ? `${img ? `<img src="${esc(img.src)}" alt="">` : ''}<div class="word">${esc(withArt(it))}</div>${withArt(it) === it.es ? gender(it) : ''}`
       : `<div class="word">${esc(it.ru)}</div>`;
@@ -439,6 +439,7 @@ on(/^\/test\/(.+)$/, spec => {
       </div>
       ${area}
       <div id="fb"></div>`;
+    resetSlow();
     if (q.autoSpeak) setTimeout(() => speak(q.speak), 250);
     if (q.options) view.querySelectorAll('.opt').forEach(b => b.onclick = () => {
       if (view.querySelector('.opt.ok,.opt.bad')) return;

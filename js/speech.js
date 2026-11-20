@@ -13,16 +13,20 @@ function pickVoice() {
   return vs.find(v => v.voiceURI === settings.voice) || vs.find(v => /es[-_]ES/i.test(v.lang)) || vs[0] || null;
 }
 
+// Повторное прослушивание того же текста — медленнее: обычная → ×0.7 → ×0.5
+let lastText = '', repeats = 0;
+export function resetSlow() { lastText = ''; repeats = 0; }
 export function speak(text, rate) {
   if (!('speechSynthesis' in window)) return false;
   speechSynthesis.cancel();
+  if (text === lastText) repeats++; else { lastText = text; repeats = 0; }
   // убираем пометки в скобках и варианты через запятую произносим все
   const clean = String(text).replace(/\([^)]*\)/g, '').replace(/\s*\/\s*/g, ', ').trim();
   const u = new SpeechSynthesisUtterance(clean);
   const v = pickVoice();
   if (v) u.voice = v;
   u.lang = v?.lang || 'es-ES';
-  u.rate = rate || settings.rate || 0.9;
+  u.rate = (rate || settings.rate || 0.9) * [1, 0.7, 0.5][Math.min(repeats, 2)];
   speechSynthesis.speak(u);
   return true;
 }
