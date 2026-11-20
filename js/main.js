@@ -2,7 +2,7 @@ import { state, settings, save, saveSettings, onChange, aiKeys, streakDays, uid,
 import { book, loadBook, hasRu, imgFor, KIND_RU, kindLabel, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences } from './data.js';
 import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearned, mistakes } from './srs.js';
 import { speak, listen, canListen, judge, esVoices } from './speech.js';
-import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions } from './quiz.js';
+import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions, buildWriteTest } from './quiz.js';
 import { chat, wordsFromPhoto, askGeminiApp, shareText, translateUrl, PROVIDERS, provider, providerInfo, hasKey as aiHasKey } from './ai.js';
 import * as drive from './sync.js';
 import * as cloud from './cloud.js';
@@ -194,7 +194,7 @@ on(/^\/lesson\/(\d+)(?:\/(\w+))?$/, (idS, tab) => {
       <button data-tab="sent" class="${tab === 'sent' ? 'on' : ''}">Предложения</button>
     </div>
     ${body}
-    <a class="btn" href="#/test/lesson-${id}">Тест по уроку</a>`;
+    <div class="btns"><a class="btn" href="#/test/lesson-${id}">Тест по уроку</a><a class="btn ghost" href="#/test/write-${id}">✍️ Письменный тест</a></div>`;
   view.querySelectorAll('.seg button').forEach(b => b.onclick = () => { lessonTabs[id] = b.dataset.tab; location.replace(`#/lesson/${id}/${b.dataset.tab}`); });
   view.querySelectorAll('[data-kind]').forEach(b => b.onclick = () => { lessonTabs['k' + id] = b.dataset.kind; route(); });
   const all = $('#addAll'); if (all) all.onclick = () => { const n = addToCards(testable(id).map(i => i.id)); toast(n ? `Добавлено в карточки: ${n}` : 'Все слова урока уже в карточках'); route(); };
@@ -285,7 +285,7 @@ function resolveSet(spec) {
   if (spec === 'due') return { items: dueCards(), title: 'Повторение', lessons: null };
   if (spec === 'mistakes') return { items: mistakes(), title: 'Мои ошибки', lessons: [...new Set(mistakes().map(i => i.lessonId))] };
   if (spec === 'my') return { items: (book.byLesson.get('my') || []).filter(hasRu), title: 'Мои слова', lessons: ['my'] };
-  const m = spec.match(/^(lesson|ids|gram|sent)-(.+)$/);
+  const m = spec.match(/^(lesson|ids|gram|sent|write)-(.+)$/);
   if (!m) return { items: [], title: '' };
   const lessons = m[2].split(',').map(x => x === 'my' ? 'my' : +x).filter(x => x === 'my' || book.lessons.has(x));
   const items = lessons.flatMap(l => (book.byLesson.get(l) || []).filter(hasRu));
@@ -366,6 +366,7 @@ on(/^\/train$/, () => {
     </div>
     <div class="mut small">Каждое слово спрашивается на уровне своего урока.</div>
     <div class="btns"><button class="btn ghost" id="goCards">Карточки</button><button class="btn" id="goTest">Тест</button></div>
+    <button class="btn ghost" id="goWrite">✍️ Письменный тест</button>
     ${mistakes().length ? `<a class="btn line" href="#/test/mistakes">Только мои ошибки (${mistakes().length})</a>` : ''}`;
   const boxes = () => [...view.querySelectorAll('input[type=checkbox]')];
   const chosen = () => boxes().filter(b => b.checked).map(b => b.value);
@@ -382,6 +383,7 @@ on(/^\/train$/, () => {
   const go = kind => { const c = chosen(); if (!c.length) return toast('Отметьте хотя бы один урок'); location.hash = `#/${kind}/ids-${c.join(',')}`; };
   $('#goCards').onclick = () => go('cards');
   $('#goTest').onclick = () => go('test');
+  $('#goWrite').onclick = () => { const c = chosen(); if (!c.length) return toast('Отметьте хотя бы один урок'); location.hash = `#/test/write-${c.join(',')}`; };
 });
 
 // ---------- Тест ----------
@@ -391,10 +393,11 @@ on(/^\/test\/(.+)$/, spec => {
   const isLessonTest = set.kind === 'lesson' && set.lessons?.length === 1;
   let qs;
   if (set.kind === 'gram') { const lid = set.lessons[0]; qs = grammarQuestions(lid, levelOf(lid), book.byLesson.get(lid) || []).sort(() => Math.random() - .5).slice(0, 10); }
+  else if (set.kind === 'write') { qs = buildWriteTest(set.lessons || [], 10); }
   else if (set.kind === 'sent') { qs = sentenceQuestions(set.lessons[0]).sort(() => Math.random() - .5).slice(0, 8); }
   else if (spec === 'mistakes' || spec === 'due') qs = buildTest(set.lessons || [], Math.min(12, set.items.length), { items: set.items, vocabOnly: true });
   else qs = buildTest(set.lessons || [], 10, { vocabOnly: spec === 'my' || (set.lessons || []).every(l => l === 'my') });
-  setTitle(isLessonTest ? 'Тест · ' + set.title : (set.kind === 'gram' ? 'Грамматика' : set.kind === 'sent' ? 'Предложения' : 'Тест'), true);
+  setTitle(isLessonTest ? 'Тест · ' + set.title : (set.kind === 'gram' ? 'Грамматика' : set.kind === 'sent' ? 'Предложения' : set.kind === 'write' ? 'Письменный тест' : 'Тест'), true);
   if (!qs.length) { view.innerHTML = `<div class="empty-note">Для теста пока нет материала.</div>`; return; }
   let i = 0, right = 0; const wrong = [];
   const lid0 = set.lessons?.[0];
@@ -410,7 +413,7 @@ on(/^\/test\/(.+)$/, spec => {
       area = `<div class="tiles" id="ans"></div><div class="tiles" id="pool" style="border-style:solid">${q.shuffled.map((w, k) => `<button class="tile" data-k="${k}">${esc(w)}</button>`).join('')}</div>
         <button class="btn" id="chk">Проверить</button>`;
     } else {
-      area = `<input class="inp" id="inp" autocomplete="off" autocapitalize="off" spellcheck="false" lang="es" placeholder="${q.article ? 'el / la + слово' : 'Ответ по-испански'}" enterkeyhint="done">
+      area = `<input class="inp" id="inp" autocomplete="off" autocapitalize="off" spellcheck="false" lang="es" placeholder="${q.type === 'dictation' ? 'Напишите, что услышали' : q.article ? 'el / la + слово' : 'Ответ по-испански'}" enterkeyhint="done">
         <div class="accents">${['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü', '¿', '¡'].map(c => `<button data-ch="${c}">${c}</button>`).join('')}</div>
         <div class="btns">${q.hint ? `<button class="btn ghost" id="hint">Подсказка</button>` : ''}<button class="btn ghost" id="skip">Не знаю</button><button class="btn" id="chk">Проверить</button></div>`;
     }
@@ -458,7 +461,7 @@ on(/^\/test\/(.+)$/, spec => {
       const h = $('#hint'); if (h) h.onclick = () => toast(hintFor(q), 3500);
     }
   };
-  const correctText = q => q.type === 'write_es' ? (q.article ? q.article + ' ' : '') + q.item.es
+  const correctText = q => q.type === 'dictation' ? q.expected[0] : q.type === 'write_es' ? (q.article ? q.article + ' ' : '') + q.item.es
     : q.type === 'conj_write' || q.type === 'conj' ? q.answerSpeak
     : q.options ? (q.type === 'pick_img' ? `${q.item.es} — ${q.item.ru}` : q.type === 'article' ? `${q.options.find(o => o.correct).label} ${q.item.es}` : (q.item ? `${q.item.es} — ${q.item.ru}` : q.options.find(o => o.correct).label)) : '';
   function done(ok, almost, correct, msg) {

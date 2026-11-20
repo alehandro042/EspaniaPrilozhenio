@@ -1,6 +1,7 @@
 // Тесты: вопросы строятся только из данных учебника (слова, таблицы спряжений, предложения).
 import { state, save } from './store.js';
 import { book, hasRu, imgFor, conjugations, articleItems, sentences } from './data.js';
+import { similarity } from './speech.js';
 
 export const LEVELS = ['Лёгкий', 'Средний', 'Сложный'];
 export const LEVEL_HINT = [
@@ -55,6 +56,9 @@ export function checkTyped(input, expectedList, lvl, withArticle) {
     const noArt = expectedList.some(e => norm(e, lvl < 2) === norm(input, lvl < 2));
     if (noArt) return { ok: false, msg: `Нужен артикль: ${withArticle}` };
   }
+  // длинная фраза с одной-двумя опечатками: на лёгком и среднем уровне — «почти»
+  if (!loose && lvl < 2 && exp.some(e => e.length > 12 && similarity(e, input) >= 0.92))
+    return { ok: true, almost: true, msg: 'Почти: есть небольшая опечатка' };
   if (loose) {
     if (lvl >= 2) return { ok: false, msg: 'Ошибка в ударении или ñ' };
     if (lvl === 1) return { ok: true, almost: true, msg: 'Почти: проверьте ударение / ñ' };
@@ -173,5 +177,32 @@ export function buildTest(lessonIds, n = 10, opts = {}) {
 
 export function hintFor(q) {
   const e = (q.expected || [])[0] || '';
+  if (q.type === 'dictation') { const w = e.split(/\s+/); return `Слов: ${w.length}. Начало: «${w.slice(0, 2).join(' ')}…»`; }
   return e ? `Начинается на «${(q.article ? q.article + ' ' : '') + e[0]}», букв: ${e.length}` : '';
+}
+
+// Письменный тест: всё нужно написать самому — слова и фразы с русского, диктант предложений из учебника, спряжение.
+export function buildWriteTest(lessonIds, n = 10) {
+  const items = lessonIds.flatMap(l => (book.byLesson.get(l) || []).filter(hasRu));
+  const phrases = items.filter(it => it.kind === 'phrase' || /\s/.test(it.es));
+  const words = items.filter(it => !phrases.includes(it));
+  const dict = lessonIds.filter(l => l !== 'my').flatMap(l => { const L = book.lessons.get(l); return L ? sentences(L).map(x => ({ ...x, lessonId: l })) : []; });
+  const conj = lessonIds.filter(l => l !== 'my').flatMap(l => { const L = book.lessons.get(l); return L ? conjugations(L).map(c => ({ ...c, lessonId: l })) : []; });
+  const weight = it => { const c = state.cards[it.id]; return !c ? 2 : 1 + c.lapses * 2 + (c.streak < 2 ? 1 : 0); };
+  const pickW = (arr, k) => { const bag = arr.map(it => ({ it, w: weight(it) })); const out = []; while (out.length < k && bag.length) { let r = Math.random() * bag.reduce((a, x) => a + x.w, 0), i = 0; for (; i < bag.length - 1; i++) { r -= bag[i].w; if (r <= 0) break; } out.push(bag.splice(i, 1)[0].it); } return out; };
+  const want = { dict: dict.length ? Math.round(n * 0.3) : 0, conj: conj.length ? Math.round(n * 0.2) : 0, phr: phrases.length ? Math.round(n * 0.2) : 0 };
+  const qs = [];
+  for (const s of shuffle(dict).slice(0, want.dict)) {
+    const lvl = levelOf(s.lessonId);
+    qs.push({ type: 'dictation', lessonId: s.lessonId, kind: 'Диктант: напишите, что услышали', prompt: '🔊', speak: s.es, autoSpeak: true, expected: [s.es], hint: lvl === 0, sub: s.pattern });
+  }
+  for (const c of shuffle(conj).slice(0, want.conj)) {
+    qs.push({ type: 'conj_write', lessonId: c.lessonId, kind: `Спряжение (${c.ref})`, prompt: `${c.person} … (${c.verb})`, expected: [c.form], answerSpeak: c.form, hint: levelOf(c.lessonId) < 2 });
+  }
+  const mk = it => { const lvl = levelOf(it.lessonId); const art = lvl === 2 && needsArticle(it) ? article(it) : '';
+    return { type: 'write_es', item: it, kind: art ? 'Напишите по-испански с артиклем' : (it.kind === 'phrase' || /\s/.test(it.es) ? 'Напишите фразу по-испански' : 'Напишите по-испански'), prompt: it.ru, expected: variants(it.es), article: art, hint: lvl < 2 }; };
+  qs.push(...pickW(phrases, want.phr).map(mk));
+  qs.push(...pickW(words, n - qs.length).map(mk));
+  if (qs.length < n) qs.push(...pickW(phrases.filter(p => !qs.some(q => q.item === p)), n - qs.length).map(mk));
+  return shuffle(qs);
 }
