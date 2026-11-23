@@ -71,10 +71,20 @@ export function imgFor(es) {
   return im && im.file ? { src: BASE + im.file, ...im } : null;
 }
 
+// Страницы раздела Vocabulario в конце урока: из vocabulary.source («Vocabulario, с. 14–15»).
+export function vocabRange(L) {
+  const m = /Vocabulario,\s*с\.\s*(\d+)(?:\s*[–-]\s*(\d+))?/.exec(L?.vocabulary?.source || '');
+  return m ? [+m[1], +(m[2] || m[1])] : null;
+}
+// Алфавитный порядок, как в словаре учебника (без ¡ ¿ и скобок в начале).
+const abcKey = s => String(s).replace(/^[¡¿("'«\s-]+/, '').toLowerCase();
+export const abcSort = (a, b) => abcKey(a.es).localeCompare(abcKey(b.es), 'es');
+
 function buildItems() {
   book.items.clear(); book.byLesson.clear();
   for (const [lid, L] of book.lessons) {
     const arr = [];
+    const vr = vocabRange(L);
     const seen = new Set();
     for (const [field, raw] of Object.entries(L.vocabulary || {})) {
       const list = Array.isArray(raw) ? raw.map(fromEntry) : (raw && typeof raw === 'object') ? flattenGroup(raw) : null;
@@ -86,6 +96,7 @@ function buildItems() {
         if (seen.has(id)) continue;
         seen.add(id);
         const it = { id, lessonId: lid, kind, ...w };
+        if (vr && w.page >= vr[0] && w.page <= vr[1]) it.inVocab = true; // слово из Vocabulario в конце урока
         arr.push(it); book.items.set(id, it);
       }
     }

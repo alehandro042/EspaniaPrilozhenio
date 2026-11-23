@@ -1,5 +1,5 @@
 import { state, settings, save, saveSettings, onChange, aiKeys, streakDays, uid, replaceState, merge, tickDay } from './store.js';
-import { book, loadBook, hasRu, imgFor, KIND_RU, kindLabel, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences, withArt } from './data.js';
+import { book, loadBook, vocabRange, abcSort, hasRu, imgFor, KIND_RU, kindLabel, lessonMeta, unitMeta, lessonName, refreshMyItems, conjugations, sentences, withArt } from './data.js';
 import { grade, answer, dueCards, addToCards, lessonProgress, testable, isLearned, mistakes } from './srs.js';
 import { speak, resetSlow, listen, canListen, judge, esVoices } from './speech.js';
 import { LEVELS, LEVEL_HINT, levelOf, recordTest, buildTest, checkTyped, hintFor, grammarQuestions, sentenceQuestions, buildWriteTest, TOPICS, topicTest, prepSections, pronSections, genderQuestions, genderNouns } from './quiz.js';
@@ -14,7 +14,7 @@ const { signIn, signOut, clientId, hasToken } = drive;
 const $ = (s, el = document) => el.querySelector(s);
 const view = $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const VERSION = '1.30';
+const VERSION = '1.31';
 
 // ---------- общие элементы ----------
 function toast(msg, ms = 2600) {
@@ -252,10 +252,20 @@ function vocabTab(id, L) {
   const order = ['verb', 'word', 'phrase', 'number', 'country', 'nationality', 'extra', 'name'];
   const rank = x => order.includes(x) ? order.indexOf(x) : 100;
   kinds.sort((a, b) => rank(a) - rank(b));
+  // «Словарь урока» — весь Vocabulario из конца урока одним списком по алфавиту, как в учебнике
+  const voc = items.filter(i => i.inVocab).sort(abcSort);
+  if (voc.length) kinds.unshift('book');
   let k = lessonTabs['k' + id]; if (!kinds.includes(k)) k = kinds[0];
-  const list = items.filter(i => i.kind === k);
-  return `<div class="row start" style="flex-wrap:wrap;gap:6px">${kinds.map(x => `<button class="chip ${x === k ? 'on' : ''}" data-kind="${x}">${esc(kindLabel(x))} · ${items.filter(i => i.kind === x).length}</button>`).join('')}</div>
-    <div class="c">${list.map(it => wordRow(it)).join('') || '<div class="empty-note">Нет слов</div>'}</div>
+  const count = x => x === 'book' ? voc.length : items.filter(i => i.kind === x).length;
+  const label = x => x === 'book' ? '📖 Словарь урока' : kindLabel(x);
+  let rows;
+  if (k === 'book') {
+    const vr = vocabRange(L); let prev = '';
+    rows = `<div class="mut small">Vocabulario, с. ${vr[0]}${vr[1] !== vr[0] ? '–' + vr[1] : ''} — все слова из словаря в конце урока, по алфавиту.</div>` +
+      voc.map(it => { const ch = it.es.replace(/^[¡¿("'«\s-]+/, '').charAt(0).toUpperCase(); const hd = ch !== prev ? `<div class="abc">${esc(ch)}</div>` : ''; prev = ch; return hd + wordRow(it); }).join('');
+  } else rows = items.filter(i => i.kind === k).map(it => wordRow(it)).join('');
+  return `<div class="row start" style="flex-wrap:wrap;gap:6px">${kinds.map(x => `<button class="chip ${x === k ? 'on' : ''}" data-kind="${x}">${esc(label(x))} · ${count(x)}</button>`).join('')}</div>
+    <div class="c">${rows || '<div class="empty-note">Нет слов</div>'}</div>
     <div class="btns"><button class="btn ghost" id="addAll">Все слова в карточки</button><a class="btn ghost" href="#/cards/lesson-${id}">Карточки урока</a></div>
     ${L.vocabulary?.source ? `<div class="mut small" style="text-align:center">Источник: ${esc(L.vocabulary.source)}</div>` : ''}`;
 }
