@@ -1,4 +1,5 @@
 import SENT_RU from './sentences-ru.js';
+import { WORDS_RU, OVERRIDE } from './words-ru.js';
 // Загрузка учебника: textbook/contents.json + все уроки, у которых есть поле file.
 // Новый урок = новый JSON в textbook/lessons/ + поле "file" в contents.json. Код менять не нужно.
 import { state } from './store.js';
@@ -64,7 +65,7 @@ export async function loadBook() {
 }
 
 // Пометка «перевода в учебнике нет» — такие слова показываем, но не спрашиваем в тестах.
-export const hasRu = it => !!(it.ru && String(it.ru).trim() && !String(it.ru).trim().startsWith('('));
+export const hasRu = it => { const r = typeof it === 'string' ? it : it?.ru; return !!(r && String(r).trim() && !String(r).trim().startsWith('(')); };
 
 export function imgFor(es) {
   const im = book.images[es];
@@ -103,12 +104,26 @@ function buildItems() {
     book.byLesson.set(lid, arr);
   }
   fillGender();
+  fillRu();
   refreshMyItems();
 }
 
 // Род, если в этом месте учебника он не указан:
 // 1) то же слово в другом уроке учебника с указанным родом (tema m, dictado m…);
 // 2) несколько слов без рода нигде в учебнике — по правилу §3 (-a — ж. р., -o — м. р.).
+// Перевод, если в этом месте учебника его нет: 1) уточнение для списка (OVERRIDE),
+// 2) перевод того же слова в другом уроке учебника, 3) перевод приложения (words-ru.js, по просьбе Александра 23.11.2026).
+const bare = es => String(es).replace(/^(el|la|los|las|un|una) /, '').replace(/ \([IVX]+\)$/, '');
+function fillRu() {
+  const known = new Map();
+  for (const it of book.items.values()) if (hasRu(it.ru) && !known.has(bare(it.es))) known.set(bare(it.es), it.ru);
+  for (const it of book.items.values()) {
+    if (hasRu(it.ru)) continue;
+    const own = OVERRIDE[it.kind]?.[it.es] || (!known.has(bare(it.es)) && WORDS_RU[it.es]);
+    const ru = own || known.get(bare(it.es));
+    if (ru) { it.ru = ru; if (own) it.ruOwn = true; }
+  }
+}
 const GENDER_BY_RULE = { 'fonética': 'f', 'economía': 'f', 'literatura': 'f', 'práctica': 'f', 'grado': 'm', 'sociología': 'f' };
 function fillGender() {
   const known = new Map();

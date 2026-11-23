@@ -1,8 +1,8 @@
 // Офлайн-режим: оболочка приложения кэшируется, учебник — «сначала сеть, потом кэш»,
 // чтобы новые уроки подхватывались сами, а без интернета работало последнее загруженное.
-const VERSION = 'espanola-v44';
+const VERSION = 'espanola-v45';
 const SHELL = ['./', 'index.html', 'css/app.css', 'config.js', 'manifest.webmanifest',
-  'js/main.js', 'js/store.js', 'js/data.js', 'js/srs.js', 'js/speech.js', 'js/quiz.js', 'js/ai.js', 'js/sync.js', 'js/cloud.js', 'js/sentences-ru.js', 'js/pronouns.js',
+  'js/main.js', 'js/store.js', 'js/data.js', 'js/srs.js', 'js/speech.js', 'js/quiz.js', 'js/ai.js', 'js/sync.js', 'js/cloud.js', 'js/sentences-ru.js', 'js/words-ru.js', 'js/pronouns.js',
   'icons/icon-192.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', e => {
