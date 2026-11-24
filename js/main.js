@@ -738,10 +738,11 @@ const PART = { 'а': 'A', 'б': 'B', 'в': 'C', 'г': 'D', 'a': 'A', 'b': 'B', '
 function parseExerciseQuery(text) {
   const t = ' ' + String(text).toLowerCase().replace(/ё/g, 'е') + ' ';
   const NUM = '(\\d{1,2})\\s*\\*?\\s*(?:[\\s.(-]*([абвгabcd])(?![а-яa-z]))?';
-  const LIST = NUM + '(?:\\s*(?:,|;|\\+|и|and|&)\\s*(?:упр(?:ажнени[еяю]|ажн)?\\.?\\s*)?' + '\\d{1,2}\\s*\\*?\\s*(?:[\\s.(-]*[абвгabcd](?![а-яa-z]))?' + ')*';
+  const LIST = NUM + '(?:(?:\\s*(?:,|;|\\+|и|and|&)\\s*|(?<=\\s)|\\s+)(?:упр(?:ажнени[еяю]|ажн)?\\.?\\s*)?' + '\\d{1,2}\\s*\\*?\\s*(?:[\\s.(-]*[абвгabcd](?![а-яa-z]))?' + ')*';
   // страница: «стр 52», «с. 52», а также «52 стр», «на 52 странице», «52-я страница»
   const EXW = '(?:упр(?:ажнени[еяю]|ажн)?|№|номер|задани[еяю])';
-  let pg = t.match(/(?<![а-яa-z])(?:стр(?:аниц[аеуы])?|с)\.?\s*(\d{1,3})(?!\d)/);
+  // «52 стр 8 9» — если сообщение начинается с «N стр», это страница
+  let pg = t.match(/^\s*(?:на\s+)?(\d{1,3})\s*(?:-?(?:я|й|ой|ая))?\s*стр(?:аниц[аеуы]|\.)?(?![а-яa-z])/) || t.match(/(?<![а-яa-z])(?:стр(?:аниц[аеуы])?|с)\.?\s*(\d{1,3})(?!\d)/);
   // «52 страница 9 упражнение»: число после «страница» — это номер упражнения
   if (pg && new RegExp('^\\s*(?:-?(?:е|ое))?\\s*' + EXW + '[а-я]*(?![а-я])(?!\\.?\\s*\\d)').test(t.slice(pg.index + pg[0].length))) pg = null;
   if (!pg) {
@@ -760,7 +761,9 @@ function parseExerciseQuery(text) {
   const res = (list, extra) => ({ ...list[0], items: list, ...extra });
   if (exm && pg) return res(items(exm[1]), { page: +pg[1] });
   if (exm && ls) return res(items(exm[1]), { lesson: +ls[1] });
-  if (exm) return res(items(exm[1]), { noPage: true }); // «а теперь упр 19» — страницу возьмём из прошлого запроса
+  if (exm) return res(items(exm[1]), { noPage: true });
+  // «стр 52 8 9 10» — после страницы просто номера
+  if (pg) { const rest = t2.trim().match(new RegExp('^(?:упр\\S*\\s*)?(' + LIST + ')$')); if (rest) return res(items(rest[1]), { page: +pg[1] }); } // «а теперь упр 19» — страницу возьмём из прошлого запроса
   const m = t.trim().match(new RegExp('^(\\d{1,3})[\\s,./:-]+(' + LIST + ')$'));
   if (m) return res(items(m[2]), { page: +m[1] });
   return null;
